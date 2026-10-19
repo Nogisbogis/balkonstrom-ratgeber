@@ -1,14 +1,20 @@
 {{ define "main" }}
 <article class="wide einsatz">
   {{ partial "breadcrumb.html" . }}
-  {{ partial "disclosure-box.html" . }}
-  <div class="einsatz-kopf">{{ partial "icon.html" .Params.icon }}<h1>{{ .Title }}</h1></div>
-  <p class="lead">{{ .Params.intro }}</p>
+  <div class="einsatz-kopf">
+    <div class="einsatz-kopf-text">
+      <h1>{{ .Title }}</h1>
+      <p class="lead">{{ .Params.intro }}</p>
+      {{ partial "disclosure-box.html" . }}
+    </div>
+    {{- $fk := dict "camping-van" "camping" "stromausfall" "stromausfall" "balkon-speicher" "balkon" "unterwegs" "unterwegs" }}
+    {{- with index $fk .Params.icon }}{{ partial "foto.html" (dict "key" . "ctx" $ "sizes" "(min-width: 64rem) 40rem, 100vw" "lazy" false "cls" "einsatz-foto" "ratio" "1/1") }}{{ end }}
+  </div>
   {{- $p := . }}
   {{- $items := slice }}
   {{- range .Params.empfehlungen }}{{ $e := . }}{{ range where hugo.Data.empfehlungen "einsatz" $e }}{{ $items = $items | append . }}{{ end }}{{ end }}
   <section class="einsatz-sec" aria-labelledby="e-empf">
-    <h2 id="e-empf"><span class="label-sun">Meine Empfehlung</span></h2>
+    <h2 id="e-empf">Meine Empfehlung</h2>
     <ul class="empf-list empf-grid empf-grid-{{ len $items }}">{{ range $items }}{{ partial "empfehlung-item.html" (dict "modell" .modell "grund" .grund "einsatz" ($p.Params.empfehlung_label | default .einsatz) "ctx" $p "vergleich" (gt (len $items) 1)) }}{{ end }}</ul>
     <p class="note">Die Empfehlung stammt aus meinem Artikel und stützt sich auf Herstellerdaten oder zitierte Tests. Ich habe die Geräte nicht selbst getestet. <a href="{{ "methodik/" | relURL }}">So arbeite ich</a></p>
   </section>

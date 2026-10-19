@@ -4,9 +4,9 @@
 {{- $qidx := dict }}{{ range $i, $q := .Params.quellen }}{{ $qidx = merge $qidx (dict $q.id (add $i 1)) }}{{ end }}
 <article class="produkt">
   {{ partial "breadcrumb.html" . }}
-  {{ partial "disclosure-box.html" . }}
   <h1>{{ .Title }}</h1>
-  <p class="meta">Produktseite · Zuletzt aktualisiert <time datetime="{{ .Lastmod.Format "2006-01-02" }}">{{ .Lastmod.Format "02.01.2006" }}</time> · eigene Recherche, kein eigener Test</p>
+  <p class="meta">Produktseite Powerstation · Zuletzt aktualisiert <time datetime="{{ .Lastmod.Format "2006-01-02" }}">{{ .Lastmod.Format "02.01.2006" }}</time> · eigene Recherche, kein eigener Test</p>
+  {{ partial "disclosure-box.html" . }}
 
   <div class="p-top">
     <div class="p-media">

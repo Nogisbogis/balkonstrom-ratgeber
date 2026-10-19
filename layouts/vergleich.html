@@ -1,7 +1,7 @@
 {{ define "main" }}
 <article class="wide vergleich">
-  {{ partial "disclosure-box.html" . }}
   <h1>{{ .Title }}</h1>
+  {{ partial "disclosure-box.html" . }}
   <div id="auswahl-hinweis" class="auswahl-hinweis" hidden></div>
   {{ .Content }}
 
@@ -13,21 +13,21 @@
   <section id="powerstations" class="tabpanel" aria-labelledby="h-ps">
   <h2 id="h-ps">Powerstations</h2>
   <form class="filters" data-table="t-ps" hidden>
-    <fieldset>
+    <fieldset data-ui>
       <legend>Filtern</legend>
       <label>Kapazität ab (Wh)
-        <input type="number" min="0" step="100" placeholder="z. B. 500" data-filter="wh" data-op="min" inputmode="numeric"></label>
+        <input type="number" min="0" step="100" placeholder="z. B. 500…" data-filter="wh" data-op="min" inputmode="numeric"></label>
       <label>Dauerleistung ab (W)
-        <input type="number" min="0" step="100" placeholder="z. B. 1000" data-filter="w" data-op="min" inputmode="numeric"></label>
+        <input type="number" min="0" step="100" placeholder="z. B. 1000…" data-filter="w" data-op="min" inputmode="numeric"></label>
       <label>Gewicht bis (kg)
-        <input type="number" min="0" step="0.5" placeholder="z. B. 5" data-filter="kg" data-op="max" inputmode="decimal"></label>
+        <input type="number" min="0" step="0.5" placeholder="z. B. 5…" data-filter="kg" data-op="max" inputmode="decimal"></label>
       {{ $akkus := slice }}{{ range hugo.Data.powerstations }}{{ $akkus = $akkus | append .akkutyp }}{{ end }}
       {{ if gt (len ($akkus | uniq)) 1 }}<label>Akkutyp
         <select data-filter="akku" data-op="eq"><option value="">alle</option>{{ range ($akkus | uniq) }}<option>{{ . }}</option>{{ end }}</select></label>{{ end }}
       <button type="reset" class="btn-sec">Zurücksetzen</button>
     </fieldset>
   </form>
-  <div class="table-wrap" tabindex="0" role="region" aria-label="Tabelle Powerstations, horizontal scrollbar">
+  <div class="table-wrap" data-ui tabindex="0" role="region" aria-label="Tabelle Powerstations, horizontal scrollbar">
   <table id="t-ps" class="cmp">
     <thead><tr>
       <th data-sort="text" class="col-modell">Modell</th>
@@ -67,7 +67,7 @@
   <section id="balkonkraftwerke" class="tabpanel" aria-labelledby="h-bkw">
   <h2 id="h-bkw">Balkonkraftwerke &amp; Speicher</h2>
   <form class="filters" data-table="t-bkw" hidden>
-    <fieldset>
+    <fieldset data-ui>
       <legend>Filtern</legend>
       <label>Typ
         <select data-filter="typ" data-op="eq">
@@ -76,13 +76,13 @@
           {{ range ($typen | uniq) }}<option>{{ . }}</option>{{ end }}
         </select></label>
       <label>Speicher ab (kWh)
-        <input type="number" min="0" step="0.1" placeholder="z. B. 1,9" data-filter="speicher" data-op="min" inputmode="decimal"></label>
+        <input type="number" min="0" step="0.1" placeholder="z. B. 1,9…" data-filter="speicher" data-op="min" inputmode="decimal"></label>
       <label>PV-Eingang ab (W)
-        <input type="number" min="0" step="100" placeholder="z. B. 2000" data-filter="pv" data-op="min" inputmode="numeric"></label>
+        <input type="number" min="0" step="100" placeholder="z. B. 2000…" data-filter="pv" data-op="min" inputmode="numeric"></label>
       <button type="reset" class="btn-sec">Zurücksetzen</button>
     </fieldset>
   </form>
-  <div class="table-wrap" tabindex="0" role="region" aria-label="Tabelle Balkonkraftwerke, horizontal scrollbar">
+  <div class="table-wrap" data-ui tabindex="0" role="region" aria-label="Tabelle Balkonkraftwerke, horizontal scrollbar">
   <table id="t-bkw" class="cmp">
     <thead><tr>
       <th data-sort="text" class="col-modell">Modell</th>

@@ -1,5 +1,6 @@
 +++
 title = 'Beste Powerstation fürs Camping: worauf es ankommt (mit Vergleich)'
+foto = 'camping'
 seotitle = "Beste Powerstation fürs Camping: Kaufberatung"
 date = '2026-10-19'
 description = 'Kapazität, Dauerleistung, Gewicht, Solareingang und Sicherheit: So findest du die passende Powerstation fürs Camping – mit Herstellerdaten und unabhängigen Testergebnissen.'

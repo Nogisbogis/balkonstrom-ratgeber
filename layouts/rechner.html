@@ -5,7 +5,7 @@
 <form class="tool" id="rechner" novalidate>
   <fieldset><legend>1. Deine Geräte</legend>
     <p class="note">Leistung in Watt vom Typenschild oder Netzteil. „Stunden“ = wie lange das Gerät zwischen zwei Ladungen läuft.</p>
-    <div class="tablewrap"><table class="geraete">
+    <div class="tablewrap" data-ui><table class="geraete">
       <thead><tr><th scope="col">Gerät</th><th scope="col">Watt</th><th scope="col">Stunden</th><th scope="col">Anzahl</th><th scope="col"><span class="sr">Entfernen</span></th></tr></thead>
       <tbody id="zeilen"></tbody>
     </table></div>
@@ -20,7 +20,7 @@
     </div>
   </fieldset>
   <fieldset><legend>2. Powerstation</legend>
-    <label>Modell: <select id="modell"><option value="">eigene Kapazität eingeben …</option></select></label>
+    <label>Modell: <select id="modell"><option value="">eigene Kapazität eingeben…</option></select></label>
     <p id="eigen"><label>Kapazität: <input type="number" id="kap" min="1" max="20000" step="1" value="1000" inputmode="decimal"> Wh</label>
       <label>Dauerleistung: <input type="number" id="dauer" min="1" max="10000" step="1" value="1000" inputmode="decimal"> W</label></p>
   </fieldset>

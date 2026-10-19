@@ -1,4 +1,5 @@
-<li class="card">
+<li class="card{{ if .Params.foto }} mit-foto{{ end }}">
+  {{- with .Params.foto }}{{ partial "foto.html" (dict "key" . "sizes" "(min-width: 64rem) 24rem, 100vw" "lazy" true "cls" "card-foto" "ratio" "3/2") }}{{ end }}
   <div class="card-body">
     {{ with .Params.kategorie }}{{ with site.GetPage (printf "/%s" .) }}<p class="card-kat">{{ .Title }}</p>{{ end }}{{ end }}
     <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>

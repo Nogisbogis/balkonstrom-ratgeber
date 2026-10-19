@@ -5,10 +5,10 @@
   <p class="ka-text">{{ . | $.RenderString }}</p>
   <div class="ka-grid">
     {{- with $.Params.fuer_dich }}
-    <div class="ka-ja"><h3><span aria-hidden="true">✓</span> Für dich, wenn …</h3><ul>{{ range . }}<li>{{ . | $.RenderString }}</li>{{ end }}</ul></div>
+    <div class="ka-ja"><h3><span class="mk" aria-hidden="true">+</span> Für dich, wenn …</h3><ul>{{ range . }}<li>{{ . | $.RenderString }}</li>{{ end }}</ul></div>
     {{- end }}
     {{- with $.Params.eher_nicht }}
-    <div class="ka-nein"><h3><span aria-hidden="true">✗</span> Eher nicht, wenn …</h3><ul>{{ range . }}<li>{{ . | $.RenderString }}</li>{{ end }}</ul></div>
+    <div class="ka-nein"><h3><span class="mk" aria-hidden="true">–</span> Eher nicht, wenn …</h3><ul>{{ range . }}<li>{{ . | $.RenderString }}</li>{{ end }}</ul></div>
     {{- end }}
   </div>
   {{- with $.Params.kurz }}

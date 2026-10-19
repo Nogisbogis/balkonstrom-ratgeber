@@ -1,5 +1,6 @@
 +++
 title = 'Powerstation mit Solarpanel kombinieren: Spannung, Stecker, Leistung'
+foto = 'balkon2'
 seotitle = "Powerstation mit Solarpanel kombinieren: So geht's"
 date = '2026-10-19'
 description = 'Welches Solarpanel passt an welche Powerstation? Spannungsbereich, Strom, maximale Leistung, Stecker (XT60, DC8020, SDC, USB-C), Reihen- oder Parallelschaltung und warum die Leerlaufspannung im Winter steigt.'

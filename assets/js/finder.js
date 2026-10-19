@@ -68,8 +68,8 @@
   function karte(p, checks, knapp) {
     var h = '<div class="treffer' + (knapp ? ' knapp' : '') + '"><h3><a href="' + esc(p.url) + '">' + esc(p.m) + '</a></h3>';
     h += '<p class="note">' + f(p.wh) + ' Wh · ' + f(p.w) + ' W · ' + f(p.kg) + ' kg · Solar ' + f(p.pv) + ' W · USV ≤ ' + p.usv + ' ms · ' + esc(p.akku) + '</p><p class="regeln-titel"><strong>' + (knapp ? 'Knapp daneben, weil eine Regel nicht erfüllt ist:' : 'Passt, weil:') + '</strong></p><ul class="regeln">';
-    checks.forEach(function (c) { h += '<li>' + (c.ok ? '✓ ' : '✗ ') + esc(c.t) + '</li>'; });
-    h += '<li>' + (knapp ? '' : '✓ ') + esc(sortGrund[EINSATZ](p)) + '</li></ul>';
+    checks.forEach(function (c) { h += '<li>' + (c.ok ? '<span class="mk mk-ja" aria-hidden="true">+</span> ' : '<span class="mk mk-nein" aria-hidden="true">–</span> <span class="sr">nicht erfüllt: </span>') + esc(c.t) + '</li>'; });
+    h += '<li>' + (knapp ? '' : '<span class="mk mk-ja" aria-hidden="true">+</span> ') + esc(sortGrund[EINSATZ](p)) + '</li></ul>';
     if (p.warn) h += '<p class="warnbox">' + esc(p.warn) + '</p>';
     h += '<p><a href="' + esc(p.url) + '">Datenblatt, Tests &amp; Quellen</a> · <a href="../laufzeitrechner/?m=' + encodeURIComponent(p.s) + '">Laufzeit jetzt ausrechnen</a></p></div>';
     return h;

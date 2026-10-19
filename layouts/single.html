@@ -1,19 +1,37 @@
 {{ define "main" }}
 {{ if and (eq .Section "posts") (gt .WordCount 1500) }}<div class="lesefortschritt" aria-hidden="true"></div>{{ end }}
-<article>
-  {{ partial "breadcrumb.html" . }}
-  {{ partial "disclosure-box.html" . }}
-  <h1>{{ .Title }}</h1>
-  <p class="meta">{{ if eq .Section "posts" }}Veröffentlicht {{ end }}<time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "02.01.2006" }}</time>{{ if eq .Section "posts" }} · Zuletzt aktualisiert <time datetime="{{ .Lastmod.Format "2006-01-02" }}">{{ .Lastmod.Format "02.01.2006" }}</time> · {{ .ReadingTime }} Min. Lesezeit{{ end }}</p>
-  {{ if eq .Section "posts" }}
-  {{ partial "kurzantwort.html" . }}
-  {{ if and (ne .Params.toc false) (findRE `<h2 ` .Content 1) }}
-  <details class="toc"><summary>Inhaltsverzeichnis</summary>{{ .TableOfContents }}</details>
-  {{ end }}
-  {{ else }}{{ partial "kurzbox.html" . }}{{ end }}
-  {{ .Content }}
-  {{ partial "faq.html" . }}
+{{- $post := eq .Section "posts" }}
+{{- $toc := and $post (ne .Params.toc false) (findRE `<h2 ` .Content 1) }}
+<article class="post{{ if $toc }} mit-rail{{ end }}">
+  <header class="post-kopf">
+    {{ partial "breadcrumb.html" . }}
+    <h1>{{ .Title }}</h1>
+    <p class="meta">{{ if $post }}Veröffentlicht {{ end }}<time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "02.01.2006" }}</time>{{ if $post }} · Zuletzt aktualisiert <time datetime="{{ .Lastmod.Format "2006-01-02" }}">{{ .Lastmod.Format "02.01.2006" }}</time> · {{ .ReadingTime }} Min. Lesezeit{{ end }}</p>
+    {{ partial "disclosure-box.html" . }}
+  </header>
+  {{- with .Params.foto }}{{ $f := index (where hugo.Data.fotos "key" .) 0 }}
+  {{ partial "foto.html" (dict "key" . "ctx" $ "sizes" "(min-width: 76rem) 70rem, 100vw" "lazy" false "cls" "post-foto" "ratio" "21/9" "cap" (printf "Symbolbild: %s" $f.alt)) }}
+  {{- end }}
+  <div class="post-raster">
+    <div class="post-body">
+      {{ if $post }}
+      {{ partial "kurzantwort.html" . }}
+      {{ if $toc }}<details class="toc"><summary>Inhaltsverzeichnis</summary>{{ .TableOfContents }}</details>{{ end }}
+      {{ else }}{{ partial "kurzbox.html" . }}{{ end }}
+      {{ .Content }}
+      {{ partial "faq.html" . }}
+    </div>
+    {{- if $toc }}
+    <aside class="post-rail" aria-labelledby="rail-titel">
+      <div class="rail-innen">
+        <h2 id="rail-titel" class="rail-titel">In diesem Artikel</h2>
+        {{ replace .TableOfContents `id="TableOfContents"` `class="rail-toc"` | safeHTML }}
+        <p class="rail-tool">{{ with .Params.weiter }}<span class="rail-tool-l">Selbst rechnen</span><a class="textlink" href="{{ .url | relURL }}">{{ .text }}</a>{{ else }}<a class="textlink" href="{{ "laufzeitrechner/" | relURL }}">Laufzeitrechner öffnen</a>{{ end }}</p>
+      </div>
+    </aside>
+    {{- end }}
+  </div>
 </article>
-{{ if eq .Section "posts" }}{{ if .Params.weiter }}{{ partial "weiter.html" . }}{{ else }}{{ partial "empfehlungsbox.html" . }}{{ partial "weiterlesen.html" . }}{{ end }}{{ end }}
-{{ if and (eq .Section "posts") (ne .Params.comments false) }}{{ partial "comments.html" . }}{{ end }}
+{{ if $post }}{{ if .Params.weiter }}{{ partial "weiter.html" . }}{{ else }}{{ partial "empfehlungsbox.html" . }}{{ partial "weiterlesen.html" . }}{{ end }}{{ end }}
+{{ if and $post (ne .Params.comments false) }}{{ partial "comments.html" . }}{{ end }}
 {{ end }}

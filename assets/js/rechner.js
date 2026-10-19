@@ -31,11 +31,11 @@
   function zeile(name, w, h, anz) {
     n++;
     var tr = document.createElement('tr');
-    tr.innerHTML = '<td><input type="text" aria-label="Gerät ' + n + '" placeholder="z. B. Kühlbox" value="' + esc(name || '') + '"></td>' +
+    tr.innerHTML = '<td><input type="text" aria-label="Gerät ' + n + '" placeholder="z. B. Kühlbox…" value="' + esc(name || '') + '"></td>' +
       '<td><input type="number" min="0" max="5000" step="1" inputmode="decimal" aria-label="Watt Gerät ' + n + '" value="' + (w || '') + '"></td>' +
       '<td><input type="number" min="0" max="240" step="0.5" inputmode="decimal" aria-label="Stunden Gerät ' + n + '" value="' + (h || '') + '"></td>' +
       '<td><input type="number" min="1" max="20" step="1" inputmode="decimal" aria-label="Anzahl Gerät ' + n + '" value="' + (anz || 1) + '"></td>' +
-      '<td><button type="button" class="btn-sec" aria-label="Zeile entfernen">✕</button></td>';
+      '<td><button type="button" class="btn-sec" aria-label="Zeile entfernen">Entfernen</button></td>';
     tr.querySelector('button').addEventListener('click', function () { tr.remove(); rechne(); });
     tbody.appendChild(tr);
   }
@@ -100,10 +100,10 @@
     if (ev && E > 0) h += '<p class="note">Der Eigenverbrauch fällt an, solange die Station eingeschaltet ist. Die Bedarfsrechnung oben enthält ihn nicht, weil die Einschaltzeit unbekannt ist.</p>';
     if (s.warn) h += '<p class="warnbox">' + esc(s.warn) + '</p>';
     // Alle Modelle im Überblick
-    h += '<h3>So lange reichen die Modelle aus meinem Vergleich</h3><p class="note">Gleiche Geräte, gleiche Annahmen. ✗ = Dauerleistung zu klein für alle Geräte gleichzeitig.</p><div class="tablewrap"><table class="cmp"><thead><tr><th>Modell</th><th class="r">nutzbar (Annahme)</th><th class="r">Anteil deines Bedarfs</th><th class="r">Dauerbetrieb</th></tr></thead><tbody>';
+    h += '<h3>So lange reichen die Modelle aus meinem Vergleich</h3><p class="note">Gleiche Geräte, gleiche Annahmen. „zu wenig W“ = Dauerleistung zu klein für alle Geräte gleichzeitig.</p><div class="tablewrap"><table class="cmp"><thead><tr><th>Modell</th><th class="r">nutzbar (Annahme)</th><th class="r">Anteil deines Bedarfs</th><th class="r">Dauerbetrieb</th></tr></thead><tbody>';
     daten.forEach(function (p) {
       var nz = p.wh * eta;
-      h += '<tr><td><a href="' + esc(p.url) + '">' + esc(p.m) + '</a></td><td class="r">' + f(Math.round(nz)) + ' Wh</td><td class="r">' + (E > 0 ? f(Math.round(nz / E * 100)) + ' %' : '–') + '</td><td class="r">' + (P > p.w ? '✗ ' : '') + dauer(nz / (P + ev)) + '</td></tr>';
+      h += '<tr><td><a href="' + esc(p.url) + '">' + esc(p.m) + '</a></td><td class="r">' + f(Math.round(nz)) + ' Wh</td><td class="r">' + (E > 0 ? f(Math.round(nz / E * 100)) + ' %' : '–') + '</td><td class="r">' + (P > p.w ? '<span class="mk mk-nein">zu wenig W</span> ' : '') + dauer(nz / (P + ev)) + '</td></tr>';
     });
     h += '</tbody></table></div>';
     out.innerHTML = h;

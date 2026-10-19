@@ -1,5 +1,6 @@
 +++
 title = 'Balkonkraftwerk anmelden 2026: 800-Watt-Regel, Marktstammdatenregister, Steckdose – was gilt'
+foto = 'balkon'
 seotitle = "Balkonkraftwerk anmelden 2026: 800-W-Regel & MaStR"
 date = '2026-10-19'
 description = 'Die aktuellen Regeln für Balkonkraftwerke in Deutschland: Leistungsgrenzen, Registrierung im Marktstammdatenregister, Zählertausch, Schuko-Stecker nach neuer VDE-Norm sowie Rechte von Mietern und Wohnungseigentümern.'
