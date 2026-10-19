@@ -3,24 +3,23 @@ title = "Impressum"
 layout = "legal"
 +++
 
-> **Hinweis an den Betreiber:** Bitte alle Platzhalter in geschweiften Klammern durch die eigenen Angaben ersetzen und anschließend in `hugo.toml` `noindex = false` setzen.
 
 ## Angaben gemäß § 5 DDG
 
-{{NAME}}  
-{{STRASSE}}  
-{{PLZ_ORT}}  
+Paul Klamt  
+Robert-Koch-Straße 2  
+20249 Hamburg  
 Deutschland
 
 ## Kontakt
 
-E-Mail: {{EMAIL}}
+E-Mail: paul.klamt@klamt.com
 
 ## Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV
 
-{{NAME}}  
-{{STRASSE}}  
-{{PLZ_ORT}}
+Paul Klamt  
+Robert-Koch-Straße 2  
+20249 Hamburg
 
 ## Hinweis zu Affiliate-Links
 

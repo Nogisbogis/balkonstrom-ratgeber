@@ -11,8 +11,7 @@ disableKinds = ["taxonomy", "term"]
   # HUGO_PARAMS_PARTNERTAG überschrieben (GitHub: Variable/Secret AMAZON_PARTNER_TAG).
   # Alternativ hier fest eintragen, z. B. partnerTag = "meintag-21".
   partnerTag = ""
-  # Solange das Impressum Platzhalter enthält: true lassen (robots noindex auf allen Seiten).
-  noindex = true
+  noindex = false
   disclosure = "Werbung / Affiliate-Links: Als Amazon-Partner verdiene ich an qualifizierten Verkäufen."
 
 [pagination]

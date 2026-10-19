@@ -8,10 +8,10 @@ url = "/datenschutz/"
 
 Verantwortlich für die Datenverarbeitung auf dieser Website im Sinne der Datenschutz-Grundverordnung (DSGVO) ist:
 
-{{NAME}}  
-{{STRASSE}}  
-{{PLZ_ORT}}  
-E-Mail: {{EMAIL}}
+Paul Klamt  
+Robert-Koch-Straße 2  
+20249 Hamburg  
+E-Mail: paul.klamt@klamt.com
 
 ## 2. Allgemeines
 
