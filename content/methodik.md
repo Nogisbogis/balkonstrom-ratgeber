@@ -9,11 +9,15 @@ Den Balkonstrom-Ratgeber schreibe ich allein. Hier steht, woher meine Angaben ko
 
 ## Quellen
 
+{{% mehr "Herstellerdaten, Tests, Behörden, Widersprüche, kein eigener Test" %}}
+
 - **Herstellerdaten:** Technische Angaben wie Kapazität, Dauerleistung, Gewicht, Solareingang oder Garantie übernehme ich aus Datenblättern, Handbüchern, Zertifikaten und Herstellerseiten. Jede Angabe ist auf der jeweiligen Produktseite mit Quelle verlinkt.
 - **Unabhängige Tests:** Ergebnisse von ADAC, Stiftung Warentest, c't, CHIP, COMPUTER BILD und anderen gebe ich nur wieder, wenn ich sie in der Originalquelle gefunden habe. Berichte Dritter über einen Test kennzeichne ich als solche. Bezahlschranken umgehe ich nicht; was ich nicht einsehen konnte, steht als offen da.
 - **Behörden und Verbände:** Rechtliche und allgemeine Angaben stützen sich zum Beispiel auf Bundesnetzagentur, Bundeswirtschaftsministerium, Umweltbundesamt, BBK und Verbraucherzentrale.
 - **Widersprüche:** Wenn sich Quellen widersprechen, zeige ich beide Werte und sage, mit welchem die Werkzeuge rechnen.
 - **Kein eigener Test:** Ich habe die Geräte nicht selbst getestet. Bewertungen, Siegel oder Noten, die nicht aus einer verlinkten Quelle stammen, gibt es hier nicht.
+
+{{% /mehr %}}
 
 ## Wie Empfehlungen entstehen
 

@@ -74,12 +74,16 @@ Manche Hersteller schreiben Regeln vor. Bei der **Jackery Explorer 1000 v2** sin
 
 ## Stecker und Adapter
 
+{{% mehr "Stecker und Adapter der einzelnen Modelle" %}}
+
 - **XT60 / XT-60i:** Anker C300X, C1000 Gen 2, C2000 Gen 2. Bei der BLUETTI Elite 100 V2 führt ein MC4-auf-XT60-Kabel vom Panel zur Station.
 - **DC8020:** Jackery. Die Explorer 300 Plus lädt Solar aber nur über USB-C und braucht dafür einen Adapter.
 - **SDC:** DJI-eigener Anschluss. Für Solar gibt es laut DJI ein MC4-Kabel.
 - **MC4:** der übliche Stecker an größeren Solarmodulen. Fast immer brauchst du ein Adapterkabel auf den Eingang der Powerstation.
 
 Ob ein Solarkabel im Karton liegt, ist unterschiedlich. Beim ADAC-Test fehlte der EcoFlow DELTA 3 Plus das PV-Ladekabel, bei der Anker C300X sind Solar- und Kfz-Kabel laut Anker separat erhältlich. Bei der BLUETTI Elite 100 V2 widersprechen sich Herstellerseite und ein Praxistest. Einzelheiten stehen auf den Produktseiten.
+
+{{% /mehr %}}
 
 {{< produkte art="ps" modelle="BLUETTI Elite 100 V2|EcoFlow DELTA 3 Plus|Anker SOLIX C2000 Gen 2" >}}
 

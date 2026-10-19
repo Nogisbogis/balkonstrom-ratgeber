@@ -1,0 +1,10 @@
+{{- /* {{% mehr "Kurzer Titel, was drinsteht" %}} Markdown {{% /mehr %}} – zugeklappter Abschnitt (natives details, ohne JS). Inhalt bleibt im HTML. */ -}}
+{{- $t := .Get 0 | default (.Get "titel") }}
+{{- if not $t }}{{ errorf "mehr: Titel fehlt (%s)" .Position }}{{ end }}
+<details class="mehr"><summary>{{ $t | markdownify }}</summary>
+<div class="mehr-inhalt">
+
+{{ .Inner }}
+
+</div>
+</details>

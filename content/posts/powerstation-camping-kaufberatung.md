@@ -66,11 +66,15 @@ Eine Powerstation ist ein großer Akku mit Steckdosen, USB-Anschlüssen und meis
 
 Rechne für jedes Gerät: **Leistung in Watt × Stunden pro Tag = Wattstunden pro Tag**. Die Leistung steht auf dem Typenschild oder im Datenblatt. Bei Kühlboxen mit Kompressor geben viele Hersteller den Verbrauch direkt pro 24 Stunden an – dieser Wert ist realistischer als die Nennleistung, weil der Kompressor nicht ständig läuft.
 
+{{% mehr "Puffer, Orientierungswerte und Laufzeit-Grafik" %}}
+
 Addiere alles und plane einen Puffer ein: Beim Umwandeln auf 230 V geht Energie verloren, und Hersteller-Kapazitäten werden im Alltag nicht immer erreicht. Der ADAC stellte in seinem Test 2025 fest, dass die mobilen Stromspeicher weniger liefern als von den Herstellern angegeben. Mit meinem [Laufzeitrechner](/laufzeitrechner/) kannst du deine Geräte eintragen und siehst für jedes Modell, ob der Akku reicht.
 
 Zur Orientierung: Die Stiftung Warentest hat berechnet, dass eine Powerstation mit 500 Wh ein Smartphone rund 33-mal oder einen Laptop etwa zehnmal laden kann; eine Lichterkette leuchtet damit rund 65 Stunden.
 
 {{< grafik src="img/ps-laufzeit.svg" alt="Balkendiagramm rechnerischer Laufzeiten für 245, 1.024 und 2.048 Wh: LED-Lampe mit 10 W etwa 24, 102 und 205 Stunden; Kühlbox mit 40 W etwa 6, 26 und 51 Stunden; Laptop mit 60 W etwa 4, 17 und 34 Stunden; Kaffeemaschine mit 1.000 W läuft an der kleinsten Powerstation nicht, an den großen etwa 1 und 2 Stunden. Ohne Umwandlungsverluste." caption="Rechnerische Laufzeit = Kapazität laut Hersteller ÷ Geräteleistung. Die Geräteleistungen sind **Beispielwerte**, Umwandlungsverluste sind nicht abgezogen – real läuft alles kürzer (siehe oben). Kapazitäten: kleinstes Gerät, 1-kWh-Klasse und größtes Gerät aus dem Vergleich." >}}
+
+{{% /mehr %}}
 
 ## Schritt 2: Reicht die Dauerleistung?
 
@@ -78,27 +82,39 @@ Die Dauerleistung (Nennleistung am 230-V-Ausgang) muss höher sein als die Leist
 
 Geräte mit Heizelement – Wasserkocher, Föhn, Kaffeemaschine – haben oft über 1.000 W. Kleine Powerstations mit 300 W schaffen das nicht.
 
+{{% mehr "Boost-Modi und Grafik zur Dauerleistung" %}}
+
 Manche Hersteller bieten Boost-Modi (z. B. „X-Boost“ bei EcoFlow, „SurgePad“ bei Anker), die solche Geräte mit reduzierter Leistung betreiben. Das ist laut Herstellern nur für einfache Heizgeräte gedacht, die dann mit weniger Leistung – also langsamer – arbeiten.
 
 In meinem [Vergleich](/vergleich/#powerstations) steht in der Spalte „Dauerleistung“ immer die Nennleistung ohne Boost oder Spitzenleistung.
 
 {{< grafik src="img/ps-dauerleistung.svg" alt="Balkendiagramm der Dauerleistung laut Hersteller: EcoFlow RIVER 3, Jackery Explorer 300 Plus und Anker SOLIX C300X je 300 W, EcoFlow RIVER 3 Plus 600 W, DJI Power 1000 Mini 800 W, Jackery Explorer 1000 v2 1.500 W, EcoFlow DELTA 3 Plus und BLUETTI Elite 100 V2 je 1.800 W, Anker SOLIX C1000 Gen 2 2.000 W, Anker SOLIX C2000 Gen 2 2.400 W. Eine Linie markiert 1.000 W." caption="Dauerleistung (Nennleistung am 230-V-Ausgang) laut Hersteller. Die gestrichelte Linie bei 1.000 W zeigt, ab wo Geräte mit Heizelement oft liegen." >}}
 
+{{% /mehr %}}
+
 ## Schritt 3: Gewicht und Größe
 
 Kapazität bedeutet Gewicht. Laut Herstellerangaben wiegen die Geräte der 250–300-Wh-Klasse zwischen 3,55 kg (EcoFlow RIVER 3) und 4,7 kg (EcoFlow RIVER 3 Plus). In der 1-kWh-Klasse liegen sie zwischen 10,8 kg (Jackery Explorer 1000 v2) und 12,5 kg (EcoFlow DELTA 3 Plus). Mit 2 kWh ist man bei knapp 19 kg (Anker SOLIX C2000 Gen 2). Fürs Zelt und den Fußweg vom Parkplatz sind große Modelle unhandlich, im Wohnmobil oder Van spielt das Gewicht eine geringere Rolle.
 
+{{% mehr "Grafik: Kapazität und Gewicht im Vergleich" %}}
+
 {{< grafik src="img/ps-kapazitaet-gewicht.svg" alt="Gegenüberstellung von Kapazität und Gewicht für zehn Powerstations laut Hersteller: Die 250–300-Wh-Geräte wiegen 3,55 bis 4,7 kg, die 1-kWh-Geräte 10,8 bis 12,5 kg, die Anker SOLIX C2000 Gen 2 mit 2.048 Wh 18,9 kg. Die berechnete Energiedichte liegt zwischen 61 und 108 Wh pro kg." caption="Kapazität (links) und Gewicht (rechts) laut Hersteller. Die Spalte Wh/kg ist einfach Kapazität ÷ Gewicht – je höher, desto mehr Energie pro Kilogramm." >}}
+
+{{% /mehr %}}
 
 ## Schritt 4: Laden unterwegs – Solar und Auto
 
 **Solar:** Wichtig sind die maximale Solarleistung und der zulässige Spannungsbereich.
+
+{{% mehr "Solareingänge der Modelle im Detail" %}}
 
 - Die kleinen Modelle verarbeiten laut Hersteller 100 W (Jackery Explorer 300 Plus, Anker SOLIX C300X) bis 220 W (EcoFlow RIVER 3 Plus).
 - Die Jackery Explorer 300 Plus erlaubt nur ein einziges Panel mit 12–27 V.
 - Die 1-kWh-Modelle nehmen 400 bis 1.000 W auf.
 
 Wie schnell die Powerstation tatsächlich lädt, hängt vom Wetter, vom Winkel des Panels und von der Panelgröße ab.
+
+{{% /mehr %}}
 
 **Auto:** Fast alle Geräte lassen sich über die 12-V-Steckdose laden, allerdings langsam.
 
@@ -118,12 +134,16 @@ Lufthansa verbietet Geräte und Akkus mit mehr als 160 Wh (Ausnahme: Mobilitäts
 
 **ADAC (Juni 2025):** Acht Powerstations mit 768 bis 1.440 Wh. Alle erreichten ihre angegebene Dauerleistung, der Schutz vor Kurzschluss und Überlastung funktionierte bei allen.
 
+{{% mehr "Alle Testnoten von ADAC und Stiftung Warentest" %}}
+
 - Testsieger: Bluetti AC180P (Note 2,0), danach EcoFlow DELTA 3 Plus (2,1)
 - „Gut“: Allpowers R1500 und Anker SOLIX C800 Plus (je 2,5)
 - „Befriedigend“: DJI Power 1000 (2,6) und Fossibot F1200 (2,7)
 - Durchgefallen wegen der DC-Eingänge: Ective BlackBox 10 und Jackery Explorer 1000 v2 (5,0)
 
 **Stiftung Warentest (Juli 2023):** Elf kleinere Powerstations mit 400 bis 644 Wh, fünf davon „gut“. Testsieger war die EcoFlow River 2 Max (2,1). Der Test ist älter, viele der Modelle wurden inzwischen durch Nachfolger ersetzt.
+
+{{% /mehr %}}
 
 
 ## Modelle im Überblick

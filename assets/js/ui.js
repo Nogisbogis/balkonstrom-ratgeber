@@ -23,3 +23,14 @@
     }
   });
 })();
+// Sprungziele in zugeklappten Abschnitten (z. B. Quellenverweis #q-…): umgebende <details> öffnen.
+// Ohne JS bleibt alles zugänglich, nur eben zugeklappt.
+(function () {
+  function auf() {
+    var id = decodeURIComponent(location.hash.slice(1)), el = id && document.getElementById(id);
+    for (var p = el; p; p = p.parentElement) if (p.tagName === 'DETAILS') p.open = true;
+    if (el && el.closest('details')) el.scrollIntoView();
+  }
+  window.addEventListener('hashchange', auf);
+  document.addEventListener('DOMContentLoaded', function () { if (location.hash) auf(); });
+})();

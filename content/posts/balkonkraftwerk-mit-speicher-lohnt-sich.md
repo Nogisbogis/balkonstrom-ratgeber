@@ -53,15 +53,23 @@ Was in dem Moment nicht verbraucht wird – etwa vom Kühlschrank, Router oder d
 
 Ein Speicher lädt tagsüber mit dem Überschuss und gibt die Energie später wieder ab, zum Beispiel abends.
 
+{{% mehr "All-in-one-Systeme, Steuerung und Schema-Grafik" %}}
+
 Die meisten aktuellen Geräte sind „All-in-one“-Systeme: Die Module werden direkt am Speicher angeschlossen, der einen integrierten Wechselrichter hat und mit höchstens 800 W ins Hausnetz einspeist.
 
 Steuern lässt sich das meist per App, mit einem zusätzlichen Smart Meter oder Messgerät am Zähler auch automatisch nach dem aktuellen Verbrauch („Nulleinspeisung“).
 
 {{< grafik src="img/speicher-schema.svg" alt="Schema: Solarmodule liefern Gleichstrom an einen Speicher mit integriertem Wechselrichter, der höchstens 800 W ins Hausnetz abgibt. Nicht verbrauchter Strom geht ohne Vergütung ins öffentliche Netz. Optional: Off-Grid-Steckdose für direkt angeschlossene Geräte und ein Smart Meter, das nach Verbrauch regelt." caption="**Schematische Darstellung** eines All-in-one-Systems. Grenzen für den vereinfachten Betrieb: 2.000 Wp Module, 800 VA Wechselrichter." >}}
 
+{{% /mehr %}}
+
 Wichtig: Ein Speicher macht das Balkonkraftwerk nicht stärker. Er verschiebt nur den Zeitpunkt, zu dem der Strom genutzt wird – und dabei geht ein Teil der Energie beim Laden und Entladen verloren.
 
+{{% mehr "Grafik: Tagesverlauf mit und ohne Speicher" %}}
+
 {{< grafik src="img/speicher-tagesprofil.svg" alt="Schematischer Tagesverlauf ohne Zahlen: Die Solarerzeugung steigt morgens, ist mittags am höchsten und fällt abends ab. Der Verbrauch hat eine Spitze morgens und eine größere abends. Mittags ist die Erzeugung höher als der Verbrauch, dieser Überschuss lädt den Speicher; abends gibt der Speicher Energie ab." caption="**Schematische Darstellung, keine Messwerte.** Wie groß Überschuss und Abendbedarf tatsächlich sind, hängt von Modulleistung, Wetter, Jahreszeit und deinem Haushalt ab." >}}
+
+{{% /mehr %}}
 
 ## Lohnt sich das? Eine Beispielrechnung
 
@@ -76,9 +84,15 @@ Die Antwort hängt von wenigen Größen ab: wie viel Überschuss tatsächlich an
 
 Die Stiftung Warentest nennt für die geprüften Speicher Preise zwischen rund 700 und 1.000 Euro (Stand Februar 2026). Nur für den Speicher ergäbe sich damit eine Amortisationszeit von etwa sechs bis acht Jahren.
 
+{{% mehr "Grafik: Rechenweg der Beispielrechnung" %}}
+
 {{< grafik src="img/speicher-beispielrechnung.svg" alt="Rechenweg der Beispielrechnung: 1,92 kWh mal 200 Tage mal 90 Prozent ergibt etwa 346 kWh pro Jahr, mal 35 Cent etwa 121 Euro pro Jahr. Ein Liniendiagramm zeigt die kumulierte Ersparnis über zehn Jahre; sie erreicht die Kaufpreise von 700 Euro nach etwa 5,8 und 1.000 Euro nach etwa 8,3 Jahren." caption="Die Beispielrechnung aus dem Text als Grafik. **Alle Werte sind Annahmen**, die Preisspanne stammt von der Stiftung Warentest (Stand Februar 2026). Mit weniger vollen Ladezyklen verschiebt sich der Schnittpunkt nach rechts." >}}
 
+{{% /mehr %}}
+
 Die Annahme „200 volle Zyklen“ ist eher optimistisch.
+
+{{% mehr "Was die Zahl der Zyklen beeinflusst und PV-Rechner" %}}
 
 - Ein klassisches Balkonkraftwerk mit zwei Modulen erzeugt an einem guten Sommertag einige Kilowattstunden, von denen ein Teil ohnehin direkt verbraucht wird.
 - Im Winter bleibt oft kaum Überschuss übrig.
@@ -86,6 +100,8 @@ Die Annahme „200 volle Zyklen“ ist eher optimistisch.
 - Wer dagegen mehr Modulleistung installiert (bis 2.000 Wp sind im vereinfachten Verfahren erlaubt) und tagsüber wenig zu Hause ist, nutzt den Speicher deutlich besser aus.
 
 Die Stiftung Warentest bietet auf ihrer Website einen eigenen PV-Rechner an, mit dem du die Wirtschaftlichkeit mit deinen eigenen Werten prüfen kannst (Link unten in den Quellen).
+
+{{% /mehr %}}
 
 ## Was der Test der Stiftung Warentest zeigt
 
@@ -104,6 +120,8 @@ Welche Modelle genau welche Note bekommen haben, steht im kostenpflichtigen Teil
 
 **Solareingänge:** Achte auf die Zahl der MPPT-Eingänge und die maximale PV-Leistung. Aktuelle Geräte verarbeiten laut Hersteller 1.500 bis 3.600 W Modulleistung. Für den vereinfachten Betrieb als Steckersolargerät sind aber höchstens 2.000 Wp erlaubt.
 
+{{% mehr "Nachrüsten, Notstrom, EMV, Außenaufstellung und App" %}}
+
 **Nachrüsten oder Komplettsystem:** Einige Speicher werden zwischen Modulen und vorhandenem Wechselrichter angeschlossen, andere ersetzen den Wechselrichter, wieder andere werden über die Steckdose angeschlossen (AC-gekoppelt). Prüfe, ob das Gerät zu deinem vorhandenen Balkonkraftwerk passt.
 
 **Notstrom:** Viele Speicher haben eine Off-Grid-Steckdose. Bei einem Stromausfall versorgt sie nur die dort direkt angeschlossenen Geräte – nicht das Hausnetz.
@@ -113,6 +131,8 @@ Welche Modelle genau welche Note bekommen haben, steht im kostenpflichtigen Teil
 **Außenaufstellung:** Steht der Speicher auf dem Balkon, sollte er eine passende Schutzart (z. B. IP65) haben und für die Temperaturen am Aufstellort zugelassen sein. Die Angaben findest du im Datenblatt.
 
 **Software und App:** Für eine automatische Regelung nach Verbrauch brauchst du meist ein Smart Meter oder einen Lesekopf am Stromzähler. Kläre vorher, ob das Gerät mit deinem Zähler funktioniert und ob es ohne Cloud-Konto bedienbar ist.
+
+{{% /mehr %}}
 
 ## Anmeldung: Was beim Speicher dazukommt
 

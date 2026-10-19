@@ -79,11 +79,15 @@ Empfindliche Geräte wie Computer oder Heizungssteuerung brauchen laut BBK eine 
 
 Die Rechnung ist einfach: **nutzbare Wattstunden ÷ Leistung der Geräte = Stunden**. Die nutzbare Energie liegt aber unter der Nennkapazität:
 
+{{% mehr "Messwerte zur nutzbaren Kapazität (ADAC, IMTEST, Notebookcheck)" %}}
+
 - Der ADAC stellte 2025 fest, dass die nutzbare Nettokapazität im Schnitt „gut 10 bis 15 Prozent“ unter der Bruttokapazität der Hersteller lag.
 - IMTEST maß an der DJI Power 1000 Mini bei rund 80 W Last 757 von 1.008 Wh.
 - Notebookcheck maß an der Anker SOLIX C2000 Gen 2 bei 200 W knapp 79 % nutzbar, bei 1.800 W gut 90 %.
 
 Bei kleiner Dauerlast, wie sie für Router und Licht typisch ist, arbeiten Wechselrichter also oft weniger effizient. Manche Stationen brauchen zudem selbst Strom. Jackery gibt für die Explorer 1000 v2 einen Standby-Verbrauch von 18 W an. Laut ADAC gehen bei eingeschaltetem Wechselrichter „teils schon 30 Watt verloren“; die Tester raten, ihn auszuschalten, wenn die 230-V-Steckdosen nicht gebraucht werden. Handys und andere USB-Geräte lassen sich direkt an den USB-Ausgängen laden.
+
+{{% /mehr %}}
 
 Mit dem [Laufzeitrechner](/laufzeitrechner/) trägst du deine Geräte ein und siehst für alle Modelle aus meinem Vergleich, wie lange es reicht. Die Annahmen wie Wirkungsgrad und Eigenverbrauch kannst du dort selbst einstellen.
 

@@ -52,3 +52,8 @@ enableGitInfo = true
   [[related.indices]]
     name = "date"
     weight = 10
+
+[markup.goldmark.renderer]
+  # Nötig für {{% mehr %}}: das Shortcode gibt <details> aus, das Goldmark sonst entfernt.
+  # Inhalte stammen ausschließlich aus diesem Repo.
+  unsafe = true

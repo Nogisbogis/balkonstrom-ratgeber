@@ -250,7 +250,7 @@ article p,article li{max-width:var(--measure)}
 .post-kopf{padding-bottom:2rem;margin-bottom:2.5rem;border-bottom:3px solid var(--rule)}
 .post-kopf h1{max-width:none;font-size:clamp(2.25rem,1.3rem + 3vw,3.75rem)}
 .post-kopf .meta{margin:0 0 1.5rem}
-.post-kopf .notice{margin:0}
+.post-kopf .notice,.post-kopf .disclosure-zeile{margin:0}
 .post:not(.mit-rail){max-width:var(--measure);margin-inline:auto}
 .post:not(.mit-rail) .post-kopf h1{max-width:var(--measure)}
 .post-raster{display:block}
@@ -287,9 +287,20 @@ article p,article li{max-width:var(--measure)}
 figure.grafik{margin:2.5rem 0;padding:0}
 figure.grafik img{display:block;width:100%;height:auto;background:var(--card)}
 figure.grafik figcaption{color:var(--muted);font-size:var(--fs-s);margin-top:.5rem;line-height:1.5}
-details.quellen,details.lesehinweis{background:var(--surface);padding:0 1.25rem;margin:1rem 0 1.5rem;font-size:var(--fs-b)}
+/* Aufklappbare Blöcke (natives details/summary, ohne JS): Quellen, Lesehinweise, „mehr“-Abschnitte */
+details.quellen,details.lesehinweis,details.mehr{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:0 1.25rem;margin:1rem 0 1.5rem;font-size:var(--fs-b)}
 details.quellen ul{font-size:var(--fs-s);font-family:var(--sans)}
-details.quellen[open],details.lesehinweis[open]{padding-bottom:.75rem}
+details.quellen[open],details.lesehinweis[open],details.mehr[open]{padding-bottom:.75rem}
+details.quellen>summary,details.lesehinweis>summary,details.mehr>summary{list-style:none;min-height:var(--tap);display:flex;align-items:center;gap:.75rem;cursor:pointer;font-weight:700;font-family:var(--sans);font-size:var(--fs-s);padding:.5rem 0;line-height:1.35}
+details.quellen>summary::-webkit-details-marker,details.lesehinweis>summary::-webkit-details-marker,details.mehr>summary::-webkit-details-marker{display:none}
+details.quellen>summary::after,details.lesehinweis>summary::after,details.mehr>summary::after{content:"+";flex:none;margin-left:auto;width:1.75rem;height:1.75rem;display:inline-flex;align-items:center;justify-content:center;border:2px solid currentColor;border-radius:999px;font-size:1.125rem;font-weight:700;line-height:1;color:var(--accent)}
+details.quellen[open]>summary::after,details.lesehinweis[open]>summary::after,details.mehr[open]>summary::after{content:"−"}
+details.mehr>summary:hover,details.quellen>summary:hover,details.lesehinweis>summary:hover{color:var(--accent)}
+.mehr-inhalt>:first-child{margin-top:.25rem}
+.mehr-inhalt>:last-child{margin-bottom:0}
+.mehr-inhalt figure.grafik{margin:1.25rem 0}
+.mehr-inhalt .tablewrap,.mehr-inhalt .table-wrap{margin-bottom:.5rem}
+.disclosure-zeile{font-size:.875rem;line-height:1.45;margin:0 0 1rem}
 blockquote{margin:2rem 0;padding:0 0 0 1.25rem;border-left:4px solid var(--rule);font-style:italic}
 code{font-size:.9em;background:var(--surface);padding:.05em .3em}
 
@@ -579,7 +590,7 @@ th[aria-sort=none] .sort:not(:has(.einh))::after,th[aria-sort=none] .einh::after
 .einsatz-kopf{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,6fr);gap:2rem clamp(2rem,5vw,4rem);align-items:end;margin:.5rem 0 1rem}
 .einsatz-kopf h1{margin:0 0 1rem}
 .einsatz-kopf .lead{margin:0 0 1.5rem}
-.einsatz-kopf .notice{margin:0}
+.einsatz-kopf .notice,.einsatz-kopf .disclosure-zeile{margin:0}
 .einsatz-foto img{aspect-ratio:1/1}
 .einsatz-sec{margin:clamp(5rem,8vw,7rem) 0 0}
 .einsatz-sec>h2{margin:0 0 1.25rem}
@@ -719,3 +730,18 @@ h1{max-width:none}
 @media (max-width:40rem){.post-kopf h1{font-size:1.75rem;line-height:1.12}}
 .breadcrumb li{display:flex;align-items:center}
 .breadcrumb span[aria-current]{display:inline;min-height:0;padding:.5rem 0}
+/* Produktseiten: zugeklappte Daten, Tests, Quellen */
+details.p-test{margin:.75rem 0;padding:0 1.25rem}
+details.p-test+details.p-test{border-top:1px solid var(--line)}
+details.p-test[open]{padding-bottom:.75rem}
+.p-test-sum{display:flex;flex-wrap:wrap;column-gap:.5rem;align-items:baseline}
+.p-test-sum .p-test-name{font-size:var(--fs-b)}
+.p-test-sum .urteil{flex-basis:100%;margin:.125rem 0 0;font-weight:600;color:var(--ink)}
+.p-test-link{font-family:var(--sans);font-size:var(--fs-s)}
+details.p-mehr .tablewrap{margin:0}
+.p-wider details.mehr{margin:.5rem 0 0}
+.p-quellen details.mehr ol{margin:.25rem 0 0}
+.about-mehr{align-self:start;margin:0}
+.about-mehr p{margin:.25rem 0 0}
+.so-gehts{margin:-.5rem 0 1.5rem;max-width:var(--measure)}
+.so-gehts p{margin:.25rem 0 0}

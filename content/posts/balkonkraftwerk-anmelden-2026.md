@@ -53,6 +53,8 @@ Durch das Solarpaket I wurde im Erneuerbare-Energien-Gesetz (EEG) die maximale W
 
 Die Solarmodule dürfen zusammen höchstens 2.000 Watt haben. Liegt eine Anlage darüber, gilt sie als reguläre PV-Anlage – mit allen Pflichten, die dazugehören.
 
+{{% mehr "Details: Typenschild, Software-Drosselung, Speicher, ein Gerät pro Zähler" %}}
+
 Entscheidend für die 800 VA ist laut Bundeswirtschaftsministerium und Umweltbundesamt die Angabe **auf dem Typenschild oder im Einheitenzertifikat** des Wechselrichters.
 
 Eine Drosselung per Software reicht nicht aus – egal, ob sie der Hersteller oder du selbst einstellst. Ein Wechselrichter mit 1.000 VA laut Typenschild ist also kein Steckersolargerät im Sinne der vereinfachten Regeln, auch wenn er in der App auf 800 W begrenzt ist.
@@ -61,11 +63,15 @@ Auch Balkonkraftwerke mit Speicher fallen unter diese Grenzen: Maßgeblich ist, 
 
 Pro Stromzähler ist laut Umweltbundesamt nur ein selbst angemeldetes Steckersolargerät zulässig. Ein Balkonkraftwerk darf aber zusätzlich zu einer vorhandenen PV-Dachanlage betrieben werden.
 
+{{% /mehr %}}
+
 ## Anmeldung im Marktstammdatenregister
 
 Seit dem 16. Mai 2024 reicht für ein Balkonkraftwerk die Registrierung im [Marktstammdatenregister](https://www.marktstammdatenregister.de/) (MaStR) der Bundesnetzagentur.
 
 Die frühere zusätzliche Meldung beim Netzbetreiber entfällt. Die Registrierung soll innerhalb eines Monats nach der Inbetriebnahme erfolgen.
+
+{{% mehr "Abgefragte Angaben, Registrierungshilfe, Speicher und Einspeisevergütung" %}}
 
 Abgefragt werden nur wenige Angaben:
 
@@ -85,15 +91,21 @@ Die Bundesnetzagentur stellt dafür eine eigene [Registrierungshilfe für Balkon
 
 Eine EEG-Vergütung ist zwar grundsätzlich möglich, dann verliert die Anlage aber laut Bundeswirtschaftsministerium den Status als Steckersolargerät und damit die Vereinfachungen. Ein Balkonkraftwerk lohnt sich also über den Strom, den du selbst gleichzeitig verbrauchst.
 
+{{% /mehr %}}
+
 ## Der Stromzähler: Was passiert mit dem alten Zähler?
 
 Viele Haushalte haben noch einen analogen Ferraris-Zähler, der sich rückwärts drehen kann, wenn das Balkonkraftwerk mehr erzeugt, als im Haushalt verbraucht wird.
 
 Das wird übergangsweise geduldet: Du darfst das Balkonkraftwerk mit jedem vorhandenen Zähler in Betrieb nehmen.
 
+{{% mehr "Zählertausch und Kosten" %}}
+
 Nach der Registrierung im Marktstammdatenregister prüft der Messstellenbetreiber – meist der Netzbetreiber – den Zähler und tauscht ihn bei Bedarf gegen eine moderne Messeinrichtung (Zweirichtungszähler).
 
 Laut Bundeswirtschaftsministerium ist das für dich im Regelfall kostenlos, auch im laufenden Betrieb entstehen keine Mehrkosten. Unabhängig davon werden alte Ferraris-Zähler bis 2032 ohnehin schrittweise ersetzt.
+
+{{% /mehr %}}
 
 ## Die Steckdose: Schuko oder Energiesteckvorrichtung?
 
@@ -105,7 +117,11 @@ Die lange umstrittene Frage nach dem Schuko-Stecker ist seit Dezember 2025 norma
 
 Bei **mehr als 960 W bis 2.000 W** Modulleistung ist für den normgerechten Anschluss weiterhin eine spezielle Energiesteckvorrichtung (zum Beispiel der sogenannte Wieland-Stecker) oder ein Festanschluss durch eine Elektrofachkraft nötig. Hintergrund: Bei mehr Modulleistung liegt die volle Wechselrichterleistung deutlich länger am Stecker an.
 
+{{% mehr "Grafik: Modulleistung und Anschlussart" %}}
+
 {{< grafik src="img/anmelden-modulleistung-anschluss.svg" alt="Skala der Modulleistung: bis 960 Wp Schuko-Steckdose möglich, wenn das Gerät DIN VDE V 0126-95 erfüllt; über 960 bis 2.000 Wp Energiesteckvorrichtung wie Wieland-Stecker oder Festanschluss; über 2.000 Wp reguläre PV-Anlage. Wechselrichter jeweils höchstens 800 VA." caption="Welcher Anschluss bei welcher Modulleistung normgerecht ist (DIN VDE V 0126-95:2025-12, EEG). Keine Rechtsberatung." >}}
+
+{{% /mehr %}}
 
 Was du außerdem beachten solltest:
 
@@ -119,9 +135,13 @@ Seit dem 17. Oktober 2024 gehören Steckersolargeräte zu den privilegierten bau
 
 Das heißt nicht, dass du ohne Zustimmung loslegen kannst: Du musst weiterhin fragen.
 
+{{% mehr "Wann Vermieter ablehnen dürfen und was das Ministerium empfiehlt" %}}
+
 Vermieter oder Eigentümergemeinschaft können aber nur noch aus triftigem Grund ablehnen – beim Mietrecht etwa, wenn die Maßnahme dem Vermieter nicht zuzumuten ist. Über die Art der Ausführung (zum Beispiel die Montage) kann die Eigentümergemeinschaft mitentscheiden.
 
 Das Bundeswirtschaftsministerium empfiehlt, die Pläne frühzeitig mitzuteilen und auf eine sichere, unauffällige Montage zu achten.
+
+{{% /mehr %}}
 
 ## Checkliste
 
@@ -131,7 +151,11 @@ Das Bundeswirtschaftsministerium empfiehlt, die Pläne frühzeitig mitzuteilen u
 4. Innerhalb eines Monats nach Inbetriebnahme im Marktstammdatenregister registrieren – mit Speicher diesen mit angeben und beim Netzbetreiber melden.
 5. Den Zählertausch abwarten; darum kümmert sich der Messstellenbetreiber.
 
+{{% mehr "Grafik: Ablauf in fünf Schritten" %}}
+
 {{< grafik src="img/anmelden-ablauf.svg" alt="Ablaufdiagramm in fünf Schritten: 1. Gerät prüfen (Wechselrichter höchstens 800 VA laut Typenschild, Module höchstens 2.000 W, für Schuko höchstens 960 W), 2. Zustimmung von Vermieter oder Eigentümergemeinschaft einholen, 3. sicher montieren und anschließen, 4. innerhalb eines Monats im Marktstammdatenregister registrieren – mit Speicher diesen angeben und beim Netzbetreiber anmelden, 5. Zählertausch durch den Messstellenbetreiber abwarten." caption="Die Checkliste als Ablauf. Der Abzweig gilt nur, wenn du einen Speicher betreibst." >}}
+
+{{% /mehr %}}
 
 Welche Sets und Speicher es gibt und was sie laut Hersteller leisten, zeigt mein [Vergleich](/vergleich/#balkonkraftwerke).
 

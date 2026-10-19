@@ -3,17 +3,24 @@ title = "Laufzeitrechner: Wie lange hält meine Powerstation?"
 description = "Laufzeitrechner für Powerstations: Geräte mit Watt und Stunden eintragen, Modell oder Kapazität wählen, Laufzeit sehen. Wirkungsgrad als einstellbare Annahme (Standard 85 %)."
 layout = "rechner"
 date = 2026-10-19
-intro = "Trag deine Geräte ein und wähle ein Modell. Der Rechner zeigt, ob der Akku reicht – für alle Powerstations aus meinem Vergleich auf einen Blick. Er rechnet nur im Browser, nichts wird gespeichert."
+intro = "Trag deine Geräte ein und wähle ein Modell."
+so_gehts = "Der Rechner zeigt, ob der Akku reicht – für alle Powerstations aus meinem Vergleich auf einen Blick. Er rechnet nur im Browser, nichts wird gespeichert."
 +++
 
 ## So rechnet der Rechner
+
+{{% mehr "Die vier Formeln des Rechners" %}}
 
 - **Bedarf pro Ladung** = Summe aus Watt × Stunden × Anzahl.
 - **Nutzbare Energie** = Nennkapazität × Wirkungsgrad. Der Wirkungsgrad ist eine **Annahme**. Standard sind 85 %, du kannst ihn ändern.
 - **Dauerbetrieb** = nutzbare Energie ÷ (Leistung aller Geräte + Eigenverbrauch).
 - **Warnung**, wenn alle Geräte zusammen mehr Watt brauchen, als die Station dauerhaft liefert. Maßgeblich ist die Dauerleistung laut Hersteller, nicht die Spitze.
 
+{{% /mehr %}}
+
 ## Warum 85 % – und warum du das ändern solltest
+
+{{% mehr "Messwerte von ADAC, IMTEST, Notebookcheck und CHIP, Eigenverbrauch" %}}
 
 Powerstations geben nie die volle Nennkapazität ab. Bei der Umwandlung auf 230 V geht Energie verloren, und bei kleiner Last arbeiten viele Wechselrichter weniger effizient.
 
@@ -24,11 +31,17 @@ Powerstations geben nie die volle Nennkapazität ab. Bei der Umwandlung auf 230 
 
 Für kleine Lasten über die Steckdose rechne lieber mit 75–80 %. Für USB- und 12-V-Geräte ohne Wechselrichter darf der Wert höher liegen. Der Eigenverbrauch ist ebenfalls eine Annahme: Jackery nennt als Standby-Leistung 12 W (Explorer 300 Plus) bzw. 18 W (Explorer 1000 v2), Anker für die C2000 Gen 2 unter 10 W im Leerlauf.
 
+{{% /mehr %}}
+
 ## Grenzen
+
+{{% mehr "Anlaufspitzen, Kühlgeräte und Kälte" %}}
 
 - Geräte mit Motor oder Kompressor, etwa Kühlschrank oder Werkzeug, brauchen beim Anlaufen kurz deutlich mehr Leistung. Diese Spitzen rechnet das Tool nicht ein.
 - Kühlgeräte laufen nicht ständig. Für die Stunden zählt nur die Zeit, in der der Kompressor arbeitet; Angaben dazu stehen oft im Datenblatt.
 - Kälte verringert die nutzbare Kapazität. Beachte die Temperaturangaben auf den Produktseiten.
+
+{{% /mehr %}}
 
 Passt die Station nicht? Der [Powerstation-Finder](/powerstation-finder/) schlägt Modelle anhand deiner Angaben vor.
 

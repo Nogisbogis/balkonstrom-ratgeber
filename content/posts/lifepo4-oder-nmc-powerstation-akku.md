@@ -43,7 +43,11 @@ Lithium-Ionen-Akkus unterscheiden sich vor allem im Material der Kathode:
 - **NMC:** Lithium-Nickel-Mangan-Kobalt-Oxid
 - **NCA:** Lithium-Nickel-Kobalt-Aluminium-Oxid
 
+{{% mehr "Zur Studie des KIT" %}}
+
 Die KIT-Forscher haben 2023 handelsübliche Zellen im Format 21700 mit allen drei Kathoden verglichen. Das ist ein verbreitetes Rundzellen-Format, 21 mm dick und 70 mm lang. Die Zellen wurden gezielt überhitzt und mit einem Nagel durchstochen.
+
+{{% /mehr %}}
 
 ## Sicherheit: LFP reagiert später und schwächer
 
@@ -53,9 +57,13 @@ Die Ergebnisse der Studie in Kürze:
 - **Nageltest:** LFP-Zellen gingen bei keinem Ladezustand in den thermischen Durchgang und erreichten höchstens rund 130 °C. NMC- und NCA-Zellen taten das bei 30, 50 und 100 % Ladung.
 - **Ladezustand:** Bei 0 % Ladung trat bei keiner Chemie ein thermischer Durchgang auf.
 
+{{% mehr "Fazit der Autoren und Einordnung der Studie" %}}
+
 Das Fazit der Autoren: LFP-Zellen sind „inhärent sicherer“ als NCA- und NMC-Zellen. Sie weisen aber auch darauf hin, dass das langsamere Reagieren das Erkennen eines Fehlers erschweren kann. Batteriemanagementsysteme müssten darauf ausgelegt sein.
 
 Wichtig für die Einordnung: Die Studie untersuchte einzelne Zellen, keine fertigen Powerstations. Wie sicher ein Gerät ist, hängt auch von Gehäuse, Elektronik und Batteriemanagement ab. Dass ein Gerät mit LFP-Akku trotzdem durchfallen kann, zeigt der ADAC-Test 2025. Dort bekam die Jackery Explorer 1000 v2 wegen nicht entkoppelter DC-Eingänge die Note „mangelhaft“, mit Zellchemie hatte das nichts zu tun.
+
+{{% /mehr %}}
 
 ## Der Preis: weniger Energie pro Zelle
 
@@ -79,9 +87,13 @@ Die Hersteller der LFP-Powerstations in meinem Vergleich geben 3.000 bis 4.000 L
 - DJI Power 1000 Mini: 4.000 Zyklen, danach über 80 %, gemessen bei 25 °C und 400 W Entladung
 - Jackery Explorer 1000 v2: 4.000 Zyklen bis **70 %**
 
+{{% mehr "Restkapazität richtig vergleichen und Garantie als Indiz" %}}
+
 Eine Angabe „bis 70 %“ ist nicht mit „bis 80 %“ vergleichbar. Unabhängige Langzeittests der Zyklenfestigkeit habe ich für keines der Geräte gefunden. Die Zahlen sind Herstellerangaben.
 
 Ein indirektes Indiz liefert die Garantie. Anker staffelt sie in der EU ausdrücklich nach Zellchemie: **5 Jahre für Modelle mit LiFePO4, 1,5 Jahre für Modelle mit NMC-Akku.** Die NMC-Modelle in Ankers Liste sind ältere PowerHouse-Geräte.
+
+{{% /mehr %}}
 
 ## Temperatur: Laden ab 0 °C
 

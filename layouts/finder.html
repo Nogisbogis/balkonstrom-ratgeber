@@ -2,6 +2,7 @@
 {{ partial "breadcrumb.html" . }}
 <h1>{{ .Title }}</h1>
 {{ with .Params.intro }}<p class="lead">{{ . }}</p>{{ end }}
+{{ with .Params.so_gehts }}<details class="mehr so-gehts"><summary>So funktioniert’s</summary><p>{{ . | $.RenderString }}</p></details>{{ end }}
 <form class="tool" id="finder" novalidate>
   <fieldset><legend>1. Wofür brauchst du die Powerstation vor allem?</legend>
     <label class="opt"><input type="radio" name="einsatz" value="camping" checked> <span><strong>Camping, Festival, unterwegs</strong> – wird oft getragen</span></label>

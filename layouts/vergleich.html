@@ -1,7 +1,6 @@
 {{ define "main" }}
 <article class="wide vergleich">
   <h1>{{ .Title }}</h1>
-  {{ partial "disclosure-box.html" . }}
   <div id="auswahl-hinweis" class="auswahl-hinweis" hidden></div>
   {{ .Content }}
 
@@ -28,6 +27,7 @@
       <p class="count" aria-live="polite">&nbsp;</p>
     </fieldset>
   </form>
+  {{ partial "disclosure-box.html" . }}
   <div class="table-wrap" data-ui role="region" aria-label="Tabelle Powerstations">
   <table id="t-ps" class="cmp">
     <thead><tr>
@@ -55,6 +55,7 @@
   </table>
   </div>
   <p class="note abb-hinweis">Abbildungen in der Tabelle: Illustrationen nach Herstellerangaben, kein Produktfoto.</p>
+  <details class="mehr mehr-grafik"><summary>Grafiken: Größenvergleich und Kapazität/Gewicht der Powerstations</summary>
   <figure class="grafik groesse">
     <img src="{{ "img/illu/groesse-powerstations.svg" | relURL }}" width="1284" height="900" loading="lazy" decoding="async" alt="Größenvergleich: alle {{ len hugo.Data.powerstations }} Powerstations aus der Tabelle als schematische Darstellung im selben Maßstab, von der EcoFlow TRAIL 300 DC bis zur EcoFlow DELTA Pro 3.">
     <figcaption><strong>Größenvergleich im selben Maßstab</strong> (Maße laut Hersteller, 10-cm-Maßstab unten links). Illustration nach Herstellerangaben, kein Produktfoto.</figcaption>
@@ -64,6 +65,7 @@
     <a href="{{ "img/ps-vergleich-kapazitaet-gewicht.svg" | relURL }}" title="Grafik in voller Größe öffnen"><img src="{{ "img/ps-vergleich-kapazitaet-gewicht.svg" | relURL }}" width="760" height="616" loading="lazy" decoding="async" alt="Gegenüberstellung von Kapazität und Gewicht aller {{ len $ps }} Powerstations aus der Tabelle: {{ lang.FormatNumber 0 (math.Min $whs) }} bis {{ lang.FormatNumber 0 (math.Max $whs) }} Wh und {{ replace (string (math.Min $kgs)) "." "," }} bis {{ replace (string (math.Max $kgs)) "." "," }} kg laut Hersteller, mit berechneter Energiedichte von 61 bis 115 Wh pro kg."></a>
     <figcaption>Kapazität und Gewicht der Powerstations aus der Tabelle (Herstellerangaben); Wh/kg ist Kapazität ÷ Gewicht.</figcaption>
   </figure>
+  </details>
   </section>
 
   <section id="balkonkraftwerke" class="tabpanel" aria-labelledby="h-bkw">
@@ -85,6 +87,7 @@
       <p class="count" aria-live="polite">&nbsp;</p>
     </fieldset>
   </form>
+  {{ partial "disclosure-box.html" . }}
   <div class="table-wrap" data-ui role="region" aria-label="Tabelle Balkonkraftwerke">
   <table id="t-bkw" class="cmp">
     <thead><tr>
@@ -112,6 +115,7 @@
   </table>
   </div>
   <p class="note abb-hinweis">Abbildungen in der Tabelle: Illustrationen nach Herstellerangaben, kein Produktfoto.</p>
+  <details class="mehr mehr-grafik"><summary>Grafiken: Größenvergleich und Kapazität/PV-Eingang der Speicher</summary>
   <figure class="grafik groesse">
     <img src="{{ "img/illu/groesse-balkonspeicher.svg" | relURL }}" width="1204" height="301" loading="lazy" decoding="async" alt="Größenvergleich: die sechs Balkonspeicher aus der Tabelle als schematische Darstellung im selben Maßstab; die EcoFlow STREAM-Geräte sind schmal und hoch, die Anker Solarbanks breit und flach.">
     <figcaption><strong>Größenvergleich der Speicher im selben Maßstab</strong> (Maße laut Hersteller). Das RS40P-Set ohne Speicher fehlt, seine Module sind je 170,6 × 113,4 cm groß. Illustration nach Herstellerangaben, kein Produktfoto.</figcaption>
@@ -120,6 +124,7 @@
     <a href="{{ "img/vergleich-bkw-speicher.svg" | relURL }}" title="Grafik in voller Größe öffnen"><img src="{{ "img/vergleich-bkw-speicher.svg" | relURL }}" width="760" height="352" loading="lazy" decoding="async" alt="Balkendiagramm der sechs Speicher aus der Tabelle: Kapazität von 1,6 bis 2,688 kWh und maximaler PV-Eingang von 1.500 bis 3.600 W laut Hersteller. Eine Linie markiert die 2.000-Wp-Grenze für Steckersolargeräte."></a>
     <figcaption>Kapazität und maximaler PV-Eingang der Speicher aus der Tabelle (Herstellerangaben). Für den vereinfachten Betrieb zählen höchstens 2.000 Wp Module.</figcaption>
   </figure>
+  </details>
   </section>
 
   <p class="note">Alle Werte sind Herstellerangaben (Stand der Datenerhebung: {{ .Params.stand }}). Preise nenne ich bewusst nicht, weil sie sich ständig ändern. Mit * markierte Links sind Affiliate-Links. Alle Abbildungen der Modelle sind eigene Illustrationen nach Herstellerangaben, keine Produktfotos.</p>

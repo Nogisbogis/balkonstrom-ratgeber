@@ -43,6 +43,8 @@
   </div>
 
   <h2 id="daten">Technische Daten</h2>
+  {{- $nd := 0 }}{{ range .Params.daten }}{{ if not .gruppe }}{{ $nd = add $nd 1 }}{{ end }}{{ end }}
+  <details class="mehr p-mehr"><summary>Alle technischen Daten anzeigen ({{ $nd }} Angaben, je mit Quelle)</summary>
   <div class="tablewrap"><table class="p-daten">
     <thead><tr><th scope="col">Merkmal</th><th scope="col">Angabe</th><th scope="col">Quelle</th></tr></thead>
     <tbody>
@@ -53,10 +55,13 @@
     {{- end }}
     </tbody>
   </table></div>
+  </details>
 
   {{- with .Params.widersprueche }}
   <section class="p-wider" aria-labelledby="widersprueche"><h2 id="widersprueche">Wo sich Quellen widersprechen</h2>
-  <ul>{{ range . }}<li>{{ .t | $.RenderString }} {{ partial "qref.html" (dict "ids" .q "idx" $qidx) }}</li>{{ end }}</ul></section>
+  <details class="mehr p-mehr"><summary>{{ len . }} {{ cond (eq (len .) 1) "Widerspruch" "Widersprüche" }} zwischen den Quellen anzeigen</summary>
+  <ul>{{ range . }}<li>{{ .t | $.RenderString }} {{ partial "qref.html" (dict "ids" .q "idx" $qidx) }}</li>{{ end }}</ul>
+  </details></section>
   {{- end }}
 
   <div class="p-sw">
@@ -66,11 +71,10 @@
 
   <section aria-labelledby="tests"><h2 id="tests">Was Tests sagen</h2>
   {{- range .Params.tests }}
-    <div class="p-test">
-      <h3><a href="{{ .url }}" rel="noopener" target="_blank">{{ .name }}</a>{{ with .datum }} <small>({{ . }})</small>{{ end }}</h3>
-      {{ with .urteil }}<p class="urteil">{{ . }}</p>{{ end }}
+    <details class="mehr p-test"><summary><span class="p-test-sum"><strong class="p-test-name">{{ .name }}</strong>{{ with .datum }} <small>({{ . }})</small>{{ end }}{{ with .urteil }}<span class="urteil">{{ . }}</span>{{ end }}</span></summary>
       {{ .text | $.RenderString (dict "display" "block") }}
-    </div>
+      <p class="p-test-link"><a href="{{ .url }}" rel="noopener" target="_blank">Zum Testbericht: {{ .name }}</a></p>
+    </details>
   {{- end }}
   {{ with .Params.tests_hinweis }}<p class="note">{{ . | $.RenderString }}</p>{{ end }}
   <p class="note">Testnoten gebe ich nur wieder, wenn ich sie in der Originalquelle gefunden habe; Angaben aus Berichten Dritter sind als solche gekennzeichnet. Ich habe das Gerät nicht selbst getestet.</p>
@@ -89,7 +93,9 @@
   {{- end }}
 
   <section class="p-quellen" aria-labelledby="quellen"><h2 id="quellen">Quellen</h2>
+  <details class="mehr p-mehr" id="quellen-liste"><summary>{{ len .Params.quellen }} Quellen mit Links anzeigen</summary>
   <ol>{{ range .Params.quellen }}<li id="q-{{ .id }}"><a href="{{ .url }}" rel="{{ if strings.Contains .url "amazon." }}sponsored nofollow noopener{{ else }}noopener{{ end }}" target="_blank">{{ .titel }}</a>{{ with .art }} <span class="note">– {{ . }}</span>{{ end }}</li>{{ end }}</ol>
+  </details>
   <p class="note">Alle Links abgerufen am {{ (time (.Params.lastmod | default .Date)).Format "02.01.2006" }}. Herstellerangaben können sich ändern; maßgeblich ist das Datenblatt zum Zeitpunkt des Kaufs. Ob und wie du ein Balkonkraftwerk anmelden musst und was am Zählerplatz gilt, steht in meinem <a href="{{ "posts/balkonkraftwerk-anmelden-2026/" | relURL }}">Artikel zur Anmeldung</a>.</p>
   </section>
   {{- with $p.asin }}{{ if ne $p.modell "Jackery Explorer 1000 v2" }}
