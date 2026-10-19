@@ -562,3 +562,28 @@ body.mit-cmp-bar{padding-bottom:5rem}
 .home-band{background:var(--surface);margin-inline:calc(50% - 50vw);padding:clamp(2.5rem,6vw,4.5rem) calc(50vw - 50%);margin-top:clamp(3rem,8vw,6rem);border-top:0}
 .home-band .tool-tiles a{background:var(--bg)}
 html,body{overflow-x:clip}
+/* Finder Schritt für Schritt */
+.wiz-nav{margin:1rem 0 0}
+.wiz-stand{display:flex;flex-direction:column;gap:.4rem;max-width:20rem;margin:0 0 1rem;font-size:.9375rem;font-weight:700}
+.wiz-btns{display:flex;flex-wrap:wrap;gap:.75rem;margin:0}
+.wiz-btns [hidden]{display:none}
+.wiz fieldset[hidden]{display:none}
+.wiz-nav + p[hidden]{display:none}
+.regeln-titel{margin:.6rem 0 .2rem}
+/* FAQ-Seite */
+.faq-filter{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem 1rem;margin:1.5rem 0 1rem}
+.faq-filter[hidden]{display:none}
+.faq-filter input{min-height:var(--tap);flex:1 1 16rem;max-width:26rem;padding:.5rem .9rem;border:1.5px solid var(--field);border-radius:999px;font:inherit;background:var(--bg);color:var(--ink)}
+.faq-sprung{display:flex;flex-wrap:wrap;gap:.25rem 1.5rem;margin:0 0 .5rem}
+.faq-sprung a{display:inline-flex;align-items:center;min-height:var(--tap);font-weight:650}
+.faq-gruppe{margin-top:2rem}
+.faq-gruppe[hidden],.faq-gruppe details[hidden]{display:none}
+.faq-gruppe>h2{margin:0 0 .5rem}
+.faq-mehr{margin:.4rem 0 0}
+/* Lesefortschritt (nur lange Artikel, nur mit Scroll-Timeline, nicht bei reduzierter Bewegung) */
+.lesefortschritt{display:none}
+@supports (animation-timeline:scroll()){
+  .lesefortschritt{display:block;position:fixed;top:0;left:0;right:0;height:3px;background:var(--accent);transform-origin:0 50%;transform:scaleX(0);animation:lesen linear both;animation-timeline:scroll(root);z-index:60;pointer-events:none}
+  @keyframes lesen{to{transform:scaleX(1)}}
+}
+@media (prefers-reduced-motion:reduce){.lesefortschritt{display:none!important}}

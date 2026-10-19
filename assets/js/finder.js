@@ -6,7 +6,7 @@
   if (!form || !out || !el) return;
   var daten = JSON.parse(el.textContent);
   var ETA = 0.85; // Annahme: nutzbarer Anteil der Nennkapazität
-  var nf = new Intl.NumberFormat('de-DE', { maximumFractionDigits: 1 });
+  var nf = new Intl.NumberFormat('de-DE', { maximumFractionDigits: 2 });
   function f(n) { return nf.format(n); }
   function wert(name) {
     var r = form.querySelector('input[name="' + name + '"]:checked');
@@ -58,18 +58,49 @@
       { ok: p.kg <= kg, t: f(p.kg) + ' kg ' + (p.kg <= kg ? '≤' : '>') + ' ' + (kg >= 99 ? 'keine Grenze' : f(kg) + ' kg') }
     ];
   }
+  var sortGrund = {
+    camping: function (p) { return 'für unterwegs zählt das Gewicht: ' + f(p.kg) + ' kg'; },
+    van: function (p) { return 'für mehrere Tage mit Solar zählt der Solareingang: ' + f(p.pv) + ' W'; },
+    notstrom: function (p) { return 'für den Stromausfall zählt die Umschaltzeit: USV ≤ ' + p.usv + ' ms laut Hersteller'; },
+    werkzeug: function (p) { return 'für Werkzeug zählt die Dauerleistung: ' + f(p.w) + ' W'; }
+  };
+  var EINSATZ = 'camping';
   function karte(p, checks, knapp) {
     var h = '<div class="treffer' + (knapp ? ' knapp' : '') + '"><h3><a href="' + esc(p.url) + '">' + esc(p.m) + '</a></h3>';
-    h += '<p class="note">' + f(p.wh) + ' Wh · ' + f(p.w) + ' W · ' + f(p.kg) + ' kg · Solar ' + f(p.pv) + ' W · USV ≤ ' + p.usv + ' ms · ' + esc(p.akku) + '</p><ul class="regeln">';
+    h += '<p class="note">' + f(p.wh) + ' Wh · ' + f(p.w) + ' W · ' + f(p.kg) + ' kg · Solar ' + f(p.pv) + ' W · USV ≤ ' + p.usv + ' ms · ' + esc(p.akku) + '</p><p class="regeln-titel"><strong>' + (knapp ? 'Knapp daneben, weil eine Regel nicht erfüllt ist:' : 'Passt, weil:') + '</strong></p><ul class="regeln">';
     checks.forEach(function (c) { h += '<li>' + (c.ok ? '✓ ' : '✗ ') + esc(c.t) + '</li>'; });
-    h += '</ul>';
+    h += '<li>' + (knapp ? '' : '✓ ') + esc(sortGrund[EINSATZ](p)) + '</li></ul>';
     if (p.warn) h += '<p class="warnbox">' + esc(p.warn) + '</p>';
     h += '<p><a href="' + esc(p.url) + '">Datenblatt, Tests &amp; Quellen</a> · <a href="../laufzeitrechner/?m=' + encodeURIComponent(p.s) + '">Laufzeit jetzt ausrechnen</a></p></div>';
     return h;
   }
+  // Schritt für Schritt: eine Frage pro Ansicht (ohne JS stehen alle Fragen untereinander)
+  var sets = Array.prototype.slice.call(form.querySelectorAll('fieldset'));
+  var submitP = form.querySelector('button[type=submit]').parentNode;
+  var nav = document.createElement('div');
+  nav.className = 'wiz-nav';
+  nav.innerHTML = '<p class="wiz-stand" aria-live="polite"></p><p class="wiz-btns"><button type="button" class="btn-sec wiz-zurueck">Zurück</button> <button type="button" class="btn wiz-weiter">Weiter</button></p>';
+  form.insertBefore(nav, submitP);
+  form.insertBefore(nav.querySelector('.wiz-stand'), sets[0]);
+  var stand = form.querySelector('.wiz-stand'), zur = nav.querySelector('.wiz-zurueck'), wei = nav.querySelector('.wiz-weiter');
+  var schritt = 0;
+  function zeige(i, fokus) {
+    schritt = Math.max(0, Math.min(sets.length - 1, i));
+    sets.forEach(function (fs, k) { fs.hidden = k !== schritt; });
+    stand.innerHTML = '<span class="wiz-text">Frage ' + (schritt + 1) + ' von ' + sets.length + '</span><span class="bar" aria-hidden="true"><i style="width:' + ((schritt + 1) / sets.length * 100) + '%"></i></span>';
+    zur.hidden = schritt === 0;
+    wei.hidden = schritt === sets.length - 1;
+    submitP.hidden = schritt !== sets.length - 1;
+    if (fokus) { var lg = sets[schritt].querySelector('legend'); lg.setAttribute('tabindex', '-1'); lg.focus(); }
+  }
+  form.classList.add('wiz');
+  wei.addEventListener('click', function () { zeige(schritt + 1, true); });
+  zur.addEventListener('click', function () { out.innerHTML = ''; zeige(schritt - 1, true); });
+  zeige(0, false);
   form.addEventListener('submit', function (e) {
     e.preventDefault();
     var einsatz = (form.querySelector('input[name="einsatz"]:checked') || {}).value || 'camping';
+    EINSATZ = sortText[einsatz] ? einsatz : 'camping';
     var w = wert('watt'), wh = wert('wh'), kg = wert('kg');
     if (!(w > 0) || !(wh > 0)) { out.innerHTML = '<p class="warnbox">Bitte bei „genau“ eine Zahl größer als 0 eintragen.</p>'; return; }
     var passt = [], knapp = [];

@@ -18,15 +18,19 @@ kurz = [
 ]
 [[faq]]
   f = 'Kann ich mit einer Powerstation mein Haus versorgen?'
+  gruppe = 'Technik'
   a = 'Nicht über die Steckdose. Eine Powerstation versorgt die Geräte, die du direkt anschließt. Wer ins Hausnetz einspeisen will, muss laut BBK einen Elektrofachbetrieb beauftragen; Arbeiten an der Hausinstallation dürfen nur Fachbetriebe ausführen.'
 [[faq]]
   f = 'Wie schnell schaltet eine Powerstation bei Stromausfall um?'
+  gruppe = 'Technik'
   a = 'Die Hersteller in meinem Vergleich nennen 10 bis 20 ms. Jackery weist ausdrücklich darauf hin, dass das keine 0-ms-USV ist und nicht für Server oder Workstations gedacht ist.'
 [[faq]]
   f = 'Wie lange hält eine Powerstation bei Stromausfall?'
+  gruppe = 'Technik'
   a = 'Das hängt von Kapazität und Verbrauch ab: nutzbare Wattstunden geteilt durch die Leistung der Geräte. Tests zeigen, dass nicht die volle Nennkapazität nutzbar ist. Der [Laufzeitrechner](/laufzeitrechner/) rechnet es für deine Geräte aus.'
 [[faq]]
   f = 'Muss ich die Powerstation für den Notfall regelmäßig laden?'
+  gruppe = 'Technik'
   a = 'Ja. Batteriesysteme entladen sich mit der Zeit selbst; das BBK rät, sie regelmäßig zu überprüfen und gegebenenfalls nachzuladen. Beachte auch die Lagertemperaturen im Datenblatt.'
 [[top_empfehlung]]
   einsatz = 'Router, Licht, Kühlschrank – und kurz auch Geräte mit Heizelement'

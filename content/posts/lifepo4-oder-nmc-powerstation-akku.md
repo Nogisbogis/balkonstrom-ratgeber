@@ -17,12 +17,15 @@ kurz = [
 ]
 [[faq]]
   f = 'Ist LiFePO4 sicherer als NMC?'
+  gruppe = 'Technik'
   a = 'In der KIT-Studie von 2023 an 21700-Zellen ja: LFP reagierte erst bei deutlich höheren Temperaturen und ging beim Nageltest bei keinem Ladezustand in den thermischen Durchgang. NMC- und NCA-Zellen taten das ab 30 % Ladung. Die Forscher nennen LFP „inhärent sicherer“.'
 [[faq]]
   f = 'Warum sind LiFePO4-Powerstations schwerer?'
+  gruppe = 'Technik'
   a = 'LFP speichert pro Zelle weniger Energie. Im KIT-Vergleich hatte die LFP-Zelle 9,9 Wh, die NMC- und NCA-Zellen im selben Format 18 Wh. Für dieselbe Kapazität braucht man also mehr Zellen.'
 [[faq]]
   f = 'Was bedeuten 4.000 Zyklen bis 80 %?'
+  gruppe = 'Kauf'
   a = 'Nach 4.000 vollen Lade- und Entladezyklen soll laut Hersteller noch 80 % der ursprünglichen Kapazität vorhanden sein. Jackery gibt für die Explorer 1000 v2 dagegen 4.000 Zyklen bis 70 % an. Die Werte sind nur vergleichbar, wenn die Restkapazität gleich ist.'
 +++
 

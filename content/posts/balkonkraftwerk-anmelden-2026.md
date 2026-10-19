@@ -21,18 +21,23 @@ kurz = [
 ]
 [[faq]]
   f = 'Wie viel Leistung darf ein Balkonkraftwerk haben?'
+  gruppe = 'Recht & Anmeldung'
   a = 'Höchstens 800 VA Wechselrichterleistung laut Typenschild oder Einheitenzertifikat und höchstens 2.000 W Modulleistung. Eine Drosselung per Software reicht nicht.'
 [[faq]]
   f = 'Wo muss ich mein Balkonkraftwerk anmelden?'
+  gruppe = 'Recht & Anmeldung'
   a = 'Nur im Marktstammdatenregister der Bundesnetzagentur, innerhalb eines Monats nach Inbetriebnahme. Die frühere Meldung beim Netzbetreiber entfällt; einen Speicher musst du laut Bundeswirtschaftsministerium aber zusätzlich beim Netzbetreiber anmelden.'
 [[faq]]
   f = 'Darf ich ein Balkonkraftwerk an eine normale Schuko-Steckdose anschließen?'
+  gruppe = 'Recht & Anmeldung'
   a = 'Laut DIN VDE V 0126-95:2025-12 ja, wenn das Gerät die Norm erfüllt, der Wechselrichter höchstens 800 VA und die Module höchstens 960 W haben. Darüber braucht es eine Energiesteckvorrichtung oder einen Festanschluss.'
 [[faq]]
   f = 'Was passiert mit meinem alten Stromzähler?'
+  gruppe = 'Recht & Anmeldung'
   a = 'Er wird übergangsweise geduldet. Nach der Registrierung tauscht der Messstellenbetreiber ihn bei Bedarf gegen einen Zweirichtungszähler, laut Bundeswirtschaftsministerium im Regelfall kostenlos.'
 [[faq]]
   f = 'Kann mein Vermieter das Balkonkraftwerk verbieten?'
+  gruppe = 'Recht & Anmeldung'
   a = 'Du musst weiterhin fragen. Seit dem 17. Oktober 2024 sind Steckersolargeräte aber privilegierte bauliche Veränderungen; Vermieter oder Eigentümergemeinschaft können nur noch aus triftigem Grund ablehnen.'
 +++
 

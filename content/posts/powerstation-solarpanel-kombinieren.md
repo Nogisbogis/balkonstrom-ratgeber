@@ -18,12 +18,15 @@ kurz = [
 ]
 [[faq]]
   f = 'Welches Solarpanel passt zu meiner Powerstation?'
+  gruppe = 'Kauf'
   a = 'Eines, dessen Spannung im Eingangsbereich der Powerstation liegt, dessen Strom den Grenzwert nicht überschreitet und dessen Stecker passt. Die maximale Solarleistung bestimmt, wie viel die Station höchstens aufnimmt. Die Werte für die zehn Modelle aus meinem Vergleich stehen in der Tabelle im Artikel.'
 [[faq]]
   f = 'Reihe oder parallel – wie schließe ich zwei Panels an?'
+  gruppe = 'Technik'
   a = 'In Reihe addieren sich die Spannungen, parallel die Ströme. Bei Reihenschaltung muss die summierte Leerlaufspannung auch bei Kälte unter der Höchstspannung des Eingangs bleiben. Manche Geräte schreiben eine Schaltung vor: Bei der Jackery Explorer 1000 v2 sind die beiden Eingänge parallel geschaltet, und Jackery verlangt gleiche Panels.'
 [[faq]]
   f = 'Warum ist die Leerlaufspannung im Winter wichtig?'
+  gruppe = 'Technik'
   a = 'Laut SMA-Planungsleitfaden ist die Leerlaufspannung bei niedrigen Temperaturen am höchsten. Wer nahe an der Höchstspannung des Eingangs plant, kann sie an einem kalten, sonnigen Tag überschreiten.'
 +++
 

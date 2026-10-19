@@ -1,0 +1,26 @@
+{{ define "main" }}
+{{- /* FAQ-Seite: sammelt die FAQ aller Artikel (Antwort = Text aus dem Artikel), gruppiert, mit Link zur ausführlichen Stelle. */ -}}
+{{- $gruppen := slice "Recht & Anmeldung" "Technik" "Kauf" }}
+{{- $alle := slice }}
+{{- range (where site.RegularPages "Section" "posts").ByDate }}{{ $p := . }}{{ range .Params.faq }}{{ $alle = $alle | append (dict "f" .f "a" .a "g" (.gruppe | default "Technik") "p" $p) }}{{ end }}{{ end }}
+<article class="faq-seite">
+  {{ partial "breadcrumb.html" . }}
+  <h1>{{ .Title }}</h1>
+  {{ .Content }}
+  <p class="faq-filter" hidden><label for="faq-suche"><strong>Fragen durchsuchen</strong></label><input type="search" id="faq-suche" placeholder="z. B. Schuko, USV, Speicher" autocomplete="off"><span class="note" id="faq-zahl" aria-live="polite"></span></p>
+  <nav class="faq-sprung" aria-label="Themen">{{ range $gruppen }}<a href="#{{ . | urlize }}">{{ . }}</a>{{ end }}</nav>
+  {{- range $gruppen }}{{ $g := . }}
+  <section class="faq faq-gruppe" id="{{ $g | urlize }}" aria-labelledby="h-{{ $g | urlize }}">
+    <h2 id="h-{{ $g | urlize }}">{{ $g }}</h2>
+    {{- range where $alle "g" $g }}
+    <details><summary>{{ .f }}</summary><div>{{ .a | .p.RenderString }}<p class="faq-mehr"><a class="textlink" href="{{ .p.RelPermalink }}#faq-titel">Ausführlich: {{ .p.Title }}</a></p></div></details>
+    {{- end }}
+  </section>
+  {{- end }}
+  <p class="note faq-leer" id="faq-leer" hidden>Keine Frage passt zu deiner Suche. Alle Artikel findest du im <a href="{{ "ratgeber/" | relURL }}">Ratgeber</a>.</p>
+</article>
+{{- $qs := slice }}{{ range $alle }}{{ $qs = $qs | append (dict "@type" "Question" "name" .f "acceptedAnswer" (dict "@type" "Answer" "text" (.a | .p.RenderString | plainify | htmlUnescape))) }}{{ end }}
+<script type="application/ld+json">{{ dict "@context" "https://schema.org" "@type" "FAQPage" "mainEntity" $qs | jsonify | safeJS }}</script>
+{{ $js := resources.Get "js/faq.js" | minify | fingerprint }}
+<script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" defer></script>
+{{ end }}

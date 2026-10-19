@@ -21,18 +21,23 @@ kurz = [
 ]
 [[faq]]
   f = 'Erzeugt ein Speicher mehr Strom?'
+  gruppe = 'Technik'
   a = 'Nein. Er verschiebt nur den Zeitpunkt, zu dem der Solarstrom genutzt wird, zum Beispiel vom Mittag in den Abend. Beim Laden und Entladen geht dabei ein Teil der Energie verloren.'
 [[faq]]
   f = 'Wann lohnt sich ein Speicher fürs Balkonkraftwerk?'
+  gruppe = 'Kauf'
   a = 'Am ehesten, wenn deine Module tagsüber regelmäßig deutlich mehr erzeugen, als du gleichzeitig verbrauchst. In meiner Beispielrechnung (nur Annahmen: 1,92 kWh, 200 volle Zyklen, 90 %, 35 ct/kWh) amortisiert sich der Speicher allein nach etwa sechs bis acht Jahren.'
 [[faq]]
   f = 'Was hat die Stiftung Warentest bei Balkonkraftwerk-Speichern festgestellt?'
+  gruppe = 'Kauf'
   a = 'Im Test vom 19.03.2026 waren drei von fünf Speichern „mangelhaft“, weil sie zu starke elektromagnetische Störungen aussandten. Nicht alle lieferten die versprochene Strommenge.'
 [[faq]]
   f = 'Muss ich einen Speicher anmelden?'
+  gruppe = 'Recht & Anmeldung'
   a = 'Ja. Im Marktstammdatenregister gibst du ihn bei der Registrierung des Balkonkraftwerks mit an. Laut Bundeswirtschaftsministerium muss er zusätzlich beim Netzbetreiber angemeldet werden.'
 [[faq]]
   f = 'Versorgt der Speicher bei Stromausfall das ganze Haus?'
+  gruppe = 'Technik'
   a = 'Nein. Eine Off-Grid-Steckdose versorgt nur die Geräte, die direkt daran angeschlossen sind, nicht das Hausnetz.'
 +++
 

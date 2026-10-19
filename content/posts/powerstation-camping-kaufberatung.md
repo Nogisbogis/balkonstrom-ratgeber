@@ -26,18 +26,23 @@ kurz = [
   text = '1-kWh-Klasse mit 10–13 kg. Die EcoFlow DELTA 3 Plus war im ADAC-Test Zweite, die Anker SOLIX C1000 Gen 2 hat laut Hersteller die höchste Dauerleistung der Gruppe.'
 [[faq]]
   f = 'Wie viel Kapazität brauche ich fürs Camping?'
+  gruppe = 'Kauf'
   a = 'Rechne für jedes Gerät Watt × Stunden und addiere alles. Plane einen Puffer ein, weil beim Umwandeln auf 230 V Energie verloren geht; der ADAC stellte 2025 fest, dass die Powerstations weniger lieferten als angegeben. Der [Laufzeitrechner](/laufzeitrechner/) nimmt dir das Rechnen ab.'
 [[faq]]
   f = 'Was ist der Unterschied zwischen Kapazität und Dauerleistung?'
+  gruppe = 'Technik'
   a = 'Die Kapazität in Wattstunden bestimmt, wie lange etwas läuft. Die Dauerleistung in Watt bestimmt, was überhaupt läuft: Sie muss höher sein als die Leistung aller Geräte, die gleichzeitig angeschlossen sind.'
 [[faq]]
   f = 'Kann ich einen Wasserkocher an einer Powerstation betreiben?'
+  gruppe = 'Technik'
   a = 'Nur an einer Station mit ausreichend Dauerleistung. Geräte mit Heizelement haben oft über 1.000 W, kleine Powerstations mit 300 W schaffen das nicht. Boost-Modi wie X-Boost oder SurgePad betreiben solche Geräte laut Herstellern nur mit reduzierter Leistung.'
 [[faq]]
   f = 'Darf ich eine Powerstation mit ins Flugzeug nehmen?'
+  gruppe = 'Recht & Anmeldung'
   a = 'Nein, keine der hier genannten. Lufthansa verbietet Akkus über 160 Wh (Ausnahmen: Mobilitätshilfen und medizinische Geräte), und die kleinste Station im Vergleich hat 245 Wh.'
 [[faq]]
   f = 'Darf ich gleichzeitig über Solar und Auto laden?'
+  gruppe = 'Technik'
   a = 'Bei Geräten mit nicht entkoppelten DC-Eingängen nicht. Der ADAC hat die Jackery Explorer 1000 v2 und die Ective BlackBox 10 deshalb 2025 mit „mangelhaft“ bewertet; es drohen Schäden am 12-V-Bordnetz.'
 [[top_empfehlung]]
   einsatz = 'Handy, Licht und Laptop am Wochenende'
