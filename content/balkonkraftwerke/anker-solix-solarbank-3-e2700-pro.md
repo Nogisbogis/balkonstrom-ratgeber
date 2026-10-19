@@ -6,7 +6,7 @@ date: '2026-10-19'
 lastmod: '2026-10-19'
 description: 'Anker Solarbank 3 E2700 Pro (2,7 kWh, 3.600 W PV, 1.200-W-Notstrom): Daten mit Quellen, VDE-Zertifikat, Stiftung Warentest 4/2026, COMPUTER BILD.'
 kurzzeile: 2,7 kWh, 4 MPPT bis 3.600 W, 1.200 W Notstrom
-kurzfazit: 'Die Solarbank 3 Pro ist der größte Speicher in unserem Vergleich: 2,688 kWh, vier MPPT mit zusammen bis zu 3.600 W und eine Notstromsteckdose mit 1.200 W. Erweitert sind bis zu 16 kWh möglich. Stiftung Warentest hat das Gerät im März 2026 geprüft; die Note ist kostenpflichtig. Laut Berichten über den Test schnitt es als einziges „befriedigend“ ab. COMPUTER BILD vergibt die volle Wertung. Mit 29,2 kg ist es allerdings schwer. Und wer mehr als 2.000 Wp anschließt, verlässt die vereinfachten Regeln für Steckersolargeräte.'
+kurzfazit: 'Die Solarbank 3 Pro ist der größte Speicher in meinem Vergleich: 2,688 kWh, vier MPPT mit zusammen bis zu 3.600 W und eine Notstromsteckdose mit 1.200 W. Erweitert sind bis zu 16 kWh möglich. Stiftung Warentest hat das Gerät im März 2026 geprüft; die Note ist kostenpflichtig. Laut Berichten über den Test schnitt es als einziges „befriedigend“ ab. COMPUTER BILD vergibt die volle Wertung. Mit 29,2 kg ist es allerdings schwer. Und wer mehr als 2.000 Wp anschließt, verlässt die vereinfachten Regeln für Steckersolargeräte.'
 fuer:
 - Haushalte mit hohem Abendverbrauch, die viel Solarstrom speichern wollen
 - Wer ein ausbaufähiges System sucht (bis 5 Zusatzakkus, laut Anker auch die 1,6-kWh-Akkus der Solarbank 2 Pro)
@@ -160,7 +160,7 @@ tests:
   datum: 19.03.2026
   url: https://www.test.de/speicher-fuer-balkonkraftwerke-test-6278221-detail/320000039340!1/
   urteil: Note nur im kostenpflichtigen Teil
-  text: 'Im Test mit vier weiteren Speichern (Funktion 60 %, Handhabung 25 %, EMV, Sicherheit und Datenschutz je 5 %). Frei zugänglich: Drei der fünf Geräte erhielten „mangelhaft“, weil sie zu viele elektromagnetische Störsignale aussenden; beim Starkregentest drang bei vier Geräten Wasser in die integrierten Steckdosen. Welche Geräte betroffen sind, steht im kostenpflichtigen Teil; wir haben ihn nicht eingesehen. Laut appgefahren.de war die Solarbank 3 Pro Testsieger und als einziges Gerät „befriedigend“ (3,3); bei der EMV lag sie knapp über dem Grenzwert, und Wasser drang in die Off-Grid-Steckdose. Frei sichtbar: gemessen 28,6 kg, Off-Grid-Leistung 1.200 W. Der Bundesverband Steckersolar kritisiert die Abwertungsregel, nach der ein einzelnes schwaches Prüfkriterium das Gesamturteil auf „mangelhaft“ ziehen kann.'
+  text: 'Im Test mit vier weiteren Speichern (Funktion 60 %, Handhabung 25 %, EMV, Sicherheit und Datenschutz je 5 %). Frei zugänglich: Drei der fünf Geräte erhielten „mangelhaft“, weil sie zu viele elektromagnetische Störsignale aussenden; beim Starkregentest drang bei vier Geräten Wasser in die integrierten Steckdosen. Welche Geräte betroffen sind, steht im kostenpflichtigen Teil; ich habe ihn nicht eingesehen. Laut appgefahren.de war die Solarbank 3 Pro Testsieger und als einziges Gerät „befriedigend“ (3,3); bei der EMV lag sie knapp über dem Grenzwert, und Wasser drang in die Off-Grid-Steckdose. Frei sichtbar: gemessen 28,6 kg, Off-Grid-Leistung 1.200 W. Der Bundesverband Steckersolar kritisiert die Abwertungsregel, nach der ein einzelnes schwaches Prüfkriterium das Gesamturteil auf „mangelhaft“ ziehen kann.'
 - name: COMPUTER BILD
   url: https://www.computerbild.de/artikel/cb-Tests-Energie-Anker-Solix-Solarbank-3-Pro-Balkonkraftwerk-Speicher-Test-39604695.html
   urteil: Bewertung 5 von 5 (laut Seitendaten)

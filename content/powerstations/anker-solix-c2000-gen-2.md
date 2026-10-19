@@ -7,7 +7,7 @@ lastmod: 2026-10-19
 description: "Anker SOLIX C2000 Gen 2 (2.048 Wh, 2.400 W, 18,9 kg, erweiterbar auf 4 kWh): technische Daten aus Produktseite und Handbuch mit Quellen, Widersprüche, Notebookcheck-Messwerte."
 kurzzeile: "2.048 Wh, 2.400 W, erweiterbar auf 4 kWh, 18,9 kg"
 kurzfazit: |
-  Die C2000 Gen 2 ist die größte Station in unserem Vergleich: 2.048 Wh LiFePO4, 2.400 W Dauerleistung, laut Anker in rund einer Stunde mit 2.300 W geladen und mit dem BP2000 auf 4 kWh erweiterbar. Mit 18,9 kg ist sie eher für Haus, Garten und Wohnmobil als zum Tragen. Notebookcheck maß bei 200 W Last knapp 79 % nutzbare Energie, bei 1.800 W gut 90 %. Eine Testnote gibt es bisher nicht. Produktseite und Handbuch widersprechen sich bei der Spitzenleistung, und eine Garantiedauer haben wir nicht gefunden.
+  Die C2000 Gen 2 ist die größte Station in meinem Vergleich: 2.048 Wh LiFePO4, 2.400 W Dauerleistung, laut Anker in rund einer Stunde mit 2.300 W geladen und mit dem BP2000 auf 4 kWh erweiterbar. Mit 18,9 kg ist sie eher für Haus, Garten und Wohnmobil als zum Tragen. Notebookcheck maß bei 200 W Last knapp 79 % nutzbare Energie, bei 1.800 W gut 90 %. Eine Testnote gibt es bisher nicht. Produktseite und Handbuch widersprechen sich bei der Spitzenleistung, und eine Garantiedauer habe ich nicht gefunden.
 fuer:
   - "Notstrom für mehrere Geräte über Stunden, USV 10 ms laut Handbuch"
   - "Große Verbraucher bis 2.400 W"
@@ -49,7 +49,7 @@ daten:
   - {k: App, v: "ja", q: h}
   - {k: Garantie, v: "weder auf der Produktseite noch in der Anleitung gefunden", q: [h, hb]}
 widersprueche:
-  - {t: "**Spitzenleistung:** Produktseite 4.000 W, Handbuch „SurgePad bis 3.000 W“. Wir zeigen beides; der Finder rechnet nur mit der Dauerleistung.", q: [h, hb]}
+  - {t: "**Spitzenleistung:** Produktseite 4.000 W, Handbuch „SurgePad bis 3.000 W“. Ich zeige beides; der Finder rechnet nur mit der Dauerleistung.", q: [h, hb]}
   - {t: "**Steckdosen:** Die deutsche Produktseite spricht stellenweise von „5x AC-Ausgängen“ und erwähnt einen US-Anschluss (TT-30); Notebookcheck zählt am EU-Gerät vier Steckdosen. Teile der Seite stammen offenbar aus anderen Regionalversionen.", q: [h, nbc]}
 staerken:
   - {t: "2 kWh und 2.400 W bei 18,9 kg; Notebookcheck nennt die Station 11,6 kg leichter als den Vorgänger", q: [h, nbc]}
@@ -66,7 +66,7 @@ tests:
     url: "https://www.notebookcheck.com/11-6-kg-leichter-als-der-Vorgaenger-Powerstation-Anker-Solix-C2000-Gen-2-im-Praxis-Test.1230097.0.html"
     urteil: "Praxistest, keine Note (Testgerät vom Hersteller)"
     text: "Bei rund 200 W gut 1.600 Wh nutzbar (knapp 79 %), bei 1.800 W ca. 1.850 Wh (gut 90 %). AC-Laden mit ca. 2.350 Wh aus dem Netz (gut 87 % Ladewirkungsgrad). Ca. 35 dB bei hoher Last. Pro: leichter, 2.400 W, lädt schnell, erweiterbar, leise. Contra: keine LED, Effizienz bei geringer AC-Leistung."
-tests_hinweis: "Von ADAC, Stiftung Warentest, CHIP oder COMPUTER BILD haben wir bis zum 19.10.2026 keinen Test der C2000 Gen 2 gefunden."
+tests_hinweis: "Von ADAC, Stiftung Warentest, CHIP oder COMPUTER BILD habe ich bis zum 19.10.2026 keinen Test der C2000 Gen 2 gefunden."
 alternativen:
   - {slug: ecoflow-delta-3-plus, warum: "Halbe Kapazität ab Werk, erweiterbar bis 5 kWh, ADAC 2,1; 12,5 kg."}
   - {slug: anker-solix-c1000-gen-2, warum: "Halbe Kapazität und 2.000 W bei 11,3 kg; nicht erweiterbar."}

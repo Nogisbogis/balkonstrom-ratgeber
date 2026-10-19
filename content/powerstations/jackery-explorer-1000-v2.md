@@ -6,9 +6,9 @@ date: 2026-10-19
 lastmod: 2026-10-19
 description: "Jackery Explorer 1000 v2 (1.070 Wh, 1.500 W, 10,8 kg): technische Daten mit Quellen, ADAC-Ergebnis „mangelhaft“ wegen nicht entkoppelter DC-Eingänge, IMTEST, Stärken, Schwächen."
 kurzzeile: "1.070 Wh, 1.500 W, 10,8 kg – ADAC „mangelhaft“ (DC-Eingänge)"
-warnung: "**ADAC (06/2025): „mangelhaft“ (5,0)** wegen nicht entkoppelter DC-Eingänge. Wer gleichzeitig über Solar und Auto lädt, riskiert laut ADAC Schäden am 12-V-Bordnetz. Nicht gleichzeitig über Auto und Solar laden. Wir verlinken dieses Modell deshalb nicht zum Kauf."
+warnung: "**ADAC (06/2025): „mangelhaft“ (5,0)** wegen nicht entkoppelter DC-Eingänge. Wer gleichzeitig über Solar und Auto lädt, riskiert laut ADAC Schäden am 12-V-Bordnetz. Nicht gleichzeitig über Auto und Solar laden. Ich verlinke dieses Modell deshalb nicht zum Kauf."
 kurzfazit: |
-  Die Explorer 1000 v2 ist mit 10,8 kg die leichteste Station der 1-kWh-Klasse in unserem Vergleich und laut IMTEST leise (38 dB). Der ADAC hat sie 2025 aber mit „mangelhaft“ (5,0) bewertet, weil die DC-Eingänge nicht voneinander entkoppelt sind. Im Jackery-Helpcenter steht inzwischen, dass gleichzeitiges Laden über Solar und Auto nicht zulässig ist. IMTEST vergab nach altem Verfahren „gut (2,13)“. Wir führen die Station zur Vollständigkeit, aber ohne Kauflink.
+  Die Explorer 1000 v2 ist mit 10,8 kg die leichteste Station der 1-kWh-Klasse in meinem Vergleich und laut IMTEST leise (38 dB). Der ADAC hat sie 2025 aber mit „mangelhaft“ (5,0) bewertet, weil die DC-Eingänge nicht voneinander entkoppelt sind. Im Jackery-Helpcenter steht inzwischen, dass gleichzeitiges Laden über Solar und Auto nicht zulässig ist. IMTEST vergab nach altem Verfahren „gut (2,13)“. Ich führe die Station zur Vollständigkeit, aber ohne Kauflink.
 fuer:
   - "Wer sie ausschließlich an Steckdose oder Solar lädt und nie zugleich über Auto und Solar"
   - "Leise Nutzung im Zelt oder Wohnmobil (IMTEST: 38 dB)"
@@ -53,7 +53,7 @@ daten:
 widersprueche:
   - {t: "**Steckdosen:** Das Jackery-Helpcenter nennt drei AC-Ausgänge, IMTEST beschreibt zwei Steckdosen. Möglicherweise gibt es Regionalvarianten – vor dem Kauf prüfen.", q: [h, im]}
   - {t: "**USB-Anschlüsse:** Jackery nennt vier USB-Anschlüsse, IMTEST zählt einen USB-A- und zwei USB-C-Ports.", q: [h, im]}
-  - {t: "**USV/EPS:** Die Jackery-Tabelle nennt „EPS-Funktion: keine“, aber eine „UPS-Funktion“ mit 20 ms. Jackery selbst schreibt, die Funktion sei keine 0-ms-USV und nicht für Server oder Workstations gedacht. Wir rechnen mit 20 ms.", q: h}
+  - {t: "**USV/EPS:** Die Jackery-Tabelle nennt „EPS-Funktion: keine“, aber eine „UPS-Funktion“ mit 20 ms. Jackery selbst schreibt, die Funktion sei keine 0-ms-USV und nicht für Server oder Workstations gedacht. Ich rechne mit 20 ms.", q: h}
   - {t: "**Gleichzeitiges Laden:** Zum ADAC-Testzeitpunkt fehlte laut ADAC ein Warnhinweis an Gerät und Anleitung. Das Jackery-Helpcenter bezeichnet gleichzeitiges Laden über Solar und Auto inzwischen als nicht zulässig.", q: [adac, h]}
 staerken:
   - {t: "Leicht für 1 kWh: ca. 10,8 kg", q: h}

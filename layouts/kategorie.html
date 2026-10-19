@@ -7,7 +7,7 @@
 <h2 id="modelle">Alle Modelle im Detail</h2>
 <p>Je Modell eine Seite mit Datentabelle (jede Angabe mit Quelle), Testergebnissen, Stärken, Schwächen und Alternativen.</p>
 <ul class="plist">{{ range sort hugo.Data.powerstations "kapazitaet_wh" }}{{ $d := . }}{{ with site.GetPage (printf "/powerstations/%s" .slug) }}<li><a href="{{ .RelPermalink }}"><strong>{{ .Title }}</strong><span>{{ lang.FormatNumber 0 $d.kapazitaet_wh }} Wh · {{ lang.FormatNumber 0 $d.dauerleistung_w }} W · {{ replace (string $d.gewicht_kg) "." "," }} kg</span></a></li>{{ end }}{{ end }}</ul>
-<p class="tool-links-inline">Unsicher, welche passt? <a href="{{ "powerstation-finder/" | relURL }}">Zum Powerstation-Finder</a> · <a href="{{ "laufzeitrechner/" | relURL }}">Zum Laufzeitrechner</a></p>
+<p class="tool-links-inline">Unsicher, welche passt? <a href="{{ "powerstation-finder/" | relURL }}">Passende Powerstation finden</a> · <a href="{{ "laufzeitrechner/" | relURL }}">Laufzeit jetzt ausrechnen</a></p>
 {{ end }}
 {{ if eq .Params.kategorie "balkonkraftwerke" }}
 <h2 id="modelle">Alle Sets und Speicher im Detail</h2>

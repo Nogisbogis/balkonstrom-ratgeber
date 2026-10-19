@@ -6,7 +6,7 @@
   {{ partial "breadcrumb.html" . }}
   {{ partial "disclosure-box.html" . }}
   <h1>{{ .Title }}</h1>
-  <p class="meta">Produktseite · Stand der Recherche <time datetime="{{ .Lastmod.Format "2006-01-02" }}">{{ .Lastmod.Format "02.01.2006" }}</time> · eigene Recherche, kein eigener Test</p>
+  <p class="meta">Produktseite · Zuletzt aktualisiert <time datetime="{{ .Lastmod.Format "2006-01-02" }}">{{ .Lastmod.Format "02.01.2006" }}</time> · eigene Recherche, kein eigener Test</p>
 
   <div class="p-top">
     <div class="p-media">
@@ -29,7 +29,7 @@
       <p class="note">Herstellerangaben, Belege unten in der Tabelle.</p>
       {{- with .Params.warnung }}<p class="notice p-warn">{{ . | $.RenderString }}</p>{{ end }}
       <p class="pcard-links">
-      {{- with $p.asin }}<a class="btn btn-amazon" href="{{ partial "amazon-url.html" . }}" rel="sponsored nofollow noopener" target="_blank">Bei Amazon ansehen<span class="ad-mark" title="Affiliate-Link">*</span></a>{{ else }}<span class="note">Kein Kauflink: Wir haben kein Amazon-Angebot gefunden, das eindeutig zu genau diesem Modell passt.</span>{{ end }}
+      {{- with $p.asin }}<a class="btn btn-amazon" href="{{ partial "amazon-url.html" . }}" rel="sponsored nofollow noopener" target="_blank">Aktuellen Preis bei Amazon ansehen<span class="ad-mark" title="Affiliate-Link">*</span></a>{{ else }}<span class="note">Kein Kauflink: Ich habe kein Amazon-Angebot gefunden, das eindeutig zu genau diesem Modell passt.</span>{{ end }}
       <a class="btn-sec" href="{{ "amortisationsrechner/" | relURL }}">Lohnt sich das? Rechner</a>
       </p>
     </div>
@@ -73,7 +73,7 @@
     </div>
   {{- end }}
   {{ with .Params.tests_hinweis }}<p class="note">{{ . | $.RenderString }}</p>{{ end }}
-  <p class="note">Testnoten geben wir nur wieder, wenn wir sie in der Originalquelle gefunden haben; Angaben aus Berichten Dritter sind als solche gekennzeichnet. Wir haben das Gerät nicht selbst getestet.</p>
+  <p class="note">Testnoten gebe ich nur wieder, wenn ich sie in der Originalquelle gefunden habe; Angaben aus Berichten Dritter sind als solche gekennzeichnet. Ich habe das Gerät nicht selbst getestet.</p>
   </section>
 
   {{- with .Params.alternativen }}
@@ -90,7 +90,10 @@
 
   <section class="p-quellen" aria-labelledby="quellen"><h2 id="quellen">Quellen</h2>
   <ol>{{ range .Params.quellen }}<li id="q-{{ .id }}"><a href="{{ .url }}" rel="noopener" target="_blank">{{ .titel }}</a>{{ with .art }} <span class="note">– {{ . }}</span>{{ end }}</li>{{ end }}</ol>
-  <p class="note">Alle Links abgerufen am {{ .Lastmod.Format "02.01.2006" }}. Herstellerangaben können sich ändern; maßgeblich ist das Datenblatt zum Zeitpunkt des Kaufs. Ob und wie du ein Balkonkraftwerk anmelden musst und was am Zählerplatz gilt, steht in unserem <a href="{{ "posts/balkonkraftwerk-anmelden-2026/" | relURL }}">Artikel zur Anmeldung</a>.</p>
+  <p class="note">Alle Links abgerufen am {{ (time (.Params.lastmod | default .Date)).Format "02.01.2006" }}. Herstellerangaben können sich ändern; maßgeblich ist das Datenblatt zum Zeitpunkt des Kaufs. Ob und wie du ein Balkonkraftwerk anmelden musst und was am Zählerplatz gilt, steht in meinem <a href="{{ "posts/balkonkraftwerk-anmelden-2026/" | relURL }}">Artikel zur Anmeldung</a>.</p>
   </section>
+  {{- with $p.asin }}{{ if ne $p.modell "Jackery Explorer 1000 v2" }}
+  <div class="sticky-cta"><a class="btn btn-amazon" href="{{ partial "amazon-url.html" . }}" rel="sponsored nofollow noopener" target="_blank">Aktuellen Preis bei Amazon ansehen<span class="ad-mark" title="Affiliate-Link">*</span></a></div>
+  {{- end }}{{ end }}
 </article>
 {{ end }}

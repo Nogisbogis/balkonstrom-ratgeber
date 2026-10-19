@@ -68,7 +68,7 @@
     if (ev && E > 0) h += '<p class="note">Der Eigenverbrauch fällt an, solange die Station eingeschaltet ist. Die Bedarfsrechnung oben enthält ihn nicht, weil die Einschaltzeit unbekannt ist.</p>';
     if (s.warn) h += '<p class="warnbox">' + esc(s.warn) + '</p>';
     // Alle Modelle im Überblick
-    h += '<h3>So lange reichen die Modelle aus unserem Vergleich</h3><p class="note">Gleiche Geräte, gleiche Annahmen. ✗ = Dauerleistung zu klein für alle Geräte gleichzeitig.</p><div class="tablewrap"><table class="cmp"><thead><tr><th>Modell</th><th class="r">nutzbar (Annahme)</th><th class="r">Anteil deines Bedarfs</th><th class="r">Dauerbetrieb</th></tr></thead><tbody>';
+    h += '<h3>So lange reichen die Modelle aus meinem Vergleich</h3><p class="note">Gleiche Geräte, gleiche Annahmen. ✗ = Dauerleistung zu klein für alle Geräte gleichzeitig.</p><div class="tablewrap"><table class="cmp"><thead><tr><th>Modell</th><th class="r">nutzbar (Annahme)</th><th class="r">Anteil deines Bedarfs</th><th class="r">Dauerbetrieb</th></tr></thead><tbody>';
     daten.forEach(function (p) {
       var nz = p.wh * eta;
       h += '<tr><td><a href="' + esc(p.url) + '">' + esc(p.m) + '</a></td><td class="r">' + f(Math.round(nz)) + ' Wh</td><td class="r">' + (E > 0 ? f(Math.round(nz / E * 100)) + ' %' : '–') + '</td><td class="r">' + (P > p.w ? '✗ ' : '') + dauer(nz / (P + ev)) + '</td></tr>';

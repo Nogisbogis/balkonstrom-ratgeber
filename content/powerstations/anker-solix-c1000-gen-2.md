@@ -7,7 +7,7 @@ lastmod: 2026-10-19
 description: "Anker SOLIX C1000 Gen 2 (1.024 Wh, 2.000 W, 11,3 kg): technische Daten mit Quellen, CHIP-Test (2,2), Stärken, Schwächen und Alternativen."
 kurzzeile: "1.024 Wh, 2.000 W, 11,3 kg – CHIP „gut (2,2)“"
 kurzfazit: |
-  Die C1000 Gen 2 hat die höchste Dauerleistung in der 1-kWh-Gruppe unseres Vergleichs: 2.000 W, Spitze 3.000 W laut Anker, bei 11,3 kg. Mit HyperFlash lädt sie laut Anker in 49 Minuten (Einschalten per App, Akku über 20 °C). CHIP vergibt „gut (2,2)“, misst 839 Wh an 230 V und 74 % Wirkungsgrad und nennt das Ultraschnellladen laut. Erweitern lässt sie sich nicht. Eine Garantiedauer haben wir auf der Anker-Produktseite nicht gefunden.
+  Die C1000 Gen 2 hat die höchste Dauerleistung in der 1-kWh-Gruppe meines Vergleichs: 2.000 W, Spitze 3.000 W laut Anker, bei 11,3 kg. Mit HyperFlash lädt sie laut Anker in 49 Minuten (Einschalten per App, Akku über 20 °C). CHIP vergibt „gut (2,2)“, misst 839 Wh an 230 V und 74 % Wirkungsgrad und nennt das Ultraschnellladen laut. Erweitern lässt sie sich nicht. Eine Garantiedauer habe ich auf der Anker-Produktseite nicht gefunden.
 fuer:
   - "Geräte mit hoher Leistung: Wasserkocher, Heißluftfritteuse, Werkzeug bis 2.000 W"
   - "Wer schnell nachladen will (laut Anker 49 min mit HyperFlash)"

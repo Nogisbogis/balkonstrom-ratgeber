@@ -189,7 +189,7 @@ tests:
   url: https://www.test.de/balkonkraftwerk-test-5501703-0/
   urteil: anderes Set getestet
   text: Im Balkonkraftwerk-Test war ein Anker-Set mit 870-Wp-Bifazialmodul und demselben MI80. Die Module unterscheiden sich vom RS40P; die Note (kostenpflichtig) lässt sich nicht übertragen.
-tests_hinweis: Einen Test genau dieser Kombination aus 445-W-Modulen und MI80 haben wir nicht gefunden.
+tests_hinweis: Einen Test genau dieser Kombination aus 445-W-Modulen und MI80 habe ich nicht gefunden.
 alternativen:
 - slug: anker-solix-solarbank-2-e1600-pro
   warum: 'Wer Solarstrom auch abends nutzen will: Speicher mit Wechselrichter und Notstromsteckdose, Module separat.'

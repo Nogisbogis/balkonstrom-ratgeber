@@ -288,3 +288,39 @@ table.p-daten tr.gruppe th{background:var(--soft);font-size:.8rem;text-transform
 .tool-teaser em.btn{font-style:normal;margin-top:auto;align-self:flex-start;font-size:.9rem}
 .tool select{max-width:100%}
 .tool fieldset{min-width:0}.tool select{width:100%}
+/* Sticky-CTA (nur mobil, nur Produktseiten mit geprüfter ASIN) */
+.sticky-cta{display:none}
+@media (max-width:40rem){
+  .sticky-cta{display:block;position:fixed;left:0;right:0;bottom:0;z-index:30;padding:.55rem 1rem calc(.55rem + env(safe-area-inset-bottom));background:var(--bg);border-top:1px solid var(--line);box-shadow:0 -2px 8px rgba(0,0,0,.08)}
+  .sticky-cta .btn{display:block;text-align:center;font-size:1rem;padding:.6rem .8rem}
+  body:has(.sticky-cta){padding-bottom:4.2rem}
+}
+/* Startseite: Hero, Schritte, Empfehlungen, Vertrauen */
+.hero-neu{display:grid;grid-template-columns:1.15fr 1fr;gap:1.2rem;align-items:center;background:var(--soft);border:1px solid var(--line);border-radius:12px;padding:1.4rem 1.4rem 1.2rem;margin:0 0 1.6rem}
+.hero-neu h1{font-size:1.75rem;margin:0 0 .6rem}
+.hero-neu .lead{color:var(--fg);font-size:1.1rem;margin:0 0 1rem}
+.hero-cta{display:flex;flex-wrap:wrap;gap:.6rem;margin:0}
+.btn-gross{padding:.7rem 1.15rem;font-size:1.02rem;border-radius:6px;font-weight:600}
+a.btn-sec.btn-gross{background:var(--bg)}
+.hero-bild{width:100%;height:auto;display:block}
+@media (max-width:40rem){.hero-neu{grid-template-columns:1fr;padding:1rem}.hero-neu h1{font-size:1.45rem}.hero-bild{order:-1;max-height:170px;object-fit:contain}.hero-cta a{flex:1 1 100%;text-align:center}}
+h2.abschnitt{font-size:1.05rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin:1.8rem 0 .7rem}
+.schritte ol{list-style:none;counter-reset:s;padding:0;margin:0 0 1.4rem;display:grid;gap:.7rem;grid-template-columns:repeat(auto-fit,minmax(12rem,1fr))}
+.schritte li{counter-increment:s;border:1px solid var(--line);border-radius:10px;padding:.8rem .9rem .8rem 3rem;position:relative;display:flex;flex-direction:column;gap:.2rem}
+.schritte li::before{content:counter(s);position:absolute;left:.85rem;top:.8rem;width:1.6rem;height:1.6rem;border-radius:50%;background:var(--accent);color:var(--btnfg);font-weight:700;display:flex;align-items:center;justify-content:center}
+.schritte span{font-size:.9rem;color:var(--muted)}
+.empf-list{list-style:none;padding:0;margin:0}
+.empf{border:1px solid var(--line);border-radius:10px;padding:.8rem .95rem;display:flex;flex-direction:column;gap:.3rem;background:var(--bg)}
+.empf+.empf{margin-top:.6rem}
+.empf-einsatz{font-size:.8rem;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);font-weight:600}
+.empf-modell{font-size:1.08rem}
+.empf-grund{font-size:.92rem}
+.empf-links{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin-top:.2rem}
+.empf-grid{display:grid;gap:.7rem;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr))}
+.empf-grid .empf+.empf{margin-top:0}
+.empfbox{border:2px solid var(--accent);border-radius:10px;padding:.8rem 1rem;margin:1rem 0 1.2rem;background:var(--soft)}
+.empfbox h2{margin:0 0 .6rem;font-size:1.15rem}
+.empfbox .note{margin:.6rem 0 0}
+.trust ul{list-style:none;padding:0;margin:0 0 .6rem;display:grid;gap:.7rem;grid-template-columns:repeat(auto-fit,minmax(13rem,1fr))}
+.trust li{border-left:4px solid var(--accent);padding:.3rem .8rem;display:flex;flex-direction:column;gap:.2rem}
+.trust span{font-size:.9rem;color:var(--muted)}

@@ -46,7 +46,7 @@
         <td class="r" data-v="{{ .gewicht_kg }}">{{ replace (string .gewicht_kg) "." "," }}</td>
         <td class="r" data-v="{{ .solareingang_w }}">{{ lang.FormatNumber 0 .solareingang_w }}</td>
         <td>{{ .akkutyp }}</td>
-        <td class="links">{{ with site.GetPage (printf "/powerstations/%s" (.slug | default "-")) }}<a href="{{ .RelPermalink }}">Details</a><br>{{ end }}<a href="{{ .quelle }}" rel="noopener nofollow" target="_blank">Quelle</a>{{ with .asin }}<br><a class="amazon-link" href="{{ partial "amazon-url.html" . }}" rel="sponsored nofollow noopener" target="_blank">Amazon</a><sup class="ad-mark">*</sup>{{ end }}</td>
+        <td class="links">{{ with site.GetPage (printf "/powerstations/%s" (.slug | default "-")) }}<a href="{{ .RelPermalink }}">Details</a><br>{{ end }}<a href="{{ .quelle }}" rel="noopener nofollow" target="_blank">Quelle</a>{{ with .asin }}<br><a class="amazon-link" href="{{ partial "amazon-url.html" . }}" rel="sponsored nofollow noopener" target="_blank">Preis bei Amazon</a><sup class="ad-mark">*</sup>{{ end }}</td>
       </tr>
     {{ end }}
     </tbody>
@@ -96,7 +96,7 @@
         <td class="r" data-v="{{ .pv_max_w }}">{{ if gt .pv_max_w 0 }}{{ lang.FormatNumber 0 .pv_max_w }}{{ else }}–{{ end }}</td>
         <td class="r" data-v="{{ .module_wp }}">{{ if gt .module_wp 0 }}{{ lang.FormatNumber 0 .module_wp }}{{ else }}–{{ end }}</td>
         <td class="r" data-v="{{ .wechselrichter_w }}">{{ .wechselrichter_w }}</td>
-        <td class="links">{{ with site.GetPage (printf "/balkonkraftwerke/%s" (.slug | default "-")) }}<a href="{{ .RelPermalink }}">Details</a><br>{{ end }}<a href="{{ .quelle }}" rel="noopener nofollow" target="_blank">Quelle</a>{{ with .asin }}<br><a class="amazon-link" href="{{ partial "amazon-url.html" . }}" rel="sponsored nofollow noopener" target="_blank">Amazon</a><sup class="ad-mark">*</sup>{{ end }}</td>
+        <td class="links">{{ with site.GetPage (printf "/balkonkraftwerke/%s" (.slug | default "-")) }}<a href="{{ .RelPermalink }}">Details</a><br>{{ end }}<a href="{{ .quelle }}" rel="noopener nofollow" target="_blank">Quelle</a>{{ with .asin }}<br><a class="amazon-link" href="{{ partial "amazon-url.html" . }}" rel="sponsored nofollow noopener" target="_blank">Preis bei Amazon</a><sup class="ad-mark">*</sup>{{ end }}</td>
       </tr>
     {{ end }}
     </tbody>
@@ -108,7 +108,7 @@
   </figure>
   </section>
 
-  <p class="note">Alle Werte sind Herstellerangaben (Stand der Datenerhebung: {{ .Params.stand }}). Preise nennen wir bewusst nicht, weil sie sich ständig ändern. Mit * markierte Links sind Affiliate-Links. Produktfotos nur aus Pressebereichen der Hersteller mit Erlaubnis zur redaktionellen Nutzung; Bildnachweis jeweils am Foto. Ohne freigegebenes Foto steht ein Platzhalter.</p>
+  <p class="note">Alle Werte sind Herstellerangaben (Stand der Datenerhebung: {{ .Params.stand }}). Preise nenne ich bewusst nicht, weil sie sich ständig ändern. Mit * markierte Links sind Affiliate-Links. Produktfotos nur aus Pressebereichen der Hersteller mit Erlaubnis zur redaktionellen Nutzung; Bildnachweis jeweils am Foto. Ohne freigegebenes Foto steht ein Platzhalter.</p>
 </article>
 {{ $js := resources.Get "js/vergleich.js" | minify | fingerprint }}
 <script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" defer></script>

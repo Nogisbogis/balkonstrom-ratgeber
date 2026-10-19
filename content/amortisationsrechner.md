@@ -38,7 +38,7 @@ Zum Vergleich: Das Umweltbundesamt kommt für 800 W senkrecht, 45 % Eigenverbrau
 
 ## Und mit Speicher?
 
-Ein Speicher erhöht den Eigenverbrauchsanteil, kostet aber deutlich mehr. Beim Ein- und Ausspeichern geht zudem Energie verloren. Das Umweltbundesamt hält Speicher bei durchschnittlichem Verbrauch „eher nicht“ für lohnend. Pauschal belastbare Werte für den Eigenverbrauch mit Speicher haben wir nicht gefunden. Rechne deinen Fall mit dem [Stecker-Solar-Simulator der HTW Berlin](https://solar.htw-berlin.de/rechner/stecker-solar-simulator/) und trag den Anteil hier ein. Mehr dazu im Artikel [Balkonkraftwerk mit Speicher: Lohnt sich das?](/posts/balkonkraftwerk-mit-speicher-lohnt-sich/).
+Ein Speicher erhöht den Eigenverbrauchsanteil, kostet aber deutlich mehr. Beim Ein- und Ausspeichern geht zudem Energie verloren. Das Umweltbundesamt hält Speicher bei durchschnittlichem Verbrauch „eher nicht“ für lohnend. Pauschal belastbare Werte für den Eigenverbrauch mit Speicher habe ich nicht gefunden. Rechne deinen Fall mit dem [Stecker-Solar-Simulator der HTW Berlin](https://solar.htw-berlin.de/rechner/stecker-solar-simulator/) und trag den Anteil hier ein. Mehr dazu im Artikel [Balkonkraftwerk mit Speicher: Lohnt sich das?](/posts/balkonkraftwerk-mit-speicher-lohnt-sich/).
 
 ## Grenzen
 

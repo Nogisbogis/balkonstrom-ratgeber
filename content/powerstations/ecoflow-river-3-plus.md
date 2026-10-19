@@ -65,7 +65,7 @@ tests:
     url: "https://www.hartware.de/2025/10/08/ecoflow-river-3-plus-im-test/"
     urteil: "keine Note vergeben"
     text: "Positiv: sehr leise, kompakt, erweiterbar, 5 Jahre Garantie, sehr effiziente DC-Ausgänge, USV mit USB-Kommunikation, App. Negativ: Effizienz des AC-Wandlers nicht herausragend, zu wenige USB-Ports. Die Zusatzakkus bringen laut Hartware einen eigenen 140-W-USB-C-Port mit."
-tests_hinweis: "Weitere Testnoten (z. B. aus Zeitschriften) haben wir nur über Sammelportale gefunden und nicht in der Originalquelle prüfen können; deshalb nennen wir sie nicht."
+tests_hinweis: "Weitere Testnoten (z. B. aus Zeitschriften) habe ich nur über Sammelportale gefunden und nicht in der Originalquelle prüfen können; deshalb nenne ich sie nicht."
 alternativen:
   - {slug: ecoflow-river-3, warum: "Leichter (3,55 kg) und weiterhin im Programm, aber nur 300 W, eine Steckdose und 24 Monate Garantie."}
   - {slug: anker-solix-c300x, warum: "288 Wh, zwei 140-W-USB-C-Ports und 5 Jahre Garantie; nur 300 W Dauerleistung."}

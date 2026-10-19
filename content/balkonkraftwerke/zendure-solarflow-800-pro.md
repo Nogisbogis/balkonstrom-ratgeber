@@ -6,7 +6,7 @@ date: '2026-10-19'
 lastmod: '2026-10-19'
 description: 'Zendure SolarFlow 800 Pro (1,92 kWh, 48 V, 4 MPPT bis 2.640 W, 1.000-W-Notstrom): Daten mit Quellen, VDE-Zertifikat, Tests von COMPUTER BILD, heise und Stiftung Warentest.'
 kurzzeile: 1,92 kWh (48 V), 4 MPPT bis 2.640 W, 1.000 W Notstrom
-kurzfazit: Der SolarFlow 800 Pro speichert 1,92 kWh in einem 48-V-Akku, hat vier MPPT mit zusammen 2.640 W und eine Notstromsteckdose mit 1.000 W. Laut Zendure schaltet sie bei Stromausfall in 15 ms um, wenn die Funktion in der App aktiv ist. COMPUTER BILD und heise loben Effizienz, Notstrom und Smart-Meter-Regelung; Kritik gibt es an Kalibrierungs-Entladungen und der Cloud-Abhängigkeit. Stiftung Warentest führt das Gerät als „nicht mehr im Handel“, Zendure verkauft es im eigenen Shop weiter. Einen passenden Amazon-Link haben wir nicht.
+kurzfazit: Der SolarFlow 800 Pro speichert 1,92 kWh in einem 48-V-Akku, hat vier MPPT mit zusammen 2.640 W und eine Notstromsteckdose mit 1.000 W. Laut Zendure schaltet sie bei Stromausfall in 15 ms um, wenn die Funktion in der App aktiv ist. COMPUTER BILD und heise loben Effizienz, Notstrom und Smart-Meter-Regelung; Kritik gibt es an Kalibrierungs-Entladungen und der Cloud-Abhängigkeit. Stiftung Warentest führt das Gerät als „nicht mehr im Handel“, Zendure verkauft es im eigenen Shop weiter. Einen passenden Amazon-Link habe ich nicht.
 fuer:
 - Wer viel Modulleistung über vier Eingänge verteilen will (je 660 W)
 - 'Smart-Home-Nutzer: lokale API und Home Assistant laut heise'
@@ -155,7 +155,7 @@ tests:
   datum: 19.03.2026
   url: https://www.test.de/speicher-fuer-balkonkraftwerke-test-6278221-detail/320000039340!6/
   urteil: Note nur im kostenpflichtigen Teil
-  text: 'Im Test mit vier weiteren Speichern (Funktion 60 %, Handhabung 25 %, EMV, Sicherheit und Datenschutz je 5 %). Frei zugänglich: Drei der fünf Geräte erhielten „mangelhaft“, weil sie zu viele elektromagnetische Störsignale aussenden; beim Starkregentest drang bei vier Geräten Wasser in die integrierten Steckdosen. Welche Geräte betroffen sind, steht im kostenpflichtigen Teil; wir haben ihn nicht eingesehen. Frei sichtbar: gemessen 26,0 kg, Off-Grid-Leistung 1.000 W. Der Bundesverband Steckersolar kritisiert die Abwertungsregel, nach der ein einzelnes schwaches Prüfkriterium das Gesamturteil auf „mangelhaft“ ziehen kann.'
+  text: 'Im Test mit vier weiteren Speichern (Funktion 60 %, Handhabung 25 %, EMV, Sicherheit und Datenschutz je 5 %). Frei zugänglich: Drei der fünf Geräte erhielten „mangelhaft“, weil sie zu viele elektromagnetische Störsignale aussenden; beim Starkregentest drang bei vier Geräten Wasser in die integrierten Steckdosen. Welche Geräte betroffen sind, steht im kostenpflichtigen Teil; ich habe ihn nicht eingesehen. Frei sichtbar: gemessen 26,0 kg, Off-Grid-Leistung 1.000 W. Der Bundesverband Steckersolar kritisiert die Abwertungsregel, nach der ein einzelnes schwaches Prüfkriterium das Gesamturteil auf „mangelhaft“ ziehen kann.'
 - name: COMPUTER BILD
   datum: 20.01.2026
   url: https://www.computerbild.de/artikel/Tests-Energie-Zendure-Solarflow-800-Pro-Test-00877-40675967.html

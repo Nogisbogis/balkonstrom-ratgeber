@@ -3,7 +3,7 @@ title = "Laufzeitrechner: Wie lange hält meine Powerstation?"
 description = "Laufzeitrechner für Powerstations: Geräte mit Watt und Stunden eintragen, Modell oder Kapazität wählen, Laufzeit sehen. Wirkungsgrad als einstellbare Annahme (Standard 85 %)."
 layout = "rechner"
 date = 2026-10-19
-intro = "Trag deine Geräte ein und wähle ein Modell. Der Rechner zeigt, ob der Akku reicht – für alle zehn Powerstations aus unserem Vergleich auf einen Blick. Er rechnet nur im Browser, nichts wird gespeichert."
+intro = "Trag deine Geräte ein und wähle ein Modell. Der Rechner zeigt, ob der Akku reicht – für alle zehn Powerstations aus meinem Vergleich auf einen Blick. Er rechnet nur im Browser, nichts wird gespeichert."
 +++
 
 ## So rechnet der Rechner

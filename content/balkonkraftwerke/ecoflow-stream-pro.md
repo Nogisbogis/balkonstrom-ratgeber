@@ -6,7 +6,7 @@ date: '2026-10-19'
 lastmod: '2026-10-19'
 description: 'EcoFlow STREAM Pro (1,92 kWh, 3 MPPT bis 1.500 W, 1.200-W-Steckdosen): technische Daten mit Quellen aus dem Handbuch, Unterschiede zum STREAM Ultra, Testlage.'
 kurzzeile: 1,92 kWh, 3 MPPT bis 1.500 W, Steckdosen 1.200 W
-kurzfazit: 'Der STREAM Pro ist laut EcoFlow-Handbuch technisch der STREAM Ultra mit einem Modul-Eingang weniger: 3 MPPT, zusammen 1.500 W PV, 22,8 kg. Akku (1,92 kWh LFP), Steckdosen (1.200 W) und Netzbetrieb (bis 2.300 W für angeschlossene Geräte) sind gleich. Eigene unabhängige Tests zum Pro haben wir nicht gefunden. Die Tests zum Ultra lassen sich nur eingeschränkt übertragen, auch die EMV-Kritik der Stiftung Warentest nicht. Eine Garantieangabe für den Pro fehlt auf der deutschen EcoFlow-Seite.'
+kurzfazit: 'Der STREAM Pro ist laut EcoFlow-Handbuch technisch der STREAM Ultra mit einem Modul-Eingang weniger: 3 MPPT, zusammen 1.500 W PV, 22,8 kg. Akku (1,92 kWh LFP), Steckdosen (1.200 W) und Netzbetrieb (bis 2.300 W für angeschlossene Geräte) sind gleich. Eigene unabhängige Tests zum Pro habe ich nicht gefunden. Die Tests zum Ultra lassen sich nur eingeschränkt übertragen, auch die EMV-Kritik der Stiftung Warentest nicht. Eine Garantieangabe für den Pro fehlt auf der deutschen EcoFlow-Seite.'
 fuer:
 - Wer höchstens drei Module anschließt und die Funktionen des Ultra will
 - Verteilte Speicher im Haus (Verbund bis 6 STREAM-Geräte)

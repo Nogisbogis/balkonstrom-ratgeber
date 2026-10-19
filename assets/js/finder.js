@@ -49,7 +49,7 @@
     checks.forEach(function (c) { h += '<li>' + (c.ok ? '✓ ' : '✗ ') + esc(c.t) + '</li>'; });
     h += '</ul>';
     if (p.warn) h += '<p class="warnbox">' + esc(p.warn) + '</p>';
-    h += '<p><a href="' + esc(p.url) + '">Datenblatt, Tests &amp; Quellen</a> · <a href="../laufzeitrechner/?m=' + encodeURIComponent(p.s) + '">Laufzeit berechnen</a></p></div>';
+    h += '<p><a href="' + esc(p.url) + '">Datenblatt, Tests &amp; Quellen</a> · <a href="../laufzeitrechner/?m=' + encodeURIComponent(p.s) + '">Laufzeit jetzt ausrechnen</a></p></div>';
     return h;
   }
   form.addEventListener('submit', function (e) {
@@ -73,7 +73,7 @@
       h += '<p><strong>' + ps.length + ' von ' + daten.length + ' Modellen erfüllen alle drei Regeln.</strong></p>';
       ps.forEach(function (p) { h += karte(p, find(passt, p), false); });
     } else {
-      h += '<p class="warnbox">Kein Modell in unserem Vergleich erfüllt alle drei Regeln. Unten stehen die Modelle, die nur an einer Regel scheitern.</p>';
+      h += '<p class="warnbox">Kein Modell in meinem Vergleich erfüllt alle drei Regeln. Unten stehen die Modelle, die nur an einer Regel scheitern.</p>';
     }
     if (ks.length) {
       h += '<h3>Knapp daneben (eine Regel nicht erfüllt)</h3>';

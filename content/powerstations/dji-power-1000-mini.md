@@ -35,7 +35,7 @@ daten:
   - {k: USB-A, v: "2 × 12 W", q: h}
   - {k: SDC, v: "DJI-SDC-Anschluss (z. B. für Drohnen-Ladegeräte)", q: h}
   - gruppe: Laden
-  - {k: AC-Laden, v: "IMTEST maß 1:10 h", q: im, hinweis: "Eine eindeutige Ladezeit-Angabe von DJI haben wir auf der Datenseite nicht gefunden."}
+  - {k: AC-Laden, v: "IMTEST maß 1:10 h", q: im, hinweis: "Eine eindeutige Ladezeit-Angabe von DJI habe ich auf der Datenseite nicht gefunden."}
   - {k: SDC-Eingang (Solar/Auto), v: "9–28 V, max. 400 W", q: h}
   - {k: Solar, v: "über DJI-MC4-Kabel bis 400 W", q: faq}
   - {k: Auto, v: "Autobatterie-Kabel bis 400 W; Kfz-Steckdose 12 V 120 W / 24 V 240 W", q: faq}
@@ -69,7 +69,7 @@ tests:
     url: "https://www.imtest.de/energie/dji-power-1000-mini-im-test-kleine-powerstation-2026/619685/"
     urteil: "Preis-Leistungs-Sieger der 1000-W-Klasse (keine Einzelnote im Text)"
     text: "Bei rund 80 W Last 9:28 h Laufzeit = 757 Wh. AC-Ladezeit 1:10 h, bis 49 dB beim Laden. Kritik: nur ein Tragegriff an der kurzen Seite, Autoladekabel separat, Solarmodul nicht dabei. Eingebaute Leuchte und App positiv."
-tests_hinweis: "Den ADAC-Test 2025 der **DJI Power 1000** (ohne „Mini“) führen wir bewusst nicht als Testergebnis dieser Station auf."
+tests_hinweis: "Den ADAC-Test 2025 der **DJI Power 1000** (ohne „Mini“) führe ich bewusst nicht als Testergebnis dieser Station auf."
 alternativen:
   - {slug: anker-solix-c1000-gen-2, warum: "Ähnliches Gewicht, aber 2.000 W, vier Steckdosen und 600 W Solar; nicht erweiterbar."}
   - {slug: bluetti-elite-100-v2, warum: "1.800 W und 1.000 W Solar bei gleichem Gewicht, aber ebenfalls nur zwei Steckdosen."}

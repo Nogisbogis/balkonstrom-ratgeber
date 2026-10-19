@@ -7,7 +7,7 @@ lastmod: 2026-10-19
 description: "Anker SOLIX C300X (288 Wh, 300 W, 2 × 140 W USB-C): technische Daten aus Produktseite und Datenblatt mit Quellen, Widersprüche in den Angaben, Stärken, Schwächen, Alternativen."
 kurzzeile: "288 Wh, 300 W, 2 × 140 W USB-C – noch kein unabhängiger Test"
 kurzfazit: |
-  Die C300X ist eine kleine 288-Wh-Station mit LiFePO4, zwei 230-V-Steckdosen und zwei USB-C-Ports mit je 140 W. Laut Anker ist sie in 50 Minuten zu 80 % geladen und gibt 5 Jahre Garantie. Solar geht nur bis 100 W. Einen unabhängigen Test genau dieser AC-Variante haben wir nicht gefunden. Datenblatt und Handbuch widersprechen sich außerdem beim Gewicht und bei der USV-Zeit.
+  Die C300X ist eine kleine 288-Wh-Station mit LiFePO4, zwei 230-V-Steckdosen und zwei USB-C-Ports mit je 140 W. Laut Anker ist sie in 50 Minuten zu 80 % geladen und gibt 5 Jahre Garantie. Solar geht nur bis 100 W. Einen unabhängigen Test genau dieser AC-Variante habe ich nicht gefunden. Datenblatt und Handbuch widersprechen sich außerdem beim Gewicht und bei der USV-Zeit.
 fuer:
   - "Wer vor allem Laptops, Tablets und Handys per USB-C laden will (2 × 140 W)"
   - "Kleine 230-V-Geräte bis 300 W, z. B. Licht, Ventilator, Router"
@@ -49,8 +49,8 @@ daten:
   - {k: Lieferumfang, v: "Kfz- und Solarkabel separat erhältlich", q: h}
   - {k: Garantie, v: "5 Jahre", q: [h, ds]}
 widersprueche:
-  - {t: "**USV-Zeit:** Das Datenblatt nennt in der Überschrift „UPS 10ms“, im Fließtext „under 20ms“. Wir rechnen im Finder mit dem ungünstigeren Wert (20 ms).", q: ds}
-  - {t: "**Gewicht:** Datenblatt 4 kg, Benutzerhandbuch 4,13 kg. In unserer Tabelle steht der höhere Wert.", q: [ds, hb]}
+  - {t: "**USV-Zeit:** Das Datenblatt nennt in der Überschrift „UPS 10ms“, im Fließtext „under 20ms“. Ich rechne im Finder mit dem ungünstigeren Wert (20 ms).", q: ds}
+  - {t: "**Gewicht:** Datenblatt 4 kg, Benutzerhandbuch 4,13 kg. In meiner Tabelle steht der höhere Wert.", q: [ds, hb]}
 staerken:
   - {t: "Zwei USB-C-Ports mit je 140 W, laden und entladen", q: [h, ds]}
   - {t: "Zwei Steckdosen, obwohl die Station klein ist", q: ds}
@@ -61,7 +61,7 @@ schwaechen:
   - {t: "300 W Dauerleistung; alle Ausgänge zusammen höchstens 360 W", q: ds}
   - {t: "Kfz- und Solarkabel nicht dabei", q: h}
   - {t: "Widersprüchliche Angaben zu USV und Gewicht", q: [ds, hb]}
-tests_hinweis: "**Kein unabhängiger Test gefunden.** Für die AC-Variante C300X haben wir bis zum 19.10.2026 keinen Test von ADAC, Stiftung Warentest, CHIP, COMPUTER BILD, IMTEST oder c't gefunden. Es gibt Tests der USB-only-Variante C300X DC und des Vorgängers C300; die übertragen wir nicht."
+tests_hinweis: "**Kein unabhängiger Test gefunden.** Für die AC-Variante C300X habe ich bis zum 19.10.2026 keinen Test von ADAC, Stiftung Warentest, CHIP, COMPUTER BILD, IMTEST oder c't gefunden. Es gibt Tests der USB-only-Variante C300X DC und des Vorgängers C300; die übertrage ich nicht."
 alternativen:
   - {slug: ecoflow-river-3, warum: "Etwas leichter, im IMTEST-Test „gut (1,95)“, aber nur eine Steckdose und 24 Monate Garantie."}
   - {slug: jackery-explorer-300-plus, warum: "Gleiche Kapazität, getestet von CHIP und IMTEST; Solar ebenfalls nur 100 W."}

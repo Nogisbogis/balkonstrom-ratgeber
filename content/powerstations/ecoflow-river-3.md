@@ -7,7 +7,7 @@ lastmod: 2026-10-19
 description: "EcoFlow RIVER 3 (245 Wh, 300 W, 3,55 kg): technische Daten mit Quellen, Testergebnisse von CHIP und IMTEST, Stärken, Schwächen und Alternativen."
 kurzzeile: "245 Wh, 300 W, 3,55 kg – kleinste Station im Vergleich"
 kurzfazit: |
-  Die RIVER 3 ist die leichteste und kleinste Powerstation in unserem Vergleich: 245 Wh und 300 W Dauerleistung bei 3,55 kg laut EcoFlow. Sie reicht für Handy, Laptop, Licht und Router, aber nicht für Geräte mit Heizelement. IMTEST hat 224 Wh nutzbare Energie und rund eine Stunde Ladezeit gemessen; CHIP bemängelt die wenigen Anschlüsse und kommt nur auf „befriedigend“. Mit 24 Monaten ist die Garantie bei Kauf im EcoFlow-Shop kürzer als bei der RIVER 3 Plus.
+  Die RIVER 3 ist die leichteste und kleinste Powerstation in meinem Vergleich: 245 Wh und 300 W Dauerleistung bei 3,55 kg laut EcoFlow. Sie reicht für Handy, Laptop, Licht und Router, aber nicht für Geräte mit Heizelement. IMTEST hat 224 Wh nutzbare Energie und rund eine Stunde Ladezeit gemessen; CHIP bemängelt die wenigen Anschlüsse und kommt nur auf „befriedigend“. Mit 24 Monaten ist die Garantie bei Kauf im EcoFlow-Shop kürzer als bei der RIVER 3 Plus.
 fuer:
   - "Wochenend-Camping, Festival, Balkon: Handy, Laptop, Kamera-Akkus, LED-Licht"
   - "Router oder kleiner Rechner als Überbrückung bei kurzen Stromausfällen (USV-Umschaltung < 20 ms laut EcoFlow)"

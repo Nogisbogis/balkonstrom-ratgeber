@@ -81,7 +81,7 @@ daten:
 - k: Zertifizierung
   v: VDE-AR-N 4105:2018, EN 50549, IEC 62109, IEC 62619 u. a. (laut Datenblatt)
   q: db
-  hinweis: Ein Einheitenzertifikat selbst haben wir nicht eingesehen.
+  hinweis: Ein Einheitenzertifikat selbst habe ich nicht eingesehen.
 - gruppe: Allgemein
 - k: Schutzart
   v: IP66
@@ -127,7 +127,7 @@ tests:
   datum: 19.03.2026
   url: https://www.test.de/speicher-fuer-balkonkraftwerke-test-6278221-detail/320000039340!4/
   urteil: Note nur im kostenpflichtigen Teil
-  text: 'Im Test mit vier weiteren Speichern (Funktion 60 %, Handhabung 25 %, EMV, Sicherheit und Datenschutz je 5 %). Frei zugänglich: Drei der fünf Geräte erhielten „mangelhaft“, weil sie zu viele elektromagnetische Störsignale aussenden; beim Starkregentest drang bei vier Geräten Wasser in die integrierten Steckdosen. Welche Geräte betroffen sind, steht im kostenpflichtigen Teil; wir haben ihn nicht eingesehen. Frei sichtbar: gemessen 23,7 kg, Off-Grid-Leistung 800 W. Der Bundesverband Steckersolar kritisiert die Abwertungsregel, nach der ein einzelnes schwaches Prüfkriterium das Gesamturteil auf „mangelhaft“ ziehen kann.'
+  text: 'Im Test mit vier weiteren Speichern (Funktion 60 %, Handhabung 25 %, EMV, Sicherheit und Datenschutz je 5 %). Frei zugänglich: Drei der fünf Geräte erhielten „mangelhaft“, weil sie zu viele elektromagnetische Störsignale aussenden; beim Starkregentest drang bei vier Geräten Wasser in die integrierten Steckdosen. Welche Geräte betroffen sind, steht im kostenpflichtigen Teil; ich habe ihn nicht eingesehen. Frei sichtbar: gemessen 23,7 kg, Off-Grid-Leistung 800 W. Der Bundesverband Steckersolar kritisiert die Abwertungsregel, nach der ein einzelnes schwaches Prüfkriterium das Gesamturteil auf „mangelhaft“ ziehen kann.'
 - name: COMPUTER BILD
   datum: 04.12.2025
   url: https://www.computerbild.de/artikel/Tests-Energie-Balkonkraftwerk-Growatt-Nexa-2000-Test-40564259.html

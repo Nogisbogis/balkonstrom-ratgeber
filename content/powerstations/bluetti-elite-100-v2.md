@@ -7,7 +7,7 @@ lastmod: 2026-10-19
 description: "BLUETTI Elite 100 V2 (1.024 Wh, 1.800 W, 1.000 W Solar, 11,5 kg): Daten aus Handbuch und Produktseite mit Quellen, Messwerte aus einem Praxistest, Stärken, Schwächen, Alternativen."
 kurzzeile: "1.024 Wh, 1.800 W, 1.000 W Solar, 11,5 kg"
 kurzfazit: |
-  Die Elite 100 V2 hat 1.024 Wh LiFePO4, 1.800 W Dauerleistung und mit 1.000 W den stärksten Solareingang der 1-kWh-Klasse in unserem Vergleich, bei 11,5 kg. Die USV schaltet laut BLUETTI in höchstens 10 ms um, die Garantie beträgt 5 Jahre. Im Praxistest von smartzone kamen 936 Wh bei 200 W über die Steckdose an, über USB-A deutlich weniger. Nur zwei 230-V-Steckdosen, und einen echten Zusatzakku nennt BLUETTI nicht.
+  Die Elite 100 V2 hat 1.024 Wh LiFePO4, 1.800 W Dauerleistung und mit 1.000 W den stärksten Solareingang der 1-kWh-Klasse in meinem Vergleich, bei 11,5 kg. Die USV schaltet laut BLUETTI in höchstens 10 ms um, die Garantie beträgt 5 Jahre. Im Praxistest von smartzone kamen 936 Wh bei 200 W über die Steckdose an, über USB-A deutlich weniger. Nur zwei 230-V-Steckdosen, und einen echten Zusatzakku nennt BLUETTI nicht.
 fuer:
   - "Solar-Camping und Van mit großen Panels: bis 1.000 W, 12–60 V"
   - "Notstrom mit USV ≤ 10 ms"
@@ -67,8 +67,8 @@ tests:
     datum: "03.07.2025"
     url: "https://www.smartzone.de/bluetti-elite-100-v2-test/"
     urteil: "Praxistest, keine Note"
-    text: "Gemessen: 936 Wh bei 200 W und 903 Wh bei 1.800 W über AC, 842 Wh über USB-C, 680 Wh über USB-A (12 W). Schnellladung in 70 min, max. 48–49 dB(A) in 1 m. Die USV überbrückte im Test mit PC und TV. smartzone ist wie wir eine Seite mit Affiliate-Links; wir übernehmen nur die Messwerte."
-tests_hinweis: "Von ADAC, Stiftung Warentest, CHIP oder COMPUTER BILD haben wir zur Elite 100 V2 bis zum 19.10.2026 keinen Test gefunden."
+    text: "Gemessen: 936 Wh bei 200 W und 903 Wh bei 1.800 W über AC, 842 Wh über USB-C, 680 Wh über USB-A (12 W). Schnellladung in 70 min, max. 48–49 dB(A) in 1 m. Die USV überbrückte im Test mit PC und TV. smartzone nutzt wie diese Seite Affiliate-Links; ich übernehme nur die Messwerte."
+tests_hinweis: "Von ADAC, Stiftung Warentest, CHIP oder COMPUTER BILD habe ich zur Elite 100 V2 bis zum 19.10.2026 keinen Test gefunden."
 alternativen:
   - {slug: ecoflow-delta-3-plus, warum: "Gleiche Solarleistung, vier Steckdosen, erweiterbar, ADAC 2,1; 1 kg schwerer."}
   - {slug: anker-solix-c1000-gen-2, warum: "2.000 W und vier Steckdosen, CHIP „gut (2,2)“; Solar 600 W."}
