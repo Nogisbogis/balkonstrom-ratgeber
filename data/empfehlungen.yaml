@@ -1,0 +1,18 @@
+# Startseite „Meine Empfehlungen nach Einsatz“.
+# Nur Empfehlungen, die bereits in einem Artikel stehen bzw. dort belegt sind (Feld beleg).
+- einsatz: Camping klein
+  modell: EcoFlow RIVER 3
+  grund: Laut EcoFlow die leichteste Station im Vergleich (3,55 kg) – genug für Handy, Licht und Laptop am Wochenende.
+  beleg: /posts/powerstation-camping-kaufberatung/
+- einsatz: Camping & Van groß
+  modell: EcoFlow DELTA 3 Plus
+  grund: 1-kWh-Klasse für Kühlbox und mehrere Tage; im ADAC-Test 2025 mit 2,1 Zweite.
+  beleg: /posts/powerstation-camping-kaufberatung/
+- einsatz: Notstrom
+  modell: Anker SOLIX C1000 Gen 2
+  grund: 2.000 W Dauerleistung und USV-Umschaltung in ≤ 10 ms laut Anker – genug für Geräte mit Heizelement, die laut BBK 1.500–2.000 W brauchen.
+  beleg: /posts/powerstation-notstrom-blackout/
+- einsatz: Balkon mit Speicher
+  modell: Anker SOLIX Solarbank 2 E1600 Pro
+  grund: Laut COMPUTER BILD der erste Balkonspeicher mit „sehr gut“; 4 MPPT und eine 1.000-W-Notstromsteckdose laut Anker. Vorher rechnen, ob sich der Speicher lohnt.
+  beleg: /posts/balkonkraftwerk-mit-speicher-lohnt-sich/

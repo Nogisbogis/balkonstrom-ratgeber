@@ -4,6 +4,10 @@ defaultContentLanguage = "de"
 title = "Balkonstrom-Ratgeber"
 enableRobotsTXT = true
 disableKinds = ["taxonomy", "term"]
+enableGitInfo = true
+
+[frontmatter]
+  lastmod = [":git", "lastmod", ":default"]
 
 [params]
   description = "Unabhängige Ratgeber, Vergleiche und Tipps zu Balkonkraftwerken und Powerstations."
@@ -12,6 +16,7 @@ disableKinds = ["taxonomy", "term"]
   # Alternativ hier fest eintragen, z. B. partnerTag = "meintag-21".
   partnerTag = ""
   noindex = false
+  author = "Paul Klamt"
   disclosure = "Werbung / Affiliate-Links: Als Amazon-Partner verdiene ich an qualifizierten Verkäufen."
 
 [pagination]

@@ -3,7 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-{{- $title := cond .IsHome (printf "%s – Balkonkraftwerke & Powerstations" site.Title) (printf "%s – %s" .Title site.Title) }}
+{{- $title := cond .IsHome (printf "%s – Balkonkraftwerke & Powerstations" site.Title) (printf "%s – %s" (.Params.seotitle | default .Title) site.Title) }}
+{{- if and (not .IsHome) (gt (strings.RuneCount $title) 60) }}{{ $title = .Params.seotitle | default .Title }}{{ end }}
 {{- $desc := "" }}
 {{- with .Description }}{{ $desc = . }}{{ else }}{{ if .IsHome }}{{ $desc = site.Params.description }}{{ else }}{{ with .Summary }}{{ $desc = . | plainify | htmlUnescape | truncate 160 }}{{ else }}{{ $desc = site.Params.description }}{{ end }}{{ end }}{{ end }}
 {{- $og := .Params.ogImage | default "img/og-default.jpg" }}
@@ -37,6 +38,10 @@
 <meta name="twitter:title" content="{{ cond .IsHome site.Title .Title }}">
 <meta name="twitter:description" content="{{ $desc }}">
 <meta name="twitter:image" content="{{ $og | absURL }}">
+{{- if and .IsPage (eq .Section "posts") }}
+{{- $ld := dict "@context" "https://schema.org" "@type" "Article" "headline" .Title "description" $desc "datePublished" (.Date.Format "2006-01-02") "dateModified" (.Lastmod.Format "2006-01-02") "inLanguage" "de-DE" "image" ($og | absURL) "mainEntityOfPage" .Permalink "author" (dict "@type" "Person" "name" site.Params.author "url" ("methodik/" | absURL)) "publisher" (dict "@type" "Organization" "name" site.Title "url" site.Home.Permalink "logo" (dict "@type" "ImageObject" "url" ("favicon.svg" | absURL))) }}
+<script type="application/ld+json">{{ $ld | jsonify | safeJS }}</script>
+{{- end }}
 {{- $css := resources.Get "style.css" | minify | fingerprint }}
 <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
 </head>

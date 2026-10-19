@@ -2,9 +2,9 @@
 <aside class="kurzbox" aria-labelledby="kurz-titel">
   <h2 id="kurz-titel">Kurz &amp; knapp</h2>
   <ul>{{ range . }}<li>{{ . | $.RenderString }}</li>{{ end }}</ul>
-  {{- with $.Params.empfehlung }}
-  <h3>Unsere Empfehlung je Einsatz</h3>
+  {{- if not $.Params.top_empfehlung }}{{ with $.Params.empfehlung }}
+  <h3>Meine Empfehlung je Einsatz</h3>
   <dl class="empfehlung">{{ range . }}<div><dt>{{ .einsatz }}</dt><dd>{{ .text | $.RenderString }}</dd></div>{{ end }}</dl>
-  {{- end }}
+  {{- end }}{{ end }}
 </aside>
 {{- end }}

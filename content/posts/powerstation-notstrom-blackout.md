@@ -1,5 +1,6 @@
 +++
 title = 'Powerstation als Notstrom: Was sie bei einem Stromausfall kann – und was nicht'
+seotitle = "Powerstation als Notstrom: Was sie bei Stromausfall kann"
 date = '2026-10-19'
 description = 'Eine Powerstation überbrückt einen Stromausfall für einzelne Geräte – mehr nicht. Was sie für Router, Licht und Kühlschrank leisten kann, wie die USV-Funktion funktioniert und wo die Grenzen liegen.'
 draft = false
@@ -16,24 +17,28 @@ kurz = [
   a = 'Nicht über die Steckdose. Eine Powerstation versorgt die Geräte, die du direkt anschließt. Wer ins Hausnetz einspeisen will, muss laut BBK einen Elektrofachbetrieb beauftragen; Arbeiten an der Hausinstallation dürfen nur Fachbetriebe ausführen.'
 [[faq]]
   f = 'Wie schnell schaltet eine Powerstation bei Stromausfall um?'
-  a = 'Die Hersteller in unserem Vergleich nennen 10 bis 20 ms. Jackery weist ausdrücklich darauf hin, dass das keine 0-ms-USV ist und nicht für Server oder Workstations gedacht ist.'
+  a = 'Die Hersteller in meinem Vergleich nennen 10 bis 20 ms. Jackery weist ausdrücklich darauf hin, dass das keine 0-ms-USV ist und nicht für Server oder Workstations gedacht ist.'
 [[faq]]
   f = 'Wie lange hält eine Powerstation bei Stromausfall?'
   a = 'Das hängt von Kapazität und Verbrauch ab: nutzbare Wattstunden geteilt durch die Leistung der Geräte. Tests zeigen, dass nicht die volle Nennkapazität nutzbar ist. Der [Laufzeitrechner](/laufzeitrechner/) rechnet es für deine Geräte aus.'
 [[faq]]
   f = 'Muss ich die Powerstation für den Notfall regelmäßig laden?'
   a = 'Ja. Batteriesysteme entladen sich mit der Zeit selbst; das BBK rät, sie regelmäßig zu überprüfen und gegebenenfalls nachzuladen. Beachte auch die Lagertemperaturen im Datenblatt.'
+[[top_empfehlung]]
+  einsatz = 'Router, Licht, Kühlschrank – und kurz auch Geräte mit Heizelement'
+  modell = 'Anker SOLIX C1000 Gen 2'
+  grund = '2.000 W Dauerleistung und USV-Umschaltung in ≤ 10 ms laut Anker. Geräte mit Heizelement brauchen laut BBK 1.500–2.000 W.'
 +++
 
 Wenn der Strom ausfällt, sind Licht, Router, Kühlschrank und Heizungssteuerung als Erstes weg. Eine Powerstation kann einzelne Geräte für eine Weile weiterbetreiben. Sie ist aber kein Notstromaggregat fürs ganze Haus. Hier steht, was die Geräte laut Herstellern und unabhängigen Tests leisten. Die Einordnung stützt sich auf den Ratgeber „Stromausfall“ des Bundesamts für Bevölkerungsschutz und Katastrophenhilfe (BBK).
 
-*Wir haben die Geräte nicht selbst getestet. Alle Werte stammen aus den verlinkten Quellen.*
+*Ich habe die Geräte nicht selbst getestet. Alle Werte stammen aus den verlinkten Quellen.*
 
 ## Was eine Powerstation im Stromausfall leisten kann
 
 Das BBK nennt Batteriesysteme ausdrücklich als Möglichkeit, sie „können als Kurzzeitenergiespeicher zur Notstromversorgung genutzt werden“. Ein Wechselrichter erzeugt daraus 230 V. Die wesentlichen Kenngrößen sind laut BBK **Leistung und Kapazität**. Genau diese beiden Werte stehen bei jeder Powerstation im Datenblatt:
 
-- **Dauerleistung (W):** was gleichzeitig laufen darf. In unserem Vergleich reicht die Spanne von 300 W (EcoFlow RIVER 3) bis 2.400 W (Anker SOLIX C2000 Gen 2).
+- **Dauerleistung (W):** was gleichzeitig laufen darf. In meinem Vergleich reicht die Spanne von 300 W (EcoFlow RIVER 3) bis 2.400 W (Anker SOLIX C2000 Gen 2).
 - **Kapazität (Wh):** wie lange es läuft. Die Spanne reicht von 245 Wh bis 2.048 Wh.
 
 Anders als Benzin- oder Dieselgeneratoren erzeugen Powerstations keine Abgase. Generatoren dürfen laut BBK wegen Erstickungsgefahr nicht in Innenräumen betrieben werden.
@@ -48,7 +53,7 @@ Anders als Benzin- oder Dieselgeneratoren erzeugen Powerstations keine Abgase. G
 
 ## Die USV-Funktion: 10 bis 20 Millisekunden
 
-Viele Powerstations können zwischen Steckdose und Gerät hängen und bei einem Stromausfall selbst übernehmen. Die Hersteller nennen für die Modelle in unserem Vergleich diese Umschaltzeiten:
+Viele Powerstations können zwischen Steckdose und Gerät hängen und bei einem Stromausfall selbst übernehmen. Die Hersteller nennen für die Modelle in meinem Vergleich diese Umschaltzeiten:
 
 | Umschaltzeit laut Hersteller | Modelle |
 |---|---|
@@ -78,7 +83,7 @@ Mit dem [Laufzeitrechner](/laufzeitrechner/) trägst du deine Geräte ein und si
 
 - **Geladen halten:** Batteriesysteme entladen sich laut BBK mit der Zeit selbst. Sie sollten regelmäßig überprüft und gegebenenfalls nachgeladen werden.
 - **Lagertemperatur beachten:** Jackery nennt für die Explorer 1000 v2 bei Lagerung über ein Jahr 0 bis 25 °C.
-- **Nachladen ohne Netz:** Mit einem Solarpanel lässt sich nachladen, wenn das Wetter mitspielt. Was dabei zu beachten ist, erklärt unser Artikel [Powerstation mit Solarpanel kombinieren](/posts/powerstation-solarpanel-kombinieren/).
+- **Nachladen ohne Netz:** Mit einem Solarpanel lässt sich nachladen, wenn das Wetter mitspielt. Was dabei zu beachten ist, erklärt mein Artikel [Powerstation mit Solarpanel kombinieren](/posts/powerstation-solarpanel-kombinieren/).
 - **Nicht nur Strom:** Das BBK empfiehlt unter anderem ein batteriebetriebenes Radio, um im Stromausfall informiert zu bleiben.
 
 {{< produkte art="ps" modelle="DJI Power 1000 Mini|BLUETTI Elite 100 V2|EcoFlow RIVER 3 Plus" hinweis="EcoFlow RIVER 3 Plus=Laut EcoFlow seit 30.01.2026 in Deutschland ausgelaufen; Garantie und Support laufen weiter." >}}

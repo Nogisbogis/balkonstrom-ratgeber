@@ -1,18 +1,58 @@
 {{ define "main" }}
-<section class="hero">
-  <h1>{{ site.Title }}</h1>
-  <p class="lead">Ratgeber zu Balkonkraftwerken, Speichern und Powerstations – mit Herstellerdaten und Quellen, ohne erfundene Tests.</p>
+<section class="hero hero-neu">
+  <div class="hero-text">
+    <h1>Strom, wenn du ihn brauchst – auf dem Balkon, im Camper, beim Stromausfall.</h1>
+    <p class="lead">Finde in 2 Minuten das Gerät, das wirklich zu dir passt.</p>
+    <p class="hero-cta"><a class="btn btn-gross" href="{{ "powerstation-finder/" | relURL }}">Passende Powerstation finden</a> <a class="btn-sec btn-gross" href="{{ "vergleich/" | relURL }}">Alle Modelle vergleichen</a></p>
+  </div>
+  <img class="hero-bild" src="{{ "img/hero-strom.svg" | relURL }}" width="480" height="260" alt="Illustration: Balkon mit Solarmodul, Campingbus und Haus, jeweils mit Akku">
 </section>
+
+<section class="schritte" aria-labelledby="schritte-titel">
+  <h2 id="schritte-titel">In 3 Schritten zur richtigen Powerstation</h2>
+  <ol>
+    <li><strong>Geräte &amp; Watt notieren</strong><span>Was soll laufen, wie lange? Die Watt stehen auf dem Typenschild oder Netzteil.</span></li>
+    <li><strong>Laufzeit rechnen</strong><span>Im <a href="{{ "laufzeitrechner/" | relURL }}">Laufzeitrechner</a> siehst du, wie lange jede Station durchhält.</span></li>
+    <li><strong>Finder oder Vergleich</strong><span>Der <a href="{{ "powerstation-finder/" | relURL }}">Finder</a> schlägt passende Modelle vor, der <a href="{{ "vergleich/" | relURL }}">Vergleich</a> zeigt alle Daten mit Quelle.</span></li>
+  </ol>
+</section>
+
+<h2 id="werkzeuge" class="abschnitt">Werkzeuge</h2>
 {{ partial "tool-tiles.html" . }}
+
+{{- with hugo.Data.empfehlungen }}
+<section class="empf-home" aria-labelledby="empf-home-titel">
+  <h2 id="empf-home-titel">Meine Empfehlungen nach Einsatz</h2>
+  {{ partial "disclosure-box.html" . }}
+  <ul class="empf-list empf-grid">{{ range . }}{{ partial "empfehlung-item.html" (dict "modell" .modell "grund" .grund "einsatz" .einsatz "ctx" $) }}{{ end }}</ul>
+  <p class="note">Jede Empfehlung stammt aus einem meiner Artikel und stützt sich auf Herstellerdaten oder zitierte Tests. Ich habe die Geräte nicht selbst getestet. Mehr dazu unter <a href="{{ "methodik/" | relURL }}">So arbeite ich</a>.</p>
+</section>
+{{- end }}
+
+<h2 id="themen" class="abschnitt">Themen</h2>
 <nav class="kategorien" aria-label="Kategorien">
   {{ range slice "powerstations" "balkonkraftwerke" "ratgeber" }}{{ with site.GetPage (printf "/%s" .) }}
   <a class="kat kat-{{ .Params.kategorie }}" href="{{ .RelPermalink }}"><strong>{{ .Title }}</strong><span>{{ .Params.intro }}</span></a>
   {{ end }}{{ end }}
   <a class="kat kat-vergleich" href="{{ "vergleich/" | relURL }}"><strong>Vergleich</strong><span>Alle Modelle in einer filterbaren Tabelle – nur Herstellerdaten.</span></a>
 </nav>
+
+<section class="trust" aria-labelledby="trust-titel">
+  <h2 id="trust-titel">So arbeite ich</h2>
+  <ul>
+    <li><strong>Herstellerdaten mit Quelle</strong><span>Jede technische Angabe ist mit Datenblatt, Handbuch oder Herstellerseite belegt.</span></li>
+    <li><strong>Unabhängige Tests zitiert</strong><span>Ergebnisse von ADAC, Stiftung Warentest, c't, CHIP und anderen gebe ich mit Link wieder – eigene Tests mache ich nicht.</span></li>
+    <li><strong>Keine gekauften Platzierungen</strong><span>Kein Hersteller bezahlt für Erwähnung, Reihenfolge oder Empfehlung.</span></li>
+    <li><strong>Affiliate transparent, regelmäßig aktualisiert</strong><span>Amazon-Links sind mit * markiert. Jede Seite zeigt, wann sie zuletzt aktualisiert wurde.</span></li>
+  </ul>
+  <p><a href="{{ "methodik/" | relURL }}">Mehr zu Quellen, Empfehlungen und Korrekturen</a></p>
+</section>
+
 {{ $posts := where site.RegularPages "Section" "posts" }}
 <h2 id="artikel">Neueste Artikel</h2>
 {{ with $posts }}
 <ul class="cards">{{ range first 6 .ByDate.Reverse }}{{ partial "card.html" . }}{{ end }}</ul>
 {{ else }}<p class="empty">Bald gibt es hier die ersten Artikel.</p>{{ end }}
+
+{{ partial "faq.html" . }}
 {{ end }}

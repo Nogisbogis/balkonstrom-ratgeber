@@ -1,0 +1,20 @@
+{{- /* Box oben im Artikel: Empfehlung aus dem Artikel (top_empfehlung) oder neutrale Liste der Geräte im Artikel. */ -}}
+{{- if eq .Section "posts" }}
+{{- with .Params.top_empfehlung }}
+<aside class="empfbox" aria-labelledby="empf-titel">
+  <h2 id="empf-titel">Meine Empfehlung</h2>
+  <ul class="empf-list">{{ range . }}{{ partial "empfehlung-item.html" (dict "modell" .modell "grund" .grund "einsatz" .einsatz "ctx" $) }}{{ end }}</ul>
+  <p class="note">Begründung und Alternativen stehen im Artikel. Ich habe die Geräte nicht selbst getestet; die Angaben stammen aus den verlinkten Quellen.</p>
+</aside>
+{{- else }}
+{{- $m := slice }}
+{{- range findRESubmatch `\{\{<\s*produkte[^>]*modelle="([^"]+)"` .RawContent }}{{ range split (index . 1) "|" }}{{ if not (in $m .) }}{{ $m = $m | append . }}{{ end }}{{ end }}{{ end }}
+{{- with $m }}
+<aside class="empfbox" aria-labelledby="empf-titel">
+  <h2 id="empf-titel">Geräte in diesem Artikel</h2>
+  <ul class="empf-list">{{ range . }}{{ partial "empfehlung-item.html" (dict "modell" . "ctx" $) }}{{ end }}</ul>
+  <p class="note">Keine Rangfolge und kein eigener Test – Daten, Tests und Widersprüche stehen auf den Detailseiten.</p>
+</aside>
+{{- end }}
+{{- end }}
+{{- end }}

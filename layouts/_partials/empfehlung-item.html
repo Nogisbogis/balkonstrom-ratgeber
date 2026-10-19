@@ -1,0 +1,11 @@
+{{- /* Erwartet dict: modell, grund, einsatz (optional), ctx */ -}}
+{{- $i := partial "modell-info.html" .modell -}}
+<li class="empf">
+  {{- with .einsatz }}<span class="empf-einsatz">{{ . }}</span>{{ end }}
+  <strong class="empf-modell">{{ with $i.url }}<a href="{{ . }}">{{ $.modell }}</a>{{ else }}{{ $.modell }}{{ end }}</strong>
+  {{- with .grund }}<span class="empf-grund">{{ . | $.ctx.RenderString }}</span>{{ end }}
+  <span class="empf-links">
+  {{- with $i.asin }}<a class="btn btn-amazon" href="{{ partial "amazon-url.html" . }}" rel="sponsored nofollow noopener" target="_blank">Aktuellen Preis bei Amazon ansehen<span class="ad-mark" title="Affiliate-Link">*</span></a>{{ end }}
+  {{- with $i.url }} <a class="btn-sec" href="{{ . }}">Details &amp; Tests</a>{{ end }}
+  </span>
+</li>

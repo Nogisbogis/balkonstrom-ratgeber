@@ -1,5 +1,6 @@
 +++
 title = 'Balkonkraftwerk mit Speicher: Lohnt sich das? Kaufberatung 2026'
+seotitle = "Balkonkraftwerk mit Speicher: Lohnt sich das? (2026)"
 date = '2026-10-19'
 description = 'Wann ein Speicher fürs Balkonkraftwerk wirtschaftlich sinnvoll ist, was der Test der Stiftung Warentest zeigt und worauf du beim Kauf achten solltest.'
 draft = false
@@ -10,7 +11,7 @@ kategorie = 'balkonkraftwerke'
 kurz = [
   'Ein Speicher erhöht den Anteil des Solarstroms, den du selbst nutzt. Er erzeugt keinen zusätzlichen Strom.',
   'Er lohnt sich am ehesten, wenn deine Module tagsüber regelmäßig mehr erzeugen, als du gleichzeitig verbrauchst.',
-  'In unserer Beispielrechnung (nur Annahmen) ergibt sich nur für den Speicher eine Amortisationszeit von etwa sechs bis acht Jahren.',
+  'In meiner Beispielrechnung (nur Annahmen) ergibt sich nur für den Speicher eine Amortisationszeit von etwa sechs bis acht Jahren.',
   'Stiftung Warentest (März 2026): Drei von fünf Balkonkraftwerk-Speichern waren wegen zu starker elektromagnetischer Störungen „mangelhaft“.',
   'Den Speicher im Marktstammdatenregister mit angeben und laut Bundeswirtschaftsministerium zusätzlich beim Netzbetreiber anmelden.',
 ]
@@ -19,7 +20,7 @@ kurz = [
   a = 'Nein. Er verschiebt nur den Zeitpunkt, zu dem der Solarstrom genutzt wird, zum Beispiel vom Mittag in den Abend. Beim Laden und Entladen geht dabei ein Teil der Energie verloren.'
 [[faq]]
   f = 'Wann lohnt sich ein Speicher fürs Balkonkraftwerk?'
-  a = 'Am ehesten, wenn deine Module tagsüber regelmäßig deutlich mehr erzeugen, als du gleichzeitig verbrauchst. In unserer Beispielrechnung (nur Annahmen: 1,92 kWh, 200 volle Zyklen, 90 %, 35 ct/kWh) amortisiert sich der Speicher allein nach etwa sechs bis acht Jahren.'
+  a = 'Am ehesten, wenn deine Module tagsüber regelmäßig deutlich mehr erzeugen, als du gleichzeitig verbrauchst. In meiner Beispielrechnung (nur Annahmen: 1,92 kWh, 200 volle Zyklen, 90 %, 35 ct/kWh) amortisiert sich der Speicher allein nach etwa sechs bis acht Jahren.'
 [[faq]]
   f = 'Was hat die Stiftung Warentest bei Balkonkraftwerk-Speichern festgestellt?'
   a = 'Im Test vom 19.03.2026 waren drei von fünf Speichern „mangelhaft“, weil sie zu starke elektromagnetische Störungen aussandten. Nicht alle lieferten die versprochene Strommenge.'
@@ -84,7 +85,7 @@ Die Stiftung Warentest hat am 19. März 2026 einen Test von fünf Speichern für
 - Nicht alle Geräte lieferten die versprochene Strommenge.
 - Beim Growatt-Speicher drang während der Dichtigkeitsprüfung Wasser in die Steckdose.
 
-Welche Modelle genau welche Note bekommen haben, steht im kostenpflichtigen Teil des Tests. Wir nennen deshalb hier keine Testsieger.
+Welche Modelle genau welche Note bekommen haben, steht im kostenpflichtigen Teil des Tests. Ich nenne deshalb hier keine Testsieger.
 
 ## Worauf du beim Kauf achten solltest
 
@@ -106,15 +107,15 @@ Welche Modelle genau welche Note bekommen haben, steht im kostenpflichtigen Teil
 
 Ein Balkonkraftwerk muss im Marktstammdatenregister der Bundesnetzagentur registriert werden. Einen Speicher gibst du dort mit an: Im Registrierungsformular fragt das Register, ob du zusätzlich einen Stromspeicher betreibst, und erfasst dann dessen technische Daten.
 
-Laut der Kurzinformation des Bundeswirtschaftsministeriums (Stand März 2026) muss ein Speicher außerdem beim Netzbetreiber angemeldet werden – anders als das Balkonkraftwerk selbst. Frag im Zweifel bei deinem Netzbetreiber nach, welches Formular er dafür nutzt. Alles Weitere zu Anmeldung, 800-Watt-Grenze und Steckdose steht in unserem Artikel zur Anmeldung.
+Laut der Kurzinformation des Bundeswirtschaftsministeriums (Stand März 2026) muss ein Speicher außerdem beim Netzbetreiber angemeldet werden – anders als das Balkonkraftwerk selbst. Frag im Zweifel bei deinem Netzbetreiber nach, welches Formular er dafür nutzt. Alles Weitere zu Anmeldung, 800-Watt-Grenze und Steckdose steht in meinem Artikel zur Anmeldung.
 
 ## Modelle im Überblick
 
-Technische Daten zu aktuellen Speichern – Kapazität, PV-Eingang, Ausgangsleistung, jeweils mit Herstellerquelle – findest du in unserem [Vergleich](/vergleich/#balkonkraftwerke). Drei Beispiele aus der Tabelle, für die es ein Angebot auf Amazon gibt:
+Technische Daten zu aktuellen Speichern – Kapazität, PV-Eingang, Ausgangsleistung, jeweils mit Herstellerquelle – findest du in meinem [Vergleich](/vergleich/#balkonkraftwerke). Drei Beispiele aus der Tabelle, für die es ein Angebot auf Amazon gibt:
 
 {{< produkte art="bkw" modelle="Anker SOLIX Solarbank 2 E1600 Pro|EcoFlow STREAM Ultra|Growatt NEXA 2000" >}}
 
-Die Auswahl ist keine Empfehlung im Sinne eines Testergebnisses – wir haben die Geräte nicht selbst geprüft.
+Die Auswahl ist keine Empfehlung im Sinne eines Testergebnisses – ich habe die Geräte nicht selbst geprüft.
 
 ## Fazit
 

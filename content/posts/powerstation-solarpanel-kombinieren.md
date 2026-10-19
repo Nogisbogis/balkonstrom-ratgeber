@@ -1,5 +1,6 @@
 +++
 title = 'Powerstation mit Solarpanel kombinieren: Spannung, Stecker, Leistung'
+seotitle = "Powerstation mit Solarpanel kombinieren: So geht's"
 date = '2026-10-19'
 description = 'Welches Solarpanel passt an welche Powerstation? Spannungsbereich, Strom, maximale Leistung, Stecker (XT60, DC8020, SDC, USB-C), Reihen- oder Parallelschaltung und warum die Leerlaufspannung im Winter steigt.'
 draft = false
@@ -13,7 +14,7 @@ kurz = [
 ]
 [[faq]]
   f = 'Welches Solarpanel passt zu meiner Powerstation?'
-  a = 'Eines, dessen Spannung im Eingangsbereich der Powerstation liegt, dessen Strom den Grenzwert nicht überschreitet und dessen Stecker passt. Die maximale Solarleistung bestimmt, wie viel die Station höchstens aufnimmt. Die Werte für die zehn Modelle aus unserem Vergleich stehen in der Tabelle im Artikel.'
+  a = 'Eines, dessen Spannung im Eingangsbereich der Powerstation liegt, dessen Strom den Grenzwert nicht überschreitet und dessen Stecker passt. Die maximale Solarleistung bestimmt, wie viel die Station höchstens aufnimmt. Die Werte für die zehn Modelle aus meinem Vergleich stehen in der Tabelle im Artikel.'
 [[faq]]
   f = 'Reihe oder parallel – wie schließe ich zwei Panels an?'
   a = 'In Reihe addieren sich die Spannungen, parallel die Ströme. Bei Reihenschaltung muss die summierte Leerlaufspannung auch bei Kälte unter der Höchstspannung des Eingangs bleiben. Manche Geräte schreiben eine Schaltung vor: Bei der Jackery Explorer 1000 v2 sind die beiden Eingänge parallel geschaltet, und Jackery verlangt gleiche Panels.'
@@ -22,9 +23,9 @@ kurz = [
   a = 'Laut SMA-Planungsleitfaden ist die Leerlaufspannung bei niedrigen Temperaturen am höchsten. Wer nahe an der Höchstspannung des Eingangs plant, kann sie an einem kalten, sonnigen Tag überschreiten.'
 +++
 
-Ein Solarpanel macht eine Powerstation unabhängig von der Steckdose. Damit das funktioniert, muss das Panel elektrisch und mechanisch zum Solareingang passen. Hier sind die drei wichtigsten Werte, die Steckerfrage und die Daten der zehn Modelle aus unserem Vergleich.
+Ein Solarpanel macht eine Powerstation unabhängig von der Steckdose. Damit das funktioniert, muss das Panel elektrisch und mechanisch zum Solareingang passen. Hier sind die drei wichtigsten Werte, die Steckerfrage und die Daten der zehn Modelle aus meinem Vergleich.
 
-*Alle Gerätewerte sind Herstellerangaben, verlinkt auf den [Produktseiten](/powerstations/#modelle). Wir haben keine eigenen Ladetests gemacht.*
+*Alle Gerätewerte sind Herstellerangaben, verlinkt auf den [Produktseiten](/powerstations/#modelle). Ich habe keine eigenen Ladetests gemacht.*
 
 ## Die drei Werte, die passen müssen
 
@@ -60,7 +61,7 @@ Manche Hersteller schreiben Regeln vor. Bei der **Jackery Explorer 1000 v2** sin
 | [Jackery Explorer 1000 v2](/powerstations/jackery-explorer-1000-v2/) | 16–60 V | 10,5 A je Port / 21 A gesamt | 200 W je Port / 400 W gesamt | 2 × DC8020, parallel |
 | [Anker SOLIX C2000 Gen 2](/powerstations/anker-solix-c2000-gen-2/) | 11–28 V / 28–60 V | 8,2 A / 17 A | 800 W | XT-60i |
 
-„–“ heißt: Den Wert haben wir in den Herstellerquellen nicht gefunden. Ein Beispiel für die Stromgrenze: Bei der Anker C2000 Gen 2 sind laut Anleitung unter 28 V höchstens 8,2 A erlaubt, das sind bei 28 V rund 230 W. Die vollen 800 W gibt es also nur im oberen Spannungsbereich.
+„–“ heißt: Den Wert habe ich in den Herstellerquellen nicht gefunden. Ein Beispiel für die Stromgrenze: Bei der Anker C2000 Gen 2 sind laut Anleitung unter 28 V höchstens 8,2 A erlaubt, das sind bei 28 V rund 230 W. Die vollen 800 W gibt es also nur im oberen Spannungsbereich.
 
 ## Stecker und Adapter
 

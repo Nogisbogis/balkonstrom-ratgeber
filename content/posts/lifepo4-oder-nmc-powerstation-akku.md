@@ -9,7 +9,7 @@ kurz = [
   '**Sicherheit:** In einer KIT-Studie gingen LFP-Zellen beim Nageltest nie in den thermischen Durchgang, NMC- und NCA-Zellen ab 30 % Ladung schon.',
   '**Energiedichte:** Die LFP-Zelle im selben 21700-Format speicherte dort 9,9 Wh, NMC und NCA 18 Wh. LFP-Geräte sind daher größer und schwerer.',
   '**Garantie:** Anker gibt in der EU 5 Jahre auf Powerstations mit LiFePO4-Akku, 1,5 Jahre auf ältere Modelle mit NMC-Akku.',
-  'Alle zehn Powerstations in unserem Vergleich nutzen LiFePO4.',
+  'Alle zehn Powerstations in meinem Vergleich nutzen LiFePO4.',
 ]
 [[faq]]
   f = 'Ist LiFePO4 sicherer als NMC?'
@@ -22,9 +22,9 @@ kurz = [
   a = 'Nach 4.000 vollen Lade- und Entladezyklen soll laut Hersteller noch 80 % der ursprünglichen Kapazität vorhanden sein. Jackery gibt für die Explorer 1000 v2 dagegen 4.000 Zyklen bis 70 % an. Die Werte sind nur vergleichbar, wenn die Restkapazität gleich ist.'
 +++
 
-Fast jede neue Powerstation wirbt mit „LiFePO4“. Ältere Geräte und viele Powerbanks nutzen dagegen NMC-Zellen. Was steckt hinter den Kürzeln, und spielt es für dich eine Rolle? Hier fassen wir zusammen, was eine Laborstudie des Karlsruher Instituts für Technologie (KIT) und die Herstellerangaben dazu sagen.
+Fast jede neue Powerstation wirbt mit „LiFePO4“. Ältere Geräte und viele Powerbanks nutzen dagegen NMC-Zellen. Was steckt hinter den Kürzeln, und spielt es für dich eine Rolle? Hier fasse ich zusammen, was eine Laborstudie des Karlsruher Instituts für Technologie (KIT) und die Herstellerangaben dazu sagen.
 
-*Wir haben keine eigenen Messungen gemacht. Die Zahlen stammen aus den verlinkten Quellen.*
+*Ich habe keine eigenen Messungen gemacht. Die Zahlen stammen aus den verlinkten Quellen.*
 
 ## Was die Kürzel bedeuten
 
@@ -57,30 +57,30 @@ Die Sicherheit hat laut KIT einen Preis. Im 21700-Format war die LFP-Zelle nur m
 | NMC / NCA | 5 Ah | 3,6 V | 18 Wh |
 | LFP | 3 Ah | 3,3 V | 9,9 Wh |
 
-Für dieselbe Kapazität braucht ein LFP-Gerät also mehr Zellen und wird größer und schwerer. Bei den Powerstations in unserem Vergleich liegt die Energiedichte des ganzen Geräts, also Kapazität geteilt durch Gewicht laut Hersteller, zwischen rund 61 Wh/kg (EcoFlow RIVER 3 Plus) und rund 108 Wh/kg (Anker SOLIX C2000 Gen 2). Darin stecken neben den Zellen auch Gehäuse, Wechselrichter und Lüfter. Große Geräte schneiden deshalb meist besser ab.
+Für dieselbe Kapazität braucht ein LFP-Gerät also mehr Zellen und wird größer und schwerer. Bei den Powerstations in meinem Vergleich liegt die Energiedichte des ganzen Geräts, also Kapazität geteilt durch Gewicht laut Hersteller, zwischen rund 61 Wh/kg (EcoFlow RIVER 3 Plus) und rund 108 Wh/kg (Anker SOLIX C2000 Gen 2). Darin stecken neben den Zellen auch Gehäuse, Wechselrichter und Lüfter. Große Geräte schneiden deshalb meist besser ab.
 
 {{< produkte art="ps" modelle="EcoFlow RIVER 3|Jackery Explorer 300 Plus|Anker SOLIX C2000 Gen 2" >}}
 
 ## Lebensdauer: Zyklenangaben richtig lesen
 
-Die Hersteller der LFP-Powerstations in unserem Vergleich geben 3.000 bis 4.000 Ladezyklen an. Achte darauf, worauf sich die Zahl bezieht:
+Die Hersteller der LFP-Powerstations in meinem Vergleich geben 3.000 bis 4.000 Ladezyklen an. Achte darauf, worauf sich die Zahl bezieht:
 
 - EcoFlow RIVER 3: 3.000 Zyklen bis 80 % Restkapazität
 - Anker SOLIX C1000 Gen 2: 4.000 Zyklen bis mindestens 80 %
 - DJI Power 1000 Mini: 4.000 Zyklen, danach über 80 %, gemessen bei 25 °C und 400 W Entladung
 - Jackery Explorer 1000 v2: 4.000 Zyklen bis **70 %**
 
-Eine Angabe „bis 70 %“ ist nicht mit „bis 80 %“ vergleichbar. Unabhängige Langzeittests der Zyklenfestigkeit haben wir für keines der Geräte gefunden. Die Zahlen sind Herstellerangaben.
+Eine Angabe „bis 70 %“ ist nicht mit „bis 80 %“ vergleichbar. Unabhängige Langzeittests der Zyklenfestigkeit habe ich für keines der Geräte gefunden. Die Zahlen sind Herstellerangaben.
 
 Ein indirektes Indiz liefert die Garantie. Anker staffelt sie in der EU ausdrücklich nach Zellchemie: **5 Jahre für Modelle mit LiFePO4, 1,5 Jahre für Modelle mit NMC-Akku.** Die NMC-Modelle in Ankers Liste sind ältere PowerHouse-Geräte.
 
 ## Temperatur: Laden ab 0 °C
 
-Die meisten Geräte in unserem Vergleich dürfen laut Datenblatt erst ab 0 °C geladen werden. Beispiele sind die EcoFlow RIVER 3, die Jackery-Modelle sowie die Anker C300X, C1000 Gen 2 und C2000 Gen 2. DJI gibt für die Power 1000 Mini −10 bis 45 °C für Betrieb und Laden an. Wer im Winter campt, sollte das Gerät vor dem Laden aufwärmen lassen.
+Die meisten Geräte in meinem Vergleich dürfen laut Datenblatt erst ab 0 °C geladen werden. Beispiele sind die EcoFlow RIVER 3, die Jackery-Modelle sowie die Anker C300X, C1000 Gen 2 und C2000 Gen 2. DJI gibt für die Power 1000 Mini −10 bis 45 °C für Betrieb und Laden an. Wer im Winter campt, sollte das Gerät vor dem Laden aufwärmen lassen.
 
 ## Was heißt das für den Kauf?
 
-- **Für Powerstations ist LFP heute Standard.** Alle zehn Modelle in unserem [Vergleich](/vergleich/#powerstations) nutzen LiFePO4. NMC begegnet dir vor allem bei älteren oder sehr leichten Geräten und Powerbanks.
+- **Für Powerstations ist LFP heute Standard.** Alle zehn Modelle in meinem [Vergleich](/vergleich/#powerstations) nutzen LiFePO4. NMC begegnet dir vor allem bei älteren oder sehr leichten Geräten und Powerbanks.
 - **Wenn Gewicht alles ist**, kann NMC Vorteile haben. Prüfe dann besonders die Garantie und unabhängige Sicherheitstests.
 - **Zyklenangaben** nur bei gleicher Restkapazität vergleichen.
 - **Die Zellchemie ersetzt keinen Gerätetest.** Auf den [Produktseiten](/powerstations/#modelle) stehen die Testergebnisse je Modell.

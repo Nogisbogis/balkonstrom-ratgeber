@@ -1,5 +1,6 @@
 +++
 title = 'Beste Powerstation fürs Camping: worauf es ankommt (mit Vergleich)'
+seotitle = "Beste Powerstation fürs Camping: Kaufberatung"
 date = '2026-10-19'
 description = 'Kapazität, Dauerleistung, Gewicht, Solareingang und Sicherheit: So findest du die passende Powerstation fürs Camping – mit Herstellerdaten und unabhängigen Testergebnissen.'
 draft = false
@@ -34,6 +35,18 @@ kurz = [
 [[faq]]
   f = 'Darf ich gleichzeitig über Solar und Auto laden?'
   a = 'Bei Geräten mit nicht entkoppelten DC-Eingängen nicht. Der ADAC hat die Jackery Explorer 1000 v2 und die Ective BlackBox 10 deshalb 2025 mit „mangelhaft“ bewertet; es drohen Schäden am 12-V-Bordnetz.'
+[[top_empfehlung]]
+  einsatz = 'Handy, Licht und Laptop am Wochenende'
+  modell = 'EcoFlow RIVER 3'
+  grund = 'Laut EcoFlow die leichteste Station im Vergleich (3,55 kg).'
+[[top_empfehlung]]
+  einsatz = 'Kühlbox über mehrere Tage oder Geräte mit Heizelement'
+  modell = 'EcoFlow DELTA 3 Plus'
+  grund = 'Im ADAC-Test 2025 mit 2,1 Zweite.'
+[[top_empfehlung]]
+  einsatz = 'Kühlbox über mehrere Tage oder Geräte mit Heizelement'
+  modell = 'Anker SOLIX C1000 Gen 2'
+  grund = 'Laut Anker die höchste Dauerleistung der 1-kWh-Gruppe (2.000 W).'
 +++
 
 Eine Powerstation ist ein großer Akku mit Steckdosen, USB-Anschlüssen und meist einem Solareingang. Beim Camping versorgt sie Kühlbox, Licht, Handy und Laptop – je nach Größe auch eine Kaffeemaschine. Die „beste“ Powerstation gibt es nicht: Entscheidend ist, was du betreiben willst, wie lange und wie viel du tragen möchtest.
@@ -42,7 +55,7 @@ Eine Powerstation ist ein großer Akku mit Steckdosen, USB-Anschlüssen und meis
 
 Rechne für jedes Gerät: **Leistung in Watt × Stunden pro Tag = Wattstunden pro Tag**. Die Leistung steht auf dem Typenschild oder im Datenblatt. Bei Kühlboxen mit Kompressor geben viele Hersteller den Verbrauch direkt pro 24 Stunden an – dieser Wert ist realistischer als die Nennleistung, weil der Kompressor nicht ständig läuft.
 
-Addiere alles und plane einen Puffer ein: Beim Umwandeln auf 230 V geht Energie verloren, und Hersteller-Kapazitäten werden im Alltag nicht immer erreicht. Der ADAC stellte in seinem Test 2025 fest, dass die mobilen Stromspeicher weniger liefern als von den Herstellern angegeben. Mit unserem [Laufzeitrechner](/laufzeitrechner/) kannst du deine Geräte eintragen und siehst für jedes Modell, ob der Akku reicht.
+Addiere alles und plane einen Puffer ein: Beim Umwandeln auf 230 V geht Energie verloren, und Hersteller-Kapazitäten werden im Alltag nicht immer erreicht. Der ADAC stellte in seinem Test 2025 fest, dass die mobilen Stromspeicher weniger liefern als von den Herstellern angegeben. Mit meinem [Laufzeitrechner](/laufzeitrechner/) kannst du deine Geräte eintragen und siehst für jedes Modell, ob der Akku reicht.
 
 Zur Orientierung: Die Stiftung Warentest hat berechnet, dass eine Powerstation mit 500 Wh ein Smartphone rund 33-mal oder einen Laptop etwa zehnmal laden kann; eine Lichterkette leuchtet damit rund 65 Stunden.
 
@@ -56,7 +69,7 @@ Geräte mit Heizelement – Wasserkocher, Föhn, Kaffeemaschine – haben oft ü
 
 Manche Hersteller bieten Boost-Modi (z. B. „X-Boost“ bei EcoFlow, „SurgePad“ bei Anker), die solche Geräte mit reduzierter Leistung betreiben. Das ist laut Herstellern nur für einfache Heizgeräte gedacht, die dann mit weniger Leistung – also langsamer – arbeiten.
 
-In unserem [Vergleich](/vergleich/#powerstations) steht in der Spalte „Dauerleistung“ immer die Nennleistung ohne Boost oder Spitzenleistung.
+In meinem [Vergleich](/vergleich/#powerstations) steht in der Spalte „Dauerleistung“ immer die Nennleistung ohne Boost oder Spitzenleistung.
 
 {{< grafik src="img/ps-dauerleistung.svg" alt="Balkendiagramm der Dauerleistung laut Hersteller: EcoFlow RIVER 3, Jackery Explorer 300 Plus und Anker SOLIX C300X je 300 W, EcoFlow RIVER 3 Plus 600 W, DJI Power 1000 Mini 800 W, Jackery Explorer 1000 v2 1.500 W, EcoFlow DELTA 3 Plus und BLUETTI Elite 100 V2 je 1.800 W, Anker SOLIX C1000 Gen 2 2.000 W, Anker SOLIX C2000 Gen 2 2.400 W. Eine Linie markiert 1.000 W." caption="Dauerleistung (Nennleistung am 230-V-Ausgang) laut Hersteller. Die gestrichelte Linie bei 1.000 W zeigt, ab wo Geräte mit Heizelement oft liegen." >}}
 
@@ -82,13 +95,13 @@ Wie schnell die Powerstation tatsächlich lädt, hängt vom Wetter, vom Winkel d
 
 ## Schritt 5: Akku und Haltbarkeit
 
-Alle Powerstations in unserem Vergleich verwenden LiFePO4-Zellen (Lithium-Eisenphosphat). Die Hersteller geben 3.000 bis 4.000 Ladezyklen an, nach denen noch 70–80 % der Kapazität vorhanden sein sollen (z. B. EcoFlow RIVER 3: 3.000 Zyklen bis 80 %, Anker SOLIX C1000 Gen 2: 4.000 Zyklen bis 80 %, Jackery Explorer 1000 v2: 4.000 Zyklen bis 70 %). Für Camping, wo man eher selten volle Zyklen fährt, ist das mehr als ausreichend.
+Alle Powerstations in meinem Vergleich verwenden LiFePO4-Zellen (Lithium-Eisenphosphat). Die Hersteller geben 3.000 bis 4.000 Ladezyklen an, nach denen noch 70–80 % der Kapazität vorhanden sein sollen (z. B. EcoFlow RIVER 3: 3.000 Zyklen bis 80 %, Anker SOLIX C1000 Gen 2: 4.000 Zyklen bis 80 %, Jackery Explorer 1000 v2: 4.000 Zyklen bis 70 %). Für Camping, wo man eher selten volle Zyklen fährt, ist das mehr als ausreichend.
 
 Beachte die zulässigen Temperaturen: Laden ist bei den meisten Geräten laut Datenblatt erst ab 0 °C erlaubt.
 
 ## Schritt 6: Fliegen? Geht nicht.
 
-Lufthansa verbietet Geräte und Akkus mit mehr als 160 Wh (Ausnahme: Mobilitätshilfen und medizinische Geräte). Für 100 bis 160 Wh braucht man vorher eine Genehmigung. Selbst die kleinste Powerstation in unserem Vergleich hat 245 Wh. Prüfe bei anderen Airlines deren Regeln, sie orientieren sich in der Regel an denselben Gefahrgutvorschriften.
+Lufthansa verbietet Geräte und Akkus mit mehr als 160 Wh (Ausnahme: Mobilitätshilfen und medizinische Geräte). Für 100 bis 160 Wh braucht man vorher eine Genehmigung. Selbst die kleinste Powerstation in meinem Vergleich hat 245 Wh. Prüfe bei anderen Airlines deren Regeln, sie orientieren sich in der Regel an denselben Gefahrgutvorschriften.
 
 ## Was unabhängige Tests sagen
 
@@ -104,7 +117,7 @@ Lufthansa verbietet Geräte und Akkus mit mehr als 160 Wh (Ausnahme: Mobilitäts
 
 ## Modelle im Überblick
 
-Alle Werte sind Herstellerangaben. Die vollständige, filterbare Tabelle mit Quellen findest du im [Vergleich](/vergleich/#powerstations). Zu jedem Modell gibt es außerdem eine [Detailseite](/powerstations/#modelle) mit allen technischen Daten, Testergebnissen und Widersprüchen zwischen den Quellen. Wir haben keine eigenen Tests durchgeführt. Unsicher? Der [Powerstation-Finder](/powerstation-finder/) schlägt nach vier Fragen passende Modelle vor.
+Alle Werte sind Herstellerangaben. Die vollständige, filterbare Tabelle mit Quellen findest du im [Vergleich](/vergleich/#powerstations). Zu jedem Modell gibt es außerdem eine [Detailseite](/powerstations/#modelle) mit allen technischen Daten, Testergebnissen und Widersprüchen zwischen den Quellen. Ich habe keine eigenen Tests durchgeführt. Unsicher? Der [Powerstation-Finder](/powerstation-finder/) schlägt nach vier Fragen passende Modelle vor.
 
 ### Kleine Geräte (250–300 Wh)
 
@@ -118,7 +131,7 @@ Für Kühlbox, mehrere Tage oder Geräte mit Heizelement. Die EcoFlow DELTA 3 Pl
 
 {{< produkte art="ps" modelle="EcoFlow DELTA 3 Plus|Anker SOLIX C1000 Gen 2|BLUETTI Elite 100 V2|DJI Power 1000 Mini|Jackery Explorer 1000 v2" hinweis="Jackery Explorer 1000 v2=ADAC (06/2025): „mangelhaft“ (5,0) wegen nicht entkoppelter DC-Eingänge. Nicht gleichzeitig über Auto und Solar laden." >}}
 
-Die [Jackery Explorer 1000 v2](/powerstations/jackery-explorer-1000-v2/) führen wir der Vollständigkeit halber auf, ohne Kauflink. Beachte das Ergebnis des ADAC-Tests zu den DC-Eingängen, wenn du sie im Fahrzeug laden willst.
+Die [Jackery Explorer 1000 v2](/powerstations/jackery-explorer-1000-v2/) führe ich der Vollständigkeit halber auf, ohne Kauflink. Beachte das Ergebnis des ADAC-Tests zu den DC-Eingängen, wenn du sie im Fahrzeug laden willst.
 
 ## Fazit
 

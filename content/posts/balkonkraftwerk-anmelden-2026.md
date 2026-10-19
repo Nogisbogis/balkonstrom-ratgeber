@@ -1,5 +1,6 @@
 +++
 title = 'Balkonkraftwerk anmelden 2026: 800-Watt-Regel, Marktstammdatenregister, Steckdose – was gilt'
+seotitle = "Balkonkraftwerk anmelden 2026: 800-W-Regel & MaStR"
 date = '2026-10-19'
 description = 'Die aktuellen Regeln für Balkonkraftwerke in Deutschland: Leistungsgrenzen, Registrierung im Marktstammdatenregister, Zählertausch, Schuko-Stecker nach neuer VDE-Norm sowie Rechte von Mietern und Wohnungseigentümern.'
 draft = false
@@ -67,7 +68,7 @@ Die Bundesnetzagentur stellt dafür eine eigene [Registrierungshilfe für Balkon
 
 {{< grafik src="img/anmelden-mastr-angaben.svg" alt="Fünf Karten mit den Angaben für das Marktstammdatenregister: 1. Standort der Anlage, 2. Datum der Inbetriebnahme, 3. Gesamtleistung der Module in Watt, 4. Leistung des Wechselrichters, 5. Nummer des Stromzählers. Darunter der Hinweis, bei einem Speicher die Frage nach dem Stromspeicher mit Ja zu beantworten." caption="Die fünf Angaben bei der Registrierung laut Registrierungshilfe der Bundesnetzagentur." >}}
 
-**Mit Speicher:** Betreibst du zusätzlich einen Stromspeicher, beantwortest du die entsprechende Frage im Formular mit „Ja“ und gibst die Daten des Speichers mit an. Laut Bundeswirtschaftsministerium muss ein Speicher außerdem beim Netzbetreiber angemeldet werden. Mehr dazu in unserer Kaufberatung zu Balkonkraftwerken mit Speicher.
+**Mit Speicher:** Betreibst du zusätzlich einen Stromspeicher, beantwortest du die entsprechende Frage im Formular mit „Ja“ und gibst die Daten des Speichers mit an. Laut Bundeswirtschaftsministerium muss ein Speicher außerdem beim Netzbetreiber angemeldet werden. Mehr dazu in meiner Kaufberatung zu Balkonkraftwerken mit Speicher.
 
 **Keine Einspeisevergütung:** Wer die Sonderregelung für Steckersolargeräte nutzt, bekommt für den ins Netz eingespeisten Überschuss kein Geld („unentgeltliche Abnahme“).
 
@@ -121,7 +122,7 @@ Das Bundeswirtschaftsministerium empfiehlt, die Pläne frühzeitig mitzuteilen u
 
 {{< grafik src="img/anmelden-ablauf.svg" alt="Ablaufdiagramm in fünf Schritten: 1. Gerät prüfen (Wechselrichter höchstens 800 VA laut Typenschild, Module höchstens 2.000 W, für Schuko höchstens 960 W), 2. Zustimmung von Vermieter oder Eigentümergemeinschaft einholen, 3. sicher montieren und anschließen, 4. innerhalb eines Monats im Marktstammdatenregister registrieren – mit Speicher diesen angeben und beim Netzbetreiber anmelden, 5. Zählertausch durch den Messstellenbetreiber abwarten." caption="Die Checkliste als Ablauf. Der Abzweig gilt nur, wenn du einen Speicher betreibst." >}}
 
-Welche Sets und Speicher es gibt und was sie laut Hersteller leisten, zeigt unser [Vergleich](/vergleich/#balkonkraftwerke).
+Welche Sets und Speicher es gibt und was sie laut Hersteller leisten, zeigt mein [Vergleich](/vergleich/#balkonkraftwerke).
 
 ## Quellen
 
