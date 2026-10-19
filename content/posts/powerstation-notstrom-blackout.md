@@ -2,7 +2,7 @@
 title = 'Powerstation als Notstrom: Was sie bei einem Stromausfall kann – und was nicht'
 date = '2026-10-19'
 description = 'Eine Powerstation überbrückt einen Stromausfall für einzelne Geräte – mehr nicht. Was sie für Router, Licht und Kühlschrank leisten kann, wie die USV-Funktion funktioniert und wo die Grenzen liegen.'
-draft = true
+draft = false
 kategorie = 'powerstations'
 keywords = ['notstrom', 'stromausfall', 'usv']
 kurz = [
@@ -64,11 +64,11 @@ Empfindliche Geräte wie Computer oder Heizungssteuerung brauchen laut BBK eine 
 
 Die Rechnung ist einfach: **nutzbare Wattstunden ÷ Leistung der Geräte = Stunden**. Die nutzbare Energie liegt aber unter der Nennkapazität:
 
-- Der ADAC stellte 2025 fest, dass die nutzbare Kapazität im Schnitt 10 bis 15 % unter der Angabe lag.
+- Der ADAC stellte 2025 fest, dass die nutzbare Nettokapazität im Schnitt „gut 10 bis 15 Prozent“ unter der Bruttokapazität der Hersteller lag.
 - IMTEST maß an der DJI Power 1000 Mini bei rund 80 W Last 757 von 1.008 Wh.
 - Notebookcheck maß an der Anker SOLIX C2000 Gen 2 bei 200 W knapp 79 % nutzbar, bei 1.800 W gut 90 %.
 
-Bei kleiner Dauerlast, wie sie für Router und Licht typisch ist, arbeiten Wechselrichter also oft weniger effizient. Manche Stationen brauchen zudem selbst Strom. Jackery gibt für die Explorer 1000 v2 einen Standby-Verbrauch von 18 W an, der ADAC fand bei manchen Wechselrichtern rund 30 W.
+Bei kleiner Dauerlast, wie sie für Router und Licht typisch ist, arbeiten Wechselrichter also oft weniger effizient. Manche Stationen brauchen zudem selbst Strom. Jackery gibt für die Explorer 1000 v2 einen Standby-Verbrauch von 18 W an. Laut ADAC gehen bei eingeschaltetem Wechselrichter „teils schon 30 Watt verloren“; die Tester raten, ihn auszuschalten, wenn die 230-V-Steckdosen nicht gebraucht werden. Handys und andere USB-Geräte lassen sich direkt an den USB-Ausgängen laden.
 
 Mit dem [Laufzeitrechner](/laufzeitrechner/) trägst du deine Geräte ein und siehst für alle zehn Modelle, wie lange es reicht. Die Annahmen wie Wirkungsgrad und Eigenverbrauch kannst du dort selbst einstellen.
 
@@ -78,7 +78,7 @@ Mit dem [Laufzeitrechner](/laufzeitrechner/) trägst du deine Geräte ein und si
 
 - **Geladen halten:** Batteriesysteme entladen sich laut BBK mit der Zeit selbst. Sie sollten regelmäßig überprüft und gegebenenfalls nachgeladen werden.
 - **Lagertemperatur beachten:** Jackery nennt für die Explorer 1000 v2 bei Lagerung über ein Jahr 0 bis 25 °C.
-- **Nachladen ohne Netz:** Mit einem Solarpanel lässt sich nachladen, wenn das Wetter mitspielt. Was dabei zu beachten ist, erklärt unser Artikel zum Solarpanel.
+- **Nachladen ohne Netz:** Mit einem Solarpanel lässt sich nachladen, wenn das Wetter mitspielt. Was dabei zu beachten ist, erklärt unser Artikel [Powerstation mit Solarpanel kombinieren](/posts/powerstation-solarpanel-kombinieren/).
 - **Nicht nur Strom:** Das BBK empfiehlt unter anderem ein batteriebetriebenes Radio, um im Stromausfall informiert zu bleiben.
 
 {{< produkte art="ps" modelle="DJI Power 1000 Mini|BLUETTI Elite 100 V2|EcoFlow RIVER 3 Plus" hinweis="EcoFlow RIVER 3 Plus=Laut EcoFlow seit 30.01.2026 in Deutschland ausgelaufen; Garantie und Support laufen weiter." >}}
