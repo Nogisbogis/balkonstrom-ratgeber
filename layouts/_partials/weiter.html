@@ -1,0 +1,25 @@
+{{- /* Artikelende: genau ein passendes Werkzeug (vorbefüllt), ein verwandter Artikel, die Empfehlungsbox. */ -}}
+{{- $p := . }}
+{{- with .Params.weiter }}
+<section class="weiter" aria-labelledby="weiter-titel">
+  <h2 id="weiter-titel">Wie geht’s weiter?</h2>
+  <div class="weiter-grid">
+    {{- $tools := dict "laufzeitrechner" "Laufzeitrechner" "finder" "Powerstation-Finder" "amortisationsrechner" "Amortisationsrechner" }}
+    <a class="weiter-tool" href="{{ .url | relURL }}">
+      <span class="label">Selbst rechnen · {{ index $tools .tool }}</span>
+      <strong>{{ .text }}</strong>
+      <span class="weiter-hinweis">Mit Werten aus diesem Artikel vorausgefüllt – du kannst alles ändern.</span>
+      <em aria-hidden="true">→</em>
+    </a>
+    {{- with site.GetPage .artikel }}
+    <a class="weiter-artikel" href="{{ .RelPermalink }}">
+      <span class="label">Weiterlesen</span>
+      <strong>{{ .Title }}</strong>
+      {{ with .Description }}<span class="weiter-hinweis">{{ . }}</span>{{ end }}
+      <em aria-hidden="true">→</em>
+    </a>
+    {{- end }}
+  </div>
+</section>
+{{- end }}
+{{ partial "empfehlungsbox.html" . }}

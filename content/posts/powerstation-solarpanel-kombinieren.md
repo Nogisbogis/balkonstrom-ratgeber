@@ -5,6 +5,10 @@ date = '2026-10-19'
 description = 'Welches Solarpanel passt an welche Powerstation? Spannungsbereich, Strom, maximale Leistung, Stecker (XT60, DC8020, SDC, USB-C), Reihen- oder Parallelschaltung und warum die Leerlaufspannung im Winter steigt.'
 draft = false
 kategorie = 'powerstations'
+kurzgesagt = 'Damit ein Solarpanel an deine Powerstation passt, müssen Spannungsbereich, maximaler Strom und maximale Solarleistung des Eingangs stimmen. Die Leerlaufspannung ist bei Kälte am höchsten und muss auch im Winter unter der Höchstspannung des Eingangs bleiben. Oft brauchst du ein Adapterkabel vom Hersteller.'
+fuer_dich = ['du unabhängig von der Steckdose nachladen willst.', 'die Leerlaufspannung deines Panels auch bei Kälte unter der Höchstspannung des Eingangs liegt.', 'du einen passenden Stecker oder ein Adapterkabel vom Hersteller hast.']
+eher_nicht = ['du ein Gerät mit nicht entkoppelten DC-Eingängen gleichzeitig über Solar und Auto laden willst.', 'du die Ladezeiten der Hersteller als Alltagswert erwartest – sie gelten für ideale Bedingungen.', 'du bei der Jackery Explorer 1000 v2 unterschiedlich starke Panels mischen willst.']
+weiter = { tool = 'finder', url = '/powerstation-finder/?einsatz=van', text = 'Powerstation mit großem Solareingang finden', artikel = '/posts/powerstation-notstrom-blackout/' }
 keywords = ['solar', 'solarpanel', 'mppt', 'xt60']
 kurz = [
   'Drei Werte müssen passen: **Spannungsbereich (V)**, **maximaler Strom (A)** und **maximale Solarleistung (W)** des Eingangs.',

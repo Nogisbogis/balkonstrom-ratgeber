@@ -24,6 +24,9 @@
     o.value = p.s; o.textContent = p.m + ' (' + f(p.wh) + ' Wh, ' + f(p.w) + ' W)';
     sel.appendChild(o);
   });
+  var gEl = document.getElementById('geraete-daten');
+  var geraete = gEl ? JSON.parse(gEl.textContent) : [];
+  function gfind(k) { return geraete.filter(function (g) { return g.k === k; })[0]; }
   var n = 0;
   function zeile(name, w, h, anz) {
     n++;
@@ -36,6 +39,27 @@
     tr.querySelector('button').addEventListener('click', function () { tr.remove(); rechne(); });
     tbody.appendChild(tr);
   }
+  function leereZeile() {
+    return Array.prototype.filter.call(tbody.rows, function (tr) {
+      return Array.prototype.every.call(tr.querySelectorAll('input[type=text],input[type=number]'), function (i, idx) { return idx === 3 || !i.value; });
+    })[0];
+  }
+  function fuelle(name, w, h) {
+    var tr = leereZeile();
+    if (!tr) { zeile(name, w, h, 1); return; }
+    var i = tr.querySelectorAll('input');
+    i[0].value = name; i[1].value = w; i[2].value = h;
+  }
+  var chips = document.getElementById('chips');
+  if (chips && geraete.length) {
+    chips.hidden = false;
+    chips.addEventListener('click', function (e) {
+      var b = e.target.closest('button.chip');
+      if (!b) return;
+      var g = gfind(b.dataset.g);
+      if (g) { fuelle(g.n, g.w, g.h); rechne(); }
+    });
+  }
   document.getElementById('plus').addEventListener('click', function () { zeile(); rechne(); tbody.lastChild.querySelector('input').focus(); });
   function station() {
     var p = daten.filter(function (x) { return x.s === sel.value; })[0];
@@ -46,11 +70,11 @@
     eigen.hidden = !!sel.value;
     var eta = Math.min(100, Math.max(40, num(document.getElementById('eta').value) || 85)) / 100;
     var ev = num(document.getElementById('eigenv').value);
-    var E = 0, P = 0, rows = 0;
+    var E = 0, P = 0, rows = 0, liste = [];
     Array.prototype.forEach.call(tbody.rows, function (tr) {
       var i = tr.querySelectorAll('input');
       var w = num(i[1].value), h = num(i[2].value), a = Math.max(1, Math.round(num(i[3].value)) || 1);
-      if (w > 0) { rows++; P += w * a; E += w * h * a; }
+      if (w > 0) { rows++; P += w * a; E += w * h * a; liste.push({ n: i[0].value.trim() || ('Gerät ' + rows), w: w * a, e: w * h * a }); }
     });
     var s = station();
     var nutz = s.wh * eta;
@@ -62,6 +86,14 @@
     if (E > 0) {
       var anteil = nutz / E;
       h += '<p class="big">' + (anteil >= 1 ? 'Reicht: ' + f(Math.floor(anteil * 10) / 10) + '× deinen Bedarf' : 'Reicht nicht: nur ' + f(Math.round(anteil * 100)) + ' % deines Bedarfs') + '</p>';
+    }
+    if (nutz > 0) {
+      h += '<h3>Je Gerät</h3><p class="note">Balken = Anteil an der nutzbaren Energie (' + f(Math.round(nutz)) + ' Wh). „Allein“ = Laufzeit, wenn nur dieses Gerät läuft.</p><ul class="balken">';
+      liste.forEach(function (g) {
+        var pz = g.e / nutz * 100;
+        h += '<li><span class="b-name">' + esc(g.n) + '</span><span class="b-wert">' + f(Math.round(g.e)) + ' Wh · ' + f(Math.round(pz)) + ' % · allein ' + dauer(nutz / g.w) + '</span><span class="bar' + (pz > 100 ? ' bar-over' : '') + '" aria-hidden="true"><i style="width:' + Math.min(100, Math.max(1, pz)).toFixed(1) + '%"></i></span></li>';
+      });
+      h += '</ul>';
     }
     var dauerAll = nutz / (P + ev);
     h += '<p>Laufen alle Geräte ununterbrochen gleichzeitig' + (ev ? ' (plus ' + f(ev) + ' W Eigenverbrauch)' : '') + ', hält der Akku etwa <strong>' + dauer(dauerAll) + '</strong>.</p>';
@@ -81,6 +113,14 @@
   form.addEventListener('submit', function (e) { e.preventDefault(); });
   var m = new URLSearchParams(location.search).get('m');
   if (m && daten.some(function (p) { return p.s === m; })) sel.value = m;
-  zeile('', '', '', 1); zeile('', '', '', 1);
+  var gp = new URLSearchParams(location.search).get('g');
+  var start = 0;
+  if (gp) gp.split(',').slice(0, 12).forEach(function (t) {
+    var p = t.split('~');
+    if (p.length === 3) { if (num(p[1]) > 0) { zeile(p[0].slice(0, 40), num(p[1]), num(p[2]), 1); start++; } return; }
+    var q = t.split(':'), g = gfind(q[0]);
+    if (g) { zeile(g.n, g.w, q.length > 1 && num(q[1]) > 0 ? num(q[1]) : g.h, 1); start++; }
+  });
+  if (!start) { zeile('', '', '', 1); zeile('', '', '', 1); }
   rechne();
 })();

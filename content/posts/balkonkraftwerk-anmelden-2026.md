@@ -8,6 +8,10 @@ image = 'img/titel-anmelden.svg'
 imageAlt = 'Gezeichnete Illustration: zwei Solarmodule am Balkongeländer neben einem Formular mit Häkchen'
 ogImage = 'img/og-anmelden.jpg'
 kategorie = 'ratgeber'
+kurzgesagt = 'Ein Balkonkraftwerk darf höchstens 800 VA Wechselrichterleistung laut Typenschild und 2.000 W Modulleistung haben. Anmelden musst du es nur im Marktstammdatenregister, innerhalb eines Monats nach Inbetriebnahme; einen Speicher zusätzlich beim Netzbetreiber. Per Schuko-Stecker ist der Anschluss bis 960 W Modulleistung normgerecht, wenn das Gerät die DIN VDE V 0126-95 erfüllt.'
+fuer_dich = ['dein Wechselrichter laut Typenschild oder Einheitenzertifikat höchstens 800 VA hat.', 'du den Solarstrom vor allem selbst verbrauchen willst.', 'Vermieter oder Eigentümergemeinschaft zustimmen – ablehnen dürfen sie nur noch aus triftigem Grund.']
+eher_nicht = ['du eine Einspeisevergütung willst – dann verliert die Anlage den Status als Steckersolargerät.', 'du mehr als 2.000 W Module oder einen Wechselrichter über 800 VA laut Typenschild planst – dann gilt sie als reguläre PV-Anlage.', 'du per Schuko-Stecker mehr als 960 W Module anschließen willst – dann braucht es eine Energiesteckvorrichtung oder einen Festanschluss.']
+weiter = { tool = 'amortisationsrechner', url = '/amortisationsrechner/?wp=800', text = 'Ertrag und Amortisation für 800 Wp ausrechnen', artikel = '/posts/balkonkraftwerk-mit-speicher-lohnt-sich/' }
 kurz = [
   '**Leistungsgrenzen:** höchstens 800 VA Wechselrichterleistung (laut Typenschild) und höchstens 2.000 W Modulleistung.',
   '**Anmeldung:** nur im Marktstammdatenregister, innerhalb eines Monats nach Inbetriebnahme. Ein Speicher muss zusätzlich beim Netzbetreiber angemeldet werden.',

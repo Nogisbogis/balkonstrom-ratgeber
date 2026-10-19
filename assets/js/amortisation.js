@@ -64,5 +64,15 @@
   form.addEventListener('change', rechne);
   form.addEventListener('submit', function (e) { e.preventDefault(); });
   if (preset.value) spezEl.value = preset.value;
+  // Vorbelegung per Link, z. B. ?wp=800&ev=45 – nur Zahlen im erlaubten Bereich
+  var qs = new URLSearchParams(location.search);
+  ['wp', 'kosten', 'spez', 'ev', 'preis', 'steig', 'jahre'].forEach(function (id) {
+    var raw = qs.get(id); if (raw === null) return;
+    var x = parseFloat(raw.replace(',', '.')), el = document.getElementById(id);
+    if (!isFinite(x) || x < parseFloat(el.min) || x > parseFloat(el.max)) return;
+    el.value = x;
+    if (id === 'spez') preset.value = '';
+  });
+  if (qs.get('spez') && preset.querySelector('option[value="' + spezEl.value + '"]')) preset.value = spezEl.value;
   rechne();
 })();

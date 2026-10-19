@@ -21,6 +21,21 @@
       form.querySelector('input[name="' + n + '"][value="custom"]').checked = true;
     });
   });
+  // Vorbelegung per Link, z. B. ?einsatz=van&kg=5 – nur bekannte Optionen oder Zahlen
+  var qs = new URLSearchParams(location.search), vorbelegt = false;
+  ['einsatz', 'watt', 'wh', 'kg'].forEach(function (n) {
+    var v = qs.get(n); if (v === null) return;
+    var r = form.querySelector('input[name="' + n + '"][value="' + (/^[a-z0-9]+$/.test(v) ? v : '') + '"]');
+    if (r && v !== 'custom') { r.checked = true; vorbelegt = true; return; }
+    var c = form.elements[n + '_custom'], x = parseFloat(v);
+    if (c && isFinite(x) && x > 0 && x <= parseFloat(c.max)) { c.value = x; form.querySelector('input[name="' + n + '"][value="custom"]').checked = true; vorbelegt = true; }
+  });
+  if (vorbelegt) {
+    var hint = document.createElement('p');
+    hint.className = 'notice'; hint.id = 'vorbelegt';
+    hint.textContent = 'Einige Antworten sind über den Link vorausgewählt. Prüf sie kurz – du kannst alles ändern.';
+    form.insertBefore(hint, form.firstChild);
+  }
   var sortText = {
     camping: 'leichteste zuerst',
     van: 'größter Solareingang zuerst',

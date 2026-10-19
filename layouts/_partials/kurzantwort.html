@@ -1,0 +1,19 @@
+{{- /* Kurzantwort oben im Artikel – Inhalte stehen im Front Matter und fassen nur zusammen, was der Artikel belegt. */ -}}
+{{- with .Params.kurzgesagt }}
+<aside class="kurzantwort" aria-labelledby="ka-titel">
+  <h2 id="ka-titel" class="ka-label">Kurz gesagt</h2>
+  <p class="ka-text">{{ . | $.RenderString }}</p>
+  <div class="ka-grid">
+    {{- with $.Params.fuer_dich }}
+    <div class="ka-ja"><h3><span aria-hidden="true">✓</span> Für dich, wenn …</h3><ul>{{ range . }}<li>{{ . | $.RenderString }}</li>{{ end }}</ul></div>
+    {{- end }}
+    {{- with $.Params.eher_nicht }}
+    <div class="ka-nein"><h3><span aria-hidden="true">✗</span> Eher nicht, wenn …</h3><ul>{{ range . }}<li>{{ . | $.RenderString }}</li>{{ end }}</ul></div>
+    {{- end }}
+  </div>
+  {{- with $.Params.kurz }}
+  <details class="ka-fakten"><summary>Die wichtigsten Fakten aus dem Artikel</summary><ul>{{ range . }}<li>{{ . | $.RenderString }}</li>{{ end }}</ul></details>
+  {{- end }}
+  {{- if $.Params.top_empfehlung }}<p class="ka-sprung"><a class="textlink" href="#empf-titel">Meine Empfehlung ansehen</a></p>{{ end }}
+</aside>
+{{- else }}{{ partial "kurzbox.html" . }}{{ end }}

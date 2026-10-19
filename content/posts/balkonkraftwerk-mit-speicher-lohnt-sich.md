@@ -8,6 +8,10 @@ image = 'img/titel-speicher.svg'
 imageAlt = 'Gezeichnete Illustration: zwei Solarmodule am Balkongeländer und ein schlichter Akkublock'
 ogImage = 'img/og-speicher.jpg'
 kategorie = 'balkonkraftwerke'
+kurzgesagt = 'Ein Speicher erzeugt keinen zusätzlichen Strom: Er verschiebt den Solarstrom zum Beispiel vom Mittag in den Abend, und beim Laden und Entladen geht ein Teil verloren. Er lohnt sich am ehesten, wenn deine Module tagsüber regelmäßig deutlich mehr erzeugen, als du gleichzeitig verbrauchst. In meiner Beispielrechnung (nur Annahmen) amortisiert sich allein der Speicher nach etwa sechs bis acht Jahren.'
+fuer_dich = ['deine Module tagsüber regelmäßig deutlich mehr erzeugen, als du gleichzeitig verbrauchst.', 'du mehr Modulleistung installierst (bis 2.000 Wp) und tagsüber wenig zu Hause bist.', 'du bei Stromausfall einzelne Geräte an einer Off-Grid-Steckdose betreiben willst.']
+eher_nicht = ['du eine kleine Anlage mit zwei Modulen hast und tagsüber ohnehin viel Strom brauchst.', 'du selten Überschuss hast, etwa im Winter.', 'du erwartest, dass der Speicher bei Stromausfall das Hausnetz versorgt.']
+weiter = { tool = 'amortisationsrechner', url = '/amortisationsrechner/?wp=800', text = 'Prüfen, ob sich dein Balkonkraftwerk rechnet', artikel = '/posts/balkonkraftwerk-anmelden-2026/' }
 kurz = [
   'Ein Speicher erhöht den Anteil des Solarstroms, den du selbst nutzt. Er erzeugt keinen zusätzlichen Strom.',
   'Er lohnt sich am ehesten, wenn deine Module tagsüber regelmäßig mehr erzeugen, als du gleichzeitig verbrauchst.',

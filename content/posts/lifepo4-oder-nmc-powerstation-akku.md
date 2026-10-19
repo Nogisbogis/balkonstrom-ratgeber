@@ -4,6 +4,10 @@ date = '2026-10-19'
 description = 'LiFePO4 (LFP) oder NMC? Was eine Studie des KIT zur Sicherheit der Zellchemien zeigt, warum LFP-Powerstations schwerer sind, was Zyklenangaben bedeuten und wie Anker die Garantie nach Akkutyp staffelt.'
 draft = false
 kategorie = 'powerstations'
+kurzgesagt = 'LiFePO4-Zellen (LFP) reagierten in einer KIT-Laborstudie später und schwächer auf Überhitzung und gingen beim Nageltest nie in den thermischen Durchgang – NMC- und NCA-Zellen schon. Dafür speichert eine LFP-Zelle weniger Energie, LFP-Geräte sind größer und schwerer. Bei Powerstations ist LFP heute Standard; die Zellchemie ersetzt aber keinen Gerätetest.'
+fuer_dich = ['dir Sicherheit wichtiger ist als das letzte Kilo – dann passt LiFePO4.', 'du auf lange Garantie achtest: Anker gibt in der EU 5 Jahre auf Powerstations mit LiFePO4-Akku.', 'du Zyklenangaben vergleichst und dabei auf die gleiche Restkapazität achtest.']
+eher_nicht = ['Gewicht für dich alles ist – dann kann NMC Vorteile haben; prüfe dann Garantie und Sicherheitstests besonders.', 'du im Winter unter 0 °C laden musst – die meisten Geräte erlauben das laut Datenblatt nicht.', 'du die Zellchemie als Ersatz für einen Gerätetest siehst – auch ein Gerät mit LFP-Akku kann durchfallen (ADAC 2025).']
+weiter = { tool = 'finder', url = '/powerstation-finder/?einsatz=camping&kg=5', text = 'Leichte Powerstation unter 5 kg finden', artikel = '/posts/powerstation-camping-kaufberatung/' }
 keywords = ['akku', 'lifepo4', 'nmc', 'sicherheit']
 kurz = [
   '**Sicherheit:** In einer KIT-Studie gingen LFP-Zellen beim Nageltest nie in den thermischen Durchgang, NMC- und NCA-Zellen ab 30 % Ladung schon.',

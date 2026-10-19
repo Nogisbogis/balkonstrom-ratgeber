@@ -4,14 +4,15 @@
   {{ partial "disclosure-box.html" . }}
   <h1>{{ .Title }}</h1>
   <p class="meta">{{ if eq .Section "posts" }}Veröffentlicht {{ end }}<time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "02.01.2006" }}</time>{{ if eq .Section "posts" }} · Zuletzt aktualisiert <time datetime="{{ .Lastmod.Format "2006-01-02" }}">{{ .Lastmod.Format "02.01.2006" }}</time> · {{ .ReadingTime }} Min. Lesezeit{{ end }}</p>
-  {{ partial "empfehlungsbox.html" . }}
-  {{ partial "kurzbox.html" . }}
-  {{ if and (eq .Section "posts") (gt .WordCount 700) (ne .Params.toc false) }}
+  {{ if eq .Section "posts" }}
+  {{ partial "kurzantwort.html" . }}
+  {{ if and (ne .Params.toc false) (findRE `<h2 ` .Content 1) }}
   <details class="toc"><summary>Inhaltsverzeichnis</summary>{{ .TableOfContents }}</details>
   {{ end }}
+  {{ else }}{{ partial "kurzbox.html" . }}{{ end }}
   {{ .Content }}
   {{ partial "faq.html" . }}
 </article>
-{{ if eq .Section "posts" }}{{ partial "weiterlesen.html" . }}{{ end }}
+{{ if eq .Section "posts" }}{{ if .Params.weiter }}{{ partial "weiter.html" . }}{{ else }}{{ partial "empfehlungsbox.html" . }}{{ partial "weiterlesen.html" . }}{{ end }}{{ end }}
 {{ if and (eq .Section "posts") (ne .Params.comments false) }}{{ partial "comments.html" . }}{{ end }}
 {{ end }}

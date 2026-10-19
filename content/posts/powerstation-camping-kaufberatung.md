@@ -8,6 +8,10 @@ image = 'img/titel-powerstation.svg'
 imageAlt = 'Gezeichnete Illustration: Zelt auf einer Wiese mit aufgestelltem Solarpanel und Akkublock'
 ogImage = 'img/og-powerstation.jpg'
 kategorie = 'powerstations'
+kurzgesagt = 'Die „beste“ Powerstation gibt es nicht: Entscheidend ist, was du betreiben willst, wie lange und wie viel du tragen möchtest. Die Kapazität muss deinen Bedarf mit Puffer decken, die Dauerleistung über der Leistung aller gleichzeitig laufenden Geräte liegen. Ins Flugzeug darf keine der hier genannten Powerstations.'
+fuer_dich = ['du Handy, Licht und Laptop am Wochenende versorgen willst – dafür reicht oft die 250–300-Wh-Klasse.', 'du Kühlbox, mehrere Tage oder Geräte mit Heizelement planst – dann eher die 1-kWh-Klasse.', 'du mit Solar nachladen willst und der Solareingang zu deinem Panel passt.']
+eher_nicht = ['du die Station mit ins Flugzeug nehmen willst: Lufthansa verbietet Akkus über 160 Wh.', 'du Wasserkocher oder Föhn an einer kleinen 300-W-Station betreiben willst.', 'du ein Gerät mit nicht entkoppelten DC-Eingängen gleichzeitig über Auto und Solar laden willst.']
+weiter = { tool = 'laufzeitrechner', url = '/laufzeitrechner/?m=ecoflow-delta-3-plus&g=kuehlbox,laptop,smartphone', text = 'Kühlbox, Laptop und Smartphone an der DELTA 3 Plus durchrechnen', artikel = '/posts/lifepo4-oder-nmc-powerstation-akku/' }
 kurz = [
   '**Kapazität (Wh)** bestimmt, wie lange etwas läuft – **Dauerleistung (W)**, was überhaupt läuft.',
   'Fast alle aktuellen Modelle nutzen LiFePO4-Akkus mit mehreren Tausend Ladezyklen laut Hersteller.',

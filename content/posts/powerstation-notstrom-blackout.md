@@ -5,6 +5,10 @@ date = '2026-10-19'
 description = 'Eine Powerstation überbrückt einen Stromausfall für einzelne Geräte – mehr nicht. Was sie für Router, Licht und Kühlschrank leisten kann, wie die USV-Funktion funktioniert und wo die Grenzen liegen.'
 draft = false
 kategorie = 'powerstations'
+kurzgesagt = 'Eine Powerstation kann bei einem Stromausfall einzelne, direkt angeschlossene Geräte wie Router, Licht, Handy und eventuell den Kühlschrank für Stunden versorgen. Sie ist aber kein Notstromaggregat fürs ganze Haus. Die USV-Funktion schaltet laut Herstellern in 10 bis 20 ms um – das ist keine unterbrechungsfreie 0-ms-USV.'
+fuer_dich = ['du Router, Licht und Handy für einige Stunden überbrücken willst.', 'du eine leise Lösung ohne Abgase suchst – Generatoren dürfen laut BBK nicht in Innenräumen betrieben werden.', 'deine Geräte eine Umschaltzeit von 10 bis 20 ms verkraften.']
+eher_nicht = ['du das Hausnetz versorgen willst – dafür rät das BBK zu einem Elektrofachbetrieb.', 'du über längere Zeit heizen oder kochen willst.', 'du Server oder Workstations betreiben willst, die eine echte USV brauchen.']
+weiter = { tool = 'laufzeitrechner', url = '/laufzeitrechner/?m=anker-solix-c1000-gen-2&g=router,led,smartphone', text = 'Router, LED-Lampe und Smartphone im Stromausfall durchrechnen', artikel = '/posts/powerstation-solarpanel-kombinieren/' }
 keywords = ['notstrom', 'stromausfall', 'usv']
 kurz = [
   'Eine Powerstation versorgt **einzelne Geräte**, die du direkt anschließt. Fürs Einspeisen ins Hausnetz braucht es laut BBK einen Elektrofachbetrieb.',

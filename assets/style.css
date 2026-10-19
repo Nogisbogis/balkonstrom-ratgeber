@@ -466,3 +466,56 @@ main>p,main>ul:not([class]),main>ol:not([class]),main>details,main>h2,main>h3,ma
   @view-transition{navigation:none}
   *,*::before,*::after{transition:none!important;animation:none!important;scroll-behavior:auto!important}
 }
+
+/* ===== Engagement-Batch ===== */
+/* Kurzantwort */
+.kurzantwort{border:1px solid var(--line);border-top:3px solid var(--ink);border-radius:0 0 12px 12px;background:var(--surface);padding:1.25rem clamp(1rem,3vw,1.5rem) .75rem;margin:1.4rem 0 1.4rem}
+.kurzantwort .ka-label{font-size:.8125rem;text-transform:uppercase;letter-spacing:.08em;font-weight:800;margin:0 0 .5rem;color:var(--ink)}
+.ka-text{font-size:1.0625rem;margin:0 0 1rem}
+.ka-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem 1.5rem}
+.ka-grid h3{font-size:1rem;margin:0 0 .4rem}
+.ka-grid ul{margin:0;padding-left:1.1rem}
+.ka-grid li{margin:.3rem 0;font-size:.9688rem}
+.ka-ja h3 span{color:var(--accent)}
+.ka-nein h3 span{color:var(--red)}
+.ka-fakten{margin:1rem 0 0;border-top:1px solid var(--line)}
+.ka-fakten summary,.toc summary{min-height:var(--tap);display:flex;align-items:center;cursor:pointer;font-weight:700}
+.ka-fakten ul{margin:.2rem 0 .8rem;padding-left:1.1rem}
+.ka-sprung{margin:.4rem 0 .2rem}
+.ka-sprung a{display:inline-flex;align-items:center;min-height:var(--tap)}
+.toc{padding:0}
+.toc li a{display:inline-block;padding:.35rem 0}
+@media (max-width:640px){.ka-grid{grid-template-columns:1fr}}
+/* Wie geht's weiter */
+.weiter{margin-top:3rem;border-top:2px solid var(--rule);padding-top:.4rem;max-width:var(--container)}
+.weiter-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem;margin:0 0 1.5rem}
+.weiter-grid a{position:relative;display:flex;flex-direction:column;gap:.4rem;min-height:var(--tap);padding:1.25rem 3rem 1.25rem 1.25rem;border:1px solid var(--line);border-radius:12px;text-decoration:none;color:var(--ink);background:var(--bg);transition:border-color .15s,box-shadow .15s}
+.weiter-grid a.weiter-tool{background:var(--surface)}
+.weiter-grid a:hover{border-color:var(--ink);box-shadow:0 4px 16px rgba(0,0,0,.08);color:var(--ink)}
+.weiter-grid strong{font-size:1.125rem;line-height:1.3}
+.weiter-hinweis{font-size:.9375rem;color:var(--muted)}
+.weiter-grid em{position:absolute;right:1.25rem;top:1.2rem;font-style:normal;font-weight:700;font-size:1.25rem;color:var(--accent);transition:transform .15s}
+.weiter-grid a:hover em{transform:translateX(3px)}
+.weiter + .empfbox,.weiter ~ .empfbox{max-width:var(--container)}
+@media (max-width:640px){.weiter-grid{grid-template-columns:1fr}}
+/* Chips + Balken */
+.chips{margin:1rem 0 .2rem}
+.chips-titel{margin:0 0 .5rem}
+.chips ul{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:.5rem}
+.chip{min-height:var(--tap);padding:.4rem 1rem;border:1.5px solid var(--ink);border-radius:999px;background:var(--bg);color:var(--ink);font:inherit;font-size:.9375rem;cursor:pointer}
+.chip span{color:var(--muted);margin-left:.25rem}
+.chip:hover{background:var(--surface)}
+.chips-quellen{margin:.6rem 0 0;font-size:.9375rem}
+.chips-quellen summary{min-height:var(--tap);display:flex;align-items:center;cursor:pointer;font-weight:700}
+.chips-quellen li{margin:.3rem 0}
+.balken{list-style:none;padding:0;margin:.4rem 0 1.2rem;max-width:var(--measure)}
+.balken li{display:grid;grid-template-columns:1fr auto;gap:.15rem .8rem;margin:.6rem 0}
+.b-name{font-weight:700}
+.b-wert{font-size:.9375rem;color:var(--muted);text-align:right}
+.bar{grid-column:1/-1;display:block;height:10px;border-radius:999px;background:var(--line);overflow:hidden}
+.bar i{display:block;height:100%;background:var(--accent);border-radius:999px}
+.bar-over i{background:var(--red)}
+.ka-fakten summary,.toc summary,.chips-quellen summary{list-style:none;gap:.75rem}
+.ka-fakten summary::-webkit-details-marker,.toc summary::-webkit-details-marker,.chips-quellen summary::-webkit-details-marker{display:none}
+.ka-fakten summary::after,.toc summary::after,.chips-quellen summary::after{content:"+";margin-left:auto;font-size:1.25rem;font-weight:700;line-height:1;color:var(--accent)}
+.ka-fakten[open] summary::after,.toc[open] summary::after,.chips-quellen[open] summary::after{content:"−"}

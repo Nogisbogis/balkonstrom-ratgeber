@@ -10,6 +10,14 @@
       <tbody id="zeilen"></tbody>
     </table></div>
     <p><button type="button" class="btn-sec" id="plus">+ Gerät hinzufügen</button></p>
+    <div class="chips" id="chips" hidden>
+      <p class="chips-titel"><strong>Schnell hinzufügen</strong> <span class="note">– typischer Wert, dein Gerät kann abweichen</span></p>
+      <ul>{{ range hugo.Data.geraete }}<li><button type="button" class="chip" data-g="{{ .key }}">{{ .name }} <span>{{ lang.FormatNumber 0 .w }} W</span></button></li>{{ end }}</ul>
+      <details class="chips-quellen"><summary>Woher die typischen Werte kommen</summary>
+        <ul>{{ range hugo.Data.geraete }}<li><strong>{{ .name }}: {{ lang.FormatNumber 0 .w }} W</strong>, Startwert {{ lang.FormatNumber 1 .h | replaceRE `,0$` "" }} h – <a href="{{ .url }}" rel="noopener">{{ .quelle }}</a>{{ with .hinweis }}. {{ . }}{{ end }}</li>{{ end }}</ul>
+        <p class="note">Die Stunden sind frei gewählte Startwerte, keine Quellenangabe. Für dein Gerät gilt der Wert auf Typenschild oder Netzteil.</p>
+      </details>
+    </div>
   </fieldset>
   <fieldset><legend>2. Powerstation</legend>
     <label>Modell: <select id="modell"><option value="">eigene Kapazität eingeben …</option></select></label>
@@ -26,6 +34,7 @@
 <noscript><p class="notice">Der Rechner braucht JavaScript. Die Formel steht unten, damit kannst du auch von Hand rechnen.</p></noscript>
 {{ .Content }}
 {{ partial "ps-json.html" . }}
+<script type="application/json" id="geraete-daten">{{ $g := slice }}{{ range hugo.Data.geraete }}{{ $g = $g | append (dict "k" .key "n" .name "w" .w "h" .h) }}{{ end }}{{ $g | jsonify | safeJS }}</script>
 {{ $js := resources.Get "js/rechner.js" | minify | fingerprint }}
 <script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" defer></script>
 {{ end }}

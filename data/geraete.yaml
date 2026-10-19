@@ -1,0 +1,53 @@
+# Typische Leistungswerte für die Geräte-Chips im Laufzeitrechner.
+# Nur Werte mit Quelle. w = Watt (typischer Wert, das eigene Gerät kann abweichen),
+# h = Startwert für die Stunden (frei gewählte Beispiel-Annahme, im Rechner änderbar).
+- key: kuehlbox
+  name: Kühlbox
+  w: 50
+  h: 24
+  quelle: "ADAC: Mobile Powerstations im Test 2025 – Beispiel „Kühlbox (50 W)“"
+  url: https://www.adac.de/rund-ums-haus/energie/versorgung/mobile-powerstations-test/
+  hinweis: Kompressor-Kühlboxen laufen nicht ständig; viele Hersteller nennen den Verbrauch pro 24 Stunden.
+- key: router
+  name: WLAN-Router
+  w: 15
+  h: 24
+  quelle: "Verbraucherzentrale Rheinland-Pfalz: Router benötigen „in der Regel“ 10–20 W (Mittelwert)"
+  url: https://www.verbraucherzentrale-rlp.de/20-prozent-weniger-stromverbrauch-nr4-internetrouter-netz-in-der-nacht-82406
+- key: laptop
+  name: Laptop
+  w: 50
+  h: 4
+  quelle: "HEA (Stand 2023): PC/Notebook 10–50 Wh in einer Stunde gemessen (oberer Wert)"
+  url: https://www.swtenergie.de/de/Strom/Oekostrom/BDEW-HEA-Energiesparen-Messung-Tabellen-und-Verbrauchswerte-1-stunden-messung.pdf
+- key: cpap
+  name: CPAP-Gerät
+  w: 56
+  h: 8
+  quelle: "ResMed AirSense 11 Gebrauchsanweisung: typische Leistungsaufnahme 56,1 W"
+  url: https://document.resmed.com/documents/products/machine/airsense-11/user-guide/airsense11_user-guide_we_mul.pdf
+  hinweis: Medizinische Geräte nur nach Rücksprache mit Arzt oder Hersteller an einer Powerstation betreiben.
+- key: wasserkocher
+  name: Wasserkocher
+  w: 2000
+  h: 0.1
+  quelle: "BBK: Geräte, die Wärme erzeugen, brauchen „schnell 1500 Watt bis 2000 Watt“ (oberer Wert)"
+  url: https://www.bbk.bund.de/SharedDocs/Downloads/DE/Mediathek/Publikationen/Buergerinformationen/stromausfall-vorsorge-selbsthilfe.pdf?__blob=publicationFile
+- key: smartphone
+  name: Smartphone (1 Ladung)
+  w: 15
+  h: 1
+  quelle: "ADAC: Smartphone-Ladung „15 Wh“ (als 15 W × 1 h eingetragen)"
+  url: https://www.adac.de/rund-ums-haus/energie/versorgung/mobile-powerstations-test/
+- key: led
+  name: LED-Lampe
+  w: 7
+  h: 5
+  quelle: "HEA (Stand 2023): LED, ca. 800 Lumen, 7 Wh in einer Stunde"
+  url: https://www.swtenergie.de/de/Strom/Oekostrom/BDEW-HEA-Energiesparen-Messung-Tabellen-und-Verbrauchswerte-1-stunden-messung.pdf
+- key: tv
+  name: Fernseher (55 Zoll)
+  w: 70
+  h: 3
+  quelle: "HEA (Stand 2023): LED/LCD-Fernseher 55 Zoll, 70 Wh in einer Stunde"
+  url: https://www.swtenergie.de/de/Strom/Oekostrom/BDEW-HEA-Energiesparen-Messung-Tabellen-und-Verbrauchswerte-1-stunden-messung.pdf
