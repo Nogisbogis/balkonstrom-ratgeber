@@ -10,7 +10,7 @@
     <dl class="specs">
     {{- if eq $art "ps" }}
       <div><dt>Kapazität</dt><dd>{{ lang.FormatNumber 0 $p.kapazitaet_wh }} Wh</dd></div>
-      <div><dt>Dauerleistung</dt><dd>{{ lang.FormatNumber 0 $p.dauerleistung_w }} W</dd></div>
+      <div><dt>{{ if $p.nur_dc }}Leistung (nur DC){{ else }}Dauerleistung{{ end }}</dt><dd>{{ lang.FormatNumber 0 $p.dauerleistung_w }} W</dd></div>
       <div><dt>Gewicht</dt><dd>{{ replace (string $p.gewicht_kg) "." "," }} kg</dd></div>
       <div><dt>Solar max.</dt><dd>{{ lang.FormatNumber 0 $p.solareingang_w }} W</dd></div>
       <div><dt>Akku</dt><dd>{{ $p.akkutyp }}</dd></div>

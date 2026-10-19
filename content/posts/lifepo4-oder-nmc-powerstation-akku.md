@@ -15,7 +15,7 @@ kurz = [
   '**Sicherheit:** In einer KIT-Studie gingen LFP-Zellen beim Nageltest nie in den thermischen Durchgang, NMC- und NCA-Zellen ab 30 % Ladung schon.',
   '**Energiedichte:** Die LFP-Zelle im selben 21700-Format speicherte dort 9,9 Wh, NMC und NCA 18 Wh. LFP-Geräte sind daher größer und schwerer.',
   '**Garantie:** Anker gibt in der EU 5 Jahre auf Powerstations mit LiFePO4-Akku, 1,5 Jahre auf ältere Modelle mit NMC-Akku.',
-  'Alle zehn Powerstations in meinem Vergleich nutzen LiFePO4.',
+  'Alle Powerstations in meinem Vergleich nutzen LiFePO4.',
 ]
 [[faq]]
   f = 'Ist LiFePO4 sicherer als NMC?'
@@ -89,7 +89,7 @@ Die meisten Geräte in meinem Vergleich dürfen laut Datenblatt erst ab 0 °C ge
 
 ## Was heißt das für den Kauf?
 
-- **Für Powerstations ist LFP heute Standard.** Alle zehn Modelle in meinem [Vergleich](/vergleich/#powerstations) nutzen LiFePO4. NMC begegnet dir vor allem bei älteren oder sehr leichten Geräten und Powerbanks.
+- **Für Powerstations ist LFP heute Standard.** Alle Modelle in meinem [Vergleich](/vergleich/#powerstations) nutzen LiFePO4. NMC begegnet dir vor allem bei älteren oder sehr leichten Geräten und Powerbanks.
 - **Wenn Gewicht alles ist**, kann NMC Vorteile haben. Prüfe dann besonders die Garantie und unabhängige Sicherheitstests.
 - **Zyklenangaben** nur bei gleicher Restkapazität vergleichen.
 - **Die Zellchemie ersetzt keinen Gerätetest.** Auf den [Produktseiten](/powerstations/#modelle) stehen die Testergebnisse je Modell.

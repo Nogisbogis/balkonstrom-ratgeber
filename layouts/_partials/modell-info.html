@@ -2,7 +2,7 @@
 {{- $r := dict -}}
 {{- with index (where hugo.Data.powerstations "modell" .) 0 -}}
   {{- $u := "" }}{{ with site.GetPage (printf "/powerstations/%s" .slug) }}{{ $u = .RelPermalink }}{{ end -}}
-  {{- $kz := slice (printf "%s Wh" (lang.FormatNumber 0 .kapazitaet_wh)) (printf "%s W" (lang.FormatNumber 0 .dauerleistung_w)) (printf "%s kg" (replace (string .gewicht_kg) "." ",")) -}}
+  {{- $kz := slice (printf "%s Wh" (lang.FormatNumber 0 .kapazitaet_wh)) (printf "%s W%s" (lang.FormatNumber 0 .dauerleistung_w) (cond (.nur_dc | default false) " (nur DC)" "")) (printf "%s kg" (replace (string .gewicht_kg) "." ",")) -}}
   {{- $r = dict "url" $u "asin" (.asin | default "") "art" "ps" "slug" .slug "kz" $kz "daten" . -}}
 {{- else -}}
   {{- with index (where hugo.Data.balkonkraftwerke "modell" .) 0 -}}

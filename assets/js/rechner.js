@@ -21,7 +21,7 @@
   }
   daten.forEach(function (p) {
     var o = document.createElement('option');
-    o.value = p.s; o.textContent = p.m + ' (' + f(p.wh) + ' Wh, ' + f(p.w) + ' W)';
+    o.value = p.s; o.textContent = p.m + ' (' + f(p.wh) + ' Wh, ' + f(p.w) + ' W' + (p.dc ? ' nur DC' : '') + ')';
     sel.appendChild(o);
   });
   var gEl = document.getElementById('geraete-daten');
@@ -103,7 +103,7 @@
     h += '<h3>So lange reichen die Modelle aus meinem Vergleich</h3><p class="note">Gleiche Geräte, gleiche Annahmen. „zu wenig W“ = Dauerleistung zu klein für alle Geräte gleichzeitig.</p><div class="tablewrap"><table class="cmp"><thead><tr><th>Modell</th><th class="r">nutzbar (Annahme)</th><th class="r">Anteil deines Bedarfs</th><th class="r">Dauerbetrieb</th></tr></thead><tbody>';
     daten.forEach(function (p) {
       var nz = p.wh * eta;
-      h += '<tr><td><a href="' + esc(p.url) + '">' + esc(p.m) + '</a></td><td class="r">' + f(Math.round(nz)) + ' Wh</td><td class="r">' + (E > 0 ? f(Math.round(nz / E * 100)) + ' %' : '–') + '</td><td class="r">' + (P > p.w ? '<span class="mk mk-nein">zu wenig W</span> ' : '') + dauer(nz / (P + ev)) + '</td></tr>';
+      h += '<tr><td><a href="' + esc(p.url) + '">' + esc(p.m) + '</a>' + (p.dc ? ' <span class="note">nur DC, keine Steckdose</span>' : '') + '</td><td class="r">' + f(Math.round(nz)) + ' Wh</td><td class="r">' + (E > 0 ? f(Math.round(nz / E * 100)) + ' %' : '–') + '</td><td class="r">' + (P > p.w ? '<span class="mk mk-nein">zu wenig W</span> ' : '') + dauer(nz / (P + ev)) + '</td></tr>';
     });
     h += '</tbody></table></div>';
     out.innerHTML = h;

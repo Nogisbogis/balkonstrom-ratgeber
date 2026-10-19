@@ -7,6 +7,12 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(ROOT, "static", "img")
 os.makedirs(OUT, exist_ok=True)
 ps = yaml.safe_load(open(os.path.join(ROOT, "data", "powerstations.yaml"), encoding="utf-8"))
+# Die Grafiken in den Artikeln zeigen die zehn Modelle, die am 19.10.2026 im Vergleich standen (Text und Alt-Texte
+# beziehen sich darauf). Die Vergleichsseite nutzt eine eigene Grafik mit allen Modellen (ps-vergleich-kapazitaet-gewicht.svg).
+ARTIKEL_SLUGS = ["ecoflow-river-3", "ecoflow-river-3-plus", "jackery-explorer-300-plus", "anker-solix-c300x", "dji-power-1000-mini",
+                 "anker-solix-c1000-gen-2", "ecoflow-delta-3-plus", "bluetti-elite-100-v2", "jackery-explorer-1000-v2", "anker-solix-c2000-gen-2"]
+ps_alle = ps
+ps = [p for p in ps_alle if p["slug"] in ARTIKEL_SLUGS]
 bkw = yaml.safe_load(open(os.path.join(ROOT, "data", "balkonkraftwerke.yaml"), encoding="utf-8"))
 
 STYLE = """<style>
@@ -48,13 +54,12 @@ def L(x1, y1, x2, y2, cls="g", sw=1, extra=""): return f'<line x1="{x1}" y1="{y1
 def short(m): return m.replace("Anker SOLIX ", "Anker ").replace("Jackery Explorer ", "Jackery ")
 
 # ---------- 1) Powerstations: Kapazität und Gewicht (Butterfly) ----------
-def ps_kapazitaet_gewicht(name="ps-kapazitaet-gewicht.svg"):
-    rows = sorted(ps, key=lambda p: (p["kapazitaet_wh"], p["gewicht_kg"]))
+def ps_kapazitaet_gewicht(name="ps-kapazitaet-gewicht.svg", daten=None, maxwh=2200, maxkg=20, stand="19.10.2026"):
+    rows = sorted(daten or ps, key=lambda p: (p["kapazitaet_wh"], p["gewicht_kg"]))
     W, top, rh = 760, 78, 30
     H = top + rh * len(rows) + 58
     lab_w, cx = 190, 470          # Label-Spalte, Mittelachse
     left_w, right_w = cx - lab_w - 10 - 6, W - cx - 6 - 70
-    maxwh = 2200; maxkg = 20
     b = [T(20, 30, "Kapazität und Gewicht laut Hersteller", size=18, weight="bold"),
          T(20, 52, "Links: Kapazität in Wh · rechts: Gewicht in kg · Zahl rechts: Wh pro kg (berechnet)", "m", 12.5),
          T(cx - 6, top - 8, "Kapazität (Wh)", "a", 12, "end", "bold"),
@@ -72,8 +77,8 @@ def ps_kapazitaet_gewicht(name="ps-kapazitaet-gewicht.svg"):
         b.append(T(W - 20, y + 19.5, de(wh / kg, 0), "m", 12, "end"))
     yb = top + rh * len(rows)
     b.append(L(cx, top - 2, cx, yb + 2, "ax"))
-    b.append(T(20, yb + 26, "Quelle: Herstellerangaben, Stand 19.10.2026 (Links im Vergleich). Wh/kg = Kapazität ÷ Gewicht, gerundet.", "m", 11.5))
-    b.append(T(20, yb + 44, "Balkenlängen: Kapazität bis 2.200 Wh, Gewicht bis 20 kg.", "m", 11.5))
+    b.append(T(20, yb + 26, f"Quelle: Herstellerangaben, Stand {stand} (Links im Vergleich). Wh/kg = Kapazität ÷ Gewicht, gerundet.", "m", 11.5))
+    b.append(T(20, yb + 44, f"Balkenlängen: Kapazität bis {de(maxwh)} Wh, Gewicht bis {de(maxkg)} kg.", "m", 11.5))
     svg(name, W, H, "Kapazität und Gewicht der Powerstations im Vergleich",
         "Balkendiagramm mit " + str(len(rows)) + " Powerstations. " +
         "; ".join(f'{p["modell"]}: {de(p["kapazitaet_wh"])} Wh, {de(p["gewicht_kg"],2)} kg' for p in rows) + ".", b)
@@ -419,6 +424,7 @@ def favicon():
 
 if __name__ == "__main__":
     ps_kapazitaet_gewicht(); ps_dauerleistung(); ps_laufzeit()
+    ps_kapazitaet_gewicht("ps-vergleich-kapazitaet-gewicht.svg", ps_alle, 4400, 55, "20.10.2026")
     speicher_schema(); speicher_tagesprofil(); speicher_rechnung()
     anmelden_ablauf(); anmelden_stecker(); anmelden_mastr()
     bkw_speicher(); favicon()

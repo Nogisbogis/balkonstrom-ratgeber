@@ -45,29 +45,32 @@
   function sortiere(liste, einsatz) {
     return liste.sort(function (a, b) {
       if (einsatz === 'van') return b.pv - a.pv || a.kg - b.kg;
-      if (einsatz === 'notstrom') return a.usv - b.usv || b.wh - a.wh;
+      if (einsatz === 'notstrom') return (a.usv || 999) - (b.usv || 999) || b.wh - a.wh;
       if (einsatz === 'werkzeug') return b.w - a.w || a.kg - b.kg;
       return a.kg - b.kg || b.wh - a.wh;
     });
   }
-  function pruefe(p, w, wh, kg) {
+  function pruefe(p, w, wh, kg, einsatz) {
     var nutz = p.wh * ETA;
-    return [
+    var c = [
       { ok: p.w >= w, t: 'Dauerleistung ' + f(p.w) + ' W ' + (p.w >= w ? '≥' : '<') + ' ' + f(w) + ' W' },
       { ok: nutz >= wh, t: f(p.wh) + ' Wh × 85 % = ' + f(Math.round(nutz)) + ' Wh ' + (nutz >= wh ? '≥' : '<') + ' ' + f(wh) + ' Wh' },
       { ok: p.kg <= kg, t: f(p.kg) + ' kg ' + (p.kg <= kg ? '≤' : '>') + ' ' + (kg >= 99 ? 'keine Grenze' : f(kg) + ' kg') }
     ];
+    // Reine DC-Stationen (ohne 230-V-Steckdose) taugen nicht für Notstrom oder Werkzeug
+    if (p.dc && (einsatz === 'notstrom' || einsatz === 'werkzeug')) c.push({ ok: false, t: 'keine 230-V-Steckdose (nur USB und 12 V)' });
+    return c;
   }
   var sortGrund = {
     camping: function (p) { return 'für unterwegs zählt das Gewicht: ' + f(p.kg) + ' kg'; },
     van: function (p) { return 'für mehrere Tage mit Solar zählt der Solareingang: ' + f(p.pv) + ' W'; },
-    notstrom: function (p) { return 'für den Stromausfall zählt die Umschaltzeit: USV ≤ ' + p.usv + ' ms laut Hersteller'; },
+    notstrom: function (p) { return p.usv ? 'für den Stromausfall zählt die Umschaltzeit: USV ≤ ' + p.usv + ' ms laut Hersteller' : 'für den Stromausfall zählt die Umschaltzeit: dieses Modell hat keine USV'; },
     werkzeug: function (p) { return 'für Werkzeug zählt die Dauerleistung: ' + f(p.w) + ' W'; }
   };
   var EINSATZ = 'camping';
   function karte(p, checks, knapp) {
     var h = '<div class="treffer' + (knapp ? ' knapp' : '') + '"><h3><a href="' + esc(p.url) + '">' + esc(p.m) + '</a></h3>';
-    h += '<p class="note">' + f(p.wh) + ' Wh · ' + f(p.w) + ' W · ' + f(p.kg) + ' kg · Solar ' + f(p.pv) + ' W · USV ≤ ' + p.usv + ' ms · ' + esc(p.akku) + '</p><p class="regeln-titel"><strong>' + (knapp ? 'Knapp daneben, weil eine Regel nicht erfüllt ist:' : 'Passt, weil:') + '</strong></p><ul class="regeln">';
+    h += '<p class="note">' + f(p.wh) + ' Wh · ' + f(p.w) + ' W' + (p.dc ? ' (nur DC)' : '') + ' · ' + f(p.kg) + ' kg · Solar ' + f(p.pv) + ' W · ' + (p.usv ? 'USV ≤ ' + p.usv + ' ms' : 'keine USV') + ' · ' + esc(p.akku) + '</p><p class="regeln-titel"><strong>' + (knapp ? 'Knapp daneben, weil eine Regel nicht erfüllt ist:' : 'Passt, weil:') + '</strong></p><ul class="regeln">';
     checks.forEach(function (c) { h += '<li>' + (c.ok ? '<span class="mk mk-ja" aria-hidden="true">+</span> ' : '<span class="mk mk-nein" aria-hidden="true">–</span> <span class="sr">nicht erfüllt: </span>') + esc(c.t) + '</li>'; });
     h += '<li>' + (knapp ? '' : '<span class="mk mk-ja" aria-hidden="true">+</span> ') + esc(sortGrund[EINSATZ](p)) + '</li></ul>';
     if (p.warn) h += '<p class="warnbox">' + esc(p.warn) + '</p>';
@@ -105,7 +108,7 @@
     if (!(w > 0) || !(wh > 0)) { out.innerHTML = '<p class="warnbox">Bitte bei „genau“ eine Zahl größer als 0 eintragen.</p>'; return; }
     var passt = [], knapp = [];
     daten.forEach(function (p) {
-      var c = pruefe(p, w, wh, kg);
+      var c = pruefe(p, w, wh, kg, einsatz);
       var fehl = c.filter(function (x) { return !x.ok; }).length;
       if (fehl === 0) passt.push({ p: p, c: c }); else if (fehl === 1) knapp.push({ p: p, c: c });
     });

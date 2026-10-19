@@ -1,5 +1,5 @@
 # Nur Herstellerangaben. Quelle pro Produkt angeben. asin nur setzen, wenn ein amazon.de-Angebot
-# für genau dieses Modell (ohne Bundle) geprüft wurde. Stand: 19.10.2026
+# für genau dieses Modell (ohne Bundle) geprüft wurde. Stand: 20.10.2026 (sechs Modelle ergänzt)
 # abbildung: Bild für Übersichten, Karten und Thumbnails. Derzeit eigene Illustration (img/illu/<slug>.svg,
 #   erzeugt mit tools/illus.py). Später: hier die PA-API-Bild-URL eintragen (https://…) – siehe README.
 # Keine Produktfotos (auch keine Pressefotos) und keine Amazon-Bilder: alle Modelle nur als eigene Illustration.
@@ -145,3 +145,89 @@
   solareingang_w: 800
   quelle: https://www.ankersolix.com/de/c2000-gen2
   asin: B0FVFGL38H
+- modell: EcoFlow DELTA 3 Max Plus
+  slug: ecoflow-delta-3-max-plus
+  abbildung: img/illu/ecoflow-delta-3-max-plus.svg
+  spitze_w: 6000
+  usv_ms: 10
+  zyklen: 4000
+  erweiterbar: "ja"
+  kapazitaet_wh: 2048
+  dauerleistung_w: 3000
+  akkutyp: LiFePO4
+  gewicht_kg: 22.1
+  solareingang_w: 1000
+  quelle: https://www.ecoflow.com/de/delta-3-max-plus-portable-power-station/specs
+  asin: B0FXFLZHVD
+- modell: DJI Power 2000
+  slug: dji-power-2000
+  abbildung: img/illu/dji-power-2000.svg
+  spitze_w: null
+  usv_ms: 10
+  zyklen: 4000
+  erweiterbar: "ja"
+  kapazitaet_wh: 2048
+  dauerleistung_w: 3000
+  akkutyp: LiFePO4
+  gewicht_kg: 22
+  solareingang_w: 1800
+  quelle: https://www.dji.com/de/power-2000/specs
+  asin: B0F2T77FCV
+- modell: BLUETTI Elite 300
+  slug: bluetti-elite-300
+  abbildung: img/illu/bluetti-elite-300.svg
+  spitze_w: 4800
+  usv_ms: 10
+  zyklen: 6000
+  erweiterbar: "nein"
+  kapazitaet_wh: 3014.4
+  dauerleistung_w: 2400
+  akkutyp: LiFePO4
+  gewicht_kg: 26.3
+  solareingang_w: 1200
+  quelle: https://s4.bluettipower.com/bluetti/purchasePageBiz/2026/06/Elite_300_User_Manual_EU_EN-DE-1780541601377-0f1e.pdf
+  asin: B0GL22FW87
+- modell: EcoFlow DELTA Pro 3
+  slug: ecoflow-delta-pro-3
+  abbildung: img/illu/ecoflow-delta-pro-3.svg
+  spitze_w: 8000
+  usv_ms: 10
+  zyklen: 4000
+  erweiterbar: "ja"
+  kapazitaet_wh: 4096
+  dauerleistung_w: 4000
+  akkutyp: LiFePO4
+  gewicht_kg: 51.5
+  solareingang_w: 2600
+  quelle: https://de.ecoflow.com/products/ecoflow-delta-pro-3-powerstation
+  asin: B0DDKP47PY
+# nur_dc: keine 230-V-Steckdose, keine USV. dauerleistung_w ist dann die DC-Gesamtleistung (USB-C/USB-A/12 V).
+- modell: EcoFlow TRAIL 300 DC
+  slug: ecoflow-trail-300-dc
+  abbildung: img/illu/ecoflow-trail-300-dc.svg
+  nur_dc: true
+  spitze_w: null
+  usv_ms: null
+  zyklen: null
+  erweiterbar: "nein"
+  kapazitaet_wh: 288
+  dauerleistung_w: 300
+  akkutyp: LiFePO4
+  gewicht_kg: 2.58
+  solareingang_w: 110
+  quelle: https://www.ecoflow.com/de/trail-series
+  asin: B0FPL36GM6
+- modell: BLUETTI Elite 30 V2
+  slug: bluetti-elite-30-v2
+  abbildung: img/illu/bluetti-elite-30-v2.svg
+  spitze_w: 1500
+  usv_ms: 10
+  zyklen: 3000
+  erweiterbar: "nein"
+  kapazitaet_wh: 288
+  dauerleistung_w: 600
+  akkutyp: LiFePO4
+  gewicht_kg: 4.3
+  solareingang_w: 200
+  quelle: https://www.bluettipower.eu/products/elite-30-v2-portable-power-station
+  asin: B0F9FN228S

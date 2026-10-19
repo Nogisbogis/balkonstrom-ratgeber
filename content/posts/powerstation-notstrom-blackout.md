@@ -85,7 +85,7 @@ Die Rechnung ist einfach: **nutzbare Wattstunden ÷ Leistung der Geräte = Stund
 
 Bei kleiner Dauerlast, wie sie für Router und Licht typisch ist, arbeiten Wechselrichter also oft weniger effizient. Manche Stationen brauchen zudem selbst Strom. Jackery gibt für die Explorer 1000 v2 einen Standby-Verbrauch von 18 W an. Laut ADAC gehen bei eingeschaltetem Wechselrichter „teils schon 30 Watt verloren“; die Tester raten, ihn auszuschalten, wenn die 230-V-Steckdosen nicht gebraucht werden. Handys und andere USB-Geräte lassen sich direkt an den USB-Ausgängen laden.
 
-Mit dem [Laufzeitrechner](/laufzeitrechner/) trägst du deine Geräte ein und siehst für alle zehn Modelle, wie lange es reicht. Die Annahmen wie Wirkungsgrad und Eigenverbrauch kannst du dort selbst einstellen.
+Mit dem [Laufzeitrechner](/laufzeitrechner/) trägst du deine Geräte ein und siehst für alle Modelle aus meinem Vergleich, wie lange es reicht. Die Annahmen wie Wirkungsgrad und Eigenverbrauch kannst du dort selbst einstellen.
 
 **Kühlschrank:** Der Kompressor läuft nicht ständig, braucht beim Anlaufen aber kurz mehr Leistung. Wie viel, steht im Datenblatt des Geräts. Die Dauerleistung der Powerstation sollte mit Reserve darüber liegen.
 

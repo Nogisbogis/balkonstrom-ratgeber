@@ -31,6 +31,13 @@ PS = [
  dict(slug="bluetti-elite-100-v2", name="BLUETTI Elite 100 V2", dims=(320,215,250), ac=2, usbc=2, usba=2, disp="top", griff="mulde"),
  dict(slug="jackery-explorer-1000-v2", name="Jackery Explorer 1000 v2", dims=(327,224,247), ac=3, usbc=2, usba=1, disp="left", griff="klapp"),
  dict(slug="anker-solix-c2000-gen-2", name="Anker SOLIX C2000 Gen 2", dims=(459,250,257), ac=4, usbc=3, usba=1, disp="top", griff="schulter"),
+ # ergänzt 20.10.2026 (Maße und Anschlusszahlen laut Hersteller bzw. Handbuch; Elite 30 V2: 1 AC laut Test, EU-Version)
+ dict(slug="ecoflow-delta-3-max-plus", name="EcoFlow DELTA 3 Max Plus", dims=(494,242,305), ac=4, usbc=3, usba=1, disp="top", griff="zwei"),
+ dict(slug="dji-power-2000", name="DJI Power 2000", dims=(448,225,324), ac=4, usbc=4, usba=4, disp="top", griff="zwei"),
+ dict(slug="bluetti-elite-300", name="BLUETTI Elite 300", dims=(366,305,297.5), ac=2, usbc=2, usba=2, disp="top", griff="zwei"),
+ dict(slug="ecoflow-delta-pro-3", name="EcoFlow DELTA Pro 3", dims=(693,341,410), ac=5, usbc=2, usba=2, disp="top", griff="zwei", rollen=True),
+ dict(slug="ecoflow-trail-300-dc", name="EcoFlow TRAIL 300 DC", dims=(166,115,167), ac=0, usbc=2, usba=2, disp="left", griff="schlaufe", kfz=True, masse_txt=(115,166,167)),
+ dict(slug="bluetti-elite-30-v2", name="BLUETTI Elite 30 V2", dims=(250,178,167.5), ac=1, usbc=2, usba=2, disp="left", griff="mulde"),
 ]
 BKW = [
  dict(slug="anker-solix-solarbank-2-e1600-pro", name="Anker SOLIX Solarbank 2 E1600 Pro", dims=(460,249,254), ac=1, mppt=4, griff="keine", led=True),
@@ -107,10 +114,14 @@ def front_ps(m, x, y, fw, fh):
         for i in range(nc): o.append(usbc(ix + i*uw*1.45, iy+dh+ih*.12, uw))
         for i in range(na): o.append(usba(ix + (nc+i)*uw*1.45, iy+dh+ih*.12, uw))
         zone_x, zone_w, zone_y, zone_h = ix+dw+iw*.06, iw-dw-iw*.06, iy, ih*.7
-    rr = min(zone_h*.36, zone_w/(ac*2.5))
-    gap = (zone_w - ac*2*rr)/(ac+1)
-    for i in range(ac):
-        o.append(schuko(zone_x + gap*(i+1) + rr*(2*i+1), zone_y + zone_h*.45, rr))
+    if ac:
+        rr = min(zone_h*.36, zone_w/(ac*2.5))
+        gap = (zone_w - ac*2*rr)/(ac+1)
+        for i in range(ac):
+            o.append(schuko(zone_x + gap*(i+1) + rr*(2*i+1), zone_y + zone_h*.45, rr))
+    if m.get("kfz"):   # runde 12-V-Kfz-Buchse statt Steckdose (reine DC-Station)
+        rk = min(zone_h*.24, zone_w*.2); cx, cy = zone_x + zone_w*.5, zone_y + zone_h*.45
+        o.append(f'<circle cx="{r(cx)}" cy="{r(cy)}" r="{r(rk)}" class="k l"/><circle cx="{r(cx)}" cy="{r(cy)}" r="{r(rk*.55)}" class="h"/><circle cx="{r(cx)}" cy="{r(cy)}" r="{r(rk*.16)}" class="k"/>')
     if m.get("licht"):
         o.append(f'<rect x="{r(x+fw*.15)}" y="{r(y+fh*.86)}" width="{r(fw*.7)}" height="{r(fh*.05)}" rx="2" class="k l" stroke-width="1"/>')
     return "".join(o)
@@ -139,6 +150,10 @@ def zeichne(m, x, y, s, art):
     body = koerper(x, y, fw, fh, dx, dy, rad)
     g = griff(m["griff"], x, y, fw, fh, dx, dy)
     det = front_ps(m, x, y, fw, fh) if art == "ps" else front_bkw(m, x, y, fw, fh, dx, dy)
+    if m.get("rollen"):   # Rollen an der Unterseite (Trolley)
+        rw = max(3, fh*.05)
+        for wx in (x + fw*.1, x + fw*.9):
+            det += f'<circle cx="{r(wx)}" cy="{r(y+fh)}" r="{r(rw)}" class="h l" stroke-width="1.2"/>'
     return body + g + det
 
 def masse(m):
@@ -199,7 +214,8 @@ def vergleich(liste, art, name, title, s, pro_reihe):
             L, D, Hh = m["dims"]
             b += zeichne(m, x, base - Hh*s, s, art)
             nm = m["name"].replace("Anker SOLIX ", "Anker ").replace("Jackery Explorer ", "Jackery ")
-            b += f'<text x="{r(x + L*s/2)}" y="{r(base+16)}" class="m" font-size="11.5" text-anchor="middle">{esc(nm)}</text>'
+            tx = max(x + L*s/2, 4 + len(nm)*2.9)   # Beschriftung nicht links abschneiden (schmale Geräte)
+            b += f'<text x="{r(tx)}" y="{r(base+16)}" class="m" font-size="11.5" text-anchor="middle">{esc(nm)}</text>'
             x += (L + D*KX)*s + gapx
         y += hh
     b += (f'<path d="M{mx} {H-22}v-6M{mx} {H-25}h{r(100*s)}M{r(mx+100*s)} {H-22}v-6" class="ml" stroke-width="1.4" fill="none"/>'

@@ -21,7 +21,7 @@ kurz = [
 [[faq]]
   f = 'Welches Solarpanel passt zu meiner Powerstation?'
   gruppe = 'Kauf'
-  a = 'Eines, dessen Spannung im Eingangsbereich der Powerstation liegt, dessen Strom den Grenzwert nicht überschreitet und dessen Stecker passt. Die maximale Solarleistung bestimmt, wie viel die Station höchstens aufnimmt. Die Werte für die zehn Modelle aus meinem Vergleich stehen in der Tabelle im Artikel.'
+  a = 'Eines, dessen Spannung im Eingangsbereich der Powerstation liegt, dessen Strom den Grenzwert nicht überschreitet und dessen Stecker passt. Die maximale Solarleistung bestimmt, wie viel die Station höchstens aufnimmt. Die Werte für zehn Modelle aus meinem Vergleich stehen in der Tabelle im Artikel, alle weiteren im Vergleich.'
 [[faq]]
   f = 'Reihe oder parallel – wie schließe ich zwei Panels an?'
   gruppe = 'Technik'
@@ -32,7 +32,7 @@ kurz = [
   a = 'Laut SMA-Planungsleitfaden ist die Leerlaufspannung bei niedrigen Temperaturen am höchsten. Wer nahe an der Höchstspannung des Eingangs plant, kann sie an einem kalten, sonnigen Tag überschreiten.'
 +++
 
-Ein Solarpanel macht eine Powerstation unabhängig von der Steckdose. Damit das funktioniert, muss das Panel elektrisch und mechanisch zum Solareingang passen. Hier sind die drei wichtigsten Werte, die Steckerfrage und die Daten der zehn Modelle aus meinem Vergleich.
+Ein Solarpanel macht eine Powerstation unabhängig von der Steckdose. Damit das funktioniert, muss das Panel elektrisch und mechanisch zum Solareingang passen. Hier sind die drei wichtigsten Werte, die Steckerfrage und die Daten von zehn Modellen aus meinem Vergleich.
 
 *Alle Gerätewerte sind Herstellerangaben, verlinkt auf den [Produktseiten](/powerstations/#modelle). Ich habe keine eigenen Ladetests gemacht.*
 
@@ -55,7 +55,7 @@ Der Wechselrichterhersteller SMA schreibt in seinem Planungsleitfaden: „Die Le
 
 Manche Hersteller schreiben Regeln vor. Bei der **Jackery Explorer 1000 v2** sind die beiden Solareingänge laut Jackery parallel geschaltet. Unterschiedlich starke Panels dürfen nicht gleichzeitig angeschlossen werden, also nicht 100 W an einem und 200 W am anderen Eingang. Bei Mischbetrieb müssen Nennleistung, Leerlauf- und Betriebsspannung identisch sein. Die **Jackery Explorer 300 Plus** erlaubt laut Jackery nur ein einziges Panel.
 
-## Die Solareingänge der zehn Modelle
+## Die Solareingänge von zehn Modellen
 
 | Modell | Spannung | Strom | Solar max. | Anschluss |
 |---|---|---|---|---|

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300" role="img" aria-label="BLUETTI Elite 30 V2, schematische Darstellung" lang="de"><style>
+.f{fill:#e3e0d8}.t{fill:#f1eee6}.s{fill:#c9c5bb}.l{stroke:#111;stroke-width:1.6;stroke-linejoin:round;stroke-linecap:round}
+.p{fill:#262b2e}.a{fill:#0a6b3d}.as{stroke:#0a6b3d}.k{fill:#f7f5f0}.h{fill:#262b2e}.m{fill:#55595e}.ml{stroke:#55595e}
+.c{fill:#2f4f6f}.cl{stroke:#9db7d1}
+text{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+@media (max-width:220px){.dim{display:none}}
+@media (prefers-color-scheme:dark){.f{fill:#3b4d46}.t{fill:#4b5f57}.s{fill:#2c3b36}.l{stroke:#eef2ee}
+.p{fill:#0b1512}.a{fill:#5fd69a}.as{stroke:#5fd69a}.k{fill:#26372f}.h{fill:#0b1512}.m{fill:#b5c2bb}.ml{stroke:#b5c2bb}
+.c{fill:#24476b}.cl{stroke:#7fa2c8}}
+</style><path d="M45.2 92.9L120.3 42.8H354.8L279.7 92.9Z" class="t l"/><path d="M279.7 92.9L354.8 42.8V199.9L279.7 250Z" class="s l"/><rect x="45.2" y="92.9" width="234.4" height="157.1" rx="9.4" class="f l"/><path d="M157.8 67.9H242.2" class="l" stroke-width="6" stroke-linecap="round" fill="none" opacity=".7"/><rect x="61.6" y="108.6" width="68.6" height="52.8" rx="6.3" class="p"/><rect x="68.5" y="144.5" width="37.7" height="4.7" rx="1" class="a"/><rect x="68.5" y="121.8" width="20.6" height="14.8" rx="1" class="a" opacity=".55"/><rect x="61.6" y="176.5" width="11.8" height="4.5" rx="2.2" class="h"/><rect x="78.8" y="176.5" width="11.8" height="4.5" rx="2.2" class="h"/><rect x="95.9" y="176.5" width="11.8" height="5" rx="1" class="h"/><rect x="113" y="176.5" width="11.8" height="5" rx="1" class="h"/><circle cx="202.8" cy="148.2" r="31.7" class="k l"/><circle cx="190.7" cy="148.2" r="4.1" class="h"/><circle cx="214.8" cy="148.2" r="4.1" class="h"/><g class="dim"><path d="M45.2 258v8M45.2 262H279.7M279.7 258v8" class="ml" stroke-width="1.2" fill="none"/><text x="162.4" y="278" class="m" font-size="13" text-anchor="middle">25 cm</text><text x="200.0" y="292" class="m" font-size="12" text-anchor="middle">25 × 17,8 × 16,8 cm (B × T × H) laut Hersteller</text></g></svg>
