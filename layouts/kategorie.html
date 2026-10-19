@@ -15,7 +15,19 @@
 <ul class="plist">{{ range sort hugo.Data.balkonkraftwerke "speicher_kwh" }}{{ $d := . }}{{ with site.GetPage (printf "/balkonkraftwerke/%s" .slug) }}<li><a href="{{ .RelPermalink }}"><strong>{{ .Title }}</strong><span>{{ if gt $d.speicher_kwh 0 }}{{ replace (string $d.speicher_kwh) "." "," }} kWh · {{ lang.FormatNumber 0 $d.pv_max_w }} W PV{{ else }}{{ $d.module_wp }} Wp · ohne Speicher{{ end }} · Notstrom {{ if gt $d.notstrom_w 0 }}{{ $d.notstrom_w }} W{{ else }}nein{{ end }}</span></a></li>{{ end }}{{ end }}</ul>
 <p class="tool-links-inline">Lohnt sich das für dich? <a href="{{ "amortisationsrechner/" | relURL }}">Zum Amortisationsrechner</a></p>
 {{ end }}
+{{ if eq .Params.kategorie "ratgeber" }}
+{{ range slice "powerstations" "balkonkraftwerke" "ratgeber" }}{{ $k := . }}
+{{ $posts := where (where site.RegularPages "Section" "posts") "Params.kategorie" $k }}
+{{ with $posts }}
+<section class="rubrik">
+  <h2 id="{{ $k }}">{{ cond (eq $k "ratgeber") "Regeln &amp; Anmeldung" ((site.GetPage (printf "/%s" $k)).Title) | safeHTML }}</h2>
+  {{ if ne $k "ratgeber" }}<p class="rubrik-link"><a href="{{ (site.GetPage (printf "/%s" $k)).RelPermalink }}">Alle {{ (site.GetPage (printf "/%s" $k)).Title }} im Detail</a></p>{{ end }}
+  <ul class="cards">{{ range .ByDate.Reverse }}{{ partial "card.html" . }}{{ end }}</ul>
+</section>
+{{ end }}{{ end }}
+{{ else }}
 {{ $posts := where (where site.RegularPages "Section" "posts") "Params.kategorie" .Params.kategorie }}
 <h2>Artikel</h2>
 {{ with $posts }}<ul class="cards">{{ range .ByDate.Reverse }}{{ partial "card.html" . }}{{ end }}</ul>{{ else }}<p class="empty">Bald gibt es hier Artikel.</p>{{ end }}
+{{ end }}
 {{ end }}

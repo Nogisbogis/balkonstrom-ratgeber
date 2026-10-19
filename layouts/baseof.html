@@ -49,12 +49,24 @@
 <a class="skip" href="#inhalt">Zum Inhalt springen</a>
 <header class="site-header">
   <div class="wrap">
-    <a class="brand" href="{{ site.Home.RelPermalink }}"><img src="{{ "favicon.svg" | relURL }}" alt="" width="28" height="28">{{ site.Title }}</a>
-        <nav class="main-nav" aria-label="Hauptnavigation">
-      {{- $cur := .RelPermalink }}
-      {{- range slice "powerstations" "balkonkraftwerke" "ratgeber" }}{{ with site.GetPage (printf "/%s" .) }}<a href="{{ .RelPermalink }}"{{ if or (eq $cur .RelPermalink) (eq $.Params.kategorie .Params.kategorie) }} aria-current="page"{{ end }}>{{ .Title }}</a>{{ end }}{{ end }}
+    <a class="brand" href="{{ site.Home.RelPermalink }}"><span class="brand-a">Balkonstrom</span><span class="brand-b">Ratgeber</span></a>
+    {{- $cur := .RelPermalink }}
+    {{- $tools := slice ("werkzeuge/" | relURL) ("powerstation-finder/" | relURL) ("laufzeitrechner/" | relURL) ("amortisationsrechner/" | relURL) }}
+    <nav class="main-nav" aria-label="Hauptnavigation">
       <a href="{{ "vergleich/" | relURL }}"{{ if eq $cur ("vergleich/" | relURL) }} aria-current="page"{{ end }}>Vergleich</a>
-      <a href="{{ "werkzeuge/" | relURL }}"{{ if in (slice ("werkzeuge/" | relURL) ("powerstation-finder/" | relURL) ("laufzeitrechner/" | relURL) ("amortisationsrechner/" | relURL)) $cur }} aria-current="page"{{ end }}>Finder &amp; Rechner</a></nav>
+      <a href="{{ "werkzeuge/" | relURL }}"{{ if in $tools $cur }} aria-current="page"{{ end }}>Werkzeuge</a>
+      <a href="{{ "ratgeber/" | relURL }}"{{ if or (eq $cur ("ratgeber/" | relURL)) (eq .Section "posts") }} aria-current="page"{{ end }}>Ratgeber</a>
+      <a href="{{ "balkonkraftwerke/" | relURL }}"{{ if eq .Section "balkonkraftwerke" }} aria-current="page"{{ end }}>Balkonkraftwerke</a>
+    </nav>
+    <details class="m-menu">
+      <summary>Menü</summary>
+      <nav aria-label="Hauptnavigation (mobil)">
+      <a href="{{ "vergleich/" | relURL }}"{{ if eq $cur ("vergleich/" | relURL) }} aria-current="page"{{ end }}>Vergleich</a>
+      <a href="{{ "werkzeuge/" | relURL }}"{{ if in $tools $cur }} aria-current="page"{{ end }}>Werkzeuge</a>
+      <a href="{{ "ratgeber/" | relURL }}"{{ if or (eq $cur ("ratgeber/" | relURL)) (eq .Section "posts") }} aria-current="page"{{ end }}>Ratgeber</a>
+      <a href="{{ "balkonkraftwerke/" | relURL }}"{{ if eq .Section "balkonkraftwerke" }} aria-current="page"{{ end }}>Balkonkraftwerke</a>
+      </nav>
+    </details>
   </div>
 </header>
 <main class="wrap" id="inhalt">

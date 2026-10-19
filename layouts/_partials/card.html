@@ -1,5 +1,4 @@
 <li class="card">
-  {{ with .Params.image }}<img src="{{ . | relURL }}" alt="" width="480" height="270" loading="lazy" decoding="async">{{ end }}
   <div class="card-body">
     {{ with .Params.kategorie }}{{ with site.GetPage (printf "/%s" .) }}<p class="card-kat">{{ .Title }}</p>{{ end }}{{ end }}
     <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>

@@ -10,16 +10,16 @@ ps = yaml.safe_load(open(os.path.join(ROOT, "data", "powerstations.yaml"), encod
 bkw = yaml.safe_load(open(os.path.join(ROOT, "data", "balkonkraftwerke.yaml"), encoding="utf-8"))
 
 STYLE = """<style>
-.bg{fill:#ffffff}.t{fill:#1d2a33}.m{fill:#5b6b75}.g{stroke:#dde5e0}.ax{stroke:#5b6b75}
-.a{fill:#0b7a4b}.as{stroke:#0b7a4b}.b{fill:#9a5b00}.bs{stroke:#9a5b00}.c{fill:#2f5d8a}.cs{stroke:#2f5d8a}
-.box{fill:#f3f7f4;stroke:#9fb5a8}.boxa{fill:#e3f2ea;stroke:#0b7a4b}.boxb{fill:#fbefdc;stroke:#9a5b00}
-.ar{fill:#5b6b75}.ars{stroke:#5b6b75}.al{fill:#0b7a4b;fill-opacity:.18}.bl{fill:#9a5b00;fill-opacity:.18}
+.bg{fill:#ffffff}.t{fill:#111111}.m{fill:#55595e}.g{stroke:#e2e2df}.ax{stroke:#111111}
+.a{fill:#0a6b3d}.as{stroke:#0a6b3d}.b{fill:#9a4a00}.bs{stroke:#9a4a00}.c{fill:#1f4f8f}.cs{stroke:#1f4f8f}
+.box{fill:#f4f4f2;stroke:#111111}.boxa{fill:#ffffff;stroke:#0a6b3d}.boxb{fill:#ffffff;stroke:#9a4a00}
+.ar{fill:#111111}.ars{stroke:#111111}.al{fill:#0a6b3d;fill-opacity:.14}.bl{fill:#9a4a00;fill-opacity:.14}
 text{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
 @media (prefers-color-scheme:dark){
-.bg{fill:#121816}.t{fill:#e3ebe6}.m{fill:#9fb0a8}.g{stroke:#2a3631}.ax{stroke:#9fb0a8}
-.a{fill:#4fd197}.as{stroke:#4fd197}.b{fill:#e8b04f}.bs{stroke:#e8b04f}.c{fill:#7fb2e5}.cs{stroke:#7fb2e5}
-.box{fill:#18211d;stroke:#3b4a43}.boxa{fill:#14302a;stroke:#4fd197}.boxb{fill:#33280f;stroke:#e8b04f}
-.ar{fill:#9fb0a8}.ars{stroke:#9fb0a8}.al{fill:#4fd197;fill-opacity:.2}.bl{fill:#e8b04f;fill-opacity:.2}}
+.bg{fill:#0f0f0f}.t{fill:#ececea}.m{fill:#a8aaa6}.g{stroke:#2e2f2d}.ax{stroke:#ececea}
+.a{fill:#4cd38a}.as{stroke:#4cd38a}.b{fill:#f0b45a}.bs{stroke:#f0b45a}.c{fill:#8db8f0}.cs{stroke:#8db8f0}
+.box{fill:#1a1a19;stroke:#ececea}.boxa{fill:#0f0f0f;stroke:#4cd38a}.boxb{fill:#0f0f0f;stroke:#f0b45a}
+.ar{fill:#ececea}.ars{stroke:#ececea}.al{fill:#4cd38a;fill-opacity:.18}.bl{fill:#f0b45a;fill-opacity:.18}}
 </style>"""
 
 def esc(s): return html.escape(str(s), quote=True)
@@ -411,10 +411,10 @@ def bkw_speicher(name="vergleich-bkw-speicher.svg"):
 
 # ---------- Favicon ----------
 def favicon():
-    s = ('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#0b7a4b"/>'
-         '<circle cx="46" cy="17" r="8" fill="#ffd25e"/>'
-         '<path d="M10 50 L20 26 H50 L42 50 Z" fill="#e3f2ea"/>'
-         '<path d="M20 26 L42 50 M35 26 L31 50 M14 40 H46 M17 33 H48" stroke="#0b7a4b" stroke-width="2.4" fill="none"/></svg>\n')
+    s = ('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="8" fill="#111111"/>'
+         '<rect x="8" y="46" width="48" height="6" fill="#4cd38a"/>'
+         '<path d="M12 40 L20 14 H52 L44 40 Z" fill="#ffffff"/>'
+         '<path d="M30 14 L26 40 M41 14 L35 40 M16 27 H48" stroke="#111111" stroke-width="2.6" fill="none"/></svg>\n')
     open(os.path.join(ROOT, "static", "favicon.svg"), "w").write(s)
 
 if __name__ == "__main__":

@@ -2,16 +2,16 @@
 <title id="t">Ablaufdiagramm: Balkonkraftwerk anmelden und in Betrieb nehmen</title>
 <desc id="d">Fünf Schritte: 1. Gerät prüfen – Wechselrichter höchstens 800 VA laut Typenschild, Module höchstens 2.000 Watt, für Schuko höchstens 960 Watt und DIN VDE V 0126-95. 2. Zustimmung von Vermieter oder Eigentümergemeinschaft einholen. 3. Sicher montieren und passend anschließen. 4. Innerhalb eines Monats im Marktstammdatenregister registrieren; mit Speicher diesen angeben und zusätzlich beim Netzbetreiber anmelden. 5. Zählertausch durch den Messstellenbetreiber abwarten, im Regelfall kostenlos.</desc>
 <style>
-.bg{fill:#ffffff}.t{fill:#1d2a33}.m{fill:#5b6b75}.g{stroke:#dde5e0}.ax{stroke:#5b6b75}
-.a{fill:#0b7a4b}.as{stroke:#0b7a4b}.b{fill:#9a5b00}.bs{stroke:#9a5b00}.c{fill:#2f5d8a}.cs{stroke:#2f5d8a}
-.box{fill:#f3f7f4;stroke:#9fb5a8}.boxa{fill:#e3f2ea;stroke:#0b7a4b}.boxb{fill:#fbefdc;stroke:#9a5b00}
-.ar{fill:#5b6b75}.ars{stroke:#5b6b75}.al{fill:#0b7a4b;fill-opacity:.18}.bl{fill:#9a5b00;fill-opacity:.18}
+.bg{fill:#ffffff}.t{fill:#111111}.m{fill:#55595e}.g{stroke:#e2e2df}.ax{stroke:#111111}
+.a{fill:#0a6b3d}.as{stroke:#0a6b3d}.b{fill:#9a4a00}.bs{stroke:#9a4a00}.c{fill:#1f4f8f}.cs{stroke:#1f4f8f}
+.box{fill:#f4f4f2;stroke:#111111}.boxa{fill:#ffffff;stroke:#0a6b3d}.boxb{fill:#ffffff;stroke:#9a4a00}
+.ar{fill:#111111}.ars{stroke:#111111}.al{fill:#0a6b3d;fill-opacity:.14}.bl{fill:#9a4a00;fill-opacity:.14}
 text{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
 @media (prefers-color-scheme:dark){
-.bg{fill:#121816}.t{fill:#e3ebe6}.m{fill:#9fb0a8}.g{stroke:#2a3631}.ax{stroke:#9fb0a8}
-.a{fill:#4fd197}.as{stroke:#4fd197}.b{fill:#e8b04f}.bs{stroke:#e8b04f}.c{fill:#7fb2e5}.cs{stroke:#7fb2e5}
-.box{fill:#18211d;stroke:#3b4a43}.boxa{fill:#14302a;stroke:#4fd197}.boxb{fill:#33280f;stroke:#e8b04f}
-.ar{fill:#9fb0a8}.ars{stroke:#9fb0a8}.al{fill:#4fd197;fill-opacity:.2}.bl{fill:#e8b04f;fill-opacity:.2}}
+.bg{fill:#0f0f0f}.t{fill:#ececea}.m{fill:#a8aaa6}.g{stroke:#2e2f2d}.ax{stroke:#ececea}
+.a{fill:#4cd38a}.as{stroke:#4cd38a}.b{fill:#f0b45a}.bs{stroke:#f0b45a}.c{fill:#8db8f0}.cs{stroke:#8db8f0}
+.box{fill:#1a1a19;stroke:#ececea}.boxa{fill:#0f0f0f;stroke:#4cd38a}.boxb{fill:#0f0f0f;stroke:#f0b45a}
+.ar{fill:#ececea}.ars{stroke:#ececea}.al{fill:#4cd38a;fill-opacity:.18}.bl{fill:#f0b45a;fill-opacity:.18}}
 </style>
 <rect class="bg" width="760" height="600" rx="8"/>
 <defs><marker id="pf" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="ar"/></marker></defs>
