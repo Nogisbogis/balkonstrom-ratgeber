@@ -1,0 +1,94 @@
+{{ define "main" }}
+<article class="wide">
+  {{ partial "disclosure-box.html" . }}
+  <h1>{{ .Title }}</h1>
+  {{ .Content }}
+
+  <h2 id="balkonkraftwerke">Balkonkraftwerke &amp; Speicher</h2>
+  <form class="filters" data-table="t-bkw" hidden>
+    <label>Typ
+      <select data-filter="typ" data-op="eq">
+        <option value="">alle</option>
+        {{ $typen := slice }}{{ range hugo.Data.balkonkraftwerke }}{{ $typen = $typen | append .typ }}{{ end }}
+        {{ range ($typen | uniq) }}<option>{{ . }}</option>{{ end }}
+      </select></label>
+    <label>Speicher mind. (kWh)
+      <input type="number" min="0" step="0.1" data-filter="speicher" data-op="min" inputmode="decimal"></label>
+    <label>PV-Eingang mind. (W)
+      <input type="number" min="0" step="100" data-filter="pv" data-op="min" inputmode="numeric"></label>
+    <button type="reset" class="btn-sec">Zurücksetzen</button>
+  </form>
+  <div class="table-wrap">
+  <table id="t-bkw" class="cmp">
+    <thead><tr>
+      <th data-sort="text">Modell</th>
+      <th data-sort="text">Typ</th>
+      <th data-sort="num" class="r">Module (Wp)</th>
+      <th data-sort="num" class="r">PV-Eingang max. (W)</th>
+      <th data-sort="num" class="r">Wechselrichter (W)</th>
+      <th data-sort="num" class="r">Speicher (kWh)</th>
+      <th>Links</th>
+    </tr></thead>
+    <tbody>
+    {{ range hugo.Data.balkonkraftwerke }}
+      <tr data-typ="{{ .typ }}" data-speicher="{{ .speicher_kwh }}" data-pv="{{ cond (gt .pv_max_w 0) .pv_max_w .module_wp }}">
+        <td>{{ .modell }}</td>
+        <td>{{ .typ }}</td>
+        <td class="r" data-v="{{ .module_wp }}">{{ if gt .module_wp 0 }}{{ lang.FormatNumber 0 .module_wp }}{{ else }}–{{ end }}</td>
+        <td class="r" data-v="{{ .pv_max_w }}">{{ if gt .pv_max_w 0 }}{{ lang.FormatNumber 0 .pv_max_w }}{{ else }}–{{ end }}</td>
+        <td class="r" data-v="{{ .wechselrichter_w }}">{{ .wechselrichter_w }}</td>
+        <td class="r" data-v="{{ .speicher_kwh }}">{{ if gt .speicher_kwh 0 }}{{ replace (string .speicher_kwh) "." "," }}{{ else }}nein{{ end }}</td>
+        <td class="links"><a href="{{ .quelle }}" rel="noopener nofollow" target="_blank">Quelle</a>{{ with .asin }} · <a class="amazon-link" href="{{ partial "amazon-url.html" . }}" rel="sponsored nofollow noopener" target="_blank">Amazon</a><sup class="ad-mark">*</sup>{{ end }}</td>
+      </tr>
+    {{ end }}
+    </tbody>
+  </table>
+  </div>
+
+  <h2 id="powerstations">Powerstations</h2>
+  <form class="filters" data-table="t-ps" hidden>
+    <label>Kapazität mind. (Wh)
+      <input type="number" min="0" step="100" data-filter="wh" data-op="min" inputmode="numeric"></label>
+    <label>Dauerleistung mind. (W)
+      <input type="number" min="0" step="100" data-filter="w" data-op="min" inputmode="numeric"></label>
+    <label>Gewicht max. (kg)
+      <input type="number" min="0" step="0.5" data-filter="kg" data-op="max" inputmode="decimal"></label>
+    <label>Akkutyp
+      <select data-filter="akku" data-op="eq">
+        <option value="">alle</option>
+        {{ $akkus := slice }}{{ range hugo.Data.powerstations }}{{ $akkus = $akkus | append .akkutyp }}{{ end }}
+        {{ range ($akkus | uniq) }}<option>{{ . }}</option>{{ end }}
+      </select></label>
+    <button type="reset" class="btn-sec">Zurücksetzen</button>
+  </form>
+  <div class="table-wrap">
+  <table id="t-ps" class="cmp">
+    <thead><tr>
+      <th data-sort="text">Modell</th>
+      <th data-sort="num" class="r">Kapazität (Wh)</th>
+      <th data-sort="num" class="r">Dauerleistung (W)</th>
+      <th data-sort="text">Akkutyp</th>
+      <th data-sort="num" class="r">Gewicht (kg)</th>
+      <th data-sort="num" class="r">Solareingang max. (W)</th>
+      <th>Links</th>
+    </tr></thead>
+    <tbody>
+    {{ range sort hugo.Data.powerstations "kapazitaet_wh" }}
+      <tr data-wh="{{ .kapazitaet_wh }}" data-w="{{ .dauerleistung_w }}" data-kg="{{ .gewicht_kg }}" data-akku="{{ .akkutyp }}">
+        <td>{{ .modell }}</td>
+        <td class="r" data-v="{{ .kapazitaet_wh }}">{{ lang.FormatNumber 0 .kapazitaet_wh }}</td>
+        <td class="r" data-v="{{ .dauerleistung_w }}">{{ lang.FormatNumber 0 .dauerleistung_w }}</td>
+        <td>{{ .akkutyp }}</td>
+        <td class="r" data-v="{{ .gewicht_kg }}">{{ replace (string .gewicht_kg) "." "," }}</td>
+        <td class="r" data-v="{{ .solareingang_w }}">{{ lang.FormatNumber 0 .solareingang_w }}</td>
+        <td class="links"><a href="{{ .quelle }}" rel="noopener nofollow" target="_blank">Quelle</a>{{ with .asin }} · <a class="amazon-link" href="{{ partial "amazon-url.html" . }}" rel="sponsored nofollow noopener" target="_blank">Amazon</a><sup class="ad-mark">*</sup>{{ end }}</td>
+      </tr>
+    {{ end }}
+    </tbody>
+  </table>
+  </div>
+  <p class="note">Alle Werte sind Herstellerangaben (Stand der Datenerhebung: {{ .Params.stand }}). Preise nennen wir bewusst nicht, weil sie sich ständig ändern. Mit * markierte Links sind Affiliate-Links.</p>
+</article>
+{{ $js := resources.Get "js/vergleich.js" | minify | fingerprint }}
+<script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" defer></script>
+{{ end }}

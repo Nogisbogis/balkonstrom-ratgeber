@@ -1,0 +1,5 @@
+{{- /* Gibt die amazon.de-URL für eine ASIN zurück (mit Partner-Tag, falls gesetzt). */ -}}
+{{- $tag := or (getenv "HUGO_PARTNER_TAG") site.Params.partnerTag -}}
+{{- $url := printf "https://www.amazon.de/dp/%s" . -}}
+{{- with $tag }}{{ $url = printf "%s?tag=%s" $url (. | urlquery) }}{{ end -}}
+{{- return $url -}}

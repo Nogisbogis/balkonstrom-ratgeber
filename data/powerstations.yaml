@@ -1,0 +1,82 @@
+# Nur Herstellerangaben. Quelle pro Produkt angeben. asin nur setzen, wenn ein amazon.de-Angebot
+# für genau dieses Modell (ohne Bundle) geprüft wurde. Stand: 19.10.2026
+- modell: EcoFlow RIVER 3
+  kapazitaet_wh: 245
+  dauerleistung_w: 300
+  akkutyp: LiFePO4
+  gewicht_kg: 3.55
+  solareingang_w: 110
+  quelle: https://de.ecoflow.com/products/river-3-portable-power-station
+  asin: B0DFVZ5D7Z
+- modell: EcoFlow RIVER 3 Plus
+  kapazitaet_wh: 286
+  dauerleistung_w: 600
+  akkutyp: LiFePO4
+  gewicht_kg: 4.7
+  solareingang_w: 220
+  quelle: https://de.ecoflow.com/products/river-3-plus-portable-power-station
+  asin: B0DFVZ6MYX
+- modell: Jackery Explorer 300 Plus
+  kapazitaet_wh: 288
+  dauerleistung_w: 300
+  akkutyp: LiFePO4
+  gewicht_kg: 3.75
+  solareingang_w: 100
+  quelle: https://helpcenter.eu.jackery.com/hc/en-gb/articles/52682971950363-Explorer-300-Plus-Basic-Information
+  asin: B0C27VWNM7
+- modell: Anker SOLIX C300X
+  kapazitaet_wh: 288
+  dauerleistung_w: 300
+  akkutyp: LiFePO4
+  gewicht_kg: 4.13
+  solareingang_w: 100
+  quelle: https://support.anker.com/s/article/Anker-SOLIX-C300X-Portable-Power-Station-Benutzerhandbuch-A1723
+  asin: B0FLJH3ZZY
+- modell: DJI Power 1000 Mini
+  kapazitaet_wh: 1008
+  dauerleistung_w: 800
+  akkutyp: LiFePO4
+  gewicht_kg: 11.5
+  solareingang_w: 400
+  quelle: https://www.dji.com/de/power-1000-mini/specs
+  asin: B0GJC2M84T
+- modell: Anker SOLIX C1000 Gen 2
+  kapazitaet_wh: 1024
+  dauerleistung_w: 2000
+  akkutyp: LiFePO4
+  gewicht_kg: 11.3
+  solareingang_w: 600
+  quelle: https://www.ankersolix.com/de/products/c1000-gen2
+  asin: B0FN7MSY4L
+- modell: EcoFlow DELTA 3 Plus
+  kapazitaet_wh: 1024
+  dauerleistung_w: 1800
+  akkutyp: LiFePO4
+  gewicht_kg: 12.5
+  solareingang_w: 1000
+  quelle: https://www.ecoflow.com/au/delta-3-plus-portable-power-station/specs
+  asin: B0DFPW2Y2C
+- modell: BLUETTI Elite 100 V2
+  kapazitaet_wh: 1024
+  dauerleistung_w: 1800
+  akkutyp: LiFePO4
+  gewicht_kg: 11.5
+  solareingang_w: 1000
+  quelle: https://s4.bluettipower.com/bluetti/purchasePageBiz/2026/06/Elite_100_V2_User_Manual_EU_EN-DE-1780889806412-6beb.pdf
+  asin: B0F9PKNWS1
+- modell: Jackery Explorer 1000 v2
+  kapazitaet_wh: 1070
+  dauerleistung_w: 1500
+  akkutyp: LiFePO4
+  gewicht_kg: 10.8
+  solareingang_w: 400
+  quelle: https://helpcenter.eu.jackery.com/hc/de/articles/52683026571291-Explorer-1000-V2-Grundlegende-Informationen
+  asin: B0DB1T34X5
+- modell: Anker SOLIX C2000 Gen 2
+  kapazitaet_wh: 2048
+  dauerleistung_w: 2400
+  akkutyp: LiFePO4
+  gewicht_kg: 18.9
+  solareingang_w: 800
+  quelle: https://www.ankersolix.com/de/c2000-gen2
+  asin: B0FVFGL38H

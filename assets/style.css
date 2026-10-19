@@ -31,3 +31,18 @@ th,td{border:1px solid var(--line);padding:.4rem .6rem;text-align:left}
 .comments-consent{background:var(--soft);border:1px solid var(--line);border-radius:6px;padding:.8rem 1rem;font-size:.92rem}
 .btn{font:inherit;font-weight:600;background:var(--accent);color:#fff;border:0;border-radius:5px;padding:.5rem 1rem;cursor:pointer}
 .btn:hover{opacity:.9}
+.table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:0 0 .5rem}
+table.cmp{display:table;font-size:.9rem;min-width:40rem}
+table.cmp th{background:var(--soft);white-space:nowrap}
+table.cmp .r{text-align:right;font-variant-numeric:tabular-nums}
+table.cmp .links{white-space:nowrap}
+.sort{font:inherit;font-weight:700;background:none;border:0;padding:0;color:inherit;cursor:pointer}
+th[aria-sort=ascending] .sort::after{content:" ▲"}
+th[aria-sort=descending] .sort::after{content:" ▼"}
+th[aria-sort=none] .sort::after{content:" ↕";color:var(--muted)}
+.filters{display:flex;flex-wrap:wrap;gap:.6rem 1rem;align-items:flex-end;margin:.5rem 0 1rem;font-size:.9rem}
+.filters label{display:flex;flex-direction:column;gap:.2rem}
+.filters input,.filters select{font:inherit;padding:.3rem .4rem;border:1px solid var(--line);border-radius:4px;background:var(--bg);color:var(--fg);min-width:8rem}
+.btn-sec{font:inherit;background:none;border:1px solid var(--line);border-radius:4px;padding:.3rem .7rem;cursor:pointer;color:var(--fg)}
+.count,.note{color:var(--muted);font-size:.85rem}
+.main-nav{margin-left:auto}.main-nav a{margin-left:.9rem;font-size:.95rem}

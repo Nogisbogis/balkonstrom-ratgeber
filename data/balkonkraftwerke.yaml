@@ -1,0 +1,59 @@
+# Nur Herstellerangaben. module_wp = mitgelieferte Modulleistung (0 = keine Module im Lieferumfang),
+# pv_max_w = max. PV-Eingang laut Hersteller (0 = nicht zutreffend), wechselrichter_w = netzgekoppelte
+# Ausgangsleistung, speicher_kwh = 0 bei Sets ohne Speicher. Stand: 19.10.2026
+- modell: Anker SOLIX RS40P Balkonkraftwerk (2 × 445 W, MI80)
+  typ: Set ohne Speicher
+  module_wp: 890
+  pv_max_w: 0
+  wechselrichter_w: 800
+  speicher_kwh: 0
+  quelle: https://www.ankersolix.com/eu/products/b5143
+  asin: ""
+- modell: Anker SOLIX Solarbank 2 E1600 Pro
+  typ: Speicher mit Wechselrichter
+  module_wp: 0
+  pv_max_w: 2400
+  wechselrichter_w: 800
+  speicher_kwh: 1.6
+  quelle: https://support.ankersolix.com/s/article/Anker-SOLIX-Solarbank-2-E1600-Pro-Benutzerhandbuch-A17C1-CH
+  asin: B0D1X82HDL
+- modell: Anker SOLIX Solarbank 3 E2700 Pro
+  typ: Speicher mit Wechselrichter
+  module_wp: 0
+  pv_max_w: 3600
+  wechselrichter_w: 800
+  speicher_kwh: 2.688
+  quelle: https://support.ankersolix.com/de/s/article/Anker-SOLIX-Solarbank-3-E2700-Pro-Benutzerhandbuch-A17C5
+  asin: ""
+- modell: Zendure SolarFlow 800 Pro
+  typ: Speicher mit Wechselrichter
+  module_wp: 0
+  pv_max_w: 2640
+  wechselrichter_w: 800
+  speicher_kwh: 1.92
+  quelle: https://www.zendure.de/products/solarflow-800-pro
+  asin: ""
+- modell: EcoFlow STREAM Ultra
+  typ: Speicher mit Wechselrichter
+  module_wp: 0
+  pv_max_w: 2000
+  wechselrichter_w: 800
+  speicher_kwh: 1.92
+  quelle: https://de.ecoflow.com/pages/stream-series-plug-in-battery
+  asin: B0F5B93DTV
+- modell: EcoFlow STREAM Pro
+  typ: Speicher mit Wechselrichter
+  module_wp: 0
+  pv_max_w: 1500
+  wechselrichter_w: 800
+  speicher_kwh: 1.92
+  quelle: "https://ecoflow-service-us-prod.oss-us-west-1.aliyuncs.com/cms/manual/1750903136593/EcoFlow%20STREAM%20Ultra%20%26%20Pro_User%20Manual.pdf"
+  asin: ""
+- modell: Growatt NEXA 2000
+  typ: Speicher mit Wechselrichter
+  module_wp: 0
+  pv_max_w: 2600
+  wechselrichter_w: 800
+  speicher_kwh: 2.048
+  quelle: https://de.growatt.com/upload/file/Nexa2000_Datenblatt_202504_DE.pdf
+  asin: B0FSDHLV8M
