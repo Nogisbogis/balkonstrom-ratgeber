@@ -2,7 +2,7 @@
 title = 'Powerstation mit Solarpanel kombinieren: Spannung, Stecker, Leistung'
 date = '2026-10-19'
 description = 'Welches Solarpanel passt an welche Powerstation? Spannungsbereich, Strom, maximale Leistung, Stecker (XT60, DC8020, SDC, USB-C), Reihen- oder Parallelschaltung und warum die Leerlaufspannung im Winter steigt.'
-draft = true
+draft = false
 kategorie = 'powerstations'
 keywords = ['solar', 'solarpanel', 'mppt', 'xt60']
 kurz = [
