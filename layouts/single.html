@@ -5,4 +5,5 @@
   <p class="meta"><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "02.01.2006" }}</time>{{ if ne .Lastmod .Date }} · aktualisiert {{ .Lastmod.Format "02.01.2006" }}{{ end }}</p>
   {{ .Content }}
 </article>
+{{ if and (eq .Section "posts") (ne .Params.comments false) }}{{ partial "comments.html" . }}{{ end }}
 {{ end }}

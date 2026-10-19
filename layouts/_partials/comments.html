@@ -1,0 +1,29 @@
+{{- with site.Params.giscus }}{{ if .enable }}
+<section class="comments" id="kommentare" aria-label="Kommentare">
+  <h2>Kommentare</h2>
+  <div class="comments-consent" id="giscus-consent">
+    <p>Die Kommentare werden über <strong>giscus</strong> aus GitHub Discussions geladen. Erst wenn du auf „Kommentare laden“ klickst, werden Inhalte von giscus.app und github.com nachgeladen. Dabei werden u. a. deine IP-Adresse und Browserdaten an GitHub bzw. giscus übertragen (auch in die USA). Zum Kommentieren brauchst du ein GitHub-Konto. Details in der <a href="{{ "datenschutz/" | relURL }}#kommentare">Datenschutzerklärung</a>.</p>
+    <button type="button" id="giscus-load" class="btn">Kommentare laden</button>
+  </div>
+  <div class="giscus"></div>
+  <noscript><p>Für die Kommentarfunktion wird JavaScript benötigt. Du kannst auch direkt in den <a href="https://github.com/{{ .repo }}/discussions" rel="noopener">GitHub Discussions</a> mitdiskutieren.</p></noscript>
+</section>
+<script>
+document.getElementById('giscus-load').addEventListener('click', function () {
+  var s = document.createElement('script');
+  s.src = 'https://giscus.app/client.js';
+  var a = {
+    'data-repo': {{ .repo }}, 'data-repo-id': {{ .repoId }},
+    'data-category': {{ .category }}, 'data-category-id': {{ .categoryId }},
+    'data-mapping': {{ .mapping }}, 'data-strict': '1',
+    'data-reactions-enabled': '1', 'data-emit-metadata': '0',
+    'data-input-position': 'bottom', 'data-theme': 'preferred_color_scheme',
+    'data-lang': {{ .lang }}, 'data-loading': 'lazy'
+  };
+  for (var k in a) s.setAttribute(k, a[k]);
+  s.crossOrigin = 'anonymous'; s.async = true;
+  document.querySelector('.comments .giscus').after(s);
+  document.getElementById('giscus-consent').remove();
+});
+</script>
+{{- end }}{{ end }}

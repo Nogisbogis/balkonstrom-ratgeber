@@ -16,3 +16,12 @@ disableKinds = ["taxonomy", "term"]
 
 [pagination]
   pagerSize = 20
+
+[params.giscus]
+  enable = true
+  repo = "Nogisbogis/balkonstrom-ratgeber"
+  repoId = "R_kgDOVPbPWg"
+  category = "Announcements"
+  categoryId = "DIC_kwDOVPbPWs4DI_x1"
+  mapping = "pathname"
+  lang = "de"

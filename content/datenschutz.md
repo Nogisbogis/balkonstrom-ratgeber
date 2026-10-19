@@ -15,7 +15,7 @@ E-Mail: paul.klamt@klamt.com
 
 ## 2. Allgemeines
 
-Diese Website ist eine rein statische Seite. Es werden **keine Cookies** gesetzt, **keine Analyse- oder Tracking-Tools** eingesetzt, keine externen Schriftarten (z. B. Google Fonts) und keine externen Skripte geladen. Es gibt keine Kontaktformulare, Kommentarfunktionen oder Benutzerkonten.
+Diese Website ist eine rein statische Seite. Es werden **keine Cookies** gesetzt, **keine Analyse- oder Tracking-Tools** eingesetzt und keine externen Schriftarten (z. B. Google Fonts) geladen. Es gibt keine Kontaktformulare und keine Benutzerkonten. Externe Inhalte werden nur geladen, wenn du die Kommentarfunktion unter einem Artikel ausdrücklich per Klick aktivierst (siehe Abschnitt „Kommentare über giscus / GitHub Discussions“).
 
 ## 3. Hosting über GitHub Pages
 
@@ -35,11 +35,25 @@ Auf dieser Website selbst werden durch die Affiliate-Links **keine Daten erhoben
 
 Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der Finanzierung der Website). Einzelheiten zur Datenverarbeitung durch Amazon findest du in der [Datenschutzerklärung von Amazon](https://www.amazon.de/gp/help/customer/display.html?nodeId=201909010).
 
-## 5. Kontakt per E-Mail
+## 5. Kommentare über giscus / GitHub Discussions {#kommentare}
+
+Unter Artikeln gibt es eine Kommentarfunktion auf Basis von **giscus** (Open-Source-Projekt, https://giscus.app). Die Kommentare werden als Beiträge in den GitHub Discussions des Repositorys dieser Website gespeichert. Anbieter von GitHub ist die GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA.
+
+**Kein automatisches Laden:** Die Kommentarfunktion wird nicht automatisch geladen. Erst wenn du auf die Schaltfläche „Kommentare laden“ klickst, lädt dein Browser ein Skript von giscus.app und zeigt die Kommentare in einem eingebetteten Fenster (iframe) von giscus.app an, das wiederum Daten von github.com bzw. dessen Servern abruft.
+
+**Welche Daten übertragen werden:** Beim Laden werden insbesondere deine IP-Adresse, Datum und Uhrzeit, Browser- und Geräteinformationen sowie die Adresse der aufgerufenen Seite an giscus und GitHub übermittelt. Wenn du kommentieren oder reagieren möchtest, meldest du dich mit deinem GitHub-Konto an und autorisierst die giscus-App; dein Kommentar wird dann öffentlich mit deinem GitHub-Benutzernamen und -Profilbild in GitHub Discussions gespeichert. Für die Anmeldung speichert giscus ein Zugriffstoken in deinem Browser (Local Storage auf giscus.app). Ich selbst erhalte keine Daten außer den öffentlich sichtbaren Kommentaren.
+
+**Rechtsgrundlage** ist deine Einwilligung (Art. 6 Abs. 1 lit. a DSGVO, § 25 Abs. 1 TDDDG), die du durch den Klick auf „Kommentare laden“ erteilst. Du kannst sie jederzeit mit Wirkung für die Zukunft widerrufen, indem du die Seite neu lädst und die Kommentare nicht erneut lädst; eine giscus-Anmeldung kannst du in deinen GitHub-Einstellungen (Applications) widerrufen. Eigene Kommentare kannst du auf GitHub bearbeiten oder löschen.
+
+Es kann zu einer Übermittlung in die USA kommen. GitHub ist unter dem EU-U.S. Data Privacy Framework zertifiziert (Art. 45 DSGVO).
+
+Weitere Informationen: [GitHub Privacy Statement](https://docs.github.com/de/site-policy/privacy-policies/github-general-privacy-statement) und [Datenschutzerklärung von giscus](https://github.com/giscus/giscus/blob/main/PRIVACY-POLICY.md).
+
+## 6. Kontakt per E-Mail
 
 Wenn du mir eine E-Mail schreibst, verarbeite ich deine Angaben (E-Mail-Adresse, Name, Inhalt) ausschließlich zur Bearbeitung deiner Anfrage. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO bzw. lit. b DSGVO, sofern deine Anfrage auf einen Vertrag abzielt. Die Daten werden gelöscht, sobald sie für die Bearbeitung nicht mehr erforderlich sind und keine gesetzlichen Aufbewahrungspflichten entgegenstehen.
 
-## 6. Deine Rechte als betroffene Person
+## 7. Deine Rechte als betroffene Person
 
 Du hast im Rahmen der gesetzlichen Bestimmungen jederzeit das Recht auf:
 
@@ -52,10 +66,10 @@ Du hast im Rahmen der gesetzlichen Bestimmungen jederzeit das Recht auf:
 
 Wende dich dazu einfach an die oben genannte E-Mail-Adresse.
 
-## 7. Beschwerderecht bei einer Aufsichtsbehörde
+## 8. Beschwerderecht bei einer Aufsichtsbehörde
 
 Du hast das Recht, dich bei einer Datenschutz-Aufsichtsbehörde zu beschweren, wenn du der Ansicht bist, dass die Verarbeitung deiner personenbezogenen Daten gegen die DSGVO verstößt (Art. 77 DSGVO). Zuständig ist insbesondere die Aufsichtsbehörde des Bundeslandes deines Wohnorts oder des Sitzes des Verantwortlichen.
 
-## 8. Aktualität
+## 9. Aktualität
 
-Stand: Oktober 2026. Ich passe diese Datenschutzerklärung an, sobald sich die Website oder die Rechtslage ändert.
+Stand: 19. Oktober 2026. Ich passe diese Datenschutzerklärung an, sobald sich die Website oder die Rechtslage ändert.

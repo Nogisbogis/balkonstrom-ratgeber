@@ -27,3 +27,7 @@ th,td{border:1px solid var(--line);padding:.4rem .6rem;text-align:left}
 .site-footer p{margin:.3rem 0}
 .pager{display:flex;justify-content:space-between;margin-top:1.5rem}
 @media (prefers-color-scheme:dark){:root{--fg:#e3ebe6;--muted:#9fb0a8;--accent:#4fd197;--bg:#121816;--soft:#18211d;--line:#2a3631;--warn:#2a2614;--warnline:#8a7430}}
+.comments{margin-top:2.5rem;border-top:1px solid var(--line);padding-top:1rem}
+.comments-consent{background:var(--soft);border:1px solid var(--line);border-radius:6px;padding:.8rem 1rem;font-size:.92rem}
+.btn{font:inherit;font-weight:600;background:var(--accent);color:#fff;border:0;border-radius:5px;padding:.5rem 1rem;cursor:pointer}
+.btn:hover{opacity:.9}
