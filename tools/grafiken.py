@@ -12,14 +12,14 @@ bkw = yaml.safe_load(open(os.path.join(ROOT, "data", "balkonkraftwerke.yaml"), e
 STYLE = """<style>
 .bg{fill:#ffffff}.t{fill:#111111}.m{fill:#55595e}.g{stroke:#e2e2df}.ax{stroke:#111111}
 .a{fill:#0a6b3d}.as{stroke:#0a6b3d}.b{fill:#9a4a00}.bs{stroke:#9a4a00}.c{fill:#1f4f8f}.cs{stroke:#1f4f8f}
-.box{fill:#f4f4f2;stroke:#111111}.boxa{fill:#ffffff;stroke:#0a6b3d}.boxb{fill:#ffffff;stroke:#9a4a00}
+.box{fill:#f1eee6;stroke:#111111}.boxa{fill:#ffffff;stroke:#0a6b3d}.boxb{fill:#ffffff;stroke:#9a4a00}
 .ar{fill:#111111}.ars{stroke:#111111}.al{fill:#0a6b3d;fill-opacity:.14}.bl{fill:#9a4a00;fill-opacity:.14}
 text{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
 @media (prefers-color-scheme:dark){
-.bg{fill:#0f0f0f}.t{fill:#ececea}.m{fill:#a8aaa6}.g{stroke:#2e2f2d}.ax{stroke:#ececea}
-.a{fill:#4cd38a}.as{stroke:#4cd38a}.b{fill:#f0b45a}.bs{stroke:#f0b45a}.c{fill:#8db8f0}.cs{stroke:#8db8f0}
-.box{fill:#1a1a19;stroke:#ececea}.boxa{fill:#0f0f0f;stroke:#4cd38a}.boxb{fill:#0f0f0f;stroke:#f0b45a}
-.ar{fill:#ececea}.ars{stroke:#ececea}.al{fill:#4cd38a;fill-opacity:.18}.bl{fill:#f0b45a;fill-opacity:.18}}
+.bg{fill:#0f1f1a}.t{fill:#eef2ee}.m{fill:#b5c2bb}.g{stroke:#2a4a40}.ax{stroke:#eef2ee}
+.a{fill:#5fd69a}.as{stroke:#5fd69a}.b{fill:#f0b45a}.bs{stroke:#f0b45a}.c{fill:#8db8f0}.cs{stroke:#8db8f0}
+.box{fill:#16302a;stroke:#eef2ee}.boxa{fill:#0f1f1a;stroke:#5fd69a}.boxb{fill:#0f1f1a;stroke:#f0b45a}
+.ar{fill:#eef2ee}.ars{stroke:#eef2ee}.al{fill:#5fd69a;fill-opacity:.18}.bl{fill:#f0b45a;fill-opacity:.18}}
 </style>"""
 
 def esc(s): return html.escape(str(s), quote=True)
@@ -428,8 +428,8 @@ ILLU_STYLE = """<style>
 .sky{fill:#e6f1ea}.sun{fill:#f2b84b}.wall{fill:#d9cdb8}.rail{fill:#7d8a83}.pan{fill:#24456b}.cell{stroke:#7fa2c8}
 .grass{fill:#9cc49a}.tent{fill:#0b7a4b}.tent2{fill:#08603b}.bat{fill:#5b6b75}.batl{fill:#4fd197}.doc{fill:#ffffff;stroke:#5b6b75}
 .ln{stroke:#5b6b75}.chk{stroke:#0b7a4b}.hill{fill:#b9d6bd}.plant{fill:#3f8a5a}.pot{fill:#b5653a}
-@media (prefers-color-scheme:dark){.sky{fill:#18261f}.sun{fill:#e8b04f}.wall{fill:#3a362e}.rail{fill:#9fb0a8}.pan{fill:#2c5a8c}
-.cell{stroke:#9cc0e6}.grass{fill:#2c4a33}.hill{fill:#22382a}.doc{fill:#202a25;stroke:#9fb0a8}.ln{stroke:#9fb0a8}.chk{stroke:#4fd197}
+@media (prefers-color-scheme:dark){.sky{fill:#16302a}.sun{fill:#e8b04f}.wall{fill:#3a362e}.rail{fill:#9fb0a8}.pan{fill:#2c5a8c}
+.cell{stroke:#9cc0e6}.grass{fill:#2c4a33}.hill{fill:#22382a}.doc{fill:#1b3a32;stroke:#9fb0a8}.ln{stroke:#9fb0a8}.chk{stroke:#4fd197}
 .tent{fill:#2f9e6a}.tent2{fill:#1f7a50}.bat{fill:#7d8a83}}
 </style>"""
 

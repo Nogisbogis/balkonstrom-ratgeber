@@ -1,17 +1,22 @@
-/* Balkonstrom-Ratgeber – Designsystem (Okt. 2026)
-   Kontraste (WCAG, auf Weiß): Text #111 18,9:1 · Akzent #0a6b3d 6,6:1 (auch Weiß auf Akzent) · Grau #55595e 7,1:1 · Rot #b42318 6,6:1 · Amber #9a4a00 6,3:1
-   Dunkel (auf #0f0f0f): Text #ececea 16,2:1 · Akzent #4cd38a 10,0:1 · Grau #a8aaa6 8,2:1
-   Sonne #f5b700 nur als Fläche mit #111-Text (10,5:1), max. einmal pro Ansicht; Fuß #e8e8e4 auf #111 15,4:1
+/* Balkonstrom-Ratgeber – Designsystem (Okt. 2026, Hintergrund-Update)
+   Hell: Grund #faf8f3, Bänder #f1eee6, klickbare Karten #fff. Text #111 17,8:1 · Grau #55595e 6,7:1 (6,1:1 auf Band) · Akzent #0a6b3d 6,2:1 (5,7:1 auf Band) · Weiß auf Akzent 6,6:1 · Rot #b42318 6,2:1 · Amber #9a4a00 5,9:1 · Feldrand #6b6b6b
+   Dunkel: Grund #0f1f1a, Flächen #16302a, Linien #2a4a40. Text #eef2ee 15,1:1 (12,5:1 auf Fläche) · Grau #b5c2bb 9,3:1 (7,7:1) · Akzent #5fd69a 9,4:1 (7,8:1) · #0f1f1a auf Akzent 9,4:1 · Rot #ff8a80 7,5:1 · Amber #f0b45a 9,2:1
+   Fuß: hell #0d2a20 mit #eef2ee 13,6:1 / #b5c2bb 8,3:1; dunkel #142a23 mit #eef2ee 13,4:1 / #b5c2bb 8,2:1
+   Sonne #f5b700 nur als Fläche mit #111-Text (10,5:1) und als dezenter Lichtschein im Hero.
    Abstände im 4-px-Raster (.25rem-Schritte). */
 @view-transition{navigation:auto}
 :root{
-  --ink:#111;--bg:#fff;--muted:#55595e;--line:#dcdcd8;--rule:#111;--surface:#f4f4f2;
+  --ink:#111;--bg:#faf8f3;--card:#fff;--band-card:#fff;--muted:#55595e;--line:#dcd8cc;--rule:#111;--surface:#f1eee6;
   --accent:#0a6b3d;--accent-hover:#08532f;--on-accent:#fff;
-  --red:#b42318;--amber:#9a4a00;--field:#767676;--sun:#f5b700;--tap:48px;--pill:999px;
+  --red:#b42318;--amber:#9a4a00;--field:#6b6b6b;--sun:#f5b700;
+  --foot-bg:#0d2a20;--foot-ink:#eef2ee;--foot-muted:#b5c2bb;--foot-line:#2f5a4a;
+  --glow:radial-gradient(56rem 30rem at 88% -10%,rgba(245,183,0,.17),rgba(245,183,0,0) 70%),radial-gradient(40rem 24rem at 0% 70%,rgba(10,107,61,.06),rgba(10,107,61,0) 70%);--tap:48px;--pill:999px;
   --font:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
   --measure:44rem;--container:72rem;--gap:clamp(1rem,3vw,2rem)
 }
-@media (prefers-color-scheme:dark){:root{--ink:#ececea;--bg:#0f0f0f;--muted:#a8aaa6;--line:#2e2f2d;--rule:#ececea;--surface:#1a1a19;--accent:#4cd38a;--accent-hover:#7be3aa;--on-accent:#0f0f0f;--red:#ff8a80;--amber:#f0b45a;--field:#8d8f8b}}
+@media (prefers-color-scheme:dark){:root{--ink:#eef2ee;--bg:#0f1f1a;--card:#16302a;--band-card:#0f1f1a;--muted:#b5c2bb;--line:#2a4a40;--rule:#eef2ee;--surface:#16302a;--accent:#5fd69a;--accent-hover:#8fe5b8;--on-accent:#0f1f1a;--red:#ff8a80;--amber:#f0b45a;--field:#8fa69b;
+  --foot-bg:#142a23;--foot-ink:#eef2ee;--foot-muted:#b5c2bb;--foot-line:#2a4a40;
+  --glow:radial-gradient(56rem 30rem at 88% -10%,rgba(245,183,0,.11),rgba(245,183,0,0) 70%),radial-gradient(44rem 26rem at 0% 70%,rgba(95,214,154,.07),rgba(95,214,154,0) 70%);color-scheme:dark}}
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
 body{margin:0;font:400 17px/1.65 var(--font);color:var(--ink);background:var(--bg);-webkit-font-smoothing:antialiased}
@@ -59,15 +64,15 @@ main{padding-top:2rem;padding-bottom:4rem;min-height:60vh}
 .m-menu nav a[aria-current=page]{box-shadow:inset 4px 0 0 var(--accent);padding-left:.8rem}
 
 /* Fuß */
-.site-footer{background:#111;color:#ececea;font-size:.92rem}
+.site-footer{background:var(--foot-bg);color:var(--foot-ink);font-size:.92rem}
 .site-footer .wrap{padding-top:2.5rem;padding-bottom:2rem}
 .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:2rem}
 .footer-brand{font-size:1.15rem;letter-spacing:-.02em;margin:0 0 .6rem}
-.site-footer .disclosure{max-width:30rem;color:#ececea}
+.site-footer .disclosure{max-width:30rem;color:var(--foot-ink)}
 .site-footer nav{display:flex;flex-direction:column;gap:.45rem}
-.site-footer a{color:#fff;text-decoration:none}
-.site-footer a:hover{text-decoration:underline;color:#fff}
-.site-footer .copy{margin:2rem 0 0;padding-top:1rem;border-top:1px solid #3a3a38;color:#b8bab6}
+.site-footer a{color:var(--foot-ink);text-decoration:none}
+.site-footer a:hover{text-decoration:underline;color:var(--foot-ink)}
+.site-footer .copy{margin:2rem 0 0;padding-top:1rem;border-top:1px solid var(--foot-line);color:var(--foot-muted)}
 
 /* Buttons & Links */
 .btn{font:inherit;font-size:1rem;font-weight:650;line-height:1.25;background:var(--accent);color:var(--on-accent);text-decoration:none;display:inline-block;border:0;border-radius:3px;padding:.7rem 1.1rem;cursor:pointer}
@@ -427,15 +432,15 @@ main>p,main>ul:not([class]),main>ol:not([class]),main>details,main>h2,main>h3,ma
 .schritte strong{font-size:1.125rem}
 .schritte span{font-size:.9375rem;color:var(--muted)}
 /* Fuß */
-.site-footer{background:#111;color:#e8e8e4}
+.site-footer{background:var(--foot-bg);color:var(--foot-ink)}
 .site-footer .wrap{padding-top:3rem;padding-bottom:2rem}
 .footer-brand{margin:0 0 2rem;font-size:1.25rem}
 .footer-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:2rem}
 .footer-grid>div:first-child{grid-column:auto}
-.site-footer h2{font-size:.8125rem;text-transform:uppercase;letter-spacing:.08em;color:#b8bab6;margin:0 0 .5rem;font-weight:700}
+.site-footer h2{font-size:.8125rem;text-transform:uppercase;letter-spacing:.08em;color:var(--foot-muted);margin:0 0 .5rem;font-weight:700}
 .site-footer nav{gap:0}
-.site-footer nav a{color:#e8e8e4;min-height:40px;display:flex;align-items:center}
-.site-footer .disclosure{max-width:none;margin:2rem 0 0;padding-top:1.25rem;border-top:1px solid #3a3a38;color:#e8e8e4}
+.site-footer nav a{color:var(--foot-ink);min-height:40px;display:flex;align-items:center}
+.site-footer .disclosure{max-width:none;margin:2rem 0 0;padding-top:1.25rem;border-top:1px solid var(--foot-line);color:var(--foot-ink)}
 .site-footer .copy{margin:1rem 0 0;padding-top:0;border-top:0}
 /* Menü & Bedienelemente: Touch-Ziele */
 .m-menu summary{min-height:var(--tap);display:flex;align-items:center;border-radius:var(--pill);padding:0 1.25rem;border-width:1.5px}
@@ -587,3 +592,14 @@ html,body{overflow-x:clip}
   @keyframes lesen{to{transform:scaleX(1)}}
 }
 @media (prefers-reduced-motion:reduce){.lesefortschritt{display:none!important}}
+
+/* ===== Hintergrund-Update: warmer Grund, Lichtschein im Hero, Karten ===== */
+.hero{position:relative;isolation:isolate}
+.hero::before{content:"";position:absolute;z-index:-1;top:0;bottom:0;left:calc(50% - 50vw);right:calc(50% - 50vw);background:var(--glow);pointer-events:none}
+.tool-tiles a,.weiter-grid a,.einsatz-wahl a{background:var(--card)}
+.weiter-grid a.weiter-tool{background:var(--surface)}
+.home-band .tool-tiles a{background:var(--band-card)}
+.kurzantwort{background:var(--surface)}
+.site-footer .copy,.site-footer h2{color:var(--foot-muted)}
+.hero::before{-webkit-mask-image:linear-gradient(to bottom,#000 55%,transparent);mask-image:linear-gradient(to bottom,#000 55%,transparent)}
+.site-footer{border-top:1px solid var(--foot-line)}
