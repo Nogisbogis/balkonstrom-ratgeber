@@ -2,6 +2,7 @@
 title = 'Powerstation als Notstrom: Was sie bei einem Stromausfall kann – und was nicht'
 foto = 'stromausfall'
 seotitle = "Powerstation als Notstrom: Was sie bei Stromausfall kann"
+lastmod = '2026-10-19T22:04:52+02:00'
 date = '2026-10-19'
 description = 'Eine Powerstation überbrückt einen Stromausfall für einzelne Geräte – mehr nicht. Was sie für Router, Licht und Kühlschrank leisten kann, wie die USV-Funktion funktioniert und wo die Grenzen liegen.'
 draft = false

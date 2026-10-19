@@ -1,6 +1,7 @@
 +++
 title = 'LiFePO4 oder NMC: Welcher Akku gehört in die Powerstation?'
 foto = 'unterwegs'
+lastmod = '2026-10-19T22:04:52+02:00'
 date = '2026-10-19'
 description = 'LiFePO4 (LFP) oder NMC? Was eine Studie des KIT zur Sicherheit der Zellchemien zeigt, warum LFP-Powerstations schwerer sind, was Zyklenangaben bedeuten und wie Anker die Garantie nach Akkutyp staffelt.'
 draft = false

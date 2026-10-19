@@ -7,7 +7,7 @@ disableKinds = ["taxonomy", "term"]
 enableGitInfo = true
 
 [frontmatter]
-  lastmod = [":git", "lastmod", ":default"]
+  lastmod = ["lastmod", ":git", ":default"]
 
 [params]
   description = "Unabhängige Ratgeber, Vergleiche und Tipps zu Balkonkraftwerken und Powerstations."

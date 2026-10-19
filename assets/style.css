@@ -711,3 +711,5 @@ h1{max-width:none}
 /* Lange Artikeltitel (Inhalt bleibt): auf Tablet/Telefon etwas kleiner, damit sie in höchstens drei Zeilen stehen */
 @media (max-width:52rem){.post-kopf h1{font-size:clamp(1.875rem,1.2rem + 3vw,2.5rem)}}
 @media (max-width:40rem){.post-kopf h1{font-size:1.75rem;line-height:1.12}}
+.breadcrumb li{display:flex;align-items:center}
+.breadcrumb span[aria-current]{display:inline;min-height:0;padding:.5rem 0}

@@ -2,6 +2,7 @@
 title = 'Balkonkraftwerk mit Speicher: Lohnt sich das? Kaufberatung 2026'
 foto = 'balkon2'
 seotitle = "Balkonkraftwerk mit Speicher: Lohnt sich das? (2026)"
+lastmod = '2026-10-19T22:04:52+02:00'
 date = '2026-10-19'
 description = 'Wann ein Speicher fürs Balkonkraftwerk wirtschaftlich sinnvoll ist, was der Test der Stiftung Warentest zeigt und worauf du beim Kauf achten solltest.'
 draft = false
