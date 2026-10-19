@@ -22,10 +22,8 @@ var AUSWAHL = (function () {
     if (!table) return;
     form.hidden = false;
     var rows = Array.prototype.slice.call(table.tBodies[0].rows);
-    var count = document.createElement('p');
-    count.className = 'count';
-    count.setAttribute('aria-live', 'polite');
-    (form.querySelector('fieldset') || form).appendChild(count);
+    var count = form.querySelector('.count'); // im HTML vorhanden (kein Layoutsprung beim Laden)
+    if (!count) { count = document.createElement('p'); count.className = 'count'; count.setAttribute('aria-live', 'polite'); (form.querySelector('fieldset') || form).appendChild(count); }
     function apply() {
       var shown = 0;
       rows.forEach(function (tr) {
@@ -92,7 +90,7 @@ var AUSWAHL = (function () {
   var links = Array.prototype.slice.call(nav.querySelectorAll('a[data-tab]'));
   var panels = links.map(function (a) { return document.getElementById(a.dataset.tab); });
   var mitAuswahl = panels.filter(function (p) { return AUSWAHL.some(function (s) { return p.querySelector('tr[data-slug="' + s + '"]'); }); });
-  if (mitAuswahl.length > 1) return; // Auswahl aus beiden Kategorien: beide Tabellen untereinander zeigen
+  if (mitAuswahl.length > 1) { document.documentElement.classList.add('js-tabs-aus'); return; } // Auswahl aus beiden Kategorien: beide Tabellen untereinander zeigen
   nav.setAttribute('role', 'tablist');
   links.forEach(function (a, i) {
     a.setAttribute('role', 'tab');

@@ -1,52 +1,12 @@
 // Balkonstrom-Ratgeber – kleine Bedienschicht (eigenes Skript, keine externen Quellen, kein Tracking).
-// 1) Kopfleiste nimmt die Farbe des Abschnitts darunter an (data-field: paper | field | surface).
-// 2) Abschnitte erscheinen gestaffelt (nur ohne „Bewegung reduzieren“; ohne JS ist alles sofort sichtbar).
-// 3) Laufzeit-Beleg auf der Startseite: Gerät wählen → gleiche Formel wie der Laufzeitrechner (Wh × 85 % / W).
+// Laufzeit-Beleg auf der Startseite: Gerät wählen → gleiche Formel wie der Laufzeitrechner (Wh × 85 % / W).
+// Keine Einblende-Animationen und kein Farbwechsel der Kopfleiste mehr (Okt. 2026: Seite soll beim Laden ruhig stehen).
 (function () {
-  var d = document, root = d.documentElement;
-  root.classList.add('ui'); // „mo“ setzt schon das Inline-Skript im <head> (vor dem ersten Bild, kein Flackern)
-
+  var d = document;
   d.addEventListener('DOMContentLoaded', function () {
-    // 1) Kopf-Farbe nach Abschnitt
-    var head = d.querySelector('.site-header');
-    var fields = d.querySelectorAll('[data-field]');
-    if (head && fields.length && 'IntersectionObserver' in window) {
-      var setField = function () {
-        var y = head.getBoundingClientRect().bottom - 1, cur = 'paper';
-        for (var i = 0; i < fields.length; i++) {
-          var r = fields[i].getBoundingClientRect();
-          if (r.top <= y && r.bottom > y) cur = fields[i].getAttribute('data-field');
-        }
-        if (head.getAttribute('data-unter') !== cur) head.setAttribute('data-unter', cur);
-      };
-      var tick = false;
-      window.addEventListener('scroll', function () { if (!tick) { tick = true; requestAnimationFrame(function () { tick = false; setField(); }); } }, { passive: true });
-      window.addEventListener('resize', setField);
-      setField();
-    }
-
-    // 2) Gestaffelte Einblendung – Startseite markiert selbst, sonst die üblichen Bausteine
-    if (root.classList.contains('mo')) {
-      var auto = '.post-body > h2, .post-body > figure, .post-body > .pcards > li, .post-foto, .kurzantwort, .empfbox .empf, .weiter-grid > a, .weiterlesen .card, .cards > li, .plist > li, .tool-tiles > li, .schritte li, .einsatz-sec, .einsatz-foto, .p-top > *, .p-fazit, .p-fuer > *, .p-sw > *, .faq-gruppe, .footer-grid > *, .vergleich .tabpanel > *, .p-test, .p-quellen, .p-wider, .p-alt li';
-      Array.prototype.forEach.call(d.querySelectorAll(auto), function (el) { if (!el.closest('[data-r]') && !el.querySelector('[data-r]') && el.getBoundingClientRect().top > window.innerHeight) el.setAttribute('data-r', ''); });
-      var els = d.querySelectorAll('[data-r]');
-      var io = new IntersectionObserver(function (es) {
-        es.forEach(function (e) {
-          if (!e.isIntersecting) return;
-          var el = e.target, sib = el.parentNode ? el.parentNode.querySelectorAll(':scope > [data-r]') : [];
-          var idx = Array.prototype.indexOf.call(sib, el);
-          el.style.setProperty('--d', Math.max(0, idx) * 80 + 'ms');
-          el.classList.add('is-in');
-          io.unobserve(el);
-        });
-      }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
-      Array.prototype.forEach.call(els, function (el) { io.observe(el); });
-    }
-
     // 3) Laufzeit-Beleg
     var wahl = d.querySelector('.slip-wahl'), slip = d.querySelector('.slip');
     if (wahl && slip) {
-      wahl.hidden = false;
       var wh = parseFloat(slip.getAttribute('data-wh')), eta = parseFloat(slip.getAttribute('data-eta'));
       var link = d.querySelector('[data-slip-link]');
       wahl.addEventListener('click', function (ev) {

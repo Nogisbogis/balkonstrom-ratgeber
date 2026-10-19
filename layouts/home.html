@@ -1,30 +1,30 @@
 {{ define "main" }}
 {{- /* Startseite (Okt. 2026, v3): Richtung „Type and nothing else“ (Taste Skill) + Designsprache nach WIRED (DESIGN.md).
-     Idee: Der Ladestand eines Akkus – das grüne Feld ist gespeicherte Energie, die Überschrift steht halb darin. */ -}}
+     Hero: Überschrift vollständig auf Papier, darunter das grüne Feld mit Satz und Aktionen. Keine Lade-Animationen (Okt. 2026). */ -}}
 {{- $fotos := dict "Camping klein" "unterwegs" "Camping & Van groß" "camping" "Notstrom" "stromausfall" "Balkon mit Speicher" "balkon" }}
-<section class="h2f" data-field="paper" aria-labelledby="h2f-titel">
-  <h1 class="h2f-h" id="h2f-titel"><span class="h2f-a">Strom<br> auf Vorrat</span><span class="h2f-b" aria-hidden="true">Strom<br> auf Vorrat</span></h1>
-  <div class="h2f-unten" data-field="field">
+<section class="h2f" aria-labelledby="h2f-titel">
+  <h1 class="h2f-h" id="h2f-titel">Strom<br> auf Vorrat</h1>
+  <div class="h2f-unten">
     <p class="h2f-satz">Powerstations und Balkonkraftwerke mit Speicher im Vergleich. Finde in 2 Minuten das Gerät, das wirklich zu dir passt.</p>
     <p class="h2f-cta"><a class="btn btn-sun" href="{{ "powerstation-finder/" | relURL }}">Passende Powerstation finden</a><a class="textlink" href="{{ "vergleich/" | relURL }}">Alle Modelle vergleichen</a></p>
   </div>
 </section>
 
 {{- with site.GetPage "/einsatz" }}
-<section class="poster" data-field="field" aria-labelledby="poster-titel">
-  <h2 id="poster-titel" class="poster-titel" data-r>Wofür brauchst du Strom?</h2>
-  <ul class="poster-liste">{{ range .Pages.ByWeight }}<li data-r><a href="{{ .RelPermalink }}"><span class="poster-wort">{{ .Params.kurztitel }}</span><span class="poster-detail">{{ .Params.kurztext }}</span></a></li>{{ end }}</ul>
+<section class="poster" aria-labelledby="poster-titel">
+  <h2 id="poster-titel" class="poster-titel">Wofür brauchst du Strom?</h2>
+  <ul class="poster-liste">{{ range .Pages.ByWeight }}<li><a href="{{ .RelPermalink }}"><span class="poster-wort">{{ .Params.kurztitel }}</span><span class="poster-detail">{{ .Params.kurztext }}</span></a></li>{{ end }}</ul>
 </section>
 {{- end }}
 
 {{- with hugo.Data.empfehlungen }}
-<section class="home-sec empf-home" data-field="paper" aria-labelledby="empf-home-titel">
-  <div class="sec-kopf" data-r>
+<section class="home-sec empf-home" aria-labelledby="empf-home-titel">
+  <div class="sec-kopf">
     <h2 id="empf-home-titel">Meine Empfehlungen nach Einsatz</h2>
     <p class="disclosure-small">{{ site.Params.disclosure }}</p>
   </div>
   <ul class="feature-liste">{{ range $i, $e := . }}
-    <li class="feature{{ if modBool $i 2 }}{{ else }} feature-rev{{ end }}" data-r>
+    <li class="feature{{ if modBool $i 2 }}{{ else }} feature-rev{{ end }}">
       {{ partial "foto.html" (dict "key" (index $fotos $e.einsatz) "ctx" $ "sizes" "(min-width: 64rem) 34rem, 100vw" "lazy" true "cls" "feature-foto") }}
       <div class="feature-text">{{ partial "empfehlung-item.html" (dict "modell" $e.modell "grund" $e.grund "einsatz" $e.einsatz "ctx" $ "vergleich" true "tag" "div" "gross" true) }}</div>
     </li>{{ end }}
@@ -33,24 +33,24 @@
 </section>
 {{- end }}
 
-<section class="home-sec slip-sec" data-field="surface" aria-labelledby="tools-titel">
+<section class="home-sec slip-sec" aria-labelledby="tools-titel">
   {{ partial "rechen-slip.html" . }}
 </section>
 
 {{ $posts := where site.RegularPages "Section" "posts" }}
-<section class="home-sec artikel-sec" data-field="paper" aria-labelledby="artikel">
+<section class="home-sec artikel-sec" aria-labelledby="artikel">
   <div class="artikel-spalte">
-    <h2 id="artikel" data-r>Neueste Artikel</h2>
-    {{ with $posts }}<ul class="zeilen">{{ range first 6 .ByLastmod.Reverse }}<li data-r><a href="{{ .RelPermalink }}"><span class="z-titel">{{ .Title }}</span><span class="z-wert">{{ with .Params.kategorie }}{{ with site.GetPage (printf "/%s" .) }}{{ .Title }} · {{ end }}{{ end }}{{ .ReadingTime }} Min.</span></a></li>{{ end }}</ul>
+    <h2 id="artikel">Neueste Artikel</h2>
+    {{ with $posts }}<ul class="zeilen">{{ range first 6 .ByLastmod.Reverse }}<li><a href="{{ .RelPermalink }}"><span class="z-titel">{{ .Title }}</span><span class="z-wert">{{ with .Params.kategorie }}{{ with site.GetPage (printf "/%s" .) }}{{ .Title }} · {{ end }}{{ end }}{{ .ReadingTime }} Min.</span></a></li>{{ end }}</ul>
     <p class="more"><a class="textlink" href="{{ "ratgeber/" | relURL }}">Alle Artikel</a></p>
     {{ else }}<p class="empty">Bald gibt es hier die ersten Artikel.</p>{{ end }}
   </div>
   {{ partial "foto.html" (dict "key" "balkon2" "ctx" $ "sizes" "(min-width: 64rem) 30rem, 100vw" "lazy" true "cls" "artikel-foto" "ratio" "4/5" "cap" "Mini-PV-Anlage an einer Balkonbrüstung in Tauberbischofsheim") }}
 </section>
 
-<section class="home-sec about" data-field="paper" aria-labelledby="about-titel">
-  <h2 id="about-titel" data-r>So arbeite ich</h2>
-  <div class="about-text"><p data-r>Den Balkonstrom-Ratgeber schreibe ich allein. Technische Angaben wie Kapazität, Dauerleistung und Gewicht übernehme ich aus <mark class="hl hl-a">Datenblättern und Handbüchern</mark> der Hersteller, jede mit Quelle auf der Produktseite. Ergebnisse von <mark class="hl hl-b">ADAC, Stiftung Warentest</mark>, c’t oder CHIP gebe ich nur wieder, wenn ich sie in der Originalquelle gefunden habe. Widersprechen sich Quellen, zeige ich <mark class="hl hl-a">beide Werte</mark>. <mark class="hl hl-b">Ich habe die Geräte nicht selbst getestet.</mark></p><p data-r>Eine Empfehlung nenne ich nur für einen konkreten Einsatz, und kein Hersteller oder Händler bezahlt für eine Erwähnung oder Platzierung. Die Seite finanziert sich über <mark class="hl hl-a">Affiliate-Links</mark>: Als Amazon-Partner verdiene ich an qualifizierten Verkäufen, für dich entstehen keine Mehrkosten; solche Links sind mit * markiert. Preise nenne ich nicht, weil sie sich ständig ändern. <a class="hl hl-c about-link" href="{{ "methodik/" | relURL }}">Quellen, Empfehlungen und Korrekturen im Detail</a></p></div>
+<section class="home-sec about" aria-labelledby="about-titel">
+  <h2 id="about-titel">So arbeite ich</h2>
+  <div class="about-text"><p>Den Balkonstrom-Ratgeber schreibe ich allein. Technische Angaben wie Kapazität, Dauerleistung und Gewicht übernehme ich aus <mark class="hl hl-a">Datenblättern und Handbüchern</mark> der Hersteller, jede mit Quelle auf der Produktseite. Ergebnisse von <mark class="hl hl-b">ADAC, Stiftung Warentest</mark>, c’t oder CHIP gebe ich nur wieder, wenn ich sie in der Originalquelle gefunden habe. Widersprechen sich Quellen, zeige ich <mark class="hl hl-a">beide Werte</mark>. <mark class="hl hl-b">Ich habe die Geräte nicht selbst getestet.</mark></p><p>Eine Empfehlung nenne ich nur für einen konkreten Einsatz, und kein Hersteller oder Händler bezahlt für eine Erwähnung oder Platzierung. Die Seite finanziert sich über <mark class="hl hl-a">Affiliate-Links</mark>: Als Amazon-Partner verdiene ich an qualifizierten Verkäufen, für dich entstehen keine Mehrkosten; solche Links sind mit * markiert. Preise nenne ich nicht, weil sie sich ständig ändern. <a class="hl hl-c about-link" href="{{ "methodik/" | relURL }}">Quellen, Empfehlungen und Korrekturen im Detail</a></p></div>
 </section>
 {{ partial "cmp-bar.html" . }}
 {{ end }}

@@ -89,7 +89,7 @@
   {{- end }}
 
   <section class="p-quellen" aria-labelledby="quellen"><h2 id="quellen">Quellen</h2>
-  <ol>{{ range .Params.quellen }}<li id="q-{{ .id }}"><a href="{{ .url }}" rel="noopener" target="_blank">{{ .titel }}</a>{{ with .art }} <span class="note">– {{ . }}</span>{{ end }}</li>{{ end }}</ol>
+  <ol>{{ range .Params.quellen }}<li id="q-{{ .id }}"><a href="{{ .url }}" rel="{{ if strings.Contains .url "amazon." }}sponsored nofollow noopener{{ else }}noopener{{ end }}" target="_blank">{{ .titel }}</a>{{ with .art }} <span class="note">– {{ . }}</span>{{ end }}</li>{{ end }}</ol>
   <p class="note">Alle Links abgerufen am {{ (time (.Params.lastmod | default .Date)).Format "02.01.2006" }}. Herstellerangaben können sich ändern; maßgeblich ist das Datenblatt zum Zeitpunkt des Kaufs. Ob und wie du ein Balkonkraftwerk anmelden musst und was am Zählerplatz gilt, steht in meinem <a href="{{ "posts/balkonkraftwerk-anmelden-2026/" | relURL }}">Artikel zur Anmeldung</a>.</p>
   </section>
   {{- with $p.asin }}{{ if ne $p.modell "Jackery Explorer 1000 v2" }}

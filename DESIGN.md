@@ -502,11 +502,16 @@ The brand uses no drop-shadows. Surface contrast and hairline borders carry all 
 
 ## Anpassung Balkonstrom-Ratgeber (Okt. 2026)
 
-Übernommen: Serife für Erzählung (Überschriften, Artikeltext), Grotesk für Struktur (Navigation, Buttons, Tabellen, Formulare, Metadaten); eckige Buttons und Felder (0 px Radius); keine Schatten; Magazin-Komposition statt Karten-Raster; Fuß als volle, invertierte Fläche.
+Übernommen: Serife für Erzählung (Überschriften, Artikeltext), Grotesk für Struktur (Navigation, Buttons, Tabellen, Formulare, Metadaten); keine Schatten; Magazin-Komposition statt Karten-Raster; Fuß als volle, invertierte Fläche.
 
 Abweichungen (Gründe):
 - **Schriften:** nur Systemschriften, keine Webfonts (Projektregel). Serife: `"Iowan Old Style", Charter, "Bitstream Charter", "Sitka Text", Cambria, Georgia, "Noto Serif", serif`; Grotesk: `system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif`.
 - **Farben:** statt Schwarz/Weiß die vorhandene Markenpalette (hell: warmes Off-White `#faf8f3`, Tinte `#111`, Akzent `#0a6b3d`; dunkel: Nachtgrün `#0f1f1a`, Tinte `#eef2ee`, Akzent `#5fd69a`), alles WCAG AA.
 - **Haarlinien:** WIRED trennt Story-Zeilen mit 1-px-Linien; hier (Taste-Skill-Hausregel) Trennung über Abstand und Tonstufen. Linien nur in echten Tabellen und Formularfeldern.
 - **Eyebrows/Versalien-Labels:** entfallen (Hausregel), Kategorien stehen in Satzschreibung.
-- **Touch-Ziele:** mindestens 48 px (Projektregel), statt ~44 px.
+- **Touch-Ziele:** mindestens 48 px (Projektregel), statt ~44 px. Ausnahme: der kompakte Kaufbutton in der Vergleichstabelle (44 px, Desktop) und der Quellen-Link in der Modellzelle (24 px, WCAG 2.2 Mindestgröße).
+- **Radien (v3.1, 20.10.2026, Wunsch des Betreibers):** statt WIRED-Eckig sind alle Buttons abgerundet. Token `--r-btn: 999px` (Pille) für `.btn` (grün), `.btn-sun` (gelb), `.btn-sec` (Outline), Sticky-Kaufleiste, Vergleichsleiste, Chips und den Menü-Button. Token `--r-feld: 10px` für Eingabefelder, Auswahllisten und Antwort-Optionen im Finder. Modell-Karten der mobilen Vergleichstabelle: 12 px. Flächen, Kacheln und Bänder bleiben eckig.
+- **Bewegung (v3.1):** keine Einblende- oder Lade-Animationen (kein gestaffeltes Einblenden, kein Zoom von Fotos, kein Farbwechsel der Kopfleiste beim Scrollen). Die Seite steht beim Laden still (CLS 0). Erlaubt sind nur Reaktionen auf Nutzeraktionen: Hover (Pfeil rückt 4 px, Foto 2 % Zoom), Ergebnis-Einblendung der Rechner, Balken im Rechner-Ergebnis, Seitenwechsel per View Transition; alles aus bei „Bewegung reduzieren“.
+- **Hero (v3.1):** Überschrift „Strom auf Vorrat“ steht vollständig auf Papier (keine geteilte Überschrift über zwei Felder mehr), darunter das grüne Feld in voller Breite. Unterzeile in Grotesk, 19–22 px, Zeilenhöhe 1.55, max. 38 Zeichen, `--field-ink` auf `--field` (13,6:1 hell, 7,05:1 dunkel). Textlink „Alle Modelle vergleichen →“ in Fließtextgröße mit gelber Unterstreichung.
+- **Vergleichstabelle (v3.1):** ab 1024 px echte Tabelle ohne Quer- und ohne Innen-Scrollen, Kopfzeile klebt unter der Kopfleiste; Kurzüberschriften mit Einheit in zweiter Zeile; Modellname verlinkt die Detailseite, darunter klein „Quelle: Hersteller“; Kauf als ein kompakter Outline-Pillenbutton „Preis bei Amazon*“ (`rel="sponsored nofollow noopener"`). Unter 1024 px eine Karte je Modell (Werte mit Beschriftung, Button in voller Breite), kein Querscrollen.
+- **Bilder:** keine Produktfotos, auch keine Pressefotos; jedes Modell nur als eigene Illustration (`img/illu/<slug>.svg`, hell/dunkel).

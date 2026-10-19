@@ -3,8 +3,7 @@
 # Ausgangsleistung, speicher_kwh = 0 bei Sets ohne Speicher. Stand: 19.10.2026
 # abbildung: Bild für Übersichten, Karten und Thumbnails. Derzeit eigene Illustration (img/illu/<slug>.svg,
 #   erzeugt mit tools/illus.py). Später: hier die PA-API-Bild-URL eintragen (https://…) – siehe README.
-# Produktbilder (bild*): nur aus Pressebereichen mit ausdrücklicher Erlaubnis für redaktionelle Nutzung;
-# Quelle, Lizenz und Bildnachweis je Bild angeben. Keine Amazon-Bilder.
+# Keine Produktfotos (auch keine Pressefotos) und keine Amazon-Bilder: alle Modelle nur als eigene Illustration.
 # slug = Produktseite /balkonkraftwerke/<slug>/; kurzname = Suchmuster (| getrennt) für Artikel-Verweise.
 # mppt, notstrom_w (0 = keine netzunabhängige Steckdose), max_kwh (0 = kein Speicher), garantie: Herstellerangaben,
 # Belege und Widersprüche auf der Produktseite (content/balkonkraftwerke/<slug>.md).
@@ -53,11 +52,6 @@
   speicher_kwh: 2.688
   quelle: https://support.ankersolix.com/s/article/Anker-SOLIX-Solarbank-3-E2700-Pro-A17C5-User-Guide
   asin: ""
-  bild: img/produkte/anker-solix-solarbank-3-e2700-pro.webp
-  bild_alt: "Anker SOLIX Solarbank 3 Pro in einer Studioaufnahme"
-  bild_credit: "Bild: Anker Solix / ots"
-  bild_quelle: https://www.presseportal.de/pm/179225/6008981
-  bild_lizenz: "presseportal.de: Verwendung für redaktionelle Zwecke honorarfrei, nur mit Bildrechte-Hinweis (https://www.presseportal.de/nutzungsbedingungen)"
 - modell: Zendure SolarFlow 800 Pro
   slug: "zendure-solarflow-800-pro"
   abbildung: img/illu/zendure-solarflow-800-pro.svg

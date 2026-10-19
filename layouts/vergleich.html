@@ -25,29 +25,30 @@
       {{ if gt (len ($akkus | uniq)) 1 }}<label>Akkutyp
         <select data-filter="akku" data-op="eq"><option value="">alle</option>{{ range ($akkus | uniq) }}<option>{{ . }}</option>{{ end }}</select></label>{{ end }}
       <button type="reset" class="btn-sec">Zurücksetzen</button>
+      <p class="count" aria-live="polite">&nbsp;</p>
     </fieldset>
   </form>
-  <div class="table-wrap" data-ui tabindex="0" role="region" aria-label="Tabelle Powerstations, horizontal scrollbar">
+  <div class="table-wrap" data-ui role="region" aria-label="Tabelle Powerstations">
   <table id="t-ps" class="cmp">
     <thead><tr>
-      <th data-sort="text" class="col-modell">Modell</th>
-      <th data-sort="num" class="r">Kapazität (Wh)</th>
-      <th data-sort="num" class="r">Dauer&shy;leistung (W)</th>
-      <th data-sort="num" class="r">Gewicht (kg)</th>
-      <th data-sort="num" class="r">Solar max. (W)</th>
-      <th data-sort="text">Akku</th>
-      <th>Links</th>
+      <th data-sort="text" class="col-modell" scope="col">Modell</th>
+      <th data-sort="num" class="r" scope="col">Kapazität <span class="einh">Wh</span></th>
+      <th data-sort="num" class="r" scope="col">Leistung <span class="einh">W</span></th>
+      <th data-sort="num" class="r" scope="col">Gewicht <span class="einh">kg</span></th>
+      <th data-sort="num" class="r" scope="col">Solar <span class="einh">max. W</span></th>
+      <th data-sort="text" scope="col">Akku</th>
+      <th class="col-kauf" scope="col"><span class="sr">Kaufen</span></th>
     </tr></thead>
     <tbody>
     {{ range sort hugo.Data.powerstations "kapazitaet_wh" }}
       <tr data-slug="{{ .slug }}" data-wh="{{ .kapazitaet_wh }}" data-w="{{ .dauerleistung_w }}" data-kg="{{ .gewicht_kg }}" data-akku="{{ .akkutyp }}">
-        <td class="col-modell">{{ partial "thumb.html" . }}{{ $m := .modell }}<span class="mname">{{ with site.GetPage (printf "/powerstations/%s" (.slug | default "-")) }}<a href="{{ .RelPermalink }}">{{ $m }}</a>{{ else }}{{ $m }}{{ end }}</span></td>
-        <td class="r" data-v="{{ .kapazitaet_wh }}">{{ lang.FormatNumber 0 .kapazitaet_wh }}</td>
-        <td class="r" data-v="{{ .dauerleistung_w }}">{{ lang.FormatNumber 0 .dauerleistung_w }}</td>
-        <td class="r" data-v="{{ .gewicht_kg }}">{{ replace (string .gewicht_kg) "." "," }}</td>
-        <td class="r" data-v="{{ .solareingang_w }}">{{ lang.FormatNumber 0 .solareingang_w }}</td>
-        <td>{{ .akkutyp }}</td>
-        <td class="links">{{ with site.GetPage (printf "/powerstations/%s" (.slug | default "-")) }}<a href="{{ .RelPermalink }}">Details</a><br>{{ end }}<a href="{{ .quelle }}" rel="noopener nofollow" target="_blank">Quelle</a>{{ with .asin }}<br><a class="amazon-link" href="{{ partial "amazon-url.html" . }}" rel="sponsored nofollow noopener" target="_blank">Preis bei Amazon</a><sup class="ad-mark">*</sup>{{ end }}</td>
+        <th class="col-modell" scope="row">{{ partial "thumb.html" . }}{{ $m := .modell }}<span class="mname">{{ with site.GetPage (printf "/powerstations/%s" (.slug | default "-")) }}<a href="{{ .RelPermalink }}">{{ $m }}</a>{{ else }}{{ $m }}{{ end }}</span><a class="mquelle" href="{{ .quelle }}" rel="noopener nofollow" target="_blank">Quelle: Hersteller<span class="sr"> (öffnet neues Fenster)</span></a></th>
+        <td class="r" data-v="{{ .kapazitaet_wh }}" data-l="Kapazität">{{ lang.FormatNumber 0 .kapazitaet_wh }}<span class="einh-m"> Wh</span></td>
+        <td class="r" data-v="{{ .dauerleistung_w }}" data-l="Leistung">{{ lang.FormatNumber 0 .dauerleistung_w }}<span class="einh-m"> W</span></td>
+        <td class="r" data-v="{{ .gewicht_kg }}" data-l="Gewicht">{{ replace (string .gewicht_kg) "." "," }}<span class="einh-m"> kg</span></td>
+        <td class="r" data-v="{{ .solareingang_w }}" data-l="Solar max.">{{ lang.FormatNumber 0 .solareingang_w }}<span class="einh-m"> W</span></td>
+        <td data-l="Akku">{{ .akkutyp }}</td>
+        <td class="col-kauf">{{ with .asin }}<a class="btn-sec btn-tab" href="{{ partial "amazon-url.html" . }}" rel="sponsored nofollow noopener" target="_blank">Preis bei Amazon<span class="ad-mark" title="Affiliate-Link">*</span></a>{{ else }}<span class="kein-kauf">kein Kauflink</span>{{ end }}</td>
       </tr>
     {{ end }}
     </tbody>
@@ -80,29 +81,30 @@
       <label>PV-Eingang ab (W)
         <input type="number" min="0" step="100" placeholder="z. B. 2000…" data-filter="pv" data-op="min" inputmode="numeric"></label>
       <button type="reset" class="btn-sec">Zurücksetzen</button>
+      <p class="count" aria-live="polite">&nbsp;</p>
     </fieldset>
   </form>
-  <div class="table-wrap" data-ui tabindex="0" role="region" aria-label="Tabelle Balkonkraftwerke, horizontal scrollbar">
+  <div class="table-wrap" data-ui role="region" aria-label="Tabelle Balkonkraftwerke">
   <table id="t-bkw" class="cmp">
     <thead><tr>
-      <th data-sort="text" class="col-modell">Modell</th>
-      <th data-sort="text">Typ</th>
-      <th data-sort="num" class="r">Speicher (kWh)</th>
-      <th data-sort="num" class="r">PV-Eingang max. (W)</th>
-      <th data-sort="num" class="r">Module (Wp)</th>
-      <th data-sort="num" class="r">Wechsel&shy;richter (W)</th>
-      <th>Links</th>
+      <th data-sort="text" class="col-modell" scope="col">Modell</th>
+      <th data-sort="text" scope="col">Typ</th>
+      <th data-sort="num" class="r" scope="col">Speicher <span class="einh">kWh</span></th>
+      <th data-sort="num" class="r" scope="col">PV-Eingang <span class="einh">max. W</span></th>
+      <th data-sort="num" class="r" scope="col">Module <span class="einh">Wp</span></th>
+      <th data-sort="num" class="r" scope="col"><abbr title="Wechselrichter">WR</abbr> <span class="einh">W</span></th>
+      <th class="col-kauf" scope="col"><span class="sr">Kaufen</span></th>
     </tr></thead>
     <tbody>
     {{ range hugo.Data.balkonkraftwerke }}
       <tr data-slug="{{ .slug }}" data-typ="{{ .typ }}" data-speicher="{{ .speicher_kwh }}" data-pv="{{ cond (gt .pv_max_w 0) .pv_max_w .module_wp }}">
-        <td class="col-modell">{{ partial "thumb.html" . }}<span class="mname">{{ $m := .modell }}{{ with site.GetPage (printf "/balkonkraftwerke/%s" (.slug | default "-")) }}<a href="{{ .RelPermalink }}">{{ $m }}</a>{{ else }}{{ $m }}{{ end }}</span></td>
-        <td>{{ .typ }}</td>
-        <td class="r" data-v="{{ .speicher_kwh }}">{{ if gt .speicher_kwh 0 }}{{ replace (string .speicher_kwh) "." "," }}{{ else }}nein{{ end }}</td>
-        <td class="r" data-v="{{ .pv_max_w }}">{{ if gt .pv_max_w 0 }}{{ lang.FormatNumber 0 .pv_max_w }}{{ else }}–{{ end }}</td>
-        <td class="r" data-v="{{ .module_wp }}">{{ if gt .module_wp 0 }}{{ lang.FormatNumber 0 .module_wp }}{{ else }}–{{ end }}</td>
-        <td class="r" data-v="{{ .wechselrichter_w }}">{{ .wechselrichter_w }}</td>
-        <td class="links">{{ with site.GetPage (printf "/balkonkraftwerke/%s" (.slug | default "-")) }}<a href="{{ .RelPermalink }}">Details</a><br>{{ end }}<a href="{{ .quelle }}" rel="noopener nofollow" target="_blank">Quelle</a>{{ with .asin }}<br><a class="amazon-link" href="{{ partial "amazon-url.html" . }}" rel="sponsored nofollow noopener" target="_blank">Preis bei Amazon</a><sup class="ad-mark">*</sup>{{ end }}</td>
+        <th class="col-modell" scope="row">{{ partial "thumb.html" . }}<span class="mname">{{ $m := .modell }}{{ with site.GetPage (printf "/balkonkraftwerke/%s" (.slug | default "-")) }}<a href="{{ .RelPermalink }}">{{ $m }}</a>{{ else }}{{ $m }}{{ end }}</span><a class="mquelle" href="{{ .quelle }}" rel="noopener nofollow" target="_blank">Quelle: Hersteller<span class="sr"> (öffnet neues Fenster)</span></a></th>
+        <td data-l="Typ" class="col-typ">{{ .typ }}</td>
+        <td class="r" data-v="{{ .speicher_kwh }}" data-l="Speicher">{{ if gt .speicher_kwh 0 }}{{ replace (string .speicher_kwh) "." "," }}<span class="einh-m"> kWh</span>{{ else }}nein{{ end }}</td>
+        <td class="r" data-v="{{ .pv_max_w }}" data-l="PV-Eingang max.">{{ if gt .pv_max_w 0 }}{{ lang.FormatNumber 0 .pv_max_w }}<span class="einh-m"> W</span>{{ else }}–{{ end }}</td>
+        <td class="r" data-v="{{ .module_wp }}" data-l="Module">{{ if gt .module_wp 0 }}{{ lang.FormatNumber 0 .module_wp }}<span class="einh-m"> Wp</span>{{ else }}–{{ end }}</td>
+        <td class="r" data-v="{{ .wechselrichter_w }}" data-l="Wechselrichter">{{ .wechselrichter_w }}<span class="einh-m"> W</span></td>
+        <td class="col-kauf">{{ with .asin }}<a class="btn-sec btn-tab" href="{{ partial "amazon-url.html" . }}" rel="sponsored nofollow noopener" target="_blank">Preis bei Amazon<span class="ad-mark" title="Affiliate-Link">*</span></a>{{ else }}<span class="kein-kauf">kein Kauflink</span>{{ end }}</td>
       </tr>
     {{ end }}
     </tbody>
@@ -119,7 +121,7 @@
   </figure>
   </section>
 
-  <p class="note">Alle Werte sind Herstellerangaben (Stand der Datenerhebung: {{ .Params.stand }}). Preise nenne ich bewusst nicht, weil sie sich ständig ändern. Mit * markierte Links sind Affiliate-Links. Produktfotos nur aus Pressebereichen der Hersteller mit Erlaubnis zur redaktionellen Nutzung; Bildnachweis jeweils am Foto. Ohne freigegebenes Foto steht ein Platzhalter.</p>
+  <p class="note">Alle Werte sind Herstellerangaben (Stand der Datenerhebung: {{ .Params.stand }}). Preise nenne ich bewusst nicht, weil sie sich ständig ändern. Mit * markierte Links sind Affiliate-Links. Alle Abbildungen der Modelle sind eigene Illustrationen nach Herstellerangaben, keine Produktfotos.</p>
 </article>
 {{ $js := resources.Get "js/vergleich.js" | minify | fingerprint }}
 <script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" defer></script>

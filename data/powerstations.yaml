@@ -2,8 +2,7 @@
 # für genau dieses Modell (ohne Bundle) geprüft wurde. Stand: 19.10.2026
 # abbildung: Bild für Übersichten, Karten und Thumbnails. Derzeit eigene Illustration (img/illu/<slug>.svg,
 #   erzeugt mit tools/illus.py). Später: hier die PA-API-Bild-URL eintragen (https://…) – siehe README.
-# Produktbilder (bild*): nur aus Pressebereichen mit ausdrücklicher Erlaubnis für redaktionelle Nutzung;
-# Quelle, Lizenz und Bildnachweis je Bild angeben. Keine Amazon-Bilder.
+# Keine Produktfotos (auch keine Pressefotos) und keine Amazon-Bilder: alle Modelle nur als eigene Illustration.
 # slug = Produktseite /powerstations/<slug>/. spitze_w, usv_ms, zyklen, erweiterbar: Herstellerangaben,
 # Belege und Widersprüche stehen auf der jeweiligen Produktseite (content/powerstations/<slug>.md).
 # usv_ms: bei widersprüchlichen Angaben der höhere (ungünstigere) Wert.
@@ -77,11 +76,6 @@
   solareingang_w: 400
   quelle: https://www.dji.com/de/power-1000-mini/specs
   asin: B0GJC2M84T
-  bild: img/produkte/dji-power-1000-mini.webp
-  bild_alt: "DJI Power 1000 Mini auf einem Holzregal, Frontseite mit Anschlüssen"
-  bild_credit: "Bild: DJI"
-  bild_quelle: https://www.mynewsdesk.com/uk/dji/images/versatile-charging-ports-eu-dot-jpg-3454328
-  bild_lizenz: "Mynewsdesk-Lizenz „Media Use“ (unverändert, mit Urhebernennung), siehe Bildseite"
 - modell: Anker SOLIX C1000 Gen 2
   slug: anker-solix-c1000-gen-2
   abbildung: img/illu/anker-solix-c1000-gen-2.svg

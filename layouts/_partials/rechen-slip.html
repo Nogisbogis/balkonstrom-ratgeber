@@ -6,7 +6,7 @@
 {{- $h := div (mul $d.kapazitaet_wh 0.85) $kb.w }}{{ $hh := int (math.Floor $h) }}{{ $mm := int (math.Round (mul (sub $h $hh) 60)) }}
 {{- $n := 0 }}{{ range $ps }}{{ if and (ge .dauerleistung_w 250) (ge (mul .kapazitaet_wh 0.85) 150) (le .gewicht_kg 5) }}{{ $n = add $n 1 }}{{ end }}{{ end }}
 {{- $sp := mul (mul 0.8 665) (mul 0.45 0.37) }}{{ $j := div 400.0 $sp }}
-<div class="slip-links" data-r>
+<div class="slip-links">
   <h2 id="tools-titel">Selbst rechnen</h2>
   <p>Drei Werkzeuge, alle Annahmen offen und änderbar. Wähle ein Gerät, und der Beleg rechnet mit denselben Formeln wie der Laufzeitrechner.</p>
   <ul class="slip-tools">
@@ -15,8 +15,8 @@
     <li><a class="textlink" href="{{ "amortisationsrechner/" | relURL }}?wp=800&amp;kosten=400&amp;spez=665&amp;ev=45&amp;preis=37">Amortisation berechnen</a><span>Beispiel mit Werten des Umweltbundesamts (800 Wp senkrecht, 45 % Eigenverbrauch, 37 ct, 400 €): ≈ {{ lang.FormatNumber 1 $j }} Jahre</span></li>
   </ul>
 </div>
-<div class="slip-wrap" data-r>
-  <div class="slip-wahl" role="group" aria-label="Gerät für den Beleg wählen" hidden>
+<div class="slip-wrap">
+  <div class="slip-wahl" role="group" aria-label="Gerät für den Beleg wählen">
     {{- range slice "kuehlbox" "laptop" "router" "tv" }}{{ $g := index (where hugo.Data.geraete "key" .) 0 }}
     <button type="button" class="chip" data-k="{{ $g.key }}" data-w="{{ $g.w }}" data-n="{{ $g.name }}" data-q="{{ index (split $g.quelle ":") 0 }}"{{ if eq $g.key "kuehlbox" }} aria-pressed="true"{{ else }} aria-pressed="false"{{ end }}>{{ $g.name }}</button>
     {{- end }}

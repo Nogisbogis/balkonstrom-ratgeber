@@ -1,6 +1,6 @@
 {{- /* Einsatz-Wahl als Plakat-Liste (Name groß links, Kurzbeschreibung rechts) → /einsatz/<slug>/ */ -}}
 {{- with site.GetPage "/einsatz" }}
 <nav class="einsatz-wahl" aria-label="Nach Einsatz wählen">
-  <ul class="poster-liste">{{ range .Pages.ByWeight }}<li data-r><a href="{{ .RelPermalink }}"><span class="poster-wort">{{ .Params.kurztitel }}</span><span class="poster-detail">{{ .Params.kurztext }}</span></a></li>{{ end }}</ul>
+  <ul class="poster-liste">{{ range .Pages.ByWeight }}<li><a href="{{ .RelPermalink }}"><span class="poster-wort">{{ .Params.kurztitel }}</span><span class="poster-detail">{{ .Params.kurztext }}</span></a></li>{{ end }}</ul>
 </nav>
 {{- end }}
