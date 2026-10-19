@@ -1,0 +1,14 @@
+{{- /* Abbildung aus static/: {{< grafik src="img/x.svg" alt="…" caption="…" >}} */ -}}
+{{- $src := .Get "src" }}
+{{- $alt := .Get "alt" }}
+{{- if not $alt }}{{ errorf "grafik: alt fehlt (%s)" .Position }}{{ end }}
+{{- $w := 760 }}{{ $h := 400 }}
+{{- $file := path.Join "static" $src }}
+{{- if os.FileExists $file }}
+  {{- $raw := os.ReadFile $file }}
+  {{- with findRESubmatch `viewBox="0 0 ([0-9.]+) ([0-9.]+)"` $raw 1 }}{{ $w = index (index . 0) 1 }}{{ $h = index (index . 0) 2 }}{{ end }}
+{{- else }}{{ errorf "grafik: Datei fehlt: %s" $file }}{{ end }}
+<figure class="grafik">
+  <a href="{{ $src | relURL }}" title="Grafik in voller Größe öffnen"><img src="{{ $src | relURL }}" alt="{{ $alt }}" width="{{ $w }}" height="{{ $h }}" loading="lazy" decoding="async"></a>
+  {{- with .Get "caption" }}<figcaption>{{ . | markdownify }}</figcaption>{{ end }}
+</figure>

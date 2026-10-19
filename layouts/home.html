@@ -1,19 +1,17 @@
 {{ define "main" }}
-<section class="intro">
-  <h1>{{ site.Title }}</h1>
-  <p>{{ site.Params.description }}</p>
+<section class="hero">
+  <div class="hero-text">
+    <h1>{{ site.Title }}</h1>
+    <p class="lead">Nüchterne Ratgeber zu Balkonkraftwerken, Speichern und Powerstations – mit Herstellerdaten, Regeln und unabhängigen Testergebnissen. Jede Angabe mit Quelle, keine erfundenen Tests.</p>
+    <p class="hero-links"><a class="btn" href="{{ "vergleich/" | relURL }}">Zum Vergleich</a> <a class="btn-sec" href="#artikel">Artikel lesen</a></p>
+  </div>
 </section>
 {{ $posts := where site.RegularPages "Section" "posts" }}
 {{ $pager := .Paginate $posts.ByDate.Reverse }}
+<h2 id="artikel">Artikel</h2>
 {{ with $pager.Pages }}
-<ul class="post-list">
-  {{ range . }}
-  <li>
-    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-    <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "02.01.2006" }}</time>
-    {{ with .Description }}<p>{{ . }}</p>{{ end }}
-  </li>
-  {{ end }}
+<ul class="cards">
+  {{ range . }}{{ partial "card.html" . }}{{ end }}
 </ul>
 {{ else }}
 <p class="empty">Bald gibt es hier die ersten Artikel.</p>

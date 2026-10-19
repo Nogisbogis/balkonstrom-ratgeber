@@ -1,0 +1,14 @@
+{{ define "main" }}
+<article class="notfound">
+  <h1>Seite nicht gefunden (404)</h1>
+  <p>Diese Seite gibt es nicht (mehr). Vielleicht hilft dir eine dieser Seiten weiter:</p>
+  <ul>
+    <li><a href="{{ site.Home.RelPermalink }}">Startseite mit allen Artikeln</a></li>
+    <li><a href="{{ "vergleich/" | relURL }}">Vergleich: Balkonkraftwerke und Powerstations</a></li>
+  </ul>
+  {{ with where site.RegularPages "Section" "posts" }}
+  <h2>Artikel</h2>
+  <ul>{{ range .ByDate.Reverse }}<li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>{{ end }}</ul>
+  {{ end }}
+</article>
+{{ end }}

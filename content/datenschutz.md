@@ -1,6 +1,7 @@
 +++
 title = "Datenschutzerklärung"
 layout = "legal"
+description = "Datenschutzerklärung des Balkonstrom-Ratgebers: Hosting bei GitHub Pages, Affiliate-Links, Kommentare über giscus und deine Rechte."
 url = "/datenschutz/"
 +++
 

@@ -1,6 +1,7 @@
 +++
 title = "Impressum"
 layout = "legal"
+description = "Impressum des Balkonstrom-Ratgebers: Anbieterkennzeichnung nach § 5 DDG."
 +++
 
 

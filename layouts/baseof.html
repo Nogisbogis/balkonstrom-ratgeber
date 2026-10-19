@@ -3,24 +3,53 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }} – {{ site.Title }}{{ end }}</title>
-<meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ with .Summary }}{{ . | plainify | truncate 160 }}{{ else }}{{ site.Params.description }}{{ end }}{{ end }}">
-{{- if site.Params.noindex }}
-<meta name="robots" content="noindex, nofollow">
+{{- $title := cond .IsHome (printf "%s – Balkonkraftwerke & Powerstations" site.Title) (printf "%s – %s" .Title site.Title) }}
+{{- $desc := "" }}
+{{- with .Description }}{{ $desc = . }}{{ else }}{{ if .IsHome }}{{ $desc = site.Params.description }}{{ else }}{{ with .Summary }}{{ $desc = . | plainify | htmlUnescape | truncate 160 }}{{ else }}{{ $desc = site.Params.description }}{{ end }}{{ end }}{{ end }}
+{{- $og := .Params.ogImage | default "img/og-default.jpg" }}
+<title>{{ $title }}</title>
+<meta name="description" content="{{ $desc }}">
+{{- if or site.Params.noindex (eq .Kind "404") }}
+<meta name="robots" content="noindex, follow">
 {{- end }}
+{{- if ne .Kind "404" }}
 <link rel="canonical" href="{{ .Permalink }}">
+{{- end }}
+<meta name="theme-color" content="#0b7a4b" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#121816" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="{{ "favicon.svg" | relURL }}" type="image/svg+xml">
+<meta property="og:site_name" content="{{ site.Title }}">
+<meta property="og:locale" content="de_DE">
+<meta property="og:type" content="{{ if and .IsPage (eq .Section "posts") }}article{{ else }}website{{ end }}">
+<meta property="og:title" content="{{ cond .IsHome site.Title .Title }}">
+<meta property="og:description" content="{{ $desc }}">
+<meta property="og:url" content="{{ .Permalink }}">
+<meta property="og:image" content="{{ $og | absURL }}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="{{ .Params.imageAlt | default "Illustration: Solarmodule am Balkon" }}">
+{{- if and .IsPage (eq .Section "posts") }}
+<meta property="article:published_time" content="{{ .Date.Format "2006-01-02" }}">
+<meta property="article:modified_time" content="{{ .Lastmod.Format "2006-01-02" }}">
+{{- end }}
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ cond .IsHome site.Title .Title }}">
+<meta name="twitter:description" content="{{ $desc }}">
+<meta name="twitter:image" content="{{ $og | absURL }}">
 {{- $css := resources.Get "style.css" | minify | fingerprint }}
 <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
 </head>
 <body>
+<a class="skip" href="#inhalt">Zum Inhalt springen</a>
 <header class="site-header">
   <div class="wrap">
-    <a class="brand" href="{{ "/" | relURL }}">{{ site.Title }}</a>
+    <a class="brand" href="{{ site.Home.RelPermalink }}"><img src="{{ "favicon.svg" | relURL }}" alt="" width="28" height="28">{{ site.Title }}</a>
     <span class="tagline">Balkonkraftwerke &amp; Powerstations</span>
-    <nav class="main-nav"><a href="{{ "/" | relURL }}">Artikel</a><a href="{{ "vergleich/" | relURL }}">Vergleich</a></nav>
+    <nav class="main-nav" aria-label="Hauptnavigation"><a href="{{ site.Home.RelPermalink }}"{{ if .IsHome }} aria-current="page"{{ end }}>Artikel</a><a href="{{ "vergleich/" | relURL }}"{{ if eq .RelPermalink ("vergleich/" | relURL) }} aria-current="page"{{ end }}>Vergleich</a></nav>
   </div>
 </header>
-<main class="wrap">
+<main class="wrap" id="inhalt">
 {{ block "main" . }}{{ end }}
 </main>
 {{ partial "footer.html" . }}
