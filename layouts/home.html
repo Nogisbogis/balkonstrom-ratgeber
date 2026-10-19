@@ -1,0 +1,27 @@
+{{ define "main" }}
+<section class="intro">
+  <h1>{{ site.Title }}</h1>
+  <p>{{ site.Params.description }}</p>
+</section>
+{{ $posts := where site.RegularPages "Section" "posts" }}
+{{ $pager := .Paginate $posts.ByDate.Reverse }}
+{{ with $pager.Pages }}
+<ul class="post-list">
+  {{ range . }}
+  <li>
+    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+    <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "02.01.2006" }}</time>
+    {{ with .Description }}<p>{{ . }}</p>{{ end }}
+  </li>
+  {{ end }}
+</ul>
+{{ else }}
+<p class="empty">Bald gibt es hier die ersten Artikel.</p>
+{{ end }}
+{{ if gt $pager.TotalPages 1 }}
+<nav class="pager">
+  {{ with $pager.Prev }}<a href="{{ .URL }}">← Neuer</a>{{ end }}
+  {{ with $pager.Next }}<a href="{{ .URL }}">Älter →</a>{{ end }}
+</nav>
+{{ end }}
+{{ end }}
