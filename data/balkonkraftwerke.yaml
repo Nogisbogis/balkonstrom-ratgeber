@@ -8,7 +8,7 @@
   wechselrichter_w: 800
   speicher_kwh: 0
   quelle: https://www.ankersolix.com/eu/products/b5143
-  asin: ""
+  asin: B0CB86CXLD
 - modell: Anker SOLIX Solarbank 2 E1600 Pro
   typ: Speicher mit Wechselrichter
   module_wp: 0
@@ -48,7 +48,7 @@
   wechselrichter_w: 800
   speicher_kwh: 1.92
   quelle: "https://ecoflow-service-us-prod.oss-us-west-1.aliyuncs.com/cms/manual/1750903136593/EcoFlow%20STREAM%20Ultra%20%26%20Pro_User%20Manual.pdf"
-  asin: ""
+  asin: B0F5B7WDQ4
 - modell: Growatt NEXA 2000
   typ: Speicher mit Wechselrichter
   module_wp: 0
