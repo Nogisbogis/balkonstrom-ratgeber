@@ -261,7 +261,7 @@ table.p-daten tr.gruppe th{background:var(--soft);font-size:.8rem;text-transform
 .pcard-links .details{font-weight:600}
 .mname a{color:var(--fg)}
 /* Werkzeuge */
-.tool-teaser{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:.8rem;margin:0 0 1.6rem}
+.tool-teaser{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:.8rem;margin:0 0 1.6rem}
 .tool-teaser a{display:block;border:2px solid var(--accent);border-radius:10px;padding:.8rem 1rem;text-decoration:none;color:var(--fg);background:var(--bg)}
 .tool-teaser a:hover{background:var(--soft)}
 .tool-teaser strong{display:block;font-size:1.1rem;color:var(--accent)}
