@@ -1,0 +1,34 @@
+{{- /* Produktkarte. Kontext: dict "p" <Datensatz> "art" "ps"|"bkw" "hinweis" <optional> */ -}}
+{{- $p := .p }}{{ $art := .art }}
+<li class="pcard">
+  <div class="pcard-media">
+  {{- with $p.bild }}
+    <figure class="pbild"><img src="{{ . | relURL }}" alt="{{ $p.bild_alt }}" width="600" height="{{ cond (eq $art "ps") 450 338 }}" loading="lazy" decoding="async"><figcaption>{{ $p.bild_credit }}</figcaption></figure>
+  {{- else }}
+    <div class="pbild-leer" aria-hidden="true"><span>{{ cond (eq $art "ps") "Powerstation" "Balkonkraftwerk" }}</span><small>kein freigegebenes Pressefoto</small></div>
+  {{- end }}
+  </div>
+  <div class="pcard-body">
+    <h3>{{ $p.modell }}</h3>
+    <dl class="specs">
+    {{- if eq $art "ps" }}
+      <div><dt>Kapazität</dt><dd>{{ lang.FormatNumber 0 $p.kapazitaet_wh }} Wh</dd></div>
+      <div><dt>Dauerleistung</dt><dd>{{ lang.FormatNumber 0 $p.dauerleistung_w }} W</dd></div>
+      <div><dt>Gewicht</dt><dd>{{ replace (string $p.gewicht_kg) "." "," }} kg</dd></div>
+      <div><dt>Solar max.</dt><dd>{{ lang.FormatNumber 0 $p.solareingang_w }} W</dd></div>
+      <div><dt>Akku</dt><dd>{{ $p.akkutyp }}</dd></div>
+    {{- else }}
+      <div><dt>Typ</dt><dd>{{ $p.typ }}</dd></div>
+      {{- if gt $p.speicher_kwh 0 }}<div><dt>Speicher</dt><dd>{{ replace (string $p.speicher_kwh) "." "," }} kWh</dd></div>{{ end }}
+      {{- if gt $p.pv_max_w 0 }}<div><dt>PV-Eingang max.</dt><dd>{{ lang.FormatNumber 0 $p.pv_max_w }} W</dd></div>{{ end }}
+      {{- if gt $p.module_wp 0 }}<div><dt>Module</dt><dd>{{ lang.FormatNumber 0 $p.module_wp }} Wp</dd></div>{{ end }}
+      <div><dt>Ausgang (Wechselrichter)</dt><dd>{{ $p.wechselrichter_w }} W</dd></div>
+    {{- end }}
+    </dl>
+    {{- with .hinweis }}<p class="phinweis">{{ . }}</p>{{ end }}
+    <p class="pcard-links">
+      {{- with $p.asin }}<a class="btn btn-amazon" href="{{ partial "amazon-url.html" . }}" rel="sponsored nofollow noopener" target="_blank">Bei Amazon ansehen<span class="ad-mark" title="Affiliate-Link">*</span></a>{{ end }}
+      <a class="quelle" href="{{ $p.quelle }}" rel="noopener" target="_blank">Herstellerdaten</a>
+    </p>
+  </div>
+</li>

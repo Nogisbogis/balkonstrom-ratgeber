@@ -1,0 +1,3 @@
+<details class="lesehinweis"><summary>{{ .Get "titel" }}</summary>
+{{ .Inner | .Page.RenderString (dict "display" "block") }}
+</details>

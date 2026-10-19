@@ -6,25 +6,29 @@ draft = false
 image = 'img/titel-anmelden.svg'
 imageAlt = 'Gezeichnete Illustration: zwei Solarmodule am Balkongeländer neben einem Formular mit Häkchen'
 ogImage = 'img/og-anmelden.jpg'
+kategorie = 'ratgeber'
+kurz = [
+  '**Leistungsgrenzen:** höchstens 800 VA Wechselrichterleistung (laut Typenschild) und höchstens 2.000 W Modulleistung.',
+  '**Anmeldung:** nur im Marktstammdatenregister, innerhalb eines Monats nach Inbetriebnahme. Ein Speicher muss zusätzlich beim Netzbetreiber angemeldet werden.',
+  '**Zähler:** Ein alter, rückwärts laufender Zähler wird vorübergehend geduldet; den Tausch übernimmt der Messstellenbetreiber.',
+  '**Schuko-Stecker:** normgerecht bis 960 W Modulleistung, wenn das Gerät die DIN VDE V 0126-95 erfüllt.',
+  '**Miete und Eigentum:** Zustimmung weiterhin nötig – seit dem 17. Oktober 2024 dürfen Vermieter oder Eigentümergemeinschaft aber nur in begründeten Ausnahmefällen ablehnen.',
+]
 +++
 
 Für Balkonkraftwerke – offiziell „Steckersolargeräte“ – gelten seit 2024 deutlich einfachere Regeln. Mit dem Solarpaket I, einer Änderung von Miet- und Wohnungseigentumsrecht und der neuen Produktnorm DIN VDE V 0126-95 vom Dezember 2025 hat sich viel geändert. Hier ist der Stand im Oktober 2026, mit Quellen.
 
 *Dieser Artikel ist keine Rechtsberatung. Er fasst die Angaben von Bundeswirtschaftsministerium, Bundesnetzagentur, Umweltbundesamt und VDE zusammen.*
 
-## Kurz gesagt
-
-- **Leistungsgrenzen:** höchstens 800 VA Wechselrichterleistung und höchstens 2.000 W Modulleistung.
-- **Anmeldung:** nur im Marktstammdatenregister der Bundesnetzagentur. Eine Anmeldung beim Netzbetreiber ist nicht mehr nötig.
-- **Zähler:** Ein alter, rückwärts laufender Zähler wird vorübergehend geduldet. Der Messstellenbetreiber tauscht ihn bei Bedarf aus, ohne dass du dich kümmern musst.
-- **Schuko-Stecker:** normgerecht bis 960 W Modulleistung, wenn das Gerät die DIN VDE V 0126-95 erfüllt. Darüber braucht es eine spezielle Energiesteckvorrichtung.
-- **Miete und Eigentum:** Seit dem 17. Oktober 2024 sind Balkonkraftwerke privilegiert. Zustimmen müssen Vermieter oder Eigentümergemeinschaft weiterhin, ablehnen können sie aber nur in begründeten Ausnahmefällen.
-
 ## Die Leistungsgrenzen: 800 VA und 2.000 W
 
-Durch das Solarpaket I wurde im Erneuerbare-Energien-Gesetz (EEG) die maximale Wechselrichterleistung für Steckersolargeräte auf 800 Voltampere angehoben. Die Solarmodule dürfen zusammen höchstens 2.000 Watt haben. Liegt eine Anlage darüber, gilt sie als reguläre PV-Anlage – mit allen Pflichten, die dazugehören.
+Durch das Solarpaket I wurde im Erneuerbare-Energien-Gesetz (EEG) die maximale Wechselrichterleistung für Steckersolargeräte auf 800 Voltampere angehoben.
 
-Entscheidend für die 800 VA ist laut Bundeswirtschaftsministerium und Umweltbundesamt die Angabe **auf dem Typenschild oder im Einheitenzertifikat** des Wechselrichters. Eine Drosselung per Software reicht nicht aus – egal, ob sie der Hersteller oder du selbst einstellst. Ein Wechselrichter mit 1.000 VA laut Typenschild ist also kein Steckersolargerät im Sinne der vereinfachten Regeln, auch wenn er in der App auf 800 W begrenzt ist.
+Die Solarmodule dürfen zusammen höchstens 2.000 Watt haben. Liegt eine Anlage darüber, gilt sie als reguläre PV-Anlage – mit allen Pflichten, die dazugehören.
+
+Entscheidend für die 800 VA ist laut Bundeswirtschaftsministerium und Umweltbundesamt die Angabe **auf dem Typenschild oder im Einheitenzertifikat** des Wechselrichters.
+
+Eine Drosselung per Software reicht nicht aus – egal, ob sie der Hersteller oder du selbst einstellst. Ein Wechselrichter mit 1.000 VA laut Typenschild ist also kein Steckersolargerät im Sinne der vereinfachten Regeln, auch wenn er in der App auf 800 W begrenzt ist.
 
 Auch Balkonkraftwerke mit Speicher fallen unter diese Grenzen: Maßgeblich ist, was der Wechselrichter höchstens ins Hausnetz abgibt.
 
@@ -32,7 +36,9 @@ Pro Stromzähler ist laut Umweltbundesamt nur ein selbst angemeldetes Steckersol
 
 ## Anmeldung im Marktstammdatenregister
 
-Seit dem 16. Mai 2024 reicht für ein Balkonkraftwerk die Registrierung im [Marktstammdatenregister](https://www.marktstammdatenregister.de/) (MaStR) der Bundesnetzagentur. Die frühere zusätzliche Meldung beim Netzbetreiber entfällt. Die Registrierung soll innerhalb eines Monats nach der Inbetriebnahme erfolgen.
+Seit dem 16. Mai 2024 reicht für ein Balkonkraftwerk die Registrierung im [Marktstammdatenregister](https://www.marktstammdatenregister.de/) (MaStR) der Bundesnetzagentur.
+
+Die frühere zusätzliche Meldung beim Netzbetreiber entfällt. Die Registrierung soll innerhalb eines Monats nach der Inbetriebnahme erfolgen.
 
 Abgefragt werden nur wenige Angaben:
 
@@ -48,13 +54,19 @@ Die Bundesnetzagentur stellt dafür eine eigene [Registrierungshilfe für Balkon
 
 **Mit Speicher:** Betreibst du zusätzlich einen Stromspeicher, beantwortest du die entsprechende Frage im Formular mit „Ja“ und gibst die Daten des Speichers mit an. Laut Bundeswirtschaftsministerium muss ein Speicher außerdem beim Netzbetreiber angemeldet werden. Mehr dazu in unserer Kaufberatung zu Balkonkraftwerken mit Speicher.
 
-**Keine Einspeisevergütung:** Wer die Sonderregelung für Steckersolargeräte nutzt, bekommt für den ins Netz eingespeisten Überschuss kein Geld („unentgeltliche Abnahme“). Eine EEG-Vergütung ist zwar grundsätzlich möglich, dann verliert die Anlage aber laut Bundeswirtschaftsministerium den Status als Steckersolargerät und damit die Vereinfachungen. Ein Balkonkraftwerk lohnt sich also über den Strom, den du selbst gleichzeitig verbrauchst.
+**Keine Einspeisevergütung:** Wer die Sonderregelung für Steckersolargeräte nutzt, bekommt für den ins Netz eingespeisten Überschuss kein Geld („unentgeltliche Abnahme“).
+
+Eine EEG-Vergütung ist zwar grundsätzlich möglich, dann verliert die Anlage aber laut Bundeswirtschaftsministerium den Status als Steckersolargerät und damit die Vereinfachungen. Ein Balkonkraftwerk lohnt sich also über den Strom, den du selbst gleichzeitig verbrauchst.
 
 ## Der Stromzähler: Was passiert mit dem alten Zähler?
 
-Viele Haushalte haben noch einen analogen Ferraris-Zähler, der sich rückwärts drehen kann, wenn das Balkonkraftwerk mehr erzeugt, als im Haushalt verbraucht wird. Das wird übergangsweise geduldet: Du darfst das Balkonkraftwerk mit jedem vorhandenen Zähler in Betrieb nehmen.
+Viele Haushalte haben noch einen analogen Ferraris-Zähler, der sich rückwärts drehen kann, wenn das Balkonkraftwerk mehr erzeugt, als im Haushalt verbraucht wird.
 
-Nach der Registrierung im Marktstammdatenregister prüft der Messstellenbetreiber – meist der Netzbetreiber – den Zähler und tauscht ihn bei Bedarf gegen eine moderne Messeinrichtung (Zweirichtungszähler). Laut Bundeswirtschaftsministerium ist das für dich im Regelfall kostenlos, auch im laufenden Betrieb entstehen keine Mehrkosten. Unabhängig davon werden alte Ferraris-Zähler bis 2032 ohnehin schrittweise ersetzt.
+Das wird übergangsweise geduldet: Du darfst das Balkonkraftwerk mit jedem vorhandenen Zähler in Betrieb nehmen.
+
+Nach der Registrierung im Marktstammdatenregister prüft der Messstellenbetreiber – meist der Netzbetreiber – den Zähler und tauscht ihn bei Bedarf gegen eine moderne Messeinrichtung (Zweirichtungszähler).
+
+Laut Bundeswirtschaftsministerium ist das für dich im Regelfall kostenlos, auch im laufenden Betrieb entstehen keine Mehrkosten. Unabhängig davon werden alte Ferraris-Zähler bis 2032 ohnehin schrittweise ersetzt.
 
 ## Die Steckdose: Schuko oder Energiesteckvorrichtung?
 
@@ -78,7 +90,11 @@ Was du außerdem beachten solltest:
 
 Seit dem 17. Oktober 2024 gehören Steckersolargeräte zu den privilegierten baulichen Veränderungen. Mieter können nach § 554 BGB verlangen, dass der Vermieter ihnen die Installation erlaubt. Wohnungseigentümer können nach § 20 Abs. 2 Nr. 5 WEG eine angemessene bauliche Veränderung für ein Steckersolargerät verlangen.
 
-Das heißt nicht, dass du ohne Zustimmung loslegen kannst: Du musst weiterhin fragen. Vermieter oder Eigentümergemeinschaft können aber nur noch aus triftigem Grund ablehnen – beim Mietrecht etwa, wenn die Maßnahme dem Vermieter nicht zuzumuten ist. Über die Art der Ausführung (zum Beispiel die Montage) kann die Eigentümergemeinschaft mitentscheiden. Das Bundeswirtschaftsministerium empfiehlt, die Pläne frühzeitig mitzuteilen und auf eine sichere, unauffällige Montage zu achten.
+Das heißt nicht, dass du ohne Zustimmung loslegen kannst: Du musst weiterhin fragen.
+
+Vermieter oder Eigentümergemeinschaft können aber nur noch aus triftigem Grund ablehnen – beim Mietrecht etwa, wenn die Maßnahme dem Vermieter nicht zuzumuten ist. Über die Art der Ausführung (zum Beispiel die Montage) kann die Eigentümergemeinschaft mitentscheiden.
+
+Das Bundeswirtschaftsministerium empfiehlt, die Pläne frühzeitig mitzuteilen und auf eine sichere, unauffällige Montage zu achten.
 
 ## Checkliste
 
@@ -94,9 +110,11 @@ Welche Sets und Speicher es gibt und was sie laut Hersteller leisten, zeigt unse
 
 ## Quellen
 
+{{< quellen >}}
 - Bundesministerium für Wirtschaft und Energie: [Kurzinformation zu Steckersolargeräten](https://www.bundeswirtschaftsministerium.de/Redaktion/DE/Downloads/J-L/kurzinformation-zu-steckersolargeraeten.pdf?__blob=publicationFile&v=11), Stand März 2026
 - Bundesnetzagentur, Marktstammdatenregister: [Häufige Fragen](https://www.marktstammdatenregister.de/MaStRHilfe/subpages/faq.html) und [Registrierungshilfe für Balkonkraftwerke](https://www.marktstammdatenregister.de/MaStRHilfe/files/regHilfen/Registrierungshilfe_Balkonkraftwerk.pdf)
 - Umweltbundesamt: [Steckersolargeräte (Balkonkraftwerke)](https://www.umweltbundesamt.de/themen/klima-energie/erneuerbare-energien/photovoltaik/steckersolargeraete-balkonkraftwerke)
 - VDE FNN: [Steckerfertige PV-Anlagen: Anschluss & Anmeldung](https://www.vde.com/fnn-pv-stecker); VDE: [Steckersolargeräte – FAQ](https://www.vde.com/topics-de/energy/steckersolargeraete-faq)
 - Bundesgesetzblatt 2024 I Nr. 306: [Gesetz zur Erleichterung des Einsatzes von Steckersolargeräten](https://www.recht.bund.de/bgbl/1/2024/306/regelungstext.pdf), in Kraft seit 17.10.2024
 - [§ 20 WEG](https://www.gesetze-im-internet.de/woeigg/__20.html) und [§ 554 BGB](https://www.gesetze-im-internet.de/bgb/__554.html)
+{{< /quellen >}}

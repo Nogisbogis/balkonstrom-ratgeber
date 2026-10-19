@@ -1,0 +1,15 @@
+{{- /* {{< produkte art="ps" modelle="EcoFlow RIVER 3|EcoFlow RIVER 3 Plus" >}}  art: ps | bkw
+     Optional: hinweis="Modell=Text|Modell=Text" */ -}}
+{{- $art := .Get "art" }}
+{{- $daten := cond (eq $art "ps") hugo.Data.powerstations hugo.Data.balkonkraftwerke }}
+{{- $hinweise := dict }}
+{{- with .Get "hinweis" }}{{ range split . "|" }}{{ $kv := split . "=" }}{{ $hinweise = merge $hinweise (dict (index $kv 0) (index $kv 1)) }}{{ end }}{{ end }}
+<ul class="pcards">
+{{- range split (.Get "modelle") "|" }}
+  {{- $name := trim . " " }}
+  {{- $p := index (where $daten "modell" $name) 0 }}
+  {{- if not $p }}{{ errorf "produkte: Modell %q nicht in den Daten (%s)" $name $.Position }}{{ end }}
+  {{- if and $p.asin (not (or (getenv "HUGO_PARTNER_TAG") site.Params.partnerTag)) }}{{ warnf "produkte: kein Partner-Tag gesetzt (%s)" $.Position }}{{ end }}
+  {{- partial "produktkarte.html" (dict "p" $p "art" $art "hinweis" (index $hinweise $name)) }}
+{{- end }}
+</ul>

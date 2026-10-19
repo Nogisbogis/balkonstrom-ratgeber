@@ -6,17 +6,22 @@ draft = false
 image = 'img/titel-powerstation.svg'
 imageAlt = 'Gezeichnete Illustration: Zelt auf einer Wiese mit aufgestelltem Solarpanel und Akkublock'
 ogImage = 'img/og-powerstation.jpg'
+kategorie = 'powerstations'
+kurz = [
+  '**Kapazität (Wh)** bestimmt, wie lange etwas läuft – **Dauerleistung (W)**, was überhaupt läuft.',
+  'Fast alle aktuellen Modelle nutzen LiFePO4-Akkus mit mehreren Tausend Ladezyklen laut Hersteller.',
+  'Ins Flugzeug darf keine der hier genannten Powerstations: Bei Lufthansa sind Lithium-Akkus über 160 Wh verboten.',
+  'Der ADAC hat 2025 zwei Powerstations wegen nicht entkoppelter DC-Eingänge mit „mangelhaft“ bewertet.',
+]
+[[empfehlung]]
+  einsatz = 'Handy, Licht und Laptop am Wochenende'
+  text = '250–300-Wh-Klasse mit 3,5–4,7 kg. Die EcoFlow RIVER 3 ist laut Hersteller die leichteste im Vergleich, die RIVER 3 Plus hat die höchste Dauerleistung der kleinen Klasse.'
+[[empfehlung]]
+  einsatz = 'Kühlbox über mehrere Tage oder Geräte mit Heizelement'
+  text = '1-kWh-Klasse mit 10–13 kg. Die EcoFlow DELTA 3 Plus war im ADAC-Test Zweite, die Anker SOLIX C1000 Gen 2 hat laut Hersteller die höchste Dauerleistung der Gruppe.'
 +++
 
 Eine Powerstation ist ein großer Akku mit Steckdosen, USB-Anschlüssen und meist einem Solareingang. Beim Camping versorgt sie Kühlbox, Licht, Handy und Laptop – je nach Größe auch eine Kaffeemaschine. Die „beste“ Powerstation gibt es nicht: Entscheidend ist, was du betreiben willst, wie lange und wie viel du tragen möchtest.
-
-## Kurz gesagt
-
-- **Kapazität (Wh)** bestimmt, wie lange etwas läuft. **Dauerleistung (W)** bestimmt, was überhaupt läuft.
-- Für Handy, Licht und Laptop reichen kleine Geräte mit rund 250–300 Wh und 3,5–4,7 kg. Für Kühlbox über mehrere Tage oder Geräte mit Heizelement brauchst du eher die 1-kWh-Klasse mit 10–13 kg.
-- Fast alle aktuellen Modelle nutzen LiFePO4-Akkus mit mehreren Tausend Ladezyklen laut Hersteller.
-- Ins Flugzeug darf keine der hier genannten Powerstations: Bei Lufthansa sind Lithium-Akkus über 160 Wh verboten.
-- Der ADAC hat 2025 zwei Powerstations wegen nicht entkoppelter DC-Eingänge mit „mangelhaft“ bewertet. Wer im Auto und per Solar lädt, sollte darauf achten.
 
 ## Schritt 1: Wie viel Kapazität brauchst du?
 
@@ -30,7 +35,11 @@ Zur Orientierung: Die Stiftung Warentest hat berechnet, dass eine Powerstation m
 
 ## Schritt 2: Reicht die Dauerleistung?
 
-Die Dauerleistung (Nennleistung am 230-V-Ausgang) muss höher sein als die Leistung aller Geräte, die gleichzeitig laufen. Geräte mit Heizelement – Wasserkocher, Föhn, Kaffeemaschine – haben oft über 1.000 W. Kleine Powerstations mit 300 W schaffen das nicht. Manche Hersteller bieten Boost-Modi (z. B. „X-Boost“ bei EcoFlow, „SurgePad“ bei Anker), die solche Geräte mit reduzierter Leistung betreiben. Das ist laut Herstellern nur für einfache Heizgeräte gedacht, die dann mit weniger Leistung – also langsamer – arbeiten.
+Die Dauerleistung (Nennleistung am 230-V-Ausgang) muss höher sein als die Leistung aller Geräte, die gleichzeitig laufen.
+
+Geräte mit Heizelement – Wasserkocher, Föhn, Kaffeemaschine – haben oft über 1.000 W. Kleine Powerstations mit 300 W schaffen das nicht.
+
+Manche Hersteller bieten Boost-Modi (z. B. „X-Boost“ bei EcoFlow, „SurgePad“ bei Anker), die solche Geräte mit reduzierter Leistung betreiben. Das ist laut Herstellern nur für einfache Heizgeräte gedacht, die dann mit weniger Leistung – also langsamer – arbeiten.
 
 In unserem [Vergleich](/vergleich/#powerstations) steht in der Spalte „Dauerleistung“ immer die Nennleistung ohne Boost oder Spitzenleistung.
 
@@ -44,9 +53,17 @@ Kapazität bedeutet Gewicht. Laut Herstellerangaben wiegen die Geräte der 250�
 
 ## Schritt 4: Laden unterwegs – Solar und Auto
 
-**Solar:** Wichtig sind die maximale Solarleistung und der zulässige Spannungsbereich. Die kleinen Modelle verarbeiten laut Hersteller 100 W (Jackery Explorer 300 Plus, Anker SOLIX C300X) bis 220 W (EcoFlow RIVER 3 Plus). Die Jackery Explorer 300 Plus erlaubt nur ein einziges Panel mit 12–27 V. Die 1-kWh-Modelle nehmen 400 bis 1.000 W auf. Wie schnell die Powerstation tatsächlich lädt, hängt vom Wetter, vom Winkel des Panels und von der Panelgröße ab.
+**Solar:** Wichtig sind die maximale Solarleistung und der zulässige Spannungsbereich.
 
-**Auto:** Fast alle Geräte lassen sich über die 12-V-Steckdose laden, allerdings langsam. Achtung bei Geräten mit zwei DC-Eingängen: Der ADAC hat im Juni 2025 die Jackery Explorer 1000 v2 und die Ective BlackBox 10 mit „mangelhaft“ bewertet, weil deren DC-Eingänge nicht voneinander entkoppelt sind. Wer gleichzeitig über Solarmodul und Auto lädt, riskiert laut ADAC Schäden am 12-V-Bordnetz; einen ausreichenden Warnhinweis gab es weder am Gerät noch in der Anleitung.
+- Die kleinen Modelle verarbeiten laut Hersteller 100 W (Jackery Explorer 300 Plus, Anker SOLIX C300X) bis 220 W (EcoFlow RIVER 3 Plus).
+- Die Jackery Explorer 300 Plus erlaubt nur ein einziges Panel mit 12–27 V.
+- Die 1-kWh-Modelle nehmen 400 bis 1.000 W auf.
+
+Wie schnell die Powerstation tatsächlich lädt, hängt vom Wetter, vom Winkel des Panels und von der Panelgröße ab.
+
+**Auto:** Fast alle Geräte lassen sich über die 12-V-Steckdose laden, allerdings langsam.
+
+**Achtung bei Geräten mit zwei DC-Eingängen:** Der ADAC hat im Juni 2025 die Jackery Explorer 1000 v2 und die Ective BlackBox 10 mit „mangelhaft“ bewertet, weil deren DC-Eingänge nicht voneinander entkoppelt sind. Wer gleichzeitig über Solarmodul und Auto lädt, riskiert laut ADAC Schäden am 12-V-Bordnetz; einen ausreichenden Warnhinweis gab es weder am Gerät noch in der Anleitung.
 
 ## Schritt 5: Akku und Haltbarkeit
 
@@ -60,35 +77,33 @@ Lufthansa verbietet Geräte und Akkus mit mehr als 160 Wh (Ausnahme: Mobilitäts
 
 ## Was unabhängige Tests sagen
 
-**ADAC (Juni 2025):** Acht Powerstations mit 768 bis 1.440 Wh. Alle erreichten ihre angegebene Dauerleistung, der Schutz vor Kurzschluss und Überlastung funktionierte bei allen. Testsieger war die Bluetti AC180P (Note 2,0), danach die EcoFlow DELTA 3 Plus (2,1). „Gut“ waren außerdem Allpowers R1500 und Anker SOLIX C800 Plus (je 2,5). DJI Power 1000 (2,6) und Fossibot F1200 (2,7) waren „befriedigend“. Wegen der DC-Eingänge fielen Ective BlackBox 10 und Jackery Explorer 1000 v2 durch (5,0).
+**ADAC (Juni 2025):** Acht Powerstations mit 768 bis 1.440 Wh. Alle erreichten ihre angegebene Dauerleistung, der Schutz vor Kurzschluss und Überlastung funktionierte bei allen.
+
+- Testsieger: Bluetti AC180P (Note 2,0), danach EcoFlow DELTA 3 Plus (2,1)
+- „Gut“: Allpowers R1500 und Anker SOLIX C800 Plus (je 2,5)
+- „Befriedigend“: DJI Power 1000 (2,6) und Fossibot F1200 (2,7)
+- Durchgefallen wegen der DC-Eingänge: Ective BlackBox 10 und Jackery Explorer 1000 v2 (5,0)
 
 **Stiftung Warentest (Juli 2023):** Elf kleinere Powerstations mit 400 bis 644 Wh, fünf davon „gut“. Testsieger war die EcoFlow River 2 Max (2,1). Der Test ist älter, viele der Modelle wurden inzwischen durch Nachfolger ersetzt.
 
-Wir haben keine eigenen Tests durchgeführt.
 
-## Vergleich: kleine Geräte und 1-kWh-Klasse
+## Modelle im Überblick
 
-Alle Werte sind Herstellerangaben. Die vollständige, filterbare Tabelle mit Quellen findest du im [Vergleich](/vergleich/#powerstations).
+Alle Werte sind Herstellerangaben. Die vollständige, filterbare Tabelle mit Quellen findest du im [Vergleich](/vergleich/#powerstations). Wir haben keine eigenen Tests durchgeführt.
 
-| Modell | Kapazität | Dauerleistung | Gewicht | Solar max. |
-|---|---:|---:|---:|---:|
-| EcoFlow RIVER 3 | 245 Wh | 300 W | 3,55 kg | 110 W |
-| EcoFlow RIVER 3 Plus | 286 Wh | 600 W | 4,7 kg | 220 W |
-| Jackery Explorer 300 Plus | 288 Wh | 300 W | 3,75 kg | 100 W |
-| Anker SOLIX C300X | 288 Wh | 300 W | 4,13 kg | 100 W |
-| DJI Power 1000 Mini | 1.008 Wh | 800 W | 11,5 kg | 400 W |
-| Anker SOLIX C1000 Gen 2 | 1.024 Wh | 2.000 W | 11,3 kg | 600 W |
-| EcoFlow DELTA 3 Plus | 1.024 Wh | 1.800 W | 12,5 kg | 1.000 W |
-| BLUETTI Elite 100 V2 | 1.024 Wh | 1.800 W | 11,5 kg | 1.000 W |
-| Jackery Explorer 1000 v2 | 1.070 Wh | 1.500 W | 10,8 kg | 400 W |
+### Kleine Geräte (250–300 Wh)
 
-**Für Wochenenden mit Handy, Licht und Laptop:** Ein Gerät der 250–300-Wh-Klasse reicht oft aus. Die EcoFlow RIVER 3 ist laut Hersteller die leichteste in der Tabelle, die RIVER 3 Plus hat die höchste Dauerleistung der kleinen Klasse.
-{{< amazon asin="B0DFVZ5D7Z" text="EcoFlow RIVER 3 bei Amazon ansehen" >}} · {{< amazon asin="B0DFVZ6MYX" text="EcoFlow RIVER 3 Plus bei Amazon ansehen" >}} · {{< amazon asin="B0C27VWNM7" text="Jackery Explorer 300 Plus bei Amazon ansehen" >}} · {{< amazon asin="B0FLJH3ZZY" text="Anker SOLIX C300X bei Amazon ansehen" >}}
+Für Wochenenden mit Handy, Licht und Laptop reicht oft ein Gerät dieser Klasse. Die EcoFlow RIVER 3 ist laut Hersteller die leichteste, die RIVER 3 Plus hat die höchste Dauerleistung der kleinen Klasse.
 
-**Für Kühlbox, mehrere Tage oder Geräte mit Heizelement:** Hier braucht es die 1-kWh-Klasse. Die EcoFlow DELTA 3 Plus war im ADAC-Test Zweite. Die Anker SOLIX C1000 Gen 2 hat laut Hersteller die höchste Dauerleistung der Gruppe (2.000 W), die DJI Power 1000 Mini ist mit 800 W schwächer, aber kompakter.
-{{< amazon asin="B0DFPW2Y2C" text="EcoFlow DELTA 3 Plus bei Amazon ansehen" >}} · {{< amazon asin="B0FN7MSY4L" text="Anker SOLIX C1000 Gen 2 bei Amazon ansehen" >}} · {{< amazon asin="B0F9PKNWS1" text="BLUETTI Elite 100 V2 bei Amazon ansehen" >}} · {{< amazon asin="B0GJC2M84T" text="DJI Power 1000 Mini bei Amazon ansehen" >}}
+{{< produkte art="ps" modelle="EcoFlow RIVER 3|EcoFlow RIVER 3 Plus|Jackery Explorer 300 Plus|Anker SOLIX C300X" >}}
 
-Die Jackery Explorer 1000 v2 führen wir der Vollständigkeit halber in der Tabelle. Beachte das Ergebnis des ADAC-Tests zu den DC-Eingängen, wenn du sie im Fahrzeug laden willst.
+### 1-kWh-Klasse
+
+Für Kühlbox, mehrere Tage oder Geräte mit Heizelement. Die EcoFlow DELTA 3 Plus war im ADAC-Test Zweite. Die Anker SOLIX C1000 Gen 2 hat laut Hersteller die höchste Dauerleistung der Gruppe (2.000 W), die DJI Power 1000 Mini ist mit 800 W schwächer, aber kompakter.
+
+{{< produkte art="ps" modelle="EcoFlow DELTA 3 Plus|Anker SOLIX C1000 Gen 2|BLUETTI Elite 100 V2|DJI Power 1000 Mini|Jackery Explorer 1000 v2" hinweis="Jackery Explorer 1000 v2=ADAC (06/2025): „mangelhaft“ (5,0) wegen nicht entkoppelter DC-Eingänge. Nicht gleichzeitig über Auto und Solar laden." >}}
+
+Die Jackery Explorer 1000 v2 führen wir der Vollständigkeit halber auf, ohne Kauflink. Beachte das Ergebnis des ADAC-Tests zu den DC-Eingängen, wenn du sie im Fahrzeug laden willst.
 
 ## Fazit
 
@@ -96,7 +111,9 @@ Die Jackery Explorer 1000 v2 führen wir der Vollständigkeit halber in der Tabe
 
 ## Quellen
 
+{{< quellen >}}
 - ADAC: [Mobile Powerstations im Test 2025](https://www.adac.de/rund-ums-haus/energie/versorgung/mobile-powerstations-test/), 11.06.2025, und [Einzelergebnis Jackery Explorer 1000 v2](https://www.adac.de/rund-ums-haus/energie/versorgung/mobile-powerstations-test/jackery-explorer-1000-v2-id-5032/)
 - Stiftung Warentest: [Mobile Stromspeicher im Test](https://www.test.de/news/Mobile-Stromspeicher-im-Test-Beste-Powerstation-im-Test-kostet-nur-520-Euro-6273250-0/) (Test vom 20.07.2023, Seite aktualisiert 07.01.2026)
 - Lufthansa: [Elektronische Geräte und Batterien](https://www.lufthansa.com/de/de/prepare-for-your-trip/baggage/electronic-devices-and-batteries.html)
 - Herstellerangaben: [EcoFlow RIVER 3](https://de.ecoflow.com/products/river-3-portable-power-station), [EcoFlow RIVER 3 Plus](https://de.ecoflow.com/products/river-3-plus-portable-power-station), [Jackery Explorer 300 Plus](https://helpcenter.eu.jackery.com/hc/en-gb/articles/52682971950363-Explorer-300-Plus-Basic-Information), [Anker SOLIX C300X](https://support.anker.com/s/article/Anker-SOLIX-C300X-Portable-Power-Station-Benutzerhandbuch-A1723), [DJI Power 1000 Mini](https://www.dji.com/de/power-1000-mini/specs), [Anker SOLIX C1000 Gen 2](https://www.ankersolix.com/de/products/c1000-gen2), [EcoFlow DELTA 3 Plus](https://www.ecoflow.com/au/delta-3-plus-portable-power-station/specs), [BLUETTI Elite 100 V2](https://s4.bluettipower.com/bluetti/purchasePageBiz/2026/06/Elite_100_V2_User_Manual_EU_EN-DE-1780889806412-6beb.pdf), [Jackery Explorer 1000 v2](https://helpcenter.eu.jackery.com/hc/de/articles/52683026571291-Explorer-1000-V2-Grundlegende-Informationen), [Anker SOLIX C2000 Gen 2](https://www.ankersolix.com/de/c2000-gen2)
+{{< /quellen >}}
