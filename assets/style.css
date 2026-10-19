@@ -383,3 +383,4 @@ th[aria-sort=none] .sort::after{content:" ↕";color:var(--muted)}
 main>p,main>ul:not([class]),main>ol:not([class]),main>details,main>h2,main>h3,main>.lead{max-width:var(--measure)}
 .tool label{line-height:1.5}
 .tool p label input,.tool p label select{margin:0 .3rem}
+@media (max-width:40rem){.p-top:has(.p-media .pbild-leer) .p-kern{grid-template-columns:repeat(2,minmax(0,1fr))}}
