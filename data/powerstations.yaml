@@ -2,7 +2,15 @@
 # für genau dieses Modell (ohne Bundle) geprüft wurde. Stand: 19.10.2026
 # Produktbilder (bild*): nur aus Pressebereichen mit ausdrücklicher Erlaubnis für redaktionelle Nutzung;
 # Quelle, Lizenz und Bildnachweis je Bild angeben. Keine Amazon-Bilder.
+# slug = Produktseite /powerstations/<slug>/. spitze_w, usv_ms, zyklen, erweiterbar: Herstellerangaben,
+# Belege und Widersprüche stehen auf der jeweiligen Produktseite (content/powerstations/<slug>.md).
+# usv_ms: bei widersprüchlichen Angaben der höhere (ungünstigere) Wert.
 - modell: EcoFlow RIVER 3
+  slug: ecoflow-river-3
+  spitze_w: 600
+  usv_ms: 20
+  zyklen: 3000
+  erweiterbar: "nein"
   kapazitaet_wh: 245
   dauerleistung_w: 300
   akkutyp: LiFePO4
@@ -11,6 +19,11 @@
   quelle: https://de.ecoflow.com/products/river-3-portable-power-station
   asin: B0DFVZ5D7Z
 - modell: EcoFlow RIVER 3 Plus
+  slug: ecoflow-river-3-plus
+  spitze_w: 1200
+  usv_ms: 10
+  zyklen: 3000
+  erweiterbar: "ja"
   kapazitaet_wh: 286
   dauerleistung_w: 600
   akkutyp: LiFePO4
@@ -19,6 +32,11 @@
   quelle: https://de.ecoflow.com/products/river-3-plus-portable-power-station
   asin: B0DFVZ6MYX
 - modell: Jackery Explorer 300 Plus
+  slug: jackery-explorer-300-plus
+  spitze_w: 600
+  usv_ms: 20
+  zyklen: 3000
+  erweiterbar: "nein"
   kapazitaet_wh: 288
   dauerleistung_w: 300
   akkutyp: LiFePO4
@@ -27,6 +45,11 @@
   quelle: https://helpcenter.eu.jackery.com/hc/en-gb/articles/52682971950363-Explorer-300-Plus-Basic-Information
   asin: B0C27VWNM7
 - modell: Anker SOLIX C300X
+  slug: anker-solix-c300x
+  spitze_w: 600
+  usv_ms: 20
+  zyklen: 3000
+  erweiterbar: "k. A."
   kapazitaet_wh: 288
   dauerleistung_w: 300
   akkutyp: LiFePO4
@@ -35,6 +58,11 @@
   quelle: https://support.anker.com/s/article/Anker-SOLIX-C300X-Portable-Power-Station-Benutzerhandbuch-A1723
   asin: B0FLJH3ZZY
 - modell: DJI Power 1000 Mini
+  slug: dji-power-1000-mini
+  spitze_w: 1000
+  usv_ms: 10
+  zyklen: 4000
+  erweiterbar: "nein"
   kapazitaet_wh: 1008
   dauerleistung_w: 800
   akkutyp: LiFePO4
@@ -48,6 +76,11 @@
   bild_quelle: https://www.mynewsdesk.com/uk/dji/images/versatile-charging-ports-eu-dot-jpg-3454328
   bild_lizenz: "Mynewsdesk-Lizenz „Media Use“ (unverändert, mit Urhebernennung), siehe Bildseite"
 - modell: Anker SOLIX C1000 Gen 2
+  slug: anker-solix-c1000-gen-2
+  spitze_w: 3000
+  usv_ms: 10
+  zyklen: 4000
+  erweiterbar: "nein"
   kapazitaet_wh: 1024
   dauerleistung_w: 2000
   akkutyp: LiFePO4
@@ -56,6 +89,11 @@
   quelle: https://www.ankersolix.com/de/products/c1000-gen2
   asin: B0FN7MSY4L
 - modell: EcoFlow DELTA 3 Plus
+  slug: ecoflow-delta-3-plus
+  spitze_w: 3600
+  usv_ms: 10
+  zyklen: 4000
+  erweiterbar: "ja"
   kapazitaet_wh: 1024
   dauerleistung_w: 1800
   akkutyp: LiFePO4
@@ -64,6 +102,11 @@
   quelle: https://www.ecoflow.com/au/delta-3-plus-portable-power-station/specs
   asin: B0DFPW2Y2C
 - modell: BLUETTI Elite 100 V2
+  slug: bluetti-elite-100-v2
+  spitze_w: 3600
+  usv_ms: 10
+  zyklen: 4000
+  erweiterbar: "nein"
   kapazitaet_wh: 1024
   dauerleistung_w: 1800
   akkutyp: LiFePO4
@@ -72,6 +115,11 @@
   quelle: https://s4.bluettipower.com/bluetti/purchasePageBiz/2026/06/Elite_100_V2_User_Manual_EU_EN-DE-1780889806412-6beb.pdf
   asin: B0F9PKNWS1
 - modell: Jackery Explorer 1000 v2
+  slug: jackery-explorer-1000-v2
+  spitze_w: 3000
+  usv_ms: 20
+  zyklen: 4000
+  erweiterbar: "nein"
   kapazitaet_wh: 1070
   dauerleistung_w: 1500
   akkutyp: LiFePO4
@@ -79,6 +127,11 @@
   solareingang_w: 400
   quelle: https://helpcenter.eu.jackery.com/hc/de/articles/52683026571291-Explorer-1000-V2-Grundlegende-Informationen
 - modell: Anker SOLIX C2000 Gen 2
+  slug: anker-solix-c2000-gen-2
+  spitze_w: 4000
+  usv_ms: 10
+  zyklen: 4000
+  erweiterbar: "ja"
   kapazitaet_wh: 2048
   dauerleistung_w: 2400
   akkutyp: LiFePO4

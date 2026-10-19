@@ -1,0 +1,4 @@
+{{- /* Quellenverweise: dict "ids" (slice|string) "idx" (map id→Nummer) */ -}}
+{{- if . }}{{ $ids := .ids }}{{ if reflect.IsSlice $ids | not }}{{ $ids = slice $ids }}{{ end }}{{ $idx := .idx -}}
+<span class="qref">{{ range $ids }}{{ $n := index $idx . }}{{ if not $n }}{{ errorf "qref: Quelle %q fehlt" . }}{{ end }}<a href="#q-{{ . }}" title="Quelle {{ $n }}">[{{ $n }}]</a>{{ end }}</span>
+{{- end }}

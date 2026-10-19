@@ -9,7 +9,8 @@
   {{- end }}
   </div>
   <div class="pcard-body">
-    <h3>{{ $p.modell }}</h3>
+    {{- $seite := "" }}{{ with $p.slug }}{{ with site.GetPage (printf "/powerstations/%s" .) }}{{ $seite = .RelPermalink }}{{ end }}{{ end }}
+    <h3>{{ with $seite }}<a href="{{ . }}">{{ $p.modell }}</a>{{ else }}{{ $p.modell }}{{ end }}</h3>
     <dl class="specs">
     {{- if eq $art "ps" }}
       <div><dt>Kapazität</dt><dd>{{ lang.FormatNumber 0 $p.kapazitaet_wh }} Wh</dd></div>
@@ -28,6 +29,7 @@
     {{- with .hinweis }}<p class="phinweis">{{ . }}</p>{{ end }}
     <p class="pcard-links">
       {{- with $p.asin }}<a class="btn btn-amazon" href="{{ partial "amazon-url.html" . }}" rel="sponsored nofollow noopener" target="_blank">Bei Amazon ansehen<span class="ad-mark" title="Affiliate-Link">*</span></a>{{ end }}
+      {{- with $seite }}<a class="btn-sec details" href="{{ . }}">Details &amp; Tests</a>{{ end }}
       <a class="quelle" href="{{ $p.quelle }}" rel="noopener" target="_blank">Herstellerdaten</a>
     </p>
   </div>

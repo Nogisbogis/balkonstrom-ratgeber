@@ -1,0 +1,97 @@
+{{ define "main" }}
+{{- $p := index (where hugo.Data.powerstations "modell" .Params.modell) 0 }}
+{{- if not $p }}{{ errorf "produkt: Modell %q nicht in data/powerstations.yaml (%s)" .Params.modell .File.Path }}{{ end }}
+{{- $qidx := dict }}{{ range $i, $q := .Params.quellen }}{{ $qidx = merge $qidx (dict $q.id (add $i 1)) }}{{ end }}
+<article class="produkt">
+  {{ partial "breadcrumb.html" . }}
+  {{ partial "disclosure-box.html" . }}
+  <h1>{{ .Title }}</h1>
+  <p class="meta">Produktseite · Stand der Recherche <time datetime="{{ .Lastmod.Format "2006-01-02" }}">{{ .Lastmod.Format "02.01.2006" }}</time> · eigene Recherche, kein eigener Test</p>
+
+  <div class="p-top">
+    <div class="p-media">
+    {{- with $p.bild }}
+      <figure class="pbild"><img src="{{ . | relURL }}" alt="{{ $p.bild_alt }}" width="600" height="450" decoding="async"><figcaption>{{ $p.bild_credit }}</figcaption></figure>
+    {{- else }}
+      <div class="pbild-leer" aria-hidden="true"><span>Powerstation</span><small>kein freigegebenes Pressefoto</small></div>
+    {{- end }}
+    </div>
+    <div class="p-eck">
+      <dl class="p-kern">
+        <div><dt>Kapazität</dt><dd>{{ lang.FormatNumber 0 $p.kapazitaet_wh }} Wh</dd></div>
+        <div><dt>Dauerleistung</dt><dd>{{ lang.FormatNumber 0 $p.dauerleistung_w }} W</dd></div>
+        <div><dt>Gewicht</dt><dd>{{ replace (string $p.gewicht_kg) "." "," }} kg</dd></div>
+        <div><dt>Solar max.</dt><dd>{{ lang.FormatNumber 0 $p.solareingang_w }} W</dd></div>
+        <div><dt>Akku</dt><dd>{{ $p.akkutyp }}</dd></div>
+        <div><dt>USV-Umschaltung</dt><dd>{{ if eq $p.usv_ms 10 }}≤ 10 ms{{ else }}≤ {{ $p.usv_ms }} ms{{ end }}</dd></div>
+      </dl>
+      <p class="note">Herstellerangaben, Belege unten in der Tabelle.</p>
+      {{- with .Params.warnung }}<p class="notice p-warn">{{ . | $.RenderString }}</p>{{ end }}
+      <p class="pcard-links">
+      {{- with $p.asin }}<a class="btn btn-amazon" href="{{ partial "amazon-url.html" . }}" rel="sponsored nofollow noopener" target="_blank">Bei Amazon ansehen<span class="ad-mark" title="Affiliate-Link">*</span></a>{{ else }}<span class="note">Kein Kauflink – siehe Hinweis oben.</span>{{ end }}
+      <a class="btn-sec" href="{{ "laufzeitrechner/" | relURL }}?m={{ $p.slug }}">Laufzeit berechnen</a>
+      </p>
+    </div>
+  </div>
+
+  <section class="p-fazit" aria-labelledby="fazit"><h2 id="fazit">Kurzfazit</h2>{{ .Params.kurzfazit | .RenderString (dict "display" "block") }}</section>
+
+  <div class="p-fuer">
+    <section><h2 id="fuer-wen">Für wen geeignet</h2><ul class="ja">{{ range .Params.fuer }}<li>{{ . | $.RenderString }}</li>{{ end }}</ul></section>
+    <section><h2 id="nicht-fuer">Für wen eher nicht</h2><ul class="nein">{{ range .Params.nicht_fuer }}<li>{{ . | $.RenderString }}</li>{{ end }}</ul></section>
+  </div>
+
+  <h2 id="daten">Technische Daten</h2>
+  <div class="tablewrap"><table class="p-daten">
+    <thead><tr><th scope="col">Merkmal</th><th scope="col">Angabe</th><th scope="col">Quelle</th></tr></thead>
+    <tbody>
+    {{- range .Params.daten }}
+      {{- if .gruppe }}<tr class="gruppe"><th colspan="3" scope="rowgroup">{{ .gruppe }}</th></tr>{{ else }}
+      <tr{{ if .hinweis }} class="hat-hinweis"{{ end }}><th scope="row">{{ .k }}</th><td>{{ .v | $.RenderString }}{{ with .hinweis }}<span class="d-hinweis">{{ . | $.RenderString }}</span>{{ end }}</td><td class="qcell">{{ partial "qref.html" (dict "ids" .q "idx" $qidx) }}</td></tr>
+      {{- end }}
+    {{- end }}
+    </tbody>
+  </table></div>
+
+  {{- with .Params.widersprueche }}
+  <section class="p-wider" aria-labelledby="widersprueche"><h2 id="widersprueche">Wo sich Quellen widersprechen</h2>
+  <ul>{{ range . }}<li>{{ .t | $.RenderString }} {{ partial "qref.html" (dict "ids" .q "idx" $qidx) }}</li>{{ end }}</ul></section>
+  {{- end }}
+
+  <div class="p-sw">
+    <section><h2 id="staerken">Stärken</h2><ul class="ja">{{ range .Params.staerken }}<li>{{ .t | $.RenderString }} {{ partial "qref.html" (dict "ids" .q "idx" $qidx) }}</li>{{ end }}</ul></section>
+    <section><h2 id="schwaechen">Schwächen</h2><ul class="nein">{{ range .Params.schwaechen }}<li>{{ .t | $.RenderString }} {{ partial "qref.html" (dict "ids" .q "idx" $qidx) }}</li>{{ end }}</ul></section>
+  </div>
+
+  <section aria-labelledby="tests"><h2 id="tests">Was Tests sagen</h2>
+  {{- with .Params.tests }}
+    {{- range . }}
+    <div class="p-test">
+      <h3><a href="{{ .url }}" rel="noopener" target="_blank">{{ .name }}</a>{{ with .datum }} <small>({{ . }})</small>{{ end }}</h3>
+      {{ with .urteil }}<p class="urteil">{{ . }}</p>{{ end }}
+      {{ .text | $.RenderString (dict "display" "block") }}
+    </div>
+    {{- end }}
+  {{- end }}
+  {{ with .Params.tests_hinweis }}<p class="note">{{ . | $.RenderString }}</p>{{ end }}
+  <p class="note">Testnoten geben wir nur wieder, wenn wir sie in der Originalquelle gefunden haben. Wir haben das Gerät nicht selbst getestet.</p>
+  </section>
+
+  {{- with .Params.alternativen }}
+  <section aria-labelledby="alternativen"><h2 id="alternativen">Alternativen</h2>
+  <ul class="p-alt">{{ range . }}{{ $warum := .warum }}{{ $a := index (where hugo.Data.powerstations "slug" .slug) 0 }}{{ with site.GetPage (printf "/powerstations/%s" .slug) }}<li><a href="{{ .RelPermalink }}"><strong>{{ .Title }}</strong></a> <span class="note">{{ lang.FormatNumber 0 $a.kapazitaet_wh }} Wh · {{ lang.FormatNumber 0 $a.dauerleistung_w }} W · {{ replace (string $a.gewicht_kg) "." "," }} kg</span>{{ with $warum }}<br>{{ . | $.RenderString }}{{ end }}</li>{{ else }}{{ errorf "alternativen: %q fehlt" .slug }}{{ end }}{{ end }}</ul>
+  </section>
+  {{- end }}
+
+  {{- $posts := slice }}{{ range where site.RegularPages "Section" "posts" }}{{ if findRE (printf "%s(?:$|[^ A-Za-z0-9]| [^P])" $p.modell) .RawContent 1 }}{{ $posts = $posts | append . }}{{ end }}{{ end }}
+  {{- with $posts }}
+  <section aria-labelledby="artikel"><h2 id="artikel">Erwähnt in diesen Artikeln</h2>
+  <ul class="cards">{{ range . }}{{ partial "card.html" . }}{{ end }}</ul></section>
+  {{- end }}
+
+  <section class="p-quellen" aria-labelledby="quellen"><h2 id="quellen">Quellen</h2>
+  <ol>{{ range .Params.quellen }}<li id="q-{{ .id }}"><a href="{{ .url }}" rel="noopener" target="_blank">{{ .titel }}</a>{{ with .art }} <span class="note">– {{ . }}</span>{{ end }}</li>{{ end }}</ol>
+  <p class="note">Alle Links abgerufen am {{ .Lastmod.Format "02.01.2006" }}. Herstellerangaben können sich ändern; maßgeblich ist das Datenblatt zum Zeitpunkt des Kaufs.</p>
+  </section>
+</article>
+{{ end }}

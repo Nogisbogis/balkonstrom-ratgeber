@@ -1,7 +1,14 @@
 {{ define "main" }}
+{{ partial "breadcrumb.html" . }}
 <h1>{{ .Title }}</h1>
 {{ with .Params.intro }}<p class="lead">{{ . }}</p>{{ end }}
 {{ with .Params.vergleich }}<p><a class="btn" href="{{ . | relURL }}">Zum Vergleich: {{ $.Title }}</a></p>{{ end }}
+{{ if eq .Params.kategorie "powerstations" }}
+<h2 id="modelle">Alle Modelle im Detail</h2>
+<p>Je Modell eine Seite mit Datentabelle (jede Angabe mit Quelle), Testergebnissen, Stärken, Schwächen und Alternativen.</p>
+<ul class="plist">{{ range sort hugo.Data.powerstations "kapazitaet_wh" }}{{ $d := . }}{{ with site.GetPage (printf "/powerstations/%s" .slug) }}<li><a href="{{ .RelPermalink }}"><strong>{{ .Title }}</strong><span>{{ lang.FormatNumber 0 $d.kapazitaet_wh }} Wh · {{ lang.FormatNumber 0 $d.dauerleistung_w }} W · {{ replace (string $d.gewicht_kg) "." "," }} kg</span></a></li>{{ end }}{{ end }}</ul>
+<p class="tool-links-inline">Unsicher, welche passt? <a href="{{ "powerstation-finder/" | relURL }}">Zum Powerstation-Finder</a> · <a href="{{ "laufzeitrechner/" | relURL }}">Zum Laufzeitrechner</a></p>
+{{ end }}
 {{ $posts := where (where site.RegularPages "Section" "posts") "Params.kategorie" .Params.kategorie }}
 <h2>Artikel</h2>
 {{ with $posts }}<ul class="cards">{{ range .ByDate.Reverse }}{{ partial "card.html" . }}{{ end }}</ul>{{ else }}<p class="empty">Bald gibt es hier Artikel.</p>{{ end }}

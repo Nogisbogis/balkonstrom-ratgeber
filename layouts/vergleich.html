@@ -40,13 +40,13 @@
     <tbody>
     {{ range sort hugo.Data.powerstations "kapazitaet_wh" }}
       <tr data-wh="{{ .kapazitaet_wh }}" data-w="{{ .dauerleistung_w }}" data-kg="{{ .gewicht_kg }}" data-akku="{{ .akkutyp }}">
-        <td class="col-modell">{{ partial "thumb.html" . }}<span class="mname">{{ .modell }}</span></td>
+        <td class="col-modell">{{ partial "thumb.html" . }}{{ $m := .modell }}<span class="mname">{{ with site.GetPage (printf "/powerstations/%s" (.slug | default "-")) }}<a href="{{ .RelPermalink }}">{{ $m }}</a>{{ else }}{{ $m }}{{ end }}</span></td>
         <td class="r" data-v="{{ .kapazitaet_wh }}">{{ lang.FormatNumber 0 .kapazitaet_wh }}</td>
         <td class="r" data-v="{{ .dauerleistung_w }}">{{ lang.FormatNumber 0 .dauerleistung_w }}</td>
         <td class="r" data-v="{{ .gewicht_kg }}">{{ replace (string .gewicht_kg) "." "," }}</td>
         <td class="r" data-v="{{ .solareingang_w }}">{{ lang.FormatNumber 0 .solareingang_w }}</td>
         <td>{{ .akkutyp }}</td>
-        <td class="links"><a href="{{ .quelle }}" rel="noopener nofollow" target="_blank">Quelle</a>{{ with .asin }}<br><a class="amazon-link" href="{{ partial "amazon-url.html" . }}" rel="sponsored nofollow noopener" target="_blank">Amazon</a><sup class="ad-mark">*</sup>{{ end }}</td>
+        <td class="links">{{ with site.GetPage (printf "/powerstations/%s" (.slug | default "-")) }}<a href="{{ .RelPermalink }}">Details</a><br>{{ end }}<a href="{{ .quelle }}" rel="noopener nofollow" target="_blank">Quelle</a>{{ with .asin }}<br><a class="amazon-link" href="{{ partial "amazon-url.html" . }}" rel="sponsored nofollow noopener" target="_blank">Amazon</a><sup class="ad-mark">*</sup>{{ end }}</td>
       </tr>
     {{ end }}
     </tbody>
