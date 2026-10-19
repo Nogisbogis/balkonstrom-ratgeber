@@ -33,3 +33,17 @@ disableKinds = ["taxonomy", "term"]
 
 [sitemap]
   changeFreq = "weekly"
+
+[related]
+  includeNewer = true
+  threshold = 10
+  toLower = true
+  [[related.indices]]
+    name = "kategorie"
+    weight = 100
+  [[related.indices]]
+    name = "keywords"
+    weight = 80
+  [[related.indices]]
+    name = "date"
+    weight = 10

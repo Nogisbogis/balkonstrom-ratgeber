@@ -1,0 +1,11 @@
+{{- /* FAQ aus Front Matter: faq = [{f, a}] – Antworten fassen nur den Artikelinhalt zusammen */ -}}
+{{- with .Params.faq }}
+<section class="faq" aria-labelledby="faq-titel">
+  <h2 id="faq-titel">Häufige Fragen</h2>
+  {{- range . }}
+  <details><summary>{{ .f }}</summary><div>{{ .a | $.RenderString }}</div></details>
+  {{- end }}
+</section>
+{{- $qs := slice }}{{ range . }}{{ $qs = $qs | append (dict "@type" "Question" "name" .f "acceptedAnswer" (dict "@type" "Answer" "text" (.a | $.RenderString | plainify | htmlUnescape))) }}{{ end }}
+<script type="application/ld+json">{{ dict "@context" "https://schema.org" "@type" "FAQPage" "mainEntity" $qs | jsonify | safeJS }}</script>
+{{- end }}

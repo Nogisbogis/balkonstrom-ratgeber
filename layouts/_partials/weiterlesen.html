@@ -1,0 +1,26 @@
+{{- /* Weiterlesen: Werkzeuge, erwähnte Produktseiten, verwandte Artikel */ -}}
+{{- $p := . }}
+{{- $produkte := slice }}
+{{- if eq .Section "posts" }}
+  {{- range hugo.Data.powerstations }}{{ if findRE (printf "%s(?:$|[^ A-Za-z0-9]| [^P])" (.modell | strings.TrimSpace | replaceRE `([.+*?()|\[\]{}^$\\])` `\$1`)) $p.RawContent 1 }}{{ with site.GetPage (printf "/powerstations/%s" .slug) }}{{ $produkte = $produkte | append . }}{{ end }}{{ end }}{{ end }}
+{{- end }}
+{{- $rel := slice }}
+{{- range site.RegularPages.Related . }}{{ if and (eq .Section "posts") (ne .RelPermalink $p.RelPermalink) }}{{ $rel = $rel | append . }}{{ end }}{{ end }}
+{{- if lt (len $rel) 2 }}{{ range where (where site.RegularPages "Section" "posts") "RelPermalink" "ne" $p.RelPermalink }}{{ if not (in $rel .) }}{{ $rel = $rel | append . }}{{ end }}{{ end }}{{ end }}
+<aside class="weiterlesen" aria-labelledby="wl-titel">
+  <h2 id="wl-titel">Weiterlesen</h2>
+  {{- with $produkte }}
+  <h3>Produktseiten zu diesem Artikel</h3>
+  <ul class="wl-produkte">{{ range . }}<li><a href="{{ .RelPermalink }}">{{ .Title }}</a>{{ with .Params.kurzzeile }} <span>– {{ . }}</span>{{ end }}</li>{{ end }}</ul>
+  {{- end }}
+  {{- with first 3 $rel }}
+  <h3>Verwandte Artikel</h3>
+  <ul class="cards">{{ range . }}{{ partial "card.html" . }}{{ end }}</ul>
+  {{- end }}
+  <h3>Selbst ausrechnen</h3>
+  <ul class="tool-links">
+    <li><a href="{{ "powerstation-finder/" | relURL }}"><strong>Powerstation-Finder</strong> – 4 Fragen, transparente Regeln</a></li>
+    <li><a href="{{ "laufzeitrechner/" | relURL }}"><strong>Laufzeitrechner</strong> – wie lange reicht der Akku für deine Geräte?</a></li>
+    <li><a href="{{ "vergleich/" | relURL }}"><strong>Vergleichstabelle</strong> – alle Modelle filtern und sortieren</a></li>
+  </ul>
+</aside>

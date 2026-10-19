@@ -14,6 +14,21 @@ kurz = [
   '**Schuko-Stecker:** normgerecht bis 960 W Modulleistung, wenn das Gerät die DIN VDE V 0126-95 erfüllt.',
   '**Miete und Eigentum:** Zustimmung weiterhin nötig – seit dem 17. Oktober 2024 dürfen Vermieter oder Eigentümergemeinschaft aber nur in begründeten Ausnahmefällen ablehnen.',
 ]
+[[faq]]
+  f = 'Wie viel Leistung darf ein Balkonkraftwerk haben?'
+  a = 'Höchstens 800 VA Wechselrichterleistung laut Typenschild oder Einheitenzertifikat und höchstens 2.000 W Modulleistung. Eine Drosselung per Software reicht nicht.'
+[[faq]]
+  f = 'Wo muss ich mein Balkonkraftwerk anmelden?'
+  a = 'Nur im Marktstammdatenregister der Bundesnetzagentur, innerhalb eines Monats nach Inbetriebnahme. Die frühere Meldung beim Netzbetreiber entfällt; einen Speicher musst du laut Bundeswirtschaftsministerium aber zusätzlich beim Netzbetreiber anmelden.'
+[[faq]]
+  f = 'Darf ich ein Balkonkraftwerk an eine normale Schuko-Steckdose anschließen?'
+  a = 'Laut DIN VDE V 0126-95:2025-12 ja, wenn das Gerät die Norm erfüllt, der Wechselrichter höchstens 800 VA und die Module höchstens 960 W haben. Darüber braucht es eine Energiesteckvorrichtung oder einen Festanschluss.'
+[[faq]]
+  f = 'Was passiert mit meinem alten Stromzähler?'
+  a = 'Er wird übergangsweise geduldet. Nach der Registrierung tauscht der Messstellenbetreiber ihn bei Bedarf gegen einen Zweirichtungszähler, laut Bundeswirtschaftsministerium im Regelfall kostenlos.'
+[[faq]]
+  f = 'Kann mein Vermieter das Balkonkraftwerk verbieten?'
+  a = 'Du musst weiterhin fragen. Seit dem 17. Oktober 2024 sind Steckersolargeräte aber privilegierte bauliche Veränderungen; Vermieter oder Eigentümergemeinschaft können nur noch aus triftigem Grund ablehnen.'
 +++
 
 Für Balkonkraftwerke – offiziell „Steckersolargeräte“ – gelten seit 2024 deutlich einfachere Regeln. Mit dem Solarpaket I, einer Änderung von Miet- und Wohnungseigentumsrecht und der neuen Produktnorm DIN VDE V 0126-95 vom Dezember 2025 hat sich viel geändert. Hier ist der Stand im Oktober 2026, mit Quellen.

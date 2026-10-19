@@ -19,6 +19,21 @@ kurz = [
 [[empfehlung]]
   einsatz = 'Kühlbox über mehrere Tage oder Geräte mit Heizelement'
   text = '1-kWh-Klasse mit 10–13 kg. Die EcoFlow DELTA 3 Plus war im ADAC-Test Zweite, die Anker SOLIX C1000 Gen 2 hat laut Hersteller die höchste Dauerleistung der Gruppe.'
+[[faq]]
+  f = 'Wie viel Kapazität brauche ich fürs Camping?'
+  a = 'Rechne für jedes Gerät Watt × Stunden und addiere alles. Plane einen Puffer ein, weil beim Umwandeln auf 230 V Energie verloren geht; der ADAC stellte 2025 fest, dass die Powerstations weniger lieferten als angegeben. Der [Laufzeitrechner](/laufzeitrechner/) nimmt dir das Rechnen ab.'
+[[faq]]
+  f = 'Was ist der Unterschied zwischen Kapazität und Dauerleistung?'
+  a = 'Die Kapazität in Wattstunden bestimmt, wie lange etwas läuft. Die Dauerleistung in Watt bestimmt, was überhaupt läuft: Sie muss höher sein als die Leistung aller Geräte, die gleichzeitig angeschlossen sind.'
+[[faq]]
+  f = 'Kann ich einen Wasserkocher an einer Powerstation betreiben?'
+  a = 'Nur an einer Station mit ausreichend Dauerleistung. Geräte mit Heizelement haben oft über 1.000 W, kleine Powerstations mit 300 W schaffen das nicht. Boost-Modi wie X-Boost oder SurgePad betreiben solche Geräte laut Herstellern nur mit reduzierter Leistung.'
+[[faq]]
+  f = 'Darf ich eine Powerstation mit ins Flugzeug nehmen?'
+  a = 'Nein, keine der hier genannten. Lufthansa verbietet Akkus über 160 Wh (Ausnahmen: Mobilitätshilfen und medizinische Geräte), und die kleinste Station im Vergleich hat 245 Wh.'
+[[faq]]
+  f = 'Darf ich gleichzeitig über Solar und Auto laden?'
+  a = 'Bei Geräten mit nicht entkoppelten DC-Eingängen nicht. Der ADAC hat die Jackery Explorer 1000 v2 und die Ective BlackBox 10 deshalb 2025 mit „mangelhaft“ bewertet; es drohen Schäden am 12-V-Bordnetz.'
 +++
 
 Eine Powerstation ist ein großer Akku mit Steckdosen, USB-Anschlüssen und meist einem Solareingang. Beim Camping versorgt sie Kühlbox, Licht, Handy und Laptop – je nach Größe auch eine Kaffeemaschine. Die „beste“ Powerstation gibt es nicht: Entscheidend ist, was du betreiben willst, wie lange und wie viel du tragen möchtest.
@@ -27,7 +42,7 @@ Eine Powerstation ist ein großer Akku mit Steckdosen, USB-Anschlüssen und meis
 
 Rechne für jedes Gerät: **Leistung in Watt × Stunden pro Tag = Wattstunden pro Tag**. Die Leistung steht auf dem Typenschild oder im Datenblatt. Bei Kühlboxen mit Kompressor geben viele Hersteller den Verbrauch direkt pro 24 Stunden an – dieser Wert ist realistischer als die Nennleistung, weil der Kompressor nicht ständig läuft.
 
-Addiere alles und plane einen Puffer ein: Beim Umwandeln auf 230 V geht Energie verloren, und Hersteller-Kapazitäten werden im Alltag nicht immer erreicht. Der ADAC stellte in seinem Test 2025 fest, dass die mobilen Stromspeicher weniger liefern als von den Herstellern angegeben.
+Addiere alles und plane einen Puffer ein: Beim Umwandeln auf 230 V geht Energie verloren, und Hersteller-Kapazitäten werden im Alltag nicht immer erreicht. Der ADAC stellte in seinem Test 2025 fest, dass die mobilen Stromspeicher weniger liefern als von den Herstellern angegeben. Mit unserem [Laufzeitrechner](/laufzeitrechner/) kannst du deine Geräte eintragen und siehst für jedes Modell, ob der Akku reicht.
 
 Zur Orientierung: Die Stiftung Warentest hat berechnet, dass eine Powerstation mit 500 Wh ein Smartphone rund 33-mal oder einen Laptop etwa zehnmal laden kann; eine Lichterkette leuchtet damit rund 65 Stunden.
 
@@ -89,7 +104,7 @@ Lufthansa verbietet Geräte und Akkus mit mehr als 160 Wh (Ausnahme: Mobilitäts
 
 ## Modelle im Überblick
 
-Alle Werte sind Herstellerangaben. Die vollständige, filterbare Tabelle mit Quellen findest du im [Vergleich](/vergleich/#powerstations). Wir haben keine eigenen Tests durchgeführt.
+Alle Werte sind Herstellerangaben. Die vollständige, filterbare Tabelle mit Quellen findest du im [Vergleich](/vergleich/#powerstations). Zu jedem Modell gibt es außerdem eine [Detailseite](/powerstations/#modelle) mit allen technischen Daten, Testergebnissen und Widersprüchen zwischen den Quellen. Wir haben keine eigenen Tests durchgeführt. Unsicher? Der [Powerstation-Finder](/powerstation-finder/) schlägt nach vier Fragen passende Modelle vor.
 
 ### Kleine Geräte (250–300 Wh)
 
@@ -103,7 +118,7 @@ Für Kühlbox, mehrere Tage oder Geräte mit Heizelement. Die EcoFlow DELTA 3 Pl
 
 {{< produkte art="ps" modelle="EcoFlow DELTA 3 Plus|Anker SOLIX C1000 Gen 2|BLUETTI Elite 100 V2|DJI Power 1000 Mini|Jackery Explorer 1000 v2" hinweis="Jackery Explorer 1000 v2=ADAC (06/2025): „mangelhaft“ (5,0) wegen nicht entkoppelter DC-Eingänge. Nicht gleichzeitig über Auto und Solar laden." >}}
 
-Die Jackery Explorer 1000 v2 führen wir der Vollständigkeit halber auf, ohne Kauflink. Beachte das Ergebnis des ADAC-Tests zu den DC-Eingängen, wenn du sie im Fahrzeug laden willst.
+Die [Jackery Explorer 1000 v2](/powerstations/jackery-explorer-1000-v2/) führen wir der Vollständigkeit halber auf, ohne Kauflink. Beachte das Ergebnis des ADAC-Tests zu den DC-Eingängen, wenn du sie im Fahrzeug laden willst.
 
 ## Fazit
 

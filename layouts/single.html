@@ -1,7 +1,7 @@
 {{ define "main" }}
 <article>
+  {{ partial "breadcrumb.html" . }}
   {{ partial "disclosure-box.html" . }}
-  {{ with .Params.kategorie }}{{ with site.GetPage (printf "/%s" .) }}<p class="crumb"><a href="{{ .RelPermalink }}">{{ .Title }}</a></p>{{ end }}{{ end }}
   <h1>{{ .Title }}</h1>
   <p class="meta"><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "02.01.2006" }}</time>{{ if ne (.Lastmod.Format "2006-01-02") (.Date.Format "2006-01-02") }} · aktualisiert {{ .Lastmod.Format "02.01.2006" }}{{ end }}{{ if eq .Section "posts" }} · {{ .ReadingTime }} Min. Lesezeit{{ end }}</p>
   {{ partial "kurzbox.html" . }}
@@ -9,6 +9,8 @@
   <details class="toc"><summary>Inhaltsverzeichnis</summary>{{ .TableOfContents }}</details>
   {{ end }}
   {{ .Content }}
+  {{ partial "faq.html" . }}
 </article>
+{{ if eq .Section "posts" }}{{ partial "weiterlesen.html" . }}{{ end }}
 {{ if and (eq .Section "posts") (ne .Params.comments false) }}{{ partial "comments.html" . }}{{ end }}
 {{ end }}
