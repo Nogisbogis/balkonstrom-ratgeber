@@ -1,25 +1,17 @@
 {{ define "main" }}
 <section class="hero">
-  <div class="hero-text">
-    <h1>{{ site.Title }}</h1>
-    <p class="lead">Nüchterne Ratgeber zu Balkonkraftwerken, Speichern und Powerstations – mit Herstellerdaten, Regeln und unabhängigen Testergebnissen. Jede Angabe mit Quelle, keine erfundenen Tests.</p>
-    <p class="hero-links"><a class="btn" href="{{ "vergleich/" | relURL }}">Zum Vergleich</a> <a class="btn-sec" href="#artikel">Artikel lesen</a></p>
-  </div>
+  <h1>{{ site.Title }}</h1>
+  <p class="lead">Ratgeber zu Balkonkraftwerken, Speichern und Powerstations – mit Herstellerdaten und Quellen, ohne erfundene Tests.</p>
 </section>
-{{ $posts := where site.RegularPages "Section" "posts" }}
-{{ $pager := .Paginate $posts.ByDate.Reverse }}
-<h2 id="artikel">Artikel</h2>
-{{ with $pager.Pages }}
-<ul class="cards">
-  {{ range . }}{{ partial "card.html" . }}{{ end }}
-</ul>
-{{ else }}
-<p class="empty">Bald gibt es hier die ersten Artikel.</p>
-{{ end }}
-{{ if gt $pager.TotalPages 1 }}
-<nav class="pager">
-  {{ with $pager.Prev }}<a href="{{ .URL }}">← Neuer</a>{{ end }}
-  {{ with $pager.Next }}<a href="{{ .URL }}">Älter →</a>{{ end }}
+<nav class="kategorien" aria-label="Kategorien">
+  {{ range slice "powerstations" "balkonkraftwerke" "ratgeber" }}{{ with site.GetPage (printf "/%s" .) }}
+  <a class="kat kat-{{ .Params.kategorie }}" href="{{ .RelPermalink }}"><strong>{{ .Title }}</strong><span>{{ .Params.intro }}</span></a>
+  {{ end }}{{ end }}
+  <a class="kat kat-vergleich" href="{{ "vergleich/" | relURL }}"><strong>Vergleich</strong><span>Alle Modelle in einer filterbaren Tabelle – nur Herstellerdaten.</span></a>
 </nav>
-{{ end }}
+{{ $posts := where site.RegularPages "Section" "posts" }}
+<h2 id="artikel">Neueste Artikel</h2>
+{{ with $posts }}
+<ul class="cards">{{ range first 6 .ByDate.Reverse }}{{ partial "card.html" . }}{{ end }}</ul>
+{{ else }}<p class="empty">Bald gibt es hier die ersten Artikel.</p>{{ end }}
 {{ end }}

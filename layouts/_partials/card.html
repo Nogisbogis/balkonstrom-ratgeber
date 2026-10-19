@@ -1,8 +1,9 @@
 <li class="card">
   {{ with .Params.image }}<img src="{{ . | relURL }}" alt="" width="480" height="270" loading="lazy" decoding="async">{{ end }}
   <div class="card-body">
+    {{ with .Params.kategorie }}{{ with site.GetPage (printf "/%s" .) }}<p class="card-kat">{{ .Title }}</p>{{ end }}{{ end }}
     <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
     {{ with .Description }}<p>{{ . }}</p>{{ end }}
-    <p class="meta"><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "02.01.2006" }}</time> · {{ .ReadingTime }} Min. Lesezeit</p>
+    <p class="meta">{{ .ReadingTime }} Min. Lesezeit</p>
   </div>
 </li>

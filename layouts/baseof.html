@@ -45,8 +45,10 @@
 <header class="site-header">
   <div class="wrap">
     <a class="brand" href="{{ site.Home.RelPermalink }}"><img src="{{ "favicon.svg" | relURL }}" alt="" width="28" height="28">{{ site.Title }}</a>
-    <span class="tagline">Balkonkraftwerke &amp; Powerstations</span>
-    <nav class="main-nav" aria-label="Hauptnavigation"><a href="{{ site.Home.RelPermalink }}"{{ if .IsHome }} aria-current="page"{{ end }}>Artikel</a><a href="{{ "vergleich/" | relURL }}"{{ if eq .RelPermalink ("vergleich/" | relURL) }} aria-current="page"{{ end }}>Vergleich</a></nav>
+        <nav class="main-nav" aria-label="Hauptnavigation">
+      {{- $cur := .RelPermalink }}
+      {{- range slice "powerstations" "balkonkraftwerke" "ratgeber" }}{{ with site.GetPage (printf "/%s" .) }}<a href="{{ .RelPermalink }}"{{ if or (eq $cur .RelPermalink) (eq $.Params.kategorie .Params.kategorie) }} aria-current="page"{{ end }}>{{ .Title }}</a>{{ end }}{{ end }}
+      <a href="{{ "vergleich/" | relURL }}"{{ if eq $cur ("vergleich/" | relURL) }} aria-current="page"{{ end }}>Vergleich</a></nav>
   </div>
 </header>
 <main class="wrap" id="inhalt">

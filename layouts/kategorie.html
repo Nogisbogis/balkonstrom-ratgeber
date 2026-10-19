@@ -1,0 +1,8 @@
+{{ define "main" }}
+<h1>{{ .Title }}</h1>
+{{ with .Params.intro }}<p class="lead">{{ . }}</p>{{ end }}
+{{ with .Params.vergleich }}<p><a class="btn" href="{{ . | relURL }}">Zum Vergleich: {{ $.Title }}</a></p>{{ end }}
+{{ $posts := where (where site.RegularPages "Section" "posts") "Params.kategorie" .Params.kategorie }}
+<h2>Artikel</h2>
+{{ with $posts }}<ul class="cards">{{ range .ByDate.Reverse }}{{ partial "card.html" . }}{{ end }}</ul>{{ else }}<p class="empty">Bald gibt es hier Artikel.</p>{{ end }}
+{{ end }}
