@@ -1,6 +1,7 @@
 {{- /* Erwartet dict: modell, grund, einsatz (optional), ctx */ -}}
 {{- $i := partial "modell-info.html" .modell -}}
 <li class="empf">
+  {{- with $i.daten }}{{ partial "abbildung.html" (dict "p" . "w" 96 "h" 72 "lazy" true "cap" false "cls" "empf-abb") }}{{ end }}
   {{- with .einsatz }}<span class="empf-einsatz">{{ . }}</span>{{ end }}
   <strong class="empf-modell">{{ with $i.url }}<a href="{{ . }}">{{ $.modell }}</a>{{ else }}{{ $.modell }}{{ end }}</strong>
   {{- with $i.kz }}<span class="empf-kz"><span class="sr">{{ if eq $i.art "ps" }}Kapazität, Dauerleistung, Gewicht{{ else }}Speicher, Wechselrichter-Leistung, MPPT-Tracker{{ end }} laut Hersteller: </span>{{ range $k, $v := . }}{{ if $k }}<span aria-hidden="true"> · </span>{{ end }}<b>{{ $v }}</b>{{ end }}</span>{{ end }}

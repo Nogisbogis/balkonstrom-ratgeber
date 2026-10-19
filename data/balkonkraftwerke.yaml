@@ -1,6 +1,8 @@
 # Nur Herstellerangaben. module_wp = mitgelieferte Modulleistung (0 = keine Module im Lieferumfang),
 # pv_max_w = max. PV-Eingang laut Hersteller (0 = nicht zutreffend), wechselrichter_w = netzgekoppelte
 # Ausgangsleistung, speicher_kwh = 0 bei Sets ohne Speicher. Stand: 19.10.2026
+# abbildung: Bild für Übersichten, Karten und Thumbnails. Derzeit eigene Illustration (img/illu/<slug>.svg,
+#   erzeugt mit tools/illus.py). Später: hier die PA-API-Bild-URL eintragen (https://…) – siehe README.
 # Produktbilder (bild*): nur aus Pressebereichen mit ausdrücklicher Erlaubnis für redaktionelle Nutzung;
 # Quelle, Lizenz und Bildnachweis je Bild angeben. Keine Amazon-Bilder.
 # slug = Produktseite /balkonkraftwerke/<slug>/; kurzname = Suchmuster (| getrennt) für Artikel-Verweise.
@@ -8,6 +10,7 @@
 # Belege und Widersprüche auf der Produktseite (content/balkonkraftwerke/<slug>.md).
 - modell: Anker SOLIX RS40P Balkonkraftwerk (2 × 445 W, MI80)
   slug: "anker-solix-rs40p"
+  abbildung: img/illu/anker-solix-rs40p.svg
   kurzname: "RS40P"
   mppt: 2
   notstrom_w: 0
@@ -22,6 +25,7 @@
   asin: B0CB86CXLD
 - modell: Anker SOLIX Solarbank 2 E1600 Pro
   slug: "anker-solix-solarbank-2-e1600-pro"
+  abbildung: img/illu/anker-solix-solarbank-2-e1600-pro.svg
   kurzname: "Solarbank 2 E1600 Pro|Solarbank 2 Pro"
   mppt: 4
   notstrom_w: 1000
@@ -36,6 +40,7 @@
   asin: B0D1X82HDL
 - modell: Anker SOLIX Solarbank 3 E2700 Pro
   slug: "anker-solix-solarbank-3-e2700-pro"
+  abbildung: img/illu/anker-solix-solarbank-3-e2700-pro.svg
   kurzname: "Solarbank 3 E2700 Pro|Solarbank 3 Pro"
   mppt: 4
   notstrom_w: 1200
@@ -55,6 +60,7 @@
   bild_lizenz: "presseportal.de: Verwendung für redaktionelle Zwecke honorarfrei, nur mit Bildrechte-Hinweis (https://www.presseportal.de/nutzungsbedingungen)"
 - modell: Zendure SolarFlow 800 Pro
   slug: "zendure-solarflow-800-pro"
+  abbildung: img/illu/zendure-solarflow-800-pro.svg
   kurzname: "SolarFlow 800 Pro"
   mppt: 4
   notstrom_w: 1000
@@ -69,6 +75,7 @@
   asin: ""
 - modell: EcoFlow STREAM Ultra
   slug: "ecoflow-stream-ultra"
+  abbildung: img/illu/ecoflow-stream-ultra.svg
   kurzname: "STREAM Ultra|Stream Ultra"
   mppt: 4
   notstrom_w: 1200
@@ -83,6 +90,7 @@
   asin: B0F5B93DTV
 - modell: EcoFlow STREAM Pro
   slug: "ecoflow-stream-pro"
+  abbildung: img/illu/ecoflow-stream-pro.svg
   kurzname: "STREAM Pro|Stream Pro"
   mppt: 3
   notstrom_w: 1200
@@ -97,6 +105,7 @@
   asin: B0F5B7WDQ4
 - modell: Growatt NEXA 2000
   slug: "growatt-nexa-2000"
+  abbildung: img/illu/growatt-nexa-2000.svg
   kurzname: "NEXA 2000|Nexa 2000"
   mppt: 4
   notstrom_w: 800

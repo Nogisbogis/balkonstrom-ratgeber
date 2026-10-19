@@ -2,11 +2,7 @@
 {{- $p := .p }}{{ $art := .art }}
 <li class="pcard">
   <div class="pcard-media">
-  {{- with $p.bild }}
-    <figure class="pbild"><img src="{{ . | relURL }}" alt="{{ $p.bild_alt }}" width="600" height="{{ cond (eq $art "ps") 450 338 }}" loading="lazy" decoding="async"><figcaption>{{ $p.bild_credit }}</figcaption></figure>
-  {{- else }}
-    <div class="pbild-leer" aria-hidden="true"><span>{{ cond (eq $art "ps") "Powerstation" "Balkonkraftwerk" }}</span><small>kein freigegebenes Pressefoto</small></div>
-  {{- end }}
+  {{ partial "abbildung.html" (dict "p" $p "w" 400 "h" 300 "lazy" true "cap" true "cls" "pbild") }}
   </div>
   <div class="pcard-body">
     {{- $seite := "" }}{{ with $p.slug }}{{ with site.GetPage (printf "/%s/%s" (cond (eq $art "ps") "powerstations" "balkonkraftwerke") .) }}{{ $seite = .RelPermalink }}{{ end }}{{ end }}

@@ -1,5 +1,7 @@
 # Nur Herstellerangaben. Quelle pro Produkt angeben. asin nur setzen, wenn ein amazon.de-Angebot
 # für genau dieses Modell (ohne Bundle) geprüft wurde. Stand: 19.10.2026
+# abbildung: Bild für Übersichten, Karten und Thumbnails. Derzeit eigene Illustration (img/illu/<slug>.svg,
+#   erzeugt mit tools/illus.py). Später: hier die PA-API-Bild-URL eintragen (https://…) – siehe README.
 # Produktbilder (bild*): nur aus Pressebereichen mit ausdrücklicher Erlaubnis für redaktionelle Nutzung;
 # Quelle, Lizenz und Bildnachweis je Bild angeben. Keine Amazon-Bilder.
 # slug = Produktseite /powerstations/<slug>/. spitze_w, usv_ms, zyklen, erweiterbar: Herstellerangaben,
@@ -7,6 +9,7 @@
 # usv_ms: bei widersprüchlichen Angaben der höhere (ungünstigere) Wert.
 - modell: EcoFlow RIVER 3
   slug: ecoflow-river-3
+  abbildung: img/illu/ecoflow-river-3.svg
   spitze_w: 600
   usv_ms: 20
   zyklen: 3000
@@ -20,6 +23,7 @@
   asin: B0DFVZ5D7Z
 - modell: EcoFlow RIVER 3 Plus
   slug: ecoflow-river-3-plus
+  abbildung: img/illu/ecoflow-river-3-plus.svg
   spitze_w: 1200
   usv_ms: 10
   zyklen: 3000
@@ -33,6 +37,7 @@
   asin: B0DFVZ6MYX
 - modell: Jackery Explorer 300 Plus
   slug: jackery-explorer-300-plus
+  abbildung: img/illu/jackery-explorer-300-plus.svg
   spitze_w: 600
   usv_ms: 20
   zyklen: 3000
@@ -46,6 +51,7 @@
   asin: B0C27VWNM7
 - modell: Anker SOLIX C300X
   slug: anker-solix-c300x
+  abbildung: img/illu/anker-solix-c300x.svg
   spitze_w: 600
   usv_ms: 20
   zyklen: 3000
@@ -59,6 +65,7 @@
   asin: B0FLJH3ZZY
 - modell: DJI Power 1000 Mini
   slug: dji-power-1000-mini
+  abbildung: img/illu/dji-power-1000-mini.svg
   spitze_w: 1000
   usv_ms: 10
   zyklen: 4000
@@ -77,6 +84,7 @@
   bild_lizenz: "Mynewsdesk-Lizenz „Media Use“ (unverändert, mit Urhebernennung), siehe Bildseite"
 - modell: Anker SOLIX C1000 Gen 2
   slug: anker-solix-c1000-gen-2
+  abbildung: img/illu/anker-solix-c1000-gen-2.svg
   spitze_w: 3000
   usv_ms: 10
   zyklen: 4000
@@ -90,6 +98,7 @@
   asin: B0FN7MSY4L
 - modell: EcoFlow DELTA 3 Plus
   slug: ecoflow-delta-3-plus
+  abbildung: img/illu/ecoflow-delta-3-plus.svg
   spitze_w: 3600
   usv_ms: 10
   zyklen: 4000
@@ -103,6 +112,7 @@
   asin: B0DFPW2Y2C
 - modell: BLUETTI Elite 100 V2
   slug: bluetti-elite-100-v2
+  abbildung: img/illu/bluetti-elite-100-v2.svg
   spitze_w: 3600
   usv_ms: 10
   zyklen: 4000
@@ -116,6 +126,7 @@
   asin: B0F9PKNWS1
 - modell: Jackery Explorer 1000 v2
   slug: jackery-explorer-1000-v2
+  abbildung: img/illu/jackery-explorer-1000-v2.svg
   spitze_w: 3000
   usv_ms: 20
   zyklen: 4000
@@ -128,6 +139,7 @@
   quelle: https://helpcenter.eu.jackery.com/hc/de/articles/52683026571291-Explorer-1000-V2-Grundlegende-Informationen
 - modell: Anker SOLIX C2000 Gen 2
   slug: anker-solix-c2000-gen-2
+  abbildung: img/illu/anker-solix-c2000-gen-2.svg
   spitze_w: 4000
   usv_ms: 10
   zyklen: 4000

@@ -13,7 +13,7 @@
     {{- with $p.bild }}
       <figure class="pbild"><img src="{{ . | relURL }}" alt="{{ $p.bild_alt }}" width="600" height="338" decoding="async"><figcaption>{{ $p.bild_credit }}</figcaption></figure>
     {{- else }}
-      <div class="pbild-leer" aria-hidden="true"><span>Balkonkraftwerk</span><small>kein freigegebenes Pressefoto</small></div>
+      {{ partial "abbildung.html" (dict "p" $p "w" 400 "h" 300 "lazy" false "cap" true "cls" "pbild") }}
     {{- end }}
     </div>
     <div class="p-eck">
