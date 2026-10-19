@@ -708,3 +708,6 @@ main>p,main>ul:not([class]),main>ol:not([class]),main>details,main>h2,main>h3,ma
 h1{max-width:none}
 .post-kopf h1,.produkt>h1{max-width:none}
 .einsatz-kopf{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+/* Lange Artikeltitel (Inhalt bleibt): auf Tablet/Telefon etwas kleiner, damit sie in höchstens drei Zeilen stehen */
+@media (max-width:52rem){.post-kopf h1{font-size:clamp(1.875rem,1.2rem + 3vw,2.5rem)}}
+@media (max-width:40rem){.post-kopf h1{font-size:1.75rem;line-height:1.12}}
