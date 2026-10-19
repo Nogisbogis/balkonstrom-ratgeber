@@ -1,0 +1,31 @@
+{{ define "main" }}
+{{ partial "breadcrumb.html" . }}
+<h1>{{ .Title }}</h1>
+{{ with .Params.intro }}<p class="lead">{{ . }}</p>{{ end }}
+<form class="tool" id="rechner" novalidate>
+  <fieldset><legend>1. Deine Geräte</legend>
+    <p class="note">Leistung in Watt vom Typenschild oder Netzteil. „Stunden“ = wie lange das Gerät zwischen zwei Ladungen läuft.</p>
+    <div class="tablewrap"><table class="geraete">
+      <thead><tr><th scope="col">Gerät</th><th scope="col">Watt</th><th scope="col">Stunden</th><th scope="col">Anzahl</th><th scope="col"><span class="sr">Entfernen</span></th></tr></thead>
+      <tbody id="zeilen"></tbody>
+    </table></div>
+    <p><button type="button" class="btn-sec" id="plus">+ Gerät hinzufügen</button></p>
+  </fieldset>
+  <fieldset><legend>2. Powerstation</legend>
+    <label>Modell: <select id="modell"><option value="">eigene Kapazität eingeben …</option></select></label>
+    <p id="eigen"><label>Kapazität: <input type="number" id="kap" min="1" max="20000" step="1" value="1000" inputmode="numeric"> Wh</label>
+      <label>Dauerleistung: <input type="number" id="dauer" min="1" max="10000" step="1" value="1000" inputmode="numeric"> W</label></p>
+  </fieldset>
+  <fieldset><legend>3. Annahmen</legend>
+    <p><label><strong>Annahme Wirkungsgrad:</strong> <input type="number" id="eta" min="40" max="100" step="1" value="85" inputmode="numeric"> % der Nennkapazität nutzbar</label></p>
+    <p><label><strong>Annahme Eigenverbrauch der Station:</strong> <input type="number" id="eigenv" min="0" max="100" step="1" value="0" inputmode="numeric"> W</label></p>
+    <p class="note">Beide Werte sind Schätzungen, keine Messungen. Mehr dazu unter der Rechnung.</p>
+  </fieldset>
+  <div class="ergebnis" id="r-ergebnis" aria-live="polite"></div>
+</form>
+<noscript><p class="notice">Der Rechner braucht JavaScript. Die Formel steht unten, damit kannst du auch von Hand rechnen.</p></noscript>
+{{ .Content }}
+{{ partial "ps-json.html" . }}
+{{ $js := resources.Get "js/rechner.js" | minify | fingerprint }}
+<script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" defer></script>
+{{ end }}

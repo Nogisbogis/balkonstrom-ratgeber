@@ -1,0 +1,8 @@
+{{- /* Powerstation-Daten als JSON für Finder und Rechner (nur Herstellerdaten + Seitenlinks) */ -}}
+{{- $out := slice }}
+{{- range sort hugo.Data.powerstations "kapazitaet_wh" }}
+  {{- $url := "" }}{{ $warn := "" }}
+  {{- with site.GetPage (printf "/powerstations/%s" .slug) }}{{ $url = .RelPermalink }}{{ with .Params.warnung }}{{ $warn = . | markdownify | plainify | htmlUnescape }}{{ end }}{{ end }}
+  {{- $out = $out | append (dict "m" .modell "s" .slug "wh" .kapazitaet_wh "w" .dauerleistung_w "kg" .gewicht_kg "pv" .solareingang_w "usv" .usv_ms "akku" .akkutyp "url" $url "warn" $warn) }}
+{{- end }}
+<script type="application/json" id="ps-daten">{{ $out | jsonify | safeJS }}</script>

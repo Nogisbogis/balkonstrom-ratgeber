@@ -1,0 +1,42 @@
+{{ define "main" }}
+{{ partial "breadcrumb.html" . }}
+<h1>{{ .Title }}</h1>
+{{ with .Params.intro }}<p class="lead">{{ . }}</p>{{ end }}
+<form class="tool" id="finder" novalidate>
+  <fieldset><legend>1. Wofür brauchst du die Powerstation vor allem?</legend>
+    <label class="opt"><input type="radio" name="einsatz" value="camping" checked> <span><strong>Camping, Festival, unterwegs</strong> – wird oft getragen</span></label>
+    <label class="opt"><input type="radio" name="einsatz" value="van"> <span><strong>Van, Wohnmobil, Gartenhaus</strong> – mehrere Tage, Nachladen mit Solar</span></label>
+    <label class="opt"><input type="radio" name="einsatz" value="notstrom"> <span><strong>Stromausfall zu Hause</strong> – Router, Licht, Kühlschrank überbrücken</span></label>
+    <label class="opt"><input type="radio" name="einsatz" value="werkzeug"> <span><strong>Werkzeug, Küchengeräte</strong> – hohe Leistung für kurze Zeit</span></label>
+  </fieldset>
+  <fieldset><legend>2. Wie viel Leistung brauchen die Geräte, die <em>gleichzeitig</em> laufen?</legend>
+    <p class="note">Steht auf dem Typenschild oder Netzteil in Watt (W). Mehrere Geräte gleichzeitig: Watt addieren.</p>
+    <label class="opt"><input type="radio" name="watt" value="250" checked> <span>bis 250 W <span class="note">(z. B. Laptop, Licht, Router, Ventilator)</span></span></label>
+    <label class="opt"><input type="radio" name="watt" value="600"> <span>bis 600 W</span></label>
+    <label class="opt"><input type="radio" name="watt" value="800"> <span>bis 800 W</span></label>
+    <label class="opt"><input type="radio" name="watt" value="1500"> <span>bis 1.500 W</span></label>
+    <label class="opt"><input type="radio" name="watt" value="2000"> <span>bis 2.000 W <span class="note">(Geräte mit Heizelement brauchen laut BBK oft 1.500–2.000 W)</span></span></label>
+    <label class="opt"><input type="radio" name="watt" value="custom"> <span>genau: <input type="number" name="watt_custom" min="1" max="5000" step="1" inputmode="numeric" aria-label="Leistung in Watt"> W</span></label>
+  </fieldset>
+  <fieldset><legend>3. Wie viel Energie brauchst du zwischen zwei Ladungen?</legend>
+    <p class="note">Watt × Stunden, für alle Geräte addiert. Beispiel: 50 W für 8 Stunden = 400 Wh. Genauer geht es mit dem <a href="{{ "laufzeitrechner/" | relURL }}">Laufzeitrechner</a>.</p>
+    <label class="opt"><input type="radio" name="wh" value="150" checked> <span>bis 150 Wh <span class="note">(Handys, Kamera, etwas Licht)</span></span></label>
+    <label class="opt"><input type="radio" name="wh" value="400"> <span>bis 400 Wh</span></label>
+    <label class="opt"><input type="radio" name="wh" value="800"> <span>bis 800 Wh</span></label>
+    <label class="opt"><input type="radio" name="wh" value="1600"> <span>bis 1.600 Wh</span></label>
+    <label class="opt"><input type="radio" name="wh" value="custom"> <span>genau: <input type="number" name="wh_custom" min="1" max="10000" step="1" inputmode="numeric" aria-label="Energiebedarf in Wattstunden"> Wh</span></label>
+  </fieldset>
+  <fieldset><legend>4. Wie wichtig ist das Gewicht?</legend>
+    <label class="opt"><input type="radio" name="kg" value="5"> <span><strong>sehr wichtig</strong> – unter 5 kg</span></label>
+    <label class="opt"><input type="radio" name="kg" value="13" checked> <span><strong>tragbar</strong> – bis 13 kg</span></label>
+    <label class="opt"><input type="radio" name="kg" value="99"> <span><strong>egal</strong> – steht meist an einem Ort</span></label>
+  </fieldset>
+  <p><button type="submit" class="btn">Passende Modelle zeigen</button></p>
+  <div class="ergebnis" id="finder-ergebnis" aria-live="polite"></div>
+</form>
+<noscript><p class="notice">Der Finder braucht JavaScript. Ohne JavaScript findest du alle Modelle in der <a href="{{ "vergleich/" | relURL }}">Vergleichstabelle</a>.</p></noscript>
+{{ .Content }}
+{{ partial "ps-json.html" . }}
+{{ $js := resources.Get "js/finder.js" | minify | fingerprint }}
+<script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" defer></script>
+{{ end }}
