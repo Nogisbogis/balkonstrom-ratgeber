@@ -1,0 +1,7 @@
+{{ define "main" }}
+{{ partial "breadcrumb.html" . }}
+<h1>{{ .Title }}</h1>
+{{ with .Params.intro }}<p class="lead">{{ . }}</p>{{ end }}
+{{ partial "tool-tiles.html" . }}
+{{ .Content }}
+{{ end }}

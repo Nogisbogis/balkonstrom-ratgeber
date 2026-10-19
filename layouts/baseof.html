@@ -49,7 +49,7 @@
       {{- $cur := .RelPermalink }}
       {{- range slice "powerstations" "balkonkraftwerke" "ratgeber" }}{{ with site.GetPage (printf "/%s" .) }}<a href="{{ .RelPermalink }}"{{ if or (eq $cur .RelPermalink) (eq $.Params.kategorie .Params.kategorie) }} aria-current="page"{{ end }}>{{ .Title }}</a>{{ end }}{{ end }}
       <a href="{{ "vergleich/" | relURL }}"{{ if eq $cur ("vergleich/" | relURL) }} aria-current="page"{{ end }}>Vergleich</a>
-      <a href="{{ "powerstation-finder/" | relURL }}"{{ if or (eq $cur ("powerstation-finder/" | relURL)) (eq $cur ("laufzeitrechner/" | relURL)) }} aria-current="page"{{ end }}>Finder &amp; Rechner</a></nav>
+      <a href="{{ "werkzeuge/" | relURL }}"{{ if in (slice ("werkzeuge/" | relURL) ("powerstation-finder/" | relURL) ("laufzeitrechner/" | relURL) ("amortisationsrechner/" | relURL)) $cur }} aria-current="page"{{ end }}>Finder &amp; Rechner</a></nav>
   </div>
 </header>
 <main class="wrap" id="inhalt">

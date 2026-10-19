@@ -1,0 +1,33 @@
+{{ define "main" }}
+{{ partial "breadcrumb.html" . }}
+<h1>{{ .Title }}</h1>
+{{ with .Params.intro }}<p class="lead">{{ . }}</p>{{ end }}
+<form class="tool" id="amort" novalidate>
+  <fieldset><legend>1. Deine Anlage</legend>
+    <p><label><strong>Modulleistung:</strong> <input type="number" id="wp" min="50" max="4000" step="10" value="800" inputmode="numeric"> Wp</label>
+      <span class="note">Summe der Modul-Nennleistungen, z. B. 2 × 445 Wp = 890 Wp.</span></p>
+    <p><label><strong>Anschaffungskosten:</strong> <input type="number" id="kosten" min="0" max="20000" step="10" placeholder="z. B. 450" inputmode="numeric" required> €</label>
+      <span class="note">Dein Preis inklusive Halterung, Kabel und ggf. Speicher. Wir setzen hier bewusst keinen Wert vor.</span></p>
+  </fieldset>
+  <fieldset><legend>2. Ertrag (Annahme)</legend>
+    <p><label>Ausrichtung und Montage: <select id="preset">
+      {{- range .Params.presets }}<option value="{{ .wert }}"{{ if .standard }} selected{{ end }}>{{ .name }}</option>{{ end }}
+      <option value="">eigener Wert …</option>
+    </select></label></p>
+    <p><label><strong>Annahme Jahresertrag:</strong> <input type="number" id="spez" min="100" max="1300" step="5" value="665" inputmode="numeric"> kWh pro kWp und Jahr</label></p>
+    <p class="note">Ost, West, Teilverschattung oder dein genauer Standort: Rechne den Wert mit <a href="https://re.jrc.ec.europa.eu/pvg_tools/de/" rel="noopener" target="_blank">PVGIS</a> oder dem <a href="https://solar.htw-berlin.de/rechner/stecker-solar-simulator/" rel="noopener" target="_blank">Stecker-Solar-Simulator der HTW Berlin</a> aus und trag ihn hier ein.</p>
+  </fieldset>
+  <fieldset><legend>3. Verbrauch und Preis</legend>
+    <p><label><strong>Annahme Eigenverbrauchsanteil:</strong> <input type="number" id="ev" min="1" max="100" step="1" value="45" inputmode="numeric"> % des erzeugten Stroms nutzt du selbst</label></p>
+    <p><label><strong>Strompreis (Arbeitspreis):</strong> <input type="number" id="preis" min="1" max="150" step="0.1" value="37" inputmode="decimal"> ct/kWh</label>
+      <span class="note">Steht auf deiner Stromrechnung; Grundgebühr nicht mitzählen.</span></p>
+    <p><label><strong>Annahme Strompreisänderung:</strong> <input type="number" id="steig" min="-10" max="15" step="0.5" value="0" inputmode="decimal"> % pro Jahr</label></p>
+    <p><label><strong>Annahme Betrachtungszeitraum:</strong> <input type="number" id="jahre" min="1" max="30" step="1" value="20" inputmode="numeric"> Jahre</label></p>
+  </fieldset>
+  <div class="ergebnis" id="a-ergebnis" aria-live="polite"></div>
+</form>
+<noscript><p class="notice">Der Rechner braucht JavaScript. Die Formel steht unten, damit kannst du auch von Hand rechnen.</p></noscript>
+{{ .Content }}
+{{ $js := resources.Get "js/amortisation.js" | minify | fingerprint }}
+<script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" defer></script>
+{{ end }}
