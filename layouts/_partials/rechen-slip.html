@@ -1,0 +1,33 @@
+{{- /* „Selbst rechnen“ als Beleg: echte Beispielrechnung (gleiche Formel wie der Laufzeitrechner: Wh × 85 % / W).
+     Das Live-Element: Gerät wählen → Beleg rechnet neu (ui.js). Ohne JS bleibt das Kühlbox-Beispiel stehen. */ -}}
+{{- $ps := hugo.Data.powerstations }}
+{{- $d := index (where $ps "slug" "ecoflow-delta-3-plus") 0 }}
+{{- $kb := index (where hugo.Data.geraete "key" "kuehlbox") 0 }}
+{{- $h := div (mul $d.kapazitaet_wh 0.85) $kb.w }}{{ $hh := int (math.Floor $h) }}{{ $mm := int (math.Round (mul (sub $h $hh) 60)) }}
+{{- $n := 0 }}{{ range $ps }}{{ if and (ge .dauerleistung_w 250) (ge (mul .kapazitaet_wh 0.85) 150) (le .gewicht_kg 5) }}{{ $n = add $n 1 }}{{ end }}{{ end }}
+{{- $sp := mul (mul 0.8 665) (mul 0.45 0.37) }}{{ $j := div 400.0 $sp }}
+<div class="slip-links" data-r>
+  <h2 id="tools-titel">Selbst rechnen</h2>
+  <p>Drei Werkzeuge, alle Annahmen offen und änderbar. Wähle ein Gerät, und der Beleg rechnet mit denselben Formeln wie der Laufzeitrechner.</p>
+  <ul class="slip-tools">
+    <li><a class="textlink" href="{{ "powerstation-finder/" | relURL }}?einsatz=camping&amp;watt=250&amp;wh=150&amp;kg=5">Passende Powerstation finden</a><span>Beispiel Camping, 250 W, 150 Wh, unter 5 kg: {{ $n }} von {{ len $ps }} Modellen passen</span></li>
+    <li><a class="textlink" href="{{ "laufzeitrechner/" | relURL }}?m=ecoflow-delta-3-plus&amp;g=kuehlbox" data-slip-link>Laufzeit jetzt ausrechnen</a><span>Alle Powerstations mit deinen Geräten</span></li>
+    <li><a class="textlink" href="{{ "amortisationsrechner/" | relURL }}?wp=800&amp;kosten=400&amp;spez=665&amp;ev=45&amp;preis=37">Amortisation berechnen</a><span>Beispiel mit Werten des Umweltbundesamts (800 Wp senkrecht, 45 % Eigenverbrauch, 37 ct, 400 €): ≈ {{ lang.FormatNumber 1 $j }} Jahre</span></li>
+  </ul>
+</div>
+<div class="slip-wrap" data-r>
+  <div class="slip-wahl" role="group" aria-label="Gerät für den Beleg wählen" hidden>
+    {{- range slice "kuehlbox" "laptop" "router" "tv" }}{{ $g := index (where hugo.Data.geraete "key" .) 0 }}
+    <button type="button" class="chip" data-k="{{ $g.key }}" data-w="{{ $g.w }}" data-n="{{ $g.name }}" data-q="{{ index (split $g.quelle ":") 0 }}"{{ if eq $g.key "kuehlbox" }} aria-pressed="true"{{ else }} aria-pressed="false"{{ end }}>{{ $g.name }}</button>
+    {{- end }}
+  </div>
+  <div class="slip" data-wh="{{ $d.kapazitaet_wh }}" data-eta="0.85">
+    <p class="slip-kopf">Laufzeit-Beleg</p>
+    <p class="slip-gruppe">Gerät</p>
+    <p class="slip-zeile"><span data-slip-name>{{ $kb.name }} (typischer Wert, {{ index (split $kb.quelle ":") 0 }})</span><i aria-hidden="true"></i><span data-slip-w>{{ $kb.w }} W</span></p>
+    <p class="slip-gruppe">Powerstation</p>
+    <p class="slip-zeile"><span>{{ $d.modell }}, laut Hersteller</span><i aria-hidden="true"></i><span>{{ lang.FormatNumber 0 $d.kapazitaet_wh }} Wh</span></p>
+    <p class="slip-zeile"><span>davon nutzbar (Annahme)</span><i aria-hidden="true"></i><span>85 %</span></p>
+    <p class="slip-summe" aria-live="polite"><span>Dauerbetrieb</span><span data-slip-erg>≈ {{ $hh }} h {{ $mm }} min</span></p>
+  </div>
+</div>

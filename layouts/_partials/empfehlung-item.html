@@ -1,9 +1,12 @@
-{{- /* Erwartet dict: modell, grund, einsatz (optional), ctx */ -}}
+{{- /* Erwartet dict: modell, grund, einsatz (optional), ctx; optional tag ("li" Standard | "div"), gross (Startseite: Einsatz als h3) */ -}}
 {{- $i := partial "modell-info.html" .modell -}}
-<li class="empf">
+{{- $tag := .tag | default "li" }}
+{{- if eq $tag "div" }}<div class="empf{{ if .gross }} empf-gross{{ end }}">{{ else }}<li class="empf">{{ end }}
+  {{- with .einsatz }}{{ if $.gross }}<h3 class="empf-einsatz">{{ . }}</h3>{{ else }}<span class="empf-einsatz">{{ . }}</span>{{ end }}{{ end }}
+  <div class="empf-kopf">
   {{- with $i.daten }}{{ partial "abbildung.html" (dict "p" . "w" 96 "h" 72 "lazy" true "cap" false "cls" "empf-abb") }}{{ end }}
-  {{- with .einsatz }}<span class="empf-einsatz">{{ . }}</span>{{ end }}
   <strong class="empf-modell">{{ with $i.url }}<a href="{{ . }}">{{ $.modell }}</a>{{ else }}{{ $.modell }}{{ end }}</strong>
+  </div>
   {{- with $i.kz }}<span class="empf-kz"><span class="sr">{{ if eq $i.art "ps" }}Kapazität, Dauerleistung, Gewicht{{ else }}Speicher, Wechselrichter-Leistung, MPPT-Tracker{{ end }} laut Hersteller: </span>{{ range $k, $v := . }}{{ if $k }}<span aria-hidden="true"> · </span>{{ end }}<b>{{ $v }}</b>{{ end }}</span>{{ end }}
   {{- with .grund }}<span class="empf-grund">{{ . | $.ctx.RenderString }}</span>{{ end }}
   <span class="empf-links">
@@ -11,4 +14,4 @@
   {{- with $i.url }}<a class="textlink" href="{{ . }}">Details &amp; Tests</a>{{ end }}
   </span>
   {{- if .vergleich }}{{ with $i.slug }}<label class="cmp-check" hidden><input type="checkbox" value="{{ . }}" data-name="{{ $.modell }}"> vergleichen</label>{{ end }}{{ end }}
-</li>
+{{ if eq $tag "div" }}</div>{{ else }}</li>{{ end }}

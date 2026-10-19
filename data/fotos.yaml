@@ -1,0 +1,43 @@
+# Fotos aus offenen Sammlungen (Wikimedia Commons). Sie zeigen die Welt rund um die Geräte
+# (Balkon, Camping, Stromausfall), nie ein Produkt aus dem Vergleich. Lizenz + Urheber stehen
+# im Fuß jeder Seite, die das Foto zeigt (partial foto.html merkt sich die Nutzung).
+- key: balkon
+  datei: img/welt/balkon.jpg
+  alt: Balkone eines Mehrfamilienhauses, an zwei Brüstungen hängen Solarmodule eines Balkonkraftwerks
+  titel: Balkonkraftwerk
+  urheber: Rudy23
+  lizenz: CC BY-SA 4.0
+  lizenz_url: https://creativecommons.org/licenses/by-sa/4.0/
+  quelle: https://commons.wikimedia.org/wiki/File:Balkonkraftwerk.jpg
+- key: balkon2
+  datei: img/welt/balkon2.jpg
+  alt: Hauseingang mit zwei Solarmodulen an der Balkonbrüstung darüber
+  titel: Sogenanntes Balkonkraftwerk, eine Mini-PV-Anlage, in Tauberbischofsheim
+  urheber: Triplec85
+  lizenz: CC BY-SA 4.0
+  lizenz_url: https://creativecommons.org/licenses/by-sa/4.0/
+  quelle: https://commons.wikimedia.org/wiki/File:2023-05-05_Sogenanntes_Balkonkraftwerk,_eine_Mini-PV-Anlage,_in_Tauberbischofsheim_01.jpg
+- key: camping
+  datei: img/welt/camping.jpg
+  alt: Weißes Wohnmobil auf einem Parkplatz
+  titel: White Fiat Ducato Campervan 2006
+  urheber: User3204
+  lizenz: CC BY 4.0
+  lizenz_url: https://creativecommons.org/licenses/by/4.0/
+  quelle: https://commons.wikimedia.org/wiki/File:White_Fiat_Ducato_Campervan_2006.jpg
+- key: stromausfall
+  datei: img/welt/stromausfall.jpg
+  alt: Nächtliche Straße während eines Stromausfalls, nur Autoscheinwerfer leuchten
+  titel: Calle Larga at night during power cut
+  urheber: Jen
+  lizenz: CC BY-SA 3.0
+  lizenz_url: https://creativecommons.org/licenses/by-sa/3.0/
+  quelle: https://commons.wikimedia.org/wiki/File:Calle_Larga_at_night_during_power_cut.jpg
+- key: unterwegs
+  datei: img/welt/unterwegs.jpg
+  alt: Leichtes Zelt mit Schlafsack und Rucksack auf einer Wiese
+  titel: Tent, sleeping bag, and backpack
+  urheber: Steve Bittinger
+  lizenz: CC BY 2.0
+  lizenz_url: https://creativecommons.org/licenses/by/2.0/
+  quelle: https://commons.wikimedia.org/wiki/File:Tent,_sleeping_bag,_and_backpack.jpg

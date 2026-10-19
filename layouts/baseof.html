@@ -16,7 +16,7 @@
 {{- if ne .Kind "404" }}
 <link rel="canonical" href="{{ .Permalink }}">
 {{- end }}
-<meta name="theme-color" content="#0b7a4b" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#faf8f3" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0f1f1a" media="(prefers-color-scheme: dark)">
 <meta name="color-scheme" content="light dark">
 <link rel="icon" href="{{ "favicon.svg" | relURL }}" type="image/svg+xml">
@@ -44,8 +44,11 @@
 {{- end }}
 {{- $css := resources.Get "style.css" | minify | fingerprint }}
 <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
+<script>if(window.matchMedia&&!matchMedia("(prefers-reduced-motion: reduce)").matches&&"IntersectionObserver"in window)document.documentElement.classList.add("mo")</script>
+{{- $ui := resources.Get "js/ui.js" | minify | fingerprint }}
+<script src="{{ $ui.RelPermalink }}" integrity="{{ $ui.Data.Integrity }}" defer></script>
 </head>
-<body>
+<body class="{{ if .IsHome }}is-home{{ else }}is-{{ .Layout | default .Type }}{{ end }}">
 <a class="skip" href="#inhalt">Zum Inhalt springen</a>
 <header class="site-header">
   <div class="wrap">
