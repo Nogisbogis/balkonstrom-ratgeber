@@ -1,0 +1,1 @@
+{{- with .bild }}<figure class="thumb"><img src="{{ . | relURL }}" alt="{{ $.bild_alt }}" width="72" height="54" loading="lazy" decoding="async"><figcaption>{{ $.bild_credit }}</figcaption></figure>{{ else }}<span class="thumb thumb-leer" title="Kein freigegebenes Pressefoto"><span class="sr-only">Kein Foto</span></span>{{ end -}}

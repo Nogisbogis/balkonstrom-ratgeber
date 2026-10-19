@@ -11,7 +11,7 @@
     var count = document.createElement('p');
     count.className = 'count';
     count.setAttribute('aria-live', 'polite');
-    table.parentNode.after(count);
+    (form.querySelector('fieldset') || form).appendChild(count);
     function apply() {
       var shown = 0;
       rows.forEach(function (tr) {
@@ -68,4 +68,48 @@
       });
     });
   });
+})();
+
+// Tabs Powerstations / Balkonkraftwerke (ohne JS: Sprunglinks, beide Tabellen sichtbar)
+(function () {
+  'use strict';
+  var nav = document.querySelector('nav.tabs');
+  if (!nav) return;
+  var links = Array.prototype.slice.call(nav.querySelectorAll('a[data-tab]'));
+  var panels = links.map(function (a) { return document.getElementById(a.dataset.tab); });
+  nav.setAttribute('role', 'tablist');
+  links.forEach(function (a, i) {
+    a.setAttribute('role', 'tab');
+    a.setAttribute('aria-controls', a.dataset.tab);
+    panels[i].setAttribute('role', 'tabpanel');
+  });
+  function show(id, focus) {
+    var found = links.some(function (a) { return a.dataset.tab === id; });
+    if (!found) id = links[0].dataset.tab;
+    links.forEach(function (a, i) {
+      var on = a.dataset.tab === id;
+      a.setAttribute('aria-selected', on ? 'true' : 'false');
+      a.tabIndex = on ? 0 : -1;
+      panels[i].hidden = !on;
+      if (on && focus) a.focus();
+    });
+  }
+  links.forEach(function (a, i) {
+    a.addEventListener('click', function (e) {
+      e.preventDefault();
+      history.replaceState(null, '', '#' + a.dataset.tab);
+      show(a.dataset.tab);
+    });
+    a.addEventListener('keydown', function (e) {
+      var d = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+      if (!d) return;
+      e.preventDefault();
+      var n = links[(i + d + links.length) % links.length];
+      history.replaceState(null, '', '#' + n.dataset.tab);
+      show(n.dataset.tab, true);
+    });
+  });
+  window.addEventListener('hashchange', function () { show(location.hash.slice(1)); });
+  document.documentElement.classList.add('js-tabs');
+  show(location.hash.slice(1));
 })();
