@@ -1,24 +1,26 @@
 <footer class="site-footer">
   <div class="wrap">
+    <p class="footer-brand"><span class="brand-a">Balkonstrom</span><span class="brand-b">Ratgeber</span></p>
     <div class="footer-grid">
-      <div>
-        <p class="footer-brand"><span class="brand-a">Balkonstrom</span><span class="brand-b">Ratgeber</span></p>
-        <p class="disclosure">{{ site.Params.disclosure }}</p>
-      </div>
-      <nav class="footer-nav" aria-label="Themen">
+      <nav aria-labelledby="f-werkzeuge"><h2 id="f-werkzeuge">Werkzeuge</h2>
+        <a href="{{ "powerstation-finder/" | relURL }}">Powerstation-Finder</a>
+        <a href="{{ "laufzeitrechner/" | relURL }}">Laufzeitrechner</a>
+        <a href="{{ "amortisationsrechner/" | relURL }}">Amortisationsrechner</a>
+        <a href="{{ "vergleich/" | relURL }}">Vergleich</a>
+      </nav>
+      <nav aria-labelledby="f-ratgeber"><h2 id="f-ratgeber">Ratgeber</h2>
+        <a href="{{ "ratgeber/" | relURL }}">Alle Artikel</a>
         <a href="{{ "powerstations/" | relURL }}">Powerstations</a>
         <a href="{{ "balkonkraftwerke/" | relURL }}">Balkonkraftwerke</a>
-        <a href="{{ "ratgeber/" | relURL }}">Ratgeber</a>
-        <a href="{{ "vergleich/" | relURL }}">Vergleich</a>
-        <a href="{{ "werkzeuge/" | relURL }}">Werkzeuge</a>
       </nav>
-      <nav class="legal" aria-label="Über die Seite">
-        <a href="{{ "methodik/" | relURL }}">So arbeite ich</a>
+      <nav class="legal" aria-labelledby="f-recht"><h2 id="f-recht">Rechtliches</h2>
+        <a href="{{ "methodik/" | relURL }}">So arbeite ich (Methodik)</a>
         <a href="{{ "faq/" | relURL }}">Häufige Fragen</a>
         <a href="{{ "impressum/" | relURL }}">Impressum</a>
         <a href="{{ "datenschutz/" | relURL }}">Datenschutz</a>
       </nav>
     </div>
+    <p class="disclosure">{{ site.Params.disclosure }}</p>
     <p class="copy">© {{ now.Year }} {{ site.Title }}</p>
   </div>
 </footer>

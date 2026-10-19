@@ -1,5 +1,7 @@
-<section class="tool-teaser" aria-label="Werkzeuge">
-  <a href="{{ "powerstation-finder/" | relURL }}"><strong>Welche Powerstation passt zu mir?</strong><span>4 Fragen zu Einsatz, Leistung, Energie und Gewicht. Die Regeln siehst du offen, nichts wird gespeichert.</span><em class="btn">Passende Powerstation finden</em></a>
-  <a href="{{ "laufzeitrechner/" | relURL }}"><strong>Wie lange hält der Akku?</strong><span>Geräte eintragen und die Laufzeit für alle 10 Modelle auf einen Blick sehen. Den Wirkungsgrad stellst du selbst ein.</span><em class="btn">Laufzeit jetzt ausrechnen</em></a>
-  <a href="{{ "amortisationsrechner/" | relURL }}"><strong>Lohnt sich mein Balkonkraftwerk?</strong><span>Ertrag, Eigenverbrauch, Strompreis und Kosten eingeben – alle Annahmen mit Quelle, jede änderbar.</span><em class="btn">Amortisation berechnen</em></a>
-</section>
+{{- /* Werkzeug-Kacheln: vollständig klickbar, Verb-Überschriften. Kontext: dict "kurz" bool */ -}}
+{{- $kurz := .kurz }}
+<ul class="tool-tiles">
+  <li><a href="{{ "powerstation-finder/" | relURL }}"><strong>Passende Powerstation finden</strong>{{ if not $kurz }}<span>4 Fragen zu Einsatz, Leistung, Energie und Gewicht. Die Regeln siehst du offen, nichts wird gespeichert.</span>{{ else }}<span>4 Fragen, offene Regeln.</span>{{ end }}<em aria-hidden="true">→</em></a></li>
+  <li><a href="{{ "laufzeitrechner/" | relURL }}"><strong>Laufzeit jetzt ausrechnen</strong>{{ if not $kurz }}<span>Geräte eintragen und die Laufzeit für alle Powerstations auf einen Blick sehen. Den Wirkungsgrad stellst du selbst ein.</span>{{ else }}<span>Wie lange hält der Akku?</span>{{ end }}<em aria-hidden="true">→</em></a></li>
+  <li><a href="{{ "amortisationsrechner/" | relURL }}"><strong>Amortisation berechnen</strong>{{ if not $kurz }}<span>Ertrag, Eigenverbrauch, Strompreis und Kosten eingeben – alle Annahmen mit Quelle, jede änderbar.</span>{{ else }}<span>Lohnt sich mein Balkonkraftwerk?</span>{{ end }}<em aria-hidden="true">→</em></a></li>
+</ul>

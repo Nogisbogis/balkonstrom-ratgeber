@@ -1,14 +1,16 @@
 {{ define "main" }}
+{{- $n := add (len hugo.Data.powerstations) (len hugo.Data.balkonkraftwerke) }}
 <section class="hero">
   <h1>Strom, wenn du ihn brauchst – auf dem Balkon, im Camper, beim Stromausfall.</h1>
   <p class="lead">Finde in 2 Minuten das Gerät, das wirklich zu dir passt.</p>
   <p class="hero-cta"><a class="btn btn-gross" href="{{ "powerstation-finder/" | relURL }}">Passende Powerstation finden</a><a class="textlink" href="{{ "vergleich/" | relURL }}">Alle Modelle vergleichen</a></p>
+  <p class="fakten">{{ $n }} Geräte · 3 Werkzeuge · alle Werte mit Quelle</p>
 </section>
 
 {{- with hugo.Data.empfehlungen }}
 <section class="home-sec empf-home" aria-labelledby="empf-home-titel">
   <h2 id="empf-home-titel" class="sec-title">Meine Empfehlungen nach Einsatz</h2>
-  {{ partial "disclosure-box.html" . }}
+  <p class="disclosure-small">{{ site.Params.disclosure }}</p>
   <ul class="empf-list empf-grid">{{ range . }}{{ partial "empfehlung-item.html" (dict "modell" .modell "grund" .grund "einsatz" .einsatz "ctx" $) }}{{ end }}</ul>
   <p class="note">Jede Empfehlung stammt aus einem meiner Artikel und stützt sich auf Herstellerdaten oder zitierte Tests. Ich habe die Geräte nicht selbst getestet. <a href="{{ "methodik/" | relURL }}">So arbeite ich</a></p>
 </section>
@@ -22,10 +24,8 @@
   {{ else }}<p class="empty">Bald gibt es hier die ersten Artikel.</p>{{ end }}
 </section>
 
-<nav class="tool-strip" aria-label="Werkzeuge">
-  <span class="tool-strip-label">Selbst rechnen</span>
-  <a href="{{ "powerstation-finder/" | relURL }}">Powerstation-Finder</a>
-  <a href="{{ "laufzeitrechner/" | relURL }}">Laufzeitrechner</a>
-  <a href="{{ "amortisationsrechner/" | relURL }}">Amortisationsrechner</a>
-</nav>
+<section class="home-sec" aria-labelledby="tools-titel">
+  <h2 id="tools-titel" class="sec-title">Selbst rechnen</h2>
+  {{ partial "tool-tiles.html" (dict "kurz" true) }}
+</section>
 {{ end }}

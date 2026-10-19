@@ -29,9 +29,9 @@
     n++;
     var tr = document.createElement('tr');
     tr.innerHTML = '<td><input type="text" aria-label="Gerät ' + n + '" placeholder="z. B. Kühlbox" value="' + esc(name || '') + '"></td>' +
-      '<td><input type="number" min="0" max="5000" step="1" inputmode="numeric" aria-label="Watt Gerät ' + n + '" value="' + (w || '') + '"></td>' +
+      '<td><input type="number" min="0" max="5000" step="1" inputmode="decimal" aria-label="Watt Gerät ' + n + '" value="' + (w || '') + '"></td>' +
       '<td><input type="number" min="0" max="240" step="0.5" inputmode="decimal" aria-label="Stunden Gerät ' + n + '" value="' + (h || '') + '"></td>' +
-      '<td><input type="number" min="1" max="20" step="1" inputmode="numeric" aria-label="Anzahl Gerät ' + n + '" value="' + (anz || 1) + '"></td>' +
+      '<td><input type="number" min="1" max="20" step="1" inputmode="decimal" aria-label="Anzahl Gerät ' + n + '" value="' + (anz || 1) + '"></td>' +
       '<td><button type="button" class="btn-sec" aria-label="Zeile entfernen">✕</button></td>';
     tr.querySelector('button').addEventListener('click', function () { tr.remove(); rechne(); });
     tbody.appendChild(tr);

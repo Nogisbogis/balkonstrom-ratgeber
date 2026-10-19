@@ -2,7 +2,7 @@
 {{- if eq .Section "posts" }}
 {{- with .Params.top_empfehlung }}
 <aside class="empfbox" aria-labelledby="empf-titel">
-  <h2 id="empf-titel">Meine Empfehlung</h2>
+  <h2 id="empf-titel"><span class="label-sun">Meine Empfehlung</span></h2>
   <ul class="empf-list">{{ range . }}{{ partial "empfehlung-item.html" (dict "modell" .modell "grund" .grund "einsatz" .einsatz "ctx" $) }}{{ end }}</ul>
   <p class="note">Begründung und Alternativen stehen im Artikel. Ich habe die Geräte nicht selbst getestet; die Angaben stammen aus den verlinkten Quellen.</p>
 </aside>
