@@ -1,0 +1,7 @@
+{{- /* Einsatz-Wahl: 4 Kacheln mit eigenen Linien-Icons → /einsatz/<slug>/ */ -}}
+{{- with site.GetPage "/einsatz" }}
+<nav class="einsatz-wahl" aria-label="Nach Einsatz wählen">
+  <p class="label">Wofür brauchst du Strom?</p>
+  <ul>{{ range .Pages.ByWeight }}<li><a href="{{ .RelPermalink }}">{{ partial "icon.html" .Params.icon }}<strong>{{ .Params.kurztitel }}</strong><span>{{ .Params.kurztext }}</span></a></li>{{ end }}</ul>
+</nav>
+{{- end }}

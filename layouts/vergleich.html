@@ -2,6 +2,7 @@
 <article class="wide vergleich">
   {{ partial "disclosure-box.html" . }}
   <h1>{{ .Title }}</h1>
+  <div id="auswahl-hinweis" class="auswahl-hinweis" hidden></div>
   {{ .Content }}
 
   <nav class="tabs" aria-label="Kategorie wählen">
@@ -39,7 +40,7 @@
     </tr></thead>
     <tbody>
     {{ range sort hugo.Data.powerstations "kapazitaet_wh" }}
-      <tr data-wh="{{ .kapazitaet_wh }}" data-w="{{ .dauerleistung_w }}" data-kg="{{ .gewicht_kg }}" data-akku="{{ .akkutyp }}">
+      <tr data-slug="{{ .slug }}" data-wh="{{ .kapazitaet_wh }}" data-w="{{ .dauerleistung_w }}" data-kg="{{ .gewicht_kg }}" data-akku="{{ .akkutyp }}">
         <td class="col-modell">{{ partial "thumb.html" . }}{{ $m := .modell }}<span class="mname">{{ with site.GetPage (printf "/powerstations/%s" (.slug | default "-")) }}<a href="{{ .RelPermalink }}">{{ $m }}</a>{{ else }}{{ $m }}{{ end }}</span></td>
         <td class="r" data-v="{{ .kapazitaet_wh }}">{{ lang.FormatNumber 0 .kapazitaet_wh }}</td>
         <td class="r" data-v="{{ .dauerleistung_w }}">{{ lang.FormatNumber 0 .dauerleistung_w }}</td>
@@ -89,7 +90,7 @@
     </tr></thead>
     <tbody>
     {{ range hugo.Data.balkonkraftwerke }}
-      <tr data-typ="{{ .typ }}" data-speicher="{{ .speicher_kwh }}" data-pv="{{ cond (gt .pv_max_w 0) .pv_max_w .module_wp }}">
+      <tr data-slug="{{ .slug }}" data-typ="{{ .typ }}" data-speicher="{{ .speicher_kwh }}" data-pv="{{ cond (gt .pv_max_w 0) .pv_max_w .module_wp }}">
         <td class="col-modell">{{ partial "thumb.html" . }}<span class="mname">{{ $m := .modell }}{{ with site.GetPage (printf "/balkonkraftwerke/%s" (.slug | default "-")) }}<a href="{{ .RelPermalink }}">{{ $m }}</a>{{ else }}{{ $m }}{{ end }}</span></td>
         <td>{{ .typ }}</td>
         <td class="r" data-v="{{ .speicher_kwh }}">{{ if gt .speicher_kwh 0 }}{{ replace (string .speicher_kwh) "." "," }}{{ else }}nein{{ end }}</td>

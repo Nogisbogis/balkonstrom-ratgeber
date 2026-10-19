@@ -1,7 +1,21 @@
-{{- /* Werkzeug-Kacheln: vollständig klickbar, Verb-Überschriften. Kontext: dict "kurz" bool */ -}}
+{{- /* Werkzeug-Kacheln: vollständig klickbar, mit echtem Beispielergebnis (gleiche Formeln/Annahmen wie die Werkzeuge). Kontext: dict "kurz" bool */ -}}
 {{- $kurz := .kurz }}
+{{- /* Finder-Beispiel: Camping, 250 W, 150 Wh, unter 5 kg; Regeln wie finder.js (Wh × 85 %) */ -}}
+{{- $ps := hugo.Data.powerstations }}
+{{- $n := 0 }}{{ range $ps }}{{ if and (ge .dauerleistung_w 250) (ge (mul .kapazitaet_wh 0.85) 150) (le .gewicht_kg 5) }}{{ $n = add $n 1 }}{{ end }}{{ end }}
+{{- /* Laufzeit-Beispiel: Kühlbox 50 W (ADAC-Wert) an der DELTA 3 Plus, 85 % nutzbar */ -}}
+{{- $d := index (where $ps "slug" "ecoflow-delta-3-plus") 0 }}
+{{- $kb := index (where hugo.Data.geraete "key" "kuehlbox") 0 }}
+{{- $h := div (mul $d.kapazitaet_wh 0.85) $kb.w }}
+{{- $hh := int (math.Floor $h) }}{{ $mm := int (math.Round (mul (sub $h $hh) 60)) }}
+{{- /* Amortisation: Beispielwerte des Umweltbundesamts (800 Wp, 665 kWh/kWp, 45 %, 37 ct, 400 €) */ -}}
+{{- $sp := mul (mul 0.8 665) (mul 0.45 0.37) }}
+{{- $j := div 400.0 $sp }}
 <ul class="tool-tiles">
-  <li><a href="{{ "powerstation-finder/" | relURL }}"><strong>Passende Powerstation finden</strong>{{ if not $kurz }}<span>4 Fragen zu Einsatz, Leistung, Energie und Gewicht. Die Regeln siehst du offen, nichts wird gespeichert.</span>{{ else }}<span>4 Fragen, offene Regeln.</span>{{ end }}<em aria-hidden="true">→</em></a></li>
-  <li><a href="{{ "laufzeitrechner/" | relURL }}"><strong>Laufzeit jetzt ausrechnen</strong>{{ if not $kurz }}<span>Geräte eintragen und die Laufzeit für alle Powerstations auf einen Blick sehen. Den Wirkungsgrad stellst du selbst ein.</span>{{ else }}<span>Wie lange hält der Akku?</span>{{ end }}<em aria-hidden="true">→</em></a></li>
-  <li><a href="{{ "amortisationsrechner/" | relURL }}"><strong>Amortisation berechnen</strong>{{ if not $kurz }}<span>Ertrag, Eigenverbrauch, Strompreis und Kosten eingeben – alle Annahmen mit Quelle, jede änderbar.</span>{{ else }}<span>Lohnt sich mein Balkonkraftwerk?</span>{{ end }}<em aria-hidden="true">→</em></a></li>
+  <li><a href="{{ "powerstation-finder/" | relURL }}?einsatz=camping&amp;watt=250&amp;wh=150&amp;kg=5"><strong>Passende Powerstation finden</strong>{{ if not $kurz }}<span>4 Fragen zu Einsatz, Leistung, Energie und Gewicht. Die Regeln siehst du offen, nichts wird gespeichert.</span>{{ else }}<span>4 Fragen, offene Regeln.</span>{{ end }}
+    <span class="tile-bsp"><span class="tile-bsp-l">Beispiel: Camping, 250 W, 150 Wh, unter 5 kg</span><b>{{ $n }} von {{ len $ps }} Modellen passen</b><span class="bar" aria-hidden="true"><i style="width:{{ mul (div (float $n) (len $ps)) 100 }}%"></i></span></span><em aria-hidden="true">→</em></a></li>
+  <li><a href="{{ "laufzeitrechner/" | relURL }}?m=ecoflow-delta-3-plus&amp;g=kuehlbox"><strong>Laufzeit jetzt ausrechnen</strong>{{ if not $kurz }}<span>Geräte eintragen und die Laufzeit für alle Powerstations auf einen Blick sehen. Den Wirkungsgrad stellst du selbst ein.</span>{{ else }}<span>Wie lange hält der Akku?</span>{{ end }}
+    <span class="tile-bsp"><span class="tile-bsp-l">Beispiel: Kühlbox {{ $kb.w }} W (ADAC-Wert) an der {{ $d.modell }}, 85 % nutzbar</span><b>≈ {{ $hh }} h {{ $mm }} min Dauerbetrieb</b><span class="bar" aria-hidden="true"><i style="width:{{ math.Min 100 (mul (div $h 24) 100) }}%"></i></span><span class="tile-bsp-s">Balken: Anteil an 24 Stunden</span></span><em aria-hidden="true">→</em></a></li>
+  <li><a href="{{ "amortisationsrechner/" | relURL }}?wp=800&amp;kosten=400&amp;spez=665&amp;ev=45&amp;preis=37"><strong>Amortisation berechnen</strong>{{ if not $kurz }}<span>Ertrag, Eigenverbrauch, Strompreis und Kosten eingeben – alle Annahmen mit Quelle, jede änderbar.</span>{{ else }}<span>Lohnt sich mein Balkonkraftwerk?</span>{{ end }}
+    <span class="tile-bsp"><span class="tile-bsp-l">Beispiel mit Werten des Umweltbundesamts: 800 Wp senkrecht, 45 % Eigenverbrauch, 37 ct, 400 €</span><b>≈ {{ lang.FormatNumber 1 $j }} Jahre bis zur Amortisation</b><span class="bar" aria-hidden="true"><i style="width:{{ mul (div $j 20) 100 }}%"></i></span><span class="tile-bsp-s">Balken: Anteil an 20 Jahren</span></span><em aria-hidden="true">→</em></a></li>
 </ul>

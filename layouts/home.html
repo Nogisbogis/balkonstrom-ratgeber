@@ -3,6 +3,7 @@
 <section class="hero">
   <h1>Strom, wenn du ihn brauchst – auf dem Balkon, im Camper, beim Stromausfall.</h1>
   <p class="lead">Finde in 2 Minuten das Gerät, das wirklich zu dir passt.</p>
+  {{ partial "einsatz-wahl.html" . }}
   <p class="hero-cta"><a class="btn btn-gross" href="{{ "powerstation-finder/" | relURL }}">Passende Powerstation finden</a><a class="textlink" href="{{ "vergleich/" | relURL }}">Alle Modelle vergleichen</a></p>
   <p class="fakten">{{ $n }} Geräte · 3 Werkzeuge · alle Werte mit Quelle</p>
 </section>
@@ -11,7 +12,7 @@
 <section class="home-sec empf-home" aria-labelledby="empf-home-titel">
   <h2 id="empf-home-titel" class="sec-title">Meine Empfehlungen nach Einsatz</h2>
   <p class="disclosure-small">{{ site.Params.disclosure }}</p>
-  <ul class="empf-list empf-grid">{{ range . }}{{ partial "empfehlung-item.html" (dict "modell" .modell "grund" .grund "einsatz" .einsatz "ctx" $) }}{{ end }}</ul>
+  <ul class="empf-list empf-grid">{{ range . }}{{ partial "empfehlung-item.html" (dict "modell" .modell "grund" .grund "einsatz" .einsatz "ctx" $ "vergleich" true) }}{{ end }}</ul>
   <p class="note">Jede Empfehlung stammt aus einem meiner Artikel und stützt sich auf Herstellerdaten oder zitierte Tests. Ich habe die Geräte nicht selbst getestet. <a href="{{ "methodik/" | relURL }}">So arbeite ich</a></p>
 </section>
 {{- end }}
@@ -24,8 +25,9 @@
   {{ else }}<p class="empty">Bald gibt es hier die ersten Artikel.</p>{{ end }}
 </section>
 
-<section class="home-sec" aria-labelledby="tools-titel">
+<section class="home-sec home-band" aria-labelledby="tools-titel">
   <h2 id="tools-titel" class="sec-title">Selbst rechnen</h2>
   {{ partial "tool-tiles.html" (dict "kurz" true) }}
 </section>
+{{ partial "cmp-bar.html" . }}
 {{ end }}

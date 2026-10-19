@@ -3,9 +3,11 @@
 <li class="empf">
   {{- with .einsatz }}<span class="empf-einsatz">{{ . }}</span>{{ end }}
   <strong class="empf-modell">{{ with $i.url }}<a href="{{ . }}">{{ $.modell }}</a>{{ else }}{{ $.modell }}{{ end }}</strong>
+  {{- with $i.kz }}<span class="empf-kz"><span class="sr">{{ if eq $i.art "ps" }}Kapazität, Dauerleistung, Gewicht{{ else }}Speicher, Wechselrichter-Leistung, MPPT-Tracker{{ end }} laut Hersteller: </span>{{ range $k, $v := . }}{{ if $k }}<span aria-hidden="true"> · </span>{{ end }}<b>{{ $v }}</b>{{ end }}</span>{{ end }}
   {{- with .grund }}<span class="empf-grund">{{ . | $.ctx.RenderString }}</span>{{ end }}
   <span class="empf-links">
   {{- with $i.asin }}<a class="btn-sec btn-amazon" href="{{ partial "amazon-url.html" . }}" rel="sponsored nofollow noopener" target="_blank">Preis bei Amazon<span class="ad-mark" title="Affiliate-Link">*</span></a>{{ end }}
   {{- with $i.url }}<a class="textlink" href="{{ . }}">Details &amp; Tests</a>{{ end }}
   </span>
+  {{- if .vergleich }}{{ with $i.slug }}<label class="cmp-check" hidden><input type="checkbox" value="{{ . }}" data-name="{{ $.modell }}"> vergleichen</label>{{ end }}{{ end }}
 </li>

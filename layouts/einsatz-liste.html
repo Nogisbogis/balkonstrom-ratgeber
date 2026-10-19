@@ -1,0 +1,9 @@
+{{ define "main" }}
+<article class="wide">
+  {{ partial "breadcrumb.html" . }}
+  <h1>{{ .Title }}</h1>
+  <p class="lead">{{ .Description }}</p>
+  {{ partial "einsatz-wahl.html" . }}
+  <p class="more"><a class="textlink" href="{{ "powerstation-finder/" | relURL }}">Lieber 4 Fragen beantworten</a></p>
+</article>
+{{ end }}

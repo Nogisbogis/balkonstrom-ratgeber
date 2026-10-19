@@ -519,3 +519,46 @@ main>p,main>ul:not([class]),main>ol:not([class]),main>details,main>h2,main>h3,ma
 .ka-fakten summary::-webkit-details-marker,.toc summary::-webkit-details-marker,.chips-quellen summary::-webkit-details-marker{display:none}
 .ka-fakten summary::after,.toc summary::after,.chips-quellen summary::after{content:"+";margin-left:auto;font-size:1.25rem;font-weight:700;line-height:1;color:var(--accent)}
 .ka-fakten[open] summary::after,.toc[open] summary::after,.chips-quellen[open] summary::after{content:"−"}
+/* Einsatz-Wahl (Hero + /einsatz/) */
+.icon{display:block;flex:none;color:var(--ink)}
+.einsatz-wahl{margin:2rem 0 1.75rem}
+.einsatz-wahl .label{margin:0 0 .6rem}
+.einsatz-wahl ul{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.75rem}
+.einsatz-wahl a{display:flex;flex-direction:column;gap:.35rem;min-height:var(--tap);height:100%;padding:1rem 1.1rem 1.1rem;border:1.5px solid var(--line);border-radius:12px;text-decoration:none;color:var(--ink);background:var(--bg);transition:border-color .15s,box-shadow .15s}
+.einsatz-wahl a:hover{border-color:var(--ink);box-shadow:0 4px 16px rgba(0,0,0,.08);color:var(--ink)}
+.einsatz-wahl .icon{margin:0 0 .35rem}
+.einsatz-wahl strong{font-size:1.0625rem;line-height:1.25}
+.einsatz-wahl span{font-size:.875rem;color:var(--muted);line-height:1.4}
+@media (max-width:820px){.einsatz-wahl ul{grid-template-columns:1fr 1fr}}
+@media (max-width:360px){.einsatz-wahl ul{grid-template-columns:1fr}}
+.einsatz-kopf{display:flex;align-items:center;gap:1rem;margin:.5rem 0 0}
+.einsatz-kopf .icon{width:48px;height:48px}
+.einsatz-kopf h1{margin:0}
+.einsatz .lead{max-width:var(--measure);margin-top:1.25rem}
+.einsatz-sec{margin:2.5rem 0 0}
+.einsatz-sec>h2{margin:0 0 1rem}
+.empf-grid-1{grid-template-columns:minmax(0,1fr)!important;max-width:var(--measure)}
+.empf-grid-2{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+.cards-2{grid-template-columns:repeat(2,minmax(0,1fr));gap:0 2rem}
+.weiter-1{grid-template-columns:minmax(0,1fr);max-width:var(--measure)}
+@media (max-width:640px){.empf-grid-2,.cards-2{grid-template-columns:1fr!important}}
+/* Kennzahlen + Vergleichen */
+.empf-kz{display:block;font-size:.9375rem;font-variant-numeric:tabular-nums;color:var(--muted)}
+.empf-kz b{color:var(--ink);font-weight:750}
+.cmp-check{display:inline-flex;align-items:center;gap:.6rem;min-height:var(--tap);font-size:.9375rem;cursor:pointer;align-self:flex-start}
+.cmp-check input{width:1.25rem;height:1.25rem;accent-color:var(--accent);margin:0}
+.cmp-check[hidden]{display:none}
+.cmp-bar{position:fixed;left:0;right:0;bottom:0;z-index:35;display:flex;justify-content:center;padding:.6rem 1rem calc(.6rem + env(safe-area-inset-bottom));background:var(--bg);border-top:1px solid var(--rule)}
+.cmp-bar[hidden]{display:none}
+body.mit-cmp-bar{padding-bottom:5rem}
+.auswahl-hinweis{border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:0 12px 12px 0;background:var(--surface);padding:.75rem 1rem;margin:0 0 1.5rem;max-width:var(--measure)}
+.auswahl-hinweis p{margin:.2rem 0}
+/* Beispiel in Werkzeug-Kacheln */
+.tool-tiles .tile-bsp{display:flex;flex-direction:column;gap:.3rem;margin-top:auto;padding-top:.9rem;border-top:1px solid var(--line);color:var(--ink)}
+.tool-tiles .tile-bsp-l,.tool-tiles .tile-bsp-s{font-size:.8125rem;color:var(--muted)}
+.tool-tiles .tile-bsp b{font-size:1.0625rem;font-variant-numeric:tabular-nums}
+.tool-tiles .bar{height:8px}
+/* Werkzeuge-Band auf der Startseite */
+.home-band{background:var(--surface);margin-inline:calc(50% - 50vw);padding:clamp(2.5rem,6vw,4.5rem) calc(50vw - 50%);margin-top:clamp(3rem,8vw,6rem);border-top:0}
+.home-band .tool-tiles a{background:var(--bg)}
+html,body{overflow-x:clip}

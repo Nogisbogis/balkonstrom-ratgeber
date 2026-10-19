@@ -1,3 +1,17 @@
+// Auswahl per Link: /vergleich/?m=slug1,slug2 – nur in der URL, keine Cookies, kein localStorage
+var AUSWAHL = (function () {
+  var m = new URLSearchParams(location.search).get('m');
+  if (!m) return [];
+  var alle = Array.prototype.map.call(document.querySelectorAll('table.cmp tbody tr[data-slug]'), function (tr) { return tr.dataset.slug; });
+  return m.split(',').map(function (x) { return x.trim(); }).filter(function (x, i, a) { return x && alle.indexOf(x) >= 0 && a.indexOf(x) === i; });
+})();
+(function () {
+  var box = document.getElementById('auswahl-hinweis');
+  if (!box || !AUSWAHL.length) return;
+  var namen = AUSWAHL.map(function (s) { var tr = document.querySelector('tr[data-slug="' + s + '"] .mname'); return tr ? tr.textContent.trim() : s; });
+  box.innerHTML = '<p><strong>Deine Auswahl: ' + AUSWAHL.length + (AUSWAHL.length === 1 ? ' Modell' : ' Modelle') + '</strong> – ' + namen.map(function (n) { return n.replace(/[&<>"]/g, ''); }).join(', ') + '</p><p><a class="textlink" href="' + location.pathname + '">Alle Modelle anzeigen</a></p><p class="note">Die Auswahl steht nur in der Adresse dieser Seite – du kannst sie teilen. Nichts wird gespeichert.</p>';
+  box.hidden = false;
+})();
 (function () {
   'use strict';
   function num(v) { var n = parseFloat(String(v).replace(',', '.')); return isNaN(n) ? null : n; }
@@ -15,7 +29,7 @@
     function apply() {
       var shown = 0;
       rows.forEach(function (tr) {
-        var ok = true;
+        var ok = !AUSWAHL.length || AUSWAHL.indexOf(tr.dataset.slug) >= 0;
         form.querySelectorAll('[data-filter]').forEach(function (el) {
           var val = el.value.trim();
           if (!val) return;
@@ -29,7 +43,7 @@
         tr.hidden = !ok;
         if (ok) shown++;
       });
-      count.textContent = shown + ' von ' + rows.length + ' Modellen angezeigt';
+      count.textContent = shown + ' von ' + rows.length + ' Modellen angezeigt' + (AUSWAHL.length ? ' (deine Auswahl)' : '');
     }
     form.addEventListener('input', apply);
     form.addEventListener('change', apply);
@@ -77,6 +91,8 @@
   if (!nav) return;
   var links = Array.prototype.slice.call(nav.querySelectorAll('a[data-tab]'));
   var panels = links.map(function (a) { return document.getElementById(a.dataset.tab); });
+  var mitAuswahl = panels.filter(function (p) { return AUSWAHL.some(function (s) { return p.querySelector('tr[data-slug="' + s + '"]'); }); });
+  if (mitAuswahl.length > 1) return; // Auswahl aus beiden Kategorien: beide Tabellen untereinander zeigen
   nav.setAttribute('role', 'tablist');
   links.forEach(function (a, i) {
     a.setAttribute('role', 'tab');
@@ -111,5 +127,5 @@
   });
   window.addEventListener('hashchange', function () { show(location.hash.slice(1)); });
   document.documentElement.classList.add('js-tabs');
-  show(location.hash.slice(1));
+  show(location.hash.slice(1) || (mitAuswahl[0] && mitAuswahl[0].id) || '');
 })();

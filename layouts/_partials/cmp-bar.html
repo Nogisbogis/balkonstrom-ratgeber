@@ -1,0 +1,4 @@
+{{- /* Vergleichsleiste für Empfehlungen (erscheint erst nach Auswahl von 2 Modellen). */ -}}
+<div class="cmp-bar" id="cmp-bar" hidden aria-live="polite"><a class="btn" data-base="{{ "vergleich/" | relURL }}" href="{{ "vergleich/" | relURL }}">Modelle nebeneinander ansehen</a></div>
+{{ $js := resources.Get "js/auswahl.js" | minify | fingerprint }}
+<script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" defer></script>
