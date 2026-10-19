@@ -1,6 +1,8 @@
 # Nur Herstellerangaben. module_wp = mitgelieferte Modulleistung (0 = keine Module im Lieferumfang),
 # pv_max_w = max. PV-Eingang laut Hersteller (0 = nicht zutreffend), wechselrichter_w = netzgekoppelte
 # Ausgangsleistung, speicher_kwh = 0 bei Sets ohne Speicher. Stand: 19.10.2026
+# Produktbilder (bild*): nur aus Pressebereichen mit ausdrücklicher Erlaubnis für redaktionelle Nutzung;
+# Quelle, Lizenz und Bildnachweis je Bild angeben. Keine Amazon-Bilder.
 - modell: Anker SOLIX RS40P Balkonkraftwerk (2 × 445 W, MI80)
   typ: Set ohne Speicher
   module_wp: 890
@@ -25,6 +27,11 @@
   speicher_kwh: 2.688
   quelle: https://support.ankersolix.com/de/s/article/Anker-SOLIX-Solarbank-3-E2700-Pro-Benutzerhandbuch-A17C5
   asin: ""
+  bild: img/produkte/anker-solix-solarbank-3-e2700-pro.webp
+  bild_alt: "Anker SOLIX Solarbank 3 Pro in einer Studioaufnahme"
+  bild_credit: "Bild: Anker Solix / ots"
+  bild_quelle: https://www.presseportal.de/pm/179225/6008981
+  bild_lizenz: "presseportal.de: Verwendung für redaktionelle Zwecke honorarfrei, nur mit Bildrechte-Hinweis (https://www.presseportal.de/nutzungsbedingungen)"
 - modell: Zendure SolarFlow 800 Pro
   typ: Speicher mit Wechselrichter
   module_wp: 0

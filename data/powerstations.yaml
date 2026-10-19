@@ -1,5 +1,7 @@
 # Nur Herstellerangaben. Quelle pro Produkt angeben. asin nur setzen, wenn ein amazon.de-Angebot
 # für genau dieses Modell (ohne Bundle) geprüft wurde. Stand: 19.10.2026
+# Produktbilder (bild*): nur aus Pressebereichen mit ausdrücklicher Erlaubnis für redaktionelle Nutzung;
+# Quelle, Lizenz und Bildnachweis je Bild angeben. Keine Amazon-Bilder.
 - modell: EcoFlow RIVER 3
   kapazitaet_wh: 245
   dauerleistung_w: 300
@@ -40,6 +42,11 @@
   solareingang_w: 400
   quelle: https://www.dji.com/de/power-1000-mini/specs
   asin: B0GJC2M84T
+  bild: img/produkte/dji-power-1000-mini.webp
+  bild_alt: "DJI Power 1000 Mini auf einem Holzregal, Frontseite mit Anschlüssen"
+  bild_credit: "Bild: DJI"
+  bild_quelle: https://www.mynewsdesk.com/uk/dji/images/versatile-charging-ports-eu-dot-jpg-3454328
+  bild_lizenz: "Mynewsdesk-Lizenz „Media Use“ (unverändert, mit Urhebernennung), siehe Bildseite"
 - modell: Anker SOLIX C1000 Gen 2
   kapazitaet_wh: 1024
   dauerleistung_w: 2000
