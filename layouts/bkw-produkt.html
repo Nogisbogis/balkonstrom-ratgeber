@@ -1,0 +1,96 @@
+{{ define "main" }}
+{{- $p := index (where hugo.Data.balkonkraftwerke "modell" .Params.modell) 0 }}
+{{- if not $p }}{{ errorf "bkw-produkt: Modell %q nicht in data/balkonkraftwerke.yaml (%s)" .Params.modell .File.Path }}{{ end }}
+{{- $qidx := dict }}{{ range $i, $q := .Params.quellen }}{{ $qidx = merge $qidx (dict $q.id (add $i 1)) }}{{ end }}
+<article class="produkt">
+  {{ partial "breadcrumb.html" . }}
+  {{ partial "disclosure-box.html" . }}
+  <h1>{{ .Title }}</h1>
+  <p class="meta">Produktseite · Stand der Recherche <time datetime="{{ .Lastmod.Format "2006-01-02" }}">{{ .Lastmod.Format "02.01.2006" }}</time> · eigene Recherche, kein eigener Test</p>
+
+  <div class="p-top">
+    <div class="p-media">
+    {{- with $p.bild }}
+      <figure class="pbild"><img src="{{ . | relURL }}" alt="{{ $p.bild_alt }}" width="600" height="338" decoding="async"><figcaption>{{ $p.bild_credit }}</figcaption></figure>
+    {{- else }}
+      <div class="pbild-leer" aria-hidden="true"><span>Balkonkraftwerk</span><small>kein freigegebenes Pressefoto</small></div>
+    {{- end }}
+    </div>
+    <div class="p-eck">
+      <dl class="p-kern">
+        <div><dt>Typ</dt><dd>{{ $p.typ }}</dd></div>
+        {{- if gt $p.speicher_kwh 0 }}<div><dt>Speicher</dt><dd>{{ replace (string $p.speicher_kwh) "." "," }} kWh{{ if gt $p.max_kwh $p.speicher_kwh }}<small> · bis {{ replace (string (div (math.Round (mul $p.max_kwh 10)) 10.0)) "." "," }} kWh</small>{{ end }}</dd></div>{{ end }}
+        {{- if gt $p.module_wp 0 }}<div><dt>Module</dt><dd>{{ lang.FormatNumber 0 $p.module_wp }} Wp</dd></div>{{ end }}
+        {{- if gt $p.pv_max_w 0 }}<div><dt>PV-Eingang max.</dt><dd>{{ lang.FormatNumber 0 $p.pv_max_w }} W · {{ $p.mppt }} MPPT</dd></div>{{ else }}<div><dt>PV-Eingänge</dt><dd>{{ $p.mppt }} MPPT</dd></div>{{ end }}
+        <div><dt>Netz-Ausgang</dt><dd>{{ $p.wechselrichter_w }} W</dd></div>
+        <div><dt>Notstrom-Steckdose</dt><dd>{{ if gt $p.notstrom_w 0 }}{{ lang.FormatNumber 0 $p.notstrom_w }} W{{ else }}nein{{ end }}</dd></div>
+        <div><dt>Garantie</dt><dd>{{ $p.garantie }}</dd></div>
+      </dl>
+      <p class="note">Herstellerangaben, Belege unten in der Tabelle.</p>
+      {{- with .Params.warnung }}<p class="notice p-warn">{{ . | $.RenderString }}</p>{{ end }}
+      <p class="pcard-links">
+      {{- with $p.asin }}<a class="btn btn-amazon" href="{{ partial "amazon-url.html" . }}" rel="sponsored nofollow noopener" target="_blank">Bei Amazon ansehen<span class="ad-mark" title="Affiliate-Link">*</span></a>{{ else }}<span class="note">Kein Kauflink: Wir haben kein Amazon-Angebot gefunden, das eindeutig zu genau diesem Modell passt.</span>{{ end }}
+      <a class="btn-sec" href="{{ "amortisationsrechner/" | relURL }}">Lohnt sich das? Rechner</a>
+      </p>
+    </div>
+  </div>
+
+  <section class="p-fazit" aria-labelledby="fazit"><h2 id="fazit">Kurzfazit</h2>{{ .Params.kurzfazit | .RenderString (dict "display" "block") }}</section>
+
+  <div class="p-fuer">
+    <section><h2 id="fuer-wen">Für wen geeignet</h2><ul class="ja">{{ range .Params.fuer }}<li>{{ . | $.RenderString }}</li>{{ end }}</ul></section>
+    <section><h2 id="nicht-fuer">Für wen eher nicht</h2><ul class="nein">{{ range .Params.nicht_fuer }}<li>{{ . | $.RenderString }}</li>{{ end }}</ul></section>
+  </div>
+
+  <h2 id="daten">Technische Daten</h2>
+  <div class="tablewrap"><table class="p-daten">
+    <thead><tr><th scope="col">Merkmal</th><th scope="col">Angabe</th><th scope="col">Quelle</th></tr></thead>
+    <tbody>
+    {{- range .Params.daten }}
+      {{- if .gruppe }}<tr class="gruppe"><th colspan="3" scope="rowgroup">{{ .gruppe }}</th></tr>{{ else }}
+      <tr{{ if .hinweis }} class="hat-hinweis"{{ end }}><th scope="row">{{ .k }}</th><td>{{ .v | $.RenderString }}{{ with .hinweis }}<span class="d-hinweis">{{ . | $.RenderString }}</span>{{ end }}</td><td class="qcell">{{ partial "qref.html" (dict "ids" .q "idx" $qidx) }}</td></tr>
+      {{- end }}
+    {{- end }}
+    </tbody>
+  </table></div>
+
+  {{- with .Params.widersprueche }}
+  <section class="p-wider" aria-labelledby="widersprueche"><h2 id="widersprueche">Wo sich Quellen widersprechen</h2>
+  <ul>{{ range . }}<li>{{ .t | $.RenderString }} {{ partial "qref.html" (dict "ids" .q "idx" $qidx) }}</li>{{ end }}</ul></section>
+  {{- end }}
+
+  <div class="p-sw">
+    <section><h2 id="staerken">Stärken</h2><ul class="ja">{{ range .Params.staerken }}<li>{{ .t | $.RenderString }} {{ partial "qref.html" (dict "ids" .q "idx" $qidx) }}</li>{{ end }}</ul></section>
+    <section><h2 id="schwaechen">Schwächen</h2><ul class="nein">{{ range .Params.schwaechen }}<li>{{ .t | $.RenderString }} {{ partial "qref.html" (dict "ids" .q "idx" $qidx) }}</li>{{ end }}</ul></section>
+  </div>
+
+  <section aria-labelledby="tests"><h2 id="tests">Was Tests sagen</h2>
+  {{- range .Params.tests }}
+    <div class="p-test">
+      <h3><a href="{{ .url }}" rel="noopener" target="_blank">{{ .name }}</a>{{ with .datum }} <small>({{ . }})</small>{{ end }}</h3>
+      {{ with .urteil }}<p class="urteil">{{ . }}</p>{{ end }}
+      {{ .text | $.RenderString (dict "display" "block") }}
+    </div>
+  {{- end }}
+  {{ with .Params.tests_hinweis }}<p class="note">{{ . | $.RenderString }}</p>{{ end }}
+  <p class="note">Testnoten geben wir nur wieder, wenn wir sie in der Originalquelle gefunden haben; Angaben aus Berichten Dritter sind als solche gekennzeichnet. Wir haben das Gerät nicht selbst getestet.</p>
+  </section>
+
+  {{- with .Params.alternativen }}
+  <section aria-labelledby="alternativen"><h2 id="alternativen">Alternativen</h2>
+  <ul class="p-alt">{{ range . }}{{ $warum := .warum }}{{ $a := index (where hugo.Data.balkonkraftwerke "slug" .slug) 0 }}{{ with site.GetPage (printf "/balkonkraftwerke/%s" .slug) }}<li><a href="{{ .RelPermalink }}"><strong>{{ .Title }}</strong></a> <span class="note">{{ if gt $a.speicher_kwh 0 }}{{ replace (string $a.speicher_kwh) "." "," }} kWh · {{ lang.FormatNumber 0 $a.pv_max_w }} W PV · {{ end }}{{ if gt $a.module_wp 0 }}{{ $a.module_wp }} Wp · {{ end }}{{ $a.mppt }} MPPT · Notstrom {{ if gt $a.notstrom_w 0 }}{{ $a.notstrom_w }} W{{ else }}nein{{ end }}</span>{{ with $warum }}<br>{{ . | $.RenderString }}{{ end }}</li>{{ else }}{{ errorf "alternativen: %q fehlt" .slug }}{{ end }}{{ end }}</ul>
+  </section>
+  {{- end }}
+
+  {{- $posts := slice }}{{ range where site.RegularPages "Section" "posts" }}{{ if findRE (printf "(?:%s)(?:$|[^ A-Za-z0-9]| [^P])" $p.kurzname) .RawContent 1 }}{{ $posts = $posts | append . }}{{ end }}{{ end }}
+  {{- with $posts }}
+  <section aria-labelledby="artikel"><h2 id="artikel">Erwähnt in diesen Artikeln</h2>
+  <ul class="cards">{{ range . }}{{ partial "card.html" . }}{{ end }}</ul></section>
+  {{- end }}
+
+  <section class="p-quellen" aria-labelledby="quellen"><h2 id="quellen">Quellen</h2>
+  <ol>{{ range .Params.quellen }}<li id="q-{{ .id }}"><a href="{{ .url }}" rel="noopener" target="_blank">{{ .titel }}</a>{{ with .art }} <span class="note">– {{ . }}</span>{{ end }}</li>{{ end }}</ol>
+  <p class="note">Alle Links abgerufen am {{ .Lastmod.Format "02.01.2006" }}. Herstellerangaben können sich ändern; maßgeblich ist das Datenblatt zum Zeitpunkt des Kaufs. Ob und wie du ein Balkonkraftwerk anmelden musst und was am Zählerplatz gilt, steht in unserem <a href="{{ "posts/balkonkraftwerk-anmelden-2026/" | relURL }}">Artikel zur Anmeldung</a>.</p>
+  </section>
+</article>
+{{ end }}

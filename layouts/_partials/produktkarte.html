@@ -9,7 +9,7 @@
   {{- end }}
   </div>
   <div class="pcard-body">
-    {{- $seite := "" }}{{ with $p.slug }}{{ with site.GetPage (printf "/powerstations/%s" .) }}{{ $seite = .RelPermalink }}{{ end }}{{ end }}
+    {{- $seite := "" }}{{ with $p.slug }}{{ with site.GetPage (printf "/%s/%s" (cond (eq $art "ps") "powerstations" "balkonkraftwerke") .) }}{{ $seite = .RelPermalink }}{{ end }}{{ end }}
     <h3>{{ with $seite }}<a href="{{ . }}">{{ $p.modell }}</a>{{ else }}{{ $p.modell }}{{ end }}</h3>
     <dl class="specs">
     {{- if eq $art "ps" }}

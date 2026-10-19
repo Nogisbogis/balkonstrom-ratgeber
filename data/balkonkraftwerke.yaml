@@ -3,29 +3,50 @@
 # Ausgangsleistung, speicher_kwh = 0 bei Sets ohne Speicher. Stand: 19.10.2026
 # Produktbilder (bild*): nur aus Pressebereichen mit ausdrücklicher Erlaubnis für redaktionelle Nutzung;
 # Quelle, Lizenz und Bildnachweis je Bild angeben. Keine Amazon-Bilder.
+# slug = Produktseite /balkonkraftwerke/<slug>/; kurzname = Suchmuster (| getrennt) für Artikel-Verweise.
+# mppt, notstrom_w (0 = keine netzunabhängige Steckdose), max_kwh (0 = kein Speicher), garantie: Herstellerangaben,
+# Belege und Widersprüche auf der Produktseite (content/balkonkraftwerke/<slug>.md).
 - modell: Anker SOLIX RS40P Balkonkraftwerk (2 × 445 W, MI80)
+  slug: "anker-solix-rs40p"
+  kurzname: "RS40P"
+  mppt: 2
+  notstrom_w: 0
+  max_kwh: 0
+  garantie: "15 J. Module, 10 J. Wechselrichter"
   typ: Set ohne Speicher
   module_wp: 890
   pv_max_w: 0
   wechselrichter_w: 800
   speicher_kwh: 0
-  quelle: https://www.ankersolix.com/eu/products/b5143
+  quelle: https://bilder.obi.at/8f11a88f-d87c-4cdc-969c-6c325e889963/serve.php
   asin: B0CB86CXLD
 - modell: Anker SOLIX Solarbank 2 E1600 Pro
+  slug: "anker-solix-solarbank-2-e1600-pro"
+  kurzname: "Solarbank 2 E1600 Pro|Solarbank 2 Pro"
+  mppt: 4
+  notstrom_w: 1000
+  max_kwh: 9.6
+  garantie: "10 Jahre"
   typ: Speicher mit Wechselrichter
   module_wp: 0
   pv_max_w: 2400
   wechselrichter_w: 800
   speicher_kwh: 1.6
-  quelle: https://support.ankersolix.com/s/article/Anker-SOLIX-Solarbank-2-E1600-Pro-Benutzerhandbuch-A17C1-CH
+  quelle: https://www.ankersolix.com/de/balkonkraftwerk-mit-speicher/solarbank2-a17c1-bms
   asin: B0D1X82HDL
 - modell: Anker SOLIX Solarbank 3 E2700 Pro
+  slug: "anker-solix-solarbank-3-e2700-pro"
+  kurzname: "Solarbank 3 E2700 Pro|Solarbank 3 Pro"
+  mppt: 4
+  notstrom_w: 1200
+  max_kwh: 16.128
+  garantie: "10 Jahre"
   typ: Speicher mit Wechselrichter
   module_wp: 0
   pv_max_w: 3600
   wechselrichter_w: 800
   speicher_kwh: 2.688
-  quelle: https://support.ankersolix.com/de/s/article/Anker-SOLIX-Solarbank-3-E2700-Pro-Benutzerhandbuch-A17C5
+  quelle: https://support.ankersolix.com/s/article/Anker-SOLIX-Solarbank-3-E2700-Pro-A17C5-User-Guide
   asin: ""
   bild: img/produkte/anker-solix-solarbank-3-e2700-pro.webp
   bild_alt: "Anker SOLIX Solarbank 3 Pro in einer Studioaufnahme"
@@ -33,6 +54,12 @@
   bild_quelle: https://www.presseportal.de/pm/179225/6008981
   bild_lizenz: "presseportal.de: Verwendung für redaktionelle Zwecke honorarfrei, nur mit Bildrechte-Hinweis (https://www.presseportal.de/nutzungsbedingungen)"
 - modell: Zendure SolarFlow 800 Pro
+  slug: "zendure-solarflow-800-pro"
+  kurzname: "SolarFlow 800 Pro"
+  mppt: 4
+  notstrom_w: 1000
+  max_kwh: 11.52
+  garantie: "10 Jahre"
   typ: Speicher mit Wechselrichter
   module_wp: 0
   pv_max_w: 2640
@@ -41,6 +68,12 @@
   quelle: https://www.zendure.de/products/solarflow-800-pro
   asin: ""
 - modell: EcoFlow STREAM Ultra
+  slug: "ecoflow-stream-ultra"
+  kurzname: "STREAM Ultra|Stream Ultra"
+  mppt: 4
+  notstrom_w: 1200
+  max_kwh: 11.52
+  garantie: "10 Jahre"
   typ: Speicher mit Wechselrichter
   module_wp: 0
   pv_max_w: 2000
@@ -49,6 +82,12 @@
   quelle: https://de.ecoflow.com/pages/stream-series-plug-in-battery
   asin: B0F5B93DTV
 - modell: EcoFlow STREAM Pro
+  slug: "ecoflow-stream-pro"
+  kurzname: "STREAM Pro|Stream Pro"
+  mppt: 3
+  notstrom_w: 1200
+  max_kwh: 11.52
+  garantie: "k. A."
   typ: Speicher mit Wechselrichter
   module_wp: 0
   pv_max_w: 1500
@@ -57,6 +96,12 @@
   quelle: "https://ecoflow-service-us-prod.oss-us-west-1.aliyuncs.com/cms/manual/1750903136593/EcoFlow%20STREAM%20Ultra%20%26%20Pro_User%20Manual.pdf"
   asin: B0F5B7WDQ4
 - modell: Growatt NEXA 2000
+  slug: "growatt-nexa-2000"
+  kurzname: "NEXA 2000|Nexa 2000"
+  mppt: 4
+  notstrom_w: 800
+  max_kwh: 8.192
+  garantie: "10 Jahre"
   typ: Speicher mit Wechselrichter
   module_wp: 0
   pv_max_w: 2600

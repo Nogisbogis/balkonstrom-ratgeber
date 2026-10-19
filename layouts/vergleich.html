@@ -90,13 +90,13 @@
     <tbody>
     {{ range hugo.Data.balkonkraftwerke }}
       <tr data-typ="{{ .typ }}" data-speicher="{{ .speicher_kwh }}" data-pv="{{ cond (gt .pv_max_w 0) .pv_max_w .module_wp }}">
-        <td class="col-modell">{{ partial "thumb.html" . }}<span class="mname">{{ .modell }}</span></td>
+        <td class="col-modell">{{ partial "thumb.html" . }}<span class="mname">{{ $m := .modell }}{{ with site.GetPage (printf "/balkonkraftwerke/%s" (.slug | default "-")) }}<a href="{{ .RelPermalink }}">{{ $m }}</a>{{ else }}{{ $m }}{{ end }}</span></td>
         <td>{{ .typ }}</td>
         <td class="r" data-v="{{ .speicher_kwh }}">{{ if gt .speicher_kwh 0 }}{{ replace (string .speicher_kwh) "." "," }}{{ else }}nein{{ end }}</td>
         <td class="r" data-v="{{ .pv_max_w }}">{{ if gt .pv_max_w 0 }}{{ lang.FormatNumber 0 .pv_max_w }}{{ else }}–{{ end }}</td>
         <td class="r" data-v="{{ .module_wp }}">{{ if gt .module_wp 0 }}{{ lang.FormatNumber 0 .module_wp }}{{ else }}–{{ end }}</td>
         <td class="r" data-v="{{ .wechselrichter_w }}">{{ .wechselrichter_w }}</td>
-        <td class="links"><a href="{{ .quelle }}" rel="noopener nofollow" target="_blank">Quelle</a>{{ with .asin }}<br><a class="amazon-link" href="{{ partial "amazon-url.html" . }}" rel="sponsored nofollow noopener" target="_blank">Amazon</a><sup class="ad-mark">*</sup>{{ end }}</td>
+        <td class="links">{{ with site.GetPage (printf "/balkonkraftwerke/%s" (.slug | default "-")) }}<a href="{{ .RelPermalink }}">Details</a><br>{{ end }}<a href="{{ .quelle }}" rel="noopener nofollow" target="_blank">Quelle</a>{{ with .asin }}<br><a class="amazon-link" href="{{ partial "amazon-url.html" . }}" rel="sponsored nofollow noopener" target="_blank">Amazon</a><sup class="ad-mark">*</sup>{{ end }}</td>
       </tr>
     {{ end }}
     </tbody>

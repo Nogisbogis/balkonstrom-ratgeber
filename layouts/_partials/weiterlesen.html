@@ -3,6 +3,7 @@
 {{- $produkte := slice }}
 {{- if eq .Section "posts" }}
   {{- range hugo.Data.powerstations }}{{ if findRE (printf "%s(?:$|[^ A-Za-z0-9]| [^P])" (.modell | strings.TrimSpace | replaceRE `([.+*?()|\[\]{}^$\\])` `\$1`)) $p.RawContent 1 }}{{ with site.GetPage (printf "/powerstations/%s" .slug) }}{{ $produkte = $produkte | append . }}{{ end }}{{ end }}{{ end }}
+  {{- range hugo.Data.balkonkraftwerke }}{{ if findRE (printf "(?:%s)(?:$|[^ A-Za-z0-9]| [^P])" .kurzname) $p.RawContent 1 }}{{ with site.GetPage (printf "/balkonkraftwerke/%s" .slug) }}{{ $produkte = $produkte | append . }}{{ end }}{{ end }}{{ end }}
 {{- end }}
 {{- $rel := slice }}
 {{- range site.RegularPages.Related . }}{{ if and (eq .Section "posts") (ne .RelPermalink $p.RelPermalink) }}{{ $rel = $rel | append . }}{{ end }}{{ end }}
