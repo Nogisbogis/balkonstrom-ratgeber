@@ -2,7 +2,7 @@
 title = 'Balkonkraftwerk mit Speicher: Lohnt sich das? Kaufberatung 2026'
 date = '2026-10-19'
 description = 'Wann ein Speicher fürs Balkonkraftwerk wirtschaftlich sinnvoll ist, was der Test der Stiftung Warentest zeigt und worauf du beim Kauf achten solltest.'
-draft = true
+draft = false
 +++
 
 Ein Balkonkraftwerk produziert Strom vor allem mittags – gebraucht wird er in vielen Haushalten aber morgens und abends. Ein Speicher soll diese Lücke schließen. Ob sich das rechnet, hängt weniger vom Gerät ab als von deinem Verbrauch, deiner Modulleistung und dem Kaufpreis. Hier die wichtigsten Punkte, nüchtern zusammengefasst.

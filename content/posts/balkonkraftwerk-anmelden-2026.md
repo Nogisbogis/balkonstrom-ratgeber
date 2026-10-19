@@ -2,7 +2,7 @@
 title = 'Balkonkraftwerk anmelden 2026: 800-Watt-Regel, Marktstammdatenregister, Steckdose – was gilt'
 date = '2026-10-19'
 description = 'Die aktuellen Regeln für Balkonkraftwerke in Deutschland: Leistungsgrenzen, Registrierung im Marktstammdatenregister, Zählertausch, Schuko-Stecker nach neuer VDE-Norm sowie Rechte von Mietern und Wohnungseigentümern.'
-draft = true
+draft = false
 +++
 
 Für Balkonkraftwerke – offiziell „Steckersolargeräte“ – gelten seit 2024 deutlich einfachere Regeln. Mit dem Solarpaket I, einer Änderung von Miet- und Wohnungseigentumsrecht und der neuen Produktnorm DIN VDE V 0126-95 vom Dezember 2025 hat sich viel geändert. Hier ist der Stand im Oktober 2026, mit Quellen.

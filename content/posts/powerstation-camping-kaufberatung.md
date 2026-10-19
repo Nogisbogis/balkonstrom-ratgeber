@@ -2,7 +2,7 @@
 title = 'Beste Powerstation fürs Camping: worauf es ankommt (mit Vergleich)'
 date = '2026-10-19'
 description = 'Kapazität, Dauerleistung, Gewicht, Solareingang und Sicherheit: So findest du die passende Powerstation fürs Camping – mit Herstellerdaten und unabhängigen Testergebnissen.'
-draft = true
+draft = false
 +++
 
 Eine Powerstation ist ein großer Akku mit Steckdosen, USB-Anschlüssen und meist einem Solareingang. Beim Camping versorgt sie Kühlbox, Licht, Handy und Laptop – je nach Größe auch eine Kaffeemaschine. Die „beste“ Powerstation gibt es nicht: Entscheidend ist, was du betreiben willst, wie lange und wie viel du tragen möchtest.
