@@ -12,11 +12,11 @@ Ein Balkonkraftwerk produziert Strom vor allem mittags – gebraucht wird er in 
 - Ein Speicher erhöht den Anteil des Solarstroms, den du selbst nutzt. Er erzeugt keinen zusätzlichen Strom.
 - Er lohnt sich am ehesten, wenn deine Module tagsüber regelmäßig mehr erzeugen, als du gleichzeitig verbrauchst.
 - Die Stiftung Warentest hat im März 2026 fünf Balkonkraftwerk-Speicher geprüft: Drei bekamen wegen zu starker elektromagnetischer Störungen die Note „mangelhaft“.
-- Auch mit Speicher gilt für den vereinfachten Betrieb: höchstens 800 VA Wechselrichterleistung und 2.000 Wp Modulleistung. Der Speicher muss zusätzlich im Marktstammdatenregister eingetragen werden.
+- Auch mit Speicher gilt für den vereinfachten Betrieb: höchstens 800 VA Wechselrichterleistung und 2.000 Wp Modulleistung. Der Speicher muss bei der Registrierung im Marktstammdatenregister mit angegeben und laut Bundeswirtschaftsministerium zusätzlich beim Netzbetreiber angemeldet werden.
 
 ## Was ein Speicher am Balkonkraftwerk tatsächlich macht
 
-Ohne Speicher fließt der Solarstrom über den Wechselrichter direkt ins Hausnetz. Was in dem Moment nicht verbraucht wird – etwa vom Kühlschrank, Router oder der Waschmaschine –, geht ins öffentliche Netz. Bei der vereinfachten Anmeldung verzichten die meisten Betreiber auf eine Einspeisevergütung; dieser Strom bringt dir dann nichts.
+Ohne Speicher fließt der Solarstrom über den Wechselrichter direkt ins Hausnetz. Was in dem Moment nicht verbraucht wird – etwa vom Kühlschrank, Router oder der Waschmaschine –, geht ins öffentliche Netz. Wer die Sonderregelung für Steckersolargeräte nutzt, bekommt für diesen Strom laut Bundeswirtschaftsministerium keine Vergütung („unentgeltliche Abnahme“) – er bringt dir also nichts.
 
 Ein Speicher lädt tagsüber mit dem Überschuss und gibt die Energie später wieder ab, zum Beispiel abends. Die meisten aktuellen Geräte sind „All-in-one“-Systeme: Die Module werden direkt am Speicher angeschlossen, der einen integrierten Wechselrichter hat und mit höchstens 800 W ins Hausnetz einspeist. Steuern lässt sich das meist per App, mit einem zusätzlichen Smart Meter oder Messgerät am Zähler auch automatisch nach dem aktuellen Verbrauch („Nulleinspeisung“).
 
@@ -66,7 +66,7 @@ Welche Modelle genau welche Note bekommen haben, steht im kostenpflichtigen Teil
 
 ## Anmeldung: Was beim Speicher dazukommt
 
-Ein Balkonkraftwerk muss im Marktstammdatenregister der Bundesnetzagentur registriert werden. Ein Speicher ist dort eine eigene Einheit und muss ebenfalls eingetragen werden – bei der Erstregistrierung des Balkonkraftwerks kannst du ihn direkt mit angeben. Alles Weitere zu Anmeldung, 800-Watt-Grenze und Steckdose steht in unserem Artikel zur Anmeldung.
+Ein Balkonkraftwerk muss im Marktstammdatenregister der Bundesnetzagentur registriert werden. Einen Speicher gibst du dort mit an: Im Registrierungsformular fragt das Register, ob du zusätzlich einen Stromspeicher betreibst, und erfasst dann dessen technische Daten. Laut der Kurzinformation des Bundeswirtschaftsministeriums (Stand März 2026) muss ein Speicher außerdem beim Netzbetreiber angemeldet werden – anders als das Balkonkraftwerk selbst. Frag im Zweifel bei deinem Netzbetreiber nach, welches Formular er dafür nutzt. Alles Weitere zu Anmeldung, 800-Watt-Grenze und Steckdose steht in unserem Artikel zur Anmeldung.
 
 ## Modelle im Überblick
 
@@ -86,6 +86,7 @@ Ein Speicher ist dann sinnvoll, wenn dein Balkonkraftwerk regelmäßig deutlich 
 
 - Stiftung Warentest: [Speicher für Balkonkraftwerke im Test](https://www.test.de/speicher-fuer-balkonkraftwerke-test-6278221-0/), 19.03.2026
 - Stiftung Warentest: [FAQ Balkonkraftwerke](https://www.test.de/FAQ-Balkonkraftwerke-Solarstrom-vom-Balkon-so-geht-6283953-0/)
+- Bundesministerium für Wirtschaft und Energie: [Kurzinformation zu Steckersolargeräten](https://www.bundeswirtschaftsministerium.de/Redaktion/DE/Downloads/J-L/kurzinformation-zu-steckersolargeraeten.pdf?__blob=publicationFile&v=11), Stand März 2026
 - Umweltbundesamt: [Steckersolargeräte (Balkonkraftwerke)](https://www.umweltbundesamt.de/themen/klima-energie/erneuerbare-energien/photovoltaik/steckersolargeraete-balkonkraftwerke)
 - Bundesnetzagentur, Marktstammdatenregister: [Häufige Fragen](https://www.marktstammdatenregister.de/MaStRHilfe/subpages/faq.html) und [Registrierungshilfe für Balkonkraftwerke](https://www.marktstammdatenregister.de/MaStRHilfe/files/regHilfen/Registrierungshilfe_Balkonkraftwerk.pdf)
 - Herstellerangaben: [Anker SOLIX Solarbank 2 E1600 Pro – Benutzerhandbuch](https://support.ankersolix.com/s/article/Anker-SOLIX-Solarbank-2-E1600-Pro-Benutzerhandbuch-A17C1-CH), [EcoFlow STREAM-Serie](https://de.ecoflow.com/pages/stream-series-plug-in-battery), [Growatt NEXA 2000 Datenblatt](https://de.growatt.com/upload/file/Nexa2000_Datenblatt_202504_DE.pdf)
