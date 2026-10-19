@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 254" width="760" height="254" role="img" aria-labelledby="t d" lang="de">
+<title id="t">Die fünf Angaben bei der Registrierung im Marktstammdatenregister</title>
+<desc id="d">Fünf Karten: 1. Standort der Anlage, 2. Datum der Inbetriebnahme, 3. Gesamtleistung der Module in Watt, 4. Leistung des Wechselrichters, 5. Nummer des Stromzählers. Hinweis: Mit Speicher die Frage nach dem Stromspeicher mit Ja beantworten und dessen Daten angeben.</desc>
+<style>
+.bg{fill:#ffffff}.t{fill:#1d2a33}.m{fill:#5b6b75}.g{stroke:#dde5e0}.ax{stroke:#5b6b75}
+.a{fill:#0b7a4b}.as{stroke:#0b7a4b}.b{fill:#9a5b00}.bs{stroke:#9a5b00}.c{fill:#2f5d8a}.cs{stroke:#2f5d8a}
+.box{fill:#f3f7f4;stroke:#9fb5a8}.boxa{fill:#e3f2ea;stroke:#0b7a4b}.boxb{fill:#fbefdc;stroke:#9a5b00}
+.ar{fill:#5b6b75}.ars{stroke:#5b6b75}.al{fill:#0b7a4b;fill-opacity:.18}.bl{fill:#9a5b00;fill-opacity:.18}
+text{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+@media (prefers-color-scheme:dark){
+.bg{fill:#121816}.t{fill:#e3ebe6}.m{fill:#9fb0a8}.g{stroke:#2a3631}.ax{stroke:#9fb0a8}
+.a{fill:#4fd197}.as{stroke:#4fd197}.b{fill:#e8b04f}.bs{stroke:#e8b04f}.c{fill:#7fb2e5}.cs{stroke:#7fb2e5}
+.box{fill:#18211d;stroke:#3b4a43}.boxa{fill:#14302a;stroke:#4fd197}.boxb{fill:#33280f;stroke:#e8b04f}
+.ar{fill:#9fb0a8}.ars{stroke:#9fb0a8}.al{fill:#4fd197;fill-opacity:.2}.bl{fill:#e8b04f;fill-opacity:.2}}
+</style>
+<rect class="bg" width="760" height="254" rx="8"/>
+<text x="20" y="30" class="t" font-size="18" text-anchor="start" font-weight="bold" >Diese 5 Angaben fragt das Marktstammdatenregister ab</text>
+<text x="20" y="52" class="m" font-size="12.5" text-anchor="start" font-weight="normal" >Registrierung innerhalb eines Monats nach Inbetriebnahme, mit Benutzerkonto im Register</text>
+<rect x="20" y="76" width="136" height="100" class="box" rx="8" stroke-width="1.5"/>
+<circle cx="88.0" cy="104" r="15" class="a"/>
+<text x="88.0" y="109" class="bg" font-size="15" text-anchor="middle" font-weight="bold" >1</text>
+<text x="88.0" y="142" class="t" font-size="13.5" text-anchor="middle" font-weight="bold" >Standort</text>
+<text x="88.0" y="161" class="m" font-size="11.5" text-anchor="middle" font-weight="normal" >der Anlage</text>
+<rect x="166" y="76" width="136" height="100" class="box" rx="8" stroke-width="1.5"/>
+<circle cx="234.0" cy="104" r="15" class="a"/>
+<text x="234.0" y="109" class="bg" font-size="15" text-anchor="middle" font-weight="bold" >2</text>
+<text x="234.0" y="142" class="t" font-size="13.5" text-anchor="middle" font-weight="bold" >Datum</text>
+<text x="234.0" y="161" class="m" font-size="11.5" text-anchor="middle" font-weight="normal" >der Inbetriebnahme</text>
+<rect x="312" y="76" width="136" height="100" class="box" rx="8" stroke-width="1.5"/>
+<circle cx="380.0" cy="104" r="15" class="a"/>
+<text x="380.0" y="109" class="bg" font-size="15" text-anchor="middle" font-weight="bold" >3</text>
+<text x="380.0" y="142" class="t" font-size="13.5" text-anchor="middle" font-weight="bold" >Modulleistung</text>
+<text x="380.0" y="161" class="m" font-size="11.5" text-anchor="middle" font-weight="normal" >gesamt in Watt</text>
+<rect x="458" y="76" width="136" height="100" class="box" rx="8" stroke-width="1.5"/>
+<circle cx="526.0" cy="104" r="15" class="a"/>
+<text x="526.0" y="109" class="bg" font-size="15" text-anchor="middle" font-weight="bold" >4</text>
+<text x="526.0" y="142" class="t" font-size="13.5" text-anchor="middle" font-weight="bold" >Wechselrichter</text>
+<text x="526.0" y="161" class="m" font-size="11.5" text-anchor="middle" font-weight="normal" >Leistung</text>
+<rect x="604" y="76" width="136" height="100" class="box" rx="8" stroke-width="1.5"/>
+<circle cx="672.0" cy="104" r="15" class="a"/>
+<text x="672.0" y="109" class="bg" font-size="15" text-anchor="middle" font-weight="bold" >5</text>
+<text x="672.0" y="142" class="t" font-size="13.5" text-anchor="middle" font-weight="bold" >Zählernummer</text>
+<text x="672.0" y="161" class="m" font-size="11.5" text-anchor="middle" font-weight="normal" >deines Stromzählers</text>
+<rect x="20" y="190" width="720" height="34" class="boxb" rx="6" stroke-width="1.2"/>
+<text x="32" y="212" class="t" font-size="12.5" text-anchor="start" font-weight="normal" >Mit Speicher: Frage nach dem Stromspeicher mit „Ja“ beantworten und dessen Daten angeben.</text>
+<text x="20" y="243" class="m" font-size="11.5" text-anchor="start" font-weight="normal" >Quelle: Bundesnetzagentur, Registrierungshilfe für Balkonkraftwerke; Bundeswirtschaftsministerium.</text>
+</svg>

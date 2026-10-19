@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 550" width="760" height="550" role="img" aria-labelledby="t d" lang="de">
+<title id="t">Was läuft wie lange? Rechnerische Laufzeiten ohne Umwandlungsverluste</title>
+<desc id="d">LED-Lampe mit Beispielwert 10 W – 245 Wh: etwa 24,5 Stunden, 1.024 Wh: etwa 102,4 Stunden, 2.048 Wh: etwa 204,8 Stunden; Kompressor-Kühlbox (Mittelwert) mit Beispielwert 40 W – 245 Wh: etwa 6,1 Stunden, 1.024 Wh: etwa 25,6 Stunden, 2.048 Wh: etwa 51,2 Stunden; Laptop mit Beispielwert 60 W – 245 Wh: etwa 4,1 Stunden, 1.024 Wh: etwa 17,1 Stunden, 2.048 Wh: etwa 34,1 Stunden; Kaffeemaschine mit Beispielwert 1000 W – 245 Wh: läuft nicht, 1.024 Wh: etwa 1,0 Stunden, 2.048 Wh: etwa 2,0 Stunden.</desc>
+<style>
+.bg{fill:#ffffff}.t{fill:#1d2a33}.m{fill:#5b6b75}.g{stroke:#dde5e0}.ax{stroke:#5b6b75}
+.a{fill:#0b7a4b}.as{stroke:#0b7a4b}.b{fill:#9a5b00}.bs{stroke:#9a5b00}.c{fill:#2f5d8a}.cs{stroke:#2f5d8a}
+.box{fill:#f3f7f4;stroke:#9fb5a8}.boxa{fill:#e3f2ea;stroke:#0b7a4b}.boxb{fill:#fbefdc;stroke:#9a5b00}
+.ar{fill:#5b6b75}.ars{stroke:#5b6b75}.al{fill:#0b7a4b;fill-opacity:.18}.bl{fill:#9a5b00;fill-opacity:.18}
+text{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+@media (prefers-color-scheme:dark){
+.bg{fill:#121816}.t{fill:#e3ebe6}.m{fill:#9fb0a8}.g{stroke:#2a3631}.ax{stroke:#9fb0a8}
+.a{fill:#4fd197}.as{stroke:#4fd197}.b{fill:#e8b04f}.bs{stroke:#e8b04f}.c{fill:#7fb2e5}.cs{stroke:#7fb2e5}
+.box{fill:#18211d;stroke:#3b4a43}.boxa{fill:#14302a;stroke:#4fd197}.boxb{fill:#33280f;stroke:#e8b04f}
+.ar{fill:#9fb0a8}.ars{stroke:#9fb0a8}.al{fill:#4fd197;fill-opacity:.2}.bl{fill:#e8b04f;fill-opacity:.2}}
+</style>
+<rect class="bg" width="760" height="550" rx="8"/>
+<text x="20" y="30" class="t" font-size="18" text-anchor="start" font-weight="bold" >Was läuft wie lange? Rechnerische Laufzeit</text>
+<text x="20" y="52" class="m" font-size="12.5" text-anchor="start" font-weight="normal" >Kapazität laut Hersteller ÷ Geräteleistung. Geräteleistungen sind Beispielwerte, keine Messwerte.</text>
+<text x="20" y="70" class="b" font-size="12.5" text-anchor="start" font-weight="bold" >Umwandlungsverluste sind nicht abgezogen – die reale Laufzeit ist kürzer.</text>
+<rect x="400" y="74" width="12" height="12" class="a" rx="2" />
+<text x="417" y="84" class="t" font-size="12" text-anchor="start" font-weight="normal" >245 Wh</text>
+<rect x="520" y="74" width="12" height="12" class="c" rx="2" />
+<text x="537" y="84" class="t" font-size="12" text-anchor="start" font-weight="normal" >1.024 Wh</text>
+<rect x="640" y="74" width="12" height="12" class="b" rx="2" />
+<text x="657" y="84" class="t" font-size="12" text-anchor="start" font-weight="normal" >2.048 Wh</text>
+<text x="20" y="118" class="t" font-size="13.5" text-anchor="start" font-weight="bold" >LED-Lampe</text>
+<text x="20" y="136" class="m" font-size="12" text-anchor="start" font-weight="normal" >Beispielwert: 10 W</text>
+<rect x="300" y="103" width="34.6923828125" height="16" class="a" rx="2" />
+<text x="340.6923828125" y="116" class="t" font-size="12" text-anchor="start" font-weight="normal" >≈ 24 h</text>
+<rect x="300" y="127" width="145.0" height="16" class="c" rx="2" />
+<text x="451.0" y="140" class="t" font-size="12" text-anchor="start" font-weight="normal" >≈ 102 h (≈ 4,3 Tage)</text>
+<rect x="300" y="151" width="290.0" height="16" class="b" rx="2" />
+<text x="596.0" y="164" class="t" font-size="12" text-anchor="start" font-weight="normal" >≈ 205 h (≈ 8,5 Tage)</text>
+<line x1="20" y1="186" x2="740" y2="186" class="g" stroke-width="1" />
+<text x="20" y="216" class="t" font-size="13.5" text-anchor="start" font-weight="bold" >Kompressor-Kühlbox (Mittelwert)</text>
+<text x="20" y="234" class="m" font-size="12" text-anchor="start" font-weight="normal" >Beispielwert: 40 W</text>
+<rect x="300" y="201" width="34.6923828125" height="16" class="a" rx="2" />
+<text x="340.6923828125" y="214" class="t" font-size="12" text-anchor="start" font-weight="normal" >≈ 6,1 h</text>
+<rect x="300" y="225" width="145.0" height="16" class="c" rx="2" />
+<text x="451.0" y="238" class="t" font-size="12" text-anchor="start" font-weight="normal" >≈ 26 h</text>
+<rect x="300" y="249" width="290.0" height="16" class="b" rx="2" />
+<text x="596.0" y="262" class="t" font-size="12" text-anchor="start" font-weight="normal" >≈ 51 h (≈ 2,1 Tage)</text>
+<line x1="20" y1="284" x2="740" y2="284" class="g" stroke-width="1" />
+<text x="20" y="314" class="t" font-size="13.5" text-anchor="start" font-weight="bold" >Laptop</text>
+<text x="20" y="332" class="m" font-size="12" text-anchor="start" font-weight="normal" >Beispielwert: 60 W</text>
+<rect x="300" y="299" width="34.69238281249999" height="16" class="a" rx="2" />
+<text x="340.6923828125" y="312" class="t" font-size="12" text-anchor="start" font-weight="normal" >≈ 4,1 h</text>
+<rect x="300" y="323" width="145.0" height="16" class="c" rx="2" />
+<text x="451.0" y="336" class="t" font-size="12" text-anchor="start" font-weight="normal" >≈ 17 h</text>
+<rect x="300" y="347" width="290.0" height="16" class="b" rx="2" />
+<text x="596.0" y="360" class="t" font-size="12" text-anchor="start" font-weight="normal" >≈ 34 h</text>
+<line x1="20" y1="382" x2="740" y2="382" class="g" stroke-width="1" />
+<text x="20" y="412" class="t" font-size="13.5" text-anchor="start" font-weight="bold" >Kaffeemaschine</text>
+<text x="20" y="430" class="m" font-size="12" text-anchor="start" font-weight="normal" >Beispielwert: 1.000 W</text>
+<text x="300" y="409" class="m" font-size="12" text-anchor="start" font-weight="normal" font-style="italic">läuft nicht – Dauerleistung nur 300 W</text>
+<rect x="300" y="421" width="145.0" height="16" class="c" rx="2" />
+<text x="451.0" y="434" class="t" font-size="12" text-anchor="start" font-weight="normal" >≈ 1,0 h</text>
+<rect x="300" y="445" width="290.0" height="16" class="b" rx="2" />
+<text x="596.0" y="458" class="t" font-size="12" text-anchor="start" font-weight="normal" >≈ 2,0 h</text>
+<line x1="20" y1="480" x2="740" y2="480" class="g" stroke-width="1" />
+<text x="20" y="504" class="m" font-size="11.5" text-anchor="start" font-weight="normal" >Kapazitäten: kleinstes Gerät (245 Wh), 1-kWh-Klasse (1.024 Wh), größtes Gerät (2.048 Wh) im Vergleich.</text>
+<text x="20" y="521" class="m" font-size="11.5" text-anchor="start" font-weight="normal" >„Läuft nicht“: Die Geräteleistung liegt über der Dauerleistung der kleinsten Powerstation dieser Kapazität.</text>
+<text x="20" y="538" class="m" font-size="11.5" text-anchor="start" font-weight="normal" >Kühlboxen: Verbrauch pro 24 h aus dem Datenblatt ist genauer als ein Mittelwert.</text>
+</svg>

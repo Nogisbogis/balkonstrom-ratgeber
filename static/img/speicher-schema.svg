@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 400" width="760" height="400" role="img" aria-labelledby="t d" lang="de">
+<title id="t">Schema: Solarmodule, Speicher mit Wechselrichter, Hausnetz und öffentliches Netz</title>
+<desc id="d">Schematische Darstellung: Solarmodule liefern Gleichstrom an einen Speicher mit integriertem Wechselrichter. Dieser gibt höchstens 800 Watt ins Hausnetz ab. Nicht verbrauchter Strom fließt ohne Vergütung ins öffentliche Netz. Optional versorgt eine Off-Grid-Steckdose direkt angeschlossene Geräte, und ein Smart Meter regelt die Abgabe nach dem Verbrauch.</desc>
+<style>
+.bg{fill:#ffffff}.t{fill:#1d2a33}.m{fill:#5b6b75}.g{stroke:#dde5e0}.ax{stroke:#5b6b75}
+.a{fill:#0b7a4b}.as{stroke:#0b7a4b}.b{fill:#9a5b00}.bs{stroke:#9a5b00}.c{fill:#2f5d8a}.cs{stroke:#2f5d8a}
+.box{fill:#f3f7f4;stroke:#9fb5a8}.boxa{fill:#e3f2ea;stroke:#0b7a4b}.boxb{fill:#fbefdc;stroke:#9a5b00}
+.ar{fill:#5b6b75}.ars{stroke:#5b6b75}.al{fill:#0b7a4b;fill-opacity:.18}.bl{fill:#9a5b00;fill-opacity:.18}
+text{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+@media (prefers-color-scheme:dark){
+.bg{fill:#121816}.t{fill:#e3ebe6}.m{fill:#9fb0a8}.g{stroke:#2a3631}.ax{stroke:#9fb0a8}
+.a{fill:#4fd197}.as{stroke:#4fd197}.b{fill:#e8b04f}.bs{stroke:#e8b04f}.c{fill:#7fb2e5}.cs{stroke:#7fb2e5}
+.box{fill:#18211d;stroke:#3b4a43}.boxa{fill:#14302a;stroke:#4fd197}.boxb{fill:#33280f;stroke:#e8b04f}
+.ar{fill:#9fb0a8}.ars{stroke:#9fb0a8}.al{fill:#4fd197;fill-opacity:.2}.bl{fill:#e8b04f;fill-opacity:.2}}
+</style>
+<rect class="bg" width="760" height="400" rx="8"/>
+<defs><marker id="pf" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="ar"/></marker></defs>
+<text x="20" y="30" class="t" font-size="18" text-anchor="start" font-weight="bold" >So arbeitet ein Balkonkraftwerk mit Speicher</text>
+<text x="20" y="52" class="m" font-size="12.5" text-anchor="start" font-weight="normal" >Schematische Darstellung eines All-in-one-Systems (Speicher mit integriertem Wechselrichter)</text>
+<rect x="20" y="90" width="150" height="76" class="box" rx="8" stroke-width="1.5"/>
+<text x="95.0" y="115.0" class="t" font-size="13.5" text-anchor="middle" font-weight="bold" >Solarmodule</text>
+<text x="95.0" y="133.0" class="m" font-size="12" text-anchor="middle" font-weight="normal" >Gleichstrom</text>
+<text x="95.0" y="151.0" class="m" font-size="12" text-anchor="middle" font-weight="normal" >max. 2.000 Wp*</text>
+<rect x="240" y="74" width="200" height="108" class="boxa" rx="8" stroke-width="1.5"/>
+<text x="340.0" y="106.0" class="t" font-size="13.5" text-anchor="middle" font-weight="bold" >Speicher mit</text>
+<text x="340.0" y="124.0" class="t" font-size="13.5" text-anchor="middle" font-weight="bold" >Wechselrichter</text>
+<text x="340.0" y="142.0" class="m" font-size="12" text-anchor="middle" font-weight="normal" >lädt mit Überschuss</text>
+<text x="340.0" y="160.0" class="m" font-size="12" text-anchor="middle" font-weight="normal" >gibt max. 800 W ab</text>
+<rect x="520" y="90" width="220" height="76" class="box" rx="8" stroke-width="1.5"/>
+<text x="630.0" y="115.0" class="t" font-size="13.5" text-anchor="middle" font-weight="bold" >Hausnetz</text>
+<text x="630.0" y="133.0" class="m" font-size="12" text-anchor="middle" font-weight="normal" >Kühlschrank, Router,</text>
+<text x="630.0" y="151.0" class="m" font-size="12" text-anchor="middle" font-weight="normal" >Waschmaschine …</text>
+<rect x="520" y="250" width="220" height="76" class="boxb" rx="8" stroke-width="1.5"/>
+<text x="630.0" y="275.0" class="t" font-size="13.5" text-anchor="middle" font-weight="bold" >Öffentliches Netz</text>
+<text x="630.0" y="293.0" class="m" font-size="12" text-anchor="middle" font-weight="normal" >Überschuss: keine</text>
+<text x="630.0" y="311.0" class="m" font-size="12" text-anchor="middle" font-weight="normal" >Vergütung**</text>
+<rect x="240" y="250" width="200" height="76" class="box" rx="8" stroke-width="1.5"/>
+<text x="340.0" y="275.0" class="t" font-size="13.5" text-anchor="middle" font-weight="bold" >Off-Grid-Steckdose</text>
+<text x="340.0" y="293.0" class="m" font-size="12" text-anchor="middle" font-weight="normal" >nur direkt angeschlossene</text>
+<text x="340.0" y="311.0" class="m" font-size="12" text-anchor="middle" font-weight="normal" >Geräte bei Stromausfall</text>
+<line x1="172" y1="128" x2="236" y2="128" class="ars" stroke-width="2.5" marker-end="url(#pf)"/>
+<line x1="442" y1="128" x2="516" y2="128" class="ars" stroke-width="2.5" marker-end="url(#pf)"/>
+<text x="479" y="118" class="m" font-size="11.5" text-anchor="middle" font-weight="normal" >≤ 800 W</text>
+<line x1="630" y1="168" x2="630" y2="246" class="ars" stroke-width="2.5" marker-end="url(#pf)"/>
+<text x="622" y="204" class="m" font-size="11.5" text-anchor="end" font-weight="normal" >nicht verbrauchter</text>
+<text x="622" y="220" class="m" font-size="11.5" text-anchor="end" font-weight="normal" >Strom</text>
+<line x1="340" y1="184" x2="340" y2="246" class="ars" stroke-width="2.5" marker-end="url(#pf)" stroke-dasharray="5 4"/>
+<text x="348" y="220" class="m" font-size="11.5" text-anchor="start" font-weight="normal" >optional</text>
+<rect x="20" y="250" width="150" height="76" class="box" rx="8" stroke-width="1.5"/>
+<text x="95.0" y="275.0" class="t" font-size="13.5" text-anchor="middle" font-weight="bold" >Smart Meter</text>
+<text x="95.0" y="293.0" class="m" font-size="12" text-anchor="middle" font-weight="normal" >optional: regelt</text>
+<text x="95.0" y="311.0" class="m" font-size="12" text-anchor="middle" font-weight="normal" >nach Verbrauch</text>
+<path d="M172 288 C 205 288 205 182 250 182" fill="none" class="ars" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#pf)"/>
+<text x="20" y="360" class="m" font-size="11.5" text-anchor="start" font-weight="normal" >* Grenze für den vereinfachten Betrieb als Steckersolargerät; Wechselrichter höchstens 800 VA laut Typenschild.</text>
+<text x="20" y="378" class="m" font-size="11.5" text-anchor="start" font-weight="normal" >** Bei der Sonderregelung für Steckersolargeräte „unentgeltliche Abnahme“ (Bundeswirtschaftsministerium).</text>
+</svg>

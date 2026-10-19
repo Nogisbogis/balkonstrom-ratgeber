@@ -3,6 +3,9 @@ title = 'Beste Powerstation fürs Camping: worauf es ankommt (mit Vergleich)'
 date = '2026-10-19'
 description = 'Kapazität, Dauerleistung, Gewicht, Solareingang und Sicherheit: So findest du die passende Powerstation fürs Camping – mit Herstellerdaten und unabhängigen Testergebnissen.'
 draft = false
+image = 'img/titel-powerstation.svg'
+imageAlt = 'Gezeichnete Illustration: Zelt auf einer Wiese mit aufgestelltem Solarpanel und Akkublock'
+ogImage = 'img/og-powerstation.jpg'
 +++
 
 Eine Powerstation ist ein großer Akku mit Steckdosen, USB-Anschlüssen und meist einem Solareingang. Beim Camping versorgt sie Kühlbox, Licht, Handy und Laptop – je nach Größe auch eine Kaffeemaschine. Die „beste“ Powerstation gibt es nicht: Entscheidend ist, was du betreiben willst, wie lange und wie viel du tragen möchtest.
@@ -23,15 +26,21 @@ Addiere alles und plane einen Puffer ein: Beim Umwandeln auf 230 V geht Energie 
 
 Zur Orientierung: Die Stiftung Warentest hat berechnet, dass eine Powerstation mit 500 Wh ein Smartphone rund 33-mal oder einen Laptop etwa zehnmal laden kann; eine Lichterkette leuchtet damit rund 65 Stunden.
 
+{{< grafik src="img/ps-laufzeit.svg" alt="Balkendiagramm rechnerischer Laufzeiten für 245, 1.024 und 2.048 Wh: LED-Lampe mit 10 W etwa 24, 102 und 205 Stunden; Kühlbox mit 40 W etwa 6, 26 und 51 Stunden; Laptop mit 60 W etwa 4, 17 und 34 Stunden; Kaffeemaschine mit 1.000 W läuft an der kleinsten Powerstation nicht, an den großen etwa 1 und 2 Stunden. Ohne Umwandlungsverluste." caption="Rechnerische Laufzeit = Kapazität laut Hersteller ÷ Geräteleistung. Die Geräteleistungen sind **Beispielwerte**, Umwandlungsverluste sind nicht abgezogen – real läuft alles kürzer (siehe oben). Kapazitäten: kleinstes Gerät, 1-kWh-Klasse und größtes Gerät aus dem Vergleich." >}}
+
 ## Schritt 2: Reicht die Dauerleistung?
 
 Die Dauerleistung (Nennleistung am 230-V-Ausgang) muss höher sein als die Leistung aller Geräte, die gleichzeitig laufen. Geräte mit Heizelement – Wasserkocher, Föhn, Kaffeemaschine – haben oft über 1.000 W. Kleine Powerstations mit 300 W schaffen das nicht. Manche Hersteller bieten Boost-Modi (z. B. „X-Boost“ bei EcoFlow, „SurgePad“ bei Anker), die solche Geräte mit reduzierter Leistung betreiben. Das ist laut Herstellern nur für einfache Heizgeräte gedacht, die dann mit weniger Leistung – also langsamer – arbeiten.
 
 In unserem [Vergleich](/vergleich/#powerstations) steht in der Spalte „Dauerleistung“ immer die Nennleistung ohne Boost oder Spitzenleistung.
 
+{{< grafik src="img/ps-dauerleistung.svg" alt="Balkendiagramm der Dauerleistung laut Hersteller: EcoFlow RIVER 3, Jackery Explorer 300 Plus und Anker SOLIX C300X je 300 W, EcoFlow RIVER 3 Plus 600 W, DJI Power 1000 Mini 800 W, Jackery Explorer 1000 v2 1.500 W, EcoFlow DELTA 3 Plus und BLUETTI Elite 100 V2 je 1.800 W, Anker SOLIX C1000 Gen 2 2.000 W, Anker SOLIX C2000 Gen 2 2.400 W. Eine Linie markiert 1.000 W." caption="Dauerleistung (Nennleistung am 230-V-Ausgang) laut Hersteller. Die gestrichelte Linie bei 1.000 W zeigt, ab wo Geräte mit Heizelement oft liegen." >}}
+
 ## Schritt 3: Gewicht und Größe
 
 Kapazität bedeutet Gewicht. Laut Herstellerangaben wiegen die Geräte der 250–300-Wh-Klasse zwischen 3,55 kg (EcoFlow RIVER 3) und 4,7 kg (EcoFlow RIVER 3 Plus). In der 1-kWh-Klasse liegen sie zwischen 10,8 kg (Jackery Explorer 1000 v2) und 12,5 kg (EcoFlow DELTA 3 Plus). Mit 2 kWh ist man bei knapp 19 kg (Anker SOLIX C2000 Gen 2). Fürs Zelt und den Fußweg vom Parkplatz sind große Modelle unhandlich, im Wohnmobil oder Van spielt das Gewicht eine geringere Rolle.
+
+{{< grafik src="img/ps-kapazitaet-gewicht.svg" alt="Gegenüberstellung von Kapazität und Gewicht für zehn Powerstations laut Hersteller: Die 250–300-Wh-Geräte wiegen 3,55 bis 4,7 kg, die 1-kWh-Geräte 10,8 bis 12,5 kg, die Anker SOLIX C2000 Gen 2 mit 2.048 Wh 18,9 kg. Die berechnete Energiedichte liegt zwischen 61 und 108 Wh pro kg." caption="Kapazität (links) und Gewicht (rechts) laut Hersteller. Die Spalte Wh/kg ist einfach Kapazität ÷ Gewicht – je höher, desto mehr Energie pro Kilogramm." >}}
 
 ## Schritt 4: Laden unterwegs – Solar und Auto
 

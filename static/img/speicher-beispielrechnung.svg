@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 440" width="760" height="440" role="img" aria-labelledby="t d" lang="de">
+<title id="t">Beispielrechnung zur Amortisation eines Balkonkraftwerk-Speichers</title>
+<desc id="d">Rechenweg mit Annahmen aus dem Text: 1,92 kWh mal 200 Tage mal 90 Prozent ergibt etwa 346 kWh pro Jahr, bei 35 Cent pro kWh etwa 121 Euro Ersparnis pro Jahr. Ein Liniendiagramm zeigt die kumulierte Ersparnis über zehn Jahre; sie erreicht 700 Euro nach etwa 5,8 und 1.000 Euro nach etwa 8,3 Jahren.</desc>
+<style>
+.bg{fill:#ffffff}.t{fill:#1d2a33}.m{fill:#5b6b75}.g{stroke:#dde5e0}.ax{stroke:#5b6b75}
+.a{fill:#0b7a4b}.as{stroke:#0b7a4b}.b{fill:#9a5b00}.bs{stroke:#9a5b00}.c{fill:#2f5d8a}.cs{stroke:#2f5d8a}
+.box{fill:#f3f7f4;stroke:#9fb5a8}.boxa{fill:#e3f2ea;stroke:#0b7a4b}.boxb{fill:#fbefdc;stroke:#9a5b00}
+.ar{fill:#5b6b75}.ars{stroke:#5b6b75}.al{fill:#0b7a4b;fill-opacity:.18}.bl{fill:#9a5b00;fill-opacity:.18}
+text{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+@media (prefers-color-scheme:dark){
+.bg{fill:#121816}.t{fill:#e3ebe6}.m{fill:#9fb0a8}.g{stroke:#2a3631}.ax{stroke:#9fb0a8}
+.a{fill:#4fd197}.as{stroke:#4fd197}.b{fill:#e8b04f}.bs{stroke:#e8b04f}.c{fill:#7fb2e5}.cs{stroke:#7fb2e5}
+.box{fill:#18211d;stroke:#3b4a43}.boxa{fill:#14302a;stroke:#4fd197}.boxb{fill:#33280f;stroke:#e8b04f}
+.ar{fill:#9fb0a8}.ars{stroke:#9fb0a8}.al{fill:#4fd197;fill-opacity:.2}.bl{fill:#e8b04f;fill-opacity:.2}}
+</style>
+<rect class="bg" width="760" height="440" rx="8"/>
+<text x="20" y="30" class="t" font-size="18" text-anchor="start" font-weight="bold" >Beispielrechnung: Wann ist der Speicher abbezahlt?</text>
+<text x="20" y="52" class="b" font-size="12.5" text-anchor="start" font-weight="bold" >Alle Werte sind Annahmen aus dem Text – keine Messwerte, keine Prognose.</text>
+<rect x="20" y="70" width="113" height="54" class="box" rx="6" stroke-width="1.2"/>
+<text x="76.5" y="93" class="t" font-size="14" text-anchor="middle" font-weight="bold" >1,92 kWh</text>
+<text x="76.5" y="112" class="m" font-size="11.5" text-anchor="middle" font-weight="normal" >Kapazität</text>
+<rect x="139" y="70" width="113" height="54" class="box" rx="6" stroke-width="1.2"/>
+<text x="195.5" y="93" class="t" font-size="14" text-anchor="middle" font-weight="bold" >× 200 Tage</text>
+<text x="195.5" y="112" class="m" font-size="11.5" text-anchor="middle" font-weight="normal" >volle Zyklen/Jahr</text>
+<rect x="258" y="70" width="113" height="54" class="box" rx="6" stroke-width="1.2"/>
+<text x="314.5" y="93" class="t" font-size="14" text-anchor="middle" font-weight="bold" >× 90 %</text>
+<text x="314.5" y="112" class="m" font-size="11.5" text-anchor="middle" font-weight="normal" >nach Verlusten</text>
+<rect x="377" y="70" width="113" height="54" class="boxa" rx="6" stroke-width="1.2"/>
+<text x="433.5" y="93" class="t" font-size="14" text-anchor="middle" font-weight="bold" >≈ 346 kWh</text>
+<text x="433.5" y="112" class="m" font-size="11.5" text-anchor="middle" font-weight="normal" >pro Jahr</text>
+<rect x="496" y="70" width="113" height="54" class="box" rx="6" stroke-width="1.2"/>
+<text x="552.5" y="93" class="t" font-size="14" text-anchor="middle" font-weight="bold" >× 35 ct</text>
+<text x="552.5" y="112" class="m" font-size="11.5" text-anchor="middle" font-weight="normal" >pro kWh</text>
+<rect x="615" y="70" width="113" height="54" class="boxa" rx="6" stroke-width="1.2"/>
+<text x="671.5" y="93" class="t" font-size="14" text-anchor="middle" font-weight="bold" >≈ 121 €</text>
+<text x="671.5" y="112" class="m" font-size="11.5" text-anchor="middle" font-weight="normal" >Ersparnis/Jahr</text>
+<line x1="80" y1="370.0" x2="720" y2="370.0" class="g" stroke-width="1" />
+<text x="74" y="374.0" class="m" font-size="11" text-anchor="end" font-weight="normal" >0 €</text>
+<line x1="80" y1="329.61538461538464" x2="720" y2="329.61538461538464" class="g" stroke-width="1" />
+<text x="74" y="333.61538461538464" class="m" font-size="11" text-anchor="end" font-weight="normal" >250 €</text>
+<line x1="80" y1="289.2307692307692" x2="720" y2="289.2307692307692" class="g" stroke-width="1" />
+<text x="74" y="293.2307692307692" class="m" font-size="11" text-anchor="end" font-weight="normal" >500 €</text>
+<line x1="80" y1="248.84615384615384" x2="720" y2="248.84615384615384" class="g" stroke-width="1" />
+<text x="74" y="252.84615384615384" class="m" font-size="11" text-anchor="end" font-weight="normal" >750 €</text>
+<line x1="80" y1="208.46153846153845" x2="720" y2="208.46153846153845" class="g" stroke-width="1" />
+<text x="74" y="212.46153846153845" class="m" font-size="11" text-anchor="end" font-weight="normal" >1.000 €</text>
+<line x1="80" y1="168.07692307692307" x2="720" y2="168.07692307692307" class="g" stroke-width="1" />
+<text x="74" y="172.07692307692307" class="m" font-size="11" text-anchor="end" font-weight="normal" >1.250 €</text>
+<text x="80.0" y="387" class="m" font-size="11" text-anchor="middle" font-weight="normal" >0</text>
+<text x="144.0" y="387" class="m" font-size="11" text-anchor="middle" font-weight="normal" >1</text>
+<text x="208.0" y="387" class="m" font-size="11" text-anchor="middle" font-weight="normal" >2</text>
+<text x="272.0" y="387" class="m" font-size="11" text-anchor="middle" font-weight="normal" >3</text>
+<text x="336.0" y="387" class="m" font-size="11" text-anchor="middle" font-weight="normal" >4</text>
+<text x="400.0" y="387" class="m" font-size="11" text-anchor="middle" font-weight="normal" >5</text>
+<text x="464.0" y="387" class="m" font-size="11" text-anchor="middle" font-weight="normal" >6</text>
+<text x="528.0" y="387" class="m" font-size="11" text-anchor="middle" font-weight="normal" >7</text>
+<text x="592.0" y="387" class="m" font-size="11" text-anchor="middle" font-weight="normal" >8</text>
+<text x="656.0" y="387" class="m" font-size="11" text-anchor="middle" font-weight="normal" >9</text>
+<text x="720.0" y="387" class="m" font-size="11" text-anchor="middle" font-weight="normal" >10</text>
+<text x="400.0" y="404" class="m" font-size="11.5" text-anchor="middle" font-weight="normal" >Jahre</text>
+<rect x="80" y="208.46153846153845" width="640" height="48.46153846153845" class="bl" rx="0" />
+<line x1="80" y1="256.9230769230769" x2="720" y2="256.9230769230769" class="bs" stroke-width="1.5" stroke-dasharray="5 4"/>
+<line x1="80" y1="208.46153846153845" x2="720" y2="208.46153846153845" class="bs" stroke-width="1.5" stroke-dasharray="5 4"/>
+<text x="88" y="202.46153846153845" class="b" font-size="12" text-anchor="start" font-weight="bold" >Kaufpreis-Spanne laut Stiftung Warentest: ca. 700–1.000 € (Stand Feb. 2026)</text>
+<line x1="80.0" y1="370.0" x2="720.0" y2="174.60307692307694" class="as" stroke-width="3"/>
+<text x="476.8" y="305.38461538461536" class="a" font-size="12" text-anchor="start" font-weight="bold" >kumulierte Ersparnis (≈ 121 € pro Jahr)</text>
+<circle cx="450.4" cy="256.9" r="5" class="a"/>
+<text x="458.3703703703704" y="272.9230769230769" class="t" font-size="12" text-anchor="start" font-weight="normal" >≈ 5,8 Jahre</text>
+<circle cx="609.1" cy="208.5" r="5" class="a"/>
+<text x="617.1005291005291" y="224.46153846153845" class="t" font-size="12" text-anchor="start" font-weight="normal" >≈ 8,3 Jahre</text>
+<line x1="80" y1="370" x2="720" y2="370" class="ax" stroke-width="1" />
+<text x="20" y="428" class="m" font-size="11.5" text-anchor="start" font-weight="normal" >Ergibt etwa 6 bis 8 Jahre nur für den Speicher. Weniger volle Zyklen (z. B. im Winter) verlängern die Zeit deutlich.</text>
+</svg>

@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 270" width="760" height="270" role="img" aria-labelledby="t d" lang="de">
+<title id="t">Welche Steckverbindung bei welcher Modulleistung</title>
+<desc id="d">Skala der Modulleistung: Bis 960 Wp ist der Anschluss an eine Schuko-Steckdose normgerecht, wenn das Gerät DIN VDE V 0126-95 erfüllt. Über 960 bis 2.000 Wp braucht es eine Energiesteckvorrichtung wie den Wieland-Stecker oder einen Festanschluss. Über 2.000 Wp gilt die Anlage als reguläre PV-Anlage. Der Wechselrichter darf jeweils höchstens 800 VA haben.</desc>
+<style>
+.bg{fill:#ffffff}.t{fill:#1d2a33}.m{fill:#5b6b75}.g{stroke:#dde5e0}.ax{stroke:#5b6b75}
+.a{fill:#0b7a4b}.as{stroke:#0b7a4b}.b{fill:#9a5b00}.bs{stroke:#9a5b00}.c{fill:#2f5d8a}.cs{stroke:#2f5d8a}
+.box{fill:#f3f7f4;stroke:#9fb5a8}.boxa{fill:#e3f2ea;stroke:#0b7a4b}.boxb{fill:#fbefdc;stroke:#9a5b00}
+.ar{fill:#5b6b75}.ars{stroke:#5b6b75}.al{fill:#0b7a4b;fill-opacity:.18}.bl{fill:#9a5b00;fill-opacity:.18}
+text{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+@media (prefers-color-scheme:dark){
+.bg{fill:#121816}.t{fill:#e3ebe6}.m{fill:#9fb0a8}.g{stroke:#2a3631}.ax{stroke:#9fb0a8}
+.a{fill:#4fd197}.as{stroke:#4fd197}.b{fill:#e8b04f}.bs{stroke:#e8b04f}.c{fill:#7fb2e5}.cs{stroke:#7fb2e5}
+.box{fill:#18211d;stroke:#3b4a43}.boxa{fill:#14302a;stroke:#4fd197}.boxb{fill:#33280f;stroke:#e8b04f}
+.ar{fill:#9fb0a8}.ars{stroke:#9fb0a8}.al{fill:#4fd197;fill-opacity:.2}.bl{fill:#e8b04f;fill-opacity:.2}}
+</style>
+<rect class="bg" width="760" height="270" rx="8"/>
+<text x="20" y="30" class="t" font-size="18" text-anchor="start" font-weight="bold" >Modulleistung und Anschluss: was gilt?</text>
+<text x="20" y="52" class="m" font-size="12.5" text-anchor="start" font-weight="normal" >Summe der Modulleistung (Wp), Wechselrichter jeweils höchstens 800 VA laut Typenschild</text>
+<rect x="30.0" y="110" width="280.0" height="46" class="boxa" rx="0" stroke-width="1.5"/>
+<rect x="310.0" y="110" width="303.33333333333337" height="46" class="boxb" rx="0" stroke-width="1.5"/>
+<rect x="613.3333333333334" y="110" width="116.66666666666663" height="46" class="box" rx="0" stroke-width="1.5"/>
+<text x="170.0" y="130" class="t" font-size="13" text-anchor="middle" font-weight="bold" >Schuko-Steckdose möglich</text>
+<text x="170.0" y="147" class="m" font-size="11.5" text-anchor="middle" font-weight="normal" >mit Gerät nach DIN VDE V 0126-95</text>
+<text x="461.6666666666667" y="130" class="t" font-size="13" text-anchor="middle" font-weight="bold" >Energiesteckvorrichtung (z. B. Wieland)</text>
+<text x="461.6666666666667" y="147" class="m" font-size="11.5" text-anchor="middle" font-weight="normal" >oder Festanschluss durch Elektrofachkraft</text>
+<text x="671.6666666666667" y="130" class="t" font-size="13" text-anchor="middle" font-weight="bold" >reguläre</text>
+<text x="671.6666666666667" y="147" class="t" font-size="13" text-anchor="middle" font-weight="bold" >PV-Anlage</text>
+<line x1="30.0" y1="100" x2="30.0" y2="166" class="ax" stroke-width="1.5" />
+<text x="30.0" y="184" class="t" font-size="12.5" text-anchor="start" font-weight="bold" >0 Wp</text>
+<line x1="310.0" y1="100" x2="310.0" y2="166" class="ax" stroke-width="1.5" />
+<text x="310.0" y="184" class="t" font-size="12.5" text-anchor="middle" font-weight="bold" >960 Wp</text>
+<line x1="613.3333333333334" y1="100" x2="613.3333333333334" y2="166" class="ax" stroke-width="1.5" />
+<text x="613.3333333333334" y="184" class="t" font-size="12.5" text-anchor="middle" font-weight="bold" >2.000 Wp</text>
+<text x="170.0" y="94" class="m" font-size="11.5" text-anchor="middle" font-weight="normal" >bis 960 Wp = 800 W + 20 %, etwa zwei Standardmodule</text>
+<text x="461.6666666666667" y="94" class="m" font-size="11.5" text-anchor="middle" font-weight="normal" >Steckersolargerät, vereinfachte Regeln</text>
+<text x="20" y="226" class="m" font-size="11.5" text-anchor="start" font-weight="normal" >Quelle: DIN VDE V 0126-95:2025-12 (VDE), EEG nach Solarpaket I. Schuko zusätzlich nur mit sichergestelltem Basisschutz.</text>
+<text x="20" y="244" class="m" font-size="11.5" text-anchor="start" font-weight="normal" >Skala bis 2.400 Wp nur zur Darstellung. Keine Rechtsberatung.</text>
+</svg>

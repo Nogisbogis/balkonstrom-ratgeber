@@ -3,6 +3,9 @@ title = 'Balkonkraftwerk mit Speicher: Lohnt sich das? Kaufberatung 2026'
 date = '2026-10-19'
 description = 'Wann ein Speicher fürs Balkonkraftwerk wirtschaftlich sinnvoll ist, was der Test der Stiftung Warentest zeigt und worauf du beim Kauf achten solltest.'
 draft = false
+image = 'img/titel-speicher.svg'
+imageAlt = 'Gezeichnete Illustration: zwei Solarmodule am Balkongeländer und ein schlichter Akkublock'
+ogImage = 'img/og-speicher.jpg'
 +++
 
 Ein Balkonkraftwerk produziert Strom vor allem mittags – gebraucht wird er in vielen Haushalten aber morgens und abends. Ein Speicher soll diese Lücke schließen. Ob sich das rechnet, hängt weniger vom Gerät ab als von deinem Verbrauch, deiner Modulleistung und dem Kaufpreis. Hier die wichtigsten Punkte, nüchtern zusammengefasst.
@@ -20,7 +23,11 @@ Ohne Speicher fließt der Solarstrom über den Wechselrichter direkt ins Hausnet
 
 Ein Speicher lädt tagsüber mit dem Überschuss und gibt die Energie später wieder ab, zum Beispiel abends. Die meisten aktuellen Geräte sind „All-in-one“-Systeme: Die Module werden direkt am Speicher angeschlossen, der einen integrierten Wechselrichter hat und mit höchstens 800 W ins Hausnetz einspeist. Steuern lässt sich das meist per App, mit einem zusätzlichen Smart Meter oder Messgerät am Zähler auch automatisch nach dem aktuellen Verbrauch („Nulleinspeisung“).
 
+{{< grafik src="img/speicher-schema.svg" alt="Schema: Solarmodule liefern Gleichstrom an einen Speicher mit integriertem Wechselrichter, der höchstens 800 W ins Hausnetz abgibt. Nicht verbrauchter Strom geht ohne Vergütung ins öffentliche Netz. Optional: Off-Grid-Steckdose für direkt angeschlossene Geräte und ein Smart Meter, das nach Verbrauch regelt." caption="**Schematische Darstellung** eines All-in-one-Systems. Grenzen für den vereinfachten Betrieb: 2.000 Wp Module, 800 VA Wechselrichter." >}}
+
 Wichtig: Ein Speicher macht das Balkonkraftwerk nicht stärker. Er verschiebt nur den Zeitpunkt, zu dem der Strom genutzt wird – und dabei geht ein Teil der Energie beim Laden und Entladen verloren.
+
+{{< grafik src="img/speicher-tagesprofil.svg" alt="Schematischer Tagesverlauf ohne Zahlen: Die Solarerzeugung steigt morgens, ist mittags am höchsten und fällt abends ab. Der Verbrauch hat eine Spitze morgens und eine größere abends. Mittags ist die Erzeugung höher als der Verbrauch, dieser Überschuss lädt den Speicher; abends gibt der Speicher Energie ab." caption="**Schematische Darstellung, keine Messwerte.** Wie groß Überschuss und Abendbedarf tatsächlich sind, hängt von Modulleistung, Wetter, Jahreszeit und deinem Haushalt ab." >}}
 
 ## Lohnt sich das? Eine Beispielrechnung
 
@@ -32,6 +39,8 @@ Die Antwort hängt von wenigen Größen ab: wie viel Überschuss tatsächlich an
 - Strompreis: 35 Cent pro kWh
 
 Rechnung: 1,92 kWh × 200 Tage × 0,9 ≈ 346 kWh pro Jahr. Bei 35 Cent ergibt das rund 120 Euro Ersparnis pro Jahr. Die Stiftung Warentest nennt für die geprüften Speicher Preise zwischen rund 700 und 1.000 Euro (Stand Februar 2026). Nur für den Speicher ergäbe sich damit eine Amortisationszeit von etwa sechs bis acht Jahren.
+
+{{< grafik src="img/speicher-beispielrechnung.svg" alt="Rechenweg der Beispielrechnung: 1,92 kWh mal 200 Tage mal 90 Prozent ergibt etwa 346 kWh pro Jahr, mal 35 Cent etwa 121 Euro pro Jahr. Ein Liniendiagramm zeigt die kumulierte Ersparnis über zehn Jahre; sie erreicht die Kaufpreise von 700 Euro nach etwa 5,8 und 1.000 Euro nach etwa 8,3 Jahren." caption="Die Beispielrechnung aus dem Text als Grafik. **Alle Werte sind Annahmen**, die Preisspanne stammt von der Stiftung Warentest (Stand Februar 2026). Mit weniger vollen Ladezyklen verschiebt sich der Schnittpunkt nach rechts." >}}
 
 Die Annahme „200 volle Zyklen“ ist eher optimistisch. Ein klassisches Balkonkraftwerk mit zwei Modulen erzeugt an einem guten Sommertag einige Kilowattstunden, von denen ein Teil ohnehin direkt verbraucht wird. Im Winter bleibt oft kaum Überschuss übrig. Wer selten Überschuss hat, füllt den Speicher seltener – und spart entsprechend weniger. Wer dagegen mehr Modulleistung installiert (bis 2.000 Wp sind im vereinfachten Verfahren erlaubt) und tagsüber wenig zu Hause ist, nutzt den Speicher deutlich besser aus.
 
