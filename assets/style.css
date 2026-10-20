@@ -287,14 +287,16 @@ article p,article li{max-width:var(--measure)}
 figure.grafik{margin:2.5rem 0;padding:0}
 figure.grafik img{display:block;width:100%;height:auto;background:var(--card)}
 figure.grafik figcaption{color:var(--muted);font-size:var(--fs-s);margin-top:.5rem;line-height:1.5}
+/* Pfeil-Symbole für aufklappbare Blöcke */
+:root{--pfeil-kreis:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='14' cy='14' r='12.5'/%3E%3Cpath d='M9 12l5 5 5-5' stroke-width='2.4'/%3E%3C/svg%3E");--pfeil:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none' stroke='%23000' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 8l5 5 5-5'/%3E%3C/svg%3E")}
 /* Aufklappbare Blöcke (natives details/summary, ohne JS): Quellen, Lesehinweise, „mehr“-Abschnitte */
 details.quellen,details.lesehinweis,details.mehr{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:0 1.25rem;margin:1rem 0 1.5rem;font-size:var(--fs-b)}
 details.quellen ul{font-size:var(--fs-s);font-family:var(--sans)}
 details.quellen[open],details.lesehinweis[open],details.mehr[open]{padding-bottom:.75rem}
 details.quellen>summary,details.lesehinweis>summary,details.mehr>summary{list-style:none;min-height:var(--tap);display:flex;align-items:center;gap:.75rem;cursor:pointer;font-weight:700;font-family:var(--sans);font-size:var(--fs-s);padding:.5rem 0;line-height:1.35}
 details.quellen>summary::-webkit-details-marker,details.lesehinweis>summary::-webkit-details-marker,details.mehr>summary::-webkit-details-marker{display:none}
-details.quellen>summary::after,details.lesehinweis>summary::after,details.mehr>summary::after{content:"+";flex:none;margin-left:auto;width:1.75rem;height:1.75rem;display:inline-flex;align-items:center;justify-content:center;border:2px solid currentColor;border-radius:999px;font-size:1.125rem;font-weight:700;line-height:1;color:var(--accent)}
-details.quellen[open]>summary::after,details.lesehinweis[open]>summary::after,details.mehr[open]>summary::after{content:"−"}
+details.quellen>summary::after,details.lesehinweis>summary::after,details.mehr>summary::after{content:"";flex:none;margin-left:auto;width:1.75rem;height:1.75rem;background:var(--accent);-webkit-mask:var(--pfeil-kreis) center/contain no-repeat;mask:var(--pfeil-kreis) center/contain no-repeat;transition:transform .2s ease}
+details.quellen[open]>summary::after,details.lesehinweis[open]>summary::after,details.mehr[open]>summary::after{transform:rotate(180deg)}
 details.mehr>summary:hover,details.quellen>summary:hover,details.lesehinweis>summary:hover{color:var(--accent)}
 .mehr-inhalt>:first-child{margin-top:.25rem}
 .mehr-inhalt>:last-child{margin-bottom:0}
@@ -341,8 +343,9 @@ thead th{border-bottom:2px solid var(--rule);font-weight:700}
 .ka-sprung{margin:.5rem 0 0}
 .ka-fakten summary,.toc summary,.chips-quellen summary,details.quellen summary,details.lesehinweis summary{list-style:none;min-height:var(--tap);display:flex;align-items:center;gap:.75rem;cursor:pointer;font-weight:700}
 .ka-fakten summary::-webkit-details-marker,.toc summary::-webkit-details-marker,.chips-quellen summary::-webkit-details-marker{display:none}
-.ka-fakten summary::after,.toc summary::after,.chips-quellen summary::after{content:"+";margin-left:auto;font-size:1.25rem;font-weight:700;line-height:1;color:var(--accent)}
-.ka-fakten[open] summary::after,.toc[open] summary::after,.chips-quellen[open] summary::after{content:"−"}
+.ka-fakten summary::after,.toc summary::after,.chips-quellen summary::after{content:"";flex:none;margin-left:auto;width:1.25rem;height:1.25rem;background:var(--accent);-webkit-mask:var(--pfeil) center/contain no-repeat;mask:var(--pfeil) center/contain no-repeat;transition:transform .2s ease}
+.ka-fakten[open] summary::after,.toc[open] summary::after,.chips-quellen[open] summary::after{transform:rotate(180deg)}
+@media (prefers-reduced-motion:reduce){details>summary::after{transition:none}}
 .ka-fakten ul{margin:.25rem 0 .75rem;padding-left:1.25rem}
 
 /* Wie geht's weiter / Werkzeug-Kacheln: gefüllte Flächen statt Rahmen */
