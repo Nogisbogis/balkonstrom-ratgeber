@@ -4,6 +4,7 @@
   <div id="auswahl-hinweis" class="auswahl-hinweis" hidden></div>
   {{ .Content }}
 
+  <p class="s-quer">Powerstations gezielt filtern? <a class="textlink" href="{{ "powerstation-suche/" | relURL }}">Zur Powerstation-Suche</a></p>
   <nav class="tabs" aria-label="Kategorie wählen">
     <a href="#powerstations" data-tab="powerstations">Powerstations <span class="n">{{ len hugo.Data.powerstations }}</span></a>
     <a href="#balkonkraftwerke" data-tab="balkonkraftwerke">Balkonkraftwerke &amp; Speicher <span class="n">{{ len hugo.Data.balkonkraftwerke }}</span></a>

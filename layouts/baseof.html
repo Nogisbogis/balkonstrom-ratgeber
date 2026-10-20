@@ -54,7 +54,7 @@
   <div class="wrap">
     <a class="brand" href="{{ site.Home.RelPermalink }}"><span class="brand-a">Balkonstrom</span><span class="brand-b">Ratgeber</span></a>
     {{- $cur := .RelPermalink }}
-    {{- $tools := slice ("werkzeuge/" | relURL) ("powerstation-finder/" | relURL) ("laufzeitrechner/" | relURL) ("amortisationsrechner/" | relURL) }}
+    {{- $tools := slice ("werkzeuge/" | relURL) ("powerstation-finder/" | relURL) ("powerstation-suche/" | relURL) ("laufzeitrechner/" | relURL) ("amortisationsrechner/" | relURL) }}
     <nav class="main-nav" aria-label="Hauptnavigation">
       <a href="{{ "vergleich/" | relURL }}"{{ if eq $cur ("vergleich/" | relURL) }} aria-current="page"{{ end }}>Vergleich</a>
       <a href="{{ "werkzeuge/" | relURL }}"{{ if in $tools $cur }} aria-current="page"{{ end }}>Werkzeuge</a>

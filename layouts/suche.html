@@ -1,0 +1,72 @@
+{{ define "main" }}
+{{- /* Powerstation-Suche: Filter über data/powerstations.yaml (nur vorhandene Felder), Zustand in der URL (assets/js/suche.js).
+     Ohne JS: vollständige Liste. Amazon-Button nur, wenn laut data/verfuegbarkeit.yaml verfügbar. */ -}}
+{{- $ps := sort hugo.Data.powerstations "kapazitaet_wh" }}
+{{- $marken := slice }}{{ $akkus := slice }}{{ $zyk := slice }}
+{{- range $ps }}{{ $marken = $marken | append (index (split .modell " ") 0) }}{{ $akkus = $akkus | append .akkutyp }}{{ with .zyklen }}{{ $zyk = $zyk | append . }}{{ end }}{{ end }}
+{{ partial "breadcrumb.html" . }}
+<h1>{{ .Title }}</h1>
+{{ with .Params.intro }}<p class="lead">{{ . }}</p>{{ end }}
+<form class="suche" id="suche" role="search" aria-label="Powerstations filtern" autocomplete="off" hidden>
+  <div class="s-reihe">
+    <label class="s-name">Name<input type="search" name="q" placeholder="z. B. DELTA…" autocomplete="off" spellcheck="false"></label>
+    <label>Hersteller<select name="marke"><option value="">alle</option>{{ range ($marken | uniq | sort) }}<option>{{ . }}</option>{{ end }}</select></label>
+    <label>Akku<select name="akku"><option value="">alle</option>{{ range ($akkus | uniq | sort) }}<option>{{ . }}</option>{{ end }}</select></label>
+    <label>Sortieren<select name="sort">
+      <option value="wh">Kapazität ↑</option><option value="-wh">Kapazität ↓</option>
+      <option value="-w">Dauerleistung ↓</option><option value="kg">Gewicht ↑</option>
+      <option value="-whkg">Wh pro kg ↓</option><option value="-pv">Solareingang ↓</option>
+      <option value="name">Name A–Z</option></select></label>
+  </div>
+  <div class="s-reihe">
+    <label>Kapazität ab (Wh)<input type="number" name="whmin" min="0" step="50" inputmode="numeric"></label>
+    <label>Kapazität bis (Wh)<input type="number" name="whmax" min="0" step="50" inputmode="numeric"></label>
+    <label>Leistung 230 V ab (W)<input type="number" name="w" min="0" step="100" inputmode="numeric"></label>
+    <label>Gewicht bis (kg)<input type="number" name="kg" min="0" step="0.5" inputmode="decimal"></label>
+    <label>Solareingang ab (W)<input type="number" name="pv" min="0" step="50" inputmode="numeric"></label>
+    <label>Ladezyklen ab<select name="zyk"><option value="">egal</option>{{ range ($zyk | uniq | sort) }}<option value="{{ . }}">{{ lang.FormatNumber 0 . }}</option>{{ end }}</select></label>
+  </div>
+  <fieldset class="s-chips"><legend>Ausstattung</legend>
+    <label class="s-chip"><input type="checkbox" name="ac" value="1"> 230-V-Steckdose</label>
+    <label class="s-chip"><input type="checkbox" name="usv" value="1"> USV</label>
+    <label class="s-chip"><input type="checkbox" name="usv10" value="1"> USV ≤ 10 ms</label>
+    <label class="s-chip"><input type="checkbox" name="erw" value="1"> erweiterbar</label>
+  </fieldset>
+  <div class="s-fuss">
+    <p class="count" id="s-count" aria-live="polite">{{ len $ps }} von {{ len $ps }} Modellen</p>
+    <button type="reset" class="btn-sec">Zurücksetzen</button>
+  </div>
+  <p class="note s-hinweis">Fehlt ein Wert, steht „keine Angabe“. Das Modell fällt nur heraus, wenn du nach diesem Wert filterst.</p>
+</form>
+{{ partial "disclosure-box.html" . }}
+<ul class="s-liste" id="s-liste">
+{{- range $ps }}
+  {{- $p := . }}{{ $url := "" }}{{ with site.GetPage (printf "/powerstations/%s" .slug) }}{{ $url = .RelPermalink }}{{ end }}
+  {{- $dc := .nur_dc | default false }}{{ $whkg := div (float .kapazitaet_wh) .gewicht_kg }}
+  {{- $erw := cond (eq .erweiterbar "ja") "1" (cond (eq .erweiterbar "nein") "0" "") }}
+  <li class="s-item" data-name="{{ lower .modell }}" data-marke="{{ index (split .modell " ") 0 }}" data-akku="{{ .akkutyp }}" data-wh="{{ .kapazitaet_wh }}" data-w="{{ if $dc }}0{{ else }}{{ .dauerleistung_w }}{{ end }}" data-kg="{{ .gewicht_kg }}" data-pv="{{ .solareingang_w }}" data-whkg="{{ printf "%.1f" $whkg }}" data-usv="{{ with .usv_ms }}{{ . }}{{ else }}{{ if $dc }}0{{ end }}{{ end }}" data-erw="{{ $erw }}" data-zyk="{{ with .zyklen }}{{ . }}{{ end }}" data-ac="{{ if $dc }}0{{ else }}1{{ end }}">
+    <h2 class="s-titel" translate="no">{{ with $url }}<a href="{{ . }}">{{ $p.modell }}</a>{{ else }}{{ $p.modell }}{{ end }}</h2>
+    <dl class="s-werte">
+      <div><dt>Kapazität</dt><dd>{{ lang.FormatNumber 0 .kapazitaet_wh }} Wh</dd></div>
+      <div><dt>{{ if $dc }}Leistung (nur DC){{ else }}Dauerleistung{{ end }}</dt><dd>{{ lang.FormatNumber 0 .dauerleistung_w }} W</dd></div>
+      <div><dt>Gewicht</dt><dd>{{ replace (string .gewicht_kg) "." "," }} kg</dd></div>
+      <div><dt>Wh pro kg</dt><dd>{{ lang.FormatNumber 0 $whkg }}</dd></div>
+      <div><dt>Solar max.</dt><dd>{{ lang.FormatNumber 0 .solareingang_w }} W</dd></div>
+      <div><dt>USV</dt><dd>{{ with .usv_ms }}≤ {{ . }} ms{{ else }}{{ if $dc }}keine{{ else }}<span class="s-ka">keine Angabe</span>{{ end }}{{ end }}</dd></div>
+      <div><dt>Erweiterbar</dt><dd>{{ if eq $erw "1" }}ja{{ else if eq $erw "0" }}nein{{ else }}<span class="s-ka">keine Angabe</span>{{ end }}</dd></div>
+      <div><dt>Ladezyklen</dt><dd>{{ with .zyklen }}{{ lang.FormatNumber 0 . }}{{ else }}<span class="s-ka">keine Angabe</span>{{ end }}</dd></div>
+      <div><dt>Akku</dt><dd>{{ .akkutyp }}</dd></div>
+      {{- if $dc }}<div><dt>230-V-Steckdose</dt><dd>keine</dd></div>{{ end }}
+    </dl>
+    <p class="s-aktion">
+      {{- with $url }}<a class="btn-sec" href="{{ . }}" aria-label="Details zu {{ $p.modell }}">Details</a>{{ end }}
+      {{- with $p.asin }}{{ if partial "amazon-ok.html" . }}<a class="btn-sec btn-amazon" href="{{ partial "amazon-url.html" . }}" rel="sponsored nofollow noopener" target="_blank" aria-label="Preis bei Amazon für {{ $p.modell }} (Affiliate-Link, neues Fenster)">Preis bei Amazon<span class="ad-mark" aria-hidden="true">*</span></a>{{ else }}{{ partial "amazon-na.html" (dict "cls" "amz-na-karte") }}{{ end }}{{ else }}<span class="amz-na amz-na-karte">Kein Kauflink</span>{{ end }}
+    </p>
+  </li>
+{{- end }}
+</ul>
+<p class="s-leer notice" id="s-leer" hidden>Kein Modell passt. <button type="button" class="textlink s-leer-btn">Filter zurücksetzen</button></p>
+<p class="note">Alle Werte laut Hersteller, Belege auf den Detailseiten. Preise nenne ich nicht. Mit * markierte Links sind Affiliate-Links. Lieber nach Einsatz auswählen? <a href="{{ "powerstation-finder/" | relURL }}">Zum Finder</a></p>
+{{ $js := resources.Get "js/suche.js" | minify | fingerprint }}
+<script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" defer></script>
+{{ end }}
