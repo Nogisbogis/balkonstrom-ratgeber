@@ -29,6 +29,11 @@ asins:
     status: nicht_verfuegbar
     geprueft: '2026-10-20'
     seit: '2026-10-20'
+  B0F9PKNWS1:
+    modell: BLUETTI Elite 100 V2
+    status: verfuegbar
+    geprueft: '2026-10-20'
+    seit: '2026-10-20'
   B0F9FN228S:
     modell: BLUETTI Elite 30 V2
     status: verfuegbar
