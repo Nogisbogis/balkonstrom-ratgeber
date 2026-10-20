@@ -414,6 +414,43 @@ def bkw_speicher(name="vergleich-bkw-speicher.svg"):
         "Balkendiagramm: " + "; ".join(f'{p["modell"]}: {de(p["speicher_kwh"],3)} kWh, PV-Eingang {de(p["pv_max_w"])} W' for p in rows) +
         ". Eine gestrichelte Linie markiert die 2.000-Wp-Grenze für Steckersolargeräte.", b)
 
+# ---------- Balkonkraftwerk im Winter: Monatsertrag nach PVGIS ----------
+# PVGIS 5.3 (EU JRC), Hamburg 53,55 N / 9,99 O, 0,8 kWp, 14 % Systemverluste, SARAH3 2005–2023, abgerufen 20.10.2026.
+# Rohdaten: /workspace/blogbot/research/pvgis-2026-10-20/ (Werte stehen so auch im Artikel balkonkraftwerk-winter-ertrag).
+WINTER_HH = [
+    ("30° Süd", "a", [20.3, 35.9, 65.7, 95.3, 103.1, 103.3, 102.0, 90.2, 75.2, 50.6, 24.6, 17.2]),
+    ("senkrecht Süd", "c", [24.3, 37.8, 56.5, 66.3, 58.9, 53.3, 55.6, 57.3, 59.8, 50.1, 28.4, 22.1]),
+    ("senkrecht West", "b", [6.9, 14.9, 32.1, 48.1, 55.0, 57.7, 56.1, 48.0, 37.0, 22.0, 9.1, 5.6]),
+]
+def winter_ertrag(name="winter-ertrag-monate.svg"):
+    mon = ["Jan", "Feb", "Mär", "Apr", "Mai", "Jun", "Jul", "Aug", "Sep", "Okt", "Nov", "Dez"]
+    W, H, top, bot = 760, 400, 92, 330
+    x0, x1, maxv = 64, 740, 120
+    sy = lambda v: bot - (bot - top) * v / maxv
+    gw = (x1 - x0) / 12; bw = (gw - 10) / 3
+    b = [T(20, 30, "Monatsertrag eines 800-Wp-Balkonkraftwerks in Hamburg", size=18, weight="bold"),
+         T(20, 52, "Mittelwerte 2005–2023 nach PVGIS, in kWh pro Monat, ohne Schnee und ohne Schatten von Gebäuden", "m", 12.5)]
+    lx = 20
+    for lab, cls, _ in WINTER_HH:
+        b.append(R(lx, 64, 12, 12, cls, 2)); b.append(T(lx + 18, 75, lab, "t", 12.5)); lx += 30 + 7.4 * len(lab) + 18
+    for v in range(0, maxv + 1, 20):
+        b.append(L(x0, sy(v), x1, sy(v), "g")); b.append(T(x0 - 8, sy(v) + 4, de(v), "m", 11, "end"))
+    for i in (10, 11, 0, 1):
+        b.append(R(x0 + i * gw + 1, top - 6, gw - 2, bot - top + 6, "box", 0, 'stroke-width="0" opacity=".55"'))
+    for i, m in enumerate(mon):
+        gx = x0 + i * gw + 5
+        for k, (lab, cls, vals) in enumerate(WINTER_HH):
+            v = vals[i]; b.append(R(round(gx + k * bw, 1), round(sy(v), 1), round(bw - 1, 1), round(bot - sy(v), 1), cls, 1))
+        b.append(T(x0 + i * gw + gw / 2, bot + 16, m, "m", 11.5, "middle"))
+    b.append(L(x0, bot, x1, bot, "ax", 1))
+    b.append(T(x0 + 10.5 * gw, top - 12, "Nov–Feb hinterlegt", "m", 11, "middle"))
+    b.append(T(20, bot + 40, "Dezember: 30° Süd 17,2 kWh · senkrecht Süd 22,1 kWh · senkrecht West 5,6 kWh. Jahr: 783 · 570 · 392 kWh.", "t", 12))
+    b.append(T(20, bot + 58, "Quelle: PVGIS 5.3, EU-Kommission (JRC), 0,8 kWp, 14 % Systemverluste, abgerufen 20.10.2026. Einzelne Jahre weichen ab.", "m", 11.5))
+    svg(name, W, H, "Monatsertrag eines 800-Wp-Balkonkraftwerks in Hamburg nach Ausrichtung",
+        "Säulendiagramm mit Monatswerten nach PVGIS für Hamburg, 0,8 kWp. " +
+        " ".join(f'{lab}: ' + ", ".join(f'{m} {de(v,1)} kWh' for m, v in zip(mon, vals)) + "." for lab, _, vals in WINTER_HH) +
+        " Im Sommer liefert die 30-Grad-Anlage am meisten, von November bis Februar die senkrechte Südanlage.", b)
+
 # ---------- Favicon ----------
 def favicon():
     s = ('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="8" fill="#111111"/>'
@@ -424,6 +461,7 @@ def favicon():
 
 if __name__ == "__main__":
     ps_kapazitaet_gewicht(); ps_dauerleistung(); ps_laufzeit()
+    winter_ertrag()
     ps_kapazitaet_gewicht("ps-vergleich-kapazitaet-gewicht.svg", ps_alle, 4400, 55, "20.10.2026")
     speicher_schema(); speicher_tagesprofil(); speicher_rechnung()
     anmelden_ablauf(); anmelden_stecker(); anmelden_mastr()
