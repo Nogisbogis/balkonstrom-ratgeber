@@ -24,7 +24,7 @@
     </dl>
     {{- with .hinweis }}<p class="phinweis">{{ . }}</p>{{ end }}
     <p class="pcard-links">
-      {{- with $p.asin }}{{ if partial "amazon-ok.html" . }}<a class="btn-sec btn-amazon" href="{{ partial "amazon-url.html" . }}" rel="sponsored nofollow noopener" target="_blank">Aktuellen Preis bei Amazon ansehen<span class="ad-mark" aria-hidden="true">*</span><span class="sr"> (Affiliate-Link)</span></a>{{ else }}{{ partial "amazon-na.html" (dict "cls" "amz-na-karte") }}{{ end }}{{ end }}
+      {{- with $p.asin }}{{ if partial "amazon-ok.html" . }}<a class="btn-sec btn-amazon" href="{{ partial "amazon-url.html" . }}" rel="sponsored nofollow noopener" target="_blank">Aktuellen Preis bei Amazon ansehen<span class="ad-label">Anzeige</span><span class="sr"> (Affiliate-Link)</span></a>{{ else }}{{ partial "amazon-na.html" (dict "cls" "amz-na-karte") }}{{ end }}{{ end }}
       {{- with $seite }}<a class="btn-sec details" href="{{ . }}">Details &amp; Tests</a>{{ end }}
       <a class="quelle" href="{{ $p.quelle }}" rel="noopener" target="_blank">Herstellerdaten</a>
     </p>

@@ -23,7 +23,7 @@
 <section class="home-sec empf-home" aria-labelledby="empf-home-titel">
   <div class="sec-kopf">
     <h2 id="empf-home-titel">Meine Empfehlungen nach Einsatz</h2>
-    <p class="disclosure-small disclosure-zeile" role="note">{{ site.Params.disclosure }} <span class="ad-erkl">Mit * markierte Links sind Affiliate-Links.</span></p>
+    <p class="disclosure-small disclosure-zeile" role="note">{{ site.Params.disclosure }}</p>
   </div>
   <ul class="feature-liste">{{ range $i, $e := . }}
     <li class="feature{{ if modBool $i 2 }}{{ else }} feature-rev{{ end }}">
@@ -52,7 +52,7 @@
 
 <section class="home-sec about" aria-labelledby="about-titel">
   <h2 id="about-titel">So arbeite ich</h2>
-  <div class="about-text"><p>Den Balkonstrom-Ratgeber schreibe ich allein. Technische Angaben wie Kapazität, Dauerleistung und Gewicht übernehme ich aus <mark class="hl hl-a">Datenblättern und Handbüchern</mark> der Hersteller, jede mit Quelle auf der Produktseite. Ergebnisse von <mark class="hl hl-b">ADAC, Stiftung Warentest</mark>, c’t oder CHIP gebe ich nur wieder, wenn ich sie in der Originalquelle gefunden habe. Widersprechen sich Quellen, zeige ich <mark class="hl hl-a">beide Werte</mark>. <mark class="hl hl-b">Ich habe die Geräte nicht selbst getestet.</mark></p><details class="mehr about-mehr"><summary>Wie Empfehlungen entstehen und wie sich die Seite finanziert</summary><p>Eine Empfehlung nenne ich nur für einen konkreten Einsatz, und kein Hersteller oder Händler bezahlt für eine Erwähnung oder Platzierung. Die Seite finanziert sich über <mark class="hl hl-a">Affiliate-Links</mark>: Als Amazon-Partner verdiene ich an qualifizierten Verkäufen, für dich entstehen keine Mehrkosten; solche Links sind mit * markiert. Preise nenne ich nicht, weil sie sich ständig ändern. <a class="hl hl-c about-link" href="{{ "methodik/" | relURL }}">Quellen, Empfehlungen und Korrekturen im Detail</a></p></details></div>
+  <div class="about-text"><p>Den Balkonstrom-Ratgeber schreibe ich allein. Technische Angaben wie Kapazität, Dauerleistung und Gewicht übernehme ich aus <mark class="hl hl-a">Datenblättern und Handbüchern</mark> der Hersteller, jede mit Quelle auf der Produktseite. Ergebnisse von <mark class="hl hl-b">ADAC, Stiftung Warentest</mark>, c’t oder CHIP gebe ich nur wieder, wenn ich sie in der Originalquelle gefunden habe. Widersprechen sich Quellen, zeige ich <mark class="hl hl-a">beide Werte</mark>. <mark class="hl hl-b">Ich habe die Geräte nicht selbst getestet.</mark></p><details class="mehr about-mehr"><summary>Wie Empfehlungen entstehen und wie sich die Seite finanziert</summary><p>Eine Empfehlung nenne ich nur für einen konkreten Einsatz, und kein Hersteller oder Händler bezahlt für eine Erwähnung oder Platzierung. Die Seite finanziert sich über <mark class="hl hl-a">Affiliate-Links</mark>: Als Amazon-Partner verdiene ich an qualifizierten Verkäufen, für dich entstehen keine Mehrkosten; solche Links sind mit „Anzeige“ gekennzeichnet. Preise nenne ich nicht, weil sie sich ständig ändern. <a class="hl hl-c about-link" href="{{ "methodik/" | relURL }}">Quellen, Empfehlungen und Korrekturen im Detail</a></p></details></div>
 </section>
 {{ partial "cmp-bar.html" . }}
 {{ end }}

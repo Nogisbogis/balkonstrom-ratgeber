@@ -27,7 +27,7 @@ Kein Hersteller oder Händler bezahlt für eine Erwähnung, eine Platzierung ode
 
 ## Affiliate-Modell
 
-Die Seite finanziert sich über Affiliate-Links. Als Amazon-Partner verdiene ich an qualifizierten Verkäufen; für dich entstehen keine Mehrkosten. Solche Links sind mit * markiert, und jede Seite mit Kauflinks trägt oben einen Hinweis. Einen Kauflink setze ich nur, wenn das Amazon-Angebot eindeutig zum beschriebenen Modell passt. Bei Geräten mit ernsten Testmängeln, etwa der Jackery Explorer 1000 v2 nach dem ADAC-Test, verzichte ich auf einen Kauflink. Preise nenne ich nicht, weil sie sich ständig ändern.
+Die Seite finanziert sich über Affiliate-Links. Als Amazon-Partner verdiene ich an qualifizierten Verkäufen; für dich entstehen keine Mehrkosten. Solche Links sind mit „Anzeige“ gekennzeichnet, und jede Seite mit Kauflinks trägt oben einen Hinweis. Einen Kauflink setze ich nur, wenn das Amazon-Angebot eindeutig zum beschriebenen Modell passt. Bei Geräten mit ernsten Testmängeln, etwa der Jackery Explorer 1000 v2 nach dem ADAC-Test, verzichte ich auf einen Kauflink. Preise nenne ich nicht, weil sie sich ständig ändern.
 
 ## Aktualisierung
 

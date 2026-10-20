@@ -6,6 +6,6 @@
 {{- $extern := hasPrefix . "http" }}
 {{- $src := cond $extern . (. | relURL) }}
 {{- $alt := cond $extern $p.modell (printf "%s – schematische Darstellung" $p.modell) }}
-{{- $cap := cond $extern ($p.abbildung_hinweis | default "") "Illustration nach Herstellerangaben, kein Produktfoto" }}
+{{- $cap := cond $extern ($p.abbildung_hinweis | default "") "Illustration nach Hersteller\u00adangaben, kein Produkt\u00adfoto" }}
 <figure class="abb{{ with $.cls }} {{ . }}{{ end }}{{ if not $extern }} abb-illu{{ end }}"><img src="{{ $src }}" alt="{{ $alt }}" width="{{ $.w }}" height="{{ $.h }}"{{ if $.lazy }} loading="lazy"{{ end }}{{ if $.lcp }} fetchpriority="high"{{ end }} decoding="async">{{ if and $.cap $cap }}<figcaption>{{ $cap }}</figcaption>{{ end }}</figure>
 {{- end }}

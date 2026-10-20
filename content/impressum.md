@@ -24,7 +24,7 @@ Robert-Koch-Straße 2
 
 ## Hinweis zu Affiliate-Links
 
-Diese Website enthält Affiliate-Links (Werbung) zu Amazon. Sie sind mit einem Sternchen (*) gekennzeichnet. Als Amazon-Partner verdiene ich an qualifizierten Verkäufen. Für dich entstehen dadurch keine Mehrkosten.
+Diese Website enthält Affiliate-Links (Werbung) zu Amazon. Sie sind mit dem Hinweis „Anzeige“ gekennzeichnet. Als Amazon-Partner verdiene ich an qualifizierten Verkäufen. Für dich entstehen dadurch keine Mehrkosten.
 
 ## Bildnachweis
 

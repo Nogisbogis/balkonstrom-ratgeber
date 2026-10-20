@@ -60,13 +60,13 @@
     </dl>
     <p class="s-aktion">
       {{- with $url }}<a class="btn-sec" href="{{ . }}" aria-label="Details zu {{ $p.modell }}">Details</a>{{ end }}
-      {{- with $p.asin }}{{ if partial "amazon-ok.html" . }}<a class="btn-sec btn-amazon" href="{{ partial "amazon-url.html" . }}" rel="sponsored nofollow noopener" target="_blank" aria-label="Preis bei Amazon für {{ $p.modell }} (Affiliate-Link, neues Fenster)">Preis bei Amazon<span class="ad-mark" aria-hidden="true">*</span></a>{{ else }}{{ partial "amazon-na.html" (dict "cls" "amz-na-karte") }}{{ end }}{{ else }}<span class="amz-na amz-na-karte">Kein Kauflink</span>{{ end }}
+      {{- with $p.asin }}{{ if partial "amazon-ok.html" . }}<a class="btn-sec btn-amazon" href="{{ partial "amazon-url.html" . }}" rel="sponsored nofollow noopener" target="_blank" aria-label="Preis bei Amazon, Anzeige: {{ $p.modell }} (Affiliate-Link, neues Fenster)">Preis bei Amazon<span class="ad-label">Anzeige</span></a>{{ else }}{{ partial "amazon-na.html" (dict "cls" "amz-na-karte") }}{{ end }}{{ else }}<span class="amz-na amz-na-karte">Kein Kauflink</span>{{ end }}
     </p>
   </li>
 {{- end }}
 </ul>
 <p class="s-leer notice" id="s-leer" hidden>Kein Modell passt. <button type="button" class="textlink s-leer-btn">Filter zurücksetzen</button></p>
-<p class="note">Alle Werte laut Hersteller, Belege auf den Detailseiten. Preise nenne ich nicht. Mit * markierte Links sind Affiliate-Links. Lieber nach Einsatz auswählen? <a href="{{ "powerstation-finder/" | relURL }}">Zum Finder</a></p>
+<p class="note">Alle Werte laut Hersteller, Belege auf den Detailseiten. Preise nenne ich nicht. Links mit dem Hinweis „Anzeige“ sind Affiliate-Links. Lieber nach Einsatz auswählen? <a href="{{ "powerstation-finder/" | relURL }}">Zum Finder</a></p>
 {{ $js := resources.Get "js/suche.js" | minify | fingerprint }}
 <script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" defer></script>
 {{ end }}
