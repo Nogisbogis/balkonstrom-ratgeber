@@ -4,7 +4,7 @@
       <div class="foot-ueber">
         <h2 id="f-ueber">Über diese Seite</h2>
         <p>Unabhängige Ratgeber, Vergleiche und Rechner zu Balkonkraftwerken und Powerstations. Alle Werte mit Quelle, kein eigener Test.</p>
-        <p class="disclosure">{{ site.Params.disclosure }}</p>
+        <p class="disclosure">{{ site.Params.disclosure }} Mit * markierte Links sind Affiliate-Links.</p>
       </div>
       <nav aria-labelledby="f-werkzeuge"><h2 id="f-werkzeuge">Werkzeuge</h2>
         <a href="{{ "powerstation-finder/" | relURL }}">Powerstation-Finder</a>
@@ -30,7 +30,7 @@
       <svg class="wortmarke wm-breit" viewBox="0 0 1000 118" role="img" aria-label="{{ site.Title }}"><text x="0" y="96" textLength="1000" lengthAdjust="spacingAndGlyphs">Balkonstrom-Ratgeber</text></svg>
       <svg class="wortmarke wm-schmal" viewBox="0 0 1000 236" role="img" aria-label="{{ site.Title }}"><text x="0" y="98" textLength="1000" lengthAdjust="spacingAndGlyphs">Balkonstrom-</text><text x="0" y="214" textLength="760" lengthAdjust="spacingAndGlyphs">Ratgeber</text></svg>
       <p class="copy">© {{ now.Year }} {{ site.Title }}
-      {{- with hugo.Data.fotos }} · Fotos (Wikimedia Commons): {{ range $i, $f := . }}{{ if $i }}; {{ end }}<a href="{{ $f.quelle }}" rel="noopener">„{{ $f.titel }}“</a> von {{ $f.urheber }}, <a href="{{ $f.lizenz_url }}" rel="noopener license">{{ $f.lizenz }}</a>{{ end }}{{ end }}</p>
+      {{- with hugo.Data.fotos }} · Fotos (Wikimedia Commons, zugeschnitten): {{ range $i, $f := . }}{{ if $i }}; {{ end }}<a href="{{ $f.quelle }}" rel="noopener">„{{ $f.titel }}“</a> von {{ $f.urheber }}, <a href="{{ $f.lizenz_url }}" rel="noopener license">{{ $f.lizenz }}</a>{{ end }}{{ end }}</p>
     </div>
   </div>
 </footer>

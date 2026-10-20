@@ -55,9 +55,9 @@ Ein Speicher erhöht den Eigenverbrauchsanteil, kostet aber deutlich mehr. Beim 
 
 - Verschattung, Ost-/Westlage und Modulneigung verändern den Ertrag stark. Den Wert für deinen Standort liefern PVGIS oder der HTW-Simulator.
 - Der Rechner berücksichtigt weder Alterung der Module noch Wechselrichterverluste über die Annahme hinaus noch Grundgebühren.
+- Über 960 Wp ist laut Umweltbundesamt der normale Schukostecker nicht mehr normgerecht. Über 2.000 Wp gelten die vereinfachten Regeln für Steckersolargeräte nicht mehr.
 
 {{% /mehr %}}
-- Über 960 Wp ist laut Umweltbundesamt der normale Schukostecker nicht mehr normgerecht. Über 2.000 Wp gelten die vereinfachten Regeln für Steckersolargeräte nicht mehr.
 
 Geräte im Detail: [Balkonkraftwerke und Speicher](/balkonkraftwerke/#modelle).
 
