@@ -3,11 +3,11 @@ title: "BLUETTI Elite 100 V2"
 modell: "BLUETTI Elite 100 V2"
 layout: produkt
 date: 2026-10-19
-lastmod: 2026-10-19
+lastmod: 2026-10-20
 description: "BLUETTI Elite 100 V2 (1.024 Wh, 1.800 W, 1.000 W Solar, 11,5 kg): Daten aus Handbuch und Produktseite mit Quellen, Praxistest-Messwerte, Alternativen."
 kurzzeile: "1.024 Wh, 1.800 W, 1.000 W Solar, 11,5 kg"
 kurzfazit: |
-  Die Elite 100 V2 hat 1.024 Wh LiFePO4, 1.800 W Dauerleistung und mit 1.000 W den stärksten Solareingang der 1-kWh-Klasse in meinem Vergleich, bei 11,5 kg. Die USV schaltet laut BLUETTI in höchstens 10 ms um, die Garantie beträgt 5 Jahre. Im Praxistest von smartzone kamen 936 Wh bei 200 W über die Steckdose an, über USB-A deutlich weniger. Nur zwei 230-V-Steckdosen, und einen echten Zusatzakku nennt BLUETTI nicht.
+  Die Elite 100 V2 hat 1.024 Wh LiFePO4, 1.800 W Dauerleistung und mit 1.000 W (wie die DELTA 3 Plus) den stärksten Solareingang der 1-kWh-Klasse in meinem Vergleich, bei 11,5 kg. Die USV schaltet laut BLUETTI in höchstens 10 ms um, die Garantie beträgt 5 Jahre. Im Praxistest von smartzone kamen 936 Wh bei 200 W über die Steckdose an, über USB-A deutlich weniger. Nur zwei 230-V-Steckdosen, und einen echten Zusatzakku nennt BLUETTI nicht.
 fuer:
   - "Solar-Camping und Van mit großen Panels: bis 1.000 W, 12–60 V"
   - "Notstrom mit USV ≤ 10 ms"

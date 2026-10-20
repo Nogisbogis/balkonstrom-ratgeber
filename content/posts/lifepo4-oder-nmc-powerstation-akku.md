@@ -1,7 +1,7 @@
 +++
 title = 'LiFePO4 oder NMC: Welcher Akku gehört in die Powerstation?'
 foto = 'unterwegs'
-lastmod = '2026-10-19T22:04:52+02:00'
+lastmod = '2026-10-20T13:30:00+02:00'
 date = '2026-10-19'
 description = "LiFePO4 oder NMC? Was eine KIT-Studie zur Sicherheit zeigt, warum LFP-Powerstations schwerer sind, was Zyklen bedeuten, wie Anker die Garantie staffelt."
 draft = false
@@ -74,13 +74,13 @@ Die Sicherheit hat laut KIT einen Preis. Im 21700-Format war die LFP-Zelle nur m
 | NMC / NCA | 5 Ah | 3,6 V | 18 Wh |
 | LFP | 3 Ah | 3,3 V | 9,9 Wh |
 
-Für dieselbe Kapazität braucht ein LFP-Gerät also mehr Zellen und wird größer und schwerer. Bei den Powerstations in meinem Vergleich liegt die Energiedichte des ganzen Geräts, also Kapazität geteilt durch Gewicht laut Hersteller, zwischen rund 61 Wh/kg (EcoFlow RIVER 3 Plus) und rund 108 Wh/kg (Anker SOLIX C2000 Gen 2). Darin stecken neben den Zellen auch Gehäuse, Wechselrichter und Lüfter. Große Geräte schneiden deshalb meist besser ab.
+Für dieselbe Kapazität braucht ein LFP-Gerät also mehr Zellen und wird größer und schwerer. Bei den Powerstations in meinem Vergleich liegt die Energiedichte des ganzen Geräts, also Kapazität geteilt durch Gewicht laut Hersteller, zwischen rund 61 Wh/kg (EcoFlow RIVER 3 Plus) und rund 115 Wh/kg (BLUETTI Elite 300). Darin stecken neben den Zellen auch Gehäuse, Wechselrichter und Lüfter. Große Geräte schneiden deshalb meist besser ab.
 
 {{< produkte art="ps" modelle="EcoFlow RIVER 3|Jackery Explorer 300 Plus|Anker SOLIX C2000 Gen 2" >}}
 
 ## Lebensdauer: Zyklenangaben richtig lesen
 
-Die Hersteller der LFP-Powerstations in meinem Vergleich geben 3.000 bis 4.000 Ladezyklen an. Achte darauf, worauf sich die Zahl bezieht:
+Die Hersteller der LFP-Powerstations in meinem Vergleich geben meist 3.000 bis 4.000 Ladezyklen an, für die BLUETTI Elite 300 nennt heise 6.000. Achte darauf, worauf sich die Zahl bezieht:
 
 - EcoFlow RIVER 3: 3.000 Zyklen bis 80 % Restkapazität
 - Anker SOLIX C1000 Gen 2: 4.000 Zyklen bis mindestens 80 %

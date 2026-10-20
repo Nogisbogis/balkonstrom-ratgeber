@@ -2,7 +2,7 @@
 title = 'Beste Powerstation fürs Camping: worauf es ankommt (mit Vergleich)'
 foto = 'camping'
 seotitle = "Beste Powerstation fürs Camping: Kaufberatung"
-lastmod = '2026-10-19T22:04:52+02:00'
+lastmod = '2026-10-20T13:30:00+02:00'
 date = '2026-10-19'
 description = "Kapazität, Dauerleistung, Gewicht, Solareingang, Sicherheit: So findest du die passende Powerstation fürs Camping – mit Herstellerdaten und Tests."
 draft = false
@@ -22,7 +22,7 @@ kurz = [
 ]
 [[empfehlung]]
   einsatz = 'Handy, Licht und Laptop am Wochenende'
-  text = '250–300-Wh-Klasse mit 3,5–4,7 kg. Die EcoFlow RIVER 3 ist laut Hersteller die leichteste im Vergleich, die RIVER 3 Plus hat die höchste Dauerleistung der kleinen Klasse.'
+  text = '250–300-Wh-Klasse mit 2,6–4,7 kg. Die EcoFlow RIVER 3 ist laut Hersteller die leichteste mit 230-V-Steckdose, RIVER 3 Plus und BLUETTI Elite 30 V2 haben mit 600 W die höchste Dauerleistung der kleinen Klasse.'
 [[empfehlung]]
   einsatz = 'Kühlbox über mehrere Tage oder Geräte mit Heizelement'
   text = '1-kWh-Klasse mit 10–13 kg. Die EcoFlow DELTA 3 Plus war im ADAC-Test Zweite, die Anker SOLIX C1000 Gen 2 hat laut Hersteller die höchste Dauerleistung der Gruppe.'
@@ -49,7 +49,7 @@ kurz = [
 [[top_empfehlung]]
   einsatz = 'Handy, Licht und Laptop am Wochenende'
   modell = 'EcoFlow RIVER 3'
-  grund = 'Laut EcoFlow die leichteste Station im Vergleich (3,55 kg).'
+  grund = 'Laut EcoFlow mit 3,55 kg die leichteste Station mit 230-V-Steckdose im Vergleich.'
 [[top_empfehlung.ersatz]]
   modell = 'Jackery Explorer 300 Plus'
   grund = 'Laut Jackery 288 Wh bei 3,75 kg.'
@@ -112,7 +112,7 @@ In meinem [Vergleich](/vergleich/#powerstations) steht in der Spalte „Dauerlei
 
 ## Schritt 3: Gewicht und Größe
 
-Kapazität bedeutet Gewicht. Laut Herstellerangaben wiegen die Geräte der 250–300-Wh-Klasse zwischen 3,55 kg (EcoFlow RIVER 3) und 4,7 kg (EcoFlow RIVER 3 Plus). In der 1-kWh-Klasse liegen sie zwischen 10,8 kg (Jackery Explorer 1000 v2) und 12,5 kg (EcoFlow DELTA 3 Plus). Mit 2 kWh ist man bei knapp 19 kg (Anker SOLIX C2000 Gen 2). Fürs Zelt und den Fußweg vom Parkplatz sind große Modelle unhandlich, im Wohnmobil oder Van spielt das Gewicht eine geringere Rolle.
+Kapazität bedeutet Gewicht. Laut Herstellerangaben wiegen die Geräte der 250–300-Wh-Klasse zwischen 2,58 kg (EcoFlow TRAIL 300 DC, ohne 230-V-Steckdose) und 4,7 kg (EcoFlow RIVER 3 Plus); mit Steckdose ab 3,55 kg (EcoFlow RIVER 3). In der 1-kWh-Klasse liegen sie zwischen 10,8 kg (Jackery Explorer 1000 v2) und 12,5 kg (EcoFlow DELTA 3 Plus). Mit 2 kWh ist man bei 18,9 bis 22,1 kg (Anker SOLIX C2000 Gen 2 bis EcoFlow DELTA 3 Max Plus). Fürs Zelt und den Fußweg vom Parkplatz sind große Modelle unhandlich, im Wohnmobil oder Van spielt das Gewicht eine geringere Rolle.
 
 {{% mehr "Grafik: Kapazität und Gewicht im Vergleich" %}}
 
@@ -140,7 +140,7 @@ Wie schnell die Powerstation tatsächlich lädt, hängt vom Wetter, vom Winkel d
 
 ## Schritt 5: Akku und Haltbarkeit
 
-Alle Powerstations in meinem Vergleich verwenden LiFePO4-Zellen (Lithium-Eisenphosphat). Die Hersteller geben 3.000 bis 4.000 Ladezyklen an, nach denen noch 70–80 % der Kapazität vorhanden sein sollen (z. B. EcoFlow RIVER 3: 3.000 Zyklen bis 80 %, Anker SOLIX C1000 Gen 2: 4.000 Zyklen bis 80 %, Jackery Explorer 1000 v2: 4.000 Zyklen bis 70 %). Für Camping, wo man eher selten volle Zyklen fährt, ist das mehr als ausreichend.
+Alle Powerstations in meinem Vergleich verwenden LiFePO4-Zellen (Lithium-Eisenphosphat). Die Hersteller geben meist 3.000 bis 4.000 Ladezyklen an (für die BLUETTI Elite 300 nennt heise 6.000), nach denen noch 70–80 % der Kapazität vorhanden sein sollen (z. B. EcoFlow RIVER 3: 3.000 Zyklen bis 80 %, Anker SOLIX C1000 Gen 2: 4.000 Zyklen bis 80 %, Jackery Explorer 1000 v2: 4.000 Zyklen bis 70 %). Für Camping, wo man eher selten volle Zyklen fährt, ist das mehr als ausreichend.
 
 Beachte die zulässigen Temperaturen: Laden ist bei den meisten Geräten laut Datenblatt erst ab 0 °C erlaubt.
 
@@ -170,7 +170,7 @@ Alle Werte sind Herstellerangaben. Die vollständige, filterbare Tabelle mit Que
 
 ### Kleine Geräte (250–300 Wh)
 
-Für Wochenenden mit Handy, Licht und Laptop reicht oft ein Gerät dieser Klasse. Die EcoFlow RIVER 3 ist laut Hersteller die leichteste, die RIVER 3 Plus hat die höchste Dauerleistung der kleinen Klasse.
+Für Wochenenden mit Handy, Licht und Laptop reicht oft ein Gerät dieser Klasse. Die EcoFlow RIVER 3 ist laut Hersteller die leichteste mit 230-V-Steckdose (nur die TRAIL 300 DC ohne Steckdose wiegt weniger). RIVER 3 Plus und BLUETTI Elite 30 V2 haben mit 600 W die höchste Dauerleistung der kleinen Klasse.
 
 {{< produkte art="ps" modelle="EcoFlow RIVER 3|EcoFlow RIVER 3 Plus|Jackery Explorer 300 Plus|Anker SOLIX C300X" >}}
 

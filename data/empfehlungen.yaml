@@ -5,7 +5,7 @@
 #   Herstellerdaten/Artikeln). Ist keines verfügbar, entfällt der Eintrag. Siehe _partials/empf-wahl.html.
 - einsatz: Camping klein
   modell: EcoFlow RIVER 3
-  grund: Laut EcoFlow die leichteste Station im Vergleich (3,55 kg) – genug für Handy, Licht und Laptop am Wochenende.
+  grund: Laut EcoFlow mit 3,55 kg die leichteste Station mit 230-V-Steckdose im Vergleich – genug für Handy, Licht und Laptop am Wochenende.
   beleg: /posts/powerstation-camping-kaufberatung/
   ersatz:
     - modell: Jackery Explorer 300 Plus

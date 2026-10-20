@@ -2,7 +2,7 @@
 title = 'Powerstation als Notstrom: Was sie bei einem Stromausfall kann – und was nicht'
 foto = 'stromausfall'
 seotitle = "Powerstation als Notstrom: Was sie bei Stromausfall kann"
-lastmod = '2026-10-19T22:04:52+02:00'
+lastmod = '2026-10-20T13:30:00+02:00'
 date = '2026-10-19'
 description = "Eine Powerstation überbrückt einen Stromausfall für einzelne Geräte: was sie für Router, Licht und Kühlschrank leistet, wie USV funktioniert, wo es endet."
 draft = false
@@ -54,7 +54,7 @@ Wenn der Strom ausfällt, sind Licht, Router, Kühlschrank und Heizungssteuerung
 
 Das BBK nennt Batteriesysteme ausdrücklich als Möglichkeit, sie „können als Kurzzeitenergiespeicher zur Notstromversorgung genutzt werden“. Ein Wechselrichter erzeugt daraus 230 V. Die wesentlichen Kenngrößen sind laut BBK **Leistung und Kapazität**. Genau diese beiden Werte stehen bei jeder Powerstation im Datenblatt:
 
-- **Dauerleistung (W):** was gleichzeitig laufen darf. In meinem Vergleich reicht die Spanne von 300 W (EcoFlow RIVER 3) bis 2.400 W (Anker SOLIX C2000 Gen 2).
+- **Dauerleistung (W):** was gleichzeitig laufen darf. In meinem Vergleich reicht die Spanne von 300 W (z. B. EcoFlow RIVER 3) bis 4.000 W (EcoFlow DELTA Pro 3).
 - **Kapazität (Wh):** wie lange es läuft. Die Spanne reicht von 245 Wh bis 2.048 Wh.
 
 Anders als Benzin- oder Dieselgeneratoren erzeugen Powerstations keine Abgase. Generatoren dürfen laut BBK wegen Erstickungsgefahr nicht in Innenräumen betrieben werden.
