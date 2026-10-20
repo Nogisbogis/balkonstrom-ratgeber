@@ -24,6 +24,7 @@ Aufruf:  python tools/verfuegbarkeit.py [--nur ASIN ...] [--trocken]
 Exit-Code: 0 = ok (Datei ggf. geändert), 3 = zu viele „unklar“ (nichts geändert).
 """
 import argparse, datetime as dt, glob, json, os, random, re, shutil, socket, subprocess, sys, time, urllib.request
+sys.dont_write_bytecode = True
 import yaml, websocket
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))

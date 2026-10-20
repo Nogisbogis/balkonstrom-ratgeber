@@ -13,7 +13,7 @@ trap 'rm -f "$LOG"' EXIT
 if [ -n "$(git status --porcelain -- data/verfuegbarkeit.yaml)" ]; then
   echo "PROBLEM: data/verfuegbarkeit.yaml hat bereits uncommittete Änderungen – Lauf abgebrochen."; exit 2
 fi
-git pull -q --rebase origin main || { echo "PROBLEM: git pull fehlgeschlagen – Lauf abgebrochen."; exit 2; }
+git pull -q --rebase --autostash origin main || { echo "PROBLEM: git pull fehlgeschlagen – Lauf abgebrochen."; exit 2; }
 
 "$PY" tools/verfuegbarkeit.py 2>&1 | tee "$LOG"
 rc=${PIPESTATUS[0]}
