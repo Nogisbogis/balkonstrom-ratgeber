@@ -1,7 +1,16 @@
-{{- /* Nutzung: {{< amazon asin="B0XXXXXXXX" text="Produktname bei Amazon ansehen" >}} */ -}}
+{{- /* Nutzung: {{< amazon asin="B0XXXXXXXX" text="Produktname bei Amazon ansehen" name="Produktname" >}}
+     Ist die ASIN laut data/verfuegbarkeit.yaml nicht verfügbar/ungültig, erscheint statt des Links nur
+     der Produktname (name, sonst Modell aus den Daten, sonst text ohne „bei Amazon …“) mit neutralem Hinweis. */ -}}
 {{- $asin := .Get "asin" | default (.Get 0) -}}
 {{- $text := .Get "text" | default (.Get 1) | default "Aktuellen Preis bei Amazon ansehen" -}}
 {{- if not $asin }}{{ errorf "amazon-Shortcode: asin fehlt in %s" .Position }}{{ end -}}
+{{- if partial "amazon-ok.html" $asin -}}
 {{- if not (or (getenv "HUGO_PARTNER_TAG") site.Params.partnerTag) }}{{ warnf "amazon-Shortcode: kein Partner-Tag gesetzt (%s)" .Position }}{{ end -}}
 <a class="amazon-link" href="{{ partial "amazon-url.html" $asin }}" rel="sponsored nofollow noopener" target="_blank">{{ $text }}</a><sup class="ad-mark" title="Affiliate-Link">*</sup>
+{{- else -}}
+{{- $name := .Get "name" -}}
+{{- if not $name }}{{ with index (where (union hugo.Data.powerstations hugo.Data.balkonkraftwerke) "asin" $asin) 0 }}{{ $name = .modell }}{{ end }}{{ end -}}
+{{- if not $name }}{{ $name = replaceRE `\s*(bei|auf) Amazon.*$` "" $text }}{{ end -}}
+<span class="amazon-aus">{{ $name }}</span> {{ partial "amazon-na.html" (dict "cls" "amz-na-text") }}
+{{- end -}}
 {{- /**/ -}}

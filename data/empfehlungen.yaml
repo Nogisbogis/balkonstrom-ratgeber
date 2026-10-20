@@ -1,18 +1,45 @@
 # Startseite „Meine Empfehlungen nach Einsatz“.
 # Nur Empfehlungen, die bereits in einem Artikel stehen bzw. dort belegt sind (Feld beleg).
+# ersatz: Ausweichmodelle in dieser Reihenfolge, falls das Modell laut data/verfuegbarkeit.yaml derzeit
+#   bei Amazon nicht verfügbar oder ungültig ist (Auswahl nach demselben Kriterium, Begründung nur aus
+#   Herstellerdaten/Artikeln). Ist keines verfügbar, entfällt der Eintrag. Siehe _partials/empf-wahl.html.
 - einsatz: Camping klein
   modell: EcoFlow RIVER 3
   grund: Laut EcoFlow die leichteste Station im Vergleich (3,55 kg) – genug für Handy, Licht und Laptop am Wochenende.
   beleg: /posts/powerstation-camping-kaufberatung/
+  ersatz:
+    - modell: Jackery Explorer 300 Plus
+      grund: Laut Jackery 288 Wh bei 3,75 kg – die 250–300-Wh-Klasse reicht oft für Handy, Licht und Laptop am Wochenende.
+    - modell: Anker SOLIX C300X
+      grund: Laut Anker 288 Wh bei 4,13 kg – die 250–300-Wh-Klasse reicht oft für Handy, Licht und Laptop am Wochenende.
+    - modell: BLUETTI Elite 30 V2
+      grund: Laut BLUETTI 288 Wh bei 4,3 kg und 600 W Dauerleistung – die 250–300-Wh-Klasse reicht oft für Handy, Licht und Laptop am Wochenende.
+    - modell: EcoFlow RIVER 3 Plus
+      grund: Laut EcoFlow 286 Wh bei 4,7 kg und 600 W Dauerleistung – die 250–300-Wh-Klasse reicht oft für Handy, Licht und Laptop am Wochenende.
 - einsatz: Camping & Van groß
   modell: EcoFlow DELTA 3 Plus
   grund: 1-kWh-Klasse für Kühlbox und mehrere Tage; im ADAC-Test 2025 mit 2,1 Zweite.
   beleg: /posts/powerstation-camping-kaufberatung/
+  ersatz:
+    - modell: Anker SOLIX C1000 Gen 2
+      grund: 1-kWh-Klasse für Kühlbox und mehrere Tage; laut Anker mit 2.000 W die höchste Dauerleistung der 1-kWh-Gruppe.
+    - modell: BLUETTI Elite 100 V2
+      grund: 1-kWh-Klasse für Kühlbox und mehrere Tage; laut BLUETTI 1.024 Wh, 1.800 W Dauerleistung und 1.000 W Solareingang.
 - einsatz: Notstrom
   modell: Anker SOLIX C1000 Gen 2
   grund: 2.000 W Dauerleistung und USV-Umschaltung in ≤ 10 ms laut Anker – genug für Geräte mit Heizelement, die laut BBK 1.500–2.000 W brauchen.
   beleg: /posts/powerstation-notstrom-blackout/
+  ersatz:
+    - modell: EcoFlow DELTA 3 Plus
+      grund: 1.800 W Dauerleistung und USV-Umschaltung in ≤ 10 ms laut EcoFlow; im ADAC-Test 2025 mit 2,1 Zweite.
+    - modell: BLUETTI Elite 100 V2
+      grund: 1.800 W Dauerleistung und USV-Umschaltung in ≤ 10 ms laut BLUETTI.
 - einsatz: Balkon mit Speicher
   modell: Anker SOLIX Solarbank 2 E1600 Pro
   grund: Laut COMPUTER BILD der erste Balkonspeicher mit „sehr gut“; 4 MPPT und eine 1.000-W-Notstromsteckdose laut Anker. Vorher rechnen, ob sich der Speicher lohnt.
   beleg: /posts/balkonkraftwerk-mit-speicher-lohnt-sich/
+  ersatz:
+    - modell: EcoFlow STREAM Ultra
+      grund: Laut EcoFlow 1,92 kWh Speicher, 4 MPPT und bis zu 1.200 W an den Steckdosen ohne Netz. Vorher rechnen, ob sich der Speicher lohnt.
+    - modell: EcoFlow STREAM Pro
+      grund: Laut EcoFlow 1,92 kWh Speicher, 3 MPPT und bis zu 1.200 W an den Steckdosen ohne Netz. Vorher rechnen, ob sich der Speicher lohnt.

@@ -1,0 +1,19 @@
+{{- /* Wählt für einen Empfehlungs-Eintrag (dict/map mit modell, grund, einsatz, optional ersatz) das erste
+     Modell, das bei Amazon verlinkt werden darf (data/verfuegbarkeit.yaml über amazon-ok.html).
+     Reihenfolge: das empfohlene Modell, dann die ersatz-Liste. Modelle ohne ASIN gelten als wählbar,
+     wenn sie selbst empfohlen sind (dann gibt es ohnehin keinen Kauflink).
+     Rückgabe: dict modell, grund, einsatz, statt (Name des ersetzten Modells oder "") – oder leeres dict,
+     wenn kein Kandidat verfügbar ist (Eintrag entfällt). */ -}}
+{{- $e := . -}}
+{{- $r := dict -}}
+{{- $kand := slice (dict "modell" $e.modell "grund" $e.grund "erst" true) -}}
+{{- range $e.ersatz }}{{ $kand = $kand | append (dict "modell" .modell "grund" .grund "erst" false) }}{{ end -}}
+{{- range $kand -}}
+  {{- if not $r -}}
+    {{- $i := partial "modell-info.html" .modell -}}
+    {{- if or (and .erst (not $i.asin)) (partial "amazon-ok.html" $i.asin) -}}
+      {{- $r = dict "modell" .modell "grund" .grund "einsatz" $e.einsatz "statt" (cond .erst "" $e.modell) -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- return $r -}}

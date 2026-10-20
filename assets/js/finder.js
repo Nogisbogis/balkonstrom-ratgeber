@@ -44,6 +44,8 @@
   };
   function sortiere(liste, einsatz) {
     return liste.sort(function (a, b) {
+      // Derzeit bei Amazon nicht verfügbare Modelle stehen hinter den verfügbaren (sonst gleiche Regeln)
+      if (!!a.na !== !!b.na) return a.na ? 1 : -1;
       if (einsatz === 'van') return b.pv - a.pv || a.kg - b.kg;
       if (einsatz === 'notstrom') return (a.usv || 999) - (b.usv || 999) || b.wh - a.wh;
       if (einsatz === 'werkzeug') return b.w - a.w || a.kg - b.kg;
@@ -74,6 +76,7 @@
     checks.forEach(function (c) { h += '<li>' + (c.ok ? '<span class="mk mk-ja" aria-hidden="true">+</span> ' : '<span class="mk mk-nein" aria-hidden="true">–</span> <span class="sr">nicht erfüllt: </span>') + esc(c.t) + '</li>'; });
     h += '<li>' + (knapp ? '' : '<span class="mk mk-ja" aria-hidden="true">+</span> ') + esc(sortGrund[EINSATZ](p)) + '</li></ul>';
     if (p.warn) h += '<p class="warnbox">' + esc(p.warn) + '</p>';
+    if (p.na) h += '<p class="amz-na-zeile"><span class="amz-na">Derzeit bei Amazon nicht verfügbar</span></p>';
     h += '<p><a href="' + esc(p.url) + '">Datenblatt, Tests &amp; Quellen</a> · <a href="../laufzeitrechner/?m=' + encodeURIComponent(p.s) + '">Laufzeit jetzt ausrechnen</a></p></div>';
     return h;
   }

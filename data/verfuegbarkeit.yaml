@@ -1,0 +1,101 @@
+# Amazon-Verfügbarkeit je ASIN – automatisch erzeugt von tools/verfuegbarkeit.py, nicht von Hand pflegen.
+# status: verfuegbar | nicht_verfuegbar | ungueltig. Bei nicht_verfuegbar/ungueltig zeigt die Website
+# keinen Amazon-Link, sondern „Derzeit bei Amazon nicht verfügbar“; Empfehlungen weichen auf ersatz aus.
+# geprueft: Datum der letzten Prüfung mit Ergebnis (wird nur bei einer Statusänderung mitgeschrieben),
+# seit: seit wann der Status gilt. ASINs ohne Eintrag gelten als verfügbar.
+asins:
+  B0FN7MSY4L:
+    modell: Anker SOLIX C1000 Gen 2
+    status: verfuegbar
+    geprueft: '2026-10-20'
+    seit: '2026-10-20'
+  B0FVFGL38H:
+    modell: Anker SOLIX C2000 Gen 2
+    status: verfuegbar
+    geprueft: '2026-10-20'
+    seit: '2026-10-20'
+  B0FLJH3ZZY:
+    modell: Anker SOLIX C300X
+    status: verfuegbar
+    geprueft: '2026-10-20'
+    seit: '2026-10-20'
+  B0CB86CXLD:
+    modell: Anker SOLIX RS40P Balkonkraftwerk (2 × 445 W, MI80)
+    status: nicht_verfuegbar
+    geprueft: '2026-10-20'
+    seit: '2026-10-20'
+  B0D1X82HDL:
+    modell: Anker SOLIX Solarbank 2 E1600 Pro
+    status: nicht_verfuegbar
+    geprueft: '2026-10-20'
+    seit: '2026-10-20'
+  B0F9FN228S:
+    modell: BLUETTI Elite 30 V2
+    status: verfuegbar
+    geprueft: '2026-10-20'
+    seit: '2026-10-20'
+  B0GL22FW87:
+    modell: BLUETTI Elite 300
+    status: verfuegbar
+    geprueft: '2026-10-20'
+    seit: '2026-10-20'
+  B0GJC2M84T:
+    modell: DJI Power 1000 Mini
+    status: verfuegbar
+    geprueft: '2026-10-20'
+    seit: '2026-10-20'
+  B0F2T77FCV:
+    modell: DJI Power 2000
+    status: verfuegbar
+    geprueft: '2026-10-20'
+    seit: '2026-10-20'
+  B0FXFLZHVD:
+    modell: EcoFlow DELTA 3 Max Plus
+    status: verfuegbar
+    geprueft: '2026-10-20'
+    seit: '2026-10-20'
+  B0DFPW2Y2C:
+    modell: EcoFlow DELTA 3 Plus
+    status: verfuegbar
+    geprueft: '2026-10-20'
+    seit: '2026-10-20'
+  B0DDKP47PY:
+    modell: EcoFlow DELTA Pro 3
+    status: verfuegbar
+    geprueft: '2026-10-20'
+    seit: '2026-10-20'
+  B0DFVZ5D7Z:
+    modell: EcoFlow RIVER 3
+    status: nicht_verfuegbar
+    geprueft: '2026-10-20'
+    seit: '2026-10-20'
+  B0DFVZ6MYX:
+    modell: EcoFlow RIVER 3 Plus
+    status: nicht_verfuegbar
+    geprueft: '2026-10-20'
+    seit: '2026-10-20'
+  B0F5B7WDQ4:
+    modell: EcoFlow STREAM Pro
+    status: verfuegbar
+    geprueft: '2026-10-20'
+    seit: '2026-10-20'
+  B0F5B93DTV:
+    modell: EcoFlow STREAM Ultra
+    status: verfuegbar
+    geprueft: '2026-10-20'
+    seit: '2026-10-20'
+  B0FPL36GM6:
+    modell: EcoFlow TRAIL 300 DC
+    status: verfuegbar
+    geprueft: '2026-10-20'
+    seit: '2026-10-20'
+  B0FSDHLV8M:
+    modell: Growatt NEXA 2000
+    status: verfuegbar
+    geprueft: '2026-10-20'
+    seit: '2026-10-20'
+  B0C27VWNM7:
+    modell: Jackery Explorer 300 Plus
+    status: nicht_verfuegbar
+    geprueft: '2026-10-20'
+    seit: '2026-10-20'

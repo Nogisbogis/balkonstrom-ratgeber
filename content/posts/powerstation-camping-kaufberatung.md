@@ -50,14 +50,32 @@ kurz = [
   einsatz = 'Handy, Licht und Laptop am Wochenende'
   modell = 'EcoFlow RIVER 3'
   grund = 'Laut EcoFlow die leichteste Station im Vergleich (3,55 kg).'
+[[top_empfehlung.ersatz]]
+  modell = 'Jackery Explorer 300 Plus'
+  grund = 'Laut Jackery 288 Wh bei 3,75 kg.'
+[[top_empfehlung.ersatz]]
+  modell = 'Anker SOLIX C300X'
+  grund = 'Laut Anker 288 Wh bei 4,13 kg.'
+[[top_empfehlung.ersatz]]
+  modell = 'BLUETTI Elite 30 V2'
+  grund = 'Laut BLUETTI 288 Wh bei 4,3 kg und 600 W Dauerleistung.'
+[[top_empfehlung.ersatz]]
+  modell = 'EcoFlow RIVER 3 Plus'
+  grund = 'Laut EcoFlow 286 Wh bei 4,7 kg und 600 W Dauerleistung.'
 [[top_empfehlung]]
   einsatz = 'Kühlbox über mehrere Tage oder Geräte mit Heizelement'
   modell = 'EcoFlow DELTA 3 Plus'
   grund = 'Im ADAC-Test 2025 mit 2,1 Zweite.'
+[[top_empfehlung.ersatz]]
+  modell = 'BLUETTI Elite 100 V2'
+  grund = 'Laut BLUETTI 1.024 Wh, 1.800 W Dauerleistung und 1.000 W Solareingang.'
 [[top_empfehlung]]
   einsatz = 'Kühlbox über mehrere Tage oder Geräte mit Heizelement'
   modell = 'Anker SOLIX C1000 Gen 2'
   grund = 'Laut Anker die höchste Dauerleistung der 1-kWh-Gruppe (2.000 W).'
+[[top_empfehlung.ersatz]]
+  modell = 'BLUETTI Elite 100 V2'
+  grund = 'Laut BLUETTI 1.024 Wh, 1.800 W Dauerleistung und 1.000 W Solareingang.'
 +++
 
 Eine Powerstation ist ein großer Akku mit Steckdosen, USB-Anschlüssen und meist einem Solareingang. Beim Camping versorgt sie Kühlbox, Licht, Handy und Laptop – je nach Größe auch eine Kaffeemaschine. Die „beste“ Powerstation gibt es nicht: Entscheidend ist, was du betreiben willst, wie lange und wie viel du tragen möchtest.

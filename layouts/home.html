@@ -17,7 +17,9 @@
 </section>
 {{- end }}
 
-{{- with hugo.Data.empfehlungen }}
+{{- $gewaehlt := slice }}{{ $getauscht := false }}
+{{- range hugo.Data.empfehlungen }}{{ with partial "empf-wahl.html" . }}{{ $gewaehlt = $gewaehlt | append . }}{{ if .statt }}{{ $getauscht = true }}{{ end }}{{ end }}{{ end }}
+{{- with $gewaehlt }}
 <section class="home-sec empf-home" aria-labelledby="empf-home-titel">
   <div class="sec-kopf">
     <h2 id="empf-home-titel">Meine Empfehlungen nach Einsatz</h2>
@@ -26,10 +28,10 @@
   <ul class="feature-liste">{{ range $i, $e := . }}
     <li class="feature{{ if modBool $i 2 }}{{ else }} feature-rev{{ end }}">
       {{ partial "foto.html" (dict "key" (index $fotos $e.einsatz) "ctx" $ "sizes" "(min-width: 64rem) 34rem, 100vw" "lazy" true "cls" "feature-foto") }}
-      <div class="feature-text">{{ partial "empfehlung-item.html" (dict "modell" $e.modell "grund" $e.grund "einsatz" $e.einsatz "ctx" $ "vergleich" true "tag" "div" "gross" true) }}</div>
+      <div class="feature-text">{{ partial "empfehlung-item.html" (dict "modell" $e.modell "grund" $e.grund "einsatz" $e.einsatz "statt" $e.statt "ctx" $ "vergleich" true "tag" "div" "gross" true) }}</div>
     </li>{{ end }}
   </ul>
-  <p class="note empf-note">Jede Empfehlung stammt aus einem meiner Artikel und stützt sich auf Herstellerdaten oder zitierte Tests. Ich habe die Geräte nicht selbst getestet. <a href="{{ "methodik/" | relURL }}">So arbeite ich</a></p>
+  <p class="note empf-note">Jede Empfehlung stammt aus einem meiner Artikel und stützt sich auf Herstellerdaten oder zitierte Tests. Ich habe die Geräte nicht selbst getestet.{{ if $getauscht }} Ist ein empfohlenes Modell derzeit bei Amazon nicht verfügbar, steht dort ein Ausweichmodell derselben Klasse – begründet nur mit Herstellerdaten.{{ end }} <a href="{{ "methodik/" | relURL }}">So arbeite ich</a></p>
 </section>
 {{- end }}
 

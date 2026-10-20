@@ -748,3 +748,10 @@ details.p-mehr .tablewrap{margin:0}
 .about-mehr p{margin:.25rem 0 0}
 .so-gehts{margin:-.5rem 0 1.5rem;max-width:var(--measure)}
 .so-gehts p{margin:.25rem 0 0}
+/* Amazon-Verfügbarkeit (data/verfuegbarkeit.yaml): neutraler Hinweis statt Kauflink */
+.amz-na{font-family:var(--sans);font-size:var(--fs-s);line-height:1.4;color:var(--muted)}
+.amz-na-tab{font-size:.8125rem}
+.amz-na-cta,.amz-na-karte,.amz-na-empf{display:inline-flex;align-items:center;min-height:var(--tap)}
+.amz-na-zeile{margin:.25rem 0}
+.amz-na-quelle{font-size:inherit}
+.empf-statt{display:block;font-family:var(--sans);font-size:var(--fs-s);color:var(--muted);margin:.25rem 0}

@@ -1,0 +1,11 @@
+{{- /* true, wenn für die ASIN ein Amazon-Link gezeigt werden darf: ASIN gesetzt und laut
+     data/verfuegbarkeit.yaml (tools/verfuegbarkeit.py) weder nicht_verfuegbar noch ungueltig.
+     ASINs ohne Eintrag gelten als verfügbar. */ -}}
+{{- $ok := false -}}
+{{- with . -}}
+  {{- $ok = true -}}
+  {{- with hugo.Data.verfuegbarkeit }}{{ with .asins }}{{ with index . $ }}
+    {{- if in (slice "nicht_verfuegbar" "ungueltig") .status }}{{ $ok = false }}{{ end -}}
+  {{- end }}{{ end }}{{ end -}}
+{{- end -}}
+{{- return $ok -}}

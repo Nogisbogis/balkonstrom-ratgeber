@@ -38,6 +38,12 @@ kurz = [
   einsatz = 'Router, Licht, Kühlschrank – und kurz auch Geräte mit Heizelement'
   modell = 'Anker SOLIX C1000 Gen 2'
   grund = '2.000 W Dauerleistung und USV-Umschaltung in ≤ 10 ms laut Anker. Geräte mit Heizelement brauchen laut BBK 1.500–2.000 W.'
+[[top_empfehlung.ersatz]]
+  modell = 'EcoFlow DELTA 3 Plus'
+  grund = '1.800 W Dauerleistung und USV-Umschaltung in ≤ 10 ms laut EcoFlow. Geräte mit Heizelement brauchen laut BBK 1.500–2.000 W.'
+[[top_empfehlung.ersatz]]
+  modell = 'BLUETTI Elite 100 V2'
+  grund = '1.800 W Dauerleistung und USV-Umschaltung in ≤ 10 ms laut BLUETTI. Geräte mit Heizelement brauchen laut BBK 1.500–2.000 W.'
 +++
 
 Wenn der Strom ausfällt, sind Licht, Router, Kühlschrank und Heizungssteuerung als Erstes weg. Eine Powerstation kann einzelne Geräte für eine Weile weiterbetreiben. Sie ist aber kein Notstromaggregat fürs ganze Haus. Hier steht, was die Geräte laut Herstellern und unabhängigen Tests leisten. Die Einordnung stützt sich auf den Ratgeber „Stromausfall“ des Bundesamts für Bevölkerungsschutz und Katastrophenhilfe (BBK).

@@ -24,7 +24,7 @@ Danach sortiert der Finder nach deinem Einsatz:
 - **Notstrom:** die kürzeste USV-Umschaltzeit zuerst. Bei widersprüchlichen Herstellerangaben gilt der ungünstigere Wert.
 - **Werkzeug:** die höchste Dauerleistung zuerst.
 
-Modelle, die nur an einer Regel scheitern, zeigt er als „knapp daneben“.
+Modelle, die nur an einer Regel scheitern, zeigt er als „knapp daneben“. Modelle, die derzeit bei Amazon nicht verfügbar sind, stellt er innerhalb jeder Gruppe ans Ende und markiert sie.
 
 {{% /mehr %}}
 

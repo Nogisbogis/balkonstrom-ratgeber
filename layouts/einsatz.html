@@ -12,12 +12,14 @@
   </div>
   {{- $p := . }}
   {{- $items := slice }}
-  {{- range .Params.empfehlungen }}{{ $e := . }}{{ range where hugo.Data.empfehlungen "einsatz" $e }}{{ $items = $items | append . }}{{ end }}{{ end }}
+  {{- range .Params.empfehlungen }}{{ $e := . }}{{ range where hugo.Data.empfehlungen "einsatz" $e }}{{ with partial "empf-wahl.html" . }}{{ $items = $items | append . }}{{ end }}{{ end }}{{ end }}
+  {{- if $items }}
   <section class="einsatz-sec" aria-labelledby="e-empf">
     <h2 id="e-empf">Meine Empfehlung</h2>
-    <ul class="empf-list empf-grid empf-grid-{{ len $items }}">{{ range $items }}{{ partial "empfehlung-item.html" (dict "modell" .modell "grund" .grund "einsatz" ($p.Params.empfehlung_label | default .einsatz) "ctx" $p "vergleich" (gt (len $items) 1)) }}{{ end }}</ul>
+    <ul class="empf-list empf-grid empf-grid-{{ len $items }}">{{ range $items }}{{ partial "empfehlung-item.html" (dict "modell" .modell "grund" .grund "statt" .statt "einsatz" ($p.Params.empfehlung_label | default .einsatz) "ctx" $p "vergleich" (gt (len $items) 1)) }}{{ end }}</ul>
     <p class="note">Die Empfehlung stammt aus meinem Artikel und stützt sich auf Herstellerdaten oder zitierte Tests. Ich habe die Geräte nicht selbst getestet. <a href="{{ "methodik/" | relURL }}">So arbeite ich</a></p>
   </section>
+  {{- end }}
   <section class="einsatz-sec" aria-labelledby="e-tool">
     <h2 id="e-tool">Selbst rechnen</h2>
     {{ with .Params.tool }}<div class="weiter-grid weiter-1"><a class="weiter-tool" href="{{ .url | relURL }}"><span class="label">{{ .name }}</span><strong>{{ .text }}</strong><span class="weiter-hinweis">Passend zu diesem Einsatz vorausgefüllt – du kannst alles ändern.</span><em aria-hidden="true">→</em></a></div>{{ end }}

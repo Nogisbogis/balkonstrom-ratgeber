@@ -29,7 +29,7 @@
       <p class="note">Herstellerangaben, Belege unten in der Tabelle.</p>
       {{- with .Params.warnung }}<p class="notice p-warn">{{ . | $.RenderString }}</p>{{ end }}
       <p class="pcard-links">
-      {{- with $p.asin }}<a class="btn btn-amazon" href="{{ partial "amazon-url.html" . }}" rel="sponsored nofollow noopener" target="_blank">Aktuellen Preis bei Amazon ansehen<span class="ad-mark" title="Affiliate-Link">*</span></a>{{ else }}<span class="note">Kein Kauflink: Ich habe kein Amazon-Angebot gefunden, das eindeutig zu genau diesem Modell passt.</span>{{ end }}
+      {{- with $p.asin }}{{ if partial "amazon-ok.html" . }}<a class="btn btn-amazon" href="{{ partial "amazon-url.html" . }}" rel="sponsored nofollow noopener" target="_blank">Aktuellen Preis bei Amazon ansehen<span class="ad-mark" title="Affiliate-Link">*</span></a>{{ else }}{{ partial "amazon-na.html" (dict "cls" "amz-na-cta") }}{{ end }}{{ else }}<span class="note">Kein Kauflink: Ich habe kein Amazon-Angebot gefunden, das eindeutig zu genau diesem Modell passt.</span>{{ end }}
       <a class="btn-sec" href="{{ "amortisationsrechner/" | relURL }}">Lohnt sich das? Rechner</a>
       </p>
     </div>
@@ -94,11 +94,11 @@
 
   <section class="p-quellen" aria-labelledby="quellen"><h2 id="quellen">Quellen</h2>
   <details class="mehr p-mehr" id="quellen-liste"><summary>{{ len .Params.quellen }} Quellen mit Links anzeigen</summary>
-  <ol>{{ range .Params.quellen }}<li id="q-{{ .id }}"><a href="{{ .url }}" rel="{{ if strings.Contains .url "amazon." }}sponsored nofollow noopener{{ else }}noopener{{ end }}" target="_blank">{{ .titel }}</a>{{ with .art }} <span class="note">– {{ . }}</span>{{ end }}</li>{{ end }}</ol>
+  <ol>{{ range .Params.quellen }}<li id="q-{{ .id }}">{{ $qa := "" }}{{ with findRESubmatch `amazon\.[a-z.]+/(?:[^/]+/)?(?:dp|gp/product)/([A-Z0-9]{10})` .url 1 }}{{ $qa = index (index . 0) 1 }}{{ end }}{{ if and $qa (not (partial "amazon-ok.html" $qa)) }}{{ .titel }} {{ partial "amazon-na.html" (dict "cls" "amz-na-quelle") }}{{ else }}<a href="{{ .url }}" rel="{{ if strings.Contains .url "amazon." }}sponsored nofollow noopener{{ else }}noopener{{ end }}" target="_blank">{{ .titel }}</a>{{ end }}{{ with .art }} <span class="note">– {{ . }}</span>{{ end }}</li>{{ end }}</ol>
   </details>
   <p class="note">Alle Links abgerufen am {{ (time (.Params.lastmod | default .Date)).Format "02.01.2006" }}. Herstellerangaben können sich ändern; maßgeblich ist das Datenblatt zum Zeitpunkt des Kaufs. Ob und wie du ein Balkonkraftwerk anmelden musst und was am Zählerplatz gilt, steht in meinem <a href="{{ "posts/balkonkraftwerk-anmelden-2026/" | relURL }}">Artikel zur Anmeldung</a>.</p>
   </section>
-  {{- with $p.asin }}{{ if ne $p.modell "Jackery Explorer 1000 v2" }}
+  {{- with $p.asin }}{{ if and (ne $p.modell "Jackery Explorer 1000 v2") (partial "amazon-ok.html" .) }}
   <div class="sticky-cta"><a class="btn btn-amazon" href="{{ partial "amazon-url.html" . }}" rel="sponsored nofollow noopener" target="_blank">Aktuellen Preis bei Amazon ansehen<span class="ad-mark" title="Affiliate-Link">*</span></a></div>
   {{- end }}{{ end }}
 </article>

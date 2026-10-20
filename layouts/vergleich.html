@@ -48,7 +48,7 @@
         <td class="r" data-v="{{ .gewicht_kg }}" data-l="Gewicht">{{ replace (string .gewicht_kg) "." "," }}<span class="einh-m"> kg</span></td>
         <td class="r" data-v="{{ .solareingang_w }}" data-l="Solar max.">{{ lang.FormatNumber 0 .solareingang_w }}<span class="einh-m"> W</span></td>
         <td data-l="Akku">{{ .akkutyp }}</td>
-        <td class="col-kauf">{{ with .asin }}<a class="btn-sec btn-tab" href="{{ partial "amazon-url.html" . }}" rel="sponsored nofollow noopener" target="_blank">Preis bei Amazon<span class="ad-mark" title="Affiliate-Link">*</span></a>{{ else }}<span class="kein-kauf">kein Kauflink</span>{{ end }}</td>
+        <td class="col-kauf">{{ with .asin }}{{ if partial "amazon-ok.html" . }}<a class="btn-sec btn-tab" href="{{ partial "amazon-url.html" . }}" rel="sponsored nofollow noopener" target="_blank">Preis bei Amazon<span class="ad-mark" title="Affiliate-Link">*</span></a>{{ else }}{{ partial "amazon-na.html" (dict "cls" "amz-na-tab") }}{{ end }}{{ else }}<span class="kein-kauf">kein Kauflink</span>{{ end }}</td>
       </tr>
     {{ end }}
     </tbody>
@@ -108,7 +108,7 @@
         <td class="r" data-v="{{ .pv_max_w }}" data-l="PV-Eingang max.">{{ if gt .pv_max_w 0 }}{{ lang.FormatNumber 0 .pv_max_w }}<span class="einh-m"> W</span>{{ else }}–{{ end }}</td>
         <td class="r" data-v="{{ .module_wp }}" data-l="Module">{{ if gt .module_wp 0 }}{{ lang.FormatNumber 0 .module_wp }}<span class="einh-m"> Wp</span>{{ else }}–{{ end }}</td>
         <td class="r" data-v="{{ .wechselrichter_w }}" data-l="Wechselrichter">{{ .wechselrichter_w }}<span class="einh-m"> W</span></td>
-        <td class="col-kauf">{{ with .asin }}<a class="btn-sec btn-tab" href="{{ partial "amazon-url.html" . }}" rel="sponsored nofollow noopener" target="_blank">Preis bei Amazon<span class="ad-mark" title="Affiliate-Link">*</span></a>{{ else }}<span class="kein-kauf">kein Kauflink</span>{{ end }}</td>
+        <td class="col-kauf">{{ with .asin }}{{ if partial "amazon-ok.html" . }}<a class="btn-sec btn-tab" href="{{ partial "amazon-url.html" . }}" rel="sponsored nofollow noopener" target="_blank">Preis bei Amazon<span class="ad-mark" title="Affiliate-Link">*</span></a>{{ else }}{{ partial "amazon-na.html" (dict "cls" "amz-na-tab") }}{{ end }}{{ else }}<span class="kein-kauf">kein Kauflink</span>{{ end }}</td>
       </tr>
     {{ end }}
     </tbody>
