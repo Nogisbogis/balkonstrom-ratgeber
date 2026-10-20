@@ -4,7 +4,7 @@ modell: "Anker SOLIX C300X"
 layout: produkt
 date: 2026-10-19
 lastmod: 2026-10-19
-description: "Anker SOLIX C300X (288 Wh, 300 W, 2 × 140 W USB-C): technische Daten aus Produktseite und Datenblatt mit Quellen, Widersprüche in den Angaben, Stärken, Schwächen, Alternativen."
+description: "Anker SOLIX C300X (288 Wh, 300 W, 2 × 140 W USB-C): Daten aus Produktseite und Datenblatt mit Quellen, Widersprüche, Stärken, Schwächen, Alternativen."
 kurzzeile: "288 Wh, 300 W, 2 × 140 W USB-C – noch kein unabhängiger Test"
 kurzfazit: |
   Die C300X ist eine kleine 288-Wh-Station mit LiFePO4, zwei 230-V-Steckdosen und zwei USB-C-Ports mit je 140 W. Laut Anker ist sie in 50 Minuten zu 80 % geladen und gibt 5 Jahre Garantie. Solar geht nur bis 100 W. Einen unabhängigen Test genau dieser AC-Variante habe ich nicht gefunden. Datenblatt und Handbuch widersprechen sich außerdem beim Gewicht und bei der USV-Zeit.

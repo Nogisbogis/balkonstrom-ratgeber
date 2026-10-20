@@ -4,7 +4,7 @@ modell: "EcoFlow TRAIL 300 DC"
 layout: produkt
 date: 2026-10-20T01:00:00+02:00
 lastmod: 2026-10-20T01:00:00+02:00
-description: "EcoFlow TRAIL 300 DC (288 Wh, 2,58 kg, nur USB-C/USB-A/12 V): technische Daten mit Quellen, keine 230-V-Steckdose, Hartware- und F.A.Z.-Test, Stärken, Schwächen, Alternativen."
+description: "EcoFlow TRAIL 300 DC (288 Wh, 2,58 kg, nur USB-C, USB-A, 12 V, keine 230-V-Steckdose): Daten mit Quellen, Hartware- und F.A.Z.-Test, Alternativen."
 kurzzeile: "288 Wh in 2,58 kg – nur DC, keine 230-V-Steckdose"
 warnung: "**Keine 230-V-Steckdose:** Die TRAIL 300 DC liefert nur Gleichstrom (2 × USB-C, 2 × USB-A, 12-V-Kfz-Buchse) und hat keine USV-Funktion. Geräte mit Schukostecker laufen daran nicht."
 kurzfazit: |

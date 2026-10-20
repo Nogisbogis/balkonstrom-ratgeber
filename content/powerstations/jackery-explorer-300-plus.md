@@ -4,7 +4,7 @@ modell: "Jackery Explorer 300 Plus"
 layout: produkt
 date: 2026-10-19
 lastmod: 2026-10-19
-description: "Jackery Explorer 300 Plus (288 Wh, 300 W, 3,75 kg): Daten aus dem Jackery-Helpcenter mit Quellen, CHIP- und IMTEST-Ergebnisse, Stärken, Schwächen, Alternativen."
+description: "Jackery Explorer 300 Plus (288 Wh, 300 W, 3,75 kg): Daten aus dem Jackery-Helpcenter mit Quellen, CHIP- und IMTEST-Ergebnisse, Stärken, Schwächen."
 kurzzeile: "288 Wh, 300 W, 3,75 kg – Solar nur über USB-C"
 kurzfazit: |
   Die Explorer 300 Plus ist klein und leicht (ca. 3,75 kg) und hat 288 Wh LiFePO4. Solar und Auto lädt sie laut Jackery nur über den USB-C-Eingang mit maximal 100 W und Adapter. CHIP vergibt „ausreichend (3,6)“, misst nur 63 % Wirkungsgrad, nennt sie aber wegen der Mobilität „Mobile Empfehlung“. IMTEST kommt nach neuem Verfahren auf „gut (2,06)“. Die Garantie beträgt laut Jackery 3 Jahre plus 2 Jahre nach Registrierung.

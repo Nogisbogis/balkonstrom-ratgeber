@@ -4,7 +4,7 @@ modell: "EcoFlow RIVER 3 Plus"
 layout: produkt
 date: 2026-10-19
 lastmod: 2026-10-19
-description: "EcoFlow RIVER 3 Plus (286 Wh, 600 W, erweiterbar bis 858 Wh): technische Daten mit Quellen, Testeindrücke, Stärken, Schwächen – und der Hinweis zum Marktende in Deutschland."
+description: "EcoFlow RIVER 3 Plus (286 Wh, 600 W, erweiterbar bis 858 Wh): Daten mit Quellen, Testeindrücke, Stärken, Schwächen, Hinweis zum Marktende in Deutschland."
 kurzzeile: "286 Wh, 600 W, erweiterbar bis 858 Wh – in DE ausgelaufen"
 warnung: "**Auslaufmodell:** EcoFlow nennt auf der deutschen Produktseite den 30.01.2026 als offizielles Ende der Lebensdauer für den deutschen Markt. Garantie und Support laufen laut EcoFlow weiter. Angebote sind daher Restbestände."
 kurzfazit: |

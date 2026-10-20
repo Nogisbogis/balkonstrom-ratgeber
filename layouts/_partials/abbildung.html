@@ -1,4 +1,4 @@
-{{- /* Abbildung eines Modells für Übersichten/Karten. dict: p (Datensatz), w, h, lazy (bool), cap (bool), cls
+{{- /* Abbildung eines Modells für Übersichten/Karten. dict: p (Datensatz), w, h, lazy (bool), lcp (bool: fetchpriority=high), cap (bool), cls
      Quelle: Feld „abbildung“ im Datensatz. Lokaler Pfad = eigene Illustration (img/illu/…svg);
      eine https-URL (später PA-API) wird unverändert eingebunden – siehe README. */ -}}
 {{- $p := .p }}
@@ -7,5 +7,5 @@
 {{- $src := cond $extern . (. | relURL) }}
 {{- $alt := cond $extern $p.modell (printf "%s – schematische Darstellung" $p.modell) }}
 {{- $cap := cond $extern ($p.abbildung_hinweis | default "") "Illustration nach Herstellerangaben, kein Produktfoto" }}
-<figure class="abb{{ with $.cls }} {{ . }}{{ end }}{{ if not $extern }} abb-illu{{ end }}"><img src="{{ $src }}" alt="{{ $alt }}" width="{{ $.w }}" height="{{ $.h }}"{{ if $.lazy }} loading="lazy"{{ end }} decoding="async">{{ if and $.cap $cap }}<figcaption>{{ $cap }}</figcaption>{{ end }}</figure>
+<figure class="abb{{ with $.cls }} {{ . }}{{ end }}{{ if not $extern }} abb-illu{{ end }}"><img src="{{ $src }}" alt="{{ $alt }}" width="{{ $.w }}" height="{{ $.h }}"{{ if $.lazy }} loading="lazy"{{ end }}{{ if $.lcp }} fetchpriority="high"{{ end }} decoding="async">{{ if and $.cap $cap }}<figcaption>{{ $cap }}</figcaption>{{ end }}</figure>
 {{- end }}

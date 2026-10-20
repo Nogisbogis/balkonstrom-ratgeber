@@ -83,12 +83,7 @@
   // Schritt für Schritt: eine Frage pro Ansicht (ohne JS stehen alle Fragen untereinander)
   var sets = Array.prototype.slice.call(form.querySelectorAll('fieldset'));
   var submitP = form.querySelector('button[type=submit]').parentNode;
-  var nav = document.createElement('div');
-  nav.className = 'wiz-nav';
-  nav.innerHTML = '<p class="wiz-stand" aria-live="polite"></p><p class="wiz-btns"><button type="button" class="btn-sec wiz-zurueck">Zurück</button> <button type="button" class="btn wiz-weiter">Weiter</button></p>';
-  form.insertBefore(nav, submitP);
-  form.insertBefore(nav.querySelector('.wiz-stand'), sets[0]);
-  var stand = form.querySelector('.wiz-stand'), zur = nav.querySelector('.wiz-zurueck'), wei = nav.querySelector('.wiz-weiter');
+  var stand = form.querySelector('.wiz-stand'), zur = form.querySelector('.wiz-zurueck'), wei = form.querySelector('.wiz-weiter');
   var schritt = 0;
   function zeige(i, fokus) {
     schritt = Math.max(0, Math.min(sets.length - 1, i));

@@ -2,7 +2,7 @@
 title = 'So arbeite ich: Quellen, Empfehlungen und Korrekturen'
 seotitle = 'So arbeite ich: Methodik & Quellen'
 date = '2026-10-19'
-description = 'Wie der Balkonstrom-Ratgeber arbeitet: Herstellerdaten mit Quelle, zitierte unabhängige Tests, keine gekauften Platzierungen, Affiliate-Links offen gekennzeichnet, Updates und Korrekturen.'
+description = "So arbeitet der Balkonstrom-Ratgeber: Herstellerdaten mit Quelle, zitierte unabhängige Tests, keine gekauften Platzierungen, Affiliate-Links markiert."
 +++
 
 Den Balkonstrom-Ratgeber schreibe ich allein. Hier steht, woher meine Angaben kommen, wie Empfehlungen entstehen, wie sich die Seite finanziert und wie du mir Fehler melden kannst.

@@ -4,7 +4,7 @@ modell: "EcoFlow DELTA 3 Max Plus"
 layout: produkt
 date: 2026-10-20T01:00:00+02:00
 lastmod: 2026-10-20T01:00:00+02:00
-description: "EcoFlow DELTA 3 Max Plus (2.048 Wh, 3.000 W, erweiterbar bis 10 kWh): technische Daten mit Quellen, heise-Messwerte, F.A.Z.-Kaufkompass, Lager- und Garantiehinweis, Stärken, Schwächen, Alternativen."
+description: "EcoFlow DELTA 3 Max Plus (2.048 Wh, 3.000 W, bis 10 kWh): Daten mit Quellen, heise-Messwerte, F.A.Z.-Kaufkompass, Lager- und Garantiehinweis."
 kurzzeile: "2.048 Wh, 3.000 W, erweiterbar bis 10 kWh – F.A.Z. „Auch gut“"
 warnung: "**Lagerung:** Laut EcoFlow-Handbuch erlischt die Garantie, wenn die Station länger als 6 Monate ungeladen oder unbenutzt liegt. Spätestens alle paar Monate nachladen."
 kurzfazit: |

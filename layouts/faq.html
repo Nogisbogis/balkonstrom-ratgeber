@@ -7,7 +7,7 @@
   {{ partial "breadcrumb.html" . }}
   <h1>{{ .Title }}</h1>
   {{ .Content }}
-  <p class="faq-filter" hidden><label for="faq-suche"><strong>Fragen durchsuchen</strong></label><input type="search" id="faq-suche" placeholder="z. B. Schuko, USV, Speicher…" autocomplete="off"><span class="note" id="faq-zahl" aria-live="polite"></span></p>
+  <p class="faq-filter" hidden><label for="faq-suche"><strong>Fragen durchsuchen</strong></label><input type="search" id="faq-suche" name="frage" placeholder="z. B. Schuko, USV, Speicher…" autocomplete="off"><span class="note" id="faq-zahl" aria-live="polite"></span></p>
   <nav class="faq-sprung" aria-label="Themen">{{ range $gruppen }}<a href="#{{ . | urlize }}">{{ . }}</a>{{ end }}</nav>
   {{- range $gruppen }}{{ $g := . }}
   <section class="faq faq-gruppe" id="{{ $g | urlize }}" aria-labelledby="h-{{ $g | urlize }}">

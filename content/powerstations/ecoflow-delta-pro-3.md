@@ -4,7 +4,7 @@ modell: "EcoFlow DELTA Pro 3"
 layout: produkt
 date: 2026-10-20T01:00:00+02:00
 lastmod: 2026-10-20T01:00:00+02:00
-description: "EcoFlow DELTA Pro 3 (4.096 Wh, 4.000 W, erweiterbar bis 12 kWh, 51,5 kg): technische Daten mit Quellen, heise-Messwerte (95–96 % nutzbar), Stärken, Schwächen, Alternativen."
+description: "EcoFlow DELTA Pro 3 (4.096 Wh, 4.000 W, bis 12 kWh, 51,5 kg): Daten mit Quellen, heise-Messwerte (95–96 % nutzbar), Stärken, Schwächen, Alternativen."
 kurzzeile: "4.096 Wh, 4.000 W, erweiterbar bis 12 kWh – 51,5 kg auf Rollen"
 kurzfazit: |
   Die DELTA Pro 3 ist die stärkste Station im Vergleich: 4.096 Wh, 4.000 W Dauerleistung (X-Boost 6.000 W), 2.600 W Solar über zwei Eingänge und laut EcoFlow erweiterbar bis 12 kWh. heise maß 95 % (500 W) bzw. 96 % (über 2.000 W) nutzbare Kapazität, rund 88 % im Mischbetrieb, und lud am Netz in knapp einer Stunde voll. Der Preis dafür: 51,5 kg – bewegt wird sie mit Teleskopgriff und Rollen, Stufen gehen nur zu zweit.

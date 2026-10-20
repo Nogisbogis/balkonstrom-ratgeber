@@ -2,9 +2,10 @@
 title = 'Balkonkraftwerk anmelden 2026: 800-Watt-Regel, Marktstammdatenregister, Steckdose – was gilt'
 foto = 'balkon'
 seotitle = "Balkonkraftwerk anmelden 2026: 800-W-Regel & MaStR"
+og_title = "Balkonkraftwerk anmelden 2026: 800 W, MaStR, Steckdose"
 lastmod = '2026-10-19T22:04:52+02:00'
 date = '2026-10-19'
-description = 'Die aktuellen Regeln für Balkonkraftwerke in Deutschland: Leistungsgrenzen, Registrierung im Marktstammdatenregister, Zählertausch, Schuko-Stecker nach neuer VDE-Norm sowie Rechte von Mietern und Wohnungseigentümern.'
+description = "Balkonkraftwerk 2026 in Deutschland: Leistungsgrenzen, Marktstammdatenregister, Zählertausch, Schuko-Stecker nach neuer VDE-Norm, Rechte von Mietern."
 draft = false
 image = 'img/titel-anmelden.svg'
 imageAlt = 'Gezeichnete Illustration: zwei Solarmodule am Balkongeländer neben einem Formular mit Häkchen'

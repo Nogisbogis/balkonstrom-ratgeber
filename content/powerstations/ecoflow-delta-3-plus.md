@@ -4,7 +4,7 @@ modell: "EcoFlow DELTA 3 Plus"
 layout: produkt
 date: 2026-10-19
 lastmod: 2026-10-19
-description: "EcoFlow DELTA 3 Plus (1.024 Wh, 1.800 W, erweiterbar bis 5 kWh): technische Daten mit Quellen, ADAC (2,1) und COMPUTER BILD (1,2), Stärken, Schwächen, Alternativen."
+description: "EcoFlow DELTA 3 Plus (1.024 Wh, 1.800 W, erweiterbar bis 5 kWh): Daten mit Quellen, ADAC (2,1) und COMPUTER BILD (1,2), Stärken, Schwächen, Alternativen."
 kurzzeile: "1.024 Wh, 1.800 W, erweiterbar bis 5 kWh – ADAC 2,1"
 kurzfazit: |
   Die DELTA 3 Plus ist die vielseitigste 1-kWh-Station im Vergleich: vier Steckdosen, zwei Solareingänge mit zusammen 1.000 W, USV unter 10 ms und laut EcoFlow erweiterbar bis 5 kWh. Im ADAC-Test 2025 wurde sie mit 2,1 Zweite, COMPUTER BILD gab 1,2 („sehr gut“) und maß 887 Wh nutzbar. Kritik gab es an den fummeligen Bedienknöpfen und am fehlenden PV-Kabel. Mit 12,5 kg ist sie die schwerste der 1-kWh-Klasse hier.

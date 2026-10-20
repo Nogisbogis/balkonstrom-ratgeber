@@ -794,3 +794,42 @@ details.p-mehr .tablewrap{margin:0}
 .s-titel{text-wrap:balance}
 .s-chip:hover{border-color:var(--ink)}
 .s-chip:has(input:checked):hover{border-color:var(--accent)}
+/* Finder: Schritt-Ansicht schon vor dem Skript (kein Layout-Sprung) */
+.wiz-stand,.wiz-nav{display:none}
+.js .wiz-stand,.js .wiz-nav{display:flex}
+.js .wiz-nav{display:block}
+.js #finder:not(.wiz) fieldset:not(:first-of-type),.js #finder:not(.wiz) .wiz-submit{display:none}
+.wiz .wiz-submit[hidden]{display:none}
+.opt-genau{display:flex;align-items:center;gap:.5rem;flex-wrap:wrap;background:var(--surface);border-radius:var(--r-feld);margin:0 0 4px;padding-right:1rem;transition:background-color .15s}
+.opt-genau:hover{background:var(--surface-2)}
+.tool .opt-genau label.opt{margin:0;background:transparent;padding-right:0}
+.tool .opt-genau label.opt:has(input:checked){background:transparent;outline:0}
+.opt-genau:has(input[type=radio]:checked){background:var(--hl-b);color:#111;outline:2px solid var(--accent);outline-offset:-2px}
+.genau-zahl{display:inline-flex}
+.genau-zahl input{width:7rem}
+.nur-js{display:none}
+.js .nur-js{display:block}
+#zeilen tr.vorlage{display:none}
+.js #zeilen tr.vorlage{display:table-row}
+/* Vergleich: Filter aufklappbar (mobil zu), Modellnamen als größere Tippziele */
+.filter-box>summary{list-style:none;display:inline-flex;align-items:center;gap:.5rem;min-height:var(--tap);font-weight:700;font-size:var(--fs-b);cursor:pointer;margin-bottom:.5rem}
+.filter-box>summary::-webkit-details-marker{display:none}
+.filter-box>summary::after{content:"";width:1.5rem;height:1.5rem;background:var(--accent);-webkit-mask:var(--pfeil-kreis) center/contain no-repeat;mask:var(--pfeil-kreis) center/contain no-repeat;transition:transform .2s ease}
+.filter-box[open]>summary::after{transform:rotate(180deg)}
+.filter-box>summary:hover{color:var(--accent)}
+.mname a{display:inline-block;padding-block:.25rem;min-height:24px}
+.mquelle{margin-top:.25rem}
+@media (max-width:40rem){
+  .tabs{flex-wrap:nowrap;overflow-x:auto;white-space:nowrap;border-bottom:0;box-shadow:inset 0 -3px var(--rule);scrollbar-width:none;overscroll-behavior-x:contain}
+  .tabs::-webkit-scrollbar{display:none}
+  .tabs a{margin-bottom:0;flex:none}
+}
+/* Breadcrumb: Trenner bleibt beim nächsten Eintrag, nur der Seitentitel darf umbrechen */
+.breadcrumb ol{display:block;line-height:1.5}
+.breadcrumb li{display:inline}
+.breadcrumb li:not(:last-child){white-space:nowrap}
+.breadcrumb a{display:inline-block;min-height:24px;padding:.5rem 0}
+.breadcrumb span[aria-current]{display:inline;min-height:0;padding:0}
+@media (max-width:40rem){.breadcrumb a{padding:.25rem 0}}
+.breadcrumb li+li::before{content:none}
+.breadcrumb li:not(:last-child)::after{content:"/";margin:0 .5rem;color:var(--muted)}

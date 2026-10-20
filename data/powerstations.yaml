@@ -120,6 +120,8 @@
   asin: B0F9PKNWS1
 - modell: Jackery Explorer 1000 v2
   slug: jackery-explorer-1000-v2
+  # Redaktionell: kein Kauflink (ADAC 06/2025 „mangelhaft“, siehe Produktseite)
+  kein_kauflink: true
   abbildung: img/illu/jackery-explorer-1000-v2.svg
   spitze_w: 3000
   usv_ms: 20

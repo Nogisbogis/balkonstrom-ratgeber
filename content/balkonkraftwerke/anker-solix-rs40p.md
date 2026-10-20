@@ -4,7 +4,7 @@ modell: Anker SOLIX RS40P Balkonkraftwerk (2 × 445 W, MI80)
 layout: bkw-produkt
 date: '2026-10-19'
 lastmod: '2026-10-19'
-description: 'Anker SOLIX RS40P Balkonkraftwerk mit 2 × 445 W und MI80-Wechselrichter: Daten mit Quellen, Widersprüche zwischen Anker-Seiten, Tests von COMPUTER BILD und heise.'
+description: "Anker SOLIX RS40P mit 2 × 445 W und MI80-Wechselrichter: Daten mit Quellen, Widersprüche zwischen Anker-Seiten, Tests von COMPUTER BILD und heise."
 kurzzeile: 'Set ohne Speicher: 890 Wp, 800-W-Wechselrichter MI80'
 kurzfazit: 'Das RS40P ist ein klassisches Balkonkraftwerk ohne Speicher: zwei 445-W-Module und der Mikrowechselrichter MI80, der laut Datenblatt 800 W einspeisen kann. Mit 890 Wp bleibt es deutlich unter der 2.000-Wp-Grenze für Steckersolargeräte. Die langen Garantien (15 Jahre Module, 10 Jahre Wechselrichter) sind ein Plus. Die Tests von COMPUTER BILD (1,8 „gut“) und heise stammen aus 2023/2024 und betreffen die ältere Ausführung mit dem MI60. Außerdem widersprechen sich Ankers eigene Seiten bei Modultechnik, Maßen und Leistungsgarantie. Prüfe also vor dem Kauf, welche Modulversion geliefert wird.'
 fuer:
@@ -21,8 +21,8 @@ quellen:
   url: https://bilder.obi.at/8f11a88f-d87c-4cdc-969c-6c325e889963/serve.php
   art: Hersteller-Datenblatt
 - id: mod
-  titel: 'Anker SOLIX DE: RS40P Solarpanel (445 W) – Produktseite'
-  url: https://www.ankersolix.com/de/products/b5555416?variant=58249281044829
+  titel: 'Anker SOLIX Support (DE): RS40P Solar Panel (445W) – Produktseite. Die bisherige Shopseite mit TOPCon-, Maß- und Garantieangabe (Stand 19.10.2026) ist nicht mehr online.'
+  url: https://support.ankersolix.com/s/product/a08J1000000Y2vaIAC/anker-solix-rs40p-solar-panel-445w?language=de
   art: Hersteller
 - id: gar
   titel: 'Anker SOLIX DE: Herstellergarantie Balkonkraftwerk'

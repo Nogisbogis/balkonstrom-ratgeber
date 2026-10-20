@@ -4,12 +4,13 @@
 {{- $img := resources.Get $f.datei }}
 {{- $ratio := .ratio | default "4/3" }}
 {{- $parts := split $ratio "/" }}{{ $rw := float (index $parts 0) }}{{ $rh := float (index $parts 1) }}
-{{- $set := slice }}{{ $setj := slice }}
-{{- range slice 480 800 1200 1600 }}{{ if le . $img.Width }}{{ $h := int (math.Round (div (mul (float .) $rh) $rw)) }}
-{{- $w := $img.Fill (printf "%dx%d webp q74 Center" . $h) }}{{ $set = $set | append (printf "%s %dw" $w.RelPermalink .) }}
+{{- $set := slice }}{{ $seta := slice }}{{ $setj := slice }}
+{{- range slice 480 800 1200 }}{{ if le . $img.Width }}{{ $h := int (math.Round (div (mul (float .) $rh) $rw)) }}
+{{- $a := $img.Fill (printf "%dx%d avif q50 Center" . $h) }}{{ $seta = $seta | append (printf "%s %dw" $a.RelPermalink .) }}
+{{- $w := $img.Fill (printf "%dx%d webp q62 Center" . $h) }}{{ $set = $set | append (printf "%s %dw" $w.RelPermalink .) }}
 {{- $j := $img.Fill (printf "%dx%d jpg q78 Center" . $h) }}{{ $setj = $setj | append (printf "%s %dw" $j.RelPermalink .) }}{{ end }}{{ end }}
 {{- $fb := $img.Fill (printf "%dx%d jpg q78 Center" 800 (int (math.Round (div (mul 800.0 $rh) $rw)))) }}
 <figure class="foto {{ .cls }}">
-  <picture><source type="image/webp" srcset="{{ delimit $set ", " }}" sizes="{{ .sizes | default "100vw" }}"><img src="{{ $fb.RelPermalink }}" srcset="{{ delimit $setj ", " }}" sizes="{{ .sizes | default "100vw" }}" width="{{ $fb.Width }}" height="{{ $fb.Height }}" alt="{{ $f.alt }}"{{ if .lazy }} loading="lazy"{{ else }} fetchpriority="high"{{ end }} decoding="async"></picture>
+  <picture><source type="image/avif" srcset="{{ delimit $seta ", " }}" sizes="{{ .sizes | default "100vw" }}"><source type="image/webp" srcset="{{ delimit $set ", " }}" sizes="{{ .sizes | default "100vw" }}"><img src="{{ $fb.RelPermalink }}" srcset="{{ delimit $setj ", " }}" sizes="{{ .sizes | default "100vw" }}" width="{{ $fb.Width }}" height="{{ $fb.Height }}" alt="{{ $f.alt }}"{{ if .lazy }} loading="lazy"{{ else }} fetchpriority="high"{{ end }} decoding="async"></picture>
   {{- if .cap }}<figcaption>{{ .cap }}</figcaption>{{ end }}
 </figure>

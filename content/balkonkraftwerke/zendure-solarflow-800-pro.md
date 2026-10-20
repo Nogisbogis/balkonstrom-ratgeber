@@ -4,7 +4,7 @@ modell: Zendure SolarFlow 800 Pro
 layout: bkw-produkt
 date: '2026-10-19'
 lastmod: '2026-10-19'
-description: 'Zendure SolarFlow 800 Pro (1,92 kWh, 48 V, 4 MPPT bis 2.640 W, 1.000-W-Notstrom): Daten mit Quellen, VDE-Zertifikat, Tests von COMPUTER BILD, heise und Stiftung Warentest.'
+description: "Zendure SolarFlow 800 Pro (1,92 kWh, 4 MPPT bis 2.640 W, 1.000 W Notstrom): Daten mit Quellen, VDE-Zertifikat, Tests von COMPUTER BILD, heise, Warentest."
 kurzzeile: 1,92 kWh (48 V), 4 MPPT bis 2.640 W, 1.000 W Notstrom
 kurzfazit: Der SolarFlow 800 Pro speichert 1,92 kWh in einem 48-V-Akku, hat vier MPPT mit zusammen 2.640 W und eine Notstromsteckdose mit 1.000 W. Laut Zendure schaltet sie bei Stromausfall in 15 ms um, wenn die Funktion in der App aktiv ist. COMPUTER BILD und heise loben Effizienz, Notstrom und Smart-Meter-Regelung; Kritik gibt es an Kalibrierungs-Entladungen und der Cloud-Abhängigkeit. Stiftung Warentest führt das Gerät als „nicht mehr im Handel“, Zendure verkauft es im eigenen Shop weiter. Einen passenden Amazon-Link habe ich nicht.
 fuer:

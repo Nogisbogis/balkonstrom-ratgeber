@@ -4,7 +4,7 @@ modell: "BLUETTI Elite 300"
 layout: produkt
 date: 2026-10-20T01:00:00+02:00
 lastmod: 2026-10-20T01:00:00+02:00
-description: "BLUETTI Elite 300 (3.014 Wh, 2.400 W, 26,3 kg): technische Daten aus dem Handbuch mit Quellen, heise-Messwerte (~95,5 % AC-Effizienz), nur zwei Steckdosen, PV bis 60 V, Stärken, Schwächen, Alternativen."
+description: "BLUETTI Elite 300 (3.014 Wh, 2.400 W, 26,3 kg): Handbuchdaten mit Quellen, heise-Messwerte (~95,5 % AC-Effizienz), nur zwei Steckdosen, PV bis 60 V."
 kurzzeile: "3.014 Wh in 26,3 kg, 2.400 W – heise maß ~95,5 % nutzbar"
 kurzfazit: |
   Die Elite 300 packt 3.014 Wh in 26,3 kg – für 3 kWh sehr leicht und kompakt. heise konnte bei 500 und 1.000 W rund 2,85 bis 2,89 kWh entnehmen (etwa 95,5 % der Nennkapazität), die USV hielt ein Home-Office-Setup ohne Abbruch. Die Kompromisse: nur zwei Schuko-Steckdosen, 2.400 W Dauerleistung (Power Lifting bis 4.800 W nur für ohmsche Geräte wie Wasserkocher), keine Erweiterung, deutlich hörbare Lüfter und ein Solareingang, dessen Leerlaufspannung 60 V nie überschreiten darf.

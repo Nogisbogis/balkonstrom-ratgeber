@@ -1,6 +1,6 @@
 +++
 title = "Laufzeitrechner: Wie lange hält meine Powerstation?"
-description = "Laufzeitrechner für Powerstations: Geräte mit Watt und Stunden eintragen, Modell oder Kapazität wählen, Laufzeit sehen. Wirkungsgrad als einstellbare Annahme (Standard 85 %)."
+description = "Laufzeitrechner für Powerstations: Geräte mit Watt und Stunden eintragen, Modell oder Kapazität wählen, Laufzeit sehen. Wirkungsgrad einstellbar (85 %)."
 layout = "rechner"
 date = 2026-10-19
 intro = "Trag deine Geräte ein und wähle ein Modell."

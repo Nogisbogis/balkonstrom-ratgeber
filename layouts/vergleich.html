@@ -13,20 +13,23 @@
   <section id="powerstations" class="tabpanel" aria-labelledby="h-ps">
   <h2 id="h-ps">Powerstations</h2>
   <form class="filters" data-table="t-ps" hidden>
+    <details class="filter-box" open><summary>Filtern</summary>
     <fieldset data-ui>
-      <legend>Filtern</legend>
+      <legend class="sr">Powerstations filtern</legend>
       <label>Kapazität ab (Wh)
-        <input type="number" min="0" step="100" placeholder="z. B. 500…" data-filter="wh" data-op="min" inputmode="numeric"></label>
+        <input type="number" min="0" step="100" placeholder="z. B. 500…" name="wh" autocomplete="off" data-filter="wh" data-op="min" inputmode="numeric"></label>
       <label>Dauerleistung ab (W)
-        <input type="number" min="0" step="100" placeholder="z. B. 1000…" data-filter="w" data-op="min" inputmode="numeric"></label>
+        <input type="number" min="0" step="100" placeholder="z. B. 1000…" name="w" autocomplete="off" data-filter="w" data-op="min" inputmode="numeric"></label>
       <label>Gewicht bis (kg)
-        <input type="number" min="0" step="0.5" placeholder="z. B. 5…" data-filter="kg" data-op="max" inputmode="decimal"></label>
+        <input type="number" min="0" step="0.5" placeholder="z. B. 5…" name="kg" autocomplete="off" data-filter="kg" data-op="max" inputmode="decimal"></label>
       {{ $akkus := slice }}{{ range hugo.Data.powerstations }}{{ $akkus = $akkus | append .akkutyp }}{{ end }}
       {{ if gt (len ($akkus | uniq)) 1 }}<label>Akkutyp
-        <select data-filter="akku" data-op="eq"><option value="">alle</option>{{ range ($akkus | uniq) }}<option>{{ . }}</option>{{ end }}</select></label>{{ end }}
+        <select name="akku" autocomplete="off" data-filter="akku" data-op="eq"><option value="">alle</option>{{ range ($akkus | uniq) }}<option>{{ . }}</option>{{ end }}</select></label>{{ end }}
       <button type="reset" class="btn-sec">Zurücksetzen</button>
       <p class="count" aria-live="polite">&nbsp;</p>
     </fieldset>
+    </details>
+    <script>if(matchMedia("(max-width:40rem)").matches)document.currentScript.previousElementSibling.removeAttribute("open")</script>
   </form>
   {{ partial "disclosure-box.html" . }}
   <div class="table-wrap" data-ui role="region" aria-label="Tabelle Powerstations">
@@ -41,7 +44,9 @@
       <th class="col-kauf" scope="col"><span class="sr">Kaufen</span></th>
     </tr></thead>
     <tbody>
-    {{ range sort hugo.Data.powerstations "kapazitaet_wh" }}
+    {{- $ok := slice }}{{ $na := slice }}
+    {{- range sort hugo.Data.powerstations "kapazitaet_wh" }}{{ if or (not .asin) (partial "amazon-ok.html" .asin) }}{{ $ok = $ok | append . }}{{ else }}{{ $na = $na | append . }}{{ end }}{{ end }}
+    {{ range $ok | append $na }}
       <tr data-slug="{{ .slug }}" data-wh="{{ .kapazitaet_wh }}" data-w="{{ .dauerleistung_w }}" data-kg="{{ .gewicht_kg }}" data-akku="{{ .akkutyp }}">
         <th class="col-modell" scope="row">{{ partial "thumb.html" . }}{{ $m := .modell }}<span class="mname">{{ with site.GetPage (printf "/powerstations/%s" (.slug | default "-")) }}<a href="{{ .RelPermalink }}">{{ $m }}</a>{{ else }}{{ $m }}{{ end }}</span><a class="mquelle" href="{{ .quelle }}" rel="noopener nofollow" target="_blank">Quelle: Hersteller<span class="sr"> (öffnet neues Fenster)</span></a></th>
         <td class="r" data-v="{{ .kapazitaet_wh }}" data-l="Kapazität">{{ lang.FormatNumber 0 .kapazitaet_wh }}<span class="einh-m"> Wh</span></td>
@@ -49,7 +54,7 @@
         <td class="r" data-v="{{ .gewicht_kg }}" data-l="Gewicht">{{ replace (string .gewicht_kg) "." "," }}<span class="einh-m"> kg</span></td>
         <td class="r" data-v="{{ .solareingang_w }}" data-l="Solar max.">{{ lang.FormatNumber 0 .solareingang_w }}<span class="einh-m"> W</span></td>
         <td data-l="Akku">{{ .akkutyp }}</td>
-        <td class="col-kauf">{{ with .asin }}{{ if partial "amazon-ok.html" . }}<a class="btn-sec btn-tab" href="{{ partial "amazon-url.html" . }}" rel="sponsored nofollow noopener" target="_blank">Preis bei Amazon<span class="ad-mark" title="Affiliate-Link">*</span></a>{{ else }}{{ partial "amazon-na.html" (dict "cls" "amz-na-tab") }}{{ end }}{{ else }}<span class="kein-kauf">kein Kauflink</span>{{ end }}</td>
+        <td class="col-kauf">{{ with .asin }}{{ if partial "amazon-ok.html" . }}<a class="btn-sec btn-tab" href="{{ partial "amazon-url.html" . }}" rel="sponsored nofollow noopener" target="_blank">Preis bei Amazon<span class="ad-mark" aria-hidden="true">*</span><span class="sr"> (Affiliate-Link)</span></a>{{ else }}{{ partial "amazon-na.html" (dict "cls" "amz-na-tab") }}{{ end }}{{ else }}<span class="kein-kauf">kein Kauflink</span>{{ end }}</td>
       </tr>
     {{ end }}
     </tbody>
@@ -72,21 +77,24 @@
   <section id="balkonkraftwerke" class="tabpanel" aria-labelledby="h-bkw">
   <h2 id="h-bkw">Balkonkraftwerke &amp; Speicher</h2>
   <form class="filters" data-table="t-bkw" hidden>
+    <details class="filter-box" open><summary>Filtern</summary>
     <fieldset data-ui>
-      <legend>Filtern</legend>
+      <legend class="sr">Balkonkraftwerke filtern</legend>
       <label>Typ
-        <select data-filter="typ" data-op="eq">
+        <select name="typ" autocomplete="off" data-filter="typ" data-op="eq">
           <option value="">alle</option>
           {{ $typen := slice }}{{ range hugo.Data.balkonkraftwerke }}{{ $typen = $typen | append .typ }}{{ end }}
           {{ range ($typen | uniq) }}<option>{{ . }}</option>{{ end }}
         </select></label>
       <label>Speicher ab (kWh)
-        <input type="number" min="0" step="0.1" placeholder="z. B. 1,9…" data-filter="speicher" data-op="min" inputmode="decimal"></label>
+        <input type="number" min="0" step="0.1" placeholder="z. B. 1,9…" name="speicher" autocomplete="off" data-filter="speicher" data-op="min" inputmode="decimal"></label>
       <label>PV-Eingang ab (W)
-        <input type="number" min="0" step="100" placeholder="z. B. 2000…" data-filter="pv" data-op="min" inputmode="numeric"></label>
+        <input type="number" min="0" step="100" placeholder="z. B. 2000…" name="pv" autocomplete="off" data-filter="pv" data-op="min" inputmode="numeric"></label>
       <button type="reset" class="btn-sec">Zurücksetzen</button>
       <p class="count" aria-live="polite">&nbsp;</p>
     </fieldset>
+    </details>
+    <script>if(matchMedia("(max-width:40rem)").matches)document.currentScript.previousElementSibling.removeAttribute("open")</script>
   </form>
   {{ partial "disclosure-box.html" . }}
   <div class="table-wrap" data-ui role="region" aria-label="Tabelle Balkonkraftwerke">
@@ -101,7 +109,9 @@
       <th class="col-kauf" scope="col"><span class="sr">Kaufen</span></th>
     </tr></thead>
     <tbody>
-    {{ range hugo.Data.balkonkraftwerke }}
+    {{- $ok := slice }}{{ $na := slice }}
+    {{- range hugo.Data.balkonkraftwerke }}{{ if or (not .asin) (partial "amazon-ok.html" .asin) }}{{ $ok = $ok | append . }}{{ else }}{{ $na = $na | append . }}{{ end }}{{ end }}
+    {{ range $ok | append $na }}
       <tr data-slug="{{ .slug }}" data-typ="{{ .typ }}" data-speicher="{{ .speicher_kwh }}" data-pv="{{ cond (gt .pv_max_w 0) .pv_max_w .module_wp }}">
         <th class="col-modell" scope="row">{{ partial "thumb.html" . }}<span class="mname">{{ $m := .modell }}{{ with site.GetPage (printf "/balkonkraftwerke/%s" (.slug | default "-")) }}<a href="{{ .RelPermalink }}">{{ $m }}</a>{{ else }}{{ $m }}{{ end }}</span><a class="mquelle" href="{{ .quelle }}" rel="noopener nofollow" target="_blank">Quelle: Hersteller<span class="sr"> (öffnet neues Fenster)</span></a></th>
         <td data-l="Typ" class="col-typ">{{ .typ }}</td>
@@ -109,7 +119,7 @@
         <td class="r" data-v="{{ .pv_max_w }}" data-l="PV-Eingang max.">{{ if gt .pv_max_w 0 }}{{ lang.FormatNumber 0 .pv_max_w }}<span class="einh-m"> W</span>{{ else }}–{{ end }}</td>
         <td class="r" data-v="{{ .module_wp }}" data-l="Module">{{ if gt .module_wp 0 }}{{ lang.FormatNumber 0 .module_wp }}<span class="einh-m"> Wp</span>{{ else }}–{{ end }}</td>
         <td class="r" data-v="{{ .wechselrichter_w }}" data-l="Wechselrichter">{{ .wechselrichter_w }}<span class="einh-m"> W</span></td>
-        <td class="col-kauf">{{ with .asin }}{{ if partial "amazon-ok.html" . }}<a class="btn-sec btn-tab" href="{{ partial "amazon-url.html" . }}" rel="sponsored nofollow noopener" target="_blank">Preis bei Amazon<span class="ad-mark" title="Affiliate-Link">*</span></a>{{ else }}{{ partial "amazon-na.html" (dict "cls" "amz-na-tab") }}{{ end }}{{ else }}<span class="kein-kauf">kein Kauflink</span>{{ end }}</td>
+        <td class="col-kauf">{{ with .asin }}{{ if partial "amazon-ok.html" . }}<a class="btn-sec btn-tab" href="{{ partial "amazon-url.html" . }}" rel="sponsored nofollow noopener" target="_blank">Preis bei Amazon<span class="ad-mark" aria-hidden="true">*</span><span class="sr"> (Affiliate-Link)</span></a>{{ else }}{{ partial "amazon-na.html" (dict "cls" "amz-na-tab") }}{{ end }}{{ else }}<span class="kein-kauf">kein Kauflink</span>{{ end }}</td>
       </tr>
     {{ end }}
     </tbody>
@@ -128,7 +138,7 @@
   </details>
   </section>
 
-  <p class="note">Alle Werte sind Herstellerangaben (Stand der Datenerhebung: {{ .Params.stand }}). Preise nenne ich bewusst nicht, weil sie sich ständig ändern. Mit * markierte Links sind Affiliate-Links. Alle Abbildungen der Modelle sind eigene Illustrationen nach Herstellerangaben, keine Produktfotos.</p>
+  <p class="note">Alle Werte sind Herstellerangaben (Stand der Datenerhebung: {{ .Params.stand }}). Preise nenne ich bewusst nicht, weil sie sich ständig ändern. Modelle, die derzeit bei Amazon nicht verfügbar sind, stehen am Ende der Tabellen. Mit * markierte Links sind Affiliate-Links. Alle Abbildungen der Modelle sind eigene Illustrationen nach Herstellerangaben, keine Produktfotos.</p>
 </article>
 {{ $js := resources.Get "js/vergleich.js" | minify | fingerprint }}
 <script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" defer></script>

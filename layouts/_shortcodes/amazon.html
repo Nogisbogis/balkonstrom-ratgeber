@@ -6,7 +6,7 @@
 {{- if not $asin }}{{ errorf "amazon-Shortcode: asin fehlt in %s" .Position }}{{ end -}}
 {{- if partial "amazon-ok.html" $asin -}}
 {{- if not (or (getenv "HUGO_PARTNER_TAG") site.Params.partnerTag) }}{{ warnf "amazon-Shortcode: kein Partner-Tag gesetzt (%s)" .Position }}{{ end -}}
-<a class="amazon-link" href="{{ partial "amazon-url.html" $asin }}" rel="sponsored nofollow noopener" target="_blank">{{ $text }}</a><sup class="ad-mark" title="Affiliate-Link">*</sup>
+<a class="amazon-link" href="{{ partial "amazon-url.html" $asin }}" rel="sponsored nofollow noopener" target="_blank">{{ $text }}</a><sup class="ad-mark" aria-hidden="true">*</sup><span class="sr"> (Affiliate-Link)</span>
 {{- else -}}
 {{- $name := .Get "name" -}}
 {{- if not $name }}{{ with index (where (union hugo.Data.powerstations hugo.Data.balkonkraftwerke) "asin" $asin) 0 }}{{ $name = .modell }}{{ end }}{{ end -}}

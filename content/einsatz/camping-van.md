@@ -1,7 +1,7 @@
 +++
 title = "Powerstation für Camping & Van"
 seotitle = "Powerstation für Camping & Van: Empfehlung & Rechner"
-description = "Welche Powerstation für Wochenende, Festival oder mehrere Tage im Van? Meine Empfehlungen mit Kennzahlen, ein vorausgefüllter Laufzeitrechner und passende Artikel."
+description = "Welche Powerstation für Wochenende, Festival oder Tage im Van? Meine Empfehlungen mit Kennzahlen, vorausgefüllter Laufzeitrechner, passende Artikel."
 layout = "einsatz"
 kategorie = "einsatz"
 icon = "camping-van"

@@ -4,7 +4,7 @@ modell: "Jackery Explorer 1000 v2"
 layout: produkt
 date: 2026-10-19
 lastmod: 2026-10-19
-description: "Jackery Explorer 1000 v2 (1.070 Wh, 1.500 W, 10,8 kg): technische Daten mit Quellen, ADAC-Ergebnis „mangelhaft“ wegen nicht entkoppelter DC-Eingänge, IMTEST, Stärken, Schwächen."
+description: "Jackery Explorer 1000 v2 (1.070 Wh, 1.500 W, 10,8 kg): Daten mit Quellen, ADAC „mangelhaft“ wegen nicht entkoppelter DC-Eingänge, IMTEST, Schwächen."
 kurzzeile: "1.070 Wh, 1.500 W, 10,8 kg – ADAC „mangelhaft“ (DC-Eingänge)"
 warnung: "**ADAC (06/2025): „mangelhaft“ (5,0)** wegen nicht entkoppelter DC-Eingänge. Wer gleichzeitig über Solar und Auto lädt, riskiert laut ADAC Schäden am 12-V-Bordnetz. Nicht gleichzeitig über Auto und Solar laden. Ich verlinke dieses Modell deshalb nicht zum Kauf."
 kurzfazit: |

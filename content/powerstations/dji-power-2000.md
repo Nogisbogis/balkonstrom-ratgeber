@@ -4,7 +4,7 @@ modell: "DJI Power 2000"
 layout: produkt
 date: 2026-10-20T01:00:00+02:00
 lastmod: 2026-10-20T01:00:00+02:00
-description: "DJI Power 2000 (2.048 Wh, 3.000 W, erweiterbar bis 22,5 kWh): technische Daten mit Quellen, F.A.Z.-Messwert, Hinweis zu den DJI-Solaradaptern, Stärken, Schwächen, Alternativen."
+description: "DJI Power 2000 (2.048 Wh, 3.000 W, erweiterbar bis 22,5 kWh): Daten mit Quellen, F.A.Z.-Messwert, Hinweis zu den DJI-Solaradaptern, Stärken, Schwächen."
 kurzzeile: "2.048 Wh, 3.000 W, 5 Jahre Garantie – Solar nur über DJI-Adapter"
 warnung: "**Solar und Auto nur über DJI-Zubehör:** Die Power 2000 hat keinen XT60- oder MC4-Eingang. Solarmodule und Autobatterie werden über DJIs eigene SDC-Anschlüsse und kostenpflichtige DJI-Adapter angeschlossen."
 kurzfazit: |

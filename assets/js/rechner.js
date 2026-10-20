@@ -19,24 +19,24 @@
     if (min === 60) { std++; min = 0; }
     return std + ' h ' + (min < 10 ? '0' : '') + min + ' min';
   }
-  daten.forEach(function (p) {
-    var o = document.createElement('option');
-    o.value = p.s; o.textContent = p.m + ' (' + f(p.wh) + ' Wh, ' + f(p.w) + ' W' + (p.dc ? ' nur DC' : '') + ')';
-    sel.appendChild(o);
-  });
+  // Optionen der Modellauswahl kommen fertig aus dem HTML (kein Layout-Sprung)
   var gEl = document.getElementById('geraete-daten');
   var geraete = gEl ? JSON.parse(gEl.textContent) : [];
   function gfind(k) { return geraete.filter(function (g) { return g.k === k; })[0]; }
-  var n = 0;
+  function entfernbar(tr) { tr.querySelector('button').addEventListener('click', function () { tr.remove(); rechne(); }); }
+  // Zwei leere Zeilen stehen schon im HTML; per Link übergebene Geräte ersetzen sie
+  var vorlage = Array.prototype.slice.call(tbody.querySelectorAll('tr.vorlage'));
+  vorlage.forEach(entfernbar);
+  var n = vorlage.length;
   function zeile(name, w, h, anz) {
     n++;
     var tr = document.createElement('tr');
-    tr.innerHTML = '<td><input type="text" aria-label="Gerät ' + n + '" placeholder="z. B. Kühlbox…" value="' + esc(name || '') + '"></td>' +
-      '<td><input type="number" min="0" max="5000" step="1" inputmode="decimal" aria-label="Watt Gerät ' + n + '" value="' + (w || '') + '"></td>' +
-      '<td><input type="number" min="0" max="240" step="0.5" inputmode="decimal" aria-label="Stunden Gerät ' + n + '" value="' + (h || '') + '"></td>' +
-      '<td><input type="number" min="1" max="20" step="1" inputmode="decimal" aria-label="Anzahl Gerät ' + n + '" value="' + (anz || 1) + '"></td>' +
+    tr.innerHTML = '<td><input type="text" name="geraet" autocomplete="off" aria-label="Gerät ' + n + '" placeholder="z. B. Kühlbox…" value="' + esc(name || '') + '"></td>' +
+      '<td><input type="number" min="0" max="5000" step="1" inputmode="decimal" name="w" autocomplete="off" aria-label="Watt Gerät ' + n + '" value="' + (w || '') + '"></td>' +
+      '<td><input type="number" min="0" max="240" step="0.5" inputmode="decimal" name="h" autocomplete="off" aria-label="Stunden Gerät ' + n + '" value="' + (h || '') + '"></td>' +
+      '<td><input type="number" min="1" max="20" step="1" inputmode="decimal" name="anz" autocomplete="off" aria-label="Anzahl Gerät ' + n + '" value="' + (anz || 1) + '"></td>' +
       '<td><button type="button" class="btn-sec" aria-label="Zeile entfernen">Entfernen</button></td>';
-    tr.querySelector('button').addEventListener('click', function () { tr.remove(); rechne(); });
+    entfernbar(tr);
     tbody.appendChild(tr);
   }
   function leereZeile() {
@@ -115,12 +115,13 @@
   if (m && daten.some(function (p) { return p.s === m; })) sel.value = m;
   var gp = new URLSearchParams(location.search).get('g');
   var start = 0;
+  if (gp) n = 0;
   if (gp) gp.split(',').slice(0, 12).forEach(function (t) {
     var p = t.split('~');
     if (p.length === 3) { if (num(p[1]) > 0) { zeile(p[0].slice(0, 40), num(p[1]), num(p[2]), 1); start++; } return; }
     var q = t.split(':'), g = gfind(q[0]);
     if (g) { zeile(g.n, g.w, q.length > 1 && num(q[1]) > 0 ? num(q[1]) : g.h, 1); start++; }
   });
-  if (!start) { zeile('', '', '', 1); zeile('', '', '', 1); }
+  if (start) vorlage.forEach(function (tr) { tr.remove(); }); else n = vorlage.length;
   rechne();
 })();

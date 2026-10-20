@@ -4,7 +4,7 @@ modell: EcoFlow STREAM Ultra
 layout: bkw-produkt
 date: '2026-10-19'
 lastmod: '2026-10-19'
-description: 'EcoFlow STREAM Ultra (1,92 kWh, 4 MPPT, 1.200-W-Steckdosen, bis 2.300 W im Netzbetrieb): Daten mit Quellen, Tests von CHIP, COMPUTER BILD, c''t und Stiftung Warentest.'
+description: "EcoFlow STREAM Ultra (1,92 kWh, 4 MPPT, bis 2.300 W im Netzbetrieb): Daten mit Quellen, Tests von CHIP, COMPUTER BILD, c't und Stiftung Warentest."
 kurzzeile: 1,92 kWh, 4 MPPT bis 2.000 W, Steckdosen 1.200 W
 kurzfazit: Der STREAM Ultra ist ein Speicher mit eingebautem Wechselrichter und zwei Steckdosen am Gerät. Ohne Netz liefern sie bis zu 1.200 W, am Netz laut EcoFlow bis zu 2.300 W für direkt angeschlossene Geräte. Bis zu sechs Geräte lassen sich per WLAN zu einem virtuellen Speicher verbinden. COMPUTER BILD ist begeistert (4,8 von 5), CHIP gibt nur „befriedigend“ (3,1), wegen geringer Ladeleistung und KI-Funktionen im Abo. Bei Stiftung Warentest war das Gerät laut Berichten „mangelhaft“ wegen elektromagnetischer Störungen. Die Note selbst ist kostenpflichtig, ich habe sie nicht eingesehen.
 fuer:

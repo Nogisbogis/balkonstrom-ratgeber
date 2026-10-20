@@ -8,10 +8,10 @@
     <p class="note">Leistung in Watt vom Typenschild oder Netzteil. „Stunden“ = wie lange das Gerät zwischen zwei Ladungen läuft.</p>
     <div class="tablewrap" data-ui><table class="geraete">
       <thead><tr><th scope="col">Gerät</th><th scope="col">Watt</th><th scope="col">Stunden</th><th scope="col">Anzahl</th><th scope="col"><span class="sr">Entfernen</span></th></tr></thead>
-      <tbody id="zeilen"></tbody>
+      <tbody id="zeilen"><tr class="vorlage"><td><input type="text" name="geraet" aria-label="Gerät 1" placeholder="z. B. Kühlbox…" value="" autocomplete="off"></td><td><input type="number" min="0" max="5000" step="1" inputmode="decimal" name="w" aria-label="Watt Gerät 1" value="" autocomplete="off"></td><td><input type="number" min="0" max="240" step="0.5" inputmode="decimal" name="h" aria-label="Stunden Gerät 1" value="" autocomplete="off"></td><td><input type="number" min="1" max="20" step="1" inputmode="decimal" name="anz" aria-label="Anzahl Gerät 1" value="1" autocomplete="off"></td><td><button type="button" class="btn-sec" aria-label="Zeile entfernen">Entfernen</button></td></tr><tr class="vorlage"><td><input type="text" name="geraet" aria-label="Gerät 2" placeholder="z. B. Kühlbox…" value="" autocomplete="off"></td><td><input type="number" min="0" max="5000" step="1" inputmode="decimal" name="w" aria-label="Watt Gerät 2" value="" autocomplete="off"></td><td><input type="number" min="0" max="240" step="0.5" inputmode="decimal" name="h" aria-label="Stunden Gerät 2" value="" autocomplete="off"></td><td><input type="number" min="1" max="20" step="1" inputmode="decimal" name="anz" aria-label="Anzahl Gerät 2" value="1" autocomplete="off"></td><td><button type="button" class="btn-sec" aria-label="Zeile entfernen">Entfernen</button></td></tr></tbody>
     </table></div>
     <p><button type="button" class="btn-sec" id="plus">+ Gerät hinzufügen</button></p>
-    <div class="chips" id="chips" hidden>
+    <div class="chips nur-js" id="chips">
       <p class="chips-titel"><strong>Schnell hinzufügen</strong> <span class="note">– typischer Wert, dein Gerät kann abweichen</span></p>
       <ul>{{ range hugo.Data.geraete }}<li><button type="button" class="chip" data-g="{{ .key }}">{{ .name }} <span>{{ lang.FormatNumber 0 .w }} W</span></button></li>{{ end }}</ul>
       <details class="chips-quellen"><summary>Woher die typischen Werte kommen</summary>
@@ -21,13 +21,13 @@
     </div>
   </fieldset>
   <fieldset><legend>2. Powerstation</legend>
-    <label>Modell: <select id="modell"><option value="">eigene Kapazität eingeben…</option></select></label>
-    <p id="eigen"><label>Kapazität: <input type="number" id="kap" min="1" max="20000" step="1" value="1000" inputmode="decimal"> Wh</label>
-      <label>Dauerleistung: <input type="number" id="dauer" min="1" max="10000" step="1" value="1000" inputmode="decimal"> W</label></p>
+    <label>Modell: <select id="modell" name="modell" autocomplete="off"><option value="">eigene Kapazität eingeben…</option>{{ range sort hugo.Data.powerstations "kapazitaet_wh" }}<option value="{{ .slug }}">{{ .modell }} ({{ lang.FormatNumber 0 .kapazitaet_wh }} Wh, {{ lang.FormatNumber 0 .dauerleistung_w }} W{{ if .nur_dc }} nur DC{{ end }})</option>{{ end }}</select></label>
+    <p id="eigen"><label>Kapazität: <input type="number" id="kap" name="kap" autocomplete="off" min="1" max="20000" step="1" value="1000" inputmode="decimal"> Wh</label>
+      <label>Dauerleistung: <input type="number" id="dauer" name="dauer" autocomplete="off" min="1" max="10000" step="1" value="1000" inputmode="decimal"> W</label></p>
   </fieldset>
   <fieldset><legend>3. Annahmen</legend>
-    <p><label><strong>Annahme Wirkungsgrad:</strong> <input type="number" id="eta" min="40" max="100" step="1" value="85" inputmode="decimal"> % der Nennkapazität nutzbar</label></p>
-    <p><label><strong>Annahme Eigenverbrauch der Station:</strong> <input type="number" id="eigenv" min="0" max="100" step="1" value="0" inputmode="decimal"> W</label></p>
+    <p><label><strong>Annahme Wirkungsgrad:</strong> <input type="number" id="eta" name="eta" autocomplete="off" min="40" max="100" step="1" value="85" inputmode="decimal"> % der Nennkapazität nutzbar</label></p>
+    <p><label><strong>Annahme Eigenverbrauch der Station:</strong> <input type="number" id="eigenv" name="eigenv" autocomplete="off" min="0" max="100" step="1" value="0" inputmode="decimal"> W</label></p>
     <p class="note">Beide Werte sind Schätzungen, keine Messungen. Mehr dazu unter der Rechnung.</p>
   </fieldset>
   <div class="ergebnis" id="r-ergebnis" aria-live="polite"></div>

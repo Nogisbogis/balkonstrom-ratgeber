@@ -4,7 +4,7 @@ modell: "BLUETTI Elite 30 V2"
 layout: produkt
 date: 2026-10-20T01:00:00+02:00
 lastmod: 2026-10-20T01:00:00+02:00
-description: "BLUETTI Elite 30 V2 (288 Wh, 600 W, 4,3 kg): technische Daten aus Handbuch und Produktseite mit Quellen, smartercamping-Messwerte, eine 230-V-Steckdose (EU), Stärken, Schwächen, Alternativen."
+description: "BLUETTI Elite 30 V2 (288 Wh, 600 W, 4,3 kg, eine 230-V-Steckdose): Daten aus Handbuch und Produktseite mit Quellen, smartercamping-Messwerte, Alternativen."
 kurzzeile: "288 Wh, 600 W an einer Steckdose, 4,3 kg – USV ≤ 10 ms"
 kurzfazit: |
   Die Elite 30 V2 ist die stärkste 288-Wh-Station im Vergleich: 600 W Dauerleistung (Power Lifting bis 1.500 W nur für ohmsche Geräte), USV ≤ 10 ms und laut BLUETTI fünf Jahre Garantie bei 4,3 kg. smartercamping maß 253 Wh nutzbar bei 200 W und 245 Wh bei rund 580 W und lud am Netz in 1 h 13 min voll. Wichtig: Die EU-Version hat nur **eine** 230-V-Steckdose. Solar geht mit bis zu 200 W (12–28 V); das Solarkabel liegt nicht bei.

@@ -1,6 +1,6 @@
 +++
 title = "Welche Powerstation passt zu mir?"
-description = "Powerstation-Finder: vier Fragen zu Einsatz, Leistung, Energiebedarf und Gewicht. Die Empfehlung folgt offen gezeigten Regeln und nutzt nur Herstellerdaten."
+description = "Powerstation-Finder: vier Fragen zu Einsatz, Leistung, Energiebedarf und Gewicht. Die Empfehlung folgt offen gezeigten Regeln und nur Herstellerdaten."
 layout = "finder"
 date = 2026-10-19
 intro = "Vier Fragen, offene Regeln, keine Datenspeicherung."

@@ -4,7 +4,7 @@ modell: "Anker SOLIX C2000 Gen 2"
 layout: produkt
 date: 2026-10-19
 lastmod: 2026-10-19
-description: "Anker SOLIX C2000 Gen 2 (2.048 Wh, 2.400 W, 18,9 kg, erweiterbar auf 4 kWh): technische Daten aus Produktseite und Handbuch mit Quellen, Widersprüche, Notebookcheck-Messwerte."
+description: "Anker SOLIX C2000 Gen 2 (2.048 Wh, 2.400 W, 18,9 kg, erweiterbar auf 4 kWh): Daten aus Produktseite und Handbuch mit Quellen, Notebookcheck-Messwerte."
 kurzzeile: "2.048 Wh, 2.400 W, erweiterbar auf 4 kWh, 18,9 kg"
 kurzfazit: |
   Die C2000 Gen 2 ist die größte Station in meinem Vergleich: 2.048 Wh LiFePO4, 2.400 W Dauerleistung, laut Anker in rund einer Stunde mit 2.300 W geladen und mit dem BP2000 auf 4 kWh erweiterbar. Mit 18,9 kg ist sie eher für Haus, Garten und Wohnmobil als zum Tragen. Notebookcheck maß bei 200 W Last knapp 79 % nutzbare Energie, bei 1.800 W gut 90 %. Eine Testnote gibt es bisher nicht. Produktseite und Handbuch widersprechen sich bei der Spitzenleistung, und eine Garantiedauer habe ich nicht gefunden.
