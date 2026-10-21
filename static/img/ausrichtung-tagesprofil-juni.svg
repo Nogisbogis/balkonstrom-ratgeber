@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 400" width="760" height="400" role="img" aria-labelledby="t d" lang="de">
+<title id="t">Tagesverlauf der Leistung eines 800-Wp-Balkonkraftwerks im Juni nach Ausrichtung</title>
+<desc id="d">Liniendiagramm für Hamburg nach PVGIS, mittlere Leistung je Stunde im Juni. Süd 30 Grad erreicht gegen 13 Uhr rund 430 Watt. Ost 30 Grad hat sein Maximum gegen 11 Uhr mit rund 410 Watt und fällt am Nachmittag ab. West 30 Grad steigt erst am Vormittag an und erreicht gegen 15 Uhr rund 395 Watt, um 19 Uhr noch rund 220 Watt. Senkrecht nach Süden bleibt die Leistung im Sommer unter 280 Watt. Ab 16 Uhr liefert West 41 Prozent, Süd 24 und Ost 13 Prozent des Tagesertrags.</desc>
+<style>
+.bg{fill:#ffffff}.t{fill:#111111}.m{fill:#55595e}.g{stroke:#e2e2df}.ax{stroke:#111111}
+.a{fill:#0a6b3d}.as{stroke:#0a6b3d}.b{fill:#9a4a00}.bs{stroke:#9a4a00}.c{fill:#1f4f8f}.cs{stroke:#1f4f8f}
+.box{fill:#f1eee6;stroke:#111111}.boxa{fill:#ffffff;stroke:#0a6b3d}.boxb{fill:#ffffff;stroke:#9a4a00}
+.ar{fill:#111111}.ars{stroke:#111111}.al{fill:#0a6b3d;fill-opacity:.14}.bl{fill:#9a4a00;fill-opacity:.14}
+text{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+@media (prefers-color-scheme:dark){
+.bg{fill:#0f1f1a}.t{fill:#eef2ee}.m{fill:#b5c2bb}.g{stroke:#2a4a40}.ax{stroke:#eef2ee}
+.a{fill:#5fd69a}.as{stroke:#5fd69a}.b{fill:#f0b45a}.bs{stroke:#f0b45a}.c{fill:#8db8f0}.cs{stroke:#8db8f0}
+.box{fill:#16302a;stroke:#eef2ee}.boxa{fill:#0f1f1a;stroke:#5fd69a}.boxb{fill:#0f1f1a;stroke:#f0b45a}
+.ar{fill:#eef2ee}.ars{stroke:#eef2ee}.al{fill:#5fd69a;fill-opacity:.18}.bl{fill:#f0b45a;fill-opacity:.18}}
+</style>
+<rect class="bg" width="760" height="400" rx="8"/>
+<text x="20" y="30" class="t" font-size="18" text-anchor="start" font-weight="bold" >Wann ein 800-Wp-Balkonkraftwerk im Juni Strom liefert</text>
+<text x="20" y="52" class="m" font-size="12.5" text-anchor="start" font-weight="normal" >Hamburg, mittlere Leistung je Stunde an Junitagen 2019–2023 nach PVGIS, in Watt, Uhrzeit MESZ</text>
+<line x1="20" y1="70" x2="42" y2="70" class="as" stroke-width="3" />
+<text x="48" y="74" class="t" font-size="12.5" text-anchor="start" font-weight="normal" >Süd, 30°</text>
+<line x1="133.6" y1="70" x2="155.6" y2="70" class="bs" stroke-width="3" />
+<text x="161.6" y="74" class="t" font-size="12.5" text-anchor="start" font-weight="normal" >West, 30°</text>
+<line x1="254.39999999999998" y1="70" x2="276.4" y2="70" class="cs" stroke-width="3" />
+<text x="282.4" y="74" class="t" font-size="12.5" text-anchor="start" font-weight="normal" >Ost, 30°</text>
+<line x1="368.0" y1="70" x2="390.0" y2="70" class="ax" stroke-width="3" stroke-dasharray="6 4"/>
+<text x="396.0" y="74" class="t" font-size="12.5" text-anchor="start" font-weight="normal" >senkrecht Süd</text>
+<line x1="70" y1="320.0" x2="740" y2="320.0" class="g" stroke-width="1" />
+<text x="62" y="324.0" class="m" font-size="11" text-anchor="end" font-weight="normal" >0 W</text>
+<line x1="70" y1="270.22222222222223" x2="740" y2="270.22222222222223" class="g" stroke-width="1" />
+<text x="62" y="274.22222222222223" class="m" font-size="11" text-anchor="end" font-weight="normal" >100 W</text>
+<line x1="70" y1="220.44444444444446" x2="740" y2="220.44444444444446" class="g" stroke-width="1" />
+<text x="62" y="224.44444444444446" class="m" font-size="11" text-anchor="end" font-weight="normal" >200 W</text>
+<line x1="70" y1="170.66666666666666" x2="740" y2="170.66666666666666" class="g" stroke-width="1" />
+<text x="62" y="174.66666666666666" class="m" font-size="11" text-anchor="end" font-weight="normal" >300 W</text>
+<line x1="70" y1="120.88888888888889" x2="740" y2="120.88888888888889" class="g" stroke-width="1" />
+<text x="62" y="124.88888888888889" class="m" font-size="11" text-anchor="end" font-weight="normal" >400 W</text>
+<text x="140.5263157894737" y="338" class="m" font-size="11" text-anchor="middle" font-weight="normal" >6 Uhr</text>
+<text x="211.05263157894737" y="338" class="m" font-size="11" text-anchor="middle" font-weight="normal" >8 Uhr</text>
+<text x="281.57894736842104" y="338" class="m" font-size="11" text-anchor="middle" font-weight="normal" >10 Uhr</text>
+<text x="352.10526315789474" y="338" class="m" font-size="11" text-anchor="middle" font-weight="normal" >12 Uhr</text>
+<text x="422.63157894736844" y="338" class="m" font-size="11" text-anchor="middle" font-weight="normal" >14 Uhr</text>
+<text x="493.1578947368421" y="338" class="m" font-size="11" text-anchor="middle" font-weight="normal" >16 Uhr</text>
+<text x="563.6842105263158" y="338" class="m" font-size="11" text-anchor="middle" font-weight="normal" >18 Uhr</text>
+<text x="634.2105263157895" y="338" class="m" font-size="11" text-anchor="middle" font-weight="normal" >20 Uhr</text>
+<text x="704.7368421052631" y="338" class="m" font-size="11" text-anchor="middle" font-weight="normal" >22 Uhr</text>
+<line x1="70" y1="320" x2="740" y2="320" class="ax" stroke-width="1" />
+<polyline points="75.9,320.0 111.1,320.0 146.4,312.5 181.7,295.6 216.9,251.8 252.2,199.5 287.5,150.8 322.7,121.9 358.0,107.0 393.2,105.0 428.5,111.9 463.8,123.4 499.0,150.8 534.3,184.6 569.6,233.9 604.8,282.2 640.1,308.1 675.4,319.0 710.6,320.0" fill="none" class="as" stroke-width="3" stroke-linejoin="round"/>
+<polyline points="75.9,320.0 111.1,320.0 146.4,312.5 181.7,300.1 216.9,288.6 252.2,279.7 287.5,239.4 322.7,198.0 358.0,165.7 393.2,145.3 428.5,132.3 463.8,123.4 499.0,128.4 534.3,136.8 569.6,170.2 604.8,208.5 640.1,257.8 675.4,314.0 710.6,320.0" fill="none" class="bs" stroke-width="3" stroke-linejoin="round"/>
+<polyline points="75.9,320.0 111.1,320.0 146.4,286.2 181.7,231.4 216.9,184.6 252.2,146.3 287.5,118.4 322.7,113.9 358.0,121.9 393.2,139.3 428.5,162.7 463.8,188.6 499.0,227.4 534.3,269.2 569.6,282.7 604.8,295.6 640.1,308.1 675.4,319.0 710.6,320.0" fill="none" class="cs" stroke-width="3" stroke-linejoin="round"/>
+<polyline points="75.9,320.0 111.1,320.0 146.4,317.5 181.7,312.0 216.9,306.6 252.2,278.2 287.5,237.9 322.7,207.0 358.0,189.1 393.2,185.1 428.5,190.6 463.8,203.5 499.0,230.9 534.3,266.2 569.6,303.6 604.8,310.0 640.1,315.5 675.4,320.0 710.6,320.0" fill="none" class="ars" stroke-width="3" stroke-dasharray="6 4" stroke-linejoin="round"/>
+<text x="20" y="364" class="t" font-size="12" text-anchor="start" font-weight="normal" >Ab 16 Uhr: West 30° liefert 41 % seines Tagesertrags, Süd 30° 24 %, Ost 30° 13 %.</text>
+<text x="20" y="384" class="m" font-size="11.5" text-anchor="start" font-weight="normal" >Quelle: PVGIS 5.3, EU-Kommission (JRC), Stundenwerte, 0,8 kWp, 14 % Systemverluste, abgerufen 21.10.2026.</text>
+</svg>

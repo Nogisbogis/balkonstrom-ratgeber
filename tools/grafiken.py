@@ -451,6 +451,45 @@ def winter_ertrag(name="winter-ertrag-monate.svg"):
         " ".join(f'{lab}: ' + ", ".join(f'{m} {de(v,1)} kWh' for m, v in zip(mon, vals)) + "." for lab, _, vals in WINTER_HH) +
         " Im Sommer liefert die 30-Grad-Anlage am meisten, von November bis Februar die senkrechte Südanlage.", b)
 
+# ---------- Ausrichtung: mittlerer Tagesverlauf im Juni nach PVGIS ----------
+# PVGIS 5.3 seriescalc (EU JRC), Hamburg 53,55 N / 9,99 O, 0,8 kWp, 14 % Systemverluste, Stundenwerte 2019–2023,
+# Mittel aller Junitage je Stunde, Zeit in MESZ (UTC+2). Rohdaten: /workspace/blogbot/research/pvgis-2026-10-21/
+# (Werte stehen so auch im Artikel balkonkraftwerk-ausrichtung-neigung).
+JUNI_HH = [
+    ("Süd, 30°", "a", "", [0, 0, 0, 0, 0, 0, 15, 49, 137, 242, 340, 398, 428, 432, 418, 395, 340, 272, 173, 76, 24, 2, 0, 0]),
+    ("West, 30°", "b", "", [0, 0, 0, 0, 0, 0, 15, 40, 63, 81, 162, 245, 310, 351, 377, 395, 385, 368, 301, 224, 125, 12, 0, 0]),
+    ("Ost, 30°", "c", "", [0, 0, 0, 0, 0, 0, 68, 178, 272, 349, 405, 414, 398, 363, 316, 264, 186, 102, 75, 49, 24, 2, 0, 0]),
+    ("senkrecht Süd", "t", ' stroke-dasharray="6 4"', [0, 0, 0, 0, 0, 0, 5, 16, 27, 84, 165, 227, 263, 271, 260, 234, 179, 108, 33, 20, 9, 0, 0, 0]),
+]
+def ausrichtung_tagesprofil(name="ausrichtung-tagesprofil-juni.svg"):
+    W, H = 760, 400
+    x0, x1, y0, y1, maxv = 70, 740, 320, 96, 450
+    h0, h1 = 4, 23
+    sx = lambda h: x0 + (x1 - x0) * (h - h0) / (h1 - h0)
+    sy = lambda v: y0 - (y0 - y1) * v / maxv
+    b = [T(20, 30, "Wann ein 800-Wp-Balkonkraftwerk im Juni Strom liefert", size=18, weight="bold"),
+         T(20, 52, "Hamburg, mittlere Leistung je Stunde an Junitagen 2019–2023 nach PVGIS, in Watt, Uhrzeit MESZ", "m", 12.5)]
+    lx = 20
+    for lab, cls, dash, _ in JUNI_HH:
+        b.append(L(lx, 70, lx + 22, 70, cls.replace("t", "ax") if cls == "t" else cls + "s", 3, dash.strip()))
+        b.append(T(lx + 28, 74, lab, "t", 12.5)); lx += 40 + 7.2 * len(lab) + 16
+    for v in range(0, maxv + 1, 100):
+        b.append(L(x0, sy(v), x1, sy(v), "g")); b.append(T(x0 - 8, sy(v) + 4, de(v) + " W", "m", 11, "end"))
+    for h in range(h0 + 2, h1 + 1, 2):
+        b.append(T(sx(h), y0 + 18, f"{h} Uhr", "m", 11, "middle"))
+    b.append(L(x0, y0, x1, y0, "ax"))
+    for lab, cls, dash, vals in JUNI_HH:
+        pts = " ".join(f"{sx(h + 1/6):.1f},{sy(vals[h]):.1f}" for h in range(h0, h1))
+        sc = "ars" if cls == "t" else cls + "s"
+        b.append(f'<polyline points="{pts}" fill="none" class="{sc}" stroke-width="3"{dash} stroke-linejoin="round"/>')
+    b.append(T(20, y0 + 44, "Ab 16 Uhr: West 30° liefert 41 % seines Tagesertrags, Süd 30° 24 %, Ost 30° 13 %.", "t", 12))
+    b.append(T(20, y0 + 64, "Quelle: PVGIS 5.3, EU-Kommission (JRC), Stundenwerte, 0,8 kWp, 14 % Systemverluste, abgerufen 21.10.2026.", "m", 11.5))
+    svg(name, W, H, "Tagesverlauf der Leistung eines 800-Wp-Balkonkraftwerks im Juni nach Ausrichtung",
+        "Liniendiagramm für Hamburg nach PVGIS, mittlere Leistung je Stunde im Juni. Süd 30 Grad erreicht gegen 13 Uhr rund 430 Watt. "
+        "Ost 30 Grad hat sein Maximum gegen 11 Uhr mit rund 410 Watt und fällt am Nachmittag ab. West 30 Grad steigt erst am Vormittag "
+        "an und erreicht gegen 15 Uhr rund 395 Watt, um 19 Uhr noch rund 220 Watt. Senkrecht nach Süden bleibt die Leistung im Sommer "
+        "unter 280 Watt. Ab 16 Uhr liefert West 41 Prozent, Süd 24 und Ost 13 Prozent des Tagesertrags.", b)
+
 # ---------- Favicon ----------
 def favicon():
     s = ('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="8" fill="#111111"/>'
@@ -461,7 +500,7 @@ def favicon():
 
 if __name__ == "__main__":
     ps_kapazitaet_gewicht(); ps_dauerleistung(); ps_laufzeit()
-    winter_ertrag()
+    winter_ertrag(); ausrichtung_tagesprofil()
     ps_kapazitaet_gewicht("ps-vergleich-kapazitaet-gewicht.svg", ps_alle, 4400, 55, "20.10.2026")
     speicher_schema(); speicher_tagesprofil(); speicher_rechnung()
     anmelden_ablauf(); anmelden_stecker(); anmelden_mastr()
