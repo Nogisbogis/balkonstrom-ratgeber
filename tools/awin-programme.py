@@ -56,7 +56,7 @@ def api_get(pfad):
 
 def produkte():
     out = []
-    for f in ("powerstations.yaml", "balkonkraftwerke.yaml"):
+    for f in ("powerstations.yaml", "balkonkraftwerke.yaml", "powerbanks.yaml"):
         for p in yaml.safe_load((ROOT / "data" / f).read_text(encoding="utf-8")) or []:
             if p.get("awin_advertiser"):
                 out.append(p)

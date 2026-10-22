@@ -1,0 +1,86 @@
+{{ define "main" }}
+{{- $p := index (where hugo.Data.powerbanks "slug" .File.ContentBaseName) 0 }}
+{{- if not $p }}{{ errorf "powerbank: %q nicht in data/powerbanks.yaml (%s)" .File.ContentBaseName .File.Path }}{{ end }}
+{{- $qidx := dict }}{{ range $i, $q := .Params.quellen }}{{ $qidx = merge $qidx (dict $q.id (add $i 1)) }}{{ end }}
+{{- $aw := partial "awin-url.html" $p }}
+{{- $amz := "" }}{{ with $p.asin }}{{ if partial "amazon-ok.html" . }}{{ $amz = . }}{{ end }}{{ end }}
+<article class="produkt">
+  {{ partial "breadcrumb.html" . }}
+  <h1>{{ .Title }}</h1>
+  <p class="meta">Produktseite Powerbank · Zuletzt aktualisiert <time datetime="{{ .Lastmod.Format "2006-01-02" }}">{{ .Lastmod.Format "02.01.2006" }}</time> · eigene Recherche, kein eigener Test{{ with partial "hersteller-von.html" $p.modell }}{{ $hn := .name }}{{ with .url }} · <a class="p-marke" href="{{ . }}">Alle Geräte von {{ $hn }}</a>{{ end }}{{ end }}</p>
+  {{ if or $aw $amz }}{{ partial "disclosure-box.html" . }}{{ end }}
+
+  <div class="p-top">
+    <div class="p-media">{{ partial "abbildung.html" (dict "p" $p "w" 400 "h" 300 "lazy" false "lcp" true "cap" true "cls" "pbild") }}</div>
+    <div class="p-eck">
+      <dl class="p-kern">
+        <div><dt>Typ</dt><dd>Powerbank</dd></div>
+        <div><dt>Kapazität</dt><dd>{{ lang.FormatNumber 0 $p.kapazitaet_mah }} mAh{{ with $p.kapazitaet_wh }} · {{ replace (string .) "." "," }} Wh{{ else }}<small> · Wh: keine Angabe</small>{{ end }}</dd></div>
+        <div><dt>Leistung gesamt</dt><dd>{{ $p.max_leistung_w }} W<small> · max. {{ $p.max_port_w }} W an einem Port</small></dd></div>
+        <div><dt>Anschlüsse</dt><dd>{{ $p.usbc }} × USB-C{{ if gt $p.usba 0 }}, {{ $p.usba }} × USB-A{{ end }}{{ if $p.kabel }}, integriertes USB-C-Kabel{{ end }}</dd></div>
+        <div><dt>Gewicht</dt><dd>{{ if $p.gewicht_ca }}ca. {{ end }}{{ replace (string $p.gewicht_g) "." "," }} g</dd></div>
+        <div><dt>Garantie</dt><dd>{{ $p.garantie | default "keine Angabe" }}</dd></div>
+      </dl>
+      <p class="note">Herstellerangaben, Belege unten in der Tabelle.</p>
+      {{- with .Params.warnung }}<p class="notice p-warn">{{ . | $.RenderString }}</p>{{ end }}
+      {{- if or $aw $amz }}
+      <p class="pcard-links">
+        {{- if $aw }}{{ partial "awin-btn.html" (dict "url" $aw "cls" "btn btn-amazon") }}{{ end }}
+        {{- with $amz }}<a class="{{ if $aw }}btn-sec{{ else }}btn{{ end }} btn-amazon" href="{{ partial "amazon-url.html" . }}" rel="sponsored nofollow noopener" target="_blank">Preis bei Amazon<span class="ad-label">Anzeige</span><span class="sr"> (Affiliate-Link)</span></a>{{ end }}
+      </p>
+      {{- else }}
+      <p class="note">Noch kein geprüfter Kauflink – die Herstellerseite steht unten bei den Quellen.</p>
+      {{- end }}
+    </div>
+  </div>
+
+  <section class="p-fazit" aria-labelledby="fazit"><h2 id="fazit">Kurzfazit</h2>{{ .Params.kurzfazit | .RenderString (dict "display" "block") }}</section>
+
+  <div class="p-fuer">
+    <section><h2 id="fuer-wen">Für wen geeignet</h2><ul class="ja">{{ range .Params.fuer }}<li>{{ . | $.RenderString }}</li>{{ end }}</ul></section>
+    <section><h2 id="nicht-fuer">Für wen eher nicht</h2><ul class="nein">{{ range .Params.nicht_fuer }}<li>{{ . | $.RenderString }}</li>{{ end }}</ul></section>
+  </div>
+
+  <h2 id="daten">Technische Daten</h2>
+  {{- $nd := 0 }}{{ range .Params.daten }}{{ if not .gruppe }}{{ $nd = add $nd 1 }}{{ end }}{{ end }}
+  <details class="mehr p-mehr"><summary>Alle technischen Daten anzeigen ({{ $nd }} Angaben, je mit Quelle)</summary>
+  <div class="tablewrap"><table class="p-daten">
+    <thead><tr><th scope="col">Merkmal</th><th scope="col">Angabe</th><th scope="col">Quelle</th></tr></thead>
+    <tbody>
+    {{- range .Params.daten }}
+      {{- if .gruppe }}<tr class="gruppe"><th colspan="3" scope="rowgroup">{{ .gruppe }}</th></tr>{{ else }}
+      <tr{{ if .hinweis }} class="hat-hinweis"{{ end }}><th scope="row">{{ .k }}</th><td>{{ .v | $.RenderString }}{{ with .hinweis }}<span class="d-hinweis">{{ . | $.RenderString }}</span>{{ end }}</td><td class="qcell">{{ partial "qref.html" (dict "ids" .q "idx" $qidx) }}</td></tr>
+      {{- end }}
+    {{- end }}
+    </tbody>
+  </table></div>
+  </details>
+
+  {{- with .Params.widersprueche }}
+  <section class="p-wider" aria-labelledby="widersprueche"><h2 id="widersprueche">Wo sich Quellen widersprechen</h2>
+  <details class="mehr p-mehr"><summary>{{ len . }} {{ cond (eq (len .) 1) "Widerspruch" "Widersprüche" }} anzeigen</summary>
+  <ul>{{ range . }}<li>{{ .t | $.RenderString }} {{ partial "qref.html" (dict "ids" .q "idx" $qidx) }}</li>{{ end }}</ul>
+  </details></section>
+  {{- end }}
+
+  <div class="p-sw">
+    <section><h2 id="staerken">Stärken</h2><ul class="ja">{{ range .Params.staerken }}<li>{{ .t | $.RenderString }} {{ partial "qref.html" (dict "ids" .q "idx" $qidx) }}</li>{{ end }}</ul></section>
+    <section><h2 id="schwaechen">Schwächen</h2><ul class="nein">{{ range .Params.schwaechen }}<li>{{ .t | $.RenderString }} {{ partial "qref.html" (dict "ids" .q "idx" $qidx) }}</li>{{ end }}</ul></section>
+  </div>
+
+  {{ with .Params.tests_hinweis }}<section aria-labelledby="tests"><h2 id="tests">Was Tests sagen</h2><p class="note">{{ . | $.RenderString }}</p></section>{{ end }}
+
+  {{- $andere := slice }}{{ range hugo.Data.powerbanks }}{{ if ne .slug $p.slug }}{{ $andere = $andere | append . }}{{ end }}{{ end }}
+  {{- with $andere }}
+  <section aria-labelledby="alternativen"><h2 id="alternativen">Andere Powerbanks</h2>
+  <ul class="plist">{{ range . }}{{ $d := . }}{{ with site.GetPage (printf "/powerbanks/%s" .slug) }}{{ partial "hersteller-karte.html" (dict "d" $d "pg" . "art" "pb") }}{{ end }}{{ end }}</ul></section>
+  {{- end }}
+
+  <section class="p-quellen" aria-labelledby="quellen"><h2 id="quellen">Quellen</h2>
+  <details class="mehr p-mehr" id="quellen-liste"><summary>{{ len .Params.quellen }} {{ cond (eq (len .Params.quellen) 1) "Quelle" "Quellen" }} mit Links anzeigen</summary>
+  <ol>{{ range .Params.quellen }}<li id="q-{{ .id }}"><a href="{{ .url }}" rel="noopener" target="_blank">{{ .titel }}</a>{{ with .art }} <span class="note">– {{ . }}</span>{{ end }}</li>{{ end }}</ol>
+  </details>
+  <p class="note">Alle Links abgerufen am {{ .Lastmod.Format "02.01.2006" }}. Powerbanks sind bewusst nicht im Powerstation-Finder, in der Suche, im Vergleich oder im Laufzeitrechner enthalten.</p>
+  </section>
+</article>
+{{ end }}

@@ -1,0 +1,72 @@
+# Powerbanks – eigener Produkttyp (Seiten unter /powerbanks/<slug>/). Bewusst NICHT in powerstations.yaml:
+# Finder, Laufzeitrechner, Suche und Vergleich lesen nur powerstations.yaml bzw. balkonkraftwerke.yaml.
+# Nur Herstellerangaben von der DE-Produktseite (quelle), geprüft am 22.10.2026. null = keine Angabe.
+# asin nur nach Prüfung (genaues Modell, verfügbar); awin_advertiser + shop_url bleiben inaktiv, bis das
+# Partnerprogramm angenommen ist (layouts/_partials/awin-url.html).
+- modell: EcoFlow RAPID Pro Powerbank 20.000 mAh
+  slug: ecoflow-rapid-pro-20k
+  awin_advertiser: 51793
+  shop_url: https://de.ecoflow.com/products/rapid-pro-20k-power-bank
+  abbildung: img/illu/ecoflow-rapid-pro-20k.svg
+  kapazitaet_mah: 20000
+  kapazitaet_wh: 72
+  max_leistung_w: 230
+  max_port_w: 100
+  usbc: 3
+  usba: 0
+  kabel: true
+  eingang_w: 120
+  gewicht_g: 563.8
+  masse_mm: [145, 55, 56]
+  zellchemie: Lithium-Ionen (ternär)
+  zyklen: 400
+  display: LCD
+  app: true
+  garantie: "2 Jahre"
+  quelle: https://de.ecoflow.com/products/rapid-pro-20k-power-bank
+  asin: ""
+- modell: EcoFlow RAPID Pro Powerbank 27.650 mAh
+  slug: ecoflow-rapid-pro-27k
+  awin_advertiser: 51793
+  shop_url: https://de.ecoflow.com/products/rapid-pro-27k-power-bank
+  abbildung: img/illu/ecoflow-rapid-pro-27k.svg
+  kapazitaet_mah: 27650
+  kapazitaet_wh: 99.54
+  max_leistung_w: 300
+  max_port_w: 140
+  usbc: 3
+  usba: 0
+  kabel: true
+  eingang_w: 280
+  gewicht_g: 699.4
+  masse_mm: [166, 55, 58]
+  zellchemie: Lithium-Ionen (ternär)
+  zyklen: 300
+  display: LCD
+  app: true
+  garantie: "2 Jahre"
+  quelle: https://de.ecoflow.com/products/rapid-pro-27k-power-bank
+  asin: ""
+- modell: EcoFlow RAPID Powerbank 25.000 mAh 170 W
+  slug: ecoflow-rapid-25k
+  awin_advertiser: 51793
+  shop_url: https://de.ecoflow.com/products/rapid-power-bank-25k
+  abbildung: img/illu/ecoflow-rapid-25k.svg
+  kapazitaet_mah: 25000
+  kapazitaet_wh: null
+  max_leistung_w: 170
+  max_port_w: 140
+  usbc: 2
+  usba: 1
+  kabel: false
+  eingang_w: 140
+  gewicht_g: 565
+  gewicht_ca: true
+  masse_mm: [157, 53.8, 48.8]
+  zellchemie: Lithium-Ionen (ternär)
+  zyklen: 300
+  display: TFT
+  app: false
+  garantie: "2 Jahre"
+  quelle: https://de.ecoflow.com/products/rapid-power-bank-25k
+  asin: ""

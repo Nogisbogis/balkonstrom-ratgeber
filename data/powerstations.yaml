@@ -253,3 +253,85 @@
   solareingang_w: 200
   quelle: https://www.bluettipower.eu/products/elite-30-v2-portable-power-station
   asin: B0F9FN228S
+# Ergänzt am 22.10.2026 (Entwurf Herstellerseiten): Werte nur von der DE-Herstellerseite (quelle).
+- modell: Anker SOLIX S2000
+  slug: anker-solix-s2000
+  awin_advertiser: 32623
+  shop_url: https://www.ankersolix.com/de/products/s2000-tragbare-powerstation
+  abbildung: img/illu/anker-solix-s2000.svg
+  spitze_w: null
+  usv_ms: 10
+  zyklen: 6000
+  erweiterbar: "keine Angabe"
+  kapazitaet_wh: 2000
+  dauerleistung_w: 1500
+  akkutyp: LiFePO4
+  gewicht_kg: 16.2
+  solareingang_w: 400
+  quelle: https://www.ankersolix.com/de/s2000
+  asin: B0GY4TQ2P8
+- modell: EcoFlow DELTA 3 Classic
+  slug: ecoflow-delta-3-classic
+  awin_advertiser: 51793
+  shop_url: https://de.ecoflow.com/products/delta-3-classic-portable-power-station
+  abbildung: img/illu/ecoflow-delta-3-classic.svg
+  spitze_w: 3600
+  usv_ms: 10
+  zyklen: null
+  erweiterbar: "nein"
+  kapazitaet_wh: 1024
+  dauerleistung_w: 1800
+  akkutyp: LiFePO4
+  gewicht_kg: 12.1
+  solareingang_w: 500
+  quelle: https://de.ecoflow.com/products/delta-3-classic-portable-power-station
+  asin: B0GMCHYHQR
+- modell: EcoFlow TRAIL 200 DC
+  slug: ecoflow-trail-200-dc
+  awin_advertiser: 51793
+  shop_url: https://de.ecoflow.com/products/ecoflow-trail-serie-dc-tragbare-powerstation-200
+  abbildung: img/illu/ecoflow-trail-200-dc.svg
+  nur_dc: true
+  spitze_w: null
+  usv_ms: null
+  zyklen: null
+  erweiterbar: "nein"
+  kapazitaet_wh: 192
+  dauerleistung_w: 220
+  akkutyp: LiFePO4
+  gewicht_kg: 1.83
+  solareingang_w: 0
+  quelle: https://de.ecoflow.com/products/ecoflow-trail-serie-dc-tragbare-powerstation-200
+  asin: ""
+- modell: Jackery Explorer 3600 Plus
+  slug: jackery-explorer-3600-plus
+  awin_advertiser: 30415
+  shop_url: https://de.jackery.com/products/neu-jackery-explore-3600-plus-tragbare-powerstation
+  abbildung: img/illu/jackery-explorer-3600-plus.svg
+  spitze_w: 7200
+  usv_ms: 10
+  zyklen: 6000
+  erweiterbar: "ja"
+  kapazitaet_wh: 3584
+  dauerleistung_w: 3600
+  akkutyp: LiFePO4
+  gewicht_kg: 35
+  solareingang_w: 1000
+  quelle: https://de.jackery.com/products/neu-jackery-explore-3600-plus-tragbare-powerstation
+  asin: ""
+- modell: Jackery Explorer 2000 v2
+  slug: jackery-explorer-2000-v2
+  awin_advertiser: 30415
+  shop_url: https://de.jackery.com/products/explorer-2000-v2-portable-power-station
+  abbildung: img/illu/jackery-explorer-2000-v2.svg
+  spitze_w: null
+  usv_ms: 20
+  zyklen: 4000
+  erweiterbar: "nein"
+  kapazitaet_wh: 2042
+  dauerleistung_w: 2200
+  akkutyp: LiFePO4
+  gewicht_kg: 17.5
+  solareingang_w: 400
+  quelle: https://de.jackery.com/products/explorer-2000-v2-portable-power-station
+  asin: ""

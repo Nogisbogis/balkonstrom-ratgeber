@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300" role="img" aria-label="EcoFlow RAPID Pro 20K, schematische Darstellung" lang="de"><style>
+.f{fill:#e3e0d8}.t{fill:#f1eee6}.s{fill:#c9c5bb}.l{stroke:#111;stroke-width:1.6;stroke-linejoin:round;stroke-linecap:round}
+.p{fill:#262b2e}.a{fill:#0a6b3d}.as{stroke:#0a6b3d}.k{fill:#f7f5f0}.h{fill:#262b2e}.m{fill:#55595e}.ml{stroke:#55595e}
+.c{fill:#2f4f6f}.cl{stroke:#9db7d1}
+text{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+@media (max-width:220px){.dim{display:none}}
+@media (prefers-color-scheme:dark){.f{fill:#3b4d46}.t{fill:#4b5f57}.s{fill:#2c3b36}.l{stroke:#eef2ee}
+.p{fill:#0b1512}.a{fill:#5fd69a}.as{stroke:#5fd69a}.k{fill:#26372f}.h{fill:#0b1512}.m{fill:#b5c2bb}.ml{stroke:#b5c2bb}
+.c{fill:#24476b}.cl{stroke:#7fa2c8}}
+</style><path d="M67 122.5L109.9 93.8H357L314.1 122.5Z" class="t l"/><path d="M314.1 122.5L357 93.8V187.5L314.1 216.2Z" class="s l"/><rect x="67" y="122.5" width="247.1" height="93.7" rx="20.6" class="f l"/><rect x="170.8" y="143.1" width="88.9" height="46.9" rx="5.6" class="p"/><rect x="179.7" y="174.9" width="48.9" height="4.2" rx="1" class="a"/><rect x="179.7" y="154.8" width="26.7" height="13.1" rx="1" class="a" opacity=".55"/><rect x="81.8" y="141.2" width="19.5" height="7.4" rx="3.7" class="h"/><rect x="81.8" y="159.9" width="19.5" height="7.4" rx="3.7" class="h"/><rect x="81.8" y="178.7" width="19.5" height="7.4" rx="3.7" class="h"/><path d="M69 197.4C27 197.4 27 73.8 116.4 105.3" class="l" fill="none" stroke-width="5" stroke-linecap="round"/><rect x="112.4" y="100.3" width="16" height="8" rx="3" class="k l" stroke-width="1"/><rect x="279.5" y="161.8" width="14.8" height="11.2" rx="2" class="a"/><g class="dim"><path d="M67 226.2v8M67 230.2H314.1M314.1 226.2v8" class="ml" stroke-width="1.2" fill="none"/><text x="190.5" y="246.2" class="m" font-size="13" text-anchor="middle">14,5 cm</text><text x="200.0" y="292" class="m" font-size="12" text-anchor="middle">14,5 × 5,6 × 5,5 cm laut Hersteller</text></g></svg>

@@ -1,0 +1,10 @@
+{{- /* Hersteller zu einem Modellnamen (Präfix aus data/hersteller.yaml). Rückgabe: dict name, slug, url (leer ohne eigene Seite) oder leeres dict. */ -}}
+{{- $r := dict -}}
+{{- $m := . -}}
+{{- range hugo.Data.hersteller -}}
+  {{- if and (not $r.name) (hasPrefix $m (printf "%s " .praefix)) -}}
+    {{- $u := "" }}{{ if .seite }}{{ with site.GetPage (printf "/hersteller/%s" .slug) }}{{ $u = .RelPermalink }}{{ end }}{{ end -}}
+    {{- $r = dict "name" .name "slug" .slug "url" $u -}}
+  {{- end -}}
+{{- end -}}
+{{- return $r -}}

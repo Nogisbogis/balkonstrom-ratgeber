@@ -1,0 +1,37 @@
+{{ define "main" }}
+{{- $h := index (where hugo.Data.hersteller "slug" .Params.marke) 0 }}
+{{- if not $h }}{{ errorf "hersteller: %q nicht in data/hersteller.yaml (%s)" .Params.marke .File.Path }}{{ end }}
+{{- $g := partial "hersteller-produkte.html" $h }}
+{{- $bkwSp := true }}{{ range $g.bkw }}{{ if not (gt .d.speicher_kwh 0) }}{{ $bkwSp = false }}{{ end }}{{ end }}
+<article class="hersteller">
+  {{ partial "breadcrumb.html" . }}
+  <h1>{{ .Title }}</h1>
+  <p class="lead lead-sans">{{ .Params.kurz }}</p>
+  <ul class="hst-zahlen" aria-label="Geräte auf dieser Seite">
+    {{- with $g.ps }}<li><a href="#powerstations"><strong>{{ len . }}</strong> Powerstation{{ if gt (len .) 1 }}s{{ end }}</a></li>{{ end }}
+    {{- with $g.bkw }}<li><a href="#balkon-speicher"><strong>{{ len . }}</strong> {{ if $bkwSp }}Balkon-Speicher{{ else }}Balkonkraftwerke &amp; Speicher{{ end }}</a></li>{{ end }}
+    {{- with $g.pb }}<li><a href="#powerbanks"><strong>{{ len . }}</strong> Powerbank{{ if gt (len .) 1 }}s{{ end }}</a></li>{{ end }}
+  </ul>
+  <details class="mehr hst-intro"><summary>Über {{ $h.name }} – kurz und mit Quellen</summary>
+    <div class="mehr-inhalt">
+      <p>{{ $h.intro }}</p>
+      <ol class="hst-quellen">{{ range $h.quellen }}<li><a href="{{ .url }}" rel="noopener" target="_blank">{{ .titel }}</a></li>{{ end }}</ol>
+      <p class="note">Abgerufen am {{ .Lastmod.Format "02.01.2006" }}. Herstellerangaben, keine eigene Prüfung des Unternehmens.</p>
+    </div>
+  </details>
+  <p class="note abb-hinweis">Alle Werte: Herstellerangaben von der deutschen Produktseite, je Gerät mit Quelle. Abbildungen: Illustrationen nach Herstellerangaben, kein Produktfoto.</p>
+  {{- with $g.ps }}
+  <section aria-labelledby="powerstations"><h2 id="powerstations">Powerstations</h2>
+  <ul class="plist">{{ range . }}{{ partial "hersteller-karte.html" (dict "d" .d "pg" .pg "art" "ps") }}{{ end }}</ul></section>
+  {{- end }}
+  {{- with $g.bkw }}
+  <section aria-labelledby="balkon-speicher"><h2 id="balkon-speicher">{{ if $bkwSp }}Balkon-Speicher{{ else }}Balkonkraftwerke &amp; Speicher{{ end }}</h2>
+  <ul class="plist">{{ range . }}{{ partial "hersteller-karte.html" (dict "d" .d "pg" .pg "art" "bkw") }}{{ end }}</ul></section>
+  {{- end }}
+  {{- with $g.pb }}
+  <section aria-labelledby="powerbanks"><h2 id="powerbanks">Powerbanks</h2>
+  <ul class="plist">{{ range . }}{{ partial "hersteller-karte.html" (dict "d" .d "pg" .pg "art" "pb") }}{{ end }}</ul></section>
+  {{- end }}
+  <p class="tool-links-inline">Vergleichen statt einzeln lesen: <a href="{{ "powerstation-finder/" | relURL }}">Powerstation-Finder</a> · <a href="{{ "vergleich/" | relURL }}">Vergleichstabellen</a> · <a href="{{ "hersteller/" | relURL }}">Alle Hersteller</a></p>
+</article>
+{{ end }}

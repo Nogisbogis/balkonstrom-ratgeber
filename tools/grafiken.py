@@ -389,9 +389,12 @@ def bkw_speicher(name="vergleich-bkw-speicher.svg"):
     H = top + rh * len(rows) + 64
     lab = 230; cx = 470
     lw = cx - lab - 70; rw = W - cx - 90
-    mk, mp = 3.0, 4000
+    import math
+    mk = max(3.0, math.ceil(max(p["speicher_kwh"] for p in rows)))          # Skala aus den Daten (Stand 22.10.2026: 7 kWh)
+    mp = max(4000, math.ceil(max(p["pv_max_w"] for p in rows) / 1000) * 1000)  # bzw. 10.000 W PV
+    wr = sorted({p["wechselrichter_w"] for p in rows})
     b = [T(20, 30, "Speicher fürs Balkonkraftwerk: Kapazität und PV-Eingang", size=18, weight="bold"),
-         T(20, 52, "Herstellerangaben · Ausgang ins Hausnetz bei allen: 800 W", "m", 12.5),
+         T(20, 52, "Herstellerangaben · Ausgang ins Hausnetz am Schukostecker bei allen: " + de(wr[0]) + " W" if len(wr) == 1 else "Herstellerangaben", "m", 12.5),
          T(cx - 8, top - 8, "Speicher (kWh)", "a", 12, "end", "bold"), T(cx + 8, top - 8, "max. PV-Eingang (W)", "c", 12, "start", "bold")]
     x2000 = cx + 8 + rw * 2000 / mp
     for i, p in enumerate(rows):
@@ -401,17 +404,22 @@ def bkw_speicher(name="vergleich-bkw-speicher.svg"):
         a = lw * k / mk
         b.append(R(cx - 8 - a, y + 8, a, rh - 16, "a", 2))
         b.append(T(cx - 12 - a, y + 21.5, deg(k, 3), "t", 12, "end"))
-        c = rw * pv / mp
-        b.append(R(cx + 8, y + 8, c, rh - 16, "c", 2))
-        b.append(T(cx + 12 + c, y + 21.5, de(pv), "t", 12))
+        if pv:
+            c = rw * pv / mp
+            b.append(R(cx + 8, y + 8, c, rh - 16, "c", 2))
+            lx = cx + 12 + c
+            if lx < x2000 + 4 and lx + 40 > x2000: lx = x2000 + 6   # Zahl nicht auf die 2.000-Wp-Linie legen
+            b.append(T(lx, y + 21.5, de(pv), "t", 12))
+        else:   # AC-gekoppelt: kein eigener PV-Eingang
+            b.append(T(x2000 + 6, y + 21.5, "kein PV-Eingang (AC-gekoppelt)", "m", 12))
     yb = top + rh * len(rows)
     b.append(L(cx, top - 2, cx, yb + 2, "ax"))
     b.append(L(x2000, top - 2, x2000, yb + 4, "bs", 2, 'stroke-dasharray="5 4"'))
     b.append(T(x2000, yb + 18, "2.000 Wp: Grenze für Steckersolargeräte", "b", 11.5, "middle", "bold"))
     b.append(T(20, yb + 40, "Ein höherer PV-Eingang ist technisch möglich, für den vereinfachten Betrieb zählen aber höchstens 2.000 Wp Module.", "m", 11.5))
-    b.append(T(20, yb + 56, "Quelle: Herstellerangaben, Stand 19.10.2026, Links in der Tabelle.", "m", 11.5))
+    b.append(T(20, yb + 56, "Quelle: Herstellerangaben, Stand 22.10.2026, Links in der Tabelle.", "m", 11.5))
     svg(name, W, H, "Kapazität und maximaler PV-Eingang der Balkonkraftwerk-Speicher",
-        "Balkendiagramm: " + "; ".join(f'{p["modell"]}: {de(p["speicher_kwh"],3)} kWh, PV-Eingang {de(p["pv_max_w"])} W' for p in rows) +
+        "Balkendiagramm: " + "; ".join(f'{p["modell"]}: {deg(p["speicher_kwh"],3)} kWh, ' + (f'PV-Eingang {de(p["pv_max_w"])} W' if p["pv_max_w"] else "kein PV-Eingang (AC-gekoppelt)") for p in rows) +
         ". Eine gestrichelte Linie markiert die 2.000-Wp-Grenze für Steckersolargeräte.", b)
 
 # ---------- Balkonkraftwerk im Winter: Monatsertrag nach PVGIS ----------
@@ -534,7 +542,7 @@ def favicon():
 if __name__ == "__main__":
     ps_kapazitaet_gewicht(); ps_dauerleistung(); ps_laufzeit()
     winter_ertrag(); ausrichtung_tagesprofil(); kuehlschrank_laufzeit()
-    ps_kapazitaet_gewicht("ps-vergleich-kapazitaet-gewicht.svg", ps_alle, 4400, 55, "20.10.2026")
+    ps_kapazitaet_gewicht("ps-vergleich-kapazitaet-gewicht.svg", ps_alle, 4400, 55, "22.10.2026")
     speicher_schema(); speicher_tagesprofil(); speicher_rechnung()
     anmelden_ablauf(); anmelden_stecker(); anmelden_mastr()
     bkw_speicher(); favicon()

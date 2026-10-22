@@ -52,7 +52,7 @@
         <td class="r" data-v="{{ .kapazitaet_wh }}" data-l="Kapazität">{{ lang.FormatNumber 0 .kapazitaet_wh }}<span class="einh-m"> Wh</span></td>
         <td class="r" data-v="{{ .dauerleistung_w }}" data-l="Leistung">{{ lang.FormatNumber 0 .dauerleistung_w }}<span class="einh-m"> W</span>{{ if .nur_dc }}<span class="nur-dc">nur DC</span>{{ end }}</td>
         <td class="r" data-v="{{ .gewicht_kg }}" data-l="Gewicht">{{ replace (string .gewicht_kg) "." "," }}<span class="einh-m"> kg</span></td>
-        <td class="r" data-v="{{ .solareingang_w }}" data-l="Solar max.">{{ lang.FormatNumber 0 .solareingang_w }}<span class="einh-m"> W</span></td>
+        <td class="r" data-v="{{ .solareingang_w }}" data-l="Solar max.">{{ if gt .solareingang_w 0 }}{{ lang.FormatNumber 0 .solareingang_w }}<span class="einh-m"> W</span>{{ else }}–{{ end }}</td>
         <td data-l="Akku">{{ .akkutyp }}</td>
         <td class="col-kauf">{{- $aw := partial "awin-url.html" . }}{{ if $aw }}{{ partial "awin-btn.html" (dict "url" $aw "cls" "btn-sec btn-tab" "text" "Beim Hersteller") }}{{ with .asin }}{{ if partial "amazon-ok.html" . }}<a class="btn-sec btn-tab" href="{{ partial "amazon-url.html" . }}" rel="sponsored nofollow noopener" target="_blank">Preis bei Amazon<span class="ad-label">Anzeige</span><span class="sr"> (Affiliate-Link)</span></a>{{ end }}{{ end }}{{ else }}{{ with .asin }}{{ if partial "amazon-ok.html" . }}<a class="btn-sec btn-tab" href="{{ partial "amazon-url.html" . }}" rel="sponsored nofollow noopener" target="_blank">Preis bei Amazon<span class="ad-label">Anzeige</span><span class="sr"> (Affiliate-Link)</span></a>{{ else }}{{ partial "amazon-na.html" (dict "cls" "amz-na-tab") }}{{ end }}{{ else }}<span class="kein-kauf">kein Kauflink</span>{{ end }}{{ end }}</td>
       </tr>
@@ -63,12 +63,12 @@
   <p class="note abb-hinweis">Abbildungen in der Tabelle: Illustrationen nach Herstellerangaben, kein Produktfoto.</p>
   <details class="mehr mehr-grafik"><summary>Grafiken: Größenvergleich und Kapazität/Gewicht der Powerstations</summary>
   <figure class="grafik groesse">
-    <img src="{{ "img/illu/groesse-powerstations.svg" | relURL }}" width="1284" height="900" loading="lazy" decoding="async" alt="Größenvergleich: alle {{ len hugo.Data.powerstations }} Powerstations aus der Tabelle als schematische Darstellung im selben Maßstab, von der EcoFlow TRAIL 300 DC bis zur EcoFlow DELTA Pro 3.">
+    <img src="{{ "img/illu/groesse-powerstations.svg" | relURL }}" width="1299" height="1217" loading="lazy" decoding="async" alt="Größenvergleich: alle {{ len hugo.Data.powerstations }} Powerstations aus der Tabelle als schematische Darstellung im selben Maßstab, von der EcoFlow TRAIL 200 DC bis zur EcoFlow DELTA Pro 3.">
     <figcaption><strong>Größenvergleich im selben Maßstab</strong> (Maße laut Hersteller, 10-cm-Maßstab unten links). Illustration nach Herstellerangaben, kein Produktfoto.</figcaption>
   </figure>
   <figure class="grafik">
     {{- $ps := hugo.Data.powerstations }}{{ $whs := slice }}{{ $kgs := slice }}{{ range $ps }}{{ $whs = $whs | append .kapazitaet_wh }}{{ $kgs = $kgs | append .gewicht_kg }}{{ end }}
-    <a href="{{ "img/ps-vergleich-kapazitaet-gewicht.svg" | relURL }}" title="Grafik in voller Größe öffnen"><img src="{{ "img/ps-vergleich-kapazitaet-gewicht.svg" | relURL }}" width="760" height="616" loading="lazy" decoding="async" alt="Gegenüberstellung von Kapazität und Gewicht aller {{ len $ps }} Powerstations aus der Tabelle: {{ lang.FormatNumber 0 (math.Min $whs) }} bis {{ lang.FormatNumber 0 (math.Max $whs) }} Wh und {{ replace (string (math.Min $kgs)) "." "," }} bis {{ replace (string (math.Max $kgs)) "." "," }} kg laut Hersteller, mit berechneter Energiedichte von 61 bis 115 Wh pro kg."></a>
+    <a href="{{ "img/ps-vergleich-kapazitaet-gewicht.svg" | relURL }}" title="Grafik in voller Größe öffnen"><img src="{{ "img/ps-vergleich-kapazitaet-gewicht.svg" | relURL }}" width="760" height="766" loading="lazy" decoding="async" alt="Gegenüberstellung von Kapazität und Gewicht aller {{ len $ps }} Powerstations aus der Tabelle: {{ lang.FormatNumber 0 (math.Min $whs) }} bis {{ lang.FormatNumber 0 (math.Max $whs) }} Wh und {{ replace (string (math.Min $kgs)) "." "," }} bis {{ replace (string (math.Max $kgs)) "." "," }} kg laut Hersteller, mit berechneter Energiedichte von 61 bis 123 Wh pro kg."></a>
     <figcaption>Kapazität und Gewicht der Powerstations aus der Tabelle (Herstellerangaben); Wh/kg ist Kapazität ÷ Gewicht.</figcaption>
   </figure>
   </details>
@@ -128,11 +128,11 @@
   <p class="note abb-hinweis">Abbildungen in der Tabelle: Illustrationen nach Herstellerangaben, kein Produktfoto.</p>
   <details class="mehr mehr-grafik"><summary>Grafiken: Größenvergleich und Kapazität/PV-Eingang der Speicher</summary>
   <figure class="grafik groesse">
-    <img src="{{ "img/illu/groesse-balkonspeicher.svg" | relURL }}" width="1204" height="301" loading="lazy" decoding="async" alt="Größenvergleich: die sechs Balkonspeicher aus der Tabelle als schematische Darstellung im selben Maßstab; die EcoFlow STREAM-Geräte sind schmal und hoch, die Anker Solarbanks breit und flach.">
+    <img src="{{ "img/illu/groesse-balkonspeicher.svg" | relURL }}" width="1280" height="731" loading="lazy" decoding="async" alt="Größenvergleich: die 13 Balkonspeicher aus der Tabelle als schematische Darstellung im selben Maßstab, von der Zendure SolarFlow 800 Plus bis zur Anker SOLIX Solarbank Max; die EcoFlow STREAM-Geräte sind schmal und hoch, die Anker Solarbanks breit und flach.">
     <figcaption><strong>Größenvergleich der Speicher im selben Maßstab</strong> (Maße laut Hersteller). Das RS40P-Set ohne Speicher fehlt, seine Module sind je 170,6 × 113,4 cm groß. Illustration nach Herstellerangaben, kein Produktfoto.</figcaption>
   </figure>
   <figure class="grafik">
-    <a href="{{ "img/vergleich-bkw-speicher.svg" | relURL }}" title="Grafik in voller Größe öffnen"><img src="{{ "img/vergleich-bkw-speicher.svg" | relURL }}" width="760" height="352" loading="lazy" decoding="async" alt="Balkendiagramm der sechs Speicher aus der Tabelle: Kapazität von 1,6 bis 2,688 kWh und maximaler PV-Eingang von 1.500 bis 3.600 W laut Hersteller. Eine Linie markiert die 2.000-Wp-Grenze für Steckersolargeräte."></a>
+    <a href="{{ "img/vergleich-bkw-speicher.svg" | relURL }}" title="Grafik in voller Größe öffnen"><img src="{{ "img/vergleich-bkw-speicher.svg" | relURL }}" width="760" height="590" loading="lazy" decoding="async" alt="Balkendiagramm der 13 Speicher aus der Tabelle: Kapazität von 1,6 bis 7 kWh und maximaler PV-Eingang von 1.500 bis 10.000 W laut Hersteller; die Zendure SolarFlow 2400 AC+ hat keinen PV-Eingang (AC-gekoppelt). Eine Linie markiert die 2.000-Wp-Grenze für Steckersolargeräte."></a>
     <figcaption>Kapazität und maximaler PV-Eingang der Speicher aus der Tabelle (Herstellerangaben). Für den vereinfachten Betrieb zählen höchstens 2.000 Wp Module.</figcaption>
   </figure>
   </details>

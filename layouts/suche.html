@@ -51,7 +51,7 @@
       <div><dt>{{ if $dc }}Leistung (nur DC){{ else }}Dauerleistung{{ end }}</dt><dd>{{ lang.FormatNumber 0 .dauerleistung_w }} W</dd></div>
       <div><dt>Gewicht</dt><dd>{{ replace (string .gewicht_kg) "." "," }} kg</dd></div>
       <div><dt>Wh pro kg</dt><dd>{{ lang.FormatNumber 0 $whkg }}</dd></div>
-      <div><dt>Solar max.</dt><dd>{{ lang.FormatNumber 0 .solareingang_w }} W</dd></div>
+      <div><dt>Solar max.</dt><dd>{{ if gt .solareingang_w 0 }}{{ lang.FormatNumber 0 .solareingang_w }} W{{ else }}keiner{{ end }}</dd></div>
       <div><dt>USV</dt><dd>{{ with .usv_ms }}≤ {{ . }} ms{{ else }}{{ if $dc }}keine{{ else }}<span class="s-ka">keine Angabe</span>{{ end }}{{ end }}</dd></div>
       <div><dt>Erweiterbar</dt><dd>{{ if eq $erw "1" }}ja{{ else if eq $erw "0" }}nein{{ else }}<span class="s-ka">keine Angabe</span>{{ end }}</dd></div>
       <div><dt>Ladezyklen</dt><dd>{{ with .zyklen }}{{ lang.FormatNumber 0 . }}{{ else }}<span class="s-ka">keine Angabe</span>{{ end }}</dd></div>
