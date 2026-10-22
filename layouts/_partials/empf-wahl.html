@@ -11,7 +11,7 @@
 {{- range $kand -}}
   {{- if not $r -}}
     {{- $i := partial "modell-info.html" .modell -}}
-    {{- if or (and .erst (not $i.asin)) (partial "amazon-ok.html" $i.asin) -}}
+    {{- if or (and .erst (not $i.asin)) (partial "amazon-ok.html" $i.asin) (partial "awin-url.html" $i.daten) -}}
       {{- $r = dict "modell" .modell "grund" .grund "einsatz" $e.einsatz "statt" (cond .erst "" $e.modell) -}}
     {{- end -}}
   {{- end -}}

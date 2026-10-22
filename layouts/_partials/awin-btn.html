@@ -1,0 +1,3 @@
+{{- /* AWIN-Button „Beim Hersteller ansehen“. dict url, cls (CSS-Klassen), text (optional), modell (optional → aria-label wie in der Suche). */ -}}
+<a class="{{ .cls }} btn-awin" href="{{ .url }}" rel="sponsored nofollow noopener" target="_blank"{{ with .modell }} aria-label="Beim Hersteller ansehen, Anzeige: {{ . }} (Affiliate-Link, neues Fenster)"{{ end }}>{{ .text | default "Beim Hersteller ansehen" }}<span class="ad-label">Anzeige</span><span class="sr"> (Affiliate-Link)</span></a>
+{{- /**/ -}}

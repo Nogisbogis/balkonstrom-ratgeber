@@ -11,7 +11,7 @@
   {{- with .statt }}<span class="empf-statt">Statt {{ . }}, das derzeit bei Amazon nicht verfügbar ist.</span>{{ end }}
   {{- with .grund }}<span class="empf-grund">{{ . | $.ctx.RenderString }}</span>{{ end }}
   <span class="empf-links">
-  {{- with $i.asin }}{{ if partial "amazon-ok.html" . }}<a class="btn-sec btn-amazon" href="{{ partial "amazon-url.html" . }}" rel="sponsored nofollow noopener" target="_blank">Preis bei Amazon<span class="ad-label">Anzeige</span><span class="sr"> (Affiliate-Link)</span></a>{{ else }}{{ partial "amazon-na.html" (dict "cls" "amz-na-empf") }}{{ end }}{{ end }}
+  {{- $aw := partial "awin-url.html" $i.daten }}{{ if $aw }}{{ partial "awin-btn.html" (dict "url" $aw "cls" "btn-sec") }}{{ with $i.asin }}{{ if partial "amazon-ok.html" . }}<a class="btn-sec btn-amazon" href="{{ partial "amazon-url.html" . }}" rel="sponsored nofollow noopener" target="_blank">Preis bei Amazon<span class="ad-label">Anzeige</span><span class="sr"> (Affiliate-Link)</span></a>{{ end }}{{ end }}{{ else }}{{ with $i.asin }}{{ if partial "amazon-ok.html" . }}<a class="btn-sec btn-amazon" href="{{ partial "amazon-url.html" . }}" rel="sponsored nofollow noopener" target="_blank">Preis bei Amazon<span class="ad-label">Anzeige</span><span class="sr"> (Affiliate-Link)</span></a>{{ else }}{{ partial "amazon-na.html" (dict "cls" "amz-na-empf") }}{{ end }}{{ end }}{{ end }}
   {{- with $i.url }}<a class="textlink" href="{{ . }}">Details &amp; Tests</a>{{ end }}
   </span>
   {{- if .vergleich }}{{ with $i.slug }}<label class="cmp-check" hidden><input type="checkbox" value="{{ . }}" data-name="{{ $.modell }}"> vergleichen</label>{{ end }}{{ end }}

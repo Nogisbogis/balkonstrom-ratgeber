@@ -60,7 +60,7 @@
     </dl>
     <p class="s-aktion">
       {{- with $url }}<a class="btn-sec" href="{{ . }}" aria-label="Details zu {{ $p.modell }}">Details</a>{{ end }}
-      {{- with $p.asin }}{{ if partial "amazon-ok.html" . }}<a class="btn-sec btn-amazon" href="{{ partial "amazon-url.html" . }}" rel="sponsored nofollow noopener" target="_blank" aria-label="Preis bei Amazon, Anzeige: {{ $p.modell }} (Affiliate-Link, neues Fenster)">Preis bei Amazon<span class="ad-label">Anzeige</span></a>{{ else }}{{ partial "amazon-na.html" (dict "cls" "amz-na-karte") }}{{ end }}{{ else }}<span class="amz-na amz-na-karte">Kein Kauflink</span>{{ end }}
+      {{- $aw := partial "awin-url.html" $p }}{{ if $aw }}{{ partial "awin-btn.html" (dict "url" $aw "cls" "btn-sec" "modell" $p.modell) }}{{ with $p.asin }}{{ if partial "amazon-ok.html" . }}<a class="btn-sec btn-amazon" href="{{ partial "amazon-url.html" . }}" rel="sponsored nofollow noopener" target="_blank" aria-label="Preis bei Amazon, Anzeige: {{ $p.modell }} (Affiliate-Link, neues Fenster)">Preis bei Amazon<span class="ad-label">Anzeige</span><span class="sr"> (Affiliate-Link)</span></a>{{ end }}{{ end }}{{ else }}{{ with $p.asin }}{{ if partial "amazon-ok.html" . }}<a class="btn-sec btn-amazon" href="{{ partial "amazon-url.html" . }}" rel="sponsored nofollow noopener" target="_blank" aria-label="Preis bei Amazon, Anzeige: {{ $p.modell }} (Affiliate-Link, neues Fenster)">Preis bei Amazon<span class="ad-label">Anzeige</span></a>{{ else }}{{ partial "amazon-na.html" (dict "cls" "amz-na-karte") }}{{ end }}{{ else }}<span class="amz-na amz-na-karte">Kein Kauflink</span>{{ end }}{{ end }}
     </p>
   </li>
 {{- end }}

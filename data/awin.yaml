@@ -1,0 +1,119 @@
+# Automatisch erzeugt von tools/awin-programme.py – nicht von Hand ändern (kein Token hier!).
+# advertisers.status: joined | pending | suspended | rejected | notjoined | nicht_gefunden
+# shops.status: erreichbar | nicht_erreichbar | unklar | domain_ungueltig | ungeprueft
+# AWIN-Links erscheinen nur bei advertiser joined UND shop erreichbar (layouts/_partials/awin-url.html).
+publisher: 3131632
+stand: '2026-10-22'
+advertisers:
+  anker-solix-de:
+    id: 32623
+    name: Anker Solix DE
+    status: notjoined
+    domain: www.ankersolix.com
+    geprueft: '2026-10-22'
+  solakon-de:
+    id: null
+    name: Solakon DE
+    status: nicht_gefunden
+    domain: ''
+    geprueft: '2026-10-22'
+  zendure-eu:
+    id: 68786
+    name: Zendure EU Marketing
+    status: notjoined
+    domain: www.zendure.de
+    geprueft: '2026-10-22'
+  jackery-de:
+    id: 30415
+    name: Jackery DE
+    status: notjoined
+    domain: de.jackery.com
+    geprueft: '2026-10-22'
+  alldrei-de:
+    id: 28945
+    name: ALLDREI DE
+    status: notjoined
+    domain: www.alldrei.de
+    geprueft: '2026-10-22'
+  ecoflow-de:
+    id: 51793
+    name: EcoFlow DE
+    status: notjoined
+    domain: de.ecoflow.com
+    geprueft: '2026-10-22'
+shops:
+  ecoflow-river-3:
+    url: https://de.ecoflow.com/products/river-3-portable-power-station
+    advertiser: 51793
+    status: erreichbar
+    geprueft: '2026-10-22'
+  ecoflow-river-3-plus:
+    url: https://de.ecoflow.com/products/river-3-plus-portable-power-station?variant=55476457177469
+    advertiser: 51793
+    status: erreichbar
+    geprueft: '2026-10-22'
+  jackery-explorer-300-plus:
+    url: https://de.jackery.com/products/explorer-300-plus-portable-power-station
+    advertiser: 30415
+    status: erreichbar
+    geprueft: '2026-10-22'
+  anker-solix-c300x:
+    url: https://www.ankersolix.com/de/products/anker-solix-c300x
+    advertiser: 32623
+    status: erreichbar
+    geprueft: '2026-10-22'
+  anker-solix-c1000-gen-2:
+    url: https://www.ankersolix.com/de/products/c1000-gen2
+    advertiser: 32623
+    status: erreichbar
+    geprueft: '2026-10-22'
+  ecoflow-delta-3-plus:
+    url: https://de.ecoflow.com/products/delta-3-series-portable-power-station?variant=57988983587197
+    advertiser: 51793
+    status: erreichbar
+    geprueft: '2026-10-22'
+  anker-solix-c2000-gen-2:
+    url: https://www.ankersolix.com/de/products/c2000-gen2
+    advertiser: 32623
+    status: erreichbar
+    geprueft: '2026-10-22'
+  ecoflow-delta-3-max-plus:
+    url: https://de.ecoflow.com/products/delta-3-max-series-portable-power-station?variant=57020101296509
+    advertiser: 51793
+    status: erreichbar
+    geprueft: '2026-10-22'
+  ecoflow-delta-pro-3:
+    url: https://de.ecoflow.com/products/ecoflow-delta-pro-3-powerstation
+    advertiser: 51793
+    status: erreichbar
+    geprueft: '2026-10-22'
+  ecoflow-trail-300-dc:
+    url: https://de.ecoflow.com/products/ecoflow-trail-series-dc-portable-power-station?variant=56791585161597
+    advertiser: 51793
+    status: erreichbar
+    geprueft: '2026-10-22'
+  anker-solix-solarbank-2-e1600-pro:
+    url: https://www.ankersolix.com/de/balkonkraftwerk-mit-speicher/solarbank2-a17c1-bms
+    advertiser: 32623
+    status: erreichbar
+    geprueft: '2026-10-22'
+  anker-solix-solarbank-3-e2700-pro:
+    url: https://www.ankersolix.com/de/products/a17c5
+    advertiser: 32623
+    status: erreichbar
+    geprueft: '2026-10-22'
+  zendure-solarflow-800-pro:
+    url: https://www.zendure.de/products/solarflow-800-pro
+    advertiser: 68786
+    status: erreichbar
+    geprueft: '2026-10-22'
+  ecoflow-stream-ultra:
+    url: https://de.ecoflow.com/products/stream-ultra-pro?variant=55835416199549
+    advertiser: 51793
+    status: erreichbar
+    geprueft: '2026-10-22'
+  ecoflow-stream-pro:
+    url: https://de.ecoflow.com/products/stream-ultra-pro?variant=55835416363389
+    advertiser: 51793
+    status: erreichbar
+    geprueft: '2026-10-22'

@@ -29,7 +29,7 @@
       <p class="note">Herstellerangaben, Belege unten in der Tabelle.</p>
       {{- with .Params.warnung }}<p class="notice p-warn">{{ . | $.RenderString }}</p>{{ end }}
       <p class="pcard-links">
-      {{- with $p.asin }}{{ if partial "amazon-ok.html" . }}<a class="btn btn-amazon" href="{{ partial "amazon-url.html" . }}" rel="sponsored nofollow noopener" target="_blank">Aktuellen Preis bei Amazon ansehen<span class="ad-label">Anzeige</span><span class="sr"> (Affiliate-Link)</span></a>{{ else }}{{ partial "amazon-na.html" (dict "cls" "amz-na-cta") }}{{ end }}{{ else }}<span class="note">Kein Kauflink – siehe Hinweis oben.</span>{{ end }}
+      {{- $aw := partial "awin-url.html" $p }}{{ if $aw }}{{ partial "awin-btn.html" (dict "url" $aw "cls" "btn btn-amazon") }}{{ with $p.asin }}{{ if partial "amazon-ok.html" . }}<a class="btn-sec btn-amazon" href="{{ partial "amazon-url.html" . }}" rel="sponsored nofollow noopener" target="_blank">Preis bei Amazon<span class="ad-label">Anzeige</span><span class="sr"> (Affiliate-Link)</span></a>{{ end }}{{ end }}{{ else }}{{ with $p.asin }}{{ if partial "amazon-ok.html" . }}<a class="btn btn-amazon" href="{{ partial "amazon-url.html" . }}" rel="sponsored nofollow noopener" target="_blank">Aktuellen Preis bei Amazon ansehen<span class="ad-label">Anzeige</span><span class="sr"> (Affiliate-Link)</span></a>{{ else }}{{ partial "amazon-na.html" (dict "cls" "amz-na-cta") }}{{ end }}{{ else }}<span class="note">Kein Kauflink – siehe Hinweis oben.</span>{{ end }}{{ end }}
       <a class="btn-sec" href="{{ "laufzeitrechner/" | relURL }}?m={{ $p.slug }}">Laufzeit jetzt ausrechnen</a>
       </p>
     </div>
@@ -100,8 +100,10 @@
   </details>
   <p class="note">Alle Links abgerufen am {{ (time (.Params.lastmod | default .Date)).Format "02.01.2006" }}. Herstellerangaben können sich ändern; maßgeblich ist das Datenblatt zum Zeitpunkt des Kaufs.</p>
   </section>
-  {{- with $p.asin }}{{ if and (not $p.kein_kauflink) (partial "amazon-ok.html" .) }}
+  {{- $awS := partial "awin-url.html" $p }}{{ if $awS }}
+  <div class="sticky-cta">{{ partial "awin-btn.html" (dict "url" $awS "cls" "btn btn-amazon") }}</div>
+  {{ else }}{{ with $p.asin }}{{ if and (not $p.kein_kauflink) (partial "amazon-ok.html" .) }}
   <div class="sticky-cta"><a class="btn btn-amazon" href="{{ partial "amazon-url.html" . }}" rel="sponsored nofollow noopener" target="_blank">Aktuellen Preis bei Amazon ansehen<span class="ad-label">Anzeige</span><span class="sr"> (Affiliate-Link)</span></a></div>
-  {{- end }}{{ end }}
+  {{- end }}{{ end }}{{ end }}
 </article>
 {{ end }}

@@ -8,6 +8,8 @@
 # usv_ms: bei widersprüchlichen Angaben der höhere (ungünstigere) Wert.
 - modell: EcoFlow RIVER 3
   slug: ecoflow-river-3
+  awin_advertiser: 51793
+  shop_url: https://de.ecoflow.com/products/river-3-portable-power-station
   abbildung: img/illu/ecoflow-river-3.svg
   spitze_w: 600
   usv_ms: 20
@@ -22,6 +24,8 @@
   asin: B0DFVZ5D7Z
 - modell: EcoFlow RIVER 3 Plus
   slug: ecoflow-river-3-plus
+  awin_advertiser: 51793
+  shop_url: https://de.ecoflow.com/products/river-3-plus-portable-power-station?variant=55476457177469
   abbildung: img/illu/ecoflow-river-3-plus.svg
   spitze_w: 1200
   usv_ms: 10
@@ -36,6 +40,8 @@
   asin: B0DFVZ6MYX
 - modell: Jackery Explorer 300 Plus
   slug: jackery-explorer-300-plus
+  awin_advertiser: 30415
+  shop_url: https://de.jackery.com/products/explorer-300-plus-portable-power-station
   abbildung: img/illu/jackery-explorer-300-plus.svg
   spitze_w: 600
   usv_ms: 20
@@ -50,6 +56,8 @@
   asin: B0C27VWNM7
 - modell: Anker SOLIX C300X
   slug: anker-solix-c300x
+  awin_advertiser: 32623
+  shop_url: https://www.ankersolix.com/de/products/anker-solix-c300x
   abbildung: img/illu/anker-solix-c300x.svg
   spitze_w: 600
   usv_ms: 20
@@ -78,6 +86,8 @@
   asin: B0GJC2M84T
 - modell: Anker SOLIX C1000 Gen 2
   slug: anker-solix-c1000-gen-2
+  awin_advertiser: 32623
+  shop_url: https://www.ankersolix.com/de/products/c1000-gen2
   abbildung: img/illu/anker-solix-c1000-gen-2.svg
   spitze_w: 3000
   usv_ms: 10
@@ -92,6 +102,8 @@
   asin: B0FN7MSY4L
 - modell: EcoFlow DELTA 3 Plus
   slug: ecoflow-delta-3-plus
+  awin_advertiser: 51793
+  shop_url: https://de.ecoflow.com/products/delta-3-series-portable-power-station?variant=57988983587197
   abbildung: img/illu/ecoflow-delta-3-plus.svg
   spitze_w: 3600
   usv_ms: 10
@@ -135,6 +147,8 @@
   quelle: https://helpcenter.eu.jackery.com/hc/de/articles/52683026571291-Explorer-1000-V2-Grundlegende-Informationen
 - modell: Anker SOLIX C2000 Gen 2
   slug: anker-solix-c2000-gen-2
+  awin_advertiser: 32623
+  shop_url: https://www.ankersolix.com/de/products/c2000-gen2
   abbildung: img/illu/anker-solix-c2000-gen-2.svg
   spitze_w: 4000
   usv_ms: 10
@@ -149,6 +163,8 @@
   asin: B0FVFGL38H
 - modell: EcoFlow DELTA 3 Max Plus
   slug: ecoflow-delta-3-max-plus
+  awin_advertiser: 51793
+  shop_url: https://de.ecoflow.com/products/delta-3-max-series-portable-power-station?variant=57020101296509
   abbildung: img/illu/ecoflow-delta-3-max-plus.svg
   spitze_w: 6000
   usv_ms: 10
@@ -191,6 +207,8 @@
   asin: B0GL22FW87
 - modell: EcoFlow DELTA Pro 3
   slug: ecoflow-delta-pro-3
+  awin_advertiser: 51793
+  shop_url: https://de.ecoflow.com/products/ecoflow-delta-pro-3-powerstation
   abbildung: img/illu/ecoflow-delta-pro-3.svg
   spitze_w: 8000
   usv_ms: 10
@@ -206,6 +224,8 @@
 # nur_dc: keine 230-V-Steckdose, keine USV. dauerleistung_w ist dann die DC-Gesamtleistung (USB-C/USB-A/12 V).
 - modell: EcoFlow TRAIL 300 DC
   slug: ecoflow-trail-300-dc
+  awin_advertiser: 51793
+  shop_url: https://de.ecoflow.com/products/ecoflow-trail-series-dc-portable-power-station?variant=56791585161597
   abbildung: img/illu/ecoflow-trail-300-dc.svg
   nur_dc: true
   spitze_w: null

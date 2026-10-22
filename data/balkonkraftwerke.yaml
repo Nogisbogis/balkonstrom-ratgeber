@@ -24,6 +24,8 @@
   asin: B0CB86CXLD
 - modell: Anker SOLIX Solarbank 2 E1600 Pro
   slug: "anker-solix-solarbank-2-e1600-pro"
+  awin_advertiser: 32623
+  shop_url: "https://www.ankersolix.com/de/balkonkraftwerk-mit-speicher/solarbank2-a17c1-bms"
   abbildung: img/illu/anker-solix-solarbank-2-e1600-pro.svg
   kurzname: "Solarbank 2 E1600 Pro|Solarbank 2 Pro"
   mppt: 4
@@ -39,6 +41,8 @@
   asin: B0D1X82HDL
 - modell: Anker SOLIX Solarbank 3 E2700 Pro
   slug: "anker-solix-solarbank-3-e2700-pro"
+  awin_advertiser: 32623
+  shop_url: "https://www.ankersolix.com/de/products/a17c5"
   abbildung: img/illu/anker-solix-solarbank-3-e2700-pro.svg
   kurzname: "Solarbank 3 E2700 Pro|Solarbank 3 Pro"
   mppt: 4
@@ -54,6 +58,8 @@
   asin: ""
 - modell: Zendure SolarFlow 800 Pro
   slug: "zendure-solarflow-800-pro"
+  awin_advertiser: 68786
+  shop_url: "https://www.zendure.de/products/solarflow-800-pro"
   abbildung: img/illu/zendure-solarflow-800-pro.svg
   kurzname: "SolarFlow 800 Pro"
   mppt: 4
@@ -69,6 +75,8 @@
   asin: ""
 - modell: EcoFlow STREAM Ultra
   slug: "ecoflow-stream-ultra"
+  awin_advertiser: 51793
+  shop_url: "https://de.ecoflow.com/products/stream-ultra-pro?variant=55835416199549"
   abbildung: img/illu/ecoflow-stream-ultra.svg
   kurzname: "STREAM Ultra|Stream Ultra"
   mppt: 4
@@ -84,6 +92,8 @@
   asin: B0F5B93DTV
 - modell: EcoFlow STREAM Pro
   slug: "ecoflow-stream-pro"
+  awin_advertiser: 51793
+  shop_url: "https://de.ecoflow.com/products/stream-ultra-pro?variant=55835416363389"
   abbildung: img/illu/ecoflow-stream-pro.svg
   kurzname: "STREAM Pro|Stream Pro"
   mppt: 3

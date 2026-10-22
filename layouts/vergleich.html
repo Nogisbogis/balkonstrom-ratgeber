@@ -45,7 +45,7 @@
     </tr></thead>
     <tbody>
     {{- $ok := slice }}{{ $na := slice }}
-    {{- range sort hugo.Data.powerstations "kapazitaet_wh" }}{{ if or (not .asin) (partial "amazon-ok.html" .asin) }}{{ $ok = $ok | append . }}{{ else }}{{ $na = $na | append . }}{{ end }}{{ end }}
+    {{- range sort hugo.Data.powerstations "kapazitaet_wh" }}{{ if or (not .asin) (partial "amazon-ok.html" .asin) (partial "awin-url.html" .) }}{{ $ok = $ok | append . }}{{ else }}{{ $na = $na | append . }}{{ end }}{{ end }}
     {{ range $ok | append $na }}
       <tr data-slug="{{ .slug }}" data-wh="{{ .kapazitaet_wh }}" data-w="{{ .dauerleistung_w }}" data-kg="{{ .gewicht_kg }}" data-akku="{{ .akkutyp }}">
         <th class="col-modell" scope="row">{{ partial "thumb.html" . }}{{ $m := .modell }}<span class="mname">{{ with site.GetPage (printf "/powerstations/%s" (.slug | default "-")) }}<a href="{{ .RelPermalink }}">{{ $m }}</a>{{ else }}{{ $m }}{{ end }}</span><a class="mquelle" href="{{ .quelle }}" rel="noopener nofollow" target="_blank">Quelle: Hersteller<span class="sr"> (öffnet neues Fenster)</span></a></th>
@@ -54,7 +54,7 @@
         <td class="r" data-v="{{ .gewicht_kg }}" data-l="Gewicht">{{ replace (string .gewicht_kg) "." "," }}<span class="einh-m"> kg</span></td>
         <td class="r" data-v="{{ .solareingang_w }}" data-l="Solar max.">{{ lang.FormatNumber 0 .solareingang_w }}<span class="einh-m"> W</span></td>
         <td data-l="Akku">{{ .akkutyp }}</td>
-        <td class="col-kauf">{{ with .asin }}{{ if partial "amazon-ok.html" . }}<a class="btn-sec btn-tab" href="{{ partial "amazon-url.html" . }}" rel="sponsored nofollow noopener" target="_blank">Preis bei Amazon<span class="ad-label">Anzeige</span><span class="sr"> (Affiliate-Link)</span></a>{{ else }}{{ partial "amazon-na.html" (dict "cls" "amz-na-tab") }}{{ end }}{{ else }}<span class="kein-kauf">kein Kauflink</span>{{ end }}</td>
+        <td class="col-kauf">{{- $aw := partial "awin-url.html" . }}{{ if $aw }}{{ partial "awin-btn.html" (dict "url" $aw "cls" "btn-sec btn-tab" "text" "Beim Hersteller") }}{{ with .asin }}{{ if partial "amazon-ok.html" . }}<a class="btn-sec btn-tab" href="{{ partial "amazon-url.html" . }}" rel="sponsored nofollow noopener" target="_blank">Preis bei Amazon<span class="ad-label">Anzeige</span><span class="sr"> (Affiliate-Link)</span></a>{{ end }}{{ end }}{{ else }}{{ with .asin }}{{ if partial "amazon-ok.html" . }}<a class="btn-sec btn-tab" href="{{ partial "amazon-url.html" . }}" rel="sponsored nofollow noopener" target="_blank">Preis bei Amazon<span class="ad-label">Anzeige</span><span class="sr"> (Affiliate-Link)</span></a>{{ else }}{{ partial "amazon-na.html" (dict "cls" "amz-na-tab") }}{{ end }}{{ else }}<span class="kein-kauf">kein Kauflink</span>{{ end }}{{ end }}</td>
       </tr>
     {{ end }}
     </tbody>
@@ -110,7 +110,7 @@
     </tr></thead>
     <tbody>
     {{- $ok := slice }}{{ $na := slice }}
-    {{- range hugo.Data.balkonkraftwerke }}{{ if or (not .asin) (partial "amazon-ok.html" .asin) }}{{ $ok = $ok | append . }}{{ else }}{{ $na = $na | append . }}{{ end }}{{ end }}
+    {{- range hugo.Data.balkonkraftwerke }}{{ if or (not .asin) (partial "amazon-ok.html" .asin) (partial "awin-url.html" .) }}{{ $ok = $ok | append . }}{{ else }}{{ $na = $na | append . }}{{ end }}{{ end }}
     {{ range $ok | append $na }}
       <tr data-slug="{{ .slug }}" data-typ="{{ .typ }}" data-speicher="{{ .speicher_kwh }}" data-pv="{{ cond (gt .pv_max_w 0) .pv_max_w .module_wp }}">
         <th class="col-modell" scope="row">{{ partial "thumb.html" . }}<span class="mname">{{ $m := .modell }}{{ with site.GetPage (printf "/balkonkraftwerke/%s" (.slug | default "-")) }}<a href="{{ .RelPermalink }}">{{ $m }}</a>{{ else }}{{ $m }}{{ end }}</span><a class="mquelle" href="{{ .quelle }}" rel="noopener nofollow" target="_blank">Quelle: Hersteller<span class="sr"> (öffnet neues Fenster)</span></a></th>
@@ -119,7 +119,7 @@
         <td class="r" data-v="{{ .pv_max_w }}" data-l="PV-Eingang max.">{{ if gt .pv_max_w 0 }}{{ lang.FormatNumber 0 .pv_max_w }}<span class="einh-m"> W</span>{{ else }}–{{ end }}</td>
         <td class="r" data-v="{{ .module_wp }}" data-l="Module">{{ if gt .module_wp 0 }}{{ lang.FormatNumber 0 .module_wp }}<span class="einh-m"> Wp</span>{{ else }}–{{ end }}</td>
         <td class="r" data-v="{{ .wechselrichter_w }}" data-l="Wechselrichter">{{ .wechselrichter_w }}<span class="einh-m"> W</span></td>
-        <td class="col-kauf">{{ with .asin }}{{ if partial "amazon-ok.html" . }}<a class="btn-sec btn-tab" href="{{ partial "amazon-url.html" . }}" rel="sponsored nofollow noopener" target="_blank">Preis bei Amazon<span class="ad-label">Anzeige</span><span class="sr"> (Affiliate-Link)</span></a>{{ else }}{{ partial "amazon-na.html" (dict "cls" "amz-na-tab") }}{{ end }}{{ else }}<span class="kein-kauf">kein Kauflink</span>{{ end }}</td>
+        <td class="col-kauf">{{- $aw := partial "awin-url.html" . }}{{ if $aw }}{{ partial "awin-btn.html" (dict "url" $aw "cls" "btn-sec btn-tab" "text" "Beim Hersteller") }}{{ with .asin }}{{ if partial "amazon-ok.html" . }}<a class="btn-sec btn-tab" href="{{ partial "amazon-url.html" . }}" rel="sponsored nofollow noopener" target="_blank">Preis bei Amazon<span class="ad-label">Anzeige</span><span class="sr"> (Affiliate-Link)</span></a>{{ end }}{{ end }}{{ else }}{{ with .asin }}{{ if partial "amazon-ok.html" . }}<a class="btn-sec btn-tab" href="{{ partial "amazon-url.html" . }}" rel="sponsored nofollow noopener" target="_blank">Preis bei Amazon<span class="ad-label">Anzeige</span><span class="sr"> (Affiliate-Link)</span></a>{{ else }}{{ partial "amazon-na.html" (dict "cls" "amz-na-tab") }}{{ end }}{{ else }}<span class="kein-kauf">kein Kauflink</span>{{ end }}{{ end }}</td>
       </tr>
     {{ end }}
     </tbody>

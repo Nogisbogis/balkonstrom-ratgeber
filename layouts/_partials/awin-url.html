@@ -1,0 +1,20 @@
+{{- /* AWIN-Deeplink zur Hersteller-Produktseite für einen Produkt-Datensatz – oder "".
+     Nur wenn: awin_advertiser + shop_url gesetzt, kein redaktionelles kein_kauflink,
+     Advertiser in data/awin.yaml mit status joined UND Shopseite dort status erreichbar (gleiche URL).
+     data/awin.yaml schreibt tools/awin-programme.py (tools/awin-lauf.sh). Format: awin1.com/cread.php. */ -}}
+{{- $r := "" -}}
+{{- $p := . -}}
+{{- if and $p (reflect.IsMap $p) -}}
+{{- if and $p.awin_advertiser $p.shop_url (not $p.kein_kauflink) -}}
+  {{- with hugo.Data.awin -}}
+    {{- $pub := .publisher -}}
+    {{- $joined := false -}}
+    {{- range $k, $a := .advertisers -}}{{ if and (eq (string $a.id) (string $p.awin_advertiser)) (eq $a.status "joined") }}{{ $joined = true }}{{ end }}{{- end -}}
+    {{- $s := dict -}}{{ with .shops }}{{ with index . $p.slug }}{{ $s = . }}{{ end }}{{ end -}}
+    {{- if and $joined $pub (eq $s.status "erreichbar") (eq $s.url $p.shop_url) -}}
+      {{- $r = printf "https://www.awin1.com/cread.php?awinmid=%v&awinaffid=%v&ued=%s" $p.awin_advertiser $pub (urlquery $p.shop_url) -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- end -}}
+{{- return $r -}}
