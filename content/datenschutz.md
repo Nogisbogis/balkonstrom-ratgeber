@@ -38,6 +38,8 @@ Affiliate-Links sind auf dieser Website mit dem Hinweis „Anzeige“ gekennzeic
 
 Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der Finanzierung der Website). Einzelheiten zur Datenverarbeitung durch Amazon findest du in der [Datenschutzerklärung von Amazon](https://www.amazon.de/gp/help/customer/display.html?nodeId=201909010).
 
+{{% awin-recht "datenschutz" %}}
+
 ## 5. Kommentare über giscus / GitHub Discussions {#kommentare}
 
 Unter Artikeln gibt es eine Kommentarfunktion auf Basis von **giscus** (Open-Source-Projekt, https://giscus.app). Die Kommentare werden als Beiträge in den GitHub Discussions des Repositorys dieser Website gespeichert. Anbieter von GitHub ist die GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA.

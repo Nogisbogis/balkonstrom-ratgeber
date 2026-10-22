@@ -5,7 +5,20 @@
 # Aufruf: bash tools/verfuegbarkeit-lauf.sh
 set -uo pipefail
 cd "$(dirname "$0")/.."
-PY=${PY:-/workspace/blogbot/venv/bin/python}
+# Python: $PY, sonst venv (falls vorhanden), sonst python3. Fehlende Module werden per pip --user nachinstalliert.
+if [ -z "${PY:-}" ]; then
+  if [ -x /workspace/blogbot/venv/bin/python ]; then PY=/workspace/blogbot/venv/bin/python; else PY=$(command -v python3); fi
+fi
+FEHLT=""
+for m in yaml:pyyaml websocket:websocket-client; do
+  "$PY" -c "import ${m%%:*}" 2>/dev/null || FEHLT="$FEHLT ${m#*:}"
+done
+if [ -n "$FEHLT" ]; then
+  echo "Installiere fehlende Python-Module:$FEHLT"
+  "$PY" -m pip install --user --quiet $FEHLT 2>/dev/null || "$PY" -m pip install --user --quiet --break-system-packages $FEHLT \
+    || { echo "PROBLEM: Python-Module$FEHLT nicht installierbar – Lauf abgebrochen."; exit 2; }
+  for m in yaml websocket; do "$PY" -c "import $m" 2>/dev/null || { echo "PROBLEM: Modul $m mit $PY nicht importierbar – Lauf abgebrochen."; exit 2; }; done
+fi
 HUGO=${HUGO:-$HOME/.local/bin/hugo}
 LOG=$(mktemp)
 trap 'rm -f "$LOG"' EXIT

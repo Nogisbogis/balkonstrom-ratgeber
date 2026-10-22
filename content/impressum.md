@@ -26,6 +26,8 @@ Robert-Koch-Straße 2
 
 Diese Website enthält Affiliate-Links (Werbung) zu Amazon. Sie sind mit dem Hinweis „Anzeige“ gekennzeichnet. Als Amazon-Partner verdiene ich an qualifizierten Verkäufen. Für dich entstehen dadurch keine Mehrkosten.
 
+{{% awin-recht "impressum" %}}
+
 ## Bildnachweis
 
 Produktabbildungen, Diagramme und Vorschaubilder sind eigene Illustrationen bzw. eigene Grafiken auf Grundlage der Herstellerangaben. Es werden keine Produktfotos von Amazon oder Herstellern verwendet.

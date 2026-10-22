@@ -23,7 +23,7 @@
 <section class="home-sec empf-home" aria-labelledby="empf-home-titel">
   <div class="sec-kopf">
     <h2 id="empf-home-titel">Meine Empfehlungen nach Einsatz</h2>
-    <p class="disclosure-small disclosure-zeile" role="note">{{ site.Params.disclosure }}</p>
+    <p class="disclosure-small disclosure-zeile" role="note">{{ partial "disclosure-text.html" . }}</p>
   </div>
   <ul class="feature-liste">{{ range $i, $e := . }}
     <li class="feature{{ if modBool $i 2 }}{{ else }} feature-rev{{ end }}">

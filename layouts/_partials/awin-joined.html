@@ -1,0 +1,10 @@
+{{- /* Liste der AWIN-Programme mit status joined aus data/awin.yaml: slice von dict name (ohne Länderkürzel), domain, id. Leer = AWIN inaktiv. */ -}}
+{{- $r := slice -}}
+{{- with hugo.Data.awin -}}{{ with .advertisers -}}
+  {{- range $k, $a := . -}}
+    {{- if eq $a.status "joined" -}}
+      {{- $r = $r | append (dict "id" $a.id "name" (replaceRE `\s+(DE|EU Marketing|EU)$` "" (string $a.name)) "domain" ($a.domain | default "")) -}}
+    {{- end -}}
+  {{- end -}}
+{{- end }}{{ end -}}
+{{- return (sort $r "name") -}}

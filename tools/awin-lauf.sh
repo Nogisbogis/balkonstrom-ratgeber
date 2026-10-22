@@ -2,12 +2,15 @@
 # Täglicher AWIN-Lauf: prüft Programmstatus (tools/awin-programme.py → data/awin.yaml) und – nur bei
 # inhaltlicher Änderung (Status eines Advertisers oder Erreichbarkeit einer Shopseite) – Hugo-Testbuild,
 # Commit „AWIN: …“, Push (= Deploy via Actions). Reine Datums-Aktualisierung = „keine änderung“.
+# Ist danach ≥1 Programm joined, laufen vor dem Push zusätzlich: lychee offline und die Prüfung, dass jede Seite
+# mit awin1-Link den AWIN-Werbehinweis trägt (plus AWIN-Abschnitt in Datenschutz/Impressum); sonst PROBLEM, kein Push.
 # API-Fehler: PROBLEM melden, nichts ändern. Token nur aus Umgebung AWIN_API_TOKEN (wird nie ausgegeben).
 # Aufruf: bash tools/awin-lauf.sh
 set -uo pipefail
 cd "$(dirname "$0")/.."
 PY=${PY:-python3}
 HUGO=${HUGO:-$HOME/.local/bin/hugo}
+LYCHEE=${LYCHEE:-$HOME/.local/bin/lychee}
 F=data/awin.yaml
 LOG=$(mktemp)
 trap 'rm -f "$LOG"' EXIT
@@ -50,13 +53,40 @@ for f in glob.glob(sys.argv[1] + '/**/*.html', recursive=True):
         n[mid] += 1
         if mid not in ok:
             bad.append(f'{mid} in {f}')
-print('BAD ' + '; '.join(sorted(set(bad))) if bad else 'LINKS ' + (', '.join(f'{k}: {v}' for k, v in sorted(n.items())) or 'keine'))
+# Rechtstexte-Gate (nur wenn ≥1 Programm joined): jede Seite mit awin1-Link braucht den AWIN-Zusatz der
+# Werbekennzeichnung, Datenschutz braucht Abschnitt #awin, Impressum den AWIN-Hinweis.
+fehlt = []
+if ok:
+    for f in glob.glob(sys.argv[1] + '/**/*.html', recursive=True):
+        t = open(f, encoding='utf-8').read()
+        if 'awin1.com' in t and 'Partnernetzwerk AWIN' not in t:
+            fehlt.append(f'Werbehinweis fehlt: {f}')
+    for p, s in (('datenschutz', 'id=awin'), ('impressum', 'über das Partnernetzwerk AWIN')):
+        try:
+            if s not in open(f'{sys.argv[1]}/{p}/index.html', encoding='utf-8').read():
+                fehlt.append(f'AWIN-Text fehlt: /{p}/')
+        except OSError:
+            fehlt.append(f'Seite fehlt: /{p}/')
+if bad:
+    print('BAD ' + '; '.join(sorted(set(bad))))
+elif fehlt:
+    print('RECHT ' + '; '.join(fehlt))
+else:
+    print(('AKTIV ' if ok else 'LINKS ') + (', '.join(f'{k}: {v}' for k, v in sorted(n.items())) or 'keine'))
 PYEOF
 )
-rm -rf "$OUT" "$OUT.err"
 case "$PRUEF" in
-  BAD*) echo; echo "PROBLEM: Build enthält AWIN-Links für nicht beigetretene Programme – NICHT committet:"; echo "${PRUEF#BAD }"; zurueck; exit 5;;
+  BAD*) echo; echo "PROBLEM: Build enthält AWIN-Links für nicht beigetretene Programme – NICHT committet:"; echo "${PRUEF#BAD }"; rm -rf "$OUT" "$OUT.err"; zurueck; exit 5;;
+  RECHT*) echo; echo "PROBLEM: AWIN aktiv, aber Rechtstexte unvollständig – NICHT committet:"; echo "${PRUEF#RECHT }"; rm -rf "$OUT" "$OUT.err"; zurueck; exit 8;;
+  AKTIV*)
+    # Aktivierung: zusätzlich Linkprüfung (offline, interne Links/Anker) vor dem Push
+    if ! (cd "$OUT" && "$LYCHEE" --offline --index-files index.html --root-dir "$OUT" --exclude 'amazon\.' --exclude 'awin1' --no-progress '**/*.html' >"$OUT.err" 2>&1); then
+      echo; echo "PROBLEM: lychee meldet kaputte Links – NICHT committet:"; grep -E '\[(ERROR|[0-9]{3})\]|Errors' "$OUT.err" | head -20
+      rm -rf "$OUT" "$OUT.err"; zurueck; exit 9
+    fi
+    PRUEF="LINKS ${PRUEF#AKTIV }";;
 esac
+rm -rf "$OUT" "$OUT.err"
 
 KURZ=$(echo "$AEND" | paste -sd ';' | sed 's/;/; /g')
 git add "$F"

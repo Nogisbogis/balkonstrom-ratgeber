@@ -1,0 +1,18 @@
+{{- /* {{% awin-recht "datenschutz" %}} bzw. {{% awin-recht "impressum" %}} – AWIN-Rechtstexte, NUR wenn ≥1 Programm in data/awin.yaml joined ist; sonst keine Ausgabe. */ -}}
+{{- $j := partial "awin-joined.html" . -}}
+{{- with $j -}}
+{{- $namen := slice }}{{ range . }}{{ $namen = $namen | append (printf "%s (%s)" .name .domain) }}{{ end -}}
+{{- $liste := delimit $namen ", " " und " -}}
+{{- $kurz := slice }}{{ range . }}{{ $kurz = $kurz | append .name }}{{ end }}{{ $kurz = delimit $kurz ", " " und " -}}
+{{- if eq ($.Get 0) "datenschutz" }}
+## 4a. Partnernetzwerk AWIN (Affiliate-Links zu Hersteller-Shops) {#awin}
+
+Einige mit „Anzeige“ gekennzeichnete Links führen über das Partnernetzwerk AWIN (AWIN AG, Otto-Ostrowski-Straße 1A, 10249 Berlin) zum Shop des jeweiligen Herstellers. Derzeit betrifft das: {{ $liste }}. Kaufst du dort ein, erhalte ich ggf. eine Provision; der Preis ändert sich für dich nicht.
+
+Auf dieser Website selbst werden durch diese Links **keine Daten erhoben und keine Cookies gesetzt**. Erst wenn du einen solchen Link anklickst, wirst du in einem neuen Tab über einen Server von AWIN (www.awin1.com) zum Hersteller-Shop weitergeleitet. Dabei verarbeitet AWIN technische Daten wie IP-Adresse, Zeitpunkt sowie Browser- und Geräteinformationen. Nach eigenen Angaben setzt AWIN dafür Cookies auf seiner eigenen Tracking-Domain und Geräte-Fingerprinting ein und erhält vom Shop über einen dort eingebundenen Code begrenzte Transaktionsdaten (z. B. den Bestellwert), um den Kauf dieser Website zuzuordnen. Tracking-Daten speichert AWIN laut seiner Datenschutzerklärung grundsätzlich bis zu drei Jahre. Für diese Verarbeitung sind AWIN und der jeweilige Shop verantwortlich; der Shop fragt ggf. selbst nach deiner Einwilligung. Ich erhalte von AWIN keine Daten, mit denen ich dich identifizieren könnte, sondern nur Berichte über Klicks, Bestellungen und Provisionen.
+
+Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der Finanzierung der Website). Einzelheiten findest du in der [Datenschutzerklärung von AWIN](https://www.awin.com/de/datenschutzerklarung); Anfragen zu deinen Rechten gegenüber AWIN kannst du an global-privacy@awin.com richten.
+{{ else if eq ($.Get 0) "impressum" }}
+Außerdem enthält diese Website Affiliate-Links zu Hersteller-Shops ({{ $kurz }}) über das Partnernetzwerk AWIN (AWIN AG, Berlin). Auch sie sind mit „Anzeige“ gekennzeichnet; bei einem Kauf erhalte ich ggf. eine Provision, der Preis ändert sich für dich nicht. Einzelheiten stehen in der [Datenschutzerklärung]({{ "datenschutz/#awin" | relURL }}).
+{{ else }}{{ errorf "awin-recht: Parameter datenschutz|impressum fehlt (%s)" $.Position }}{{ end -}}
+{{- end -}}

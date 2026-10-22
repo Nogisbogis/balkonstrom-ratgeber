@@ -1,0 +1,6 @@
+{{- /* Werbekennzeichnung: Pflichtsatz aus hugo.toml; sobald ≥1 AWIN-Programm joined ist (data/awin.yaml), mit AWIN-Zusatz. */ -}}
+{{- $t := site.Params.disclosure -}}
+{{- if partial "awin-joined.html" . -}}
+  {{- $t = printf "%s %s" $t "Bei mit „Anzeige“ markierten Links zu Hersteller-Shops erhalte ich ggf. eine Provision über das Partnernetzwerk AWIN; der Preis ändert sich für dich nicht." -}}
+{{- end -}}
+{{- return $t -}}

@@ -4,7 +4,7 @@
       <div class="foot-ueber">
         <h2 id="f-ueber">Über diese Seite</h2>
         <p>Unabhängige Ratgeber, Vergleiche und Rechner zu Balkonkraftwerken und Powerstations. Alle Werte mit Quelle, kein eigener Test.</p>
-        <p class="disclosure">{{ site.Params.disclosure }}</p>
+        <p class="disclosure">{{ partial "disclosure-text.html" . }}</p>
       </div>
       <nav aria-labelledby="f-werkzeuge"><h2 id="f-werkzeuge">Werkzeuge</h2>
         <a href="{{ "powerstation-finder/" | relURL }}">Powerstation-Finder</a>
