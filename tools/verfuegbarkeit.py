@@ -105,7 +105,14 @@ return {url:location.href,doctitle:document.title,title:q('#productTitle'),avail
  used:q('#usedBuySection, #usedAccordionRow, #buyBoxAccordion').slice(0,200),
  captcha:!!document.querySelector('form[action*="validateCaptcha"]')||/Geben Sie die Zeichen|Zeichen unten ein|Klicke auf die Schaltfläche unten, um mit dem Einkauf fortzufahren|Click the button below to continue shopping/i.test(body.slice(0,4000)),
  dog:/Seite nicht gefunden|Page Not Found|konnten wir die gesuchte Seite nicht finden|Suchen Sie bestimmte Informationen/i.test(document.title+' '+body.slice(0,3000)),
- asin:asinIn,canon:canon,ort:q('#glow-ingress-line2')}})()"""
+ asin:asinIn,canon:canon,ort:q('#glow-ingress-line2'),rs:document.readyState,ppd:!!document.querySelector('#ppd'),
+ laenge:document.documentElement.outerHTML.length}})()"""
+
+# fertig = Dokument vollständig geladen, oder Produktspalte samt Kaufbox-/Verfügbarkeitsteil da,
+# oder eine Sonderseite (Captcha/404), die ohnehin keine Produktspalte hat.
+BEREIT_JS = r"""(()=>{const d=document,has=s=>!!d.querySelector(s);
+const prod=has('#productTitle')&&(has('#availability')||has('#add-to-cart-button')||has('#buy-now-button')||has('#outOfStock')||has('#buybox-see-all-buying-choices'));
+return {fertig:!window.__vkAlt&&(d.readyState==='complete'||prod||has('form[action*="validateCaptcha"]')),rs:d.readyState}})()"""
 
 class Browser:
     def __init__(self):
@@ -135,31 +142,60 @@ class Browser:
         self.i = 0; self.status = {}
         self.cmd('Network.enable'); self.cmd('Page.enable')
         self.cmd('Network.setUserAgentOverride', userAgent=UA, acceptLanguage='de-DE,de;q=0.9')
+        # nur der HTTP-Status des Hauptdokuments zählt (nicht der von Werbe-/Hilfs-iframes)
+        self.hauptframe = self.cmd('Page.getFrameTree')['result']['frameTree']['frame']['id']
+
+    def _merke(self, r):
+        p = r.get('params') or {}
+        if (r.get('method') == 'Network.responseReceived' and p.get('type') == 'Document'
+                and p.get('frameId') in (None, getattr(self, 'hauptframe', None))):
+            self.status[p['response']['url']] = p['response']['status']
 
     def cmd(self, m, **pa):
         self.i += 1; self.ws.send(json.dumps({'id': self.i, 'method': m, 'params': pa}))
         while True:
             r = json.loads(self.ws.recv())
-            if r.get('method') == 'Network.responseReceived' and r['params'].get('type') == 'Document':
-                self.status[r['params']['response']['url']] = r['params']['response']['status']
+            self._merke(r)
             if r.get('id') == self.i:
                 return r
 
-    def lade(self, url, warte=7):
+    def lade(self, url, warte=7, max_warte=60):
+        """Navigiert und wartet, bis das Dokument wirklich fertig ist (readyState 'complete' bzw.
+        Produktspalte samt Kaufbox-Elementen da), mindestens `warte` s, höchstens `max_warte` s.
+        Früher wurde fest nach 7 s ausgewertet: Amazon streamt die Produktseite in Teilen; kommt der
+        Rest langsamer (Netz/Server), stand dann nur der Kopf (<title>) im DOM, #productTitle fehlte
+        noch und jede ASIN wurde fälschlich „unklar“."""
         self.status = {}
+        # alte Seite markieren, damit die Bereitschaftsprüfung nicht versehentlich sie auswertet
+        self.cmd('Runtime.evaluate', expression='window.__vkAlt=1')
         self.cmd('Page.navigate', url=url)
-        ende = time.time() + warte
-        while time.time() < ende:          # Events abholen (HTTP-Status der Dokumente)
-            self.ws.settimeout(max(0.1, ende - time.time()))
-            try:
-                r = json.loads(self.ws.recv())
-                if r.get('method') == 'Network.responseReceived' and r['params'].get('type') == 'Document':
-                    self.status[r['params']['response']['url']] = r['params']['response']['status']
-            except websocket.WebSocketTimeoutException:
-                break
+        start = time.time()
+        bereit_seit = None
+        naechste = start + 1
+        while time.time() - start < max_warte:
+            rest = naechste - time.time()
+            if rest > 0:                        # bis zur nächsten Prüfung Ereignisse abholen
+                self.ws.settimeout(rest)
+                try:
+                    r = json.loads(self.ws.recv())
+                    self._merke(r)
+                except websocket.WebSocketTimeoutException:
+                    pass
+                continue
+            naechste = time.time() + 1
+            self.ws.settimeout(60)
+            z = self.cmd('Runtime.evaluate', expression=BEREIT_JS, returnByValue=True)['result']['result'].get('value') or {}
+            if z.get('fertig'):
+                bereit_seit = bereit_seit or time.time()
+                # kurz nachlaufen lassen, damit per JS nachgeladene Kaufbox-Teile stehen
+                if time.time() - start >= warte and time.time() - bereit_seit >= 2:
+                    break
+            else:
+                bereit_seit = None
         self.ws.settimeout(60)
         v = self.cmd('Runtime.evaluate', expression=JS, returnByValue=True)['result']['result'].get('value') or {}
         v['http'] = list(self.status.values())
+        v['wartezeit'] = round(time.time() - start, 1)
         return v
 
     def angebote(self):
@@ -190,8 +226,15 @@ def einstufen(asin, name, v):
     if any(c in (403, 429, 503) for c in http) and not v.get('title'):
         return 'unklar', f'HTTP {http}'
     titel = v.get('title', '')
+    if not titel and v.get('rs') == 'complete' and not v.get('ppd'):
+        # Seite fertig geladen, aber Amazon hat den Produktbereich (#ppd) gar nicht ausgeliefert –
+        # nur Kopf/Navigation und „Weitermachen, wo du aufgehört hast“. Kein Captcha, aber auch keine
+        # Aussage über die Verfügbarkeit möglich -> unklar (später erneut versuchen, nichts umgehen).
+        return 'unklar', (f'Amazon lieferte die Seite ohne Produktbereich (Seitentitel: {v.get("doctitle", "")[:60]!r}, '
+                          f'HTTP {http}, {v.get("laenge", 0) // 1024} KB)')
     if not titel:
-        return 'unklar', f'kein Produkttitel erkannt (Seitentitel: {v.get("doctitle", "")[:60]!r}, HTTP {http})'
+        return 'unklar', (f'kein Produkttitel erkannt (Seitentitel: {v.get("doctitle", "")[:60]!r}, HTTP {http}, '
+                          f'readyState {v.get("rs", "?")}, {v.get("laenge", 0) // 1024} KB nach {v.get("wartezeit", "?")} s)')
     ok, warum = titel_passt(name, titel)
     seite = v.get('asin') or (re.search(r'/dp/(' + ASIN_RE + ')', v.get('canon', '') + ' ' + v.get('url', '')) or [None, ''])[1]
     if not ok:
