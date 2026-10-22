@@ -1,0 +1,69 @@
+# Herstellerseiten /hersteller/<slug>/. praefix = Anfang von "modell" in powerstations/balkonkraftwerke/powerbanks.yaml.
+# seite: true = eigene Herstellerseite; false = nur in der Übersicht /hersteller/ gelistet.
+# intro: nur belegte Fakten; jede Aussage mit Quelle (quellen). Stand 22.10.2026.
+- slug: anker-solix
+  name: Anker SOLIX
+  praefix: "Anker SOLIX"
+  seite: true
+  shop: https://www.ankersolix.com/de
+  intro: >-
+    Anker SOLIX ist die Energie-Marke von Anker Innovations; Anker stellte sie im Juni 2023 vor.
+    Im deutschen SOLIX-Shop gibt es tragbare Powerstations und Balkonkraftwerk-Speicher.
+    Anker-Powerbanks laufen unter der Marke Anker und gehören nicht zum SOLIX-Sortiment, deshalb fehlen sie hier.
+  quellen:
+    - titel: "Anker: Launch der Marke Anker SOLIX (Pressemitteilung, 2023)"
+      url: https://www.prnewswire.com/news-releases/anker-expands-into-home-energy-solutions-with-launch-of-anker-solix-brand-301849936.html
+    - titel: "Anker SOLIX Deutschland: Sortiment (Navigation Balkonkraftwerk / Powerstations)"
+      url: https://www.ankersolix.com/de/s2000
+    - titel: "Anker SOLIX Deutschland: About Us (Anker = Ladetechnik inkl. Powerbanks)"
+      url: https://www.ankersolix.com/de/about
+- slug: ecoflow
+  name: EcoFlow
+  praefix: "EcoFlow"
+  seite: true
+  shop: https://de.ecoflow.com/
+  intro: >-
+    EcoFlow wurde nach eigenen Angaben 2017 von einer Gruppe Batterieingenieure gegründet.
+    Im deutschen Shop bietet EcoFlow tragbare Powerstations, Balkonkraftwerk-Speicher der STREAM-Reihe
+    und Powerbanks der RAPID-Reihe an.
+  quellen:
+    - titel: "EcoFlow: About Us"
+      url: https://de.ecoflow.com/pages/about-us
+- slug: jackery
+  name: Jackery
+  praefix: "Jackery"
+  seite: true
+  shop: https://de.jackery.com/
+  intro: >-
+    Jackery wurde laut Firmenchronik 2012 im Silicon Valley gegründet und brachte 2016 mit der
+    Explorer-Serie seine erste tragbare Lithium-Powerstation auf den Markt. In Deutschland verkauft Jackery
+    Powerstations der Explorer-Reihe und Balkonkraftwerk-Speicher der SolarVault-Reihe.
+  quellen:
+    - titel: "Jackery Deutschland: Über Jackery (Meilensteine)"
+      url: https://de.jackery.com/pages/about-us
+- slug: zendure
+  name: Zendure
+  praefix: "Zendure"
+  seite: true
+  shop: https://www.zendure.de/
+  intro: >-
+    Zendure wurde nach eigenen Angaben 2017 gegründet und hat Standorte in den USA, China, Japan und Deutschland.
+    Im deutschen Shop stehen vor allem Balkonkraftwerk-Speicher der SolarFlow-Reihe; Powerstations und
+    Powerbanks führe ich von Zendure derzeit nicht.
+  quellen:
+    - titel: "Zendure: About Zendure"
+      url: https://us.zendure.com/pages/about-us
+    - titel: "Zendure Deutschland: Über Zendure"
+      url: https://www.zendure.de/pages/about-zendure
+- slug: bluetti
+  name: BLUETTI
+  praefix: "BLUETTI"
+  seite: false
+- slug: dji
+  name: DJI
+  praefix: "DJI"
+  seite: false
+- slug: growatt
+  name: Growatt
+  praefix: "Growatt"
+  seite: false

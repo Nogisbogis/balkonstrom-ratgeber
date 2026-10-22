@@ -5,7 +5,7 @@
 <article class="produkt">
   {{ partial "breadcrumb.html" . }}
   <h1>{{ .Title }}</h1>
-  <p class="meta">Produktseite Powerstation · Zuletzt aktualisiert <time datetime="{{ .Lastmod.Format "2006-01-02" }}">{{ .Lastmod.Format "02.01.2006" }}</time> · eigene Recherche, kein eigener Test</p>
+  <p class="meta">Produktseite Powerstation · Zuletzt aktualisiert <time datetime="{{ .Lastmod.Format "2006-01-02" }}">{{ .Lastmod.Format "02.01.2006" }}</time> · eigene Recherche, kein eigener Test{{ with partial "hersteller-von.html" $p.modell }}{{ $hn := .name }}{{ with .url }} · <a class="p-marke" href="{{ . }}">Alle Geräte von {{ $hn }}</a>{{ end }}{{ end }}</p>
   {{ partial "disclosure-box.html" . }}
 
   <div class="p-top">
@@ -21,7 +21,7 @@
         <div><dt>Kapazität</dt><dd>{{ lang.FormatNumber 0 $p.kapazitaet_wh }} Wh</dd></div>
         <div><dt>{{ if $p.nur_dc }}Leistung (nur DC){{ else }}Dauerleistung{{ end }}</dt><dd>{{ lang.FormatNumber 0 $p.dauerleistung_w }} W</dd></div>
         <div><dt>Gewicht</dt><dd>{{ replace (string $p.gewicht_kg) "." "," }} kg</dd></div>
-        <div><dt>Solar max.</dt><dd>{{ lang.FormatNumber 0 $p.solareingang_w }} W</dd></div>
+        <div><dt>Solar max.</dt><dd>{{ if gt $p.solareingang_w 0 }}{{ lang.FormatNumber 0 $p.solareingang_w }} W{{ else }}kein Solareingang{{ end }}</dd></div>
         <div><dt>Akku</dt><dd>{{ $p.akkutyp }}</dd></div>
         <div><dt>USV-Umschaltung</dt><dd>{{ with $p.usv_ms }}≤ {{ . }} ms{{ else }}keine USV{{ end }}</dd></div>{{ if $p.nur_dc }}
         <div><dt>230-V-Steckdose</dt><dd>keine</dd></div>{{ end }}
@@ -29,7 +29,7 @@
       <p class="note">Herstellerangaben, Belege unten in der Tabelle.</p>
       {{- with .Params.warnung }}<p class="notice p-warn">{{ . | $.RenderString }}</p>{{ end }}
       <p class="pcard-links">
-      {{- $aw := partial "awin-url.html" $p }}{{ if $aw }}{{ partial "awin-btn.html" (dict "url" $aw "cls" "btn btn-amazon") }}{{ with $p.asin }}{{ if partial "amazon-ok.html" . }}<a class="btn-sec btn-amazon" href="{{ partial "amazon-url.html" . }}" rel="sponsored nofollow noopener" target="_blank">Preis bei Amazon<span class="ad-label">Anzeige</span><span class="sr"> (Affiliate-Link)</span></a>{{ end }}{{ end }}{{ else }}{{ with $p.asin }}{{ if partial "amazon-ok.html" . }}<a class="btn btn-amazon" href="{{ partial "amazon-url.html" . }}" rel="sponsored nofollow noopener" target="_blank">Aktuellen Preis bei Amazon ansehen<span class="ad-label">Anzeige</span><span class="sr"> (Affiliate-Link)</span></a>{{ else }}{{ partial "amazon-na.html" (dict "cls" "amz-na-cta") }}{{ end }}{{ else }}<span class="note">Kein Kauflink – siehe Hinweis oben.</span>{{ end }}{{ end }}
+      {{- $aw := partial "awin-url.html" $p }}{{ if $aw }}{{ partial "awin-btn.html" (dict "url" $aw "cls" "btn btn-amazon") }}{{ with $p.asin }}{{ if partial "amazon-ok.html" . }}<a class="btn-sec btn-amazon" href="{{ partial "amazon-url.html" . }}" rel="sponsored nofollow noopener" target="_blank">Preis bei Amazon<span class="ad-label">Anzeige</span><span class="sr"> (Affiliate-Link)</span></a>{{ end }}{{ end }}{{ else }}{{ with $p.asin }}{{ if partial "amazon-ok.html" . }}<a class="btn btn-amazon" href="{{ partial "amazon-url.html" . }}" rel="sponsored nofollow noopener" target="_blank">Aktuellen Preis bei Amazon ansehen<span class="ad-label">Anzeige</span><span class="sr"> (Affiliate-Link)</span></a>{{ else }}{{ partial "amazon-na.html" (dict "cls" "amz-na-cta") }}{{ end }}{{ else }}<span class="note">{{ if .Params.warnung }}Kein Kauflink – siehe Hinweis oben.{{ else }}Kein Kauflink: Ich habe kein Amazon-Angebot gefunden, das eindeutig zu genau diesem Modell passt.{{ end }}</span>{{ end }}{{ end }}
       <a class="btn-sec" href="{{ "laufzeitrechner/" | relURL }}?m={{ $p.slug }}">Laufzeit jetzt ausrechnen</a>
       </p>
     </div>

@@ -833,3 +833,14 @@ details.p-mehr .tablewrap{margin:0}
 @media (max-width:40rem){.breadcrumb a{padding:.25rem 0}}
 .breadcrumb li+li::before{content:none}
 .breadcrumb li:not(:last-child)::after{content:"/";margin:0 .5rem;color:var(--muted)}
+/* Herstellerseiten (Entwurf 22.10.2026) */
+.hst-zahlen{list-style:none;padding:0;margin:1rem 0 1.5rem;display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;font-family:var(--sans);font-size:var(--fs-s)}
+.hst-zahlen a{color:var(--ink);text-decoration:none;border-bottom:2px solid var(--accent);display:inline-block;padding:.35rem 0;min-height:var(--tap)}
+.hst-zahlen strong{font-size:var(--fs-b);margin-right:.25rem;font-variant-numeric:tabular-nums}
+.hst-intro,.hst-geraete{margin:0 0 1.5rem}
+.hst-quellen{font-family:var(--sans);font-size:var(--fs-s);padding-left:1.25rem}
+.hersteller section>h2,.hst-block>h2{border-top:3px solid var(--rule);padding-top:.75rem;margin-top:2rem}
+.hst-block>h2 a{color:var(--ink);text-decoration-color:var(--accent)}
+.hst-zeile{font-family:var(--sans);font-size:var(--fs-s);color:var(--muted);margin:.25rem 0 .75rem}
+.hst-zeile a{font-weight:700}
+.p-marke{font-weight:700}

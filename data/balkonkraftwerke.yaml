@@ -122,3 +122,134 @@
   speicher_kwh: 2.048
   quelle: https://de.growatt.com/upload/file/Nexa2000_Datenblatt_202504_DE.pdf
   asin: B0FSDHLV8M
+# Ergänzt am 22.10.2026 (Entwurf Herstellerseiten). wechselrichter_w = Ausgang am Schuko-Stecker (800 W);
+# netz_max_w = höhere Einspeiseleistung laut Hersteller (Festanschluss/Wieland, nur mit Elektriker).
+# mppt/notstrom_w null = keine Angabe des Herstellers. max_kwh_hinweis: wenn der Wert berechnet ist.
+- modell: Anker SOLIX Solarbank 4 E5000 Pro
+  slug: "anker-solix-solarbank-4-e5000-pro"
+  awin_advertiser: 32623
+  shop_url: "https://www.ankersolix.com/de/products/ae103"
+  abbildung: img/illu/anker-solix-solarbank-4-e5000-pro.svg
+  kurzname: "Solarbank 4 E5000 Pro|Solarbank 4 Pro"
+  mppt: 4
+  notstrom_w: 2500
+  max_kwh: 30
+  netz_max_w: 2500
+  garantie: "10 Jahre"
+  typ: Speicher mit Wechselrichter
+  module_wp: 0
+  pv_max_w: 5000
+  wechselrichter_w: 800
+  speicher_kwh: 5.024
+  quelle: https://www.ankersolix.com/de/products/ae103
+  asin: ""
+- modell: Anker SOLIX Solarbank Max
+  slug: "anker-solix-solarbank-max"
+  awin_advertiser: 32623
+  shop_url: "https://www.ankersolix.com/de/products/ae111"
+  abbildung: img/illu/anker-solix-solarbank-max.svg
+  kurzname: "Solarbank Max"
+  mppt: 3
+  notstrom_w: 3680
+  max_kwh: 42
+  netz_max_w: 4600
+  garantie: "10 Jahre"
+  typ: Speicher mit Wechselrichter
+  module_wp: 0
+  pv_max_w: 10000
+  wechselrichter_w: 800
+  speicher_kwh: 7
+  quelle: https://www.ankersolix.com/de/products/ae111
+  asin: ""
+- modell: EcoFlow STREAM Ultra X
+  slug: "ecoflow-stream-ultra-x"
+  awin_advertiser: 51793
+  shop_url: "https://de.ecoflow.com/products/stream-ultra-x"
+  abbildung: img/illu/ecoflow-stream-ultra-x.svg
+  kurzname: "STREAM Ultra X|Stream Ultra X"
+  mppt: 4
+  notstrom_w: 1200
+  max_kwh: 23
+  garantie: "10 Jahre"
+  typ: Speicher mit Wechselrichter
+  module_wp: 0
+  pv_max_w: 2000
+  wechselrichter_w: 800
+  speicher_kwh: 3.84
+  quelle: https://de.ecoflow.com/products/stream-ultra-x
+  asin: ""
+- modell: Jackery SolarVault 3 Pro Max
+  slug: "jackery-solarvault-3-pro-max"
+  awin_advertiser: 30415
+  shop_url: "https://de.jackery.com/products/solarvault-3-pro-max"
+  abbildung: img/illu/jackery-solarvault-3-pro-max.svg
+  kurzname: "SolarVault 3 Pro Max"
+  mppt: 4
+  notstrom_w: 2500
+  max_kwh: 15.12
+  netz_max_w: 2500
+  garantie: "10 Jahre"
+  typ: Speicher mit Wechselrichter
+  module_wp: 0
+  pv_max_w: 4000
+  wechselrichter_w: 800
+  speicher_kwh: 2.52
+  quelle: https://de.jackery.com/products/solarvault-3-pro-max
+  asin: B0GVK7XR9D
+- modell: Zendure SolarFlow 800 Pro 2
+  slug: "zendure-solarflow-800-pro-2"
+  awin_advertiser: 68786
+  shop_url: "https://www.zendure.de/products/zendure-solarflow-800-pro-2"
+  abbildung: img/illu/zendure-solarflow-800-pro-2.svg
+  kurzname: "SolarFlow 800 Pro 2"
+  mppt: null
+  pv_eingaenge: 4
+  notstrom_w: 1000
+  notstrom_einheit: VA
+  max_kwh: 11.52
+  garantie: "keine Angabe"
+  typ: Speicher mit Wechselrichter
+  module_wp: 0
+  pv_max_w: 2640
+  wechselrichter_w: 800
+  speicher_kwh: 1.92
+  quelle: https://www.zendure.de/products/zendure-solarflow-800-pro-2
+  asin: B0GTM2QRGY
+- modell: Zendure SolarFlow 2400 AC+
+  slug: "zendure-solarflow-2400-ac-plus"
+  awin_advertiser: 68786
+  shop_url: "https://www.zendure.de/products/zendure-solarflow-2400-ac-plus"
+  abbildung: img/illu/zendure-solarflow-2400-ac-plus.svg
+  kurzname: "SolarFlow 2400 AC\\+|SolarFlow 2400 AC Plus"
+  mppt: 0
+  notstrom_w: 3200
+  notstrom_einheit: VA
+  max_kwh: 16.8
+  max_kwh_hinweis: "berechnet: 2,4 kWh + 5 × 2,88 kWh (AB3000L laut Shop)"
+  netz_max_w: 2400
+  garantie: "keine Angabe"
+  typ: AC-gekoppelter Speicher
+  module_wp: 0
+  pv_max_w: 0
+  wechselrichter_w: 800
+  speicher_kwh: 2.4
+  quelle: https://www.zendure.de/products/zendure-solarflow-2400-ac-plus
+  asin: ""
+- modell: Zendure SolarFlow 800 Plus
+  slug: "zendure-solarflow-800-plus"
+  awin_advertiser: 68786
+  shop_url: "https://www.zendure.de/products/solarflow-800-plus"
+  abbildung: img/illu/zendure-solarflow-800-plus.svg
+  kurzname: "SolarFlow 800 Plus"
+  mppt: null
+  pv_eingaenge: 2
+  notstrom_w: null
+  max_kwh: 11.52
+  garantie: "keine Angabe"
+  typ: Speicher mit Wechselrichter
+  module_wp: 0
+  pv_max_w: 1500
+  wechselrichter_w: 800
+  speicher_kwh: 1.92
+  quelle: https://www.zendure.de/products/solarflow-800-plus
+  asin: B0G81SS7VW

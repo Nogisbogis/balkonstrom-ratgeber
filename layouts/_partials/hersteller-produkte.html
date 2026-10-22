@@ -1,0 +1,8 @@
+{{- /* Geräte eines Herstellers (Präfix aus data/hersteller.yaml) aus allen Produktdaten.
+     Rückgabe: dict ps, bkw, pb – je slice von dict d (Datensatz) und pg (Seite). Nur Einträge mit Produktseite. */ -}}
+{{- $pre := printf "%s " .praefix -}}
+{{- $ps := slice }}{{ $bkw := slice }}{{ $pb := slice -}}
+{{- range sort hugo.Data.powerstations "kapazitaet_wh" }}{{ if hasPrefix .modell $pre }}{{ $d := . }}{{ with site.GetPage (printf "/powerstations/%s" .slug) }}{{ $ps = $ps | append (dict "d" $d "pg" .) }}{{ end }}{{ end }}{{ end -}}
+{{- range sort hugo.Data.balkonkraftwerke "speicher_kwh" }}{{ if hasPrefix .modell $pre }}{{ $d := . }}{{ with site.GetPage (printf "/balkonkraftwerke/%s" .slug) }}{{ $bkw = $bkw | append (dict "d" $d "pg" .) }}{{ end }}{{ end }}{{ end -}}
+{{- with hugo.Data.powerbanks }}{{ range sort . "kapazitaet_mah" }}{{ if hasPrefix .modell $pre }}{{ $d := . }}{{ with site.GetPage (printf "/powerbanks/%s" .slug) }}{{ $pb = $pb | append (dict "d" $d "pg" .) }}{{ end }}{{ end }}{{ end }}{{ end -}}
+{{- return dict "ps" $ps "bkw" $bkw "pb" $pb -}}

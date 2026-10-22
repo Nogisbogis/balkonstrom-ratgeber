@@ -1,0 +1,6 @@
+{{- /* Notstrom-Angabe eines Balkonspeichers: null = keine Angabe, 0 = nein, sonst Wert mit Einheit (W oder VA). */ -}}
+{{- $p := . -}}
+{{- $t := "nein" -}}
+{{- if eq $p.notstrom_w nil -}}{{ $t = "keine Angabe" }}
+{{- else if gt $p.notstrom_w 0 -}}{{ $t = printf "%s %s" (lang.FormatNumber 0 $p.notstrom_w) ($p.notstrom_einheit | default "W") }}{{- end -}}
+{{- return $t -}}

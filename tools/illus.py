@@ -38,6 +38,12 @@ PS = [
  dict(slug="ecoflow-delta-pro-3", name="EcoFlow DELTA Pro 3", dims=(693,341,410), ac=5, usbc=2, usba=2, disp="top", griff="zwei", rollen=True),
  dict(slug="ecoflow-trail-300-dc", name="EcoFlow TRAIL 300 DC", dims=(166,115,167), ac=0, usbc=2, usba=2, disp="left", griff="schlaufe", kfz=True, masse_txt=(115,166,167)),
  dict(slug="bluetti-elite-30-v2", name="BLUETTI Elite 30 V2", dims=(250,178,167.5), ac=1, usbc=2, usba=2, disp="left", griff="mulde"),
+# Ergänzt 22.10.2026 (Herstellerseiten-Entwurf); Anschlusszahl nur schematisch, Maße laut Herstellerseite
+ dict(slug="anker-solix-s2000", name="Anker SOLIX S2000", dims=(208,282,323.3), ac=1, usbc=2, usba=1, disp="top", griff="zwei"),
+ dict(slug="ecoflow-delta-3-classic", name="EcoFlow DELTA 3 Classic", dims=(398,200,283), ac=2, usbc=2, usba=1, disp="top", griff="zwei"),
+ dict(slug="ecoflow-trail-200-dc", name="EcoFlow TRAIL 200 DC", dims=(115,126,167), ac=0, usbc=2, usba=2, disp="left", griff="schlaufe"),
+ dict(slug="jackery-explorer-3600-plus", name="Jackery Explorer 3600 Plus", dims=(385,309,491), ac=3, usbc=2, usba=2, disp="top", griff="zwei", rollen=True),
+ dict(slug="jackery-explorer-2000-v2", name="Jackery Explorer 2000 v2", dims=(335,264,292), ac=2, usbc=2, usba=1, disp="left", griff="klapp"),
 ]
 BKW = [
  dict(slug="anker-solix-solarbank-2-e1600-pro", name="Anker SOLIX Solarbank 2 E1600 Pro", dims=(460,249,254), ac=1, mppt=4, griff="keine", led=True),
@@ -46,6 +52,14 @@ BKW = [
  dict(slug="ecoflow-stream-ultra", name="EcoFlow STREAM Ultra", dims=(255,284,458), ac=2, mppt=4, griff="mulde", led=True),
  dict(slug="ecoflow-stream-pro", name="EcoFlow STREAM Pro", dims=(255,284,458), ac=2, mppt=3, griff="mulde", led=True),
  dict(slug="growatt-nexa-2000", name="Growatt NEXA 2000", dims=(406,255,290), ac=1, mppt=4, griff="keine", led=False),
+# Ergänzt 22.10.2026; mppt = Zahl der PV-Eingänge (Zendure: Eingänge laut Shop, MPPT-Zahl keine Angabe)
+ dict(slug="anker-solix-solarbank-4-e5000-pro", name="Anker SOLIX Solarbank 4 E5000 Pro", dims=(460,305,355), ac=1, mppt=4, griff="keine", led=True),
+ dict(slug="anker-solix-solarbank-max", name="Anker SOLIX Solarbank Max", dims=(670,356,350), ac=1, mppt=3, griff="keine", led=True),
+ dict(slug="ecoflow-stream-ultra-x", name="EcoFlow STREAM Ultra X", dims=(420,294,460), ac=1, mppt=4, griff="mulde", led=True),
+ dict(slug="jackery-solarvault-3-pro-max", name="Jackery SolarVault 3 Pro Max", dims=(485,248,282), ac=1, mppt=4, griff="zwei", led=True),
+ dict(slug="zendure-solarflow-800-pro-2", name="Zendure SolarFlow 800 Pro 2", dims=(392.7,236.3,276), ac=1, mppt=4, griff="zwei", led=False),
+ dict(slug="zendure-solarflow-2400-ac-plus", name="Zendure SolarFlow 2400 AC+", dims=(326,294,251), ac=1, mppt=0, griff="zwei", led=False),
+ dict(slug="zendure-solarflow-800-plus", name="Zendure SolarFlow 800 Plus", dims=(393,236,242), ac=0, mppt=2, griff="zwei", led=False),
 ]
 KX, KY = 0.45, 0.30   # Schrägprojektion: Tiefe nach rechts oben
 
@@ -222,9 +236,39 @@ def vergleich(liste, art, name, title, s, pro_reihe):
           f'<text x="{r(mx+100*s+8)}" y="{H-21}" class="m" font-size="12">10 cm · alle im selben Maßstab, Maße laut Hersteller</text>')
     return svg(name, W, H, title, b)
 
+PB = [   # Powerbanks: dims = Länge × Tiefe × Höhe (liegend), Maße laut Herstellerseite
+ dict(slug="ecoflow-rapid-pro-20k", name="EcoFlow RAPID Pro 20K", dims=(145,56,55), usbc=3, usba=0, kabel=True),
+ dict(slug="ecoflow-rapid-pro-27k", name="EcoFlow RAPID Pro 27K", dims=(166,58,55), usbc=3, usba=0, kabel=True),
+ dict(slug="ecoflow-rapid-25k", name="EcoFlow RAPID 25K", dims=(157,48.8,53.8), usbc=2, usba=1, kabel=False),
+]
+
+def powerbank(m):
+    """Powerbank liegend in Schrägansicht: Display vorn, Anschlüsse an der Stirnseite links, ggf. integriertes Kabel."""
+    W, H, mx, top, unten = 400, 300, 40, 30, 50
+    L, D, Hh = m["dims"]
+    s = min((W - 2*mx - 30) / (L + D*KX), (H - top - unten - 40) / (Hh + D*KY))
+    fw, fh, dx, dy = L*s, Hh*s, D*s*KX, D*s*KY
+    x = (W - fw - dx)/2 + 12; y = top + 30 + dy + (H - top - unten - 30 - fh - dy)/2
+    b = koerper(x, y, fw, fh, dx, dy, fh*.22)
+    b += display(x + fw*.42, y + fh*.22, fw*.36, fh*.5)
+    n = m["usbc"] + m["usba"]; uw = min(fh*.16, 22)
+    for i in range(m["usbc"]): b += usbc(x + fw*.06, y + fh*(.2 + .2*i), uw*1.3)
+    for i in range(m["usba"]): b += usba(x + fw*.06, y + fh*(.2 + .2*(m["usbc"]+i)), uw*1.3)
+    if m.get("kabel"):
+        cx = x - 6
+        b += (f'<path d="M{r(x+2)} {r(y+fh*.8)}C{r(cx-34)} {r(y+fh*.8)} {r(cx-34)} {r(y-dy-20)} {r(x+fw*.2)} {r(y-dy*.6)}" class="l" fill="none" stroke-width="5" stroke-linecap="round"/>'
+              f'<rect x="{r(x+fw*.2-4)}" y="{r(y-dy*.6-5)}" width="16" height="8" rx="3" class="k l" stroke-width="1"/>')
+    b += f'<rect x="{r(x+fw*.86)}" y="{r(y+fh*.42)}" width="{r(fw*.06)}" height="{r(fh*.12)}" rx="2" class="a"/>'
+    yb = y + fh + 14
+    b += (f'<g class="dim"><path d="M{r(x)} {r(yb-4)}v8M{r(x)} {r(yb)}H{r(x+fw)}M{r(x+fw)} {r(yb-4)}v8" class="ml" stroke-width="1.2" fill="none"/>'
+          f'<text x="{r(x+fw/2)}" y="{r(yb+16)}" class="m" font-size="13" text-anchor="middle">{cm(L)} cm</text>'
+          f'<text x="{W/2}" y="{H-8}" class="m" font-size="12" text-anchor="middle">{cm(L)} × {cm(D)} × {cm(Hh)} cm laut Hersteller</text></g>')
+    return svg(m["slug"] + ".svg", W, H, f'{m["name"]}, schematische Darstellung', b)
+
 if __name__ == "__main__":
     for m in PS: print(m["slug"], einzeln(m, "ps"), "Bytes")
     for m in BKW: print(m["slug"], einzeln(m, "bkw"), "Bytes")
+    for m in PB: print(m["slug"], powerbank(m), "Bytes")
     print("anker-solix-rs40p", rs40p(), "Bytes")
     ps_sorted = sorted(PS, key=lambda m: m["dims"][0]*m["dims"][1]*m["dims"][2])
     print("groesse-powerstations", vergleich(ps_sorted, "ps", "groesse-powerstations.svg", "Größenvergleich der Powerstations im selben Maßstab, schematische Darstellung", .42, 5), "Bytes")

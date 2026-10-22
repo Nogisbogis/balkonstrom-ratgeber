@@ -104,3 +104,28 @@ asins:
     status: nicht_verfuegbar
     geprueft: '2026-10-20'
     seit: '2026-10-20'
+  B0GY4TQ2P8:
+    modell: Anker SOLIX S2000
+    status: verfuegbar
+    geprueft: '2026-10-22'
+    seit: '2026-10-22'
+  B0GMCHYHQR:
+    modell: EcoFlow DELTA 3 Classic
+    status: verfuegbar
+    geprueft: '2026-10-22'
+    seit: '2026-10-22'
+  B0GVK7XR9D:
+    modell: Jackery SolarVault 3 Pro Max
+    status: verfuegbar
+    geprueft: '2026-10-22'
+    seit: '2026-10-22'
+  B0GTM2QRGY:
+    modell: Zendure SolarFlow 800 Pro 2
+    status: verfuegbar
+    geprueft: '2026-10-22'
+    seit: '2026-10-22'
+  B0G81SS7VW:
+    modell: Zendure SolarFlow 800 Plus
+    status: verfuegbar
+    geprueft: '2026-10-22'
+    seit: '2026-10-22'

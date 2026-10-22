@@ -5,7 +5,7 @@
 <article class="produkt">
   {{ partial "breadcrumb.html" . }}
   <h1>{{ .Title }}</h1>
-  <p class="meta">Produktseite Balkonkraftwerk &amp; Speicher · Zuletzt aktualisiert <time datetime="{{ .Lastmod.Format "2006-01-02" }}">{{ .Lastmod.Format "02.01.2006" }}</time> · eigene Recherche, kein eigener Test</p>
+  <p class="meta">Produktseite Balkonkraftwerk &amp; Speicher · Zuletzt aktualisiert <time datetime="{{ .Lastmod.Format "2006-01-02" }}">{{ .Lastmod.Format "02.01.2006" }}</time> · eigene Recherche, kein eigener Test{{ with partial "hersteller-von.html" $p.modell }}{{ $hn := .name }}{{ with .url }} · <a class="p-marke" href="{{ . }}">Alle Geräte von {{ $hn }}</a>{{ end }}{{ end }}</p>
   {{ partial "disclosure-box.html" . }}
 
   <div class="p-top">
@@ -19,11 +19,11 @@
     <div class="p-eck">
       <dl class="p-kern">
         <div><dt>Typ</dt><dd>{{ $p.typ }}</dd></div>
-        {{- if gt $p.speicher_kwh 0 }}<div><dt>Speicher</dt><dd>{{ replace (string $p.speicher_kwh) "." "," }} kWh{{ if gt $p.max_kwh $p.speicher_kwh }}<small> · bis {{ replace (string (div (math.Round (mul $p.max_kwh 10)) 10.0)) "." "," }} kWh</small>{{ end }}</dd></div>{{ end }}
+        {{- if gt $p.speicher_kwh 0 }}<div><dt>Speicher</dt><dd>{{ replace (string $p.speicher_kwh) "." "," }} kWh{{ if and $p.max_kwh (gt $p.max_kwh $p.speicher_kwh) }}<small> · bis {{ replace (string (div (math.Round (mul $p.max_kwh 10)) 10.0)) "." "," }} kWh{{ if $p.max_kwh_hinweis }} (berechnet){{ end }}</small>{{ end }}</dd></div>{{ end }}
         {{- if gt $p.module_wp 0 }}<div><dt>Module</dt><dd>{{ lang.FormatNumber 0 $p.module_wp }} Wp</dd></div>{{ end }}
-        {{- if gt $p.pv_max_w 0 }}<div><dt>PV-Eingang max.</dt><dd>{{ lang.FormatNumber 0 $p.pv_max_w }} W · {{ $p.mppt }} MPPT</dd></div>{{ else }}<div><dt>PV-Eingänge</dt><dd>{{ $p.mppt }} MPPT</dd></div>{{ end }}
-        <div><dt>Netz-Ausgang</dt><dd>{{ $p.wechselrichter_w }} W</dd></div>
-        <div><dt>Notstrom-Steckdose</dt><dd>{{ if gt $p.notstrom_w 0 }}{{ lang.FormatNumber 0 $p.notstrom_w }} W{{ else }}nein{{ end }}</dd></div>
+        {{- if gt $p.pv_max_w 0 }}<div><dt>PV-Eingang max.</dt><dd>{{ lang.FormatNumber 0 $p.pv_max_w }} W · {{ partial "mppt-text.html" $p }}</dd></div>{{ else }}<div><dt>PV-Eingänge</dt><dd>{{ partial "mppt-text.html" $p }}</dd></div>{{ end }}
+        <div><dt>Netz-Ausgang</dt><dd>{{ $p.wechselrichter_w }} W{{ with $p.netz_max_w }}<small> · bis {{ lang.FormatNumber 0 . }} W mit Festanschluss</small>{{ end }}</dd></div>
+        <div><dt>Notstrom-Steckdose</dt><dd>{{ partial "notstrom-text.html" $p }}</dd></div>
         <div><dt>Garantie</dt><dd>{{ $p.garantie }}</dd></div>
       </dl>
       <p class="note">Herstellerangaben, Belege unten in der Tabelle.</p>
@@ -82,7 +82,7 @@
 
   {{- with .Params.alternativen }}
   <section aria-labelledby="alternativen"><h2 id="alternativen">Alternativen</h2>
-  <ul class="p-alt">{{ range . }}{{ $warum := .warum }}{{ $a := index (where hugo.Data.balkonkraftwerke "slug" .slug) 0 }}{{ with site.GetPage (printf "/balkonkraftwerke/%s" .slug) }}<li><a href="{{ .RelPermalink }}"><strong>{{ .Title }}</strong></a> <span class="note">{{ if gt $a.speicher_kwh 0 }}{{ replace (string $a.speicher_kwh) "." "," }} kWh · {{ lang.FormatNumber 0 $a.pv_max_w }} W PV · {{ end }}{{ if gt $a.module_wp 0 }}{{ $a.module_wp }} Wp · {{ end }}{{ $a.mppt }} MPPT · Notstrom {{ if gt $a.notstrom_w 0 }}{{ $a.notstrom_w }} W{{ else }}nein{{ end }}</span>{{ with $warum }}<br>{{ . | $.RenderString }}{{ end }}</li>{{ else }}{{ errorf "alternativen: %q fehlt" .slug }}{{ end }}{{ end }}</ul>
+  <ul class="p-alt">{{ range . }}{{ $warum := .warum }}{{ $a := index (where hugo.Data.balkonkraftwerke "slug" .slug) 0 }}{{ with site.GetPage (printf "/balkonkraftwerke/%s" .slug) }}<li><a href="{{ .RelPermalink }}"><strong>{{ .Title }}</strong></a> <span class="note">{{ if gt $a.speicher_kwh 0 }}{{ replace (string $a.speicher_kwh) "." "," }} kWh · {{ if gt $a.pv_max_w 0 }}{{ lang.FormatNumber 0 $a.pv_max_w }} W PV{{ else }}kein PV-Eingang{{ end }} · {{ end }}{{ if gt $a.module_wp 0 }}{{ $a.module_wp }} Wp · {{ end }}{{ partial "mppt-text.html" $a }} · Notstrom {{ partial "notstrom-text.html" $a }}</span>{{ with $warum }}<br>{{ . | $.RenderString }}{{ end }}</li>{{ else }}{{ errorf "alternativen: %q fehlt" .slug }}{{ end }}{{ end }}</ul>
   </section>
   {{- end }}
 

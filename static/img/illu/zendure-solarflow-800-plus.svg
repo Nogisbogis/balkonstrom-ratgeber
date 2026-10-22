@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300" role="img" aria-label="Zendure SolarFlow 800 Plus, schematische Darstellung" lang="de"><style>
+.f{fill:#e3e0d8}.t{fill:#f1eee6}.s{fill:#c9c5bb}.l{stroke:#111;stroke-width:1.6;stroke-linejoin:round;stroke-linecap:round}
+.p{fill:#262b2e}.a{fill:#0a6b3d}.as{stroke:#0a6b3d}.k{fill:#f7f5f0}.h{fill:#262b2e}.m{fill:#55595e}.ml{stroke:#55595e}
+.c{fill:#2f4f6f}.cl{stroke:#9db7d1}
+text{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+@media (max-width:220px){.dim{display:none}}
+@media (prefers-color-scheme:dark){.f{fill:#3b4d46}.t{fill:#4b5f57}.s{fill:#2c3b36}.l{stroke:#eef2ee}
+.p{fill:#0b1512}.a{fill:#5fd69a}.as{stroke:#5fd69a}.k{fill:#26372f}.h{fill:#0b1512}.m{fill:#b5c2bb}.ml{stroke:#b5c2bb}
+.c{fill:#24476b}.cl{stroke:#7fa2c8}}
+</style><path d="M35 90L105.2 43.2H365L294.8 90Z" class="t l"/><path d="M294.8 90L365 43.2V203.2L294.8 250Z" class="s l"/><rect x="35" y="90" width="259.8" height="160" rx="9.6" class="f l"/><path d="M83.1 66.6l7.9 -17.6h23.1l7.9 17.6Z" class="f l"/><path d="M96.3 58.7h12.6" class="l" stroke-width="3" fill="none" opacity=".5"/><path d="M277.9 66.6l7.9 -17.6h23.1l7.9 17.6Z" class="f l"/><path d="M291.1 58.7h12.6" class="l" stroke-width="3" fill="none" opacity=".5"/><circle cx="326.7" cy="143.9" r="2.4" class="a"/><circle cx="333.1" cy="143.9" r="2.4" class="h"/><circle cx="326.7" cy="173.3" r="2.4" class="a"/><circle cx="333.1" cy="173.3" r="2.4" class="h"/><rect x="55.8" y="238.8" width="218.3" height="4.8" class="s"/><g class="dim"><path d="M35 258v8M35 262H294.8M294.8 258v8" class="ml" stroke-width="1.2" fill="none"/><text x="164.9" y="278" class="m" font-size="13" text-anchor="middle">39,3 cm</text><text x="200.0" y="292" class="m" font-size="12" text-anchor="middle">39,3 × 23,6 × 24,2 cm (B × T × H) laut Hersteller</text></g></svg>

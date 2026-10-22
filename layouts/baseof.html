@@ -65,6 +65,7 @@
       <a href="{{ "werkzeuge/" | relURL }}"{{ if in $tools $cur }} aria-current="page"{{ end }}>Werkzeuge</a>
       <a href="{{ "ratgeber/" | relURL }}"{{ if or (eq $cur ("ratgeber/" | relURL)) (eq .Section "posts") }} aria-current="page"{{ end }}>Ratgeber</a>
       <a href="{{ "balkonkraftwerke/" | relURL }}"{{ if eq .Section "balkonkraftwerke" }} aria-current="page"{{ end }}>Balkonkraftwerke</a>
+      <a class="nav-dezent" href="{{ "hersteller/" | relURL }}"{{ if eq .Section "hersteller" }} aria-current="page"{{ end }}>Hersteller</a>
     </nav>
     <details class="m-menu">
       <summary>Menü</summary>
@@ -73,6 +74,7 @@
       <a href="{{ "werkzeuge/" | relURL }}"{{ if in $tools $cur }} aria-current="page"{{ end }}>Werkzeuge</a>
       <a href="{{ "ratgeber/" | relURL }}"{{ if or (eq $cur ("ratgeber/" | relURL)) (eq .Section "posts") }} aria-current="page"{{ end }}>Ratgeber</a>
       <a href="{{ "balkonkraftwerke/" | relURL }}"{{ if eq .Section "balkonkraftwerke" }} aria-current="page"{{ end }}>Balkonkraftwerke</a>
+      <a class="nav-dezent" href="{{ "hersteller/" | relURL }}"{{ if eq .Section "hersteller" }} aria-current="page"{{ end }}>Hersteller</a>
       </nav>
     </details>
   </div>

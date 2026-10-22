@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 352" width="760" height="352" role="img" aria-labelledby="t d" lang="de">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 590" width="760" height="590" role="img" aria-labelledby="t d" lang="de">
 <title id="t">Kapazität und maximaler PV-Eingang der Balkonkraftwerk-Speicher</title>
-<desc id="d">Balkendiagramm: Anker SOLIX Solarbank 2 E1600 Pro: 1,600 kWh, PV-Eingang 2.400 W; EcoFlow STREAM Pro: 1,920 kWh, PV-Eingang 1.500 W; EcoFlow STREAM Ultra: 1,920 kWh, PV-Eingang 2.000 W; Zendure SolarFlow 800 Pro: 1,920 kWh, PV-Eingang 2.640 W; Growatt NEXA 2000: 2,048 kWh, PV-Eingang 2.600 W; Anker SOLIX Solarbank 3 E2700 Pro: 2,688 kWh, PV-Eingang 3.600 W. Eine gestrichelte Linie markiert die 2.000-Wp-Grenze für Steckersolargeräte.</desc>
+<desc id="d">Balkendiagramm: Anker SOLIX Solarbank 2 E1600 Pro: 1,6 kWh, PV-Eingang 2.400 W; EcoFlow STREAM Pro: 1,92 kWh, PV-Eingang 1.500 W; Zendure SolarFlow 800 Plus: 1,92 kWh, PV-Eingang 1.500 W; EcoFlow STREAM Ultra: 1,92 kWh, PV-Eingang 2.000 W; Zendure SolarFlow 800 Pro: 1,92 kWh, PV-Eingang 2.640 W; Zendure SolarFlow 800 Pro 2: 1,92 kWh, PV-Eingang 2.640 W; Growatt NEXA 2000: 2,048 kWh, PV-Eingang 2.600 W; Zendure SolarFlow 2400 AC+: 2,4 kWh, kein PV-Eingang (AC-gekoppelt); Jackery SolarVault 3 Pro Max: 2,52 kWh, PV-Eingang 4.000 W; Anker SOLIX Solarbank 3 E2700 Pro: 2,688 kWh, PV-Eingang 3.600 W; EcoFlow STREAM Ultra X: 3,84 kWh, PV-Eingang 2.000 W; Anker SOLIX Solarbank 4 E5000 Pro: 5,024 kWh, PV-Eingang 5.000 W; Anker SOLIX Solarbank Max: 7 kWh, PV-Eingang 10.000 W. Eine gestrichelte Linie markiert die 2.000-Wp-Grenze für Steckersolargeräte.</desc>
 <style>
 .bg{fill:#ffffff}.t{fill:#111111}.m{fill:#55595e}.g{stroke:#e2e2df}.ax{stroke:#111111}
 .a{fill:#0a6b3d}.as{stroke:#0a6b3d}.b{fill:#9a4a00}.bs{stroke:#9a4a00}.c{fill:#1f4f8f}.cs{stroke:#1f4f8f}
@@ -13,44 +13,78 @@ text{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
 .box{fill:#16302a;stroke:#eef2ee}.boxa{fill:#0f1f1a;stroke:#5fd69a}.boxb{fill:#0f1f1a;stroke:#f0b45a}
 .ar{fill:#eef2ee}.ars{stroke:#eef2ee}.al{fill:#5fd69a;fill-opacity:.18}.bl{fill:#f0b45a;fill-opacity:.18}}
 </style>
-<rect class="bg" width="760" height="352" rx="8"/>
+<rect class="bg" width="760" height="590" rx="8"/>
 <text x="20" y="30" class="t" font-size="18" text-anchor="start" font-weight="bold" >Speicher fürs Balkonkraftwerk: Kapazität und PV-Eingang</text>
-<text x="20" y="52" class="m" font-size="12.5" text-anchor="start" font-weight="normal" >Herstellerangaben · Ausgang ins Hausnetz bei allen: 800 W</text>
+<text x="20" y="52" class="m" font-size="12.5" text-anchor="start" font-weight="normal" >Herstellerangaben · Ausgang ins Hausnetz am Schukostecker bei allen: 800 W</text>
 <text x="462" y="76" class="a" font-size="12" text-anchor="end" font-weight="bold" >Speicher (kWh)</text>
 <text x="478" y="76" class="c" font-size="12" text-anchor="start" font-weight="bold" >max. PV-Eingang (W)</text>
 <text x="20" y="105" class="t" font-size="13" text-anchor="start" font-weight="normal" >Anker Solarbank 2 E1600 Pro</text>
-<rect x="371.3333333333333" y="92" width="90.66666666666667" height="18" class="a" rx="2" />
-<text x="367.3333333333333" y="105.5" class="t" font-size="12" text-anchor="end" font-weight="normal" >1,6</text>
-<rect x="478" y="92" width="120.0" height="18" class="c" rx="2" />
-<text x="602.0" y="105.5" class="t" font-size="12" text-anchor="start" font-weight="normal" >2.400</text>
+<rect x="423.14285714285717" y="92" width="38.857142857142854" height="18" class="a" rx="2" />
+<text x="419.14285714285717" y="105.5" class="t" font-size="12" text-anchor="end" font-weight="normal" >1,6</text>
+<rect x="478" y="92" width="48.0" height="18" class="c" rx="2" />
+<text x="530.0" y="105.5" class="t" font-size="12" text-anchor="start" font-weight="normal" >2.400</text>
 <text x="20" y="139" class="t" font-size="13" text-anchor="start" font-weight="normal" >EcoFlow STREAM Pro</text>
-<rect x="353.2" y="126" width="108.8" height="18" class="a" rx="2" />
-<text x="349.2" y="139.5" class="t" font-size="12" text-anchor="end" font-weight="normal" >1,92</text>
-<rect x="478" y="126" width="75.0" height="18" class="c" rx="2" />
-<text x="557.0" y="139.5" class="t" font-size="12" text-anchor="start" font-weight="normal" >1.500</text>
-<text x="20" y="173" class="t" font-size="13" text-anchor="start" font-weight="normal" >EcoFlow STREAM Ultra</text>
-<rect x="353.2" y="160" width="108.8" height="18" class="a" rx="2" />
-<text x="349.2" y="173.5" class="t" font-size="12" text-anchor="end" font-weight="normal" >1,92</text>
-<rect x="478" y="160" width="100.0" height="18" class="c" rx="2" />
-<text x="582.0" y="173.5" class="t" font-size="12" text-anchor="start" font-weight="normal" >2.000</text>
-<text x="20" y="207" class="t" font-size="13" text-anchor="start" font-weight="normal" >Zendure SolarFlow 800 Pro</text>
-<rect x="353.2" y="194" width="108.8" height="18" class="a" rx="2" />
-<text x="349.2" y="207.5" class="t" font-size="12" text-anchor="end" font-weight="normal" >1,92</text>
-<rect x="478" y="194" width="132.0" height="18" class="c" rx="2" />
-<text x="614.0" y="207.5" class="t" font-size="12" text-anchor="start" font-weight="normal" >2.640</text>
-<text x="20" y="241" class="t" font-size="13" text-anchor="start" font-weight="normal" >Growatt NEXA 2000</text>
-<rect x="345.94666666666666" y="228" width="116.05333333333334" height="18" class="a" rx="2" />
-<text x="341.94666666666666" y="241.5" class="t" font-size="12" text-anchor="end" font-weight="normal" >2,048</text>
-<rect x="478" y="228" width="130.0" height="18" class="c" rx="2" />
-<text x="612.0" y="241.5" class="t" font-size="12" text-anchor="start" font-weight="normal" >2.600</text>
-<text x="20" y="275" class="t" font-size="13" text-anchor="start" font-weight="normal" >Anker Solarbank 3 E2700 Pro</text>
-<rect x="309.67999999999995" y="262" width="152.32000000000002" height="18" class="a" rx="2" />
-<text x="305.67999999999995" y="275.5" class="t" font-size="12" text-anchor="end" font-weight="normal" >2,688</text>
-<rect x="478" y="262" width="180.0" height="18" class="c" rx="2" />
-<text x="662.0" y="275.5" class="t" font-size="12" text-anchor="start" font-weight="normal" >3.600</text>
-<line x1="470" y1="82" x2="470" y2="290" class="ax" stroke-width="1" />
-<line x1="578.0" y1="82" x2="578.0" y2="292" class="bs" stroke-width="2" stroke-dasharray="5 4"/>
-<text x="578.0" y="306" class="b" font-size="11.5" text-anchor="middle" font-weight="bold" >2.000 Wp: Grenze für Steckersolargeräte</text>
-<text x="20" y="328" class="m" font-size="11.5" text-anchor="start" font-weight="normal" >Ein höherer PV-Eingang ist technisch möglich, für den vereinfachten Betrieb zählen aber höchstens 2.000 Wp Module.</text>
-<text x="20" y="344" class="m" font-size="11.5" text-anchor="start" font-weight="normal" >Quelle: Herstellerangaben, Stand 19.10.2026, Links in der Tabelle.</text>
+<rect x="415.37142857142857" y="126" width="46.628571428571426" height="18" class="a" rx="2" />
+<text x="411.37142857142857" y="139.5" class="t" font-size="12" text-anchor="end" font-weight="normal" >1,92</text>
+<rect x="478" y="126" width="30.0" height="18" class="c" rx="2" />
+<text x="524.0" y="139.5" class="t" font-size="12" text-anchor="start" font-weight="normal" >1.500</text>
+<text x="20" y="173" class="t" font-size="13" text-anchor="start" font-weight="normal" >Zendure SolarFlow 800 Plus</text>
+<rect x="415.37142857142857" y="160" width="46.628571428571426" height="18" class="a" rx="2" />
+<text x="411.37142857142857" y="173.5" class="t" font-size="12" text-anchor="end" font-weight="normal" >1,92</text>
+<rect x="478" y="160" width="30.0" height="18" class="c" rx="2" />
+<text x="524.0" y="173.5" class="t" font-size="12" text-anchor="start" font-weight="normal" >1.500</text>
+<text x="20" y="207" class="t" font-size="13" text-anchor="start" font-weight="normal" >EcoFlow STREAM Ultra</text>
+<rect x="415.37142857142857" y="194" width="46.628571428571426" height="18" class="a" rx="2" />
+<text x="411.37142857142857" y="207.5" class="t" font-size="12" text-anchor="end" font-weight="normal" >1,92</text>
+<rect x="478" y="194" width="40.0" height="18" class="c" rx="2" />
+<text x="522.0" y="207.5" class="t" font-size="12" text-anchor="start" font-weight="normal" >2.000</text>
+<text x="20" y="241" class="t" font-size="13" text-anchor="start" font-weight="normal" >Zendure SolarFlow 800 Pro</text>
+<rect x="415.37142857142857" y="228" width="46.628571428571426" height="18" class="a" rx="2" />
+<text x="411.37142857142857" y="241.5" class="t" font-size="12" text-anchor="end" font-weight="normal" >1,92</text>
+<rect x="478" y="228" width="52.8" height="18" class="c" rx="2" />
+<text x="534.8" y="241.5" class="t" font-size="12" text-anchor="start" font-weight="normal" >2.640</text>
+<text x="20" y="275" class="t" font-size="13" text-anchor="start" font-weight="normal" >Zendure SolarFlow 800 Pro 2</text>
+<rect x="415.37142857142857" y="262" width="46.628571428571426" height="18" class="a" rx="2" />
+<text x="411.37142857142857" y="275.5" class="t" font-size="12" text-anchor="end" font-weight="normal" >1,92</text>
+<rect x="478" y="262" width="52.8" height="18" class="c" rx="2" />
+<text x="534.8" y="275.5" class="t" font-size="12" text-anchor="start" font-weight="normal" >2.640</text>
+<text x="20" y="309" class="t" font-size="13" text-anchor="start" font-weight="normal" >Growatt NEXA 2000</text>
+<rect x="412.2628571428571" y="296" width="49.737142857142864" height="18" class="a" rx="2" />
+<text x="408.2628571428571" y="309.5" class="t" font-size="12" text-anchor="end" font-weight="normal" >2,048</text>
+<rect x="478" y="296" width="52.0" height="18" class="c" rx="2" />
+<text x="534.0" y="309.5" class="t" font-size="12" text-anchor="start" font-weight="normal" >2.600</text>
+<text x="20" y="343" class="t" font-size="13" text-anchor="start" font-weight="normal" >Zendure SolarFlow 2400 AC+</text>
+<rect x="403.7142857142857" y="330" width="58.285714285714285" height="18" class="a" rx="2" />
+<text x="399.7142857142857" y="343.5" class="t" font-size="12" text-anchor="end" font-weight="normal" >2,4</text>
+<text x="524.0" y="343.5" class="m" font-size="12" text-anchor="start" font-weight="normal" >kein PV-Eingang (AC-gekoppelt)</text>
+<text x="20" y="377" class="t" font-size="13" text-anchor="start" font-weight="normal" >Jackery SolarVault 3 Pro Max</text>
+<rect x="400.8" y="364" width="61.199999999999996" height="18" class="a" rx="2" />
+<text x="396.8" y="377.5" class="t" font-size="12" text-anchor="end" font-weight="normal" >2,52</text>
+<rect x="478" y="364" width="80.0" height="18" class="c" rx="2" />
+<text x="562.0" y="377.5" class="t" font-size="12" text-anchor="start" font-weight="normal" >4.000</text>
+<text x="20" y="411" class="t" font-size="13" text-anchor="start" font-weight="normal" >Anker Solarbank 3 E2700 Pro</text>
+<rect x="396.72" y="398" width="65.28" height="18" class="a" rx="2" />
+<text x="392.72" y="411.5" class="t" font-size="12" text-anchor="end" font-weight="normal" >2,688</text>
+<rect x="478" y="398" width="72.0" height="18" class="c" rx="2" />
+<text x="554.0" y="411.5" class="t" font-size="12" text-anchor="start" font-weight="normal" >3.600</text>
+<text x="20" y="445" class="t" font-size="13" text-anchor="start" font-weight="normal" >EcoFlow STREAM Ultra X</text>
+<rect x="368.74285714285713" y="432" width="93.25714285714285" height="18" class="a" rx="2" />
+<text x="364.74285714285713" y="445.5" class="t" font-size="12" text-anchor="end" font-weight="normal" >3,84</text>
+<rect x="478" y="432" width="40.0" height="18" class="c" rx="2" />
+<text x="522.0" y="445.5" class="t" font-size="12" text-anchor="start" font-weight="normal" >2.000</text>
+<text x="20" y="479" class="t" font-size="13" text-anchor="start" font-weight="normal" >Anker Solarbank 4 E5000 Pro</text>
+<rect x="339.9885714285714" y="466" width="122.01142857142858" height="18" class="a" rx="2" />
+<text x="335.9885714285714" y="479.5" class="t" font-size="12" text-anchor="end" font-weight="normal" >5,024</text>
+<rect x="478" y="466" width="100.0" height="18" class="c" rx="2" />
+<text x="582.0" y="479.5" class="t" font-size="12" text-anchor="start" font-weight="normal" >5.000</text>
+<text x="20" y="513" class="t" font-size="13" text-anchor="start" font-weight="normal" >Anker Solarbank Max</text>
+<rect x="292.0" y="500" width="170.0" height="18" class="a" rx="2" />
+<text x="288.0" y="513.5" class="t" font-size="12" text-anchor="end" font-weight="normal" >7</text>
+<rect x="478" y="500" width="200.0" height="18" class="c" rx="2" />
+<text x="682.0" y="513.5" class="t" font-size="12" text-anchor="start" font-weight="normal" >10.000</text>
+<line x1="470" y1="82" x2="470" y2="528" class="ax" stroke-width="1" />
+<line x1="518.0" y1="82" x2="518.0" y2="530" class="bs" stroke-width="2" stroke-dasharray="5 4"/>
+<text x="518.0" y="544" class="b" font-size="11.5" text-anchor="middle" font-weight="bold" >2.000 Wp: Grenze für Steckersolargeräte</text>
+<text x="20" y="566" class="m" font-size="11.5" text-anchor="start" font-weight="normal" >Ein höherer PV-Eingang ist technisch möglich, für den vereinfachten Betrieb zählen aber höchstens 2.000 Wp Module.</text>
+<text x="20" y="582" class="m" font-size="11.5" text-anchor="start" font-weight="normal" >Quelle: Herstellerangaben, Stand 22.10.2026, Links in der Tabelle.</text>
 </svg>

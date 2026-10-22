@@ -1,7 +1,7 @@
 {{- /* Breadcrumb: Startseite › Kategorie › Seite (+ BreadcrumbList JSON-LD) */ -}}
 {{- $items := slice (dict "t" "Startseite" "u" site.Home.RelPermalink "a" site.Home.Permalink) }}
 {{- $kat := "" }}
-{{- with .Params.kategorie }}{{ $kat = . }}{{ else }}{{ if and .IsPage (in (slice "powerstations" "balkonkraftwerke") .Section) }}{{ $kat = .Section }}{{ end }}{{ end }}
+{{- with .Params.kategorie }}{{ $kat = . }}{{ else }}{{ if and .IsPage (in (slice "powerstations" "balkonkraftwerke" "powerbanks" "hersteller") .Section) }}{{ $kat = .Section }}{{ end }}{{ end }}
 {{- with $kat }}{{ with site.GetPage (printf "/%s" .) }}{{ if ne .RelPermalink $.RelPermalink }}{{ $items = $items | append (dict "t" .Title "u" .RelPermalink "a" .Permalink) }}{{ end }}{{ end }}{{ end }}
 {{- $items = $items | append (dict "t" .Title "u" "" "a" .Permalink) }}
 <nav class="breadcrumb" aria-label="Brotkrümelnavigation"><ol>
