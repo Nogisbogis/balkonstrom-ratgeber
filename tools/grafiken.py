@@ -490,6 +490,39 @@ def ausrichtung_tagesprofil(name="ausrichtung-tagesprofil-juni.svg"):
         "an und erreicht gegen 15 Uhr rund 395 Watt, um 19 Uhr noch rund 220 Watt. Senkrecht nach Süden bleibt die Leistung im Sommer "
         "unter 280 Watt. Ab 16 Uhr liefert West 41 Prozent, Süd 24 und Ost 13 Prozent des Tagesertrags.", b)
 
+# ---------- Kühlschrank an der Powerstation: rechnerische Laufzeit ----------
+# Rechnung wie im Artikel powerstation-kuehlschrank-laufzeit und im Laufzeitrechner: nutzbar = Nennkapazität × 85 %,
+# Kühlschrank = Jahresverbrauch laut EU-Label / 8.760 h (Mittelwert), plus 15 W angenommener Eigenverbrauch des Wechselrichters.
+KS_LABEL = [100, 200, 300]
+KS_STATION = [("1-kWh-Klasse (1.024 Wh)", "a", 1024), ("2-kWh-Klasse (2.048 Wh)", "c", 2048)]
+KS_ETA, KS_EV = 0.85, 15
+def ks_stunden(wh, kwh, ev=KS_EV): return wh * KS_ETA / (kwh * 1000 / 8760 + ev)
+def kuehlschrank_laufzeit(name="kuehlschrank-laufzeit.svg"):
+    W, H, top, bot = 760, 380, 96, 300
+    x0, x1, maxv = 64, 740, 72
+    sy = lambda v: bot - (bot - top) * v / maxv
+    gw = (x1 - x0) / len(KS_LABEL); bw = 88
+    b = [T(20, 30, "So lange hält ein Kühlschrank an der Powerstation (Rechnung)", size=18, weight="bold"),
+         T(20, 52, "Stunden je Ladung · 85 % nutzbar · 15 W Eigenverbrauch der Station · Verbrauch laut EU-Label", "m", 12.5)]
+    lx = 20
+    for lab, cls, _ in KS_STATION:
+        b.append(R(lx, 66, 12, 12, cls, 2)); b.append(T(lx + 18, 77, lab, "t", 12.5)); lx += 40 + 7.0 * len(lab) + 18
+    for v in range(0, maxv + 1, 12):
+        b.append(L(x0, sy(v), x1, sy(v), "g")); b.append(T(x0 - 8, sy(v) + 4, de(v) + " h", "m", 11, "end"))
+    for i, k in enumerate(KS_LABEL):
+        gx = x0 + i * gw + (gw - 2 * bw - 8) / 2
+        for j, (lab, cls, wh) in enumerate(KS_STATION):
+            h = ks_stunden(wh, k); x = gx + j * (bw + 8)
+            b.append(R(round(x, 1), round(sy(h), 1), bw, round(bot - sy(h), 1), cls, 2))
+            b.append(T(round(x + bw / 2, 1), round(sy(h) - 6, 1), "rund " + de(h) + " h", "t", 12, "middle", "bold"))
+        b.append(T(x0 + i * gw + gw / 2, bot + 18, f"Kühlschrank {de(k)} kWh/Jahr", "t", 12.5, "middle"))
+        b.append(T(x0 + i * gw + gw / 2, bot + 34, f"im Mittel {de(k * 1000 / 8760)} W, {de(k * 1000 / 365)} Wh am Tag", "m", 11, "middle"))
+    b.append(L(x0, bot, x1, bot, "ax", 1))
+    b.append(T(20, bot + 60, "Eigene Rechnung, keine Messung. Verbrauchswerte als Beispiele nach Verbraucherzentrale; dein Gerät kann abweichen.", "m", 11.5))
+    svg(name, W, H, "Rechnerische Laufzeit eines Kühlschranks an einer Powerstation",
+        "Säulendiagramm, eigene Rechnung mit 85 Prozent nutzbarer Kapazität und 15 Watt Eigenverbrauch. " +
+        " ".join(f"Kühlschrank mit {k} kWh im Jahr: 1-kWh-Klasse rund {de(ks_stunden(1024, k))} Stunden, 2-kWh-Klasse rund {de(ks_stunden(2048, k))} Stunden." for k in KS_LABEL), b)
+
 # ---------- Favicon ----------
 def favicon():
     s = ('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="8" fill="#111111"/>'
@@ -500,7 +533,7 @@ def favicon():
 
 if __name__ == "__main__":
     ps_kapazitaet_gewicht(); ps_dauerleistung(); ps_laufzeit()
-    winter_ertrag(); ausrichtung_tagesprofil()
+    winter_ertrag(); ausrichtung_tagesprofil(); kuehlschrank_laufzeit()
     ps_kapazitaet_gewicht("ps-vergleich-kapazitaet-gewicht.svg", ps_alle, 4400, 55, "20.10.2026")
     speicher_schema(); speicher_tagesprofil(); speicher_rechnung()
     anmelden_ablauf(); anmelden_stecker(); anmelden_mastr()

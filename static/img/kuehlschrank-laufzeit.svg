@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 380" width="760" height="380" role="img" aria-labelledby="t d" lang="de">
+<title id="t">Rechnerische Laufzeit eines Kühlschranks an einer Powerstation</title>
+<desc id="d">Säulendiagramm, eigene Rechnung mit 85 Prozent nutzbarer Kapazität und 15 Watt Eigenverbrauch. Kühlschrank mit 100 kWh im Jahr: 1-kWh-Klasse rund 33 Stunden, 2-kWh-Klasse rund 66 Stunden. Kühlschrank mit 200 kWh im Jahr: 1-kWh-Klasse rund 23 Stunden, 2-kWh-Klasse rund 46 Stunden. Kühlschrank mit 300 kWh im Jahr: 1-kWh-Klasse rund 18 Stunden, 2-kWh-Klasse rund 35 Stunden.</desc>
+<style>
+.bg{fill:#ffffff}.t{fill:#111111}.m{fill:#55595e}.g{stroke:#e2e2df}.ax{stroke:#111111}
+.a{fill:#0a6b3d}.as{stroke:#0a6b3d}.b{fill:#9a4a00}.bs{stroke:#9a4a00}.c{fill:#1f4f8f}.cs{stroke:#1f4f8f}
+.box{fill:#f1eee6;stroke:#111111}.boxa{fill:#ffffff;stroke:#0a6b3d}.boxb{fill:#ffffff;stroke:#9a4a00}
+.ar{fill:#111111}.ars{stroke:#111111}.al{fill:#0a6b3d;fill-opacity:.14}.bl{fill:#9a4a00;fill-opacity:.14}
+text{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+@media (prefers-color-scheme:dark){
+.bg{fill:#0f1f1a}.t{fill:#eef2ee}.m{fill:#b5c2bb}.g{stroke:#2a4a40}.ax{stroke:#eef2ee}
+.a{fill:#5fd69a}.as{stroke:#5fd69a}.b{fill:#f0b45a}.bs{stroke:#f0b45a}.c{fill:#8db8f0}.cs{stroke:#8db8f0}
+.box{fill:#16302a;stroke:#eef2ee}.boxa{fill:#0f1f1a;stroke:#5fd69a}.boxb{fill:#0f1f1a;stroke:#f0b45a}
+.ar{fill:#eef2ee}.ars{stroke:#eef2ee}.al{fill:#5fd69a;fill-opacity:.18}.bl{fill:#f0b45a;fill-opacity:.18}}
+</style>
+<rect class="bg" width="760" height="380" rx="8"/>
+<text x="20" y="30" class="t" font-size="18" text-anchor="start" font-weight="bold" >So lange hält ein Kühlschrank an der Powerstation (Rechnung)</text>
+<text x="20" y="52" class="m" font-size="12.5" text-anchor="start" font-weight="normal" >Stunden je Ladung · 85 % nutzbar · 15 W Eigenverbrauch der Station · Verbrauch laut EU-Label</text>
+<rect x="20" y="66" width="12" height="12" class="a" rx="2" />
+<text x="38" y="77" class="t" font-size="12.5" text-anchor="start" font-weight="normal" >1-kWh-Klasse (1.024 Wh)</text>
+<rect x="239.0" y="66" width="12" height="12" class="c" rx="2" />
+<text x="257.0" y="77" class="t" font-size="12.5" text-anchor="start" font-weight="normal" >2-kWh-Klasse (2.048 Wh)</text>
+<line x1="64" y1="300.0" x2="740" y2="300.0" class="g" stroke-width="1" />
+<text x="56" y="304.0" class="m" font-size="11" text-anchor="end" font-weight="normal" >0 h</text>
+<line x1="64" y1="266.0" x2="740" y2="266.0" class="g" stroke-width="1" />
+<text x="56" y="270.0" class="m" font-size="11" text-anchor="end" font-weight="normal" >12 h</text>
+<line x1="64" y1="232.0" x2="740" y2="232.0" class="g" stroke-width="1" />
+<text x="56" y="236.0" class="m" font-size="11" text-anchor="end" font-weight="normal" >24 h</text>
+<line x1="64" y1="198.0" x2="740" y2="198.0" class="g" stroke-width="1" />
+<text x="56" y="202.0" class="m" font-size="11" text-anchor="end" font-weight="normal" >36 h</text>
+<line x1="64" y1="164.0" x2="740" y2="164.0" class="g" stroke-width="1" />
+<text x="56" y="168.0" class="m" font-size="11" text-anchor="end" font-weight="normal" >48 h</text>
+<line x1="64" y1="130.0" x2="740" y2="130.0" class="g" stroke-width="1" />
+<text x="56" y="134.0" class="m" font-size="11" text-anchor="end" font-weight="normal" >60 h</text>
+<line x1="64" y1="96.0" x2="740" y2="96.0" class="g" stroke-width="1" />
+<text x="56" y="100.0" class="m" font-size="11" text-anchor="end" font-weight="normal" >72 h</text>
+<rect x="84.7" y="206.6" width="88" height="93.4" class="a" rx="2" />
+<text x="128.7" y="200.6" class="t" font-size="12" text-anchor="middle" font-weight="bold" >rund 33 h</text>
+<rect x="180.7" y="113.3" width="88" height="186.7" class="c" rx="2" />
+<text x="224.7" y="107.3" class="t" font-size="12" text-anchor="middle" font-weight="bold" >rund 66 h</text>
+<text x="176.66666666666669" y="318" class="t" font-size="12.5" text-anchor="middle" font-weight="normal" >Kühlschrank 100 kWh/Jahr</text>
+<text x="176.66666666666669" y="334" class="m" font-size="11" text-anchor="middle" font-weight="normal" >im Mittel 11 W, 274 Wh am Tag</text>
+<rect x="310.0" y="234.8" width="88" height="65.2" class="a" rx="2" />
+<text x="354.0" y="228.8" class="t" font-size="12" text-anchor="middle" font-weight="bold" >rund 23 h</text>
+<rect x="406.0" y="169.6" width="88" height="130.4" class="c" rx="2" />
+<text x="450.0" y="163.6" class="t" font-size="12" text-anchor="middle" font-weight="bold" >rund 46 h</text>
+<text x="402.00000000000006" y="318" class="t" font-size="12.5" text-anchor="middle" font-weight="normal" >Kühlschrank 200 kWh/Jahr</text>
+<text x="402.00000000000006" y="334" class="m" font-size="11" text-anchor="middle" font-weight="normal" >im Mittel 23 W, 548 Wh am Tag</text>
+<rect x="535.3" y="249.9" width="88" height="50.1" class="a" rx="2" />
+<text x="579.3" y="243.9" class="t" font-size="12" text-anchor="middle" font-weight="bold" >rund 18 h</text>
+<rect x="631.3" y="199.8" width="88" height="100.2" class="c" rx="2" />
+<text x="675.3" y="193.8" class="t" font-size="12" text-anchor="middle" font-weight="bold" >rund 35 h</text>
+<text x="627.3333333333334" y="318" class="t" font-size="12.5" text-anchor="middle" font-weight="normal" >Kühlschrank 300 kWh/Jahr</text>
+<text x="627.3333333333334" y="334" class="m" font-size="11" text-anchor="middle" font-weight="normal" >im Mittel 34 W, 822 Wh am Tag</text>
+<line x1="64" y1="300" x2="740" y2="300" class="ax" stroke-width="1" />
+<text x="20" y="360" class="m" font-size="11.5" text-anchor="start" font-weight="normal" >Eigene Rechnung, keine Messung. Verbrauchswerte als Beispiele nach Verbraucherzentrale; dein Gerät kann abweichen.</text>
+</svg>
