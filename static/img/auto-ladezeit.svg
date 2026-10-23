@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 426" width="760" height="426" role="img" aria-labelledby="t d" lang="de">
+<title id="t">Ladezeit einer Powerstation im Auto je nach Ladeweg</title>
+<desc id="d">Balkendiagramm. Anker C2000 Gen 2 (2.048 Wh), an der 12-V-Buchse, 100 W: Herstellerangabe 23 h. EcoFlow DELTA 3 Plus (1.024 Wh), an der 12-V-Buchse, max. 12 V × 8 A ≈ 96 W: eigene Rechnung, mindestens 10 h 40 min. DJI Power 1000 Mini (1.008 Wh), an der 12-V-Buchse, bis 120 W: eigene Rechnung, mindestens 8 h 24 min. DJI Power 1000 Mini (1.008 Wh), Kabel an der Starterbatterie, bis 400 W: eigene Rechnung, mindestens 2 h 31 min. Anker C2000 Gen 2 (2.048 Wh), Lichtmaschinenlader, 800 W: Herstellerangabe 2 h 36 min. EcoFlow DELTA 3 Plus (1.024 Wh), Batterieladegerät 800 W: Herstellerangabe 1 h 18 min.</desc>
+<style>
+.bg{fill:#ffffff}.t{fill:#111111}.m{fill:#55595e}.g{stroke:#e2e2df}.ax{stroke:#111111}
+.a{fill:#0a6b3d}.as{stroke:#0a6b3d}.b{fill:#9a4a00}.bs{stroke:#9a4a00}.c{fill:#1f4f8f}.cs{stroke:#1f4f8f}
+.box{fill:#f1eee6;stroke:#111111}.boxa{fill:#ffffff;stroke:#0a6b3d}.boxb{fill:#ffffff;stroke:#9a4a00}
+.ar{fill:#111111}.ars{stroke:#111111}.al{fill:#0a6b3d;fill-opacity:.14}.bl{fill:#9a4a00;fill-opacity:.14}
+text{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+@media (prefers-color-scheme:dark){
+.bg{fill:#0f1f1a}.t{fill:#eef2ee}.m{fill:#b5c2bb}.g{stroke:#2a4a40}.ax{stroke:#eef2ee}
+.a{fill:#5fd69a}.as{stroke:#5fd69a}.b{fill:#f0b45a}.bs{stroke:#f0b45a}.c{fill:#8db8f0}.cs{stroke:#8db8f0}
+.box{fill:#16302a;stroke:#eef2ee}.boxa{fill:#0f1f1a;stroke:#5fd69a}.boxb{fill:#0f1f1a;stroke:#f0b45a}
+.ar{fill:#eef2ee}.ars{stroke:#eef2ee}.al{fill:#5fd69a;fill-opacity:.18}.bl{fill:#f0b45a;fill-opacity:.18}}
+</style>
+<rect class="bg" width="760" height="426" rx="8"/>
+<text x="20" y="30" class="t" font-size="18" text-anchor="start" font-weight="bold" >Powerstation im Auto laden: Stunden von leer bis voll</text>
+<text x="20" y="52" class="m" font-size="12.5" text-anchor="start" font-weight="normal" >Grün: Herstellerangabe · Orange: eigene Rechnung Kapazität ÷ Eingangsleistung, ohne Verluste (real länger)</text>
+<line x1="330.0" y1="82" x2="330.0" y2="366" class="g" stroke-width="1" />
+<text x="330.0" y="76" class="m" font-size="11" text-anchor="middle" font-weight="normal" >0 h</text>
+<line x1="422.5" y1="82" x2="422.5" y2="366" class="g" stroke-width="1" />
+<text x="422.5" y="76" class="m" font-size="11" text-anchor="middle" font-weight="normal" >6 h</text>
+<line x1="515.0" y1="82" x2="515.0" y2="366" class="g" stroke-width="1" />
+<text x="515.0" y="76" class="m" font-size="11" text-anchor="middle" font-weight="normal" >12 h</text>
+<line x1="607.5" y1="82" x2="607.5" y2="366" class="g" stroke-width="1" />
+<text x="607.5" y="76" class="m" font-size="11" text-anchor="middle" font-weight="normal" >18 h</text>
+<line x1="700.0" y1="82" x2="700.0" y2="366" class="g" stroke-width="1" />
+<text x="700.0" y="76" class="m" font-size="11" text-anchor="middle" font-weight="normal" >24 h</text>
+<text x="20" y="106" class="t" font-size="12.5" text-anchor="start" font-weight="bold" >Anker C2000 Gen 2 (2.048 Wh)</text>
+<text x="20" y="123" class="m" font-size="11.5" text-anchor="start" font-weight="normal" >an der 12-V-Buchse, 100 W</text>
+<rect x="330" y="96" width="354.6" height="24" class="a" rx="2" />
+<text x="692.6" y="113" class="t" font-size="12" text-anchor="start" font-weight="bold" >23 h</text>
+<text x="20" y="152" class="t" font-size="12.5" text-anchor="start" font-weight="bold" >EcoFlow DELTA 3 Plus (1.024 Wh)</text>
+<text x="20" y="169" class="m" font-size="11.5" text-anchor="start" font-weight="normal" >an der 12-V-Buchse, max. 12 V × 8 A ≈ 96 W</text>
+<rect x="330" y="142" width="164.4" height="24" class="b" rx="2" />
+<text x="502.4" y="159" class="t" font-size="12" text-anchor="start" font-weight="bold" >mind. 10 h 40 min</text>
+<text x="20" y="198" class="t" font-size="12.5" text-anchor="start" font-weight="bold" >DJI Power 1000 Mini (1.008 Wh)</text>
+<text x="20" y="215" class="m" font-size="11.5" text-anchor="start" font-weight="normal" >an der 12-V-Buchse, bis 120 W</text>
+<rect x="330" y="188" width="129.5" height="24" class="b" rx="2" />
+<text x="467.5" y="205" class="t" font-size="12" text-anchor="start" font-weight="bold" >mind. 8 h 24 min</text>
+<text x="20" y="244" class="t" font-size="12.5" text-anchor="start" font-weight="bold" >DJI Power 1000 Mini (1.008 Wh)</text>
+<text x="20" y="261" class="m" font-size="11.5" text-anchor="start" font-weight="normal" >Kabel an der Starterbatterie, bis 400 W</text>
+<rect x="330" y="234" width="38.9" height="24" class="b" rx="2" />
+<text x="376.9" y="251" class="t" font-size="12" text-anchor="start" font-weight="bold" >mind. 2 h 31 min</text>
+<text x="20" y="290" class="t" font-size="12.5" text-anchor="start" font-weight="bold" >Anker C2000 Gen 2 (2.048 Wh)</text>
+<text x="20" y="307" class="m" font-size="11.5" text-anchor="start" font-weight="normal" >Lichtmaschinenlader, 800 W</text>
+<rect x="330" y="280" width="40.1" height="24" class="a" rx="2" />
+<text x="378.1" y="297" class="t" font-size="12" text-anchor="start" font-weight="bold" >2 h 36 min</text>
+<text x="20" y="336" class="t" font-size="12.5" text-anchor="start" font-weight="bold" >EcoFlow DELTA 3 Plus (1.024 Wh)</text>
+<text x="20" y="353" class="m" font-size="11.5" text-anchor="start" font-weight="normal" >Batterieladegerät 800 W</text>
+<rect x="330" y="326" width="20.0" height="24" class="a" rx="2" />
+<text x="358.0" y="343" class="t" font-size="12" text-anchor="start" font-weight="bold" >1 h 18 min</text>
+<text x="20" y="404" class="m" font-size="11.5" text-anchor="start" font-weight="normal" >Herstellerangaben: Anker (interne Labortests), EcoFlow. DJI nennt nur die Leistung, die Zeiten sind gerechnet. Keine eigene Messung.</text>
+</svg>

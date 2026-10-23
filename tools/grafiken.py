@@ -531,6 +531,40 @@ def kuehlschrank_laufzeit(name="kuehlschrank-laufzeit.svg"):
         "Säulendiagramm, eigene Rechnung mit 85 Prozent nutzbarer Kapazität und 15 Watt Eigenverbrauch. " +
         " ".join(f"Kühlschrank mit {k} kWh im Jahr: 1-kWh-Klasse rund {de(ks_stunden(1024, k))} Stunden, 2-kWh-Klasse rund {de(ks_stunden(2048, k))} Stunden." for k in KS_LABEL), b)
 
+# ---------- Powerstation im Auto laden: Ladezeit je Ladeweg ----------
+# Werte wie im Artikel powerstation-im-auto-laden. "h" = Herstellerangabe, "r" = eigene Rechnung Kapazität ÷ Eingangsleistung (ohne Verluste, also Untergrenze).
+AUTO_LADEN = [
+    ("Anker C2000 Gen 2 (2.048 Wh)", "an der 12-V-Buchse, 100 W", 23.0, "h"),
+    ("EcoFlow DELTA 3 Plus (1.024 Wh)", "an der 12-V-Buchse, max. 12 V × 8 A ≈ 96 W", 1024 / 96, "r"),
+    ("DJI Power 1000 Mini (1.008 Wh)", "an der 12-V-Buchse, bis 120 W", 1008 / 120, "r"),
+    ("DJI Power 1000 Mini (1.008 Wh)", "Kabel an der Starterbatterie, bis 400 W", 1008 / 400, "r"),
+    ("Anker C2000 Gen 2 (2.048 Wh)", "Lichtmaschinenlader, 800 W", 2 + 36 / 60, "h"),
+    ("EcoFlow DELTA 3 Plus (1.024 Wh)", "Batterieladegerät 800 W", 1.3, "h"),
+]
+def auto_ladezeit(name="auto-ladezeit.svg"):
+    W, rowh, top = 760, 46, 96
+    H = top + rowh * len(AUTO_LADEN) + 54
+    x0, x1, maxv = 330, 700, 24
+    sx = lambda v: x0 + (x1 - x0) * v / maxv
+    b = [T(20, 30, "Powerstation im Auto laden: Stunden von leer bis voll", size=18, weight="bold"),
+         T(20, 52, "Grün: Herstellerangabe · Orange: eigene Rechnung Kapazität ÷ Eingangsleistung, ohne Verluste (real länger)", "m", 12.5)]
+    for v in range(0, maxv + 1, 6):
+        b.append(L(sx(v), top - 14, sx(v), top + rowh * len(AUTO_LADEN) - 6, "g")); b.append(T(sx(v), top - 20, de(v) + " h", "m", 11, "middle"))
+    def hm(v):
+        h = int(v); m = round((v - h) * 60)
+        if m == 60: h, m = h + 1, 0
+        return f"{h} h {m:02d} min" if m else f"{h} h"
+    for i, (mod, weg, v, q) in enumerate(AUTO_LADEN):
+        y = top + i * rowh
+        b.append(T(20, y + 10, mod, "t", 12.5, weight="bold")); b.append(T(20, y + 27, weg, "m", 11.5))
+        cls = "a" if q == "h" else "b"
+        b.append(R(x0, y, round(sx(v) - x0, 1), 24, cls, 2))
+        lab = ("" if q == "h" else "mind. ") + hm(v)
+        b.append(T(round(sx(v) + 8, 1), y + 17, lab, "t", 12, weight="bold"))
+    b.append(T(20, H - 22, "Herstellerangaben: Anker (interne Labortests), EcoFlow. DJI nennt nur die Leistung, die Zeiten sind gerechnet. Keine eigene Messung.", "m", 11.5))
+    svg(name, W, H, "Ladezeit einer Powerstation im Auto je nach Ladeweg",
+        "Balkendiagramm. " + " ".join(f"{mod}, {weg}: {'Herstellerangabe' if q == 'h' else 'eigene Rechnung, mindestens'} {hm(v)}." for mod, weg, v, q in AUTO_LADEN), b)
+
 # ---------- Favicon ----------
 def favicon():
     s = ('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="8" fill="#111111"/>'
@@ -541,7 +575,7 @@ def favicon():
 
 if __name__ == "__main__":
     ps_kapazitaet_gewicht(); ps_dauerleistung(); ps_laufzeit()
-    winter_ertrag(); ausrichtung_tagesprofil(); kuehlschrank_laufzeit()
+    winter_ertrag(); ausrichtung_tagesprofil(); kuehlschrank_laufzeit(); auto_ladezeit()
     ps_kapazitaet_gewicht("ps-vergleich-kapazitaet-gewicht.svg", ps_alle, 4400, 55, "22.10.2026")
     speicher_schema(); speicher_tagesprofil(); speicher_rechnung()
     anmelden_ablauf(); anmelden_stecker(); anmelden_mastr()
