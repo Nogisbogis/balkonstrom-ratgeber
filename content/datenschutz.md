@@ -86,4 +86,4 @@ Ich setze keine automatisierte Entscheidungsfindung oder Profilbildung im Sinne 
 
 ## 10. Aktualität
 
-Stand: 20. Oktober 2026. Ich passe diese Datenschutzerklärung an, sobald sich die Website oder die Rechtslage ändert.
+Stand: 23. Oktober 2026. Ich passe diese Datenschutzerklärung an, sobald sich die Website oder die Rechtslage ändert.
