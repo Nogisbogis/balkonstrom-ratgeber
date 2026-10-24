@@ -21,9 +21,15 @@ wegfallen). Ein Protokoll jedes Laufs landet außerhalb des Repos (~/.local/stat
 Der Partner-Tag wird weder verwendet noch ausgegeben.
 
 Aufruf:  python tools/verfuegbarkeit.py [--nur ASIN ...] [--trocken]
-Exit-Code: 0 = ok (Datei ggf. geändert), 3 = zu viele „unklar“ (nichts geändert).
+Exit-Code: 0 = ok (Datei ggf. geändert), 3 = zu viele „unklar“ (nichts geändert),
+           8 = Abbruch „amazon blockt“ (die ersten ASINs alle unklar bzw. wiederholt Sperr-/Rumpfseiten;
+               nichts geändert).
+
+Robustheit: jede ASIN hat ein hartes Zeitbudget (ASIN_TIMEOUT, Standard 90 s, alle Versuche inkl.
+Websocket-Wartezeiten zusammen, abgesichert per SIGALRM); bei Überschreitung -> unklar („timeout“).
+Chrome läuft in einer eigenen Prozessgruppe und wird beim Beenden (auch bei SIGTERM) samt Kindprozessen beendet.
 """
-import argparse, datetime as dt, glob, json, os, random, re, shutil, socket, subprocess, sys, time, urllib.request
+import argparse, atexit, datetime as dt, glob, json, os, random, re, shutil, signal, socket, subprocess, sys, time, urllib.request
 sys.dont_write_bytecode = True
 import yaml, websocket
 
@@ -34,6 +40,18 @@ PROFIL = os.environ.get('AMZ_PROFIL', os.path.expanduser('~/.local/share/balkons
 PROFIL_VORLAGE = '/workspace/amzcheck/chromeprof'   # Profil mit Lieferort 10115 Berlin
 UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36'
 UNKLAR_GRENZE = 0.30
+ASIN_TIMEOUT = float(os.environ.get('VK_ASIN_TIMEOUT', 90))   # Sekunden je ASIN, alle Versuche zusammen
+BLOCK_ANFANG = int(os.environ.get('VK_BLOCK_ANFANG', 5))       # so viele unklar direkt am Anfang -> Abbruch
+BLOCK_SPERRSEITEN = int(os.environ.get('VK_BLOCK_SPERR', 3))   # so viele ASINs in Folge mit Sperr-/Rumpfseite -> Abbruch
+EXIT_BLOCKT = 8
+
+
+class ZeitLimit(Exception):
+    """Zeitbudget einer ASIN aufgebraucht."""
+
+
+def _alarm(signum, frame):
+    raise ZeitLimit('timeout')
 ASIN_RE = r'[A-Z0-9]{10}'
 
 
@@ -126,10 +144,13 @@ class Browser:
             try: os.remove(f)
             except OSError: pass
         s = socket.socket(); s.bind(('127.0.0.1', 0)); self.port = s.getsockname()[1]; s.close()
+        self.frist = None   # Zeitpunkt (time.time()), bis zu dem die aktuelle ASIN fertig sein muss
         self.p = subprocess.Popen(['google-chrome', '--headless=new', '--no-sandbox', '--disable-gpu',
                                    f'--remote-debugging-port={self.port}', '--user-data-dir=' + PROFIL,
                                    '--lang=de-DE', '--window-size=1366,900', 'about:blank'],
-                                  stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+                                  stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
+                                  start_new_session=True)   # eigene Prozessgruppe -> samt Renderern beendbar
+        atexit.register(self.zu)
         for _ in range(40):
             try:
                 tabs = json.load(urllib.request.urlopen(f'http://127.0.0.1:{self.port}/json', timeout=2)); break
@@ -151,10 +172,26 @@ class Browser:
                 and p.get('frameId') in (None, getattr(self, 'hauptframe', None))):
             self.status[p['response']['url']] = p['response']['status']
 
+    def _recv_timeout(self, wunsch=60):
+        """Websocket-Wartezeit, nie über das Zeitbudget der aktuellen ASIN hinaus."""
+        if self.frist is None:
+            return wunsch
+        rest = self.frist - time.time()
+        if rest <= 0:
+            raise ZeitLimit('timeout')
+        return max(0.05, min(wunsch, rest))
+
     def cmd(self, m, **pa):
         self.i += 1; self.ws.send(json.dumps({'id': self.i, 'method': m, 'params': pa}))
         while True:
-            r = json.loads(self.ws.recv())
+            # ohne Frist-Prüfung hier konnte ein Strom anderer Ereignisse die Schleife endlos am Leben halten
+            self.ws.settimeout(self._recv_timeout())
+            try:
+                r = json.loads(self.ws.recv())
+            except websocket.WebSocketTimeoutException:
+                if self.frist is not None and time.time() >= self.frist:
+                    raise ZeitLimit('timeout')
+                raise
             self._merke(r)
             if r.get('id') == self.i:
                 return r
@@ -172,10 +209,12 @@ class Browser:
         start = time.time()
         bereit_seit = None
         naechste = start + 1
+        if self.frist is not None:              # nie länger warten als das ASIN-Budget erlaubt
+            max_warte = min(max_warte, max(0, self.frist - start - 5))
         while time.time() - start < max_warte:
             rest = naechste - time.time()
             if rest > 0:                        # bis zur nächsten Prüfung Ereignisse abholen
-                self.ws.settimeout(rest)
+                self.ws.settimeout(self._recv_timeout(rest))
                 try:
                     r = json.loads(self.ws.recv())
                     self._merke(r)
@@ -183,7 +222,6 @@ class Browser:
                     pass
                 continue
             naechste = time.time() + 1
-            self.ws.settimeout(60)
             z = self.cmd('Runtime.evaluate', expression=BEREIT_JS, returnByValue=True)['result']['result'].get('value') or {}
             if z.get('fertig'):
                 bereit_seit = bereit_seit or time.time()
@@ -192,7 +230,6 @@ class Browser:
                     break
             else:
                 bereit_seit = None
-        self.ws.settimeout(60)
         v = self.cmd('Runtime.evaluate', expression=JS, returnByValue=True)['result']['result'].get('value') or {}
         v['http'] = list(self.status.values())
         v['wartezeit'] = round(time.time() - start, 1)
@@ -206,11 +243,20 @@ return [...document.querySelectorAll('#aod-pinned-offer, #aod-offer')].map(x=>((
         return self.cmd('Runtime.evaluate', expression=js, returnByValue=True, awaitPromise=True)['result']['result'].get('value') or []
 
     def zu(self):
+        """Beendet Chrome samt aller Kindprozesse (eigene Prozessgruppe). Mehrfach aufrufbar."""
         try: self.ws.close()
         except Exception: pass
-        self.p.terminate()
-        try: self.p.wait(10)
-        except Exception: self.p.kill()
+        try: pgid = os.getpgid(self.p.pid)
+        except Exception: pgid = None
+        if self.p.poll() is None:
+            self.p.terminate()
+            try: self.p.wait(10)
+            except Exception: self.p.kill()
+        if pgid:
+            try: os.killpg(pgid, signal.SIGKILL)   # verbliebene Renderer/Helfer
+            except Exception: pass
+        try: self.p.wait(5)
+        except Exception: pass
 
 
 # ---------------------------------------------------------------- Einstufung
@@ -253,6 +299,11 @@ def einstufen(asin, name, v):
     return 'nicht_verfuegbar', 'keine Kaufbox, kein Angebot (' + (v.get('avail', '') or '-')[:60] + ')'
 
 
+def sperrseite(st, warum):
+    """True, wenn ein unklar-Ergebnis nach Sperre aussieht (Captcha, Rumpfseite ohne #ppd, 403/429/503)."""
+    return st == 'unklar' and bool(re.match(r'Captcha|Amazon lieferte die Seite ohne Produktbereich|HTTP \[', warum))
+
+
 # ---------------------------------------------------------------- Hauptprogramm
 def main():
     ap = argparse.ArgumentParser()
@@ -267,38 +318,75 @@ def main():
     pruef = [x for x in asins if not a.nur or x in a.nur]
     print(f'{len(asins)} ASINs auf der Website, prüfe {len(pruef)} (je amazon.de/dp/<ASIN>, ohne Tag)', flush=True)
     ergebnis = {}
-    b = Browser()
+    blockt = ''
+    # SIGTERM (z. B. von `timeout` im Wrapper) -> normales Beenden, damit finally/atexit Chrome schließen
+    signal.signal(signal.SIGTERM, lambda s, f: sys.exit(143))
+    signal.signal(signal.SIGALRM, _alarm)
+    b = None
     try:
+        b = Browser()
+        sperr_folge = 0
         for n, asin in enumerate(pruef):
             name = asins[asin]['name']
             st, warum, v = 'unklar', '', {}
-            for versuch in range(3):
-                try:
-                    v = b.lade(f'https://www.amazon.de/dp/{asin}')
-                    if v.get('title') and not (v.get('cart') or v.get('buynow')) and v.get('choices'):
-                        v['angebote'] = b.angebote()      # Zustände der Angebote (Neu/Gebraucht)
-                    st, warum = einstufen(asin, name, v)
-                except Exception as e:
-                    st, warum = 'unklar', f'Fehler: {type(e).__name__}: {e}'[:120]
+            frist = time.time() + ASIN_TIMEOUT
+            b.frist = frist
+            # harte Obergrenze auch für blockierende Aufrufe außerhalb des Websockets (+10 s Puffer)
+            signal.setitimer(signal.ITIMER_REAL, ASIN_TIMEOUT + 10)
+            try:
+                for versuch in range(3):
                     try:
-                        b.zu()
-                    except Exception:
-                        pass
-                    b = Browser()
-                if st != 'unklar':
-                    break
-                time.sleep(20 * (versuch + 1) + random.uniform(0, 10))
+                        v = b.lade(f'https://www.amazon.de/dp/{asin}')
+                        if v.get('title') and not (v.get('cart') or v.get('buynow')) and v.get('choices'):
+                            v['angebote'] = b.angebote()      # Zustände der Angebote (Neu/Gebraucht)
+                        st, warum = einstufen(asin, name, v)
+                    except ZeitLimit:
+                        raise
+                    except Exception as e:
+                        st, warum = 'unklar', f'Fehler: {type(e).__name__}: {e}'[:120]
+                        b.zu(); b = Browser(); b.frist = frist
+                    if st != 'unklar':
+                        break
+                    pause = 20 * (versuch + 1) + random.uniform(0, 10)
+                    if versuch == 2 or frist - time.time() < pause + 15:
+                        break                                 # Budget reicht für keinen sinnvollen Versuch mehr
+                    time.sleep(pause)
+            except ZeitLimit:
+                st, warum = 'unklar', f'timeout (> {ASIN_TIMEOUT:.0f} s)'
+                signal.setitimer(signal.ITIMER_REAL, 0)
+                b.frist = None
+                b.zu(); b = Browser()                         # Seite/Browser hängt evtl. -> frisch starten
+            finally:
+                signal.setitimer(signal.ITIMER_REAL, 0)
+                if b is not None:
+                    b.frist = None
             ergebnis[asin] = {'status': st, 'grund': warum, 'titel': (v.get('title') or '')[:120],
                               'ort': v.get('ort', ''), 'name': name}
             print(f'[{n + 1}/{len(pruef)}] {asin} {st:16} {name or "-"} | {warum}', flush=True)
+            # Früher Abbruch: Amazon blockt -> keine halbe Stunde weiterprobieren
+            sperr_folge = sperr_folge + 1 if sperrseite(st, warum) else 0
+            if (n + 1 == BLOCK_ANFANG and len(pruef) > BLOCK_ANFANG
+                    and all(e['status'] == 'unklar' for e in ergebnis.values())):
+                blockt = f'die ersten {BLOCK_ANFANG} ASINs alle „unklar“'
+            elif sperr_folge >= BLOCK_SPERRSEITEN and len(pruef) > BLOCK_SPERRSEITEN:
+                blockt = f'{sperr_folge} ASINs in Folge mit Captcha/Sperr-/Rumpfseite'
+            if blockt:
+                break
             if n + 1 < len(pruef):
                 time.sleep(random.uniform(6, 11))
     finally:
-        b.zu()
+        signal.setitimer(signal.ITIMER_REAL, 0)
+        if b is not None:
+            b.zu()
 
-    os.makedirs(STATE, exist_ok=True)
-    json.dump({'zeit': dt.datetime.now().isoformat(timespec='seconds'), 'ergebnis': ergebnis},
+    os.makedirs(STATE, exist_ok=True)   # Protokoll liegt außerhalb des Repos
+    json.dump({'zeit': dt.datetime.now().isoformat(timespec='seconds'), 'ergebnis': ergebnis,
+               'abbruch': blockt or None},
               open(os.path.join(STATE, f'verfuegbarkeit-{heute}.json'), 'w'), ensure_ascii=False, indent=1)
+
+    if blockt:
+        print(f'PROBLEM: amazon blockt ({blockt}) – Lauf abgebrochen, es wird NICHTS geändert.', flush=True)
+        return EXIT_BLOCKT
 
     unklar = [x for x in ergebnis if ergebnis[x]['status'] == 'unklar']
     if pruef and len(unklar) / len(pruef) > UNKLAR_GRENZE:

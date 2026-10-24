@@ -2,6 +2,7 @@
 # Täglicher Verfügbarkeits-Lauf: prüft alle Amazon-ASINs (tools/verfuegbarkeit.py), und nur wenn sich
 # data/verfuegbarkeit.yaml ändert: Hugo-Testbuild, Commit „Verfügbarkeit: …“, Push (= Deploy via Actions).
 # Zu viele „unklar“ (Captcha/Sperre): Problem melden, nichts ändern.
+# Amazon blockt (Prüfskript Exit 8) oder Gesamtzeit > VK_GESAMT (Standard 20 min): Problem melden, nichts ändern.
 # Aufruf: bash tools/verfuegbarkeit-lauf.sh
 set -uo pipefail
 cd "$(dirname "$0")/.."
@@ -21,16 +22,26 @@ if [ -n "$FEHLT" ]; then
 fi
 HUGO=${HUGO:-$HOME/.local/bin/hugo}
 LOG=$(mktemp)
-trap 'rm -f "$LOG"' EXIT
+PROFIL=${AMZ_PROFIL:-$HOME/.local/share/balkonstrom/amz-profil}
+# Beim Beenden (auch Abbruch/Timeout) keine Chrome-Reste mit dem Prüfprofil zurücklassen
+aufraeumen() { rm -f "$LOG"; pkill -KILL -f -- "--user-data-dir=$PROFIL" 2>/dev/null || true; }
+trap aufraeumen EXIT
+trap 'exit 130' INT TERM HUP
 
 if [ -n "$(git status --porcelain -- data/verfuegbarkeit.yaml)" ]; then
   echo "PROBLEM: data/verfuegbarkeit.yaml hat bereits uncommittete Änderungen – Lauf abgebrochen."; exit 2
 fi
 git pull -q --rebase --autostash origin main || { echo "PROBLEM: git pull fehlgeschlagen – Lauf abgebrochen."; exit 2; }
 
-"$PY" tools/verfuegbarkeit.py 2>&1 | tee "$LOG"
+timeout --kill-after=30 "${VK_GESAMT:-20m}" "$PY" tools/verfuegbarkeit.py "$@" 2>&1 | tee "$LOG"
 rc=${PIPESTATUS[0]}
-if [ "$rc" = 3 ]; then
+if [ "$rc" = 124 ] || [ "$rc" = 137 ]; then
+  git checkout -q -- data/verfuegbarkeit.yaml 2>/dev/null
+  echo; echo "PROBLEM: Gesamtzeit von ${VK_GESAMT:-20m} überschritten – Lauf abgebrochen, es wurde nichts geändert."; exit 124
+elif [ "$rc" = 8 ]; then
+  git checkout -q -- data/verfuegbarkeit.yaml 2>/dev/null
+  echo; echo "PROBLEM: amazon blockt (die ersten Prüfungen alle „unklar“/Sperrseiten) – Lauf abgebrochen, es wurde nichts geändert."; exit 8
+elif [ "$rc" = 3 ]; then
   echo; echo "PROBLEM: zu viele Prüfungen „unklar“ (Captcha/Sperre?) – es wurde nichts geändert."; exit 3
 elif [ "$rc" != 0 ]; then
   git checkout -q -- data/verfuegbarkeit.yaml 2>/dev/null
