@@ -12,7 +12,7 @@ Verantwortlich für die Datenverarbeitung auf dieser Website im Sinne der Datens
 Paul Klamt  
 Robert-Koch-Straße 2  
 20249 Hamburg  
-E-Mail: paul.klamt@klamt.com
+E-Mail: kontakt@balkonstrom-ratgeber.de
 
 ## 2. Allgemeines
 

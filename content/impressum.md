@@ -14,7 +14,7 @@ Deutschland
 
 ## Kontakt
 
-E-Mail: paul.klamt@klamt.com
+E-Mail: kontakt@balkonstrom-ratgeber.de
 
 ## Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV
 
