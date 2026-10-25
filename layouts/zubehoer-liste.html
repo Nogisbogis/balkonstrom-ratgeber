@@ -1,0 +1,18 @@
+{{ define "main" }}
+{{ partial "breadcrumb.html" . }}
+<h1>{{ .Title }}</h1>
+{{ partial "disclosure-box.html" . }}
+{{ with .Params.intro }}<p class="lead">{{ . }}</p>{{ end }}
+{{ .Content }}
+<ul class="zub-rubriken">
+{{- range .Params.rubriken }}
+  <li id="{{ .id }}">
+    <h2>{{ .titel }}</h2>
+    <p>{{ .text }}</p>
+    {{- with .artikel }}{{ with site.GetPage . }}<p><a class="textlink" href="{{ .RelPermalink }}">{{ .Title }}</a></p>{{ end }}{{ else }}<p class="zub-status">Ratgeber folgt.</p>{{ end }}
+  </li>
+{{- end }}
+</ul>
+{{ $posts := where (where site.RegularPages "Section" "posts") "Params.kategorie" "zubehoer" }}
+{{ with $posts }}<h2>Alle Zubehör-Ratgeber</h2><ul class="cards">{{ range .ByDate.Reverse }}{{ partial "card.html" . }}{{ end }}</ul>{{ end }}
+{{ end }}

@@ -1,0 +1,13 @@
+{{- /* {{< zubehoer modelle="Shelly Plug S Gen3|Tapo P110" >}}  – Karten aus data/zubehoer.yaml
+     Optional: hinweis="Modell=Text|Modell=Text" (ersetzt den Hinweis aus den Daten) */ -}}
+{{- $hinweise := dict }}
+{{- with .Get "hinweis" }}{{ range split . "|" }}{{ $kv := split . "=" }}{{ $hinweise = merge $hinweise (dict (index $kv 0) (index $kv 1)) }}{{ end }}{{ end }}
+<ul class="pcards">
+{{- range split (.Get "modelle") "|" }}
+  {{- $name := trim . " " }}
+  {{- $p := index (where hugo.Data.zubehoer "modell" $name) 0 }}
+  {{- if not $p }}{{ errorf "zubehoer: Modell %q nicht in data/zubehoer.yaml (%s)" $name $.Position }}{{ end }}
+  {{- if and $p.asin (not (or (getenv "HUGO_PARTNER_TAG") site.Params.partnerTag)) }}{{ warnf "zubehoer: kein Partner-Tag gesetzt (%s)" $.Position }}{{ end }}
+  {{- partial "zubehoerkarte.html" (dict "p" $p "hinweis" (index $hinweise $name)) }}
+{{- end }}
+</ul>

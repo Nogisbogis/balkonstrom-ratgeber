@@ -21,11 +21,12 @@
   {{- $k := $p.Params.kategorie }}
   {{- if eq $k "powerstations" }}{{ range sort hugo.Data.powerstations "kapazitaet_wh" }}{{ with site.GetPage (printf "/powerstations/%s" .slug) }}{{ $items = $items | append . }}{{ end }}{{ end }}
   {{- else if eq $k "balkonkraftwerke" }}{{ range sort hugo.Data.balkonkraftwerke "speicher_kwh" }}{{ with site.GetPage (printf "/balkonkraftwerke/%s" .slug) }}{{ $items = $items | append . }}{{ end }}{{ end }}
-  {{- else if eq $k "ratgeber" }}{{ range slice "powerstations" "balkonkraftwerke" "ratgeber" }}{{ range (where (where site.RegularPages "Section" "posts") "Params.kategorie" .).ByDate.Reverse }}{{ $items = $items | append . }}{{ end }}{{ end }}
+  {{- else if eq $k "ratgeber" }}{{ range slice "powerstations" "balkonkraftwerke" "zubehoer" "ratgeber" }}{{ range (where (where site.RegularPages "Section" "posts") "Params.kategorie" .).ByDate.Reverse }}{{ $items = $items | append . }}{{ end }}{{ end }}
   {{- end }}
 {{- else if eq $lay "powerbank-liste" }}{{ range sort hugo.Data.powerbanks "kapazitaet_mah" }}{{ with site.GetPage (printf "/powerbanks/%s" .slug) }}{{ $items = $items | append . }}{{ end }}{{ end }}
 {{- else if eq $lay "hersteller-liste" }}{{ range hugo.Data.hersteller }}{{ if .seite }}{{ with site.GetPage (printf "/hersteller/%s" .slug) }}{{ $items = $items | append . }}{{ end }}{{ end }}{{ end }}
 {{- else if eq $lay "hersteller" }}{{ with index (where hugo.Data.hersteller "slug" $p.Params.marke) 0 }}{{ $g := partial "hersteller-produkte.html" . }}{{ range $g.ps }}{{ $items = $items | append .pg }}{{ end }}{{ range $g.bkw }}{{ $items = $items | append .pg }}{{ end }}{{ range $g.pb }}{{ $items = $items | append .pg }}{{ end }}{{ end }}
+{{- else if eq $lay "zubehoer-liste" }}{{ range (where (where site.RegularPages "Section" "posts") "Params.kategorie" "zubehoer").ByDate.Reverse }}{{ $items = $items | append . }}{{ end }}
 {{- else if eq $lay "einsatz-liste" }}{{ range $p.Pages.ByWeight }}{{ $items = $items | append . }}{{ end }}
 {{- else if eq $lay "werkzeuge" }}{{ range slice "/powerstation-finder" "/laufzeitrechner" "/amortisationsrechner" "/powerstation-suche" }}{{ with site.GetPage . }}{{ $items = $items | append . }}{{ end }}{{ end }}
 {{- else if and (eq $p.Kind "section") (eq $p.Section "posts") }}{{ range $p.Pages.ByDate.Reverse }}{{ $items = $items | append . }}{{ end }}

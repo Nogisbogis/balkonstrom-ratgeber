@@ -61,8 +61,9 @@
     <nav class="main-nav" aria-label="Hauptnavigation">
       <a href="{{ "vergleich/" | relURL }}"{{ if eq $cur ("vergleich/" | relURL) }} aria-current="page"{{ end }}>Vergleich</a>
       <a href="{{ "werkzeuge/" | relURL }}"{{ if in $tools $cur }} aria-current="page"{{ end }}>Werkzeuge</a>
-      <a href="{{ "ratgeber/" | relURL }}"{{ if or (eq $cur ("ratgeber/" | relURL)) (eq .Section "posts") }} aria-current="page"{{ end }}>Ratgeber</a>
+      <a href="{{ "ratgeber/" | relURL }}"{{ if or (eq $cur ("ratgeber/" | relURL)) (and (eq .Section "posts") (ne .Params.kategorie "zubehoer")) }} aria-current="page"{{ end }}>Ratgeber</a>
       <a href="{{ "balkonkraftwerke/" | relURL }}"{{ if eq .Section "balkonkraftwerke" }} aria-current="page"{{ end }}>Balkonkraftwerke</a>
+      {{- with site.GetPage "/zubehoer" }}{{ if .RelPermalink }}<a href="{{ .RelPermalink }}"{{ if or (eq $.Section "zubehoer") (eq $.Params.kategorie "zubehoer") }} aria-current="page"{{ end }}>Zubehör</a>{{ end }}{{ end }}
       <a class="nav-dezent" href="{{ "hersteller/" | relURL }}"{{ if eq .Section "hersteller" }} aria-current="page"{{ end }}>Hersteller</a>
     </nav>
     <details class="m-menu">
@@ -70,8 +71,9 @@
       <nav aria-label="Hauptnavigation (mobil)">
       <a href="{{ "vergleich/" | relURL }}"{{ if eq $cur ("vergleich/" | relURL) }} aria-current="page"{{ end }}>Vergleich</a>
       <a href="{{ "werkzeuge/" | relURL }}"{{ if in $tools $cur }} aria-current="page"{{ end }}>Werkzeuge</a>
-      <a href="{{ "ratgeber/" | relURL }}"{{ if or (eq $cur ("ratgeber/" | relURL)) (eq .Section "posts") }} aria-current="page"{{ end }}>Ratgeber</a>
+      <a href="{{ "ratgeber/" | relURL }}"{{ if or (eq $cur ("ratgeber/" | relURL)) (and (eq .Section "posts") (ne .Params.kategorie "zubehoer")) }} aria-current="page"{{ end }}>Ratgeber</a>
       <a href="{{ "balkonkraftwerke/" | relURL }}"{{ if eq .Section "balkonkraftwerke" }} aria-current="page"{{ end }}>Balkonkraftwerke</a>
+      {{- with site.GetPage "/zubehoer" }}{{ if .RelPermalink }}<a href="{{ .RelPermalink }}"{{ if or (eq $.Section "zubehoer") (eq $.Params.kategorie "zubehoer") }} aria-current="page"{{ end }}>Zubehör</a>{{ end }}{{ end }}
       <a class="nav-dezent" href="{{ "hersteller/" | relURL }}"{{ if eq .Section "hersteller" }} aria-current="page"{{ end }}>Hersteller</a>
       <a href="{{ "suche/" | relURL }}"{{ if eq $cur ("suche/" | relURL) }} aria-current="page"{{ end }}>Suche</a>
       </nav>
