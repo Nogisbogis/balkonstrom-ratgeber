@@ -1,0 +1,36 @@
+{{- /* Strukturierte Daten (JSON-LD). Nur Typen ohne Bewertungs-/Preisangaben:
+     Article (Ratgeber, Produkt-, Hersteller- und Einsatzseiten), ItemList (Übersichten).
+     BreadcrumbList kommt aus breadcrumb.html, FAQPage aus faq.html / layouts/faq.html.
+     Kein Product/Offer/Review/AggregateRating – es gibt keine eigenen Tests oder Preise. */ -}}
+{{- $p := .page }}{{ $desc := .desc }}{{ $img := .img }}
+{{- $lay := $p.Layout }}
+{{- $home := site.Home.Permalink }}
+{{- $author := dict "@type" "Person" "@id" (printf "%s#person" $home) "name" site.Params.author "url" ("methodik/" | absURL) }}
+{{- $pub := dict "@type" "Organization" "name" site.Title "url" $home "logo" (dict "@type" "ImageObject" "url" ("favicon.svg" | absURL)) }}
+{{- /* Article */ -}}
+{{- $art := or (and $p.IsPage (eq $p.Section "posts")) (in (slice "produkt" "bkw-produkt" "powerbank" "hersteller" "einsatz") $lay) (eq $p.RelPermalink ("methodik/" | relURL)) }}
+{{- if $art }}
+{{- $ld := dict "@context" "https://schema.org" "@type" "Article" "headline" $p.Title "description" $desc "datePublished" ($p.Date.Format "2006-01-02") "dateModified" ($p.Lastmod.Format "2006-01-02") "inLanguage" "de-DE" "image" $img "mainEntityOfPage" $p.Permalink "author" $author "publisher" $pub "isPartOf" (dict "@type" "WebSite" "@id" (printf "%s#website" $home) "name" site.Title "url" $home) }}
+{{- with $p.Params.modell }}{{ $ld = merge $ld (dict "about" (dict "@type" "Thing" "name" .)) }}{{ end }}
+{{- if eq $lay "hersteller" }}{{ with index (where hugo.Data.hersteller "slug" $p.Params.marke) 0 }}{{ $ld = merge $ld (dict "about" (dict "@type" "Organization" "name" .name)) }}{{ end }}{{ end }}
+<script type="application/ld+json">{{ $ld | jsonify | safeJS }}</script>
+{{- end }}
+{{- /* ItemList: verlinkte Seiten der Übersicht in Anzeigereihenfolge */ -}}
+{{- $items := slice }}
+{{- if eq $lay "kategorie" }}
+  {{- $k := $p.Params.kategorie }}
+  {{- if eq $k "powerstations" }}{{ range sort hugo.Data.powerstations "kapazitaet_wh" }}{{ with site.GetPage (printf "/powerstations/%s" .slug) }}{{ $items = $items | append . }}{{ end }}{{ end }}
+  {{- else if eq $k "balkonkraftwerke" }}{{ range sort hugo.Data.balkonkraftwerke "speicher_kwh" }}{{ with site.GetPage (printf "/balkonkraftwerke/%s" .slug) }}{{ $items = $items | append . }}{{ end }}{{ end }}
+  {{- else if eq $k "ratgeber" }}{{ range slice "powerstations" "balkonkraftwerke" "ratgeber" }}{{ range (where (where site.RegularPages "Section" "posts") "Params.kategorie" .).ByDate.Reverse }}{{ $items = $items | append . }}{{ end }}{{ end }}
+  {{- end }}
+{{- else if eq $lay "powerbank-liste" }}{{ range sort hugo.Data.powerbanks "kapazitaet_mah" }}{{ with site.GetPage (printf "/powerbanks/%s" .slug) }}{{ $items = $items | append . }}{{ end }}{{ end }}
+{{- else if eq $lay "hersteller-liste" }}{{ range hugo.Data.hersteller }}{{ if .seite }}{{ with site.GetPage (printf "/hersteller/%s" .slug) }}{{ $items = $items | append . }}{{ end }}{{ end }}{{ end }}
+{{- else if eq $lay "hersteller" }}{{ with index (where hugo.Data.hersteller "slug" $p.Params.marke) 0 }}{{ $g := partial "hersteller-produkte.html" . }}{{ range $g.ps }}{{ $items = $items | append .pg }}{{ end }}{{ range $g.bkw }}{{ $items = $items | append .pg }}{{ end }}{{ range $g.pb }}{{ $items = $items | append .pg }}{{ end }}{{ end }}
+{{- else if eq $lay "einsatz-liste" }}{{ range $p.Pages.ByWeight }}{{ $items = $items | append . }}{{ end }}
+{{- else if eq $lay "werkzeuge" }}{{ range slice "/powerstation-finder" "/laufzeitrechner" "/amortisationsrechner" "/powerstation-suche" }}{{ with site.GetPage . }}{{ $items = $items | append . }}{{ end }}{{ end }}
+{{- else if and (eq $p.Kind "section") (eq $p.Section "posts") }}{{ range $p.Pages.ByDate.Reverse }}{{ $items = $items | append . }}{{ end }}
+{{- end }}
+{{- with $items }}
+{{- $el := slice }}{{ range $i, $e := . }}{{ $el = $el | append (dict "@type" "ListItem" "position" (add $i 1) "url" $e.Permalink "name" $e.Title) }}{{ end }}
+<script type="application/ld+json">{{ dict "@context" "https://schema.org" "@type" "ItemList" "name" $p.Title "url" $p.Permalink "numberOfItems" (len $el) "itemListElement" $el | jsonify | safeJS }}</script>
+{{- end }}

@@ -844,3 +844,20 @@ details.p-mehr .tablewrap{margin:0}
 .hst-zeile{font-family:var(--sans);font-size:var(--fs-s);color:var(--muted);margin:.25rem 0 .75rem}
 .hst-zeile a{font-weight:700}
 .p-marke{font-weight:700}
+/* Kopfzeile: Navigation + Suchlink (Okt. 2026) */
+.head-rechts{display:flex;align-items:center;gap:1.5rem}
+.such-link{color:inherit;display:inline-flex;align-items:center;justify-content:center;min-width:var(--tap);min-height:var(--tap);border-radius:var(--r-btn)}
+.such-link:hover{color:var(--accent)}
+.such-link[aria-current=page]{color:var(--accent)}
+@media (max-width:52rem){.head-rechts{gap:.5rem}}
+/* Pagefind-Volltextsuche im Seitenstil */
+#volltext .pagefind-ui{--pagefind-ui-scale:.9;--pagefind-ui-primary:var(--accent);--pagefind-ui-text:var(--ink);--pagefind-ui-background:var(--card);--pagefind-ui-border:var(--input);--pagefind-ui-tag:var(--surface);--pagefind-ui-border-width:2px;--pagefind-ui-border-radius:var(--r-feld);--pagefind-ui-font:var(--sans);margin:1.5rem 0 2rem;max-width:var(--measure)}
+#volltext .pagefind-ui__result-link{color:var(--ink)}
+#volltext .pagefind-ui__result-link:hover{color:var(--accent)}
+#volltext .pagefind-ui__result-excerpt,#volltext .pagefind-ui__message{color:var(--muted)}
+#volltext mark{background:var(--accent);color:var(--on-accent)}
+/* Tablet: Hauptnavigation passt neben Marke + Suche nicht mehr in eine Zeile → Menü-Knopf wie mobil */
+@media (max-width:60rem){.site-header .wrap{position:relative}.main-nav{display:none}.m-menu{display:block}}
+/* Kleine Handys: Marke + Menü + Suche in einer Zeile ohne Querscrollen */
+@media (max-width:26rem){.site-header .wrap{gap:.5rem}.brand{font-size:1.25rem}.m-menu summary{padding:0 1rem}}
+@media (max-width:24rem){.such-link{display:none}}

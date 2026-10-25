@@ -44,35 +44,35 @@ kurz = [
   a = 'Du musst weiterhin fragen. Seit dem 17. Oktober 2024 sind Steckersolargeräte aber privilegierte bauliche Veränderungen; Vermieter oder Eigentümergemeinschaft können nur noch aus triftigem Grund ablehnen.'
 +++
 
-Für Balkonkraftwerke – offiziell „Steckersolargeräte“ – gelten seit 2024 deutlich einfachere Regeln. Mit dem Solarpaket I, einer Änderung von Miet- und Wohnungseigentumsrecht und der neuen Produktnorm DIN VDE V 0126-95 vom Dezember 2025 hat sich viel geändert. Hier ist der Stand im Oktober 2026, mit Quellen.
+Für Balkonkraftwerke gelten seit 2024 deutlich einfachere Regeln. Offiziell heißen sie „Steckersolargeräte“. Geändert haben sich die Regeln durch das Solarpaket I, eine Reform von Miet- und Wohnungseigentumsrecht und die neue Norm DIN VDE V 0126-95 vom Dezember 2025. Hier ist der Stand im Oktober 2026, mit Quellen.
 
-*Dieser Artikel ist keine Rechtsberatung. Er fasst die Angaben von Bundeswirtschaftsministerium, Bundesnetzagentur, Umweltbundesamt und VDE zusammen.*
+*Dieser Artikel ist keine Rechtsberatung. Er fasst zusammen, was Wirtschaftsministerium, Bundesnetzagentur, Umweltbundesamt und VDE dazu schreiben.*
 
 ## Die Leistungsgrenzen: 800 VA und 2.000 W
 
-Durch das Solarpaket I wurde im Erneuerbare-Energien-Gesetz (EEG) die maximale Wechselrichterleistung für Steckersolargeräte auf 800 Voltampere angehoben.
+Das Solarpaket I hat die Grenze im Erneuerbare-Energien-Gesetz (EEG) angehoben: Der Wechselrichter darf jetzt bis zu 800 Voltampere (VA) haben.
 
 Die Solarmodule dürfen zusammen höchstens 2.000 Watt haben. Liegt eine Anlage darüber, gilt sie als reguläre PV-Anlage – mit allen Pflichten, die dazugehören.
 
 {{% mehr "Details: Typenschild, Software-Drosselung, Speicher, ein Gerät pro Zähler" %}}
 
-Entscheidend für die 800 VA ist laut Bundeswirtschaftsministerium und Umweltbundesamt die Angabe **auf dem Typenschild oder im Einheitenzertifikat** des Wechselrichters.
+Für die 800 VA zählt die Angabe **auf dem Typenschild oder im Einheitenzertifikat** des Wechselrichters. So steht es beim Wirtschaftsministerium und beim Umweltbundesamt.
 
-Eine Drosselung per Software reicht nicht aus – egal, ob sie der Hersteller oder du selbst einstellst. Ein Wechselrichter mit 1.000 VA laut Typenschild ist also kein Steckersolargerät im Sinne der vereinfachten Regeln, auch wenn er in der App auf 800 W begrenzt ist.
+Eine Drosselung per Software reicht nicht aus – egal, ob sie der Hersteller oder du selbst einstellst. Ein Wechselrichter mit 1.000 VA laut Typenschild fällt also nicht unter die einfachen Regeln. Das gilt auch, wenn er in der App auf 800 W begrenzt ist.
 
 Auch Balkonkraftwerke mit Speicher fallen unter diese Grenzen: Maßgeblich ist, was der Wechselrichter höchstens ins Hausnetz abgibt.
 
-Pro Stromzähler ist laut Umweltbundesamt nur ein selbst angemeldetes Steckersolargerät zulässig. Ein Balkonkraftwerk darf aber zusätzlich zu einer vorhandenen PV-Dachanlage betrieben werden.
+Laut Umweltbundesamt ist pro Zähler nur ein selbst angemeldetes Steckersolargerät erlaubt. Hast du schon eine PV-Anlage auf dem Dach, darfst du trotzdem ein Balkonkraftwerk betreiben.
 
 {{% /mehr %}}
 
 ## Anmeldung im Marktstammdatenregister
 
-Seit dem 16. Mai 2024 reicht für ein Balkonkraftwerk die Registrierung im [Marktstammdatenregister](https://www.marktstammdatenregister.de/) (MaStR) der Bundesnetzagentur.
+Seit dem 16. Mai 2024 meldest du ein Balkonkraftwerk nur noch an einer Stelle an: im [Marktstammdatenregister](https://www.marktstammdatenregister.de/) (MaStR) der Bundesnetzagentur.
 
-Die frühere zusätzliche Meldung beim Netzbetreiber entfällt. Die Registrierung soll innerhalb eines Monats nach der Inbetriebnahme erfolgen.
+Die frühere Meldung beim Netzbetreiber fällt weg. Die Frist: ein Monat nach der Inbetriebnahme.
 
-{{% mehr "Abgefragte Angaben, Registrierungshilfe, Speicher und Einspeisevergütung" %}}
+{{% mehr "Details: Angaben im Formular, Speicher, keine Vergütung" %}}
 
 Abgefragt werden nur wenige Angaben:
 
@@ -82,41 +82,41 @@ Abgefragt werden nur wenige Angaben:
 4. Leistung des Wechselrichters
 5. Nummer deines Stromzählers
 
-Die Bundesnetzagentur stellt dafür eine eigene [Registrierungshilfe für Balkonkraftwerke](https://www.marktstammdatenregister.de/MaStRHilfe/files/regHilfen/Registrierungshilfe_Balkonkraftwerk.pdf) bereit. Du brauchst ein Benutzerkonto im Register.
+Dafür gibt es eine eigene [Registrierungshilfe für Balkonkraftwerke](https://www.marktstammdatenregister.de/MaStRHilfe/files/regHilfen/Registrierungshilfe_Balkonkraftwerk.pdf) der Bundesnetzagentur. Du brauchst ein Benutzerkonto im Register.
 
 {{< grafik src="img/anmelden-mastr-angaben.svg" alt="Fünf Karten mit den Angaben für das Marktstammdatenregister: 1. Standort der Anlage, 2. Datum der Inbetriebnahme, 3. Gesamtleistung der Module in Watt, 4. Leistung des Wechselrichters, 5. Nummer des Stromzählers. Darunter der Hinweis, bei einem Speicher die Frage nach dem Stromspeicher mit Ja zu beantworten." caption="Die fünf Angaben bei der Registrierung laut Registrierungshilfe der Bundesnetzagentur." >}}
 
-**Mit Speicher:** Betreibst du zusätzlich einen Stromspeicher, beantwortest du die entsprechende Frage im Formular mit „Ja“ und gibst die Daten des Speichers mit an. Laut Bundeswirtschaftsministerium muss ein Speicher außerdem beim Netzbetreiber angemeldet werden. Mehr dazu in meiner Kaufberatung zu Balkonkraftwerken mit Speicher.
+**Mit Speicher:** Betreibst du zusätzlich einen Stromspeicher, beantwortest du die entsprechende Frage im Formular mit „Ja“ und gibst die Daten des Speichers mit an. Laut Wirtschaftsministerium musst du den Speicher außerdem beim Netzbetreiber anmelden. Mehr dazu in meiner Kaufberatung zu Balkonkraftwerken mit Speicher.
 
-**Keine Einspeisevergütung:** Wer die Sonderregelung für Steckersolargeräte nutzt, bekommt für den ins Netz eingespeisten Überschuss kein Geld („unentgeltliche Abnahme“).
+**Keine Einspeisevergütung:** Mit der Sonderregel für Steckersolargeräte bekommst du für Strom, der ins Netz fließt, kein Geld („unentgeltliche Abnahme“).
 
-Eine EEG-Vergütung ist zwar grundsätzlich möglich, dann verliert die Anlage aber laut Bundeswirtschaftsministerium den Status als Steckersolargerät und damit die Vereinfachungen. Ein Balkonkraftwerk lohnt sich also über den Strom, den du selbst gleichzeitig verbrauchst.
+Eine EEG-Vergütung ist zwar möglich. Laut Wirtschaftsministerium verliert die Anlage dann aber den Status als Steckersolargerät und damit die Vereinfachungen. Ein Balkonkraftwerk lohnt sich also über den Strom, den du gleichzeitig selbst verbrauchst.
 
 {{% /mehr %}}
 
 ## Der Stromzähler: Was passiert mit dem alten Zähler?
 
-Viele Haushalte haben noch einen analogen Ferraris-Zähler, der sich rückwärts drehen kann, wenn das Balkonkraftwerk mehr erzeugt, als im Haushalt verbraucht wird.
+Viele Haushalte haben noch einen analogen Ferraris-Zähler. Er kann sich rückwärts drehen, wenn das Balkonkraftwerk mehr Strom erzeugt, als du gerade verbrauchst.
 
 Das wird übergangsweise geduldet: Du darfst das Balkonkraftwerk mit jedem vorhandenen Zähler in Betrieb nehmen.
 
 {{% mehr "Zählertausch und Kosten" %}}
 
-Nach der Registrierung im Marktstammdatenregister prüft der Messstellenbetreiber – meist der Netzbetreiber – den Zähler und tauscht ihn bei Bedarf gegen eine moderne Messeinrichtung (Zweirichtungszähler).
+Nach der Registrierung prüft der Messstellenbetreiber den Zähler. Das ist meist der Netzbetreiber. Bei Bedarf tauscht er ihn gegen einen Zweirichtungszähler (moderne Messeinrichtung).
 
-Laut Bundeswirtschaftsministerium ist das für dich im Regelfall kostenlos, auch im laufenden Betrieb entstehen keine Mehrkosten. Unabhängig davon werden alte Ferraris-Zähler bis 2032 ohnehin schrittweise ersetzt.
+Laut Wirtschaftsministerium kostet dich das im Regelfall nichts, auch nicht im laufenden Betrieb. Alte Ferraris-Zähler werden ohnehin bis 2032 nach und nach ersetzt.
 
 {{% /mehr %}}
 
 ## Die Steckdose: Schuko oder Energiesteckvorrichtung?
 
-Die lange umstrittene Frage nach dem Schuko-Stecker ist seit Dezember 2025 normativ geklärt. Mit der Produktnorm **DIN VDE V 0126-95:2025-12** ist der Anschluss an eine normale Haushaltssteckdose unter Bedingungen normgerecht:
+Lange war der Schuko-Stecker umstritten. Seit Dezember 2025 klärt das eine Norm: Nach **DIN VDE V 0126-95:2025-12** ist der Anschluss an eine normale Steckdose normgerecht, wenn drei Bedingungen erfüllt sind:
 
 - Die Wechselrichterleistung beträgt höchstens 800 VA.
 - Die Modulleistung beträgt **höchstens 960 W** (800 W plus 20 %, was etwa zwei Standardmodulen entspricht).
-- Der Basisschutz ist mechanisch oder elektromechanisch sichergestellt – etwa durch einen speziellen Schuko-Stecker mit Schutzumhüllung der Kontaktstifte, einen internen Trennschalter oder eine galvanische Trennung in einem entsprechend ausgelegten Wechselrichter.
+- Der Basisschutz ist mechanisch oder elektromechanisch gesichert. Das geht etwa mit einem Schuko-Stecker mit umhüllten Kontaktstiften, einem internen Trennschalter oder einer galvanischen Trennung im passend ausgelegten Wechselrichter.
 
-Bei **mehr als 960 W bis 2.000 W** Modulleistung ist für den normgerechten Anschluss weiterhin eine spezielle Energiesteckvorrichtung (zum Beispiel der sogenannte Wieland-Stecker) oder ein Festanschluss durch eine Elektrofachkraft nötig. Hintergrund: Bei mehr Modulleistung liegt die volle Wechselrichterleistung deutlich länger am Stecker an.
+Bei **mehr als 960 W bis 2.000 W** Modulleistung brauchst du weiterhin eine spezielle Energiesteckvorrichtung, zum Beispiel den Wieland-Stecker. Oder eine Elektrofachkraft schließt das Gerät fest an. Der Grund: Bei mehr Modulleistung liegt die volle Wechselrichterleistung deutlich länger am Stecker an.
 
 {{% mehr "Grafik: Modulleistung und Anschlussart" %}}
 
@@ -132,15 +132,15 @@ Was du außerdem beachten solltest:
 
 ## Mieter und Wohnungseigentümer
 
-Seit dem 17. Oktober 2024 gehören Steckersolargeräte zu den privilegierten baulichen Veränderungen. Mieter können nach § 554 BGB verlangen, dass der Vermieter ihnen die Installation erlaubt. Wohnungseigentümer können nach § 20 Abs. 2 Nr. 5 WEG eine angemessene bauliche Veränderung für ein Steckersolargerät verlangen.
+Seit dem 17. Oktober 2024 sind Steckersolargeräte „privilegierte bauliche Veränderungen“. Mieter können nach § 554 BGB verlangen, dass der Vermieter ihnen die Installation erlaubt. Wohnungseigentümer können nach § 20 Abs. 2 Nr. 5 WEG eine angemessene bauliche Veränderung für ein Steckersolargerät verlangen.
 
 Das heißt nicht, dass du ohne Zustimmung loslegen kannst: Du musst weiterhin fragen.
 
 {{% mehr "Wann Vermieter ablehnen dürfen und was das Ministerium empfiehlt" %}}
 
-Vermieter oder Eigentümergemeinschaft können aber nur noch aus triftigem Grund ablehnen – beim Mietrecht etwa, wenn die Maßnahme dem Vermieter nicht zuzumuten ist. Über die Art der Ausführung (zum Beispiel die Montage) kann die Eigentümergemeinschaft mitentscheiden.
+Vermieter oder Eigentümergemeinschaft können aber nur noch aus triftigem Grund ablehnen – beim Mietrecht etwa, wenn die Maßnahme dem Vermieter nicht zuzumuten ist. Bei der Ausführung, etwa der Montage, darf die Eigentümergemeinschaft mitreden.
 
-Das Bundeswirtschaftsministerium empfiehlt, die Pläne frühzeitig mitzuteilen und auf eine sichere, unauffällige Montage zu achten.
+Das Wirtschaftsministerium rät: Sag früh Bescheid und montiere sicher und unauffällig.
 
 {{% /mehr %}}
 
@@ -149,7 +149,7 @@ Das Bundeswirtschaftsministerium empfiehlt, die Pläne frühzeitig mitzuteilen u
 1. Wechselrichter mit höchstens 800 VA laut Typenschild wählen, Module mit höchstens 2.000 W – für den Schuko-Anschluss höchstens 960 W und ein Gerät nach DIN VDE V 0126-95.
 2. Zustimmung von Vermieter oder Eigentümergemeinschaft einholen.
 3. Sicher montieren (Wind- und Schneelasten beachten), passende Steckdose nutzen, im Zweifel den Stromkreis von einer Elektrofachkraft prüfen lassen.
-4. Innerhalb eines Monats nach Inbetriebnahme im Marktstammdatenregister registrieren – mit Speicher diesen mit angeben und beim Netzbetreiber melden.
+4. Innerhalb eines Monats nach Inbetriebnahme im Marktstammdatenregister registrieren. Einen Speicher dort mit angeben und beim Netzbetreiber melden.
 5. Den Zählertausch abwarten; darum kümmert sich der Messstellenbetreiber.
 
 {{% mehr "Grafik: Ablauf in fünf Schritten" %}}

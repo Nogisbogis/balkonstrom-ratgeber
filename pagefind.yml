@@ -1,0 +1,9 @@
+# Pagefind-Volltextindex (nach hugo: npx -y pagefind@1.5.2). Läuft lokal und in GitHub Actions.
+site: public
+exclude_selectors:
+  - ".breadcrumb"
+  - ".disclosure-small"
+  - ".cmp-bar"
+  - ".comments"
+  - ".skip"
+  - "script"

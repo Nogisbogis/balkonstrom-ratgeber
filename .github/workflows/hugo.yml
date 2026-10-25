@@ -47,6 +47,12 @@ jobs:
             --gc \
             --minify \
             --baseURL "${{ steps.pages.outputs.base_url }}/"
+      - name: Setup Node (für Pagefind)
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Suchindex mit Pagefind (lokal, ohne Telemetrie)
+        run: npx -y pagefind@1.5.2 --site public
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

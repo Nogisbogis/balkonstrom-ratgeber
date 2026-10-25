@@ -10,7 +10,7 @@
 {{- $og := .Params.ogImage | default "img/og-default.jpg" }}
 <title>{{ $title }}</title>
 <meta name="description" content="{{ $desc }}">
-{{- if or site.Params.noindex (eq .Kind "404") }}
+{{- if or site.Params.noindex .Params.noindex (eq .Kind "404") }}
 <meta name="robots" content="noindex, follow">
 {{- end }}
 {{- if ne .Kind "404" }}
@@ -38,10 +38,7 @@
 <meta name="twitter:title" content="{{ cond .IsHome site.Title (.Params.og_title | default .Title) }}">
 <meta name="twitter:description" content="{{ $desc }}">
 <meta name="twitter:image" content="{{ $og | absURL }}">
-{{- if and .IsPage (eq .Section "posts") }}
-{{- $ld := dict "@context" "https://schema.org" "@type" "Article" "headline" .Title "description" $desc "datePublished" (.Date.Format "2006-01-02") "dateModified" (.Lastmod.Format "2006-01-02") "inLanguage" "de-DE" "image" ($og | absURL) "mainEntityOfPage" .Permalink "author" (dict "@type" "Person" "name" site.Params.author "url" ("methodik/" | absURL)) "publisher" (dict "@type" "Organization" "name" site.Title "url" site.Home.Permalink "logo" (dict "@type" "ImageObject" "url" ("favicon.svg" | absURL))) }}
-<script type="application/ld+json">{{ $ld | jsonify | safeJS }}</script>
-{{- end }}
+{{ partial "schema.html" (dict "page" . "desc" $desc "img" ($og | absURL)) }}
 {{- if .IsHome }}
 {{- $person := dict "@type" "Person" "@id" (printf "%s#person" site.Home.Permalink) "name" site.Params.author "url" ("methodik/" | absURL) }}
 {{- $web := dict "@type" "WebSite" "@id" (printf "%s#website" site.Home.Permalink) "url" site.Home.Permalink "name" site.Title "description" site.Params.description "inLanguage" "de-DE" "author" (dict "@id" (printf "%s#person" site.Home.Permalink)) }}
@@ -60,6 +57,7 @@
     <a class="brand" href="{{ site.Home.RelPermalink }}"><span class="brand-a">Balkonstrom</span><span class="brand-b">Ratgeber</span></a>
     {{- $cur := .RelPermalink }}
     {{- $tools := slice ("werkzeuge/" | relURL) ("powerstation-finder/" | relURL) ("powerstation-suche/" | relURL) ("laufzeitrechner/" | relURL) ("amortisationsrechner/" | relURL) }}
+    <div class="head-rechts">
     <nav class="main-nav" aria-label="Hauptnavigation">
       <a href="{{ "vergleich/" | relURL }}"{{ if eq $cur ("vergleich/" | relURL) }} aria-current="page"{{ end }}>Vergleich</a>
       <a href="{{ "werkzeuge/" | relURL }}"{{ if in $tools $cur }} aria-current="page"{{ end }}>Werkzeuge</a>
@@ -75,11 +73,14 @@
       <a href="{{ "ratgeber/" | relURL }}"{{ if or (eq $cur ("ratgeber/" | relURL)) (eq .Section "posts") }} aria-current="page"{{ end }}>Ratgeber</a>
       <a href="{{ "balkonkraftwerke/" | relURL }}"{{ if eq .Section "balkonkraftwerke" }} aria-current="page"{{ end }}>Balkonkraftwerke</a>
       <a class="nav-dezent" href="{{ "hersteller/" | relURL }}"{{ if eq .Section "hersteller" }} aria-current="page"{{ end }}>Hersteller</a>
+      <a href="{{ "suche/" | relURL }}"{{ if eq $cur ("suche/" | relURL) }} aria-current="page"{{ end }}>Suche</a>
       </nav>
     </details>
+    <a class="such-link" href="{{ "suche/" | relURL }}"{{ if eq $cur ("suche/" | relURL) }} aria-current="page"{{ end }}><svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></svg><span class="sr-only">Suche</span></a>
+    </div>
   </div>
 </header>
-<main class="wrap" id="inhalt">
+<main class="wrap" id="inhalt"{{ if not (or (in (slice "legal" "volltext") .Layout) (eq .Kind "404") .Params.noindex) }} data-pagefind-body{{ end }}>
 {{ block "main" . }}{{ end }}
 </main>
 {{ partial "footer.html" . }}

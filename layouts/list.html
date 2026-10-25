@@ -1,6 +1,7 @@
 {{ define "main" }}
 <h1>{{ .Title }}</h1>
 {{ .Content }}
+<h2 class="sr-only">Alle Artikel, neueste zuerst</h2>
 <ul class="cards">
   {{ range .Pages.ByDate.Reverse }}{{ partial "card.html" . }}{{ end }}
 </ul>

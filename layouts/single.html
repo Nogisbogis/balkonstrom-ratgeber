@@ -16,7 +16,7 @@
     <div class="post-body">
       {{ if $post }}
       {{ partial "kurzantwort.html" . }}
-      {{ if $toc }}<details class="toc"><summary>Inhaltsverzeichnis</summary>{{ .TableOfContents }}</details>{{ end }}
+      {{ if $toc }}<details class="toc"><summary>Inhaltsverzeichnis</summary>{{ replace .TableOfContents `<nav id="TableOfContents">` `<nav id="TableOfContents" aria-label="Inhaltsverzeichnis">` | safeHTML }}</details>{{ end }}
       {{ else }}{{ partial "kurzbox.html" . }}{{ end }}
       {{ .Content }}
       {{ partial "faq.html" . }}
@@ -25,7 +25,7 @@
     <aside class="post-rail" aria-labelledby="rail-titel">
       <div class="rail-innen">
         <h2 id="rail-titel" class="rail-titel">In diesem Artikel</h2>
-        {{ replace .TableOfContents `id="TableOfContents"` `class="rail-toc"` | safeHTML }}
+        {{ replace .TableOfContents `id="TableOfContents"` `class="rail-toc" aria-label="Inhalt in der Seitenleiste"` | safeHTML }}
         <p class="rail-tool">{{ with .Params.weiter }}<span class="rail-tool-l">Selbst rechnen</span><a class="textlink" href="{{ .url | relURL }}">{{ .text }}</a>{{ else }}<a class="textlink" href="{{ "laufzeitrechner/" | relURL }}">Laufzeitrechner öffnen</a>{{ end }}</p>
       </div>
     </aside>

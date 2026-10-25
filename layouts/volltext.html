@@ -1,0 +1,14 @@
+{{ define "main" }}
+{{- /* Volltextsuche mit Pagefind: Index wird nach dem Hugo-Build erzeugt (pagefind --site public, auch in GitHub Actions).
+     Läuft komplett im Browser, keine externen Server, kein Tracking. */ -}}
+{{ partial "breadcrumb.html" . }}
+<h1>{{ .Title }}</h1>
+<p class="lead lead-sans">Ratgeber, Produkt- und Herstellerseiten durchsuchen.</p>
+<link rel="stylesheet" href="{{ "pagefind/pagefind-ui.css" | relURL }}">
+<div id="volltext" class="volltext" data-bundle="{{ "pagefind/" | relURL }}"></div>
+<noscript><p class="note">Die Suche braucht JavaScript. Ohne JavaScript findest du alles über den <a href="{{ "ratgeber/" | relURL }}">Ratgeber</a>, die <a href="{{ "hersteller/" | relURL }}">Hersteller</a> und den <a href="{{ "vergleich/" | relURL }}">Vergleich</a>.</p></noscript>
+<p class="note">Die Suche läuft lokal in deinem Browser. Suchbegriffe werden nicht gespeichert oder übertragen. Nach technischen Daten filtern: <a href="{{ "powerstation-suche/" | relURL }}">Powerstation-Suche</a>.</p>
+<script src="{{ "pagefind/pagefind-ui.js" | relURL }}" defer></script>
+{{ $js := resources.Get "js/volltext.js" | minify | fingerprint }}
+<script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" defer></script>
+{{ end }}

@@ -1,0 +1,32 @@
+{
+  "extends": [
+    "html-validate:recommended"
+  ],
+  "rules": {
+    "attr-quotes": "off",
+    "doctype-style": "off",
+    "no-inline-style": "off",
+    "no-raw-characters": "off",
+    "void-style": "off",
+    "attribute-boolean-style": "off",
+    "attribute-empty-style": "off",
+    "no-trailing-whitespace": "off",
+    "long-title": "off",
+    "valid-id": [
+      "error",
+      {
+        "relaxed": true
+      }
+    ],
+    "prefer-native-element": [
+      "error",
+      {
+        "exclude": [
+          "region"
+        ]
+      }
+    ],
+    "form-dup-name": "off",
+    "wcag/h32": "off"
+  }
+}

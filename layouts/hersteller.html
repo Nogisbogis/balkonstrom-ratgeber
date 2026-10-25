@@ -7,7 +7,7 @@
   {{ partial "breadcrumb.html" . }}
   <h1>{{ .Title }}</h1>
   <p class="lead lead-sans">{{ .Params.kurz }}</p>
-  <ul class="hst-zahlen" aria-label="Geräte auf dieser Seite">
+  <ul class="hst-zahlen">
     {{- with $g.ps }}<li><a href="#powerstations"><strong>{{ len . }}</strong> Powerstation{{ if gt (len .) 1 }}s{{ end }}</a></li>{{ end }}
     {{- with $g.bkw }}<li><a href="#balkon-speicher"><strong>{{ len . }}</strong> {{ if $bkwSp }}Balkon-Speicher{{ else }}Balkonkraftwerke &amp; Speicher{{ end }}</a></li>{{ end }}
     {{- with $g.pb }}<li><a href="#powerbanks"><strong>{{ len . }}</strong> Powerbank{{ if gt (len .) 1 }}s{{ end }}</a></li>{{ end }}
