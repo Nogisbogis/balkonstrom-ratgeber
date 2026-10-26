@@ -1,9 +1,11 @@
 {{ define "main" }}
 {{- /* Volltextsuche mit Pagefind: Index wird nach dem Hugo-Build erzeugt (pagefind --site public, auch in GitHub Actions).
      Läuft komplett im Browser, keine externen Server, kein Tracking. */ -}}
+<header class="kopf-feld">
 {{ partial "breadcrumb.html" . }}
 <h1>{{ .Title }}</h1>
 <p class="lead lead-sans">Ratgeber, Produkt- und Herstellerseiten durchsuchen.</p>
+</header>
 <link rel="stylesheet" href="{{ "pagefind/pagefind-ui.css" | relURL }}">
 <div id="volltext" class="volltext" data-bundle="{{ "pagefind/" | relURL }}"></div>
 <noscript><p class="note">Die Suche braucht JavaScript. Ohne JavaScript findest du alles über den <a href="{{ "ratgeber/" | relURL }}">Ratgeber</a>, die <a href="{{ "hersteller/" | relURL }}">Hersteller</a> und den <a href="{{ "vergleich/" | relURL }}">Vergleich</a>.</p></noscript>

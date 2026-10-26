@@ -3,8 +3,10 @@
 {{- if not $p }}{{ errorf "produkt: Modell %q nicht in data/powerstations.yaml (%s)" .Params.modell .File.Path }}{{ end }}
 {{- $qidx := dict }}{{ range $i, $q := .Params.quellen }}{{ $qidx = merge $qidx (dict $q.id (add $i 1)) }}{{ end }}
 <article class="produkt">
+  <header class="kopf-feld">
   {{ partial "breadcrumb.html" . }}
   <h1>{{ .Title }}</h1>
+  </header>
   <p class="meta">Produktseite Powerstation · Zuletzt aktualisiert <time datetime="{{ .Lastmod.Format "2006-01-02" }}">{{ .Lastmod.Format "02.01.2006" }}</time> · eigene Recherche, kein eigener Test{{ with partial "hersteller-von.html" $p.modell }}{{ $hn := .name }}{{ with .url }} · <a class="p-marke" href="{{ . }}">Alle Geräte von {{ $hn }}</a>{{ end }}{{ end }}</p>
   {{ partial "disclosure-box.html" . }}
 

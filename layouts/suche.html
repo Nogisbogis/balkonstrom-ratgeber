@@ -4,9 +4,11 @@
 {{- $ps := sort hugo.Data.powerstations "kapazitaet_wh" }}
 {{- $marken := slice }}{{ $akkus := slice }}{{ $zyk := slice }}
 {{- range $ps }}{{ $marken = $marken | append (index (split .modell " ") 0) }}{{ $akkus = $akkus | append .akkutyp }}{{ with .zyklen }}{{ $zyk = $zyk | append . }}{{ end }}{{ end }}
+<header class="kopf-feld">
 {{ partial "breadcrumb.html" . }}
 <h1>{{ .Title }}</h1>
 {{ with .Params.intro }}<p class="lead">{{ . }}</p>{{ end }}
+</header>
 <form class="suche" id="suche" role="search" aria-label="Powerstations filtern" autocomplete="off" hidden>
   <div class="s-reihe">
     <label class="s-name">Name<input type="search" name="q" placeholder="z. B. DELTA…" autocomplete="off" spellcheck="false"></label>

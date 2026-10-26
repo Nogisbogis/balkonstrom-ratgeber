@@ -16,8 +16,8 @@
 {{- if ne .Kind "404" }}
 <link rel="canonical" href="{{ .Permalink }}">
 {{- end }}
-<meta name="theme-color" content="#faf8f3" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#0f1f1a" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#142c52" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0a1830" media="(prefers-color-scheme: dark)">
 <meta name="color-scheme" content="light dark">
 <link rel="icon" href="{{ "favicon.svg" | relURL }}" type="image/svg+xml">
 <meta property="og:site_name" content="{{ site.Title }}">
@@ -44,6 +44,8 @@
 {{- $web := dict "@type" "WebSite" "@id" (printf "%s#website" site.Home.Permalink) "url" site.Home.Permalink "name" site.Title "description" site.Params.description "inLanguage" "de-DE" "author" (dict "@id" (printf "%s#person" site.Home.Permalink)) }}
 <script type="application/ld+json">{{ dict "@context" "https://schema.org" "@graph" (slice $web $person) | jsonify | safeJS }}</script>
 {{- end }}
+<link rel="preload" href="/fonts/league-spartan-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/figtree-400.woff2" as="font" type="font/woff2" crossorigin>
 {{- $css := resources.Get "style.css" | minify | fingerprint }}
 <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
 <script>document.documentElement.classList.add("js")</script>

@@ -1,7 +1,9 @@
 {{ define "main" }}
+<header class="kopf-feld">
 {{ partial "breadcrumb.html" . }}
 <h1>{{ .Title }}</h1>
 {{ with .Params.intro }}<p class="lead lead-sans">{{ . }}</p>{{ end }}
+</header>
 <p class="note abb-hinweis">Herstellerangaben, je Gerät mit Quelle. Abbildungen: Illustrationen, kein Produktfoto.</p>
 <ul class="plist">{{ range sort hugo.Data.powerbanks "kapazitaet_mah" }}{{ $d := . }}{{ with site.GetPage (printf "/powerbanks/%s" .slug) }}{{ partial "hersteller-karte.html" (dict "d" $d "pg" . "art" "pb") }}{{ end }}{{ end }}</ul>
 <p class="tool-links-inline">Mehr Energie für unterwegs? <a href="{{ "powerstations/" | relURL }}">Powerstations</a> · <a href="{{ "hersteller/" | relURL }}">Alle Hersteller</a></p>

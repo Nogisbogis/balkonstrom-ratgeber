@@ -1,7 +1,9 @@
 {{ define "main" }}
+<header class="kopf-feld">
 {{ partial "breadcrumb.html" . }}
 <h1>{{ .Title }}</h1>
 {{ with .Params.intro }}<p class="lead">{{ . }}</p>{{ end }}
+</header>
 <section class="schritte" aria-labelledby="schritte-titel">
   <h2 id="schritte-titel">In 3 Schritten zur richtigen Powerstation</h2>
   <ol>
