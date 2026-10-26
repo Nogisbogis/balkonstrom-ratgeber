@@ -14,7 +14,9 @@ ausschließlich die UNGETAGGTE Produktseite https://www.amazon.de/dp/<ASIN> auf 
                     „unklar“ ändert NIE den gespeicherten Status (letzter bekannter Stand bleibt).
 
 Höflich: ein Abruf nach dem anderen, 6–11 s Pause, bis zu 3 Versuche mit wachsender Pause.
-Abruf per Headless-Chrome (eigenes Profil mit Lieferort Berlin), realistische Header.
+Abruf per Headless-Chrome (eigenes Profil, Sprache de-DE), realistische Header.
+Vor jedem Abruf werden die Sitzungscookies verworfen: mit bestehender Sitzung liefert amazon.de
+oft nur eine Rumpfseite (HTTP 200, richtiger <title>, einige hundert KB, aber ohne Produktbereich).
 
 data/verfuegbarkeit.yaml wird nur geschrieben, wenn sich ein Status ändert (oder ASINs hinzukommen/
 wegfallen). Ein Protokoll jedes Laufs landet außerhalb des Repos (~/.local/state/balkonstrom/).
@@ -37,7 +39,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATEI = os.path.join(ROOT, 'data', 'verfuegbarkeit.yaml')
 STATE = os.path.expanduser('~/.local/state/balkonstrom')
 PROFIL = os.environ.get('AMZ_PROFIL', os.path.expanduser('~/.local/share/balkonstrom/amz-profil'))
-PROFIL_VORLAGE = '/workspace/amzcheck/chromeprof'   # Profil mit Lieferort 10115 Berlin
+PROFIL_VORLAGE = '/workspace/amzcheck/chromeprof'   # Chrome-Profil; die Amazon-Sitzung (samt Lieferort) wird je Abruf geleert
 UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36'
 UNKLAR_GRENZE = 0.30
 ASIN_TIMEOUT = float(os.environ.get('VK_ASIN_TIMEOUT', 90))   # Sekunden je ASIN, alle Versuche zusammen
@@ -112,24 +114,30 @@ def titel_passt(name, titel):
 
 
 # ---------------------------------------------------------------- Browser
-JS = r"""(()=>{const q=s=>{const e=document.querySelector(s);return e?e.innerText.replace(/\s+/g,' ').trim():''};
-const vis=s=>{const e=document.querySelector(s);return !!(e&&e.offsetParent!==null)};
+JS = r"""(()=>{const q=s=>{const e=document.querySelector(s);if(!e)return '';return (e.innerText||e.textContent||'').replace(/\s+/g,' ').trim()};
+const vis=s=>[...document.querySelectorAll(s)].some(e=>{const st=getComputedStyle(e);if(st.display==='none'||st.visibility==='hidden')return false;const r=e.getBoundingClientRect();return r.width>0&&r.height>0});
 const body=(document.body?document.body.innerText:'').replace(/\s+/g,' ');
 const asinIn=(document.querySelector('input#ASIN,input[name="ASIN"]')||{}).value||'';
 const canon=(document.querySelector('link[rel=canonical]')||{}).href||'';
-return {url:location.href,doctitle:document.title,title:q('#productTitle'),avail:q('#availability').slice(0,160),
- oos:!!document.querySelector('#outOfStock'),cart:vis('#add-to-cart-button'),buynow:vis('#buy-now-button'),
+const title=q('#productTitle')||q('span.product-title-word-break')||q('h1#title');
+const avail=(q('#availability')||q('#outOfStock')).slice(0,160);
+// Produktbereich: nicht nur #ppd. Eine Rumpfseite hat #dp/#dp-container, aber keines dieser Elemente.
+const produkt=!!document.querySelector('#ppd, #centerCol, #desktop_buybox, #outOfStock, #productTitle');
+return {url:location.href,doctitle:document.title,title:title,avail:avail,
+ oos:!!document.querySelector('#outOfStock'),cart:vis('#add-to-cart-button, input[name="submit.add-to-cart"]'),buynow:vis('#buy-now-button'),
  choices:q('#buybox-see-all-buying-choices').slice(0,160),aod:q('#aod-ingress-link, #olp_feature_div, #olpLinkWidget_feature_div').slice(0,200),
  used:q('#usedBuySection, #usedAccordionRow, #buyBoxAccordion').slice(0,200),
  captcha:!!document.querySelector('form[action*="validateCaptcha"]')||/Geben Sie die Zeichen|Zeichen unten ein|Klicke auf die Schaltfläche unten, um mit dem Einkauf fortzufahren|Click the button below to continue shopping/i.test(body.slice(0,4000)),
  dog:/Seite nicht gefunden|Page Not Found|konnten wir die gesuchte Seite nicht finden|Suchen Sie bestimmte Informationen/i.test(document.title+' '+body.slice(0,3000)),
- asin:asinIn,canon:canon,ort:q('#glow-ingress-line2'),rs:document.readyState,ppd:!!document.querySelector('#ppd'),
+ asin:asinIn,canon:canon,ort:q('#glow-ingress-line2'),rs:document.readyState,ppd:produkt,
  laenge:document.documentElement.outerHTML.length}})()"""
 
 # fertig = Dokument vollständig geladen, oder Produktspalte samt Kaufbox-/Verfügbarkeitsteil da,
 # oder eine Sonderseite (Captcha/404), die ohnehin keine Produktspalte hat.
 BEREIT_JS = r"""(()=>{const d=document,has=s=>!!d.querySelector(s);
-const prod=has('#productTitle')&&(has('#availability')||has('#add-to-cart-button')||has('#buy-now-button')||has('#outOfStock')||has('#buybox-see-all-buying-choices'));
+const titel=has('#productTitle')||has('span.product-title-word-break')||has('h1#title');
+const kauf=has('#availability')||has('#add-to-cart-button')||has('input[name="submit.add-to-cart"]')||has('#buy-now-button')||has('#outOfStock')||has('#buybox-see-all-buying-choices')||has('#desktop_buybox')||has('#centerCol');
+const prod=titel&&kauf;
 return {fertig:!window.__vkAlt&&(d.readyState==='complete'||prod||has('form[action*="validateCaptcha"]')),rs:d.readyState}})()"""
 
 class Browser:
@@ -162,7 +170,8 @@ class Browser:
         self.ws = websocket.create_connection(tab['webSocketDebuggerUrl'], suppress_origin=True, timeout=60)
         self.i = 0; self.status = {}
         self.cmd('Network.enable'); self.cmd('Page.enable')
-        self.cmd('Network.setUserAgentOverride', userAgent=UA, acceptLanguage='de-DE,de;q=0.9')
+        # ohne ";q=…" – Chrome hängt sonst ein zweites ";q=0.9" an ("de-DE,de;q=0.9;q=0.9")
+        self.cmd('Network.setUserAgentOverride', userAgent=UA, acceptLanguage='de-DE,de', platform='Win32')
         # nur der HTTP-Status des Hauptdokuments zählt (nicht der von Werbe-/Hilfs-iframes)
         self.hauptframe = self.cmd('Page.getFrameTree')['result']['frameTree']['frame']['id']
 
@@ -196,6 +205,17 @@ class Browser:
             if r.get('id') == self.i:
                 return r
 
+    def sitzung_leeren(self):
+        """Sitzungscookies verwerfen. Mit bestehender Amazon-Sitzung kommt ab dem nächsten Abruf
+        häufig nur eine Rumpfseite: HTTP 200, richtiger <title>, einige hundert KB, #dp vorhanden,
+        aber ohne Produktspalte (#ppd, #productTitle, Kaufbox). Ohne diese Cookies liefert derselbe
+        Chrome die vollständige Produktseite. Lieferort der frischen Sitzung folgt der Netzlokation
+        (die alte Sitzung war genau der Auslöser der Rumpfseite und kann nicht mitgenommen werden)."""
+        try:
+            self.cmd('Network.clearBrowserCookies')
+        except Exception:
+            pass
+
     def lade(self, url, warte=7, max_warte=60):
         """Navigiert und wartet, bis das Dokument wirklich fertig ist (readyState 'complete' bzw.
         Produktspalte samt Kaufbox-Elementen da), mindestens `warte` s, höchstens `max_warte` s.
@@ -203,6 +223,7 @@ class Browser:
         Rest langsamer (Netz/Server), stand dann nur der Kopf (<title>) im DOM, #productTitle fehlte
         noch und jede ASIN wurde fälschlich „unklar“."""
         self.status = {}
+        self.sitzung_leeren()   # sonst liefert Amazon ab dem 2. Abruf oft nur die Rumpfseite
         # alte Seite markieren, damit die Bereitschaftsprüfung nicht versehentlich sie auswertet
         self.cmd('Runtime.evaluate', expression='window.__vkAlt=1')
         self.cmd('Page.navigate', url=url)
@@ -273,8 +294,8 @@ def einstufen(asin, name, v):
         return 'unklar', f'HTTP {http}'
     titel = v.get('title', '')
     if not titel and v.get('rs') == 'complete' and not v.get('ppd'):
-        # Seite fertig geladen, aber Amazon hat den Produktbereich (#ppd) gar nicht ausgeliefert –
-        # nur Kopf/Navigation und „Weitermachen, wo du aufgehört hast“. Kein Captcha, aber auch keine
+        # Seite fertig geladen, aber Amazon hat den Produktbereich gar nicht ausgeliefert
+        # (kein #ppd/#centerCol/#productTitle – nur Kopf/Navigation). Kein Captcha, aber auch keine
         # Aussage über die Verfügbarkeit möglich -> unklar (später erneut versuchen, nichts umgehen).
         return 'unklar', (f'Amazon lieferte die Seite ohne Produktbereich (Seitentitel: {v.get("doctitle", "")[:60]!r}, '
                           f'HTTP {http}, {v.get("laenge", 0) // 1024} KB)')
