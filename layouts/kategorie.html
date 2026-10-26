@@ -18,12 +18,12 @@
 <p class="tool-links-inline">Lohnt sich das für dich? <a href="{{ "amortisationsrechner/" | relURL }}">Zum Amortisationsrechner</a></p>
 {{ end }}
 {{ if eq .Params.kategorie "ratgeber" }}
-{{ range slice "powerstations" "balkonkraftwerke" "ratgeber" }}{{ $k := . }}
+{{ range slice "powerstations" "balkonkraftwerke" "zubehoer" "ratgeber" }}{{ $k := . }}
 {{ $posts := where (where site.RegularPages "Section" "posts") "Params.kategorie" $k }}
 {{ with $posts }}
 <section class="rubrik">
   <h2 id="{{ $k }}">{{ cond (eq $k "ratgeber") "Regeln &amp; Anmeldung" ((site.GetPage (printf "/%s" $k)).Title) | safeHTML }}</h2>
-  {{ if ne $k "ratgeber" }}<p class="rubrik-link"><a href="{{ (site.GetPage (printf "/%s" $k)).RelPermalink }}">Alle {{ (site.GetPage (printf "/%s" $k)).Title }} im Detail</a></p>{{ end }}
+  {{ if eq $k "zubehoer" }}<p class="rubrik-link"><a href="{{ (site.GetPage "/zubehoer").RelPermalink }}">Zur Zubehör-Übersicht</a></p>{{ else if ne $k "ratgeber" }}<p class="rubrik-link"><a href="{{ (site.GetPage (printf "/%s" $k)).RelPermalink }}">Alle {{ (site.GetPage (printf "/%s" $k)).Title }} im Detail</a></p>{{ end }}
   <ul class="cards">{{ range .ByDate.Reverse }}{{ partial "card.html" . }}{{ end }}</ul>
 </section>
 {{ end }}{{ end }}

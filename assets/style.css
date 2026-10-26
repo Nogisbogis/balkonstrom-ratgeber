@@ -861,3 +861,10 @@ details.p-mehr .tablewrap{margin:0}
 /* Kleine Handys: Marke + Menü + Suche in einer Zeile ohne Querscrollen */
 @media (max-width:26rem){.site-header .wrap{gap:.5rem}.brand{font-size:1.25rem}.m-menu summary{padding:0 1rem}}
 @media (max-width:24rem){.such-link{display:none}}
+/* Zubehör (Entwurf): Karten ohne Bild, Rubrik-Kacheln */
+.pcard.pcard-zubehoer{display:flex}
+.zub-rubriken{list-style:none;padding:0;margin:1.5rem 0 2.5rem;display:grid;gap:1.25rem;grid-template-columns:repeat(auto-fill,minmax(16rem,1fr))}
+.zub-rubriken li{background:var(--surface);padding:1rem 1rem 1.25rem;max-width:none!important}
+.zub-rubriken h2{font-size:var(--fs-b);margin:0 0 .5rem}
+.zub-rubriken p{margin:0 0 .75rem}
+.zub-status{font-size:.875rem;opacity:.8}

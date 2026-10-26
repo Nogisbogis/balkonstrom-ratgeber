@@ -44,6 +44,8 @@ Wie viel ein Balkonkraftwerk liefert, hängt stark davon ab, wohin die Module ze
 
 *Alle Ertragswerte stammen aus PVGIS 5.3, abgerufen am 21.10.2026. Ich habe keine eigene Anlage gemessen.*
 
+Wie viel deine eigene Anlage liefert, zeigt eine Messsteckdose: [Ertrag selbst messen](/posts/balkonkraftwerk-ertrag-messen-steckdose/).
+
 ## Die Zahlen: Jahresertrag nach Ausrichtung und Neigung
 
 Gerechnet ist eine Anlage mit 800 Wp, also etwa zwei Standardmodulen, in Hamburg. Die Werte sind Mittelwerte der Jahre 2005 bis 2023, in kWh pro Jahr. Der Bestwert liegt bei 792 kWh (40° nach Süden), 90° heißt senkrecht.

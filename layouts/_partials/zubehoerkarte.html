@@ -1,0 +1,22 @@
+{{- /* Zubehör-Karte (Daten aus data/zubehoer.yaml). Gleiche Klassen wie produktkarte.html, ohne Bild:
+     keine Produktfotos von Amazon/Herstellern. Kontext: dict "p" <Datensatz> "hinweis" <optional> */ -}}
+{{- $p := .p }}
+<li class="pcard pcard-zubehoer">
+  <div class="pcard-body">
+    <h3>{{ $p.modell }}</h3>
+    <dl class="specs">
+      <div><dt>Hersteller</dt><dd>{{ $p.hersteller }}</dd></div>
+      <div><dt>Max. Last</dt><dd>{{ $p.last }}</dd></div>
+      <div><dt>Funk</dt><dd>{{ $p.funk }}</dd></div>
+      <div><dt>Einsatz</dt><dd>{{ $p.einsatz }}</dd></div>
+      {{- with $p.einspeisung }}<div><dt>Einspeisung</dt><dd>{{ . }}</dd></div>{{ end }}
+      {{- with $p.eigenverbrauch }}<div><dt>Eigenverbrauch</dt><dd>{{ . }}</dd></div>{{ end }}
+      {{- with $p.voraussetzung }}<div><dt>Braucht</dt><dd>{{ . }}</dd></div>{{ end }}
+    </dl>
+    {{- with (or .hinweis $p.hinweis) }}<p class="phinweis">{{ . }}</p>{{ end }}
+    <p class="pcard-links">
+      {{- with $p.asin }}{{ if partial "amazon-ok.html" . }}<a class="btn-sec btn-amazon" href="{{ partial "amazon-url.html" . }}" rel="sponsored nofollow noopener" target="_blank">Aktuellen Preis bei Amazon ansehen<span class="ad-label">Anzeige</span><span class="sr"> (Affiliate-Link)</span></a>{{ else }}{{ partial "amazon-na.html" (dict "cls" "amz-na-karte") }}{{ end }}{{ end }}
+      <a class="quelle" href="{{ $p.quelle }}" rel="noopener" target="_blank">Herstellerdaten</a>
+    </p>
+  </div>
+</li>

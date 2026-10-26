@@ -1,0 +1,53 @@
+# Zubehör (Messsteckdosen, Kabel, Halterungen …) – getrennt von powerstations/balkonkraftwerke,
+# damit Finder, Suche und Vergleich davon unberührt bleiben. Nur Herstellerangaben mit Quelle,
+# keine Preise, keine Bewertungen. „modell“ muss mit allen markanten Wörtern im Amazon-Titel
+# stehen (tools/verfuegbarkeit.py prüft das). Stand der Angaben: 26.10.2026.
+- modell: Shelly Plug S Gen3
+  slug: shelly-plug-s-gen3
+  kategorie: messsteckdose
+  hersteller: Shelly
+  asin: B0DJFCQRWL            # weiß, Einzelstück; Amazon-Modellnummer 3800235261842 = EAN Plug S MTR Gen3 (weiß) laut Shelly-Konformitätserklärung Nr. 180
+  funk: WLAN 2,4 GHz, Bluetooth, Matter
+  last: 12 A / 2.500 W (ohmsche Last)
+  einsatz: Innenraum
+  einspeisung: Ab Firmware 1.7.0 als negativer Wert (Einstellung „Rückleistungsmessung“)
+  voraussetzung: WLAN, Shelly-App oder Weboberfläche
+  quelle: https://www.shelly.com/de/products/shelly-plug-s-gen3
+  hinweis: Technisch heißt sie Plug S MTR Gen3. Shelly führt sie als eingestellt und empfiehlt als Nachfolger die Plug M Gen3 (bis 13 A / 3.000 W).
+- modell: Shelly Outdoor Plug S Gen3
+  slug: shelly-outdoor-plug-s-gen3
+  kategorie: messsteckdose
+  hersteller: Shelly
+  asin: B0DWNBDH41
+  funk: WLAN 2,4 GHz, Bluetooth, Matter
+  last: 12 A / 2.500 W (ohmsche Last)
+  einsatz: Außen, IP44, −25 bis 51 °C
+  einspeisung: Ab Firmware 1.7.0 als negativer Wert (Einstellung „Rückleistungsmessung“)
+  voraussetzung: WLAN, Shelly-App oder Weboberfläche
+  eigenverbrauch: unter 1 W
+  quelle: https://www.shelly.com/de/products/shelly-outdoor-plug-s-gen3
+- modell: FRITZ!Smart Energy 200
+  slug: fritz-smart-energy-200
+  kategorie: messsteckdose
+  hersteller: FRITZ!
+  asin: B0GR99SMSG
+  funk: DECT ULE (direkt zur FRITZ!Box)
+  last: 2.300 W
+  einsatz: Innenraum
+  einspeisung: Misst laut CHIP-Test auch in Einspeiserichtung
+  voraussetzung: FRITZ!Box mit DECT-Basis
+  eigenverbrauch: 0,5 W aus, 1,2 W an (CHIP-Messung am baugleichen FRITZ!DECT 200)
+  quelle: https://fritz.com/products/fritz-smart-energy-200-20003113
+  hinweis: Technisch identisch mit dem FRITZ!DECT 200, nur umbenannt.
+- modell: Tapo P110
+  slug: tapo-p110
+  kategorie: messsteckdose
+  hersteller: TP-Link
+  asin: B09BFT7NZJ
+  funk: WLAN 2,4 GHz
+  last: 16 A / 3.680 W (ohmsche Last)
+  einsatz: Innenraum, 0 bis 40 °C
+  einspeisung: Zeigt Einspeisung als Verbrauch an (Angabe von TP-Link)
+  voraussetzung: WLAN, Tapo-App
+  eigenverbrauch: 0,64 W aus, 1,64 W an
+  quelle: https://www.tapo.com/de/product/smart-plug/tapo-p110/

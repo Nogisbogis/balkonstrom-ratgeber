@@ -40,6 +40,8 @@ Im Winter steht die Sonne tief, die Tage sind kurz, oft ist es bewölkt. Wie vie
 
 *Alle Ertragswerte stammen aus PVGIS 5.3, abgerufen am 20.10.2026. Ich habe keine eigene Anlage gemessen.*
 
+Wie viel deine eigene Anlage liefert, zeigt eine Messsteckdose: [Balkonkraftwerk-Ertrag messen](/posts/balkonkraftwerk-ertrag-messen-steckdose/).
+
 ## Die Zahlen: Dezember und Winter im Überblick
 
 Gerechnet ist eine Anlage mit 800 Wp Modulleistung, also etwa zwei Standardmodulen. Die Werte sind Mittelwerte der Jahre 2005 bis 2023. Im Dezember sind das in Hamburg pro Tag 0,56 kWh (30° Süd), 0,71 kWh (senkrecht Süd) und 0,18 kWh (senkrecht West).

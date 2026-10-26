@@ -116,6 +116,8 @@ Welche Modelle genau welche Note bekommen haben, steht im kostenpflichtigen Teil
 
 ## Worauf du beim Kauf achten solltest
 
+Bevor du einen Speicher kaufst, miss ein paar Wochen lang, wie viel Strom dein Balkonkraftwerk liefert: [Ertrag messen](/posts/balkonkraftwerk-ertrag-messen-steckdose/).
+
 **Kapazität:** Die meisten Balkonkraftwerk-Speicher haben rund 2 kWh. Laut Stiftung Warentest reicht das etwa, um einen Kühlschrank eine Nacht lang zu betreiben oder mehrere Stunden Lampe, Laptop und Router zu versorgen. Viele Systeme lassen sich mit Zusatzakkus erweitern – sinnvoll ist das aber nur, wenn du die zusätzliche Kapazität auch füllen kannst.
 
 **Solareingänge:** Achte auf die Zahl der MPPT-Eingänge und die maximale PV-Leistung. Aktuelle Geräte verarbeiten laut Hersteller 1.500 bis 3.600 W Modulleistung. Für den vereinfachten Betrieb als Steckersolargerät sind aber höchstens 2.000 Wp erlaubt.
