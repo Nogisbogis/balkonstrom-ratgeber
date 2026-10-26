@@ -5,6 +5,9 @@ on:
   push:
     branches: ["main"]
   workflow_dispatch:
+  # Strompreis-Feed: alle 30 Minuten neu bauen, damit /api/strompreis.json aktuell bleibt (keine Commits nötig)
+  schedule:
+    - cron: "7,37 * * * *"
 
 permissions:
   contents: read
@@ -41,6 +44,10 @@ jobs:
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
+      - name: Strompreis-Feed (energy-charts DE-LU → static/api/strompreis.json)
+        # Holt den Day-Ahead-Börsenpreis serverseitig; der Browser lädt nur /api/strompreis.json von der eigenen Domain.
+        # Bricht den Build nie ab (Fallback: letzter Live-Feed bzw. "available": false).
+        run: python3 tools/strompreis_feed.py
       - name: Build with Hugo
         run: |
           hugo \
