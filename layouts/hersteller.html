@@ -4,9 +4,11 @@
 {{- $g := partial "hersteller-produkte.html" $h }}
 {{- $bkwSp := true }}{{ range $g.bkw }}{{ if not (gt .d.speicher_kwh 0) }}{{ $bkwSp = false }}{{ end }}{{ end }}
 <article class="hersteller">
+  <header class="kopf-feld">
   {{ partial "breadcrumb.html" . }}
   <h1>{{ .Title }}</h1>
   <p class="lead lead-sans">{{ .Params.kurz }}</p>
+  </header>
   <ul class="hst-zahlen">
     {{- with $g.ps }}<li><a href="#powerstations"><strong>{{ len . }}</strong> Powerstation{{ if gt (len .) 1 }}s{{ end }}</a></li>{{ end }}
     {{- with $g.bkw }}<li><a href="#balkon-speicher"><strong>{{ len . }}</strong> {{ if $bkwSp }}Balkon-Speicher{{ else }}Balkonkraftwerke &amp; Speicher{{ end }}</a></li>{{ end }}

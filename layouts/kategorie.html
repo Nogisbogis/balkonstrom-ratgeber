@@ -1,7 +1,9 @@
 {{ define "main" }}
+<header class="kopf-feld">
 {{ partial "breadcrumb.html" . }}
 <h1>{{ .Title }}</h1>
 {{ with .Params.intro }}<p class="lead">{{ . }}</p>{{ end }}
+</header>
 {{ with .Params.vergleich }}<p><a class="btn" href="{{ . | relURL }}">Zum Vergleich: {{ $.Title }}</a></p>{{ end }}
 {{ if eq .Params.kategorie "powerstations" }}
 <h2 id="modelle">Alle Modelle im Detail</h2>

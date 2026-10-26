@@ -5,8 +5,10 @@
 {{- $aw := partial "awin-url.html" $p }}
 {{- $amz := "" }}{{ with $p.asin }}{{ if partial "amazon-ok.html" . }}{{ $amz = . }}{{ end }}{{ end }}
 <article class="produkt">
+  <header class="kopf-feld">
   {{ partial "breadcrumb.html" . }}
   <h1>{{ .Title }}</h1>
+  </header>
   <p class="meta">Produktseite Powerbank · Zuletzt aktualisiert <time datetime="{{ .Lastmod.Format "2006-01-02" }}">{{ .Lastmod.Format "02.01.2006" }}</time> · eigene Recherche, kein eigener Test{{ with partial "hersteller-von.html" $p.modell }}{{ $hn := .name }}{{ with .url }} · <a class="p-marke" href="{{ . }}">Alle Geräte von {{ $hn }}</a>{{ end }}{{ end }}</p>
   {{ if or $aw $amz }}{{ partial "disclosure-box.html" . }}{{ end }}
 

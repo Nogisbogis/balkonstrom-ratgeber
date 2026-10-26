@@ -1,8 +1,10 @@
 {{ define "main" }}
+<header class="kopf-feld">
 {{ partial "breadcrumb.html" . }}
 <h1>{{ .Title }}</h1>
-{{ partial "disclosure-box.html" . }}
 {{ with .Params.intro }}<p class="lead">{{ . }}</p>{{ end }}
+{{ partial "disclosure-box.html" . }}
+</header>
 {{ .Content }}
 <ul class="zub-rubriken">
 {{- range .Params.rubriken }}

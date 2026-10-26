@@ -1,7 +1,9 @@
 {{ define "main" }}
+<header class="kopf-feld">
 {{ partial "breadcrumb.html" . }}
 <h1>{{ .Title }}</h1>
 {{ with .Params.intro }}<p class="lead lead-sans">{{ . }}</p>{{ end }}
+</header>
 <p class="note abb-hinweis">Werte: Herstellerangaben, je Gerät mit Quelle auf der Produktseite. Abbildungen: Illustrationen, kein Produktfoto.</p>
 {{- range hugo.Data.hersteller }}{{ $h := . }}
 {{- $g := partial "hersteller-produkte.html" $h }}
