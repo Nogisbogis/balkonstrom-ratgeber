@@ -48,13 +48,17 @@
   shop: https://www.zendure.de/
   intro: >-
     Zendure wurde nach eigenen Angaben 2017 gegründet und hat Standorte in den USA, China, Japan und Deutschland.
-    Im deutschen Shop stehen vor allem Balkonkraftwerk-Speicher der SolarFlow-Reihe; Powerstations und
-    Powerbanks führe ich von Zendure derzeit nicht.
+    Im deutschen Shop stehen Balkonkraftwerk-Speicher der SolarFlow-Reihe, der PV-Hub 2000, der Energiemanager
+    PowerHub und die tragbare Ace 1500. Powerbanks listet der Shop dort nicht.
   quellen:
     - titel: "Zendure: About Zendure"
       url: https://us.zendure.com/pages/about-us
     - titel: "Zendure Deutschland: Über Zendure"
       url: https://www.zendure.de/pages/about-zendure
+    - titel: "Zendure Deutschland: Kollektion SolarFlow"
+      url: https://www.zendure.de/collections/solarflow
+    - titel: "Zendure Deutschland: Ace 1500"
+      url: https://www.zendure.de/products/ace-1500
 - slug: bluetti
   name: BLUETTI
   praefix: "BLUETTI"

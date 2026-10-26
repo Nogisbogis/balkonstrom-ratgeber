@@ -1,9 +1,9 @@
 +++
 title = "Zendure"
-description = "SolarFlow-Balkonspeicher von Zendure: alle Geräte auf einer Seite, kompakte Datenkarten nach Herstellerangaben (Stand 22.10.2026), Quellen je Produkt."
+description = "SolarFlow-Speicher, Hub 2000, PowerHub und Ace 1500 von Zendure: Geräte aus dem deutschen Shop, Datenkarten nach Herstellerangaben (Stand 26.10.2026)."
 layout = "hersteller"
 marke = "zendure"
-kurz = "SolarFlow-Balkonspeicher von Zendure – im Überblick, nach Herstellerangaben."
+kurz = "SolarFlow-Speicher, Hub, PowerHub und Ace 1500 von Zendure – nach Herstellerangaben."
 date = "2026-10-22"
-lastmod = "2026-10-22"
+lastmod = "2026-10-26"
 +++

@@ -335,3 +335,20 @@
   solareingang_w: 400
   quelle: https://de.jackery.com/products/explorer-2000-v2-portable-power-station
   asin: ""
+# Ergänzt am 26.10.2026. Ace 1500: kein integrierter Akku, Kapazität über AB-Zusatzakkus.
+- modell: Zendure Ace 1500
+  slug: zendure-ace-1500
+  awin_advertiser: 68786
+  shop_url: https://www.zendure.de/products/ace-1500
+  abbildung: img/illu/zendure-ace-1500.svg
+  spitze_w: 3000
+  usv_ms: 20
+  zyklen: null
+  erweiterbar: "ja"
+  kapazitaet_wh: 0
+  dauerleistung_w: 1500
+  akkutyp: kein integrierter Akku
+  gewicht_kg: 4
+  solareingang_w: 400
+  quelle: https://www.zendure.de/products/ace-1500
+  asin: ""

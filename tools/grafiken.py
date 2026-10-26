@@ -51,7 +51,7 @@ def T(x, y, s, cls="t", size=13, anchor="start", weight="normal", extra=""):
 def R(x, y, w, h, cls, rx=0, extra=""): return f'<rect x="{x}" y="{y}" width="{w}" height="{h}" class="{cls}" rx="{rx}" {extra}/>'
 def L(x1, y1, x2, y2, cls="g", sw=1, extra=""): return f'<line x1="{x1}" y1="{y1}" x2="{x2}" y2="{y2}" class="{cls}" stroke-width="{sw}" {extra}/>'
 
-def short(m): return m.replace("Anker SOLIX ", "Anker ").replace("Jackery Explorer ", "Jackery ")
+def short(m): return m.replace("Anker SOLIX ", "Anker ").replace("Jackery Explorer ", "Jackery ").replace("Zendure SolarFlow ", "Zendure ")
 
 # ---------- 1) Powerstations: Kapazität und Gewicht (Butterfly) ----------
 def ps_kapazitaet_gewicht(name="ps-kapazitaet-gewicht.svg", daten=None, maxwh=2200, maxkg=20, stand="19.10.2026"):
@@ -385,13 +385,13 @@ def anmelden_mastr(name="anmelden-mastr-angaben.svg"):
 def bkw_speicher(name="vergleich-bkw-speicher.svg"):
     rows = [p for p in bkw if p["speicher_kwh"]]
     rows.sort(key=lambda p: (p["speicher_kwh"], p["pv_max_w"]))
-    W, top, rh = 760, 84, 34
+    W, top, rh = 980, 84, 32
     H = top + rh * len(rows) + 64
-    lab = 230; cx = 470
-    lw = cx - lab - 70; rw = W - cx - 90
+    lab = 268; cx = 560
+    lw = cx - lab - 70; rw = W - cx - 100
     import math
-    mk = max(3.0, math.ceil(max(p["speicher_kwh"] for p in rows)))          # Skala aus den Daten (Stand 22.10.2026: 7 kWh)
-    mp = max(4000, math.ceil(max(p["pv_max_w"] for p in rows) / 1000) * 1000)  # bzw. 10.000 W PV
+    mk = max(3.0, math.ceil(max(p["speicher_kwh"] for p in rows)))
+    mp = max(4000, math.ceil(max(p["pv_max_w"] for p in rows) / 1000) * 1000)
     wr = sorted({p["wechselrichter_w"] for p in rows})
     b = [T(20, 30, "Speicher fürs Balkonkraftwerk: Kapazität und PV-Eingang", size=18, weight="bold"),
          T(20, 52, "Herstellerangaben · Ausgang ins Hausnetz am Schukostecker bei allen: " + de(wr[0]) + " W" if len(wr) == 1 else "Herstellerangaben", "m", 12.5),
@@ -417,7 +417,7 @@ def bkw_speicher(name="vergleich-bkw-speicher.svg"):
     b.append(L(x2000, top - 2, x2000, yb + 4, "bs", 2, 'stroke-dasharray="5 4"'))
     b.append(T(x2000, yb + 18, "2.000 Wp: Grenze für Steckersolargeräte", "b", 11.5, "middle", "bold"))
     b.append(T(20, yb + 40, "Ein höherer PV-Eingang ist technisch möglich, für den vereinfachten Betrieb zählen aber höchstens 2.000 Wp Module.", "m", 11.5))
-    b.append(T(20, yb + 56, "Quelle: Herstellerangaben, Stand 22.10.2026, Links in der Tabelle.", "m", 11.5))
+    b.append(T(20, yb + 56, "Quelle: Herstellerangaben, Stand 26.10.2026, Links in der Tabelle.", "m", 11.5))
     svg(name, W, H, "Kapazität und maximaler PV-Eingang der Balkonkraftwerk-Speicher",
         "Balkendiagramm: " + "; ".join(f'{p["modell"]}: {deg(p["speicher_kwh"],3)} kWh, ' + (f'PV-Eingang {de(p["pv_max_w"])} W' if p["pv_max_w"] else "kein PV-Eingang (AC-gekoppelt)") for p in rows) +
         ". Eine gestrichelte Linie markiert die 2.000-Wp-Grenze für Steckersolargeräte.", b)
@@ -576,7 +576,9 @@ def favicon():
 if __name__ == "__main__":
     ps_kapazitaet_gewicht(); ps_dauerleistung(); ps_laufzeit()
     winter_ertrag(); ausrichtung_tagesprofil(); kuehlschrank_laufzeit(); auto_ladezeit()
-    ps_kapazitaet_gewicht("ps-vergleich-kapazitaet-gewicht.svg", ps_alle, 4400, 55, "22.10.2026")
+    # Ace 1500 hat keinen integrierten Akku (0 Wh) und würde die Wh-Skala und die Wh/kg-Angabe verfälschen.
+    ps_mit_akku = [p for p in ps_alle if p.get("kapazitaet_wh")]
+    ps_kapazitaet_gewicht("ps-vergleich-kapazitaet-gewicht.svg", ps_mit_akku, 4400, 55, "26.10.2026")
     speicher_schema(); speicher_tagesprofil(); speicher_rechnung()
     anmelden_ablauf(); anmelden_stecker(); anmelden_mastr()
     bkw_speicher(); favicon()

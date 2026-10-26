@@ -2,6 +2,6 @@
 {{- $d := .d }}{{ $art := .art -}}
 <li><a href="{{ .pg.RelPermalink }}">{{ partial "abbildung.html" (dict "p" $d "w" 160 "h" 120 "lazy" true "cap" false "cls" "plist-abb") }}<strong>{{ .pg.Title }}</strong><span>
 {{- if eq $art "ps" }}{{ lang.FormatNumber 0 $d.kapazitaet_wh }} Wh · {{ lang.FormatNumber 0 $d.dauerleistung_w }} W{{ if $d.nur_dc }} nur DC{{ end }} · {{ replace (string $d.gewicht_kg) "." "," }} kg
-{{- else if eq $art "bkw" }}{{ if gt $d.speicher_kwh 0 }}{{ replace (string $d.speicher_kwh) "." "," }} kWh · {{ if gt $d.pv_max_w 0 }}{{ lang.FormatNumber 0 $d.pv_max_w }} W PV{{ else }}kein PV-Eingang{{ end }}{{ else }}{{ $d.module_wp }} Wp · ohne Speicher{{ end }} · Notstrom {{ partial "notstrom-text.html" $d }}
+{{- else if eq $art "bkw" }}{{ if gt $d.speicher_kwh 0 }}{{ replace (string $d.speicher_kwh) "." "," }} kWh · {{ if gt $d.pv_max_w 0 }}{{ lang.FormatNumber 0 $d.pv_max_w }} W PV{{ else }}kein PV-Eingang{{ end }}{{ else if gt $d.pv_max_w 0 }}kein integrierter Speicher · {{ lang.FormatNumber 0 $d.pv_max_w }} W PV{{ else if gt $d.module_wp 0 }}{{ $d.module_wp }} Wp · ohne Speicher{{ else }}{{ $d.typ }}{{ end }} · Notstrom {{ partial "notstrom-text.html" $d }}
 {{- else }}{{ lang.FormatNumber 0 $d.kapazitaet_mah }} mAh{{ with $d.kapazitaet_wh }} ({{ lang.FormatNumber 0 . }} Wh){{ end }} · {{ $d.max_leistung_w }} W · {{ if $d.gewicht_ca }}ca. {{ end }}{{ lang.FormatNumber 0 $d.gewicht_g }} g{{ end -}}
 </span></a></li>

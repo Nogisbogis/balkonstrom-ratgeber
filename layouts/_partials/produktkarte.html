@@ -19,7 +19,7 @@
       {{- if gt $p.speicher_kwh 0 }}<div><dt>Speicher</dt><dd>{{ replace (string $p.speicher_kwh) "." "," }} kWh</dd></div>{{ end }}
       {{- if gt $p.pv_max_w 0 }}<div><dt>PV-Eingang max.</dt><dd>{{ lang.FormatNumber 0 $p.pv_max_w }} W</dd></div>{{ end }}
       {{- if gt $p.module_wp 0 }}<div><dt>Module</dt><dd>{{ lang.FormatNumber 0 $p.module_wp }} Wp</dd></div>{{ end }}
-      <div><dt>Ausgang (Wechselrichter)</dt><dd>{{ $p.wechselrichter_w }} W</dd></div>
+      <div><dt>Ausgang (Wechselrichter)</dt><dd>{{ if gt $p.wechselrichter_w 0 }}{{ $p.wechselrichter_w }} W{{ else }}keiner am Gerät{{ end }}</dd></div>
     {{- end }}
     </dl>
     {{- with .hinweis }}<p class="phinweis">{{ . }}</p>{{ end }}

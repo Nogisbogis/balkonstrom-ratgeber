@@ -4,7 +4,7 @@
 {{- if eq $p.mppt nil -}}
   {{- $t = cond (gt ($p.pv_eingaenge | default 0) 0) (printf "%d PV-Eingänge, MPPT: keine Angabe" $p.pv_eingaenge) "MPPT: keine Angabe" -}}
 {{- else if and (eq $p.mppt 0) (eq $p.pv_max_w 0) -}}
-  {{- $t = "keine (AC-gekoppelt)" -}}
+  {{- $t = cond (gt $p.speicher_kwh 0) "keine (AC-gekoppelt)" "keine Angabe" -}}
 {{- else -}}
   {{- $t = printf "%d MPPT" $p.mppt -}}
 {{- end -}}

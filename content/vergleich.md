@@ -2,7 +2,7 @@
 title = "Vergleich: Balkonkraftwerke und Powerstations"
 description = "Filter- und sortierbare Tabelle mit Herstellerdaten zu Balkonkraftwerk-Speichern, Sets und Powerstations – ohne Preise, mit Quelle zu jedem Modell."
 layout = "vergleich"
-stand = "19.10.2026"
+stand = "26.10.2026"
 +++
 
 {{< aufklapp titel="Hinweise zum Lesen" >}}

@@ -7,7 +7,9 @@
 {{- else -}}
   {{- with index (where hugo.Data.balkonkraftwerke "modell" .) 0 -}}
     {{- $u := "" }}{{ with site.GetPage (printf "/balkonkraftwerke/%s" .slug) }}{{ $u = .RelPermalink }}{{ end -}}
-    {{- $kz := slice (cond (gt .speicher_kwh 0) (printf "%s kWh" (replace (string .speicher_kwh) "." ",")) "ohne Speicher") (printf "%s W" (lang.FormatNumber 0 .wechselrichter_w)) (partial "mppt-text.html" .) -}}
+    {{- $speicherTxt := cond (gt .speicher_kwh 0) (printf "%s kWh" (replace (string .speicher_kwh) "." ",")) (cond (gt .pv_max_w 0) (printf "%s W PV, ohne Akku" (lang.FormatNumber 0 .pv_max_w)) "ohne Speicher") -}}
+    {{- $wrTxt := cond (gt .wechselrichter_w 0) (printf "%s W" (lang.FormatNumber 0 .wechselrichter_w)) "ohne Wechselrichter am Gerät" -}}
+    {{- $kz := slice $speicherTxt $wrTxt (partial "mppt-text.html" .) -}}
     {{- $r = dict "url" $u "asin" (.asin | default "") "art" "bkw" "slug" .slug "kz" $kz "daten" . -}}
   {{- else -}}{{ errorf "modell-info: %q nicht in den Daten" . }}{{- end -}}
 {{- end -}}

@@ -24,7 +24,7 @@
         {{- if gt $p.speicher_kwh 0 }}<div><dt>Speicher</dt><dd>{{ replace (string $p.speicher_kwh) "." "," }} kWh{{ if and $p.max_kwh (gt $p.max_kwh $p.speicher_kwh) }}<small> · bis {{ replace (string (div (math.Round (mul $p.max_kwh 10)) 10.0)) "." "," }} kWh{{ if $p.max_kwh_hinweis }} (berechnet){{ end }}</small>{{ end }}</dd></div>{{ end }}
         {{- if gt $p.module_wp 0 }}<div><dt>Module</dt><dd>{{ lang.FormatNumber 0 $p.module_wp }} Wp</dd></div>{{ end }}
         {{- if gt $p.pv_max_w 0 }}<div><dt>PV-Eingang max.</dt><dd>{{ lang.FormatNumber 0 $p.pv_max_w }} W · {{ partial "mppt-text.html" $p }}</dd></div>{{ else }}<div><dt>PV-Eingänge</dt><dd>{{ partial "mppt-text.html" $p }}</dd></div>{{ end }}
-        <div><dt>Netz-Ausgang</dt><dd>{{ $p.wechselrichter_w }} W{{ with $p.netz_max_w }}<small> · bis {{ lang.FormatNumber 0 . }} W mit Festanschluss</small>{{ end }}</dd></div>
+        <div><dt>Netz-Ausgang</dt><dd>{{ if gt $p.wechselrichter_w 0 }}{{ $p.wechselrichter_w }} W{{ with $p.netz_max_w }}<small> · bis {{ lang.FormatNumber 0 . }} W</small>{{ end }}{{ else }}keiner am Gerät{{ end }}</dd></div>
         <div><dt>Notstrom-Steckdose</dt><dd>{{ partial "notstrom-text.html" $p }}</dd></div>
         <div><dt>Garantie</dt><dd>{{ $p.garantie }}</dd></div>
       </dl>
@@ -88,7 +88,7 @@
   </section>
   {{- end }}
 
-  {{- $posts := slice }}{{ range where site.RegularPages "Section" "posts" }}{{ if findRE (printf "(?:%s)(?:$|[^ A-Za-z0-9]| [^P])" $p.kurzname) .RawContent 1 }}{{ $posts = $posts | append . }}{{ end }}{{ end }}
+  {{- $posts := slice }}{{ range where site.RegularPages "Section" "posts" }}{{ if findRE (printf "(?:%s)(?:$|[^ A-Za-z0-9+]| [^P])" $p.kurzname) .RawContent 1 }}{{ $posts = $posts | append . }}{{ end }}{{ end }}
   {{- with $posts }}
   <section aria-labelledby="artikel"><h2 id="artikel">Erwähnt in diesen Artikeln</h2>
   <ul class="cards">{{ range . }}{{ partial "card.html" . }}{{ end }}</ul></section>
