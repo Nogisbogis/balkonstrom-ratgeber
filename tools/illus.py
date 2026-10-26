@@ -44,6 +44,8 @@ PS = [
  dict(slug="ecoflow-trail-200-dc", name="EcoFlow TRAIL 200 DC", dims=(115,126,167), ac=0, usbc=2, usba=2, disp="left", griff="schlaufe"),
  dict(slug="jackery-explorer-3600-plus", name="Jackery Explorer 3600 Plus", dims=(385,309,491), ac=3, usbc=2, usba=2, disp="top", griff="zwei", rollen=True),
  dict(slug="jackery-explorer-2000-v2", name="Jackery Explorer 2000 v2", dims=(335,264,292), ac=2, usbc=2, usba=1, disp="left", griff="klapp"),
+ # Zendure 26.10.2026. Ace: L × B × H laut FAQ; kein integrierter Akku.
+ dict(slug="zendure-ace-1500", name="Zendure Ace 1500", dims=(326,200,108), masse_label="L × B × H", ac=1, usbc=1, usba=1, disp="left", griff="keine"),
 ]
 BKW = [
  dict(slug="anker-solix-solarbank-2-e1600-pro", name="Anker SOLIX Solarbank 2 E1600 Pro", dims=(460,249,254), ac=1, mppt=4, griff="keine", led=True),
@@ -60,6 +62,16 @@ BKW = [
  dict(slug="zendure-solarflow-800-pro-2", name="Zendure SolarFlow 800 Pro 2", dims=(392.7,236.3,276), ac=1, mppt=4, griff="zwei", led=False),
  dict(slug="zendure-solarflow-2400-ac-plus", name="Zendure SolarFlow 2400 AC+", dims=(326,294,251), ac=1, mppt=0, griff="zwei", led=False),
  dict(slug="zendure-solarflow-800-plus", name="Zendure SolarFlow 800 Plus", dims=(393,236,242), ac=0, mppt=2, griff="zwei", led=False),
+ # Zendure 26.10.2026. 2400 Pro: B × H × T 326 × 294 × 251 → dims B, T, H.
+ # Hub 2000: B × T × H laut FAQ. ohne_mass: Produktseite ohne (eindeutige) Maße.
+ dict(slug="zendure-solarflow-2400-pro", name="Zendure SolarFlow 2400 Pro", dims=(326,251,294), ac=1, mppt=4, griff="keine", led=False),
+ dict(slug="zendure-hub-2000", name="Zendure Hub 2000", dims=(363,64,246), ac=0, mppt=2, griff="keine", led=False),
+ dict(slug="zendure-solarflow-1600-ac", name="Zendure SolarFlow 1600 AC+", ohne_mass=True, ac=1, mppt=0),
+ dict(slug="zendure-solarflow-2400-ac", name="Zendure SolarFlow 2400 AC", ohne_mass=True, mass_hinweis="Maße widersprüchlich, nicht maßstäblich", ac=1, mppt=0),
+ dict(slug="zendure-solarflow-3000-mix-ac", name="Zendure SolarFlow 3000 Mix AC+", ohne_mass=True, ac=1, mppt=0, rollen=True),
+ dict(slug="zendure-solarflow-4000-mix-ac", name="Zendure SolarFlow 4000 Mix AC+", ohne_mass=True, ac=1, mppt=0, rollen=True),
+ dict(slug="zendure-solarflow-4000-mix-pro", name="Zendure SolarFlow 4000 Mix Pro", ohne_mass=True, ac=1, mppt=2, rollen=True),
+ dict(slug="zendure-powerhub", name="Zendure PowerHub", ohne_mass=True, ac=0, mppt=0),
 ]
 KX, KY = 0.45, 0.30   # Schrägprojektion: Tiefe nach rechts oben
 
@@ -180,7 +192,27 @@ def svg(name, w, h, title, body):
     open(os.path.join(OUT, name), "w", encoding="utf-8").write(out)
     return len(out)
 
+def ohne_mass(m, art):
+    """Kiste ohne Maßstab, wenn die Produktseite keine (eindeutigen) Maße nennt."""
+    W, H = 400, 300
+    fw, fh, dx, dy = (170, 120, 40, 26) if art == "ps" else (140, 160, 42, 28)
+    x, y = (W - fw - dx) / 2, 78
+    b = koerper(x, y, fw, fh, dx, dy, min(fw, fh) * .06)
+    if art == "ps":
+        b += front_ps(m, x, y, fw, fh)
+    else:
+        b += front_bkw(m, x, y, fw, fh, dx, dy)
+    if m.get("rollen"):
+        rw = 7
+        for wx in (x + fw * .18, x + fw * .82):
+            b += f'<circle cx="{r(wx)}" cy="{r(y+fh)}" r="{r(rw)}" class="h l" stroke-width="1.2"/>'
+    b += (f'<text x="{W/2}" y="{H-28}" class="m" font-size="13" text-anchor="middle">{esc(m.get("mass_hinweis", "Maße: keine Angabe auf der Produktseite"))}</text>'
+          f'<text x="{W/2}" y="{H-10}" class="m" font-size="12" text-anchor="middle">schematisch, nicht maßstäblich</text>')
+    return svg(m["slug"] + ".svg", W, H, f'{m["name"]}, schematische Darstellung ohne Maßangabe', b)
+
 def einzeln(m, art):
+    if m.get("ohne_mass"):
+        return ohne_mass(m, art)
     W, H, mx, top, unten = 400, 300, 34, 24, 50
     L, D, Hh = m["dims"]
     hext = .26 if m["griff"] in ("buegel", "schlaufe") else .12
@@ -191,7 +223,7 @@ def einzeln(m, art):
     fw = L*s; yb = y + Hh*s + 12
     b += (f'<g class="dim"><path d="M{r(x)} {r(yb-4)}v8M{r(x)} {r(yb)}H{r(x+fw)}M{r(x+fw)} {r(yb-4)}v8" class="ml" stroke-width="1.2" fill="none"/>'
           f'<text x="{r(x+fw/2)}" y="{r(yb+16)}" class="m" font-size="13" text-anchor="middle">{cm(L)} cm</text>'
-          f'<text x="{W/2}" y="{H-8}" class="m" font-size="12" text-anchor="middle">{masse(m)} (B × T × H) laut Hersteller</text></g>')
+          f'<text x="{W/2}" y="{H-8}" class="m" font-size="12" text-anchor="middle">{masse(m)} ({esc(m.get("masse_label", "B × T × H"))}) laut Hersteller</text></g>')
     return svg(m["slug"] + ".svg", W, H, f'{m["name"]}, schematische Darstellung', b)
 
 def rs40p():
@@ -270,7 +302,7 @@ if __name__ == "__main__":
     for m in BKW: print(m["slug"], einzeln(m, "bkw"), "Bytes")
     for m in PB: print(m["slug"], powerbank(m), "Bytes")
     print("anker-solix-rs40p", rs40p(), "Bytes")
-    ps_sorted = sorted(PS, key=lambda m: m["dims"][0]*m["dims"][1]*m["dims"][2])
+    ps_sorted = sorted([m for m in PS if not m.get("ohne_mass")], key=lambda m: m["dims"][0]*m["dims"][1]*m["dims"][2])
     print("groesse-powerstations", vergleich(ps_sorted, "ps", "groesse-powerstations.svg", "Größenvergleich der Powerstations im selben Maßstab, schematische Darstellung", .42, 5), "Bytes")
-    b_sorted = sorted(BKW, key=lambda m: m["dims"][0]*m["dims"][1]*m["dims"][2])
+    b_sorted = sorted([m for m in BKW if not m.get("ohne_mass")], key=lambda m: m["dims"][0]*m["dims"][1]*m["dims"][2])
     print("groesse-balkonspeicher", vergleich(b_sorted, "bkw", "groesse-balkonspeicher.svg", "Größenvergleich der Balkonspeicher im selben Maßstab, schematische Darstellung", .36, 6), "Bytes")

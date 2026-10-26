@@ -253,3 +253,147 @@
   speicher_kwh: 1.92
   quelle: https://www.zendure.de/products/solarflow-800-plus
   asin: B0G81SS7VW
+# Ergänzt am 26.10.2026 aus www.zendure.de (nur lieferbare Geräte, Herstellerangaben der Produktseite).
+- modell: Zendure SolarFlow 1600 AC+
+  slug: "zendure-solarflow-1600-ac"
+  awin_advertiser: 68786
+  shop_url: "https://www.zendure.de/products/zendure-solarflow-1600-ac"
+  abbildung: img/illu/zendure-solarflow-1600-ac.svg
+  kurzname: "SolarFlow 1600 AC\\+"
+  mppt: 0
+  notstrom_w: 1400
+  notstrom_einheit: VA
+  max_kwh: 11.52
+  garantie: "10 Jahre"
+  typ: AC-gekoppelter Speicher
+  module_wp: 0
+  pv_max_w: 0
+  wechselrichter_w: 800
+  netz_max_w: 1400
+  speicher_kwh: 1.92
+  quelle: https://www.zendure.de/products/zendure-solarflow-1600-ac
+  asin: ""
+- modell: Zendure SolarFlow 2400 Pro
+  slug: "zendure-solarflow-2400-pro"
+  awin_advertiser: 68786
+  shop_url: "https://www.zendure.de/products/zendure-solarflow-2400-pro"
+  abbildung: img/illu/zendure-solarflow-2400-pro.svg
+  kurzname: "SolarFlow 2400 Pro"
+  mppt: 4
+  notstrom_w: 3200
+  notstrom_einheit: VA
+  max_kwh: 16.8
+  garantie: "10 Jahre"
+  typ: Speicher mit Wechselrichter
+  module_wp: 0
+  pv_max_w: 3000
+  wechselrichter_w: 800
+  netz_max_w: 2400
+  speicher_kwh: 2.4
+  quelle: https://www.zendure.de/products/zendure-solarflow-2400-pro
+  asin: ""
+- modell: Zendure SolarFlow 2400 AC
+  slug: "zendure-solarflow-2400-ac"
+  awin_advertiser: 68786
+  shop_url: "https://www.zendure.de/products/zendure-solarflow-2400-ac"
+  abbildung: img/illu/zendure-solarflow-2400-ac.svg
+  kurzname: "SolarFlow 2400 AC"
+  mppt: 0
+  notstrom_w: 2400
+  max_kwh: 17.28
+  garantie: "keine Angabe"
+  typ: AC-gekoppelter Speicher
+  module_wp: 0
+  pv_max_w: 0
+  wechselrichter_w: 200
+  netz_max_w: 2400
+  speicher_kwh: 2.88
+  quelle: https://www.zendure.de/products/zendure-solarflow-2400-ac
+  asin: ""
+- modell: Zendure SolarFlow 3000 Mix AC+
+  slug: "zendure-solarflow-3000-mix-ac"
+  awin_advertiser: 68786
+  shop_url: "https://www.zendure.de/products/solarflow-3000-mix-ac"
+  abbildung: img/illu/zendure-solarflow-3000-mix-ac.svg
+  kurzname: "SolarFlow 3000 Mix AC\\+|3000 Mix AC"
+  mppt: 0
+  notstrom_w: null
+  max_kwh: 0
+  garantie: "10 Jahre"
+  typ: AC-gekoppelter Speicher
+  module_wp: 0
+  pv_max_w: 0
+  wechselrichter_w: 3000
+  speicher_kwh: 8
+  quelle: https://www.zendure.de/products/solarflow-3000-mix-ac
+  asin: ""
+- modell: Zendure SolarFlow 4000 Mix AC+
+  slug: "zendure-solarflow-4000-mix-ac"
+  awin_advertiser: 68786
+  shop_url: "https://www.zendure.de/products/solarflow-4000-mix-ac"
+  abbildung: img/illu/zendure-solarflow-4000-mix-ac.svg
+  kurzname: "SolarFlow 4000 Mix AC\\+|4000 Mix AC"
+  mppt: 0
+  notstrom_w: 3680
+  max_kwh: 0
+  garantie: "10 Jahre"
+  typ: AC-gekoppelter Speicher
+  module_wp: 0
+  pv_max_w: 0
+  wechselrichter_w: 3000
+  netz_max_w: 5000
+  speicher_kwh: 8
+  quelle: https://www.zendure.de/products/solarflow-4000-mix-ac
+  asin: ""
+- modell: Zendure SolarFlow 4000 Mix Pro
+  slug: "zendure-solarflow-4000-mix-pro"
+  awin_advertiser: 68786
+  shop_url: "https://www.zendure.de/products/solarflow-4000-mix-pro"
+  abbildung: img/illu/zendure-solarflow-4000-mix-pro.svg
+  kurzname: "SolarFlow 4000 Mix Pro|4000 Mix Pro"
+  mppt: 2
+  notstrom_w: 3680
+  max_kwh: 0
+  garantie: "10 Jahre"
+  typ: Speicher mit Wechselrichter
+  module_wp: 0
+  pv_max_w: 8000
+  wechselrichter_w: 3000
+  netz_max_w: 5000
+  speicher_kwh: 8
+  quelle: https://www.zendure.de/products/solarflow-4000-mix-pro
+  asin: ""
+- modell: Zendure Hub 2000
+  slug: "zendure-hub-2000"
+  awin_advertiser: 68786
+  shop_url: "https://www.zendure.de/products/hub-2000"
+  abbildung: img/illu/zendure-hub-2000.svg
+  kurzname: "Zendure Hub 2000|Hub 2000"
+  mppt: 2
+  notstrom_w: null
+  max_kwh: 7.68
+  garantie: "keine Angabe"
+  typ: PV-Hub ohne Akku
+  module_wp: 0
+  pv_max_w: 1800
+  wechselrichter_w: 0
+  speicher_kwh: 0
+  quelle: https://www.zendure.de/products/hub-2000
+  asin: ""
+- modell: Zendure PowerHub
+  slug: "zendure-powerhub"
+  awin_advertiser: 68786
+  shop_url: "https://www.zendure.de/products/zendure-powerhub"
+  abbildung: img/illu/zendure-powerhub.svg
+  kurzname: "Zendure PowerHub"
+  mppt: null
+  notstrom_w: null
+  max_kwh: 0
+  garantie: "keine Angabe"
+  typ: Energiemanager (ohne Akku)
+  module_wp: 0
+  pv_max_w: 0
+  wechselrichter_w: 0
+  speicher_kwh: 0
+  quelle: https://www.zendure.de/products/zendure-powerhub
+  asin: ""

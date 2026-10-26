@@ -198,3 +198,48 @@ shops:
     advertiser: 51793
     status: ungeprueft
     geprueft: ''
+  zendure-solarflow-1600-ac:
+    url: https://www.zendure.de/products/zendure-solarflow-1600-ac
+    advertiser: 68786
+    status: erreichbar
+    geprueft: '2026-10-26'
+  zendure-solarflow-2400-pro:
+    url: https://www.zendure.de/products/zendure-solarflow-2400-pro
+    advertiser: 68786
+    status: erreichbar
+    geprueft: '2026-10-26'
+  zendure-solarflow-2400-ac:
+    url: https://www.zendure.de/products/zendure-solarflow-2400-ac
+    advertiser: 68786
+    status: erreichbar
+    geprueft: '2026-10-26'
+  zendure-solarflow-3000-mix-ac:
+    url: https://www.zendure.de/products/solarflow-3000-mix-ac
+    advertiser: 68786
+    status: erreichbar
+    geprueft: '2026-10-26'
+  zendure-solarflow-4000-mix-ac:
+    url: https://www.zendure.de/products/solarflow-4000-mix-ac
+    advertiser: 68786
+    status: erreichbar
+    geprueft: '2026-10-26'
+  zendure-solarflow-4000-mix-pro:
+    url: https://www.zendure.de/products/solarflow-4000-mix-pro
+    advertiser: 68786
+    status: erreichbar
+    geprueft: '2026-10-26'
+  zendure-hub-2000:
+    url: https://www.zendure.de/products/hub-2000
+    advertiser: 68786
+    status: erreichbar
+    geprueft: '2026-10-26'
+  zendure-powerhub:
+    url: https://www.zendure.de/products/zendure-powerhub
+    advertiser: 68786
+    status: erreichbar
+    geprueft: '2026-10-26'
+  zendure-ace-1500:
+    url: https://www.zendure.de/products/ace-1500
+    advertiser: 68786
+    status: erreichbar
+    geprueft: '2026-10-26'
