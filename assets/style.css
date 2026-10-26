@@ -677,8 +677,6 @@ body.mit-cmp-bar{padding-bottom:5rem}
   .post.mit-rail{max-width:var(--measure);margin-inline:auto}
 }
 @media (max-width:52rem){
-  .h2f-unten{grid-template-columns:1fr}
-  .h2f-cta{justify-content:flex-start}
   .sec-kopf,.slip-sec,.artikel-sec,.einsatz-kopf{grid-template-columns:1fr}
   .artikel-foto{position:static;max-width:30rem}
   .feature,.feature-rev{grid-template-columns:1fr}
@@ -697,11 +695,6 @@ body.mit-cmp-bar{padding-bottom:5rem}
   .main-nav{display:none}
   .m-menu{display:block}
   main{padding-top:1.25rem}
-  .h2f-h{font-size:clamp(3.25rem,15vw,4.5rem)}
-  .h2f-satz{font-size:1.1875rem}
-  .h2f-cta{flex-direction:column;align-items:stretch}
-  .h2f-cta .btn{width:100%}
-  .h2f-cta .textlink{align-self:flex-start}
   .poster-wort{font-size:clamp(2.25rem,11vw,3rem)}
   .poster-liste a{grid-template-columns:1fr}
   .zeilen a{flex-direction:column;gap:.25rem}
