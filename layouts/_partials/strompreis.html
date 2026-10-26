@@ -1,0 +1,12 @@
+{{- /* Börsenstrompreis DE-LU. Daten: /api/strompreis.json (vom Pages-Workflow aus energy-charts erzeugt, gleiche Domain).
+       Kontext: dict "titel" string (optional) "id" string. Nur einmal pro Seite einbinden (bringt sein Script mit). */ -}}
+{{- $id := .id | default "strompreis" }}
+<aside class="strompreis sp-laedt" data-strompreis="{{ "api/strompreis.json" | relURL }}" aria-labelledby="{{ $id }}-titel">
+  <p class="sp-titel" id="{{ $id }}-titel">{{ .titel | default "Börsenstrompreis jetzt" }}</p>
+  <p class="sp-wert" aria-live="polite">wird geladen …</p>
+  <p class="sp-meta"></p>
+  <p class="sp-quelle">Börsenpreis DE-LU, ohne Netzentgelte/Steuern — Daten <a href="https://creativecommons.org/licenses/by/4.0/deed.de" rel="noopener license" target="_blank">CC BY 4.0</a> Bundesnetzagentur | <a href="https://www.smard.de/" rel="noopener" target="_blank">SMARD.de</a> via <a href="https://www.energy-charts.info/" rel="noopener" target="_blank">energy-charts</a> (Fraunhofer ISE)</p>
+  <noscript><p class="note">Die Anzeige braucht JavaScript.</p></noscript>
+</aside>
+{{- $js := resources.Get "js/strompreis.js" | minify | fingerprint }}
+<script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" defer></script>

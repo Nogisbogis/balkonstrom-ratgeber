@@ -4,3 +4,4 @@ resources/_gen/
 .taste-skill/
 .playwright-cli/
 __pycache__/
+static/api/strompreis.json

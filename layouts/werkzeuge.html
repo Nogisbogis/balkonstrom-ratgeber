@@ -12,5 +12,8 @@
 </section>
 <h2 class="sr-only">Werkzeuge</h2>
 {{ partial "tool-tiles.html" (dict "kurz" false) }}
+<h2>Strompreis an der Börse</h2>
+{{ partial "strompreis.html" (dict "id" "sp-werkzeuge") }}
+<p class="note">Das ist der Großhandelspreis am Day-Ahead-Markt für Deutschland und Luxemburg, ohne Netzentgelte, Umlagen und Steuern. Auf deiner Rechnung steht deshalb deutlich mehr. Interessant ist er für dynamische Tarife und um zu sehen, wann viel Solar- und Windstrom im Netz ist. Die Anzeige lädt nur eine Datei von dieser Seite, dein Browser fragt keinen fremden Server.</p>
 {{ .Content }}
 {{ end }}

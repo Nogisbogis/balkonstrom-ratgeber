@@ -868,3 +868,15 @@ details.p-mehr .tablewrap{margin:0}
 .zub-rubriken h2{font-size:var(--fs-b);margin:0 0 .5rem}
 .zub-rubriken p{margin:0 0 .75rem}
 .zub-status{font-size:.875rem;opacity:.8}
+
+/* Börsenstrompreis-Widget (/api/strompreis.json) */
+.strompreis{font-family:var(--sans);background:var(--surface);border-left:4px solid var(--accent);padding:.875rem 1rem;margin:1rem 0;max-width:var(--measure)}
+.strompreis p{margin:0}
+.strompreis .sp-titel{font-weight:700;font-size:var(--fs-s);text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
+.strompreis .sp-wert{font-size:var(--fs-b);margin:.25rem 0;font-variant-numeric:tabular-nums}
+.strompreis .sp-wert b{font-size:clamp(1.75rem,1.4rem + 1.2vw,2.25rem);line-height:1.1}
+.strompreis .sp-zeit{display:block;font-size:var(--fs-s);color:var(--muted)}
+.strompreis .sp-meta{font-size:var(--fs-s);color:var(--muted);font-variant-numeric:tabular-nums;line-height:1.5}
+.strompreis .sp-quelle{font-size:.8125rem;color:var(--muted);margin-top:.5rem;line-height:1.45}
+.strompreis.sp-leer{border-left-color:var(--amber)}
+.strompreis.sp-leer .sp-wert{font-size:var(--fs-b);font-weight:600}
