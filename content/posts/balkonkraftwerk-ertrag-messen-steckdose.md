@@ -4,7 +4,6 @@ foto = 'balkon2'
 seotitle = 'Balkonkraftwerk Ertrag messen: Messsteckdose im Vergleich'
 date = '2026-10-26'
 description = "Shelly, FRITZ! oder Tapo: Welche smarte Steckdose den Ertrag deines Balkonkraftwerks misst, welche die Einspeisung richtig anzeigt und was du dafür brauchst."
-draft = true
 kategorie = 'zubehoer'
 kurzgesagt = 'Für die Messung reicht eine smarte Steckdose mit Energiemessung zwischen Wandsteckdose und Wechselrichter. Willst du die Einspeisung mit richtigem Vorzeichen sehen, nimm eine Shelly-Steckdose der 3. Generation. Hast du eine FRITZ!Box, passt die FRITZ!Smart Energy 200. Steckt dein Balkonkraftwerk draußen, brauchst du ein Modell mit Spritzwasserschutz.'
 fuer_dich = ['du wissen willst, wie viel Strom dein Balkonkraftwerk am Tag und im Jahr liefert.', 'dein Wechselrichter keine eigene App hat oder du die Werte in dein Smart Home holen willst.', 'dein Balkonkraftwerk mit einem Schuko-Stecker angeschlossen ist.']
@@ -84,7 +83,7 @@ Danach steht vor dem Messwert in App und Weboberfläche ein Minuszeichen.
 
 **Welche passt zu dir?**
 
-- **Du willst die Einspeisung richtig angezeigt bekommen:** Shelly Plug S Gen3 oder ihren Nachfolger Plug S MTR Gen3.
+- **Du willst die Einspeisung richtig angezeigt bekommen:** Shelly Plug S Gen3 (technisch: Plug S MTR Gen3). Shelly führt sie inzwischen als eingestellt und empfiehlt die Plug M Gen3 als Nachfolger. Ob die Plug M Gen3 die Rückleistungsmessung beherrscht, steht nicht auf ihrer Produktseite.
 - **Die Steckdose ist draußen:** Shelly Outdoor Plug S Gen3. Sie ist nach IP44 gegen Spritzwasser geschützt.
 - **Du hast eine FRITZ!Box:** FRITZ!Smart Energy 200. Sie braucht kein WLAN und verbindet sich per DECT direkt mit der Box. CHIP hat am baugleichen FRITZ!DECT 200 einen Eigenverbrauch von 0,5 Watt (aus) und 1,2 Watt (an) gemessen.
 - **Du nutzt schon Tapo-Geräte:** Tapo P110. TP-Link schreibt selbst, dass sie Einspeisung als Verbrauch anzeigt.

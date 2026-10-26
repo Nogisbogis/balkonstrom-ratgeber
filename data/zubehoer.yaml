@@ -6,14 +6,14 @@
   slug: shelly-plug-s-gen3
   kategorie: messsteckdose
   hersteller: Shelly
-  asin: B0DJFCQRWL            # Variante weiß, Einzelstück
+  asin: B0DJFCQRWL            # weiß, Einzelstück; Amazon-Modellnummer 3800235261842 = EAN Plug S MTR Gen3 (weiß) laut Shelly-Konformitätserklärung Nr. 180
   funk: WLAN 2,4 GHz, Bluetooth, Matter
   last: 12 A / 2.500 W (ohmsche Last)
   einsatz: Innenraum
   einspeisung: Ab Firmware 1.7.0 als negativer Wert (Einstellung „Rückleistungsmessung“)
   voraussetzung: WLAN, Shelly-App oder Weboberfläche
   quelle: https://www.shelly.com/de/products/shelly-plug-s-gen3
-  hinweis: Shelly listet die Plug S Gen3 als ausgelaufen; Nachfolger ist die Plug S MTR Gen3 mit denselben Lastwerten.
+  hinweis: Technisch heißt sie Plug S MTR Gen3. Shelly führt sie als eingestellt und empfiehlt als Nachfolger die Plug M Gen3 (bis 13 A / 3.000 W).
 - modell: Shelly Outdoor Plug S Gen3
   slug: shelly-outdoor-plug-s-gen3
   kategorie: messsteckdose

@@ -1,6 +1,6 @@
 # Zubehör-Track: Strukturplan und interne Verlinkung (Entwurf)
 
-Stand: 26.10.2026. Alles ist ein Entwurf (`draft = true`). Nichts davon ist live.
+Stand: 26.10.2026. /zubehoer/ und der Messsteckdosen-Ratgeber sind seit 26.10.2026 live; die internen Links aus Winter-, Ausrichtungs- und Speicher-Artikel sind eingebaut.
 
 ## URL-Baum
 
@@ -52,5 +52,6 @@ Vom neuen Artikel gehen schon Links auf winter-ertrag, ausrichtung-neigung und d
 
 - `draft = true` in `content/zubehoer/_index.md` und im Artikel entfernen. Datum auf den Veröffentlichungstag setzen.
 - `python3 tools/verfuegbarkeit.py` laufen lassen (curl zeigte bei beiden Shelly-Steckdosen und der FRITZ!-Steckdose nur „Alle Angebote“).
-- Klären, welche Variante B0DJFCQRWL ist (Plug S Gen3 oder Plug S MTR Gen3).
+- Geklärt: B0DJFCQRWL hat die Modellnummer 3800235261842 = EAN der Plug S MTR Gen3 (weiß) laut Shelly-Konformitätserklärung Nr. 180. Shelly führt sie als eingestellt, empfohlener Nachfolger Plug M Gen3 (Rückleistungsmessung dort unbelegt, deshalb nicht aufgenommen).
+- Verfügbarkeit: am 26.10.2026 blockte Amazon den Check; die 4 ASINs sind noch ohne Eintrag (= gelten als verfügbar) und laufen ab dem nächsten Tageslauf mit.
 - Die übliche Prüfung: hugo --minify, lychee, JSON-LD, Lighthouse, Screenshots bei 1440/768/390.

@@ -2,7 +2,7 @@
 title = "Zubehör"
 seotitle = "Zubehör für Balkonkraftwerk und Powerstation"
 description = "Messsteckdosen, Kabel, Stecker und Halterungen für Balkonkraftwerk und Powerstation: worauf es ankommt, mit Herstellerangaben und Quellen."
-draft = true
+date = "2026-10-26"
 layout = "zubehoer-liste"
 kategorie = "zubehoer"
 intro = "Kleine Teile, die über Sicherheit und Nutzen entscheiden: Messsteckdosen, Kabel, Stecker, Halterungen. Pro Thema ein Ratgeber mit Herstellerangaben und Quellen, ohne eigene Tests."
