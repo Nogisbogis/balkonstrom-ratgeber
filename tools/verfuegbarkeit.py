@@ -132,6 +132,38 @@ return {url:location.href,doctitle:document.title,title:title,avail:avail,
  asin:asinIn,canon:canon,ort:q('#glow-ingress-line2'),rs:document.readyState,ppd:produkt,
  laenge:document.documentElement.outerHTML.length}})()"""
 
+
+def seiten_tab(tabs):
+    """Erster CDP-Target vom Typ page mit Websocket, sonst None.
+
+    /json antwortet oft schon mit HTTP 200, bevor die about:blank-Seite existiert –
+    dann stehen dort nur Browser- oder Worker-Targets. Darauf [0] zu nehmen wirft IndexError.
+    """
+    if not isinstance(tabs, list):
+        return None
+    for t in tabs:
+        if isinstance(t, dict) and t.get('type') == 'page' and t.get('webSocketDebuggerUrl'):
+            return t
+    return None
+
+
+def warte_auf_seiten_tab(holen, versuche=40, pause=0.5):
+    """Fragt die CDP-Targetliste ab, bis ein Seiten-Tab da ist (oder die Versuche um sind).
+
+    Ein erfolgreiches /json allein reicht nicht: ohne type=='page' weiter warten.
+    `holen` liefert die geparste Targetliste oder wirft, solange der Port noch nicht antwortet.
+    """
+    for _ in range(versuche):
+        try:
+            tab = seiten_tab(holen())
+        except Exception:
+            tab = None
+        if tab:
+            return tab
+        time.sleep(pause)
+    raise RuntimeError('Chrome startet nicht')
+
+
 # fertig = Dokument vollständig geladen, oder Produktspalte samt Kaufbox-/Verfügbarkeitsteil da,
 # oder eine Sonderseite (Captcha/404), die ohnehin keine Produktspalte hat.
 BEREIT_JS = r"""(()=>{const d=document,has=s=>!!d.querySelector(s);
@@ -159,14 +191,9 @@ class Browser:
                                   stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
                                   start_new_session=True)   # eigene Prozessgruppe -> samt Renderern beendbar
         atexit.register(self.zu)
-        for _ in range(40):
-            try:
-                tabs = json.load(urllib.request.urlopen(f'http://127.0.0.1:{self.port}/json', timeout=2)); break
-            except Exception:
-                time.sleep(0.5)
-        else:
-            raise RuntimeError('Chrome startet nicht')
-        tab = [t for t in tabs if t['type'] == 'page'][0]
+        # Nicht beim ersten HTTP-200 abbrechen: Chrome liefert /json oft, bevor ein page-Target existiert.
+        tab = warte_auf_seiten_tab(lambda: json.load(urllib.request.urlopen(
+            f'http://127.0.0.1:{self.port}/json', timeout=2)))
         self.ws = websocket.create_connection(tab['webSocketDebuggerUrl'], suppress_origin=True, timeout=60)
         self.i = 0; self.status = {}
         self.cmd('Network.enable'); self.cmd('Page.enable')
