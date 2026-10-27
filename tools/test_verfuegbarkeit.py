@@ -131,6 +131,83 @@ class TestEinstufen(unittest.TestCase):
         self.assertFalse(vk.sperrseite(st, warum))
 
 
+class TestCdpStart(unittest.TestCase):
+    def test_seiten_tab_ohne_page(self):
+        """Browser- oder Worker-Targets sind noch kein Seiten-Tab."""
+        self.assertIsNone(vk.seiten_tab([]))
+        self.assertIsNone(vk.seiten_tab([{'type': 'browser', 'id': 'b'}]))
+        self.assertIsNone(vk.seiten_tab([
+            {'type': 'browser'},
+            {'type': 'service_worker', 'webSocketDebuggerUrl': 'ws://sw'},
+        ]))
+        self.assertIsNone(vk.seiten_tab({'type': 'page', 'webSocketDebuggerUrl': 'ws://x'}))
+        self.assertIsNone(vk.seiten_tab([{'type': 'page'}]))  # noch ohne Websocket
+
+    def test_seiten_tab_nimmt_erste_page(self):
+        page = {'type': 'page', 'webSocketDebuggerUrl': 'ws://page', 'id': 'p'}
+        tabs = [
+            {'type': 'browser', 'id': 'b'},
+            {'type': 'service_worker', 'webSocketDebuggerUrl': 'ws://sw'},
+            page,
+            {'type': 'page', 'webSocketDebuggerUrl': 'ws://spaeter'},
+        ]
+        self.assertIs(vk.seiten_tab(tabs), page)
+
+    def test_warte_bis_page_tab_existiert(self):
+        """Erfolgreiches /json ohne type=='page' darf den Start nicht abbrechen."""
+        antworten = [
+            [{'type': 'browser', 'id': 'b'}],
+            [{'type': 'service_worker', 'webSocketDebuggerUrl': 'ws://sw'}],
+            [{'type': 'page', 'webSocketDebuggerUrl': 'ws://127.0.0.1/devtools/page/1'}],
+        ]
+
+        def holen():
+            return antworten.pop(0)
+
+        tab = vk.warte_auf_seiten_tab(holen, versuche=5, pause=0)
+        self.assertEqual(tab['webSocketDebuggerUrl'], 'ws://127.0.0.1/devtools/page/1')
+        self.assertEqual(antworten, [])
+
+    def test_warte_uebersteht_verbindungsfehler(self):
+        stand = {'n': 0}
+
+        def holen():
+            stand['n'] += 1
+            if stand['n'] < 3:
+                raise ConnectionError('refused')
+            return [{'type': 'page', 'webSocketDebuggerUrl': 'ws://ok'}]
+
+        tab = vk.warte_auf_seiten_tab(holen, versuche=5, pause=0)
+        self.assertEqual(tab['webSocketDebuggerUrl'], 'ws://ok')
+        self.assertEqual(stand['n'], 3)
+
+    def test_warte_gibt_auf_ohne_page(self):
+        def holen():
+            return [{'type': 'browser'}]
+
+        with self.assertRaises(RuntimeError) as ctx:
+            vk.warte_auf_seiten_tab(holen, versuche=3, pause=0)
+        self.assertIn('Chrome', str(ctx.exception))
+
+    def test_letzter_versuch_reicht(self):
+        stand = {'n': 0}
+
+        def holen():
+            stand['n'] += 1
+            if stand['n'] < 3:
+                return []
+            return [{'type': 'page', 'webSocketDebuggerUrl': 'ws://last'}]
+
+        tab = vk.warte_auf_seiten_tab(holen, versuche=3, pause=0)
+        self.assertEqual(tab['webSocketDebuggerUrl'], 'ws://last')
+
+    def test_init_wartet_auf_seiten_tab(self):
+        """Der Start darf nicht mehr auf dem ersten JSON-Array indexieren."""
+        quelle = inspect.getsource(vk.Browser.__init__)
+        self.assertIn('warte_auf_seiten_tab', quelle)
+        self.assertNotIn("== 'page'][0]", quelle)
+
+
 class TestSitzung(unittest.TestCase):
     def test_lade_verwirft_sitzungscookies(self):
         """Ohne diesen Schritt liefert die zweite ASIN nur die Rumpfseite."""
