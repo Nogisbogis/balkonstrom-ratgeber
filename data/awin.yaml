@@ -3,26 +3,26 @@
 # shops.status: erreichbar | nicht_erreichbar | unklar | domain_ungueltig | ungeprueft
 # AWIN-Links erscheinen nur bei advertiser joined UND shop erreichbar (layouts/_partials/awin-url.html).
 publisher: 3131632
-stand: '2026-10-23'
+stand: '2026-10-30'
 advertisers:
   anker-solix-de:
     id: 32623
     name: Anker Solix DE
     status: pending
     domain: www.ankersolix.com
-    geprueft: '2026-10-23'
+    geprueft: '2026-10-30'
   solakon-de:
     id: null
     name: Solakon DE
     status: nicht_gefunden
     domain: ''
-    geprueft: '2026-10-23'
+    geprueft: '2026-10-30'
   zendure-eu:
     id: 68786
     name: Zendure EU Marketing
     status: joined
     domain: www.zendure.de
-    geprueft: '2026-10-23'
+    geprueft: '2026-10-30'
     provision:
     - groupId: 528761
       groupCode: DEFAULT
@@ -32,21 +32,21 @@ advertisers:
   jackery-de:
     id: 30415
     name: Jackery DE
-    status: pending
+    status: rejected
     domain: de.jackery.com
-    geprueft: '2026-10-23'
+    geprueft: '2026-10-30'
   alldrei-de:
     id: 28945
     name: ALLDREI DE
     status: notjoined
     domain: www.alldrei.de
-    geprueft: '2026-10-23'
+    geprueft: '2026-10-30'
   ecoflow-de:
     id: 51793
     name: EcoFlow DE
     status: pending
     domain: de.ecoflow.com
-    geprueft: '2026-10-23'
+    geprueft: '2026-10-30'
 shops:
   ecoflow-river-3:
     url: https://de.ecoflow.com/products/river-3-portable-power-station
@@ -123,6 +123,11 @@ shops:
     advertiser: 30415
     status: ungeprueft
     geprueft: ''
+  zendure-ace-1500:
+    url: https://www.zendure.de/products/ace-1500
+    advertiser: 68786
+    status: erreichbar
+    geprueft: '2026-10-30'
   anker-solix-solarbank-2-e1600-pro:
     url: https://www.ankersolix.com/de/balkonkraftwerk-mit-speicher/solarbank2-a17c1-bms
     advertiser: 32623
@@ -137,7 +142,7 @@ shops:
     url: https://www.zendure.de/products/solarflow-800-pro
     advertiser: 68786
     status: erreichbar
-    geprueft: '2026-10-23'
+    geprueft: '2026-10-30'
   ecoflow-stream-ultra:
     url: https://de.ecoflow.com/products/stream-ultra-pro?variant=55835416199549
     advertiser: 51793
@@ -172,17 +177,57 @@ shops:
     url: https://www.zendure.de/products/zendure-solarflow-800-pro-2
     advertiser: 68786
     status: erreichbar
-    geprueft: '2026-10-23'
+    geprueft: '2026-10-30'
   zendure-solarflow-2400-ac-plus:
     url: https://www.zendure.de/products/zendure-solarflow-2400-ac-plus
     advertiser: 68786
     status: erreichbar
-    geprueft: '2026-10-23'
+    geprueft: '2026-10-30'
   zendure-solarflow-800-plus:
     url: https://www.zendure.de/products/solarflow-800-plus
     advertiser: 68786
     status: erreichbar
-    geprueft: '2026-10-23'
+    geprueft: '2026-10-30'
+  zendure-solarflow-1600-ac:
+    url: https://www.zendure.de/products/zendure-solarflow-1600-ac
+    advertiser: 68786
+    status: erreichbar
+    geprueft: '2026-10-30'
+  zendure-solarflow-2400-pro:
+    url: https://www.zendure.de/products/zendure-solarflow-2400-pro
+    advertiser: 68786
+    status: erreichbar
+    geprueft: '2026-10-30'
+  zendure-solarflow-2400-ac:
+    url: https://www.zendure.de/products/zendure-solarflow-2400-ac
+    advertiser: 68786
+    status: erreichbar
+    geprueft: '2026-10-30'
+  zendure-solarflow-3000-mix-ac:
+    url: https://www.zendure.de/products/solarflow-3000-mix-ac
+    advertiser: 68786
+    status: erreichbar
+    geprueft: '2026-10-30'
+  zendure-solarflow-4000-mix-ac:
+    url: https://www.zendure.de/products/solarflow-4000-mix-ac
+    advertiser: 68786
+    status: erreichbar
+    geprueft: '2026-10-30'
+  zendure-solarflow-4000-mix-pro:
+    url: https://www.zendure.de/products/solarflow-4000-mix-pro
+    advertiser: 68786
+    status: erreichbar
+    geprueft: '2026-10-30'
+  zendure-hub-2000:
+    url: https://www.zendure.de/products/hub-2000
+    advertiser: 68786
+    status: erreichbar
+    geprueft: '2026-10-30'
+  zendure-powerhub:
+    url: https://www.zendure.de/products/zendure-powerhub
+    advertiser: 68786
+    status: erreichbar
+    geprueft: '2026-10-30'
   ecoflow-rapid-pro-20k:
     url: https://de.ecoflow.com/products/rapid-pro-20k-power-bank
     advertiser: 51793
@@ -198,48 +243,3 @@ shops:
     advertiser: 51793
     status: ungeprueft
     geprueft: ''
-  zendure-solarflow-1600-ac:
-    url: https://www.zendure.de/products/zendure-solarflow-1600-ac
-    advertiser: 68786
-    status: erreichbar
-    geprueft: '2026-10-26'
-  zendure-solarflow-2400-pro:
-    url: https://www.zendure.de/products/zendure-solarflow-2400-pro
-    advertiser: 68786
-    status: erreichbar
-    geprueft: '2026-10-26'
-  zendure-solarflow-2400-ac:
-    url: https://www.zendure.de/products/zendure-solarflow-2400-ac
-    advertiser: 68786
-    status: erreichbar
-    geprueft: '2026-10-26'
-  zendure-solarflow-3000-mix-ac:
-    url: https://www.zendure.de/products/solarflow-3000-mix-ac
-    advertiser: 68786
-    status: erreichbar
-    geprueft: '2026-10-26'
-  zendure-solarflow-4000-mix-ac:
-    url: https://www.zendure.de/products/solarflow-4000-mix-ac
-    advertiser: 68786
-    status: erreichbar
-    geprueft: '2026-10-26'
-  zendure-solarflow-4000-mix-pro:
-    url: https://www.zendure.de/products/solarflow-4000-mix-pro
-    advertiser: 68786
-    status: erreichbar
-    geprueft: '2026-10-26'
-  zendure-hub-2000:
-    url: https://www.zendure.de/products/hub-2000
-    advertiser: 68786
-    status: erreichbar
-    geprueft: '2026-10-26'
-  zendure-powerhub:
-    url: https://www.zendure.de/products/zendure-powerhub
-    advertiser: 68786
-    status: erreichbar
-    geprueft: '2026-10-26'
-  zendure-ace-1500:
-    url: https://www.zendure.de/products/ace-1500
-    advertiser: 68786
-    status: erreichbar
-    geprueft: '2026-10-26'
