@@ -80,7 +80,7 @@ case "$PRUEF" in
   RECHT*) echo; echo "PROBLEM: AWIN aktiv, aber Rechtstexte unvollständig – NICHT committet:"; echo "${PRUEF#RECHT }"; rm -rf "$OUT" "$OUT.err"; zurueck; exit 8;;
   AKTIV*)
     # Aktivierung: zusätzlich Linkprüfung (offline, interne Links/Anker) vor dem Push
-    if ! (cd "$OUT" && "$LYCHEE" --offline --index-files index.html --root-dir "$OUT" --exclude 'amazon\.' --exclude 'awin1' --no-progress '**/*.html' >"$OUT.err" 2>&1); then
+    if ! (cd "$OUT" && "$LYCHEE" --offline --index-files index.html --root-dir "$OUT" --exclude 'amazon\.' --exclude 'awin1' --exclude '/pagefind/' --no-progress '**/*.html' >"$OUT.err" 2>&1); then
       echo; echo "PROBLEM: lychee meldet kaputte Links – NICHT committet:"; grep -E '\[(ERROR|[0-9]{3})\]|Errors' "$OUT.err" | head -20
       rm -rf "$OUT" "$OUT.err"; zurueck; exit 9
     fi
